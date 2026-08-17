@@ -1,0 +1,141 @@
+/**
+ * Pareto Travel typography
+ *
+ * Responsibility:
+ * - load the site fonts;
+ * - define the default type styles for HTML elements;
+ * - provide reusable type classes;
+ * - map typography onto the current brand and navigation selectors.
+ *
+ * Load tokens.css before this file.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+
+/* Base text */
+
+body {
+  color: var(--color-text-primary);
+  font-family: var(--type-family-body), Arial, sans-serif;
+  font-size: var(--type-size-body);
+  font-weight: var(--type-weight-regular);
+  line-height: var(--type-line-height-body);
+}
+
+/* Headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.type-page-title,
+.type-section-title {
+  color: var(--color-text-primary);
+  font-family: var(--type-family-display), sans-serif;
+  font-weight: var(--type-weight-strong);
+  text-wrap: balance;
+}
+
+h1,
+.type-page-title {
+  font-size: var(--type-size-page-title);
+  line-height: 1;
+}
+
+h2,
+.type-section-title {
+  font-size: var(--type-size-section-title);
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: var(--type-size-logo);
+  line-height: 1.2;
+}
+
+h4,
+h5,
+h6 {
+  font-family: var(--type-family-body), Arial, sans-serif;
+  font-size: var(--type-size-nav-ul);
+  line-height: 1.25;
+}
+
+/* Body-copy helpers */
+
+p,
+.type-body {
+  font-family: var(--type-family-body), Arial, sans-serif;
+  font-size: var(--type-size-body);
+  font-weight: var(--type-weight-regular);
+  line-height: var(--type-line-height-body);
+}
+
+small,
+.type-label {
+  font-size: var(--type-size-label);
+  font-weight: var(--type-weight-emphasis);
+  line-height: 1.5;
+}
+
+strong,
+b {
+  font-weight: var(--type-weight-strong);
+}
+
+/* Links */
+
+a {
+  color: var(--color-text-accent);
+  text-decoration-color: currentColor;
+  text-decoration-line: var(--type-link-decoration-line);
+  text-decoration-skip-ink: var(--type-link-decoration-skip-ink);
+  text-decoration-style: var(--type-link-decoration-style);
+  text-decoration-thickness: var(--type-link-decoration-thickness);
+  text-underline-offset: var(--type-link-underline-offset);
+}
+
+a:hover {
+  color: var(--color-text-primary);
+}
+
+/* Existing landing-page typography */
+
+.brand__word {
+  font-family: var(--type-family-display), sans-serif;
+  font-size: var(--type-size-logo);
+  font-weight: var(--type-weight-strong);
+  line-height: 1;
+}
+
+.site-nav a {
+  color: var(--color-text-primary);
+  font-size: var(--type-size-nav-ul);
+  font-weight: var(--type-weight-emphasis);
+  line-height: 1;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--color-text-accent);
+}
+
+/* Responsive type scale */
+
+@media (max-width: 620px) {
+  h1,
+  .type-page-title {
+    font-size: var(--type-size-section-title);
+  }
+
+  h2,
+  .type-section-title {
+    font-size: var(--type-size-logo);
+  }
+
+  .site-nav a {
+    font-size: var(--type-size-body);
+  }
+}

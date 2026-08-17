@@ -1,0 +1,89 @@
+/**
+ * Pareto Travel global styles
+ *
+ * Responsibility:
+ * - establish the site canvas and viewport behavior;
+ * - provide shared accessibility and interaction rules;
+ * - provide genuinely global utilities.
+ *
+ * Typography belongs in typography.css. Header, navigation, map and other
+ * component layouts belong in styles/components/.
+ */
+
+html {
+  background-color: var(--color-bg-canvas);
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100svh;
+  overflow-x: hidden;
+  background-color: var(--color-bg-canvas);
+}
+
+::selection {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-subtle);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-border-strong);
+  outline-offset: 6px;
+}
+
+:target {
+  scroll-margin-block: var(--space-xl);
+}
+
+/* Skip link: hidden until a keyboard user focuses it. */
+
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  inset-block-start: var(--space-sm);
+  inset-inline-start: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  color: var(--color-text-inverse);
+  background-color: var(--color-bg-brand);
+  transform: translateY(calc(-100% - var(--space-lg)));
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+.skip-link:hover,
+.skip-link:focus-visible {
+  color: var(--color-text-inverse);
+}
+
+/* Keep content available to assistive technology while hiding it visually. */
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

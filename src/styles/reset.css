@@ -1,0 +1,101 @@
+/**
+ * Pareto Travel browser reset
+ *
+ * This file removes inconsistent browser defaults without introducing the
+ * site's visual design. Load it before tokens.css, typography.css and
+ * global.css.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+:where(ul[role="list"], ol[role="list"]) {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  line-height: 1.5;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+picture,
+video {
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  color: inherit;
+  font: inherit;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+:where(button, [type="button"], [type="reset"], [type="submit"]):not(:disabled) {
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+figcaption,
+blockquote {
+  overflow-wrap: break-word;
+}
+
+[hidden] {
+  display: none !important;
+}

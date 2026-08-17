@@ -1,0 +1,128 @@
+.world-map-country {
+    position: absolute;
+    display: block;
+    background-color: var(  --color-map-visited);
+
+    mask: var(--map-image) center / contain no-repeat;
+    -webkit-mask: var(--map-image) center / contain no-repeat;
+
+    transition: background-color 180ms ease;
+}
+
+.world-map-country:hover,
+.world-map-country:focus-visible {
+    background-color: var(--color-icon-hover);
+}
+
+#us {
+    left: -0.0551%;
+    top: 6.7045%;
+    width: min(100%*432/1816, 432px);
+    aspect-ratio: 24 / 19;
+}
+
+#mx {
+    left: 6.8833%;
+    top: 33.9773%;
+    width: min(100%*150/1816, 150px);
+    aspect-ratio: 25 / 19;
+}
+
+#bo {
+    left: 20.4295%;
+    top: 66.0227%;
+    width: min(100%*72/1816, 72px);
+    aspect-ratio: 6 / 7;
+}
+
+#br {
+    left: 18.7775%;
+    top: 55.1136%;
+    width: min(100%*228/1816, 228px);
+    aspect-ratio: 38 / 43;
+}
+
+
+#cl {
+    left: 20.4295%;
+    top: 72.1591%;
+    width: min(100%*78/1816, 78px);
+    aspect-ratio: 13 / 41;
+}
+
+#co {
+    left: 17.1256%;
+    top: 49.6591%;
+    width: min(100%*66/1816, 66px);
+    aspect-ratio: 11 / 16;
+}
+
+#cr {
+    left: 15.1432%;
+    top: 50.3409%;
+    width: min(100%*18/1816, 18px);
+    aspect-ratio: 1 / 1;
+}
+
+#gr {
+    left: 48.8436%;
+    top: 27.1591%;
+    width: min(100%*36/1816, 36px);
+    aspect-ratio: 3 / 4;
+}
+
+#in {
+    left: 64.3722%;
+    top: 30.5682%;
+    width: min(100%*156/1816, 156px);
+    aspect-ratio: 78 / 107;
+}
+
+#is {
+    left: 37.6652%;
+    top: 9.4318%;
+    width: min(100%*48/1816, 48px);
+    aspect-ratio: 8 / 3;
+}
+
+#kh {
+    left: 75.6057%;
+    top: 47.6136%;
+    width: min(100%*30/1816, 30px);
+    aspect-ratio: 1 / 1;
+}
+
+#lk {
+    left: 68.3370%;
+    top: 51.7045%;
+    width: min(100%*12/1816, 12px);
+    aspect-ratio: 1 / 2;
+}
+
+#my {
+    left: 74.9449%;
+    top: 53.0682%;
+    width: min(100%*114/1816, 114px);
+    aspect-ratio: 19 / 7;
+}
+
+#pe {
+    left: 16.4648%;
+    top: 59.2045%;
+    width: min(100%*78/1816, 78px);
+    aspect-ratio: 13 / 19;
+}
+
+#sg {
+    left: 76.3216%;
+    top: 57.9545%;
+    width: min(100%*6/1816, 6px);
+    aspect-ratio: 1 / 1;
+}
+
+#tr {
+    left: 50.8260%;
+    top: 27.1591%;
+    width: min(100%*96/1816, 96px);
+    aspect-ratio: 16 / 7;
+}

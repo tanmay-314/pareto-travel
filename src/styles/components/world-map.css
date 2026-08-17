@@ -1,0 +1,18 @@
+.map-container {
+    position: relative;
+    width: 100vw;
+    height: auto;
+
+    /* padding: var(--space-md);*/
+}
+
+.world-map {
+    width: min(100%, 1816px);
+    aspect-ratio: 227 / 110;
+
+    display: block;
+    background-color: var(--color-map-base);
+
+    mask: var(--map-image) center / contain no-repeat;
+    -webkit-mask: var(--map-image) center / contain no-repeat;
+}

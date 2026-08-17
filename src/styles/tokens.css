@@ -1,0 +1,114 @@
+/**
+ * Pareto Travel design tokens
+ * Source: Figma variables in file IBbYsd9B2ZHOq7NXfEUhtL
+ * Generated from the Primitive and Semantic collections on 2026-08-17.
+ *
+ * Figma-to-CSS normalization:
+ * - scale and line-height numbers use px;
+ * - underline thickness uses %;
+ * - font styles use numeric CSS font weights;
+ * - Figma enum/boolean decoration values use valid CSS keywords.
+ */
+
+:root {
+  /* Primitive: colors */
+  --primitive-color-plum-primary: #85586f;
+  --primitive-color-plum-secondary: #ba97a3;
+  --primitive-color-plum-tertiary: #f0dbdb;
+  --primitive-color-cream: #fefcf3;
+  --primitive-color-teal: #588584;
+
+  /* Primitive: typography */
+  --primitive-font-family-heading: "Bitcount Grid Single";
+  --primitive-font-family-body: "Instrument Sans";
+  --primitive-font-weight-regular: 400;
+  --primitive-font-weight-medium: 500;
+  --primitive-font-weight-semi-bold: 600;
+  --primitive-line-height-body: 24px;
+
+  /* Primitive: scale */
+  --primitive-scale-gap: 2px;
+  --primitive-scale-base: 6px;
+  --primitive-scale-small: 12px;
+  --primitive-scale-medium: 18px;
+  --primitive-scale-large: 24px;
+  --primitive-scale-x-large: 30px;
+  --primitive-scale-sub-heading: 48px;
+  --primitive-scale-heading: 60px;
+
+  /* Primitive: text decoration */
+  --primitive-text-decoration-line-underline: underline;
+  --primitive-text-decoration-style-solid: solid;
+  --primitive-text-decoration-thickness-20-percent: 20%;
+  --primitive-text-decoration-offset-auto: auto;
+  --primitive-text-decoration-skip-ink-enabled: auto;
+
+  /* Semantic: backgrounds */
+  --color-bg-canvas: var(--primitive-color-cream);
+  --color-bg-subtle: var(--primitive-color-plum-tertiary);
+  --color-bg-brand: var(--primitive-color-plum-primary);
+
+  /* Semantic: text */
+  --color-text-primary: var(--primitive-color-plum-primary);
+  --color-text-secondary: var(--primitive-color-plum-secondary);
+  --color-text-inverse: var(--primitive-color-cream);
+  --color-text-accent: var(--primitive-color-teal);
+
+  /* Semantic: borders */
+  --color-border-subtle: var(--primitive-color-plum-tertiary);
+  --color-border-default: var(--primitive-color-plum-secondary);
+  --color-border-strong: var(--primitive-color-plum-primary);
+
+  /* Semantic: icons */
+  --color-icon-primary: var(--primitive-color-plum-primary);
+  --color-icon-secondary: var(--primitive-color-plum-secondary);
+  --color-icon-hover: var(--primitive-color-teal);
+
+  /* Semantic: accents */
+  --color-accent-primary: var(--primitive-color-plum-primary);
+  --color-accent-secondary: var(--primitive-color-teal);
+
+  /* Semantic: maps and artwork */
+  --color-map-base: var(--primitive-color-plum-tertiary);
+  --color-map-visited: var(--primitive-color-plum-primary);
+  --color-map-recommended: var(--primitive-color-plum-secondary);
+  --color-artwork-tint: var(--primitive-color-teal);
+
+  /* Semantic: spacing */
+  --space-2xs: var(--primitive-scale-gap);
+  --space-xs: var(--primitive-scale-base);
+  --space-sm: var(--primitive-scale-small);
+  --space-md: var(--primitive-scale-medium);
+  --space-lg: var(--primitive-scale-large);
+  --space-xl: var(--primitive-scale-x-large);
+
+  /* Semantic: sizing */
+  --size-dot-base: var(--primitive-scale-base);
+
+  /* Semantic: type families */
+  --type-family-display: var(--primitive-font-family-heading);
+  --type-family-body: var(--primitive-font-family-body);
+
+  /* Semantic: type weights */
+  --type-weight-regular: var(--primitive-font-weight-regular);
+  --type-weight-emphasis: var(--primitive-font-weight-medium);
+  --type-weight-strong: var(--primitive-font-weight-semi-bold);
+
+  /* Semantic: type sizes */
+  --type-size-label: var(--primitive-scale-small);
+  --type-size-body: var(--primitive-scale-medium);
+  --type-size-nav-ul: var(--primitive-scale-large);
+  --type-size-logo: var(--primitive-scale-x-large);
+  --type-size-section-title: var(--primitive-scale-sub-heading);
+  --type-size-page-title: var(--primitive-scale-heading);
+
+  /* Semantic: body links */
+  --type-link-decoration-line: var(--primitive-text-decoration-line-underline);
+  --type-link-decoration-style: var(--primitive-text-decoration-style-solid);
+  --type-link-decoration-thickness: var(--primitive-text-decoration-thickness-20-percent);
+  --type-link-underline-offset: var(--primitive-text-decoration-offset-auto);
+  --type-link-decoration-skip-ink: var(--primitive-text-decoration-skip-ink-enabled);
+
+  /* Semantic: line heights */
+  --type-line-height-body: var(--primitive-line-height-body);
+}
