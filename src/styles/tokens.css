@@ -17,6 +17,7 @@
   --primitive-color-plum-tertiary: #f0dbdb;
   --primitive-color-cream: #fefcf3;
   --primitive-color-teal: #588584;
+  --primitive-color-white: #ffffff;
 
   /* Primitive: typography */
   --primitive-font-family-heading: "Bitcount Grid Single";
@@ -47,6 +48,7 @@
   --color-bg-canvas: var(--primitive-color-cream);
   --color-bg-subtle: var(--primitive-color-plum-tertiary);
   --color-bg-brand: var(--primitive-color-plum-primary);
+  --color-bg-surface: var(--primitive-color-white);
 
   /* Semantic: text */
   --color-text-primary: var(--primitive-color-plum-primary);
