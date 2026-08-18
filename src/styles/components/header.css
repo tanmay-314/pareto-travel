@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-lg) var(--space-xl);
+    background-color: var(--color-bg-header);
+}
+
+.logo {
+    display: block;
+    width: min(100%*360/1816, 360px);
+    aspect-ratio: 20 / 3;
+    background-color: var(--color-icon-primary);
+
+    mask: var(--map-image) center / contain no-repeat;
+    -webkit-mask: var(--map-image) center / contain no-repeat;
+
+    transition: background-color 180ms ease;
+}
+
+.logo:hover,
+.logo:focus-visible {
+    background-color: var(--color-icon-hover);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-lg);
+    list-style-type: none;
+}

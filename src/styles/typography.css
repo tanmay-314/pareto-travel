@@ -111,6 +111,7 @@ a:hover {
 }
 
 .site-nav a {
+  font-family: var(--type-family-display), sans-serif;
   color: var(--color-text-primary);
   font-size: var(--type-size-nav-ul);
   font-weight: var(--type-weight-emphasis);

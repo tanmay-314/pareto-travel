@@ -10,131 +10,153 @@
     <link rel="stylesheet" href="../styles/global.css">
 
     <!-- Component styles follow -->
+    <link rel="stylesheet" href="../styles/components/header.css">
     <link rel="stylesheet" href="../styles/components/world-map.css">
     <link rel="stylesheet" href="../styles/components/world-map-country.css">
   </head>
   
   <body>
 
-    <div class="map-container">
+    <div class="header">
 
       <a
-        class="world-map"
-        id="world-map"
-        style="--map-image: url('../../assets/maps/world-map.svg');"
+        class="logo"
+        href="index.html"
+        style="--map-image: url('../../assets/icons/logo.svg');"
       ></a>
 
-      <a 
-        class="world-map-country"
-        id="us"
-        href="/countries/us.html"
-        style="--map-image: url('../../assets/maps/world-map-us.svg');"
-      ></a>
+      <ul class="nav">
+        <li class="site-nav"><a href="/countries/destinations.html">DESTINATIONS</a></li>
+        <li class="site-nav"><a href="/countries/months.html">MONTHS</a></li>
+        <li class="site-nav"><a href="/countries/about.html">ABOUT</a></li>
+      </ul>
 
-      <a 
-        class="world-map-country"
-        id="mx"
-        href="/countries/mx.html"
-        style="--map-image: url('../../assets/maps/world-map-mx.svg');"
-      ></a>
 
-      <a 
-        class="world-map-country"
-        id="cr"
-        href="/countries/cr.html"
-        style="--map-image: url('../../assets/maps/world-map-cr.svg');"
-      ></a>
+    </div>
 
-      <a 
-        class="world-map-country"
-        id="co"
-        href="/countries/co.html"
-        style="--map-image: url('../../assets/maps/world-map-co.svg');"
-      ></a>
+    <div class="map-container">
 
-      <a 
-        class="world-map-country"
-        id="br"
-        href="/countries/br.html"
-        style="--map-image: url('../../assets/maps/world-map-br.svg');"
-      ></a>
+      <div class="map">
 
-      <a 
-        class="world-map-country"
-        id="pe"
-        href="/countries/pe.html"
-        style="--map-image: url('../../assets/maps/world-map-pe.svg');"
-      ></a>
+        <a
+          class="world-map"
+          id="world-map"
+          style="--map-image: url('../../assets/maps/world-map.svg');"
+        ></a>
 
-      <a 
-        class="world-map-country"
-        id="bo"
-        href="/countries/bo.html"
-        style="--map-image: url('../../assets/maps/world-map-bo.svg');"
-      ></a>
+        <a 
+          class="world-map-country"
+          id="us"
+          href="/countries/us.html"
+          style="--map-image: url('../../assets/maps/world-map-us.svg');"
+        ></a>
 
-      <a 
-        class="world-map-country"
-        id="cl"
-        href="/countries/cl.html"
-        style="--map-image: url('../../assets/maps/world-map-cl.svg');"
-      ></a>
+        <a 
+          class="world-map-country"
+          id="mx"
+          href="/countries/mx.html"
+          style="--map-image: url('../../assets/maps/world-map-mx.svg');"
+        ></a>
 
-      <a 
-        class="world-map-country"
-        id="is"
-        href="/countries/is.html"
-        style="--map-image: url('../../assets/maps/world-map-is.svg');"
-      ></a>
+        <a 
+          class="world-map-country"
+          id="cr"
+          href="/countries/cr.html"
+          style="--map-image: url('../../assets/maps/world-map-cr.svg');"
+        ></a>
 
-      <a 
-        class="world-map-country"
-        id="tr"
-        href="/countries/tr.html"
-        style="--map-image: url('../../assets/maps/world-map-tr.svg');"
-      ></a>
+        <a 
+          class="world-map-country"
+          id="co"
+          href="/countries/co.html"
+          style="--map-image: url('../../assets/maps/world-map-co.svg');"
+        ></a>
 
-      <a 
-        class="world-map-country"
-        id="gr"
-        href="/countries/gr.html"
-        style="--map-image: url('../../assets/maps/world-map-gr.svg');"
-      ></a>
+        <a 
+          class="world-map-country"
+          id="br"
+          href="/countries/br.html"
+          style="--map-image: url('../../assets/maps/world-map-br.svg');"
+        ></a>
 
-      <a 
-        class="world-map-country"
-        id="in"
-        href="/countries/in.html"
-        style="--map-image: url('../../assets/maps/world-map-in.svg');"
-      ></a>
+        <a 
+          class="world-map-country"
+          id="pe"
+          href="/countries/pe.html"
+          style="--map-image: url('../../assets/maps/world-map-pe.svg');"
+        ></a>
 
-      <a 
-        class="world-map-country"
-        id="lk"
-        href="/countries/lk.html"
-        style="--map-image: url('../../assets/maps/world-map-lk.svg');"
-      ></a>
+        <a 
+          class="world-map-country"
+          id="bo"
+          href="/countries/bo.html"
+          style="--map-image: url('../../assets/maps/world-map-bo.svg');"
+        ></a>
 
-      <a 
-        class="world-map-country"
-        id="my"
-        href="/countries/my.html"
-        style="--map-image: url('../../assets/maps/world-map-my.svg');"
-      ></a>
+        <a 
+          class="world-map-country"
+          id="cl"
+          href="/countries/cl.html"
+          style="--map-image: url('../../assets/maps/world-map-cl.svg');"
+        ></a>
 
-      <a 
-        class="world-map-country"
-        id="sg"
-        href="/countries/sg.html"
-        style="--map-image: url('../../assets/maps/world-map-sg.svg');"
-      ></a>
+        <a 
+          class="world-map-country"
+          id="is"
+          href="/countries/is.html"
+          style="--map-image: url('../../assets/maps/world-map-is.svg');"
+        ></a>
 
-      <a 
-        class="world-map-country"
-        id="kh"
-        href="/countries/kh.html"
-        style="--map-image: url('../../assets/maps/world-map-kh.svg');"
-      ></a>
+        <a 
+          class="world-map-country"
+          id="tr"
+          href="/countries/tr.html"
+          style="--map-image: url('../../assets/maps/world-map-tr.svg');"
+        ></a>
+
+        <a 
+          class="world-map-country"
+          id="gr"
+          href="/countries/gr.html"
+          style="--map-image: url('../../assets/maps/world-map-gr.svg');"
+        ></a>
+
+        <a 
+          class="world-map-country"
+          id="in"
+          href="/countries/in.html"
+          style="--map-image: url('../../assets/maps/world-map-in.svg');"
+        ></a>
+
+        <a 
+          class="world-map-country"
+          id="lk"
+          href="/countries/lk.html"
+          style="--map-image: url('../../assets/maps/world-map-lk.svg');"
+        ></a>
+
+        <a 
+          class="world-map-country"
+          id="my"
+          href="/countries/my.html"
+          style="--map-image: url('../../assets/maps/world-map-my.svg');"
+        ></a>
+
+        <a 
+          class="world-map-country"
+          id="sg"
+          href="/countries/sg.html"
+          style="--map-image: url('../../assets/maps/world-map-sg.svg');"
+        ></a>
+
+        <a 
+          class="world-map-country"
+          id="kh"
+          href="/countries/kh.html"
+          style="--map-image: url('../../assets/maps/world-map-kh.svg');"
+        ></a>
+
+      </div>
 
     </div>
 
