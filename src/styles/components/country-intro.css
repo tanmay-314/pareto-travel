@@ -1,0 +1,81 @@
+/* Country intro — Figma node 676:6513 */
+
+.country-intro {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--scale-xx-large, 36px);
+  width: 100%;
+  max-width: 600px;
+  color: var(--color-text-primary, #85586f);
+}
+
+.country-intro-title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm, 12px);
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+.country-intro-name,
+.country-intro-subtitle,
+.country-intro-overview {
+  width: 100%;
+  margin: 0;
+}
+
+.country-intro-name,
+.country-intro-subtitle {
+  font-family: var(--type-family-display, "Bitcount Grid Single"), sans-serif;
+  font-style: normal;
+  line-height: normal;
+  font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
+}
+
+.country-intro-name {
+  font-size: var(--type-size-page-title, 60px);
+  font-weight: var(--type-weight-strong, 600);
+  text-transform: uppercase;
+}
+
+.country-intro-subtitle {
+  font-size: var(--type-size-country-subtitle, 36px);
+  font-weight: var(--type-weight-regular, 400);
+}
+
+.country-intro-overview {
+  font-family: var(--type-family-body, "Instrument Sans"), sans-serif;
+  font-size: var(--type-size-body, 18px);
+  font-weight: var(--type-weight-regular, 400);
+  line-height: var(--type-line-height-body, 24px);
+  overflow-wrap: break-word;
+  font-variation-settings: "wdth" 100;
+}
+
+@media (max-width: 600px) {
+  .country-intro-name {
+    font-size: clamp(42px, 12vw, var(--type-size-page-title, 60px));
+  }
+
+  .country-intro-subtitle {
+    font-size: clamp(28px, 8vw, var(--type-size-country-subtitle, 36px));
+  }
+}
+
+.country-map {
+    display: block;
+    width: min(100%*720/1816, 720px);
+    aspect-ratio: 1 / 1;
+    background-color: var(--color-icon-secondary);
+
+    mask: var(--map-image) center / contain no-repeat;
+    -webkit-mask: var(--map-image) center / contain no-repeat;
+}
+
+.country-hero {
+  display:flex;
+  width: 100%;
+}
