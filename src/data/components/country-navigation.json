@@ -1,0 +1,67 @@
+{
+  "width": 300,
+  "height": 582,
+  "assets": {
+    "pole": "../../assets/components/country-navigation/pole.svg",
+    "signDefault": "../../assets/components/country-navigation/sign-default.svg",
+    "signHover": "../../assets/components/country-navigation/sign-hover.svg"
+  },
+  "boards": [
+    {
+      "label": "Itinerary",
+      "target": "#itinerary",
+      "direction": "right",
+      "rotation": 0,
+      "x": 50,
+      "y": 27
+    },
+    {
+      "label": "Best Months",
+      "target": "#best-months",
+      "direction": "right",
+      "rotation": 3,
+      "x": 50,
+      "y": 111.56
+    },
+    {
+      "label": "City Guides",
+      "target": "#city-guides",
+      "direction": "right",
+      "rotation": -2,
+      "x": 52.094,
+      "y": 182
+    },
+    {
+      "label": "Cuisine",
+      "target": "#cuisine",
+      "direction": "left",
+      "rotation": 5,
+      "x": 0,
+      "y": 259
+    },
+    {
+      "label": "Travel",
+      "target": "#travel",
+      "direction": "left",
+      "rotation": 0,
+      "x": 4,
+      "y": 339
+    },
+    {
+      "label": "Budget",
+      "target": "#budget",
+      "direction": "right",
+      "rotation": 4,
+      "x": 54,
+      "y": 419
+    },
+    {
+      "label": "FAQs",
+      "target": "#faqs",
+      "direction": "right",
+      "rotation": -1,
+      "x": 57,
+      "y": 494
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pareto Travel</title>
+    <title>Cambodia</title>
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/tokens.css">
     <link rel="stylesheet" href="../styles/typography.css">
@@ -12,7 +12,10 @@
     <!-- Component styles follow -->
     <link rel="stylesheet" href="../styles/components/header.css">
     <link rel="stylesheet" href="../styles/components/country-intro.css">
-  </head>
+    <link rel="stylesheet" href="../styles/components/country-navigation.css">
+
+    <script type="module" src="../scripts/components/country-navigation.js"></script>
+</head>
   
   <body>
     
@@ -32,26 +35,36 @@
 
     </div>
 
-<div class="country-hero">
+    <section class="country-hero">
 
-    <div class="country-intro">
+        <div class="country-intro">
 
-      <div class="country-intro-title-group">
-        <h1 class="country-intro-name">Cambodia</h1>
-        <h2 class="country-intro-subtitle">Wat and Peace</h2>
-      </div>
+        <div class="country-intro-title-group">
+            <h1 class="country-intro-name">Cambodia</h1>
+            <h2 class="country-intro-subtitle">Wat and Peace</h2>
+        </div>
 
-      <p class="country-intro-overview">
-        Cambodia is a beautiful country with a rich history and culture. From the ancient temples of Angkor Wat to the serene landscapes of the countryside, there is something for everyone to explore and enjoy.
-      </p>
+        <p class="country-intro-overview">
+            Cambodia is a beautiful country with a rich history and culture. From the ancient temples of Angkor Wat to the serene landscapes of the countryside, there is something for everyone to explore and enjoy.
+        </p>
 
-    </div>
+        </div>
 
-    <a
-        class="country-map"
-        style="--map-image: url('../../assets/countries/cambodia/country-map.svg');"
-    ></a>
 
-</div>
+        <!-- Fix the data-config path -->
+        <nav
+            class="country-navigation"
+            data-country-navigation
+            data-config="../data/components/country-navigation.json"
+            aria-label="On this country page"
+        ></nav>
+
+
+        <a
+            class="country-map"
+            style="--map-image: url('../../assets/countries/cambodia/country-map.svg');"
+        ></a>
+
+    </section>
 
   </body>
