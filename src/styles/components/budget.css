@@ -1,0 +1,281 @@
+:root {
+  --budget-receipt-demo-background: var(--color-background-brand, #85586f);
+  --budget-receipt-paper: var(--color-background-primary, #ffffff);
+  --budget-receipt-ink: var(--color-text-primary, #85586f);
+  --budget-receipt-muted: var(--color-text-secondary, #ba97a3);
+  --budget-receipt-rule: var(--color-border-subtle, #f0dbdb);
+  --budget-receipt-font: "Bitcount Grid Single", ui-monospace, monospace;
+}
+
+/**,
+*::before,
+*::after {
+  box-sizing: border-box;
+}*/
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/*
+ * Component geometry mirrors Figma node 567:24039.
+ * Height is content-driven: every added line item extends the receipt while
+ * the lower divider, total, paper and perforated edges remain bottom-aligned.
+ */
+.budget-receipt {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 554px;
+  min-width: 554px;
+  padding: 213.731705px 65.760559px 156.390244px 39.50705px;
+  overflow: hidden;
+  color: var(--budget-receipt-ink);
+  font-family: var(--budget-receipt-font);
+  font-style: normal;
+  font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
+}
+
+.budget-receipt::before,
+.budget-receipt::after,
+.budget-receipt__paper::before,
+.budget-receipt__paper::after {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  content: "";
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle at 3px 3px,
+    var(--budget-receipt-paper) 0 3px,
+    transparent 3.08px
+  );
+  background-size: 6px 6px;
+}
+
+.budget-receipt::before,
+.budget-receipt::after {
+  left: 0;
+  width: 546px;
+  height: 6px;
+  background-repeat: repeat-x;
+}
+
+.budget-receipt::before {
+  top: 0;
+}
+
+.budget-receipt::after {
+  bottom: 9px;
+}
+
+.budget-receipt__paper {
+  position: absolute;
+  z-index: 0;
+  inset: 3px 11px 12px 3px;
+  background: var(--budget-receipt-paper);
+  pointer-events: none;
+}
+
+.budget-receipt__paper::before,
+.budget-receipt__paper::after {
+  top: -3px;
+  bottom: -3px;
+  width: 6px;
+  background-repeat: repeat-y;
+}
+
+.budget-receipt__paper::before {
+  left: -3px;
+}
+
+.budget-receipt__paper::after {
+  right: -3px;
+}
+
+.budget-receipt__rule {
+  position: absolute;
+  z-index: 1;
+  height: 6px;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle at 3px 3px,
+    var(--budget-receipt-rule) 0 3px,
+    transparent 3.08px
+  );
+  background-position: left top;
+  background-repeat: repeat-x;
+  background-size: 11.408px 6px;
+}
+
+.budget-receipt__rule--top {
+  top: 24.463px;
+  left: 21.254px;
+  width: 485.155px;
+}
+
+.budget-receipt__rule--header {
+  top: 178.61px;
+  left: 39.507px;
+  width: 450.93px;
+}
+
+.budget-receipt__rule--total {
+  right: 63.563px;
+  bottom: 110.39px;
+  width: 450.93px;
+}
+
+.budget-receipt__rule--bottom {
+  right: 44.592px;
+  bottom: 32.341px;
+  width: 485.155px;
+}
+
+.budget-receipt__header {
+  position: absolute;
+  z-index: 2;
+  top: 62px;
+  left: 40px;
+}
+
+.budget-receipt__brand,
+.budget-receipt__country,
+.budget-receipt__meta,
+.budget-receipt__line-description,
+.budget-receipt__line-value,
+.budget-receipt__total-label,
+.budget-receipt__total-value {
+  margin: 0;
+  line-height: normal;
+}
+
+.budget-receipt__brand {
+  color: var(--budget-receipt-muted);
+  font-family: var(--budget-receipt-font);
+  font-size: var(--scale-small, 12px);
+  font-weight: 500;
+}
+
+.budget-receipt__country {
+  margin-top: 16.805px;
+  color: var(--budget-receipt-ink);
+  font-size: var(--scale-large, 24px);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.budget-receipt__meta {
+  position: absolute;
+  z-index: 2;
+  top: 133.732px;
+  left: 40px;
+  color: var(--budget-receipt-muted);
+  font-family: var(--budget-receipt-font);
+  font-size: var(--scale-small, 12px);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.budget-receipt__line-items {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  width: 448.732391px;
+  margin: 0;
+  padding: 0;
+  gap: 38.048782px;
+  background: var(--budget-receipt-paper);
+}
+
+.budget-receipt__line-item {
+  display: grid;
+  grid-template-columns: 320px 128.732391px;
+  width: 448.732391px;
+  height: 18.536585px;
+}
+
+.budget-receipt__line-description {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--budget-receipt-ink);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 17.560976px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.budget-receipt__line-value {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--budget-receipt-ink);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18.536585px;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.budget-receipt__total {
+  position: absolute;
+  z-index: 2;
+  right: 65.761px;
+  bottom: 59.805px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.budget-receipt__total-label {
+  color: var(--budget-receipt-muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.budget-receipt__total-value {
+  color: var(--budget-receipt-ink);
+  font-size: 30px;
+  font-weight: 600;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.budget-receipt[data-state="error"] {
+  min-height: 180px;
+  padding: 40px;
+  background: var(--budget-receipt-paper);
+}
+
+.budget-receipt-error {
+  margin: 0;
+  color: var(--budget-receipt-ink);
+  font: 500 14px/1.5 var(--budget-receipt-font);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
+
+/*Added by @tanmay314*/
+.budget {
+  padding: var(--scale-xxlarge, 36px);
+}

@@ -15,11 +15,13 @@
     <link rel="stylesheet" href="../styles/components/country-navigation.css">
     <link rel="stylesheet" href="../styles/components/itinerary.css" />
     <link rel="stylesheet" href="../styles/components/best-months.css" />
+    <link rel="stylesheet" href="../styles/components/budget.css" />
 
 
     <script type="module" src="../scripts/components/country-navigation.js"></script>
     <script type="module" src="../scripts/components/itinerary.js"></script>
     <script type="module" src="../scripts/components/best-months.js"></script>
+    <script type="module" src="../scripts/components/budget.js"></script>
 </head>
   
   <body>
@@ -91,5 +93,16 @@
         <figcaption class="visually-hidden"></figcaption>
       </figure>
     </section>
+
+    <section class="budget" id="budget" aria-label="Budget">
+      <h2 class="country-section-title" id="budget-title">Budget</h2>
+      
+      <div
+          class="budget-receipt"
+          data-budget-receipt
+          data-source="../data/countries/cambodia/budget.json"
+          aria-live="polite"
+      ></div>
+
 
   </body>

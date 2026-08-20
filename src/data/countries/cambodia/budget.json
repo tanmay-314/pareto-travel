@@ -1,0 +1,29 @@
+{
+  "country": "CAMBODIA",
+  "days": 2,
+  "people": 2,
+  "currency": "USD",
+  "lineItems": [
+    {
+      "description": "STAYS · 2 NIGHTS",
+      "value": "$420"
+    },
+    {
+      "description": "FOOD & DRINKS",
+      "value": "$210"
+    },
+    {
+      "description": "EXPERIENCES",
+      "value": "$160"
+    },
+    {
+      "description": "INTRA-CITY TRAVEL",
+      "value": "$100"
+    },
+    {
+      "description": "MISCELANEOUS",
+      "value": "$50"
+    }
+  ],
+  "total": "$940"
+}
