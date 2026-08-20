@@ -139,3 +139,14 @@ a:hover {
     font-size: var(--type-size-body);
   }
 }
+
+
+/* Added by me */
+.country-section-title {
+    font-family: var(--type-family-display);
+    font-size: var(--type-size-section-title);
+    font-weight: var(--type-weight-emphasis);
+    line-height: var(--type-line-height-body);
+    text-transform: uppercase;
+    margin-bottom: var(--scale-xx-large, 36px);
+}

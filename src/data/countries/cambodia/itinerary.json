@@ -13,7 +13,7 @@
           "location": "SIEM REAP",
           "rotation": "-4°",
           "image": {
-            "src": "",
+            "src": "../assets/images/art-angkor-wat.svg",
             "alt": "",
             "position": "50% 50%",
             "size": 360
@@ -24,7 +24,7 @@
           "location": "SIEM REAP",
           "rotation": "2°",
           "image": {
-            "src": "",
+            "src": "../assets/images/art-bacalar.svg",
             "alt": "",
             "position": "50% 50%",
             "size": 360
