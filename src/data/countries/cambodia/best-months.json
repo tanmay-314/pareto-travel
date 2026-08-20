@@ -1,0 +1,23 @@
+{
+  "countries": {
+    "cambodia": {
+      "country": "Cambodia",
+      "centerLabel": "THE SWEET SPOT",
+      "centerValue": "NOV → FEB",
+      "months": {
+        "jan": "best",
+        "feb": "best",
+        "mar": "avoid",
+        "apr": "avoid",
+        "may": "avoid",
+        "jun": "good",
+        "jul": "good",
+        "aug": "good",
+        "sep": "good",
+        "oct": "avoid",
+        "nov": "best",
+        "dec": "best"
+      }
+    }
+  }
+}

@@ -1,0 +1,186 @@
+:root {
+  --dial-background: #fefcf3;
+  --dial-best: #85586f;
+  --dial-good: #ba97a3;
+  --dial-avoid: #f0dbdb;
+  --dial-center-fill: #f0dbdb;
+  --dial-font: "Bitcount Grid Single", "Courier New", monospace;
+  --dial-enter-duration: 1800ms;
+  --dial-spin-duration: 24s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--dial-background);
+}
+
+.page-shell {
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
+  padding: 24px;
+}
+
+.annual-travel-dial {
+  width: min(100%, 760px);
+  aspect-ratio: 760 / 700;
+  margin: 0;
+  overflow: hidden;
+  background: var(--dial-background);
+}
+
+.annual-travel-dial__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.annual-travel-dial[data-motion="spin"] .annual-travel-dial__ring {
+  transform-box: view-box;
+  transform-origin: 380px 340px;
+  animation: annual-travel-dial-enter var(--dial-enter-duration)
+    cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform;
+}
+
+.annual-travel-dial[data-motion="continuous"] .annual-travel-dial__ring {
+  transform-box: view-box;
+  transform-origin: 380px 340px;
+  animation: annual-travel-dial-rotate var(--dial-spin-duration) linear infinite;
+  will-change: transform;
+}
+
+.annual-travel-dial[data-motion="spin"] .annual-travel-dial__month {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: annual-travel-dial-counter-enter var(--dial-enter-duration)
+    cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform;
+}
+
+.annual-travel-dial[data-motion="continuous"] .annual-travel-dial__month {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: annual-travel-dial-counter-rotate var(--dial-spin-duration) linear
+    infinite;
+  will-change: transform;
+}
+
+@keyframes annual-travel-dial-enter {
+  from {
+    transform: rotate(-360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes annual-travel-dial-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes annual-travel-dial-counter-enter {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes annual-travel-dial-counter-rotate {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .annual-travel-dial[data-motion="spin"] .annual-travel-dial__ring,
+  .annual-travel-dial[data-motion="continuous"] .annual-travel-dial__ring,
+  .annual-travel-dial[data-motion="spin"] .annual-travel-dial__month,
+  .annual-travel-dial[data-motion="continuous"] .annual-travel-dial__month {
+    animation: none;
+  }
+}
+
+.annual-travel-dial__month,
+.annual-travel-dial__center-label,
+.annual-travel-dial__center-value {
+  font-family: var(--dial-font);
+  font-style: normal;
+  font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
+}
+
+.annual-travel-dial__month {
+  font-size: 18px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+.annual-travel-dial__center-label {
+  fill: var(--dial-good);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1.8px;
+  text-anchor: middle;
+}
+
+.annual-travel-dial__center-value {
+  fill: var(--dial-best);
+  font-size: 34px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+.annual-travel-dial__segment[data-state="best"] {
+  color: var(--dial-best);
+}
+
+.annual-travel-dial__segment[data-state="good"] {
+  color: var(--dial-good);
+}
+
+.annual-travel-dial__segment[data-state="avoid"] {
+  color: var(--dial-avoid);
+}
+
+.annual-travel-dial__dot,
+.annual-travel-dial__month {
+  fill: currentColor;
+}
+
+.annual-travel-dial__error {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  padding: 24px;
+  color: var(--dial-best);
+  font: 600 16px/1.5 var(--dial-font);
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/*Added by @tanmay314*/
+.best-months {
+  padding: var(--scale-xxlarge, 36px);
+  margin-top: var(--scale-xxlarge, 36px);
+}
