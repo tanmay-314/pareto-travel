@@ -149,7 +149,7 @@
     return root.children;
   }
 
-  function renderTripFacts(target, itinerary) {
+  /*function renderTripFacts(target, itinerary) {
     const root =
       typeof target === "string" ? document.querySelector(target) : target;
     if (!root) return null;
@@ -173,7 +173,7 @@
     );
 
     return root;
-  }
+  }*/
 
   function renderPage(itinerary, selectors = {}) {
     if (!itinerary || !Array.isArray(itinerary.days)) {
@@ -186,7 +186,7 @@
     );
 
     if (title) title.textContent = itinerary.title || "ITINERARY";
-    renderTripFacts(selectors.facts || "#trip-facts", itinerary);
+    /*renderTripFacts(selectors.facts || "#trip-facts", itinerary);*/
     return renderItinerary(listSelector, itinerary.days);
   }
 

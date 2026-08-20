@@ -79,8 +79,9 @@
   height: 14px;
   margin: 0;
   overflow: hidden;
-  font-size: 12px;
-  font-weight: 500;
+  font-family: var(--font-family-display);
+  font-size: var(--type-size-label);
+  font-weight: var(--type-weight-emphasis, 500);
   letter-spacing: 0.96px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -90,8 +91,9 @@
   height: 24px;
   margin: 4px 0 0;
   overflow: hidden;
-  font-size: 20px;
-  font-weight: 600;
+  font-family: var(--font-family-display);
+  font-size:   var(--type-size-body);
+  font-weight: var(--type-weight-strong, 600);
   letter-spacing: 0;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -101,4 +103,15 @@
   .itinerary-polaroid {
     transition: none;
   }
+}
+
+
+/*Added by me*/
+.polaroid-list {
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.itinerary {
+  padding: var(--scale-xxlarge, 36px);
 }
