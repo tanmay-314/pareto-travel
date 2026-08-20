@@ -1,0 +1,104 @@
+:root {
+  --color-text-primary: #85586f;
+  --font-family-display: "Bitcount Grid Single", monospace;
+}
+
+.itinerary-polaroid {
+  --polaroid-rotation: 0deg;
+  --polaroid-scale: 0.9836065574;
+
+  position: relative;
+  flex: 0 0 auto;
+  width: 405.2459px;
+  height: 452.459px;
+  margin: 0;
+  isolation: isolate;
+}
+
+.itinerary-polaroid-surface {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 412px;
+  height: 460px;
+  transform: scale(var(--polaroid-scale));
+  transform-origin: top left;
+}
+
+.itinerary-polaroid-tilt {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: rotate(var(--polaroid-rotation));
+  transform-origin: center;
+}
+
+.itinerary-polaroid-photo {
+  position: absolute;
+  z-index: 0;
+  top: 21px;
+  left: 21px;
+  width: 366px;
+  height: 366px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.itinerary-polaroid-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--polaroid-image-position, 50% 50%);
+}
+
+.itinerary-polaroid-frame {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.itinerary-polaroid-caption {
+  position: absolute;
+  z-index: 2;
+  top: 398px;
+  left: 24px;
+  width: 364px;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-display);
+  font-style: normal;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.itinerary-polaroid-day {
+  height: 14px;
+  margin: 0;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.96px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.itinerary-polaroid-location {
+  height: 24px;
+  margin: 4px 0 0;
+  overflow: hidden;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .itinerary-polaroid {
+    transition: none;
+  }
+}

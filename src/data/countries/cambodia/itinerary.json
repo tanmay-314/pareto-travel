@@ -1,0 +1,36 @@
+{
+  "itineraries": [
+    {
+      "id": "cambodia-3-day",
+      "country": "Cambodia",
+      "title": "3-DAY ITINERARY",
+      "route": "SIEM REAP → PHNOM PENH",
+      "pace": "BALANCED",
+      "bestFor": "FIRST VISIT",
+      "days": [
+        {
+          "dayNumber": "DAY 1",
+          "location": "SIEM REAP",
+          "rotation": "-4°",
+          "image": {
+            "src": "",
+            "alt": "",
+            "position": "50% 50%",
+            "size": 360
+          }
+        },
+        {
+          "dayNumber": "DAY 2",
+          "location": "SIEM REAP",
+          "rotation": "2°",
+          "image": {
+            "src": "",
+            "alt": "",
+            "position": "50% 50%",
+            "size": 360
+          }
+        }
+      ]
+    }
+  ]
+}

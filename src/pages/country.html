@@ -13,8 +13,11 @@
     <link rel="stylesheet" href="../styles/components/header.css">
     <link rel="stylesheet" href="../styles/components/country-intro.css">
     <link rel="stylesheet" href="../styles/components/country-navigation.css">
+    <link rel="stylesheet" href="../styles/components/itinerary.css" />
+
 
     <script type="module" src="../scripts/components/country-navigation.js"></script>
+    <script type="module" src="../scripts/components/itinerary.js"></script>
 </head>
   
   <body>
@@ -66,5 +69,15 @@
         ></a>
 
     </section>
+
+    <section class="itinerary" id="itinerary" aria-label="Itinerary days">
+      <h2 id="itinerary-title"></h2>
+      <dl id="trip-facts"></dl>
+      <div 
+        class="polaroid-list"
+        id="polaroid-list"
+      ></div>
+    </section>
+
 
   </body>
