@@ -1,6 +1,6 @@
 :root {
-  --country-nav-width: 186.752px;
-  --country-nav-height: 582px;
+  --country-nav-width: 167px;
+  --country-nav-height: 450px;
   --country-nav-plum: var(--color-text-primary, #85586f);
   --country-nav-teal: var(--color-text-action-hover, #588584);
   --country-nav-surface: var(--color-surface-primary, #fefcf3);
@@ -12,34 +12,22 @@
   );
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  color: var(--country-nav-plum);
-  background: var(--country-nav-surface);
-}
-
 .country-navigation {
   position: relative;
   display: block;
   width: var(--country-nav-width);
   height: var(--country-nav-height);
+  margin-block-start: var(--space-xxl, 36px);
   flex: 0 0 auto;
+  margin: var(--space-xxl, 36px);
 }
 
 .country-navigation-pole {
   position: absolute;
   top: 0;
-  left: 81.5px;
+  left: 70px;
   width: 18px;
-  height: 582px;
+  height: 450px;
   pointer-events: none;
   user-select: none;
 }

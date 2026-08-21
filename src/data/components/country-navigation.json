@@ -1,6 +1,6 @@
 {
-  "width": 186.752,
-  "height": 582,
+  "width": 167,
+  "height": 450,
   "assets": {
     "pole": "../../assets/components/country-navigation/pole.svg",
     "itinerary": "../../assets/components/country-navigation/nav-itinerary.svg",
@@ -16,64 +16,64 @@
       "label": "Itinerary",
       "target": "#itinerary",
       "asset": "itinerary",
-      "width": 174,
-      "height": 42,
-      "x": 11.5,
-      "y": 36
+      "width": 158,
+      "height": 30,
+      "x": 7,
+      "y": 30
     },
     {
       "label": "Best Time",
       "target": "#best-months",
       "asset": "bestTime",
-      "width": 176,
-      "height": 52,
-      "x": 10.52,
-      "y": 109.48
+      "width": 160,
+      "height": 39,
+      "x": 6.33,
+      "y": 85.91
     },
     {
       "label": "City Guides",
       "target": "#city-guides",
       "asset": "cityGuides",
-      "width": 176,
-      "height": 49,
-      "x": 10.82,
-      "y": 188.98
+      "width": 159,
+      "height": 36,
+      "x": 6.53,
+      "y": 147.24
     },
     {
       "label": "Cuisine",
       "target": "#cuisine",
       "asset": "cuisine",
-      "width": 177,
-      "height": 57,
-      "x": 0,
-      "y": 262.5
+      "width": 161,
+      "height": 44,
+      "x": -1,
+      "y": 203.18
     },
     {
       "label": "Inter City",
       "target": "#travel",
       "asset": "interCity",
-      "width": 174,
-      "height": 42,
-      "x": 6.5,
-      "y": 348
+      "width": 158,
+      "height": 30,
+      "x": 0,
+      "y": 270
     },
     {
       "label": "Budget",
       "target": "#budget",
       "asset": "budget",
-      "width": 177,
-      "height": 55,
-      "x": 10.25,
-      "y": 419.98
+      "width": 160,
+      "height": 41,
+      "x": 8.15,
+      "y": 324.54
     },
     {
       "label": "FAQs",
       "target": "#faqs",
       "asset": "faqs",
-      "width": 175,
-      "height": 46,
-      "x": 11.15,
-      "y": 502.48
+      "width": 159,
+      "height": 33,
+      "x": 8.75,
+      "y": 388.62
     }
   ]
 }
