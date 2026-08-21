@@ -1,10 +1,6 @@
 :root {
-  --country-nav-width: 300px;
+  --country-nav-width: 186.752px;
   --country-nav-height: 582px;
-  --country-nav-board-width: 240px;
-  --country-nav-board-height: 60px;
-  --country-nav-sign-width: 240px;
-  --country-nav-sign-height: 60px;
   --country-nav-plum: var(--color-text-primary, #85586f);
   --country-nav-teal: var(--color-text-action-hover, #588584);
   --country-nav-surface: var(--color-surface-primary, #fefcf3);
@@ -41,7 +37,7 @@ body {
 .country-navigation-pole {
   position: absolute;
   top: 0;
-  left: 134px;
+  left: 81.5px;
   width: 18px;
   height: 582px;
   pointer-events: none;
@@ -50,90 +46,37 @@ body {
 
 .country-navigation-board {
   position: absolute;
-  width: var(--country-nav-board-width);
-  height: var(--country-nav-board-height);
-  overflow: hidden;
+  display: block;
   color: var(--country-nav-plum);
   text-decoration: none;
   cursor: pointer;
+  transform: rotate(var(--board-rotation, 0deg));
+  transform-origin: 50% 50%;
+  transition: color 150ms ease;
   -webkit-tap-highlight-color: transparent;
 }
 
-.country-navigation-board-content {
-  position: relative;
-  display:block;
+.country-navigation-sign {
+  display: block;
   width: 100%;
   height: 100%;
-  transform: rotate(var(--board-rotation, 0deg));
-  transform-origin: 50% 50%;
-}
-
-.country-navigation-sign {
-  position: absolute;
-  inset: 0;
-  width: var(--country-nav-sign-width);
-  height: var(--country-nav-sign-height);
+  background-color: currentColor;
+  -webkit-mask-image: var(--country-nav-sign-image);
+  mask-image: var(--country-nav-sign-image);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
   pointer-events: none;
   user-select: none;
-  transition: opacity 150ms ease;
-}
-
-/*.country-navigation-board[data-direction="right"] .country-navigation-sign {
-  left: 12px;
-}*/
-
-.country-navigation-board[data-direction="left"] .country-navigation-sign {
-  transform: scaleX(-1);
-}
-
-.country-navigation-sign--hover {
-  opacity: 0;
-}
-
-.country-navigation-label {
-  position: absolute;
-  top: 19px;
-  width: 138px;
-  height: 22px;
-  text-align: center;
-  margin: 0;
-  overflow: hidden;
-  color: currentColor;
-  font-family: var(--country-nav-font);
-  font-size: var(--type-size-body, 18px);
-  font-weight: var(--type-weight-emphasis, 500);
-  font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
-  line-height: normal;
-  text-align: center;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  transition: color 150ms ease;
-}
-
-.country-navigation-board[data-direction="right"] .country-navigation-label {
-  left: 24px;
-}
-
-.country-navigation-board[data-direction="left"] .country-navigation-label {
-  left: 72px;
 }
 
 .country-navigation-board:hover,
 .country-navigation-board:focus-visible,
 .country-navigation-board[aria-current="location"] {
   color: var(--country-nav-teal);
-}
-
-.country-navigation-board:hover .country-navigation-sign--default,
-.country-navigation-board:focus-visible .country-navigation-sign--default,
-.country-navigation-board[aria-current="location"] .country-navigation-sign--default {
-  opacity: 0;
-}
-
-.country-navigation-board:hover .country-navigation-sign--hover,
-.country-navigation-board:focus-visible .country-navigation-sign--hover,
-.country-navigation-board[aria-current="location"] .country-navigation-sign--hover {
-  opacity: 1;
 }
 
 .country-navigation-board:focus-visible {
@@ -166,8 +109,7 @@ body {
     scroll-behavior: auto;
   }
 
-  .country-navigation-sign,
-  .country-navigation-label {
+  .country-navigation-board {
     transition: none;
   }
 }

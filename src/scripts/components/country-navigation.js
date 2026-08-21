@@ -1,46 +1,28 @@
 const DEFAULT_CONFIG_URL = "./data/components/country-navigation.json";
 
-function createImage(className, source) {
-  const image = document.createElement("img");
-  image.className = className;
-  image.src = source;
-  image.alt = "";
-  image.width = 240;
-  image.height = 60;
-  image.draggable = false;
-  return image;
-}
-
 function createBoard(board, assets) {
   const link = document.createElement("a");
-  const direction = board.direction?.toLowerCase() === "left" ? "left" : "right";
+  const signSource = assets[board.asset];
+
+  if (!signSource) {
+    throw new Error(`Country navigation asset "${board.asset}" was not found.`);
+  }
 
   link.className = "country-navigation-board";
   link.href = board.target;
-  link.dataset.direction = direction;
+  link.dataset.label = board.label;
   link.style.left = `${board.x}px`;
   link.style.top = `${board.y}px`;
+  link.style.width = `${board.width}px`;
+  link.style.height = `${board.height}px`;
   link.style.setProperty("--board-rotation", `${board.rotation ?? 0}deg`);
   link.setAttribute("aria-label", `Jump to ${board.label}`);
 
-  const content = document.createElement("span");
-  content.className = "country-navigation-board-content";
-  content.append(
-    createImage(
-      "country-navigation-sign country-navigation-sign--default",
-      assets.signDefault
-    ),
-    createImage(
-      "country-navigation-sign country-navigation-sign--hover",
-      assets.signHover
-    )
-  );
-
-  const label = document.createElement("span");
-  label.className = "country-navigation-label";
-  label.textContent = board.label;
-  content.append(label);
-  link.append(content);
+  const sign = document.createElement("span");
+  sign.className = "country-navigation-sign";
+  sign.style.setProperty("--country-nav-sign-image", `url("${signSource}")`);
+  sign.setAttribute("aria-hidden", "true");
+  link.append(sign);
 
   return link;
 }
@@ -73,7 +55,7 @@ function addNavigationBehavior(navigation) {
     navigation.dispatchEvent(
       new CustomEvent("country-navigation:select", {
         bubbles: true,
-        detail: { target: link.hash, label: link.textContent.trim() }
+        detail: { target: link.hash, label: link.dataset.label }
       })
     );
   });

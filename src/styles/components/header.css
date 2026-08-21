@@ -6,10 +6,11 @@
     background-color: var(--color-bg-header);
 }
 
-.logo {
-    display: block;
+.logo {    
+display: block;
     width: min(100%*360/1816, 360px);
     aspect-ratio: 20 / 3;
+    
     background-color: var(--color-icon-primary);
 
     mask: var(--map-image) center / contain no-repeat;
@@ -17,7 +18,6 @@
 
     transition: background-color 180ms ease;
 }
-
 .logo:hover,
 .logo:focus-visible {
     background-color: var(--color-icon-hover);

@@ -4,6 +4,7 @@
   --budget-receipt-ink: var(--color-text-primary, #85586f);
   --budget-receipt-muted: var(--color-text-secondary, #ba97a3);
   --budget-receipt-rule: var(--color-border-subtle, #f0dbdb);
+  --budget-receipt-shadow: var(--color-text-secondary, #ba97a3);
   --budget-receipt-font: "Bitcount Grid Single", ui-monospace, monospace;
 }
 
@@ -77,6 +78,7 @@
 
 .budget-receipt::after {
   bottom: 9px;
+  filter: drop-shadow(2px 4px 0 var(--budget-receipt-shadow));
 }
 
 .budget-receipt__paper {
@@ -101,6 +103,7 @@
 
 .budget-receipt__paper::after {
   right: -3px;
+  filter: drop-shadow(4px 2px 0 var(--budget-receipt-shadow));
 }
 
 .budget-receipt__rule {
