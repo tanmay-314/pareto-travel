@@ -23,7 +23,11 @@
     {
       "description": "MISCELANEOUS",
       "value": "$50"
+    },
+    {
+      "description": "BRIBES & TIPS",
+      "value": "$20"
     }
   ],
-  "total": "$940"
+  "total": "$960"
 }

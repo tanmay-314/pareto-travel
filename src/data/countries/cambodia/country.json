@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "slug": "cambodia",
+  "name": "Cambodia",
+  "subtitle": "Wat and Peace",
+  "overview": "Cambodia is a beautiful country with a rich history and culture. From the ancient temples of Angkor Wat to the serene landscapes of the countryside, there is something for everyone to explore and enjoy.",
+  "map": {
+    "src": "../../../assets/countries/cambodia/country-map.svg",
+    "alt": "Map of Cambodia"
+  }
+}
