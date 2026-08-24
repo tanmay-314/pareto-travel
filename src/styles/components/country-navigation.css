@@ -4,12 +4,7 @@
   --country-nav-plum: var(--color-text-primary, #85586f);
   --country-nav-teal: var(--color-text-action-hover, #588584);
   --country-nav-surface: var(--color-surface-primary, #fefcf3);
-  --country-nav-font: var(
-    --type-family-display,
-    "Bitcount Grid Single",
-    "Courier New",
-    monospace
-  );
+  --country-nav-font: var(--type-family-display, "Bitcount Grid Single", monospace);
 }
 
 .country-navigation {
@@ -17,9 +12,9 @@
   display: block;
   width: var(--country-nav-width);
   height: var(--country-nav-height);
-  margin-block-start: var(--space-xxl, 36px);
+  margin-block-start: var(--space-xxl);
   flex: 0 0 auto;
-  margin: var(--space-xxl, 36px);
+  margin: var(--space-xxl);
 }
 
 .country-navigation-pole {
@@ -79,7 +74,7 @@
   display: grid;
   place-items: center;
   color: var(--country-nav-plum);
-  font-family: var(--country-nav-font);
+  font-family: var(--type-family-display);
 }
 
 @media (max-width: 760px) {

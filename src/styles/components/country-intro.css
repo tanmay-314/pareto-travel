@@ -1,22 +1,21 @@
 /* Country intro — Figma node 676:6513 */
 
 .country-intro {
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--scale-xx-large, 36px);
+  gap: var(--space-sm);
   width: 100%;
-  max-width: 600px;
+  max-width: 600px; /*NEED TO CHANGE THIS LATER*/
   color: var(--color-text-primary, #85586f);  
-  padding: var(--scale-xxlarge, 36px);
+  padding: var(--space-xxl);
 }
 
 .country-intro-title-group {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-sm, 12px);
+  gap: var(--space-sm);
   width: 100%;
   overflow-wrap: break-word;
 }
@@ -25,32 +24,35 @@
 .country-intro-subtitle,
 .country-intro-overview {
   width: 100%;
-  margin: 0;
 }
 
 .country-intro-name,
 .country-intro-subtitle {
-  font-family: var(--type-family-display, "Bitcount Grid Single"), sans-serif;
+  font-family: var(--type-family-display), sans-serif;
   font-style: normal;
-  line-height: normal;
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
 }
 
 .country-intro-name {
-  font-size: var(--type-size-page-title, 60px);
-  font-weight: var(--type-weight-strong, 600);
+  font-size: var(--type-size-page-title);
+  font-weight: var(--type-weight-strong);
   text-transform: uppercase;
 }
 
+.country-intro-name {
+  line-height: var(--type-line-height-heading, 72px);
+}
+
 .country-intro-subtitle {
-  font-size: var(--type-size-country-subtitle, 36px);
-  font-weight: var(--type-weight-regular, 400);
+  font-size: var(--type-size-country-subtitle);
+  font-weight: var(--type-weight-regular);
+  line-height: var(--type-line-height-sub-heading, 48px);
 }
 
 .country-intro-overview {
-  font-family: var(--type-family-body, "Iosevka Charon Mono"), sans-serif;
-  font-size: var(--type-size-body, 18px);
-  font-weight: var(--type-weight-regular, 400);
+  font-family: var(--type-family-body), sans-serif;
+  font-size: var(--type-size-body);
+  font-weight: var(--type-weight-regular);
   line-height: var(--type-line-height-body, 24px);
   overflow-wrap: break-word;
   font-variation-settings: "wdth" 100;
@@ -58,11 +60,11 @@
 
 @media (max-width: 600px) {
   .country-intro-name {
-    font-size: clamp(42px, 12vw, var(--type-size-page-title, 60px));
+    font-size: clamp(42px, 12vw, var(--type-size-page-title));
   }
 
   .country-intro-subtitle {
-    font-size: clamp(28px, 8vw, var(--type-size-country-subtitle, 36px));
+    font-size: clamp(28px, 8vw, var(--type-size-country-subtitle));
   }
 }
 
@@ -70,8 +72,8 @@
 
 .country-map {
     display: block;
-    width: min(100%*720/1816, 720px);
-    aspect-ratio: 1 / 1;
+    width: clamp(380px, 100%, 760px);
+    aspect-ratio: 760 / 700;
     background-color: var(--color-icon-tertiary);
 
     mask: var(--map-image) center / contain no-repeat;

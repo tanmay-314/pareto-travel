@@ -4,7 +4,7 @@
   --dial-good: #ba97a3;
   --dial-avoid: #f0dbdb;
   --dial-center-fill: #f0dbdb;
-  --dial-font: "Bitcount Grid Single", "Courier New", monospace;
+  --dial-font: "Bitcount Grid Single", monospace;
   --dial-enter-duration: 1800ms;
   --dial-spin-duration: 24s;
 }
@@ -13,7 +13,7 @@
   display: grid;
   min-height: 100svh;
   place-items: center;
-  padding: 24px;
+  padding: var(--space-lg);
 }
 
 .annual-travel-dial {
@@ -105,21 +105,21 @@
 .annual-travel-dial__month,
 .annual-travel-dial__center-label,
 .annual-travel-dial__center-value {
-  font-family: var(--dial-font);
+  font-family: var(--type-family-display), "Courier New", monospace;
   font-style: normal;
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
 }
 
 .annual-travel-dial__month {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: var(--type-size-body);
+  font-weight: var(--type-weight-strong);
   text-anchor: middle;
 }
 
 .annual-travel-dial__center-label {
   fill: var(--dial-good);
-  font-size: 18px;
-  font-weight: 400;
+  font-size: var(--type-size-body);
+  font-weight: var(--type-weight-regular);
   letter-spacing: 1.8px;
   text-anchor: middle;
 }
@@ -127,7 +127,7 @@
 .annual-travel-dial__center-value {
   fill: var(--dial-best);
   font-size: 34px;
-  font-weight: 600;
+  font-weight: var(--type-weight-strong);
   text-anchor: middle;
 }
 
@@ -152,9 +152,9 @@
   display: grid;
   height: 100%;
   place-items: center;
-  padding: 24px;
+  padding: var(--space-lg);
   color: var(--dial-best);
-  font: 600 16px/1.5 var(--dial-font);
+  font: var(--type-weight-strong) 16px/1.5 var(--type-family-display), "Courier New", monospace;
   text-align: center;
 }
 
@@ -172,6 +172,6 @@
 
 /*Added by @tanmay314*/
 .best-months {
-  padding: var(--scale-xxlarge, 36px);
-  margin-top: var(--scale-xxlarge, 36px);
+  padding: var(--space-xxl);
+  margin-top: var(--space-xxl);
 }

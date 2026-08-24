@@ -69,7 +69,7 @@
   left: 24px;
   width: 364px;
   color: var(--color-text-primary);
-  font-family: var(--font-family-display);
+  font-family: var(--type-family-display), monospace;
   font-style: normal;
   line-height: normal;
   text-transform: uppercase;
@@ -79,9 +79,9 @@
   height: 14px;
   margin: 0;
   overflow: hidden;
-  font-family: var(--font-family-display);
+  font-family: var(--type-family-display), monospace;
   font-size: var(--type-size-label);
-  font-weight: var(--type-weight-emphasis, 500);
+  font-weight: var(--type-weight-emphasis);
   letter-spacing: 0.96px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -91,9 +91,9 @@
   height: 24px;
   margin: 4px 0 0;
   overflow: hidden;
-  font-family: var(--font-family-display);
+  font-family: var(--type-family-display), monospace;
   font-size:   var(--type-size-body);
-  font-weight: var(--type-weight-strong, 600);
+  font-weight: var(--type-weight-strong);
   letter-spacing: 0;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -113,6 +113,6 @@
 }
 
 .itinerary {
-  padding: var(--scale-xxlarge, 36px);
+  padding: var(--space-xxl);
 }
 

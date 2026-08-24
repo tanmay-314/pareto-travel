@@ -26,9 +26,11 @@
   --primitive-font-weight-medium: 500;
   --primitive-font-weight-semi-bold: 600;
   --primitive-line-height-body: 24px;
+  --primitive-line-height-heading: 72px;
+  --primitive-line-height-sub-heading: 48px;
 
   /* Primitive: scale */
-  --primitive-scale-gap: 2px;
+  --primitive-scale-gap: 3px;
   --primitive-scale-base: 6px;
   --primitive-scale-small: 12px;
   --primitive-scale-medium: 18px;
@@ -117,4 +119,6 @@
 
   /* Semantic: line heights */
   --type-line-height-body: var(--primitive-line-height-body);
+  --type-line-height-heading: var(--primitive-line-height-heading);
+  --type-line-height-sub-heading: var(--primitive-line-height-sub-heading);
 }

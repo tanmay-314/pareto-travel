@@ -21,7 +21,7 @@
   width: 100%;
   max-width: 1920px;
   min-height: 0;
-  padding: 28px var(--scale-xxlarge, 36px) 40px;
+  padding: 28px var(--space-xxl) 40px;
   margin-top: 16px;
   overflow: hidden;
   color: var(--faq-text-primary);
@@ -31,7 +31,7 @@
 .faqs-loading,
 .faqs-error {
   margin: 0;
-  font: 600 19px/1.4 var(--faq-font-body), sans-serif;
+  font: var(--type-weight-strong) 19px/1.4 var(--type-family-body), sans-serif;
 }
 
 .faqs-error {
@@ -49,9 +49,9 @@
 
 .faqs-title {
   margin: 0;
-  font-family: var(--faq-font-display), monospace;
-  font-size: var(--primitive-scale-sub-heading, 48px);
-  font-weight: var(  --type-weight-emphasis, 500);
+  font-family: var(--type-family-display), monospace;
+  font-size: var(--type-size-section-title);
+  font-weight: var(--type-weight-emphasis);
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
   line-height: 64px;
   white-space: nowrap;
@@ -81,7 +81,7 @@
 .quick-reference {
   width: 430px;
   height: 600px;
-  padding: 28px 30px;
+  padding: 28px var(--space-xl);
   overflow: hidden;
   color: var(--faq-text-primary);
   background: var(--faq-bg-subtle);
@@ -95,18 +95,18 @@
 }
 
 .quick-reference-title {
-  font-family: var(--faq-font-display), monospace;
-  font-size: 24px;
-  font-weight: 600;
+  font-family: var(--type-family-display), monospace;
+  font-size: var(--type-size-nav-ul);
+  font-weight: var(--type-weight-strong);
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
   line-height: 29px;
 }
 
 .quick-reference-subtitle,
 .quick-reference-label {
-  font-family: var(--faq-font-display), monospace;
-  font-size: 12px;
-  font-weight: 500;
+  font-family: var(--type-family-display), monospace;
+  font-size: var(--type-size-label);
+  font-weight: var(--type-weight-emphasis);
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
   letter-spacing: 0.08em;
   line-height: 17px;
@@ -119,7 +119,7 @@
 .quick-reference-list {
   display: grid;
   gap: 16px;
-  margin: 18px 0 0;
+  margin: var(--space-md) 0 0;
 }
 
 .quick-reference-item {
@@ -131,15 +131,15 @@
 }
 
 .quick-reference-value {
-  font-family: var(--faq-font-body), sans-serif;
+  font-family: var(--type-family-body), sans-serif;
   font-size: 19px;
-  font-weight: 600;
+  font-weight: var(--type-weight-strong);
   line-height: 25px;
 }
 
 .quick-reference-item--note .quick-reference-value {
-  font-size: 18px;
-  font-weight: 400;
+  font-size: var(--type-size-body);
+  font-weight: var(--type-weight-regular);
 }
 
 .faq-list {
@@ -190,9 +190,9 @@
 }
 
 .faq-item-index {
-  font-family: var(--faq-font-display), monospace;
+  font-family: var(--type-family-display), monospace;
   font-size: 32px;
-  font-weight: 600;
+  font-weight: var(--type-weight-strong);
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
   line-height: normal;
   color: var(--faq-rule);
@@ -201,9 +201,9 @@
 
 .faq-item-question-text {
   width: 930px;
-  font-family: var(--faq-font-body), sans-serif;
-  font-size: 24px;
-  font-weight: 600;
+  font-family: var(--type-family-body), sans-serif;
+  font-size: var(--type-size-nav-ul);
+  font-weight: var(--type-weight-strong);
   line-height: normal;
 }
 
@@ -216,9 +216,9 @@
   height: auto;
   margin: 0;
   overflow: hidden;
-  font-family: var(--faq-font-body), sans-serif;
+  font-family: var(--type-family-body), sans-serif;
   font-size: 19px;
-  font-weight: 400;
+  font-weight: var(--type-weight-regular);
   line-height: 27px;
   text-indent: 86px;
 }
@@ -265,7 +265,7 @@
 @media (max-width: 1919px) {
   .faqs-body {
     grid-template-columns: minmax(300px, 430px) minmax(0, 1fr);
-    gap: clamp(36px, 4vw, 64px);
+    gap: clamp(var(--space-xxl), 4vw, 64px);
   }
 
   .quick-reference,
@@ -292,7 +292,7 @@
 @media (max-width: 1200px) {
   .faqs {
     min-height: 0;
-    padding: 40px 48px;
+    padding: 40px var(--primitive-scale-sub-heading);
   }
 
   .faqs-title-row {
@@ -349,7 +349,7 @@
 
   .quick-reference {
     min-height: 0;
-    padding: 24px;
+    padding: var(--space-lg);
   }
 
   .faq-item,
@@ -359,13 +359,13 @@
   }
 
   .faq-item.is-open {
-    gap: 12px;
+    gap: var(--space-sm);
   }
 
   .faq-item-question,
   .faq-item.is-open .faq-item-question {
     grid-template-columns: 31px minmax(0, 1fr) 30px;
-    gap: 12px;
+    gap: var(--space-sm);
     min-height: 98px;
     height: auto;
     padding-block: 20px;

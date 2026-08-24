@@ -18,14 +18,14 @@
   box-sizing: border-box;
   width: 100%;
   min-height: 1080px;
-  padding: var(--scale-xxlarge, 36px);
-  margin-top: var(--scale-xxlarge, 36px);
+  padding: var(--space-xxl);
+  margin-top: var(--space-xxl);
   overflow: hidden;
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(  --space-lg, 24px);
+  gap: var(--space-lg);
 
   background: var(--cuisine-bg);
   color: var(--cuisine-text);
@@ -42,7 +42,7 @@
 .cuisine-note,
 .cuisine-pareto-label,
 .cuisine-dish {
-  font-family: var(--type-family-display, "Bitcount Grid Single", sans-serif);
+  font-family: var(--type-family-display);
   font-style: normal;
   margin: 0;
 }
@@ -50,7 +50,7 @@
 .cuisine-lede,
 .cuisine-description,
 .cuisine-pareto-copy {
-  font-family: var(--type-family-body, "Iosevka Charon Mono", sans-serif);
+  font-family: var(--type-family-body);
   font-style: normal;
   margin: 0;
 }
@@ -68,7 +68,7 @@
 .cuisine-title {
   flex: 0 0 auto;
   color: var(--cuisine-text);
-  font-size: 48px;
+  font-size: var(--type-size-section-title);
   font-weight: var(--type-weight-emphasis);
   line-height: 64px;
   white-space: nowrap;
@@ -81,7 +81,7 @@
 
   color: var(--cuisine-text);
   font-size: 23px;
-  font-weight: 400;
+  font-weight: var(--type-weight-regular);
   line-height: 31px;
 }
 
@@ -139,7 +139,7 @@
 .cuisine-period {
   color: var(--cuisine-text-secondary);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: var(--type-weight-emphasis);
   line-height: 20px;
   letter-spacing: 1.5px;
 }
@@ -158,14 +158,14 @@
 .cuisine-description {
   color: var(--cuisine-text);
   font-size: 19px;
-  font-weight: 400;
+  font-weight: var(--type-weight-regular);
   line-height: 27px;
 }
 
 .cuisine-note {
   color: var(--cuisine-text-accent);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--type-weight-emphasis);
   line-height: 19px;
   letter-spacing: 0.84px;
 }
@@ -179,7 +179,7 @@
 
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: var(--space-md);
 
   background: rgba(240, 219, 219, 0.55);
 }
@@ -196,7 +196,7 @@
   flex: 0 0 auto;
   color: var(--cuisine-text-accent);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--type-weight-strong);
   line-height: normal;
   letter-spacing: 1.12px;
   white-space: nowrap;
@@ -206,7 +206,7 @@
   min-width: 0;
   color: var(--cuisine-text);
   font-size: 20px;
-  font-weight: 400;
+  font-weight: var(--type-weight-regular);
   line-height: 26px;
   white-space: nowrap;
 }
@@ -225,7 +225,7 @@
   .cuisine-title-row {
     height: auto;
     flex-direction: column;
-    gap: 24px;
+    gap: var(--space-lg);
   }
 
   .cuisine-lede {
@@ -251,7 +251,7 @@
     height: auto;
     min-height: 82px;
     align-items: flex-start;
-    padding-block: 24px;
+    padding-block: var(--space-lg);
     flex-wrap: wrap;
   }
 
@@ -263,7 +263,7 @@
 
 @media (max-width: 600px) {
   .cuisine {
-    padding: 48px 24px;
+    padding: var(--primitive-scale-sub-heading) var(--space-lg);
   }
 
   .cuisine-title {

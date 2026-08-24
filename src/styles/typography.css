@@ -16,7 +16,7 @@
 
 body {
   color: var(--color-text-primary);
-  font-family: var(--type-family-body), Arial, sans-serif;
+  font-family: var(--type-family-body), sans-serif;
   font-size: var(--type-size-body);
   font-weight: var(--type-weight-regular);
   line-height: var(--type-line-height-body);
@@ -33,7 +33,7 @@ h6,
 .type-page-title,
 .type-section-title {
   color: var(--color-text-primary);
-  font-family: var(--type-family-display), sans-serif;
+  font-family: var(--type-family-display), monospace;
   font-weight: var(--type-weight-strong);
   text-wrap: balance;
 }
@@ -58,7 +58,7 @@ h3 {
 h4,
 h5,
 h6 {
-  font-family: var(--type-family-body), Arial, sans-serif;
+  font-family: var(--type-family-body), sans-serif;
   font-size: var(--type-size-nav-ul);
   line-height: 1.25;
 }
@@ -67,7 +67,7 @@ h6 {
 
 p,
 .type-body {
-  font-family: var(--type-family-body), Arial, sans-serif;
+  font-family: var(--type-family-body), sans-serif;
   font-size: var(--type-size-body);
   font-weight: var(--type-weight-regular);
   line-height: var(--type-line-height-body);
@@ -104,14 +104,14 @@ a:hover {
 /* Existing landing-page typography */
 
 .brand__word {
-  font-family: var(--type-family-display), sans-serif;
+  font-family: var(--type-family-display), monospace;
   font-size: var(--type-size-logo);
   font-weight: var(--type-weight-strong);
   line-height: 1;
 }
 
 .site-nav a {
-  font-family: var(--type-family-display), sans-serif;
+  font-family: var(--type-family-display), monospace;
   color: var(--color-text-primary);
   font-size: var(--type-size-nav-ul);
   font-weight: var(--type-weight-emphasis);
@@ -149,5 +149,5 @@ a:hover {
     font-weight: var(--type-weight-emphasis);
     line-height: var(--type-line-height-body);
     text-transform: uppercase;
-    margin-bottom: var(--scale-xx-large, 36px);
+    margin-bottom: var(--space-xxl);
 }

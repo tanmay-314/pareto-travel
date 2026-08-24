@@ -12,8 +12,8 @@
   overflow: hidden;
   background: var(--inter-city-bg-canvas);
   color: var(--inter-city-text-primary);
-  font-family: var(--inter-city-font-body);
-  padding: 28px var(--scale-xxlarge, 36px) 32px;
+  font-family: var(--type-family-body);
+  padding: 28px var(--space-xxl) 32px;
   margin-top: 16px;
 }
 
@@ -24,16 +24,16 @@
 .inter-city-title {
   min-height: 64px;
   margin: 0;
-  font-family: var(--inter-city-font-display);
+  font-family: var(--type-family-display);
   font-size: 54px;
-  font-weight: var(--type-weight-emphasis, 500);
+  font-weight: var(--type-weight-emphasis);
   line-height: 64px;
   letter-spacing: 0;
 }
 
 .inter-city-rule {
   height: 3px;
-  margin-top: 48px;
+  margin-top: var(--primitive-scale-sub-heading);
   border: 0;
   background-image: radial-gradient(
     circle,
@@ -48,7 +48,7 @@
 .inter-city-journey {
   position: relative;
   height: 220px;
-  margin-top: 24px;
+  margin-top: var(--space-lg);
   list-style: none;
   padding: 0;
 }
@@ -121,7 +121,7 @@
   border: 2px dotted var(--inter-city-text-secondary);
   border-radius: 50%;
   color: var(--inter-city-text-secondary);
-  font-family: var(--inter-city-font-display);
+  font-family: var(--type-family-display);
   font-size: 10px;
   place-items: center;
 }
@@ -141,9 +141,9 @@
   left: 0;
   width: 100%;
   min-height: 56px;
-  font-family: var(--inter-city-font-display);
+  font-family: var(--type-family-display);
   font-size: 20px;
-  font-weight: 600;
+  font-weight: var(--type-weight-strong);
   line-height: 1.15;
   white-space: pre-line;
 }
@@ -159,9 +159,9 @@
   width: 140px;
   transform: translateX(-50%);
   color: var(--inter-city-text-accent);
-  font-family: var(--inter-city-font-display);
+  font-family: var(--type-family-display);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: var(--type-weight-emphasis);
   letter-spacing: 0.06em;
   line-height: 20px;
   text-transform: uppercase;
@@ -207,7 +207,7 @@
   background: var(--inter-city-bg-subtle);
   color: var(--inter-city-text-accent);
   font-size: clamp(8px, 0.65vw, 10px);
-  font-weight: 600;
+  font-weight: var(--type-weight-strong);
   letter-spacing: 0.04em;
   line-height: 14px;
   text-transform: uppercase;
@@ -218,9 +218,9 @@
 .ticket-duration {
   position: absolute;
   margin: 0;
-  font-family: var(--inter-city-font-body);
-  font-size: clamp(9px, 0.75vw, 12px);
-  font-weight: 600;
+  font-family: var(--type-family-body);
+  font-size: clamp(9px, 0.75vw, var(--type-size-label));
+  font-weight: var(--type-weight-strong);
   line-height: 16px;
   text-transform: uppercase;
 }
@@ -239,9 +239,9 @@
   height: 24px;
   margin: 0;
   overflow: hidden;
-  font-family: var(--inter-city-font-display);
-  font-size: clamp(12px, 1.05vw, 17px);
-  font-weight: 600;
+  font-family: var(--type-family-display);
+  font-size: clamp(var(--type-size-label), 1.05vw, 17px);
+  font-weight: var(--type-weight-strong);
   line-height: 22px;
   white-space: nowrap;
 }
@@ -307,25 +307,25 @@
   margin: 0;
   overflow: hidden;
   font-size: clamp(10px, 0.82vw, 14px);
-  font-weight: 400;
+  font-weight: var(--type-weight-regular);
   line-height: 1.2857;
 }
 
 .inter-city-error {
   width: min(760px, calc(100% - 48px));
   margin: 80px auto;
-  padding: 24px;
+  padding: var(--space-lg);
   border: 1px solid var(--inter-city-text-secondary);
   border-radius: 16px;
   background: var(--inter-city-bg-surface);
   color: var(--inter-city-text-primary);
-  font-family: var(--inter-city-font-body);
+  font-family: var(--type-family-body);
 }
 
 @media (max-width: 1180px) {
   .inter-city-inner {
     width: calc(100% - 40px);
-    padding-top: 24px;
+    padding-top: var(--space-lg);
   }
 
   .inter-city-title {
@@ -334,7 +334,7 @@
   }
 
   .inter-city-rule {
-    margin-top: 48px;
+    margin-top: var(--primitive-scale-sub-heading);
   }
 
   .inter-city-journey-scroll,
@@ -366,7 +366,7 @@
 
   .inter-city-inner {
     width: calc(100% - 32px);
-    padding-block: 32px 48px;
+    padding-block: 32px var(--primitive-scale-sub-heading);
   }
 
   .inter-city-title {
@@ -388,7 +388,7 @@
     width: 100%;
     height: auto;
     margin-top: 28px;
-    gap: 12px;
+    gap: var(--space-sm);
     flex-direction: column;
   }
 
@@ -444,7 +444,7 @@
 
   .inter-city-stop-copy {
     min-height: 0;
-    font-size: 18px;
+    font-size: var(--type-size-body);
   }
 
   .inter-city-leg-summary {

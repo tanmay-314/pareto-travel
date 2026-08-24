@@ -42,7 +42,7 @@
   padding: 213.731705px 65.760559px 156.390244px 39.50705px;
   overflow: hidden;
   color: var(--budget-receipt-ink);
-  font-family: var(--budget-receipt-font);
+  font-family: var(--type-family-display), ui-monospace, monospace;
   font-style: normal;
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
 }
@@ -165,16 +165,16 @@
 
 .budget-receipt__brand {
   color: var(--budget-receipt-muted);
-  font-family: var(--budget-receipt-font);
-  font-size: var(--scale-small, 12px);
-  font-weight: 500;
+  font-family: var(--type-family-display), ui-monospace, monospace;
+  font-size: var(--type-size-label);
+  font-weight: var(--type-weight-emphasis);
 }
 
 .budget-receipt__country {
   margin-top: 16.805px;
   color: var(--budget-receipt-ink);
-  font-size: var(--scale-large, 24px);
-  font-weight: 600;
+  font-size: var(--type-size-nav-ul);
+  font-weight: var(--type-weight-strong);
   white-space: nowrap;
 }
 
@@ -184,9 +184,9 @@
   top: 133.732px;
   left: 40px;
   color: var(--budget-receipt-muted);
-  font-family: var(--budget-receipt-font);
-  font-size: var(--scale-small, 12px);
-  font-weight: 400;
+  font-family: var(--type-family-display), ui-monospace, monospace;
+  font-size: var(--type-size-label);
+  font-weight: var(--type-weight-regular);
   white-space: nowrap;
 }
 
@@ -215,7 +215,7 @@
   overflow: hidden;
   color: var(--budget-receipt-ink);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: var(--type-weight-emphasis);
   line-height: 17.560976px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -226,7 +226,7 @@
   overflow: hidden;
   color: var(--budget-receipt-ink);
   font-size: 16px;
-  font-weight: 600;
+  font-weight: var(--type-weight-strong);
   line-height: 18.536585px;
   text-align: right;
   text-overflow: ellipsis;
@@ -247,13 +247,13 @@
 .budget-receipt__total-label {
   color: var(--budget-receipt-muted);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--type-weight-emphasis);
 }
 
 .budget-receipt__total-value {
   color: var(--budget-receipt-ink);
-  font-size: 30px;
-  font-weight: 600;
+  font-size: var(--type-size-logo);
+  font-weight: var(--type-weight-strong);
   text-align: right;
   white-space: nowrap;
 }
@@ -267,7 +267,7 @@
 .budget-receipt-error {
   margin: 0;
   color: var(--budget-receipt-ink);
-  font: 500 14px/1.5 var(--budget-receipt-font);
+  font: var(--type-weight-emphasis) 14px/1.5 var(--type-family-display), ui-monospace, monospace;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -280,5 +280,5 @@
 
 /*Added by @tanmay314*/
 .budget {
-  padding: var(--scale-xxlarge, 36px);
+  padding: var(--space-xxl);
 }
