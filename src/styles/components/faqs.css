@@ -4,11 +4,6 @@
  * already defines these semantic variables, the project values take priority.
  */
 
-.faqs,
-.faqs * {
-  box-sizing: border-box;
-}
-
 .faqs {
   --faq-bg-canvas: var(--color-bg-canvas, #fefcf3);
   --faq-bg-subtle: rgb(240 219 219 / 48%);
@@ -26,8 +21,8 @@
   width: 100%;
   max-width: 1920px;
   min-height: 1080px;
-  margin-inline: auto;
-  padding: 88px 126px 72px;
+  padding: var(--scale-xxlarge, 36px);
+  margin-top: var(--scale-xxlarge, 36px);
   overflow: hidden;
   color: var(--faq-text-primary);
   background: var(--faq-bg-canvas);
@@ -55,8 +50,8 @@
 .faqs-title {
   margin: 0;
   font-family: var(--faq-font-display), monospace;
-  font-size: 58px;
-  font-weight: 600;
+  font-size: var(--primitive-scale-sub-heading, 48px);
+  font-weight: var(  --type-weight-emphasis, 500);
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
   line-height: 64px;
   white-space: nowrap;
