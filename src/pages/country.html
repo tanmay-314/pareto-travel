@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../styles/components/itinerary.css" />
     <link rel="stylesheet" href="../styles/components/best-months.css" />
     <link rel="stylesheet" href="../styles/components/budget.css" />
+    <link rel="stylesheet" href="../styles/components/cuisine.css" />
 
 
     <script type="module" src="../scripts/components/country-navigation.js"></script>
@@ -23,6 +24,7 @@
     <script type="module" src="../scripts/components/itinerary.js"></script>
     <script type="module" src="../scripts/components/best-months.js"></script>
     <script type="module" src="../scripts/components/budget.js"></script>
+    <script type="module" src="../scripts/components/cuisine.js"></script>
 </head>
   
   <body>
@@ -109,6 +111,14 @@
           data-source="../data/countries/cambodia/budget.json"
           aria-live="polite"
       ></div>
+    </section>
+
+    <section
+      class="cuisine"
+      data-cuisine-component
+      data-source="../data/countries/cambodia/cuisine.json"
+      aria-labelledby="cuisine-title"
+    ></section>
 
 
   </body>

@@ -9,15 +9,6 @@
   --dial-spin-duration: 24s;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: var(--dial-background);
-}
-
 .page-shell {
   display: grid;
   min-height: 100svh;

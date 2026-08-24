@@ -1,0 +1,278 @@
+/*
+ * cuisine
+ * Figma master: 705:6084
+ * Desktop source frame: 1920 × 1080
+ *
+ * This file intentionally consumes the existing Pareto semantic token names
+ * and supplies Figma-matched fallbacks so the component can also render alone.
+ */
+
+.cuisine {
+  --cuisine-bg: var(--color-bg-canvas, #fefcf3);
+  --cuisine-text: var(--color-text-primary, #85586f);
+  --cuisine-text-secondary: var(--color-text-secondary, #ba97a3);
+  --cuisine-text-accent: var(--color-text-accent, #588584);
+  --cuisine-accent-secondary: var(--color-accent-secondary, #588584);
+  --cuisine-rule: var(--color-bg-subtle, #f0dbdb);
+
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 1080px;
+  padding: var(--scale-xxlarge, 36px);
+  margin-top: var(--scale-xxlarge, 36px);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(  --space-lg, 24px);
+
+  background: var(--cuisine-bg);
+  color: var(--cuisine-text);
+}
+
+.cuisine *,
+.cuisine *::before,
+.cuisine *::after {
+  box-sizing: border-box;
+}
+
+.cuisine-title,
+.cuisine-period,
+.cuisine-note,
+.cuisine-pareto-label,
+.cuisine-dish {
+  font-family: var(--type-family-display, "Bitcount Grid Single", sans-serif);
+  font-style: normal;
+  margin: 0;
+}
+
+.cuisine-lede,
+.cuisine-description,
+.cuisine-pareto-copy {
+  font-family: var(--type-family-body, "Iosevka Charon Mono", sans-serif);
+  font-style: normal;
+  margin: 0;
+}
+
+.cuisine-title-row {
+  width: 100%;
+  height: 132px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.cuisine-title {
+  flex: 0 0 auto;
+  color: var(--cuisine-text);
+  font-size: 48px;
+  font-weight: var(--type-weight-emphasis);
+  line-height: 64px;
+  white-space: nowrap;
+}
+
+.cuisine-lede {
+  flex: 0 0 640px;
+  width: 640px;
+  height: 100px;
+
+  color: var(--cuisine-text);
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 31px;
+}
+
+.cuisine-rule {
+  flex: 0 0 6px;
+  width: 100%;
+  height: 6px;
+
+  /*
+   * Figma: 6px dots, 16px pitch.
+   * The first dot spans x=0–6, exactly matching the source vector rule.
+   */
+  background:
+    radial-gradient(
+      circle at 3px 3px,
+      var(--cuisine-rule) 0 3px,
+      transparent 3.1px
+    )
+    0 0 / 16px 6px repeat-x;
+}
+
+.cuisine-chapters {
+  flex: 0 0 420px;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 84px;
+  align-items: start;
+}
+
+.cuisine-chapter {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.cuisine-icon {
+  display: block;
+  flex: 0 0 60px;
+  width: 60px;
+  height: 60px;
+}
+
+.cuisine-chapter-copy {
+  width: 100%;
+  color: var(--cuisine-text);
+}
+
+.cuisine-period {
+  color: var(--cuisine-text-secondary);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 1.5px;
+}
+
+.cuisine-chapter-spacer {
+  height: 27px;
+}
+
+.cuisine-dish {
+  color: var(--cuisine-text);
+  font-size: 31px;
+  font-weight: var(--type-weight-emphasis);
+  line-height: 36px;
+}
+
+.cuisine-description {
+  color: var(--cuisine-text);
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.cuisine-note {
+  color: var(--cuisine-text-accent);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0.84px;
+}
+
+.cuisine-pareto {
+  flex: 0 0 82px;
+  width: 100%;
+  height: 82px;
+  padding: 0 22px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  background: rgba(240, 219, 219, 0.55);
+}
+
+.cuisine-pareto-marker {
+  flex: 0 0 12px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--cuisine-accent-secondary);
+}
+
+.cuisine-pareto-label {
+  flex: 0 0 auto;
+  color: var(--cuisine-text-accent);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.12px;
+  white-space: nowrap;
+}
+
+.cuisine-pareto-copy {
+  min-width: 0;
+  color: var(--cuisine-text);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  white-space: nowrap;
+}
+
+/*
+ * Responsive fallback.
+ * The 1920px desktop layout above is the Figma source of truth.
+ * These rules only activate below the source composition width.
+ */
+@media (max-width: 1100px) {
+  .cuisine {
+    min-height: 0;
+    padding: 64px 40px;
+  }
+
+  .cuisine-title-row {
+    height: auto;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .cuisine-lede {
+    flex-basis: auto;
+    width: min(640px, 100%);
+    height: auto;
+  }
+
+  .cuisine-chapters {
+    flex-basis: auto;
+    height: auto;
+    grid-template-columns: 1fr;
+    row-gap: 56px;
+    overflow: visible;
+  }
+
+  .cuisine-chapter {
+    overflow: visible;
+  }
+
+  .cuisine-pareto {
+    flex-basis: auto;
+    height: auto;
+    min-height: 82px;
+    align-items: flex-start;
+    padding-block: 24px;
+    flex-wrap: wrap;
+  }
+
+  .cuisine-pareto-copy {
+    flex: 1 1 420px;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 600px) {
+  .cuisine {
+    padding: 48px 24px;
+  }
+
+  .cuisine-title {
+    font-size: 40px;
+    line-height: 52px;
+  }
+
+  .cuisine-lede {
+    font-size: 21px;
+    line-height: 29px;
+  }
+}
