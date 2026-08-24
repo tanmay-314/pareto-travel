@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="../styles/components/best-months.css" />
     <link rel="stylesheet" href="../styles/components/budget.css" />
     <link rel="stylesheet" href="../styles/components/cuisine.css" />
+    <link rel="stylesheet" href="../styles/components/faqs.css" />
+
 
 
     <script type="module" src="../scripts/components/country-navigation.js"></script>
@@ -25,6 +27,7 @@
     <script type="module" src="../scripts/components/best-months.js"></script>
     <script type="module" src="../scripts/components/budget.js"></script>
     <script type="module" src="../scripts/components/cuisine.js"></script>
+    <script type="module" src="../scripts/components/faqs.js"></script>
 </head>
   
   <body>
@@ -102,6 +105,15 @@
       </figure>
     </section>
 
+    <section
+      class="cuisine"
+      id="cuisine"
+      data-cuisine-component
+      data-source="../data/countries/cambodia/cuisine.json"
+      aria-labelledby="cuisine-title"
+    ></section>
+
+
     <section class="budget" id="budget" aria-label="Budget">
       <h2 class="country-section-title" id="budget-title">Budget</h2>
       
@@ -114,11 +126,13 @@
     </section>
 
     <section
-      class="cuisine"
-      data-cuisine-component
-      data-source="../data/countries/cambodia/cuisine.json"
-      aria-labelledby="cuisine-title"
-    ></section>
+        class="faqs"
+        id="faqs"
+        data-faqs
+        data-source="../data/countries/cambodia/faqs.json"
+        aria-label="Frequently asked questions"
+      >
+      </section>
 
 
   </body>

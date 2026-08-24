@@ -1,0 +1,60 @@
+{
+  "sectionTitle": "FAQS",
+  "allowMultiple": false,
+  "quickReference": {
+    "title": "QUICK REFERENCE",
+    "subtitle": "THE FIVE-MINUTE VERSION",
+    "items": [
+      {
+        "label": "VISA",
+        "value": "E-VISA OR VISA ON ARRIVAL"
+      },
+      {
+        "label": "MONEY",
+        "value": "USD + CAMBODIAN RIEL"
+      },
+      {
+        "label": "SIM",
+        "value": "BUY AT THE AIRPORT"
+      },
+      {
+        "label": "PLUGS",
+        "value": "TYPE A · C · G"
+      }
+    ],
+    "note": {
+      "label": "WHEN IN DOUBT",
+      "value": "Carry small USD notes and keep one offline copy of every booking."
+    }
+  },
+  "items": [
+    {
+      "id": "visa",
+      "index": "01",
+      "question": "Do I need a visa for Cambodia?",
+      "answer": "Most travellers can use an e-visa or obtain a visa on arrival. The e-visa is the calmer option: apply before the trip, print a copy, and check that your entry point accepts it.",
+      "open": true
+    },
+    {
+      "id": "safety",
+      "index": "02",
+      "question": "Is Cambodia safe for first-time visitors?",
+      "answer": "Replace this placeholder with the final safety guidance.",
+      "open": false
+    },
+    {
+      "id": "money",
+      "index": "03",
+      "question": "Should I carry cash or rely on cards?",
+      "answer": "Replace this placeholder with the final cash and card guidance.",
+      "open": false
+    },
+    {
+      "id": "advance-bookings",
+      "index": "04",
+      "question": "What should I book before arriving?",
+      "answer": "Replace this placeholder with the final advance-booking guidance.",
+      "open": false
+    }
+  ]
+}
