@@ -1,0 +1,39 @@
+{
+  "title": "INTER-CITY TRAVEL",
+  "assets": {
+    "mapPin": "../assets/icons/icon-map-pin.svg",
+    "ticket": "https://www.figma.com/api/mcp/asset/2c127d8c-8a2f-46c2-a6e4-cd31fe77edb6.png",
+    "modes": {
+      "airplane": "../assets/icons/icon-airplane.svg",
+      "bus": "../assets/icons/icon-bus.svg",
+      "train": "../assets/icons/icon-train.svg",
+      "car": "../assets/icons/icon-car.svg"
+    }
+  },
+  "places": [
+    { "name": "SIEM REAP", "caption": "START" },
+    { "name": "PHNOM PENH", "caption": "2 NIGHTS" },
+    { "name": "BATTAMBANG", "caption": "2 NIGHTS" },
+    { "name": "KAMPOT", "caption": "FINISH" }
+  ],
+  "legs": [
+    {
+      "mode": "bus",
+      "duration": "6 HR",
+      "recommended": false,
+      "note": "Take a daytime service. You trade romance for frequency, directness and a city-centre arrival."
+    },
+    {
+      "mode": "train",
+      "duration": "5 HR",
+      "recommended": false,
+      "note": "The slower leg becomes part of the trip. Check the operating day before building the itinerary around it."
+    },
+    {
+      "mode": "car",
+      "duration": "4 HR",
+      "recommended": false,
+      "note": "An awkward cross-country connection. A private transfer saves the backtrack and works well when shared."
+    }
+  ]
+}
