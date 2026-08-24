@@ -1,28 +1,26 @@
 :root {
   --country-nav-width: 167px;
   --country-nav-height: 450px;
+  --country-nav-pole-width: 18px;
   --country-nav-plum: var(--color-text-primary, #85586f);
   --country-nav-teal: var(--color-text-action-hover, #588584);
-  --country-nav-surface: var(--color-surface-primary, #fefcf3);
-  --country-nav-font: var(--type-family-display, "Bitcount Grid Single", monospace);
 }
 
 .country-navigation {
   position: relative;
-  display: block;
   width: var(--country-nav-width);
   height: var(--country-nav-height);
-  margin-block-start: var(--space-xxl);
   flex: 0 0 auto;
   margin: var(--space-xxl);
+  align-items: center;
 }
 
 .country-navigation-pole {
   position: absolute;
   top: 0;
   left: 70px;
-  width: 18px;
-  height: 450px;
+  width: var(--country-nav-pole-width);
+  height: var(--country-nav-height);
   pointer-events: none;
   user-select: none;
 }
@@ -32,9 +30,7 @@
   display: block;
   color: var(--country-nav-plum);
   text-decoration: none;
-  cursor: pointer;
   transform: rotate(var(--board-rotation, 0deg));
-  transform-origin: 50% 50%;
   transition: color 150ms ease;
   -webkit-tap-highlight-color: transparent;
 }
@@ -78,9 +74,6 @@
 }
 
 @media (max-width: 760px) {
-  .demo {
-    grid-template-columns: 1fr;
-  }
 
   .country-navigation {
     margin-inline: auto;
@@ -88,10 +81,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   .country-navigation-board {
     transition: none;
   }
