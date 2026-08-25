@@ -12,6 +12,7 @@
     <!-- Component styles follow -->
     <link rel="stylesheet" href="../styles/components/header.css">
     <link rel="stylesheet" href="../styles/components/country-intro.css">
+    <link rel="stylesheet" href="../styles/components/country-rating.css">
     <link rel="stylesheet" href="../styles/components/country-map.css">
     <link rel="stylesheet" href="../styles/components/country-navigation.css">
     <link rel="stylesheet" href="../styles/components/itinerary.css" />
@@ -23,6 +24,7 @@
 
     <script type="module" src="../scripts/components/country-navigation.js"></script>
     <script type="module" src="../scripts/components/country-hero.js"></script>
+    <script type="module" src="../scripts/components/country-rating.js"></script>
     <script type="module" src="../scripts/components/itinerary.js"></script>
     <script type="module" src="../scripts/components/inter-city-travel.js"></script>
     <script type="module" src="../scripts/components/best-months.js"></script>
@@ -63,6 +65,13 @@
         </div>
 
         <p class="country-intro-overview" data-country-overview></p>
+
+        <div
+          class="country-rating"
+          data-country-rating
+          data-source="../data/countries/cambodia/country.json"
+          aria-label="Country ratings"
+        ></div>
 
         </div>
 

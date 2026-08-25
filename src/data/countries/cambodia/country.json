@@ -4,6 +4,33 @@
   "name": "Cambodia",
   "subtitle": "Wat and Peace",
   "overview": "Cambodia is a beautiful country with a rich history and culture. From the ancient temples of Angkor Wat to the serene landscapes of the countryside, there is something for everyone to explore and enjoy.",
+  "ratings": [
+    {
+      "id": "culture",
+      "label": "Culture",
+      "score": 4
+    },
+    {
+      "id": "nature",
+      "label": "Nature",
+      "score": 3.5
+    },
+    {
+      "id": "cities",
+      "label": "Cities",
+      "score": 3
+    },
+    {
+      "id": "safety",
+      "label": "Safety",
+      "score": 2
+    },
+    {
+      "id": "budget",
+      "label": "Budget",
+      "score": 5
+    }
+  ],
   "map": {
     "src": "../../../assets/countries/cambodia/country-map.svg",
     "alt": "Map of Cambodia",

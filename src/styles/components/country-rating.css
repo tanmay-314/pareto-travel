@@ -1,0 +1,56 @@
+/* Country rating — Figma node 851:18824 */
+
+.country-rating {
+  width: min(330px, 100%);
+  color: var(--color-text-primary);
+}
+
+.country-intro > .country-rating {
+  margin-block-start: var(--space-md);
+}
+
+.country-rating:empty,
+.country-rating[data-state="fallback"] {
+  display: none;
+}
+
+.country-rating__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: 100%;
+  margin: 0;
+}
+
+.country-rating__row {
+  display: grid;
+  grid-template-columns: 120px 150px;
+  align-items: center;
+  min-height: 30px;
+}
+
+.country-rating__descriptor,
+.country-rating__stars {
+  margin: 0;
+}
+
+.country-rating__descriptor {
+  font-family: var(--type-family-body), monospace;
+  font-size: var(--type-size-body);
+  font-weight: var(--type-weight-strong);
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.country-rating__stars {
+  display: flex;
+  width: 150px;
+  height: 30px;
+}
+
+.country-rating__star {
+  display: block;
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+}

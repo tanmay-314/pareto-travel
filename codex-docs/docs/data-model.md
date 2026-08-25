@@ -101,6 +101,32 @@ section data:
 `name`, `subtitle`, `overview`, `map.src`, and `map.alt` are required. Map paths
 are resolved relative to `country.json` and must point to a same-origin asset.
 
+## Country rating
+
+Country ratings live in the top-level `ratings` array in `country.json` because
+they are part of the country introduction. The array contains exactly five ordered
+categories. Scores use a `0`–`5` scale and may change only in `0.5` increments:
+
+```json
+{
+  "ratings": [
+    {
+      "id": "culture",
+      "label": "Culture",
+      "score": 4
+    },
+    {
+      "id": "nature",
+      "label": "Nature",
+      "score": 3.5
+    }
+  ]
+}
+```
+
+Keep the category order consistent across countries so comparisons remain
+predictable. Labels are authored display text; IDs use lowercase kebab-case.
+
 ## Budget receipt
 
 Illustrative shape:
