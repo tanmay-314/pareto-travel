@@ -3,15 +3,15 @@ const sourceCache = new Map();
 const STAR_COUNT = 5;
 const STAR_ASSETS = Object.freeze({
   primary: new URL(
-    "../../assets/components/country-rating/star-primary.png",
+    "../../assets/components/country-rating/icon-star.svg",
     import.meta.url,
   ).href,
   partial: new URL(
-    "../../assets/components/country-rating/star-partial.png",
+    "../../assets/components/country-rating/icon-star-partial.svg",
     import.meta.url,
   ).href,
   tertiary: new URL(
-    "../../assets/components/country-rating/star-tertiary.png",
+    "../../assets/components/country-rating/icon-star-tertiary.svg",
     import.meta.url,
   ).href,
 });
