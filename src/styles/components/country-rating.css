@@ -24,9 +24,9 @@
 
 .country-rating__row {
   display: grid;
-  grid-template-columns: 120px 150px;
+  grid-template-columns: 120px var(--country-rating-stars-width, 150px);
   align-items: center;
-  min-height: 30px;
+  min-height: var(--country-rating-star-size, 30px);
 }
 
 .country-rating__descriptor,
@@ -44,13 +44,13 @@
 
 .country-rating__stars {
   display: flex;
-  width: 150px;
-  height: 30px;
+  width: var(--country-rating-stars-width, 150px);
+  height: var(--country-rating-star-size, 30px);
 }
 
 .country-rating__star {
   display: block;
-  flex: 0 0 30px;
-  width: 30px;
-  height: 30px;
+  flex: 0 0 var(--country-rating-star-size, 30px);
+  width: var(--country-rating-star-size, 30px);
+  height: var(--country-rating-star-size, 30px);
 }

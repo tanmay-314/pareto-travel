@@ -9,8 +9,14 @@
 
   position: relative;
   flex: 0 0 auto;
-  width: 405.2459px;
-  height: 452.459px;
+  width: var(
+    --country-map-polaroid-width,
+    var(--polaroid-width, 405.2459px)
+  );
+  height: var(
+    --country-map-polaroid-height,
+    var(--polaroid-height, 452.459px)
+  );
   margin: 0;
   isolation: isolate;
 }
@@ -21,7 +27,9 @@
   left: 0;
   width: 412px;
   height: 460px;
-  transform: scale(var(--polaroid-scale));
+  transform: scale(
+    var(--country-map-polaroid-scale, var(--polaroid-scale))
+  );
   transform-origin: top left;
 }
 
@@ -36,10 +44,10 @@
 .itinerary-polaroid-photo {
   position: absolute;
   z-index: 0;
-  top: 21px;
-  left: 21px;
-  width: 366px;
-  height: 366px;
+  top: 24px;
+  left: 24px;
+  width: 360px;
+  height: 360px;
   overflow: hidden;
   background: transparent;
 }
@@ -115,4 +123,3 @@
 .itinerary {
   padding: var(--space-xxl);
 }
-

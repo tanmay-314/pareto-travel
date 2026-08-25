@@ -11,8 +11,16 @@
   width: var(--country-nav-width);
   height: var(--country-nav-height);
   flex: 0 0 auto;
+  align-self: center;
   margin: var(--space-xxl);
-  align-items: center;
+}
+
+.country-navigation-surface {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(var(--country-navigation-scale, 1));
+  transform-origin: top left;
 }
 
 .country-navigation-pole {

@@ -30,8 +30,12 @@
   const FIGMA_SIZE = Object.freeze({
     width: 412,
     height: 460,
-    photo: 366,
+    photo: 360,
   });
+
+  const COUNTRY_MAP_FIGMA_WIDTH = 720;
+  const POLAROID_TO_MAP_WIDTH_RATIO =
+    FIGMA_SIZE.width / COUNTRY_MAP_FIGMA_WIDTH;
 
   function normaliseRotation(value) {
     const rotation = String(value || DEFAULTS.rotation);
@@ -89,11 +93,17 @@
 
     polaroid.className = "itinerary-polaroid";
     polaroid.dataset.rotation = normaliseRotation(options.rotation);
-    polaroid.style.width = `${FIGMA_SIZE.width * scale}px`;
-    polaroid.style.height = `${FIGMA_SIZE.height * scale}px`;
+    polaroid.style.setProperty("--polaroid-scale", scale);
+    polaroid.style.setProperty(
+      "--polaroid-width",
+      `${FIGMA_SIZE.width * scale}px`,
+    );
+    polaroid.style.setProperty(
+      "--polaroid-height",
+      `${FIGMA_SIZE.height * scale}px`,
+    );
 
     surface.className = "itinerary-polaroid-surface";
-    surface.style.setProperty("--polaroid-scale", scale);
 
     tilt.className = "itinerary-polaroid-tilt";
     tilt.style.setProperty(
@@ -147,6 +157,49 @@
     if (!root) throw new Error("Itinerary mount target was not found.");
     root.replaceChildren(...days.map(create));
     return root.children;
+  }
+
+  function syncToCountryMap(target, mapTarget) {
+    const root =
+      typeof target === "string" ? document.querySelector(target) : target;
+    const map =
+      typeof mapTarget === "string"
+        ? document.querySelector(mapTarget)
+        : mapTarget;
+
+    if (!root || !map) return null;
+
+    const updateScale = (width = map.getBoundingClientRect().width) => {
+      if (width <= 0) return;
+      const polaroidWidth = width * POLAROID_TO_MAP_WIDTH_RATIO;
+      const scale = polaroidWidth / FIGMA_SIZE.width;
+      root.style.setProperty(
+        "--country-map-polaroid-scale",
+        scale,
+      );
+      root.style.setProperty(
+        "--country-map-polaroid-width",
+        `${polaroidWidth}px`,
+      );
+      root.style.setProperty(
+        "--country-map-polaroid-height",
+        `${FIGMA_SIZE.height * scale}px`,
+      );
+    };
+
+    updateScale();
+
+    if (typeof ResizeObserver === "function") {
+      const observer = new ResizeObserver(([entry]) => {
+        updateScale(entry.contentRect.width);
+      });
+      observer.observe(map);
+      return () => observer.disconnect();
+    }
+
+    const handleResize = () => updateScale();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }
 
   /*function renderTripFacts(target, itinerary) {
@@ -215,11 +268,14 @@
     renderItinerary,
     renderPage,
     loadItinerary,
+    syncToCountryMap,
   });
 
   function autoInitialise() {
     const listSelector = "#polaroid-list";
     if (!document.querySelector(listSelector)) return;
+
+    syncToCountryMap(listSelector, "[data-country-map]");
 
     loadItinerary(DATA_URL.href, {
       index: 0,

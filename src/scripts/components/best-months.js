@@ -19,9 +19,13 @@ const VALID_STATES = new Set(["best", "good", "avoid"]);
 const sourceCache = new Map();
 let dialInstanceId = 0;
 
+const DIAL_SIZE = 600;
+const DIAL_TO_MAP_SIZE_RATIO = 5 / 6;
+const dialResizeCleanups = new WeakMap();
+
 const geometry = {
-  centerX: 380,
-  centerY: 340,
+  centerX: DIAL_SIZE / 2,
+  centerY: DIAL_SIZE / 2,
   dotRadius: 3,
   ringRadius: 230,
   labelRadius: 190,
@@ -132,6 +136,38 @@ function buildMonthSegment(month, monthIndex, state) {
   return group;
 }
 
+function syncToCountryMap(container) {
+  const map = document.querySelector("[data-country-map]");
+  dialResizeCleanups.get(container)?.();
+
+  if (!map) return;
+
+  const updateSize = (mapWidth = map.getBoundingClientRect().width) => {
+    if (mapWidth <= 0) return;
+    container.style.setProperty(
+      "--annual-travel-dial-size",
+      `${mapWidth * DIAL_TO_MAP_SIZE_RATIO}px`,
+    );
+  };
+
+  updateSize();
+
+  if (typeof ResizeObserver === "function") {
+    const observer = new ResizeObserver(([entry]) => {
+      updateSize(entry.contentRect.width);
+    });
+    observer.observe(map);
+    dialResizeCleanups.set(container, () => observer.disconnect());
+    return;
+  }
+
+  const handleResize = () => updateSize();
+  window.addEventListener("resize", handleResize);
+  dialResizeCleanups.set(container, () => {
+    window.removeEventListener("resize", handleResize);
+  });
+}
+
 export function renderAnnualTravelDial(container, rawConfig) {
   const config = validateConfig(rawConfig);
   dialInstanceId += 1;
@@ -139,7 +175,7 @@ export function renderAnnualTravelDial(container, rawConfig) {
   const descriptionId = `annual-dial-description-${dialInstanceId}`;
   const svg = svgNode("svg", {
     class: "annual-travel-dial__svg",
-    viewBox: "0 0 760 700",
+    viewBox: `0 0 ${DIAL_SIZE} ${DIAL_SIZE}`,
     role: "img",
     "aria-labelledby": `${titleId} ${descriptionId}`,
     preserveAspectRatio: "xMidYMid meet",
@@ -154,8 +190,8 @@ export function renderAnnualTravelDial(container, rawConfig) {
     title,
     description,
     svgNode("rect", {
-      width: 760,
-      height: 700,
+      width: DIAL_SIZE,
+      height: DIAL_SIZE,
       fill: "var(--dial-background)",
     }),
     svgNode("circle", {
@@ -179,7 +215,7 @@ export function renderAnnualTravelDial(container, rawConfig) {
   const centerLabel = svgNode("text", {
     class: "annual-travel-dial__center-label",
     x: geometry.centerX,
-    y: 313,
+    y: geometry.centerY - 27,
     "dominant-baseline": "middle",
   });
   centerLabel.textContent = config.centerLabel;
@@ -187,7 +223,7 @@ export function renderAnnualTravelDial(container, rawConfig) {
   const centerValue = svgNode("text", {
     class: "annual-travel-dial__center-value",
     x: geometry.centerX,
-    y: 354,
+    y: geometry.centerY + 14,
     "dominant-baseline": "middle",
   });
   centerValue.textContent = config.centerValue;
@@ -200,6 +236,7 @@ export function renderAnnualTravelDial(container, rawConfig) {
     caption.textContent = description.textContent;
     container.append(caption);
   }
+  syncToCountryMap(container);
   container.removeAttribute("aria-busy");
 }
 

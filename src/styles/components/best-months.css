@@ -17,8 +17,8 @@
 }
 
 .annual-travel-dial {
-  width: min(100%, 760px);
-  aspect-ratio: 760 / 700;
+  width: var(--annual-travel-dial-size, 600px);
+  aspect-ratio: 1;
   margin: 0;
   overflow: hidden;
   background: var(--dial-background);
@@ -32,7 +32,7 @@
 
 .annual-travel-dial[data-motion="spin"] .annual-travel-dial__ring {
   transform-box: view-box;
-  transform-origin: 380px 340px;
+  transform-origin: 300px 300px;
   animation: annual-travel-dial-enter var(--dial-enter-duration)
     cubic-bezier(0.16, 1, 0.3, 1) both;
   will-change: transform;
@@ -40,7 +40,7 @@
 
 .annual-travel-dial[data-motion="continuous"] .annual-travel-dial__ring {
   transform-box: view-box;
-  transform-origin: 380px 340px;
+  transform-origin: 300px 300px;
   animation: annual-travel-dial-rotate var(--dial-spin-duration) linear infinite;
   will-change: transform;
 }

@@ -25,6 +25,7 @@
   --primitive-font-weight-regular: 400;
   --primitive-font-weight-medium: 500;
   --primitive-font-weight-semi-bold: 600;
+  --primitive-font-weight-bold: 700;
   --primitive-line-height-body: 24px;
   --primitive-line-height-heading: 72px;
   --primitive-line-height-sub-heading: 48px;
@@ -99,6 +100,7 @@
   --type-weight-regular: var(--primitive-font-weight-regular);
   --type-weight-emphasis: var(--primitive-font-weight-medium);
   --type-weight-strong: var(--primitive-font-weight-semi-bold);
+  --type-weight-bold: var(--primitive-font-weight-bold);
 
   /* Semantic: type sizes */
   --type-size-label: var(--primitive-scale-small);

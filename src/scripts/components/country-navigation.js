@@ -1,4 +1,6 @@
 const DEFAULT_CONFIG_URL = "./data/components/country-navigation.json";
+const COUNTRY_MAP_FIGMA_WIDTH = 720;
+const navigationResizeCleanups = new WeakMap();
 
 function createBoard(board, assets) {
   const link = document.createElement("a");
@@ -61,6 +63,43 @@ function addNavigationBehavior(navigation) {
   });
 }
 
+function syncToCountryMap(navigation, surface, config) {
+  const map = document.querySelector("[data-country-map]");
+  navigationResizeCleanups.get(navigation)?.();
+
+  const updateScale = (mapWidth = map?.getBoundingClientRect().width) => {
+    if (!mapWidth || mapWidth <= 0) return;
+    const scale = mapWidth / COUNTRY_MAP_FIGMA_WIDTH;
+
+    navigation.style.width = `${config.width * scale}px`;
+    navigation.style.height = `${config.height * scale}px`;
+    surface.style.setProperty("--country-navigation-scale", scale);
+  };
+
+  if (!map) {
+    navigation.style.width = `${config.width}px`;
+    navigation.style.height = `${config.height}px`;
+    return;
+  }
+
+  updateScale();
+
+  if (typeof ResizeObserver === "function") {
+    const observer = new ResizeObserver(([entry]) => {
+      updateScale(entry.contentRect.width);
+    });
+    observer.observe(map);
+    navigationResizeCleanups.set(navigation, () => observer.disconnect());
+    return;
+  }
+
+  const handleResize = () => updateScale();
+  window.addEventListener("resize", handleResize);
+  navigationResizeCleanups.set(navigation, () => {
+    window.removeEventListener("resize", handleResize);
+  });
+}
+
 async function renderCountryNavigation(navigation) {
   const configUrl = navigation.dataset.config || DEFAULT_CONFIG_URL;
 
@@ -77,8 +116,11 @@ async function renderCountryNavigation(navigation) {
       ])
     );
     navigation.replaceChildren();
-    navigation.style.width = `${config.width}px`;
-    navigation.style.height = `${config.height}px`;
+
+    const surface = document.createElement("div");
+    surface.className = "country-navigation-surface";
+    surface.style.width = `${config.width}px`;
+    surface.style.height = `${config.height}px`;
 
     const pole = document.createElement("img");
     pole.className = "country-navigation-pole";
@@ -87,12 +129,14 @@ async function renderCountryNavigation(navigation) {
     pole.width = 18;
     pole.height = config.height;
     pole.draggable = false;
-    navigation.append(pole);
+    surface.append(pole);
 
     config.boards.forEach((board) => {
-      navigation.append(createBoard(board, assets));
+      surface.append(createBoard(board, assets));
     });
 
+    navigation.append(surface);
+    syncToCountryMap(navigation, surface, config);
     addNavigationBehavior(navigation);
     navigation.dataset.status = "ready";
   } catch (error) {

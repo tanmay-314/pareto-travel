@@ -1,6 +1,8 @@
 const sourceCache = new Map();
 
 const STAR_COUNT = 5;
+const STAR_TO_MAP_SIZE_RATIO = 1 / 24;
+const ratingResizeCleanups = new WeakMap();
 const STAR_ASSETS = Object.freeze({
   primary: new URL(
     "../../assets/components/country-rating/icon-star.svg",
@@ -123,12 +125,47 @@ function createRatingRow(rating) {
   return row;
 }
 
+function syncStarSizeToCountryMap(root) {
+  const map = document.querySelector("[data-country-map]");
+  ratingResizeCleanups.get(root)?.();
+
+  if (!map) return;
+
+  const updateSize = (mapWidth = map.getBoundingClientRect().width) => {
+    if (mapWidth <= 0) return;
+    const starSize = mapWidth * STAR_TO_MAP_SIZE_RATIO;
+    root.style.setProperty("--country-rating-star-size", `${starSize}px`);
+    root.style.setProperty(
+      "--country-rating-stars-width",
+      `${starSize * STAR_COUNT}px`,
+    );
+  };
+
+  updateSize();
+
+  if (typeof ResizeObserver === "function") {
+    const observer = new ResizeObserver(([entry]) => {
+      updateSize(entry.contentRect.width);
+    });
+    observer.observe(map);
+    ratingResizeCleanups.set(root, () => observer.disconnect());
+    return;
+  }
+
+  const handleResize = () => updateSize();
+  window.addEventListener("resize", handleResize);
+  ratingResizeCleanups.set(root, () => {
+    window.removeEventListener("resize", handleResize);
+  });
+}
+
 export function renderCountryRating(root, data) {
   const ratings = normalizeRatings(data);
   const list = document.createElement("dl");
   list.className = "country-rating__list";
   list.append(...ratings.map(createRatingRow));
   root.replaceChildren(list);
+  syncStarSizeToCountryMap(root);
   root.removeAttribute("aria-busy");
   root.dataset.state = "ready";
 }
