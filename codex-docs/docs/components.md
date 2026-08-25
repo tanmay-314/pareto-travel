@@ -81,6 +81,17 @@ Update the paths below when components are integrated.
 - Accessibility: the country name remains the page `h1`; the map is exposed as an image using its configured alternative text
 - Implementation paths: `src/scripts/components/country-hero.js`, `src/styles/components/country-intro.css`, and `src/data/countries/<slug>/country.json`
 
+### Country rating
+
+- Root: `[data-country-rating]`
+- Inputs: exactly five ordered rating objects with `id`, `label`, and numeric `score`
+- Score scale: `0`–`5` in half-star increments; full, partial, and tertiary stars are rendered from exported Figma assets
+- Mounting: set `data-source` to the country's `country.json`; the component reads its top-level `ratings` array
+- Accessibility: each row is a description-list pair and exposes a text equivalent such as “Nature: 3.5 out of 5 stars”
+- Responsive behavior: the component keeps the Figma 30 px star size and caps its 330 px frame at the available width
+- Fallback: invalid or unavailable data hides only the rating block and logs an actionable error
+- Implementation paths: `src/scripts/components/country-rating.js`, `src/styles/components/country-rating.css`, `src/assets/components/country-rating/`, and `src/data/countries/<slug>/country.json`
+
 ### Annual dial
 
 - Root: `[data-component="annual-dial"]`
