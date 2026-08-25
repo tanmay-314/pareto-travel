@@ -1,0 +1,80 @@
+:root {
+  --country-map-width: 720px;
+  --country-map-aspect-ratio: 1 / 1;
+  --country-map-icon-width: 60px;
+  --country-map-icon-aspect-ratio: 1 / 1;
+}
+
+.country-map {
+  position: relative;
+  container-type: inline-size;
+  width: clamp(360px, 40vw, var(--country-map-width));
+  aspect-ratio: var(--country-map-aspect-ratio);
+  flex: 0 0 auto;
+}
+
+.country-map-shape {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-map-base);
+  mask: var(--map-image) center / contain no-repeat;
+  -webkit-mask: var(--map-image) center / contain no-repeat;
+}
+
+.country-map-locations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.country-map-marker {
+  position: absolute;
+  left: var(--marker-x);
+  top: var(--marker-y);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 8.3333333333%;
+  max-width: var(--country-map-icon-width);
+  color: var(--color-icon-secondary);
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.country-map-marker--primary {
+  color: var(--color-icon-primary);
+  cursor: pointer;
+}
+
+.country-map-marker--primary:hover,
+.country-map-marker--primary:focus-visible {
+  color: var(--color-icon-hover);
+}
+
+.country-map-marker:focus-visible {
+  outline: 2px solid var(--color-icon-hover);
+  outline-offset: 4px;
+}
+
+.country-map-marker-icon {
+  flex: 0 0 auto;
+  width: 100%;
+  aspect-ratio: var(--country-map-icon-aspect-ratio);
+  background-color: currentColor;
+  mask: var(--marker-icon) center / contain no-repeat;
+  -webkit-mask: var(--marker-icon) center / contain no-repeat;
+  transition: background-color 150ms ease;
+}
+
+.country-map-marker-label {
+  width: max-content;
+  max-width: 108px;
+  text-align: center;
+  color: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .country-map-marker-icon {
+    transition: none;
+  }
+}

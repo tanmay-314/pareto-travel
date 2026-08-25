@@ -12,6 +12,7 @@
     <!-- Component styles follow -->
     <link rel="stylesheet" href="../styles/components/header.css">
     <link rel="stylesheet" href="../styles/components/country-intro.css">
+    <link rel="stylesheet" href="../styles/components/country-map.css">
     <link rel="stylesheet" href="../styles/components/country-navigation.css">
     <link rel="stylesheet" href="../styles/components/itinerary.css" />
     <link rel="stylesheet" href="../styles/components/best-months.css" />
@@ -65,13 +66,26 @@
 
         </div>
 
+
         <div
-            class="country-map"
-            data-country-map
-            role="img"
-            aria-label="Map of Cambodia"
-            style="--map-image: url('../assets/countries/cambodia/country-map.svg');"
-        ></div>
+          class="country-map"
+          data-country-map
+          role="group"
+          aria-label="Destinations in Cambodia"
+        >
+
+          <div
+              class="country-map-shape"
+              data-country-map-shape
+              role="img"
+              aria-label="Map of Cambodia"
+          ></div>
+
+          <div
+            class="country-map-locations"
+            data-country-map-locations
+          ></div>
+        </div>
 
 
         <!-- Fix the data-config path -->

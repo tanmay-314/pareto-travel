@@ -6,6 +6,34 @@
   "overview": "Cambodia is a beautiful country with a rich history and culture. From the ancient temples of Angkor Wat to the serene landscapes of the countryside, there is something for everyone to explore and enjoy.",
   "map": {
     "src": "../../../assets/countries/cambodia/country-map.svg",
-    "alt": "Map of Cambodia"
+    "alt": "Map of Cambodia",
+    "locations": [
+      {
+        "id": "angkor-wat",
+        "label": "Angkor Wat",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 201,
+        "y": 198,
+        "href": "#angkor-wat"
+      },
+      {
+        "id": "phnom-penh",
+        "label": "Phnom Penh",
+        "icon": "airplane",
+        "state": "secondary",
+        "x": 315,
+        "y": 444
+      },
+      {
+        "id": "sihanoukville",
+        "label": "Sihanoukville",
+        "icon": "xmark",
+        "state": "primary",
+        "x": 142,
+        "y": 538,
+        "href": "#sihanoukville"
+      }
+    ]
   }
 }

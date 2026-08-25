@@ -1,7 +1,5 @@
 /* Country intro — Figma node 676:6513 */
 :root {
-  --country-map-width: 720px;
-  --country-map-aspect-ratio: 1 / 1;
   --country-intro-width: 600px;
 }
 
@@ -11,7 +9,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-sm);
-  width: clamp(var(--country-intro-width)*0.6, 40vw, var(--country-intro-width));
+  width: clamp(360px, 40vw, var(--country-intro-width));
   color: var(--color-text-primary, #85586f);  
   padding: var(--space-xxl);
 }
@@ -75,20 +73,10 @@
 
 /*Added by @tanmay314*/
 
-.country-map {
-    display: block;
-    width: clamp(var(--country-map-width)/2, 40vw, var(--country-map-width));
-    flex: 0 0 auto;
-    aspect-ratio: var(--country-map-aspect-ratio);
-    background-color: var(--color-icon-tertiary);
-
-    mask: var(--map-image) center / contain no-repeat;
-    -webkit-mask: var(--map-image) center / contain no-repeat;
-}
-
 .country-hero {
   display:flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   width: 100%;
 }
 
