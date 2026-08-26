@@ -1,6 +1,9 @@
 (() => {
   "use strict";
 
+  const ICON_TO_MAP_SIZE_RATIO = 1 / 12;
+  const resizeCleanups = new WeakMap();
+
   const DEFAULT_DATA = {
     title: "CUISINE",
     lede:
@@ -73,6 +76,38 @@
     `;
   }
 
+  function syncIconSizeToCountryMap(root) {
+    const map = document.querySelector("[data-country-map]");
+    resizeCleanups.get(root)?.();
+
+    if (!map) return;
+
+    const updateSize = (mapWidth = map.getBoundingClientRect().width) => {
+      if (mapWidth <= 0) return;
+      root.style.setProperty(
+        "--country-section-icon-size",
+        `${mapWidth * ICON_TO_MAP_SIZE_RATIO}px`,
+      );
+    };
+
+    updateSize();
+
+    if (typeof ResizeObserver === "function") {
+      const observer = new ResizeObserver(([entry]) => {
+        updateSize(entry.contentRect.width);
+      });
+      observer.observe(map);
+      resizeCleanups.set(root, () => observer.disconnect());
+      return;
+    }
+
+    const handleResize = () => updateSize();
+    window.addEventListener("resize", handleResize);
+    resizeCleanups.set(root, () => {
+      window.removeEventListener("resize", handleResize);
+    });
+  }
+
   function renderCuisine(root, data) {
     const chapters = Array.isArray(data.chapters)
       ? data.chapters.slice(0, 3)
@@ -104,6 +139,8 @@
         </p>
       </aside>
     `;
+
+    syncIconSizeToCountryMap(root);
   }
 
   async function loadData(root) {

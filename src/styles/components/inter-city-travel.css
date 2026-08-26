@@ -92,11 +92,11 @@
 
 .inter-city-icon-shell {
   position: absolute;
-  top: 60px;
+  top: calc(90px - var(--country-section-icon-half-size, 30px));
   left: 50%;
   display: grid;
-  width: 60px;
-  height: 60px;
+  width: var(--country-section-icon-size, 60px);
+  height: var(--country-section-icon-size, 60px);
   overflow: hidden;
   transform: translateX(-50%);
   place-items: center;
@@ -107,8 +107,8 @@
   position: relative;
   z-index: 1;
   display: block;
-  width: 60px;
-  height: 60px;
+  width: var(--country-section-icon-size, 60px);
+  height: var(--country-section-icon-size, 60px);
   object-fit: contain;
 }
 
@@ -116,8 +116,8 @@
   position: absolute;
   z-index: 0;
   display: grid;
-  width: 52px;
-  height: 52px;
+  width: calc(var(--country-section-icon-size, 60px) - 8px);
+  height: calc(var(--country-section-icon-size, 60px) - 8px);
   border: 2px dotted var(--inter-city-text-secondary);
   border-radius: 50%;
   color: var(--inter-city-text-secondary);
@@ -179,10 +179,10 @@
 
 .ticket {
   position: relative;
-  flex: 0 1 450px;
-  width: 450px;
+  flex: 0 1 var(--inter-city-ticket-width, 450px);
+  width: var(--inter-city-ticket-width, 450px);
   min-width: 0;
-  max-width: 450px;
+  max-width: var(--inter-city-ticket-width, 450px);
   aspect-ratio: 450 / 186;
   border-radius: 16px;
   background: var(--inter-city-bg-surface);
@@ -354,8 +354,8 @@
   }
 
   .ticket {
-    flex-basis: 450px;
-    width: 450px;
+    flex-basis: var(--inter-city-ticket-width, 450px);
+    width: var(--inter-city-ticket-width, 450px);
   }
 }
 
@@ -395,7 +395,7 @@
   .inter-city-journey::before {
     top: 30px;
     bottom: 30px;
-    left: 29px;
+    left: calc(var(--country-section-icon-half-size, 30px) - 1px);
     width: 4px;
     height: auto;
     background-image: radial-gradient(
@@ -417,7 +417,7 @@
     height: 72px;
     min-height: 72px;
     transform: none;
-    grid-template-columns: 60px 1fr;
+    grid-template-columns: var(--country-section-icon-size, 60px) 1fr;
     text-align: left;
   }
 
@@ -465,8 +465,8 @@
   }
 
   .ticket {
-    width: min(450px, calc(100vw - 48px));
-    flex-basis: min(450px, calc(100vw - 48px));
+    width: var(--inter-city-ticket-width, 450px);
+    flex-basis: var(--inter-city-ticket-width, 450px);
   }
 }
 

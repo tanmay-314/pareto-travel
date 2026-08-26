@@ -3,6 +3,9 @@
 
   const POSITION_STEP = 14.94;
   const FIRST_POSITION = 5.18;
+  const ICON_TO_MAP_SIZE_RATIO = 1 / 12;
+  const TICKET_TO_MAP_WIDTH_RATIO = 45 / 72;
+  const resizeCleanups = new WeakMap();
 
   const escapeHtml = (value) =>
     String(value ?? "")
@@ -133,6 +136,45 @@
     `;
   };
 
+  const syncIconSizeToCountryMap = (root) => {
+    const map = document.querySelector("[data-country-map]");
+    resizeCleanups.get(root)?.();
+
+    if (!map) return;
+
+    const updateSize = (mapWidth = map.getBoundingClientRect().width) => {
+      if (mapWidth <= 0) return;
+      const iconSize = mapWidth * ICON_TO_MAP_SIZE_RATIO;
+      const ticketWidth = mapWidth * TICKET_TO_MAP_WIDTH_RATIO;
+      root.style.setProperty("--country-section-icon-size", `${iconSize}px`);
+      root.style.setProperty(
+        "--country-section-icon-half-size",
+        `${iconSize / 2}px`,
+      );
+      root.style.setProperty(
+        "--inter-city-ticket-width",
+        `${ticketWidth}px`,
+      );
+    };
+
+    updateSize();
+
+    if (typeof ResizeObserver === "function") {
+      const observer = new ResizeObserver(([entry]) => {
+        updateSize(entry.contentRect.width);
+      });
+      observer.observe(map);
+      resizeCleanups.set(root, () => observer.disconnect());
+      return;
+    }
+
+    const handleResize = () => updateSize();
+    window.addEventListener("resize", handleResize);
+    resizeCleanups.set(root, () => {
+      window.removeEventListener("resize", handleResize);
+    });
+  };
+
   const render = (root, data) => {
     validateData(data);
 
@@ -166,6 +208,8 @@
       image.addEventListener("error", markFailed, { once: true });
       if (image.complete && image.naturalWidth > 0) markLoaded();
     });
+
+    syncIconSizeToCountryMap(root);
   };
 
   const renderError = (root, error) => {

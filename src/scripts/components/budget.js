@@ -1,6 +1,10 @@
 (function () {
   "use strict";
 
+  const COUNTRY_MAP_FIGMA_WIDTH = 720;
+  const RECEIPT_FIGMA_WIDTH = 554;
+  const receiptResizeCleanups = new WeakMap();
+
   const DEFAULT_RECEIPT = Object.freeze({
     country: "MIDDLE EARTH",
     days: 0,
@@ -129,6 +133,55 @@
     return article;
   }
 
+  function syncReceiptToCountryMap(frame, receipt) {
+    const map = document.querySelector("[data-country-map]");
+    receiptResizeCleanups.get(frame)?.();
+
+    if (!map) {
+      frame.style.height = `${receipt.offsetHeight}px`;
+      return;
+    }
+
+    const updateLayout = () => {
+      const mapWidth = map.getBoundingClientRect().width;
+      if (mapWidth <= 0) return;
+      const scale = mapWidth / COUNTRY_MAP_FIGMA_WIDTH;
+
+      frame.style.width = `${RECEIPT_FIGMA_WIDTH * scale}px`;
+      frame.style.height = `${receipt.offsetHeight * scale}px`;
+      receipt.style.setProperty("--budget-receipt-scale", scale);
+    };
+
+    updateLayout();
+
+    if (typeof ResizeObserver === "function") {
+      const observer = new ResizeObserver(updateLayout);
+      observer.observe(map);
+      observer.observe(receipt);
+      receiptResizeCleanups.set(frame, () => observer.disconnect());
+      return;
+    }
+
+    window.addEventListener("resize", updateLayout);
+    receiptResizeCleanups.set(frame, () => {
+      window.removeEventListener("resize", updateLayout);
+    });
+  }
+
+  function createResponsiveReceipt(data, instanceNumber) {
+    const frame = element("div", "budget-receipt-frame");
+    const receipt = createReceipt(data, instanceNumber);
+    frame.append(receipt);
+    return { frame, receipt };
+  }
+
+  function replaceWithResponsiveReceipt(target, data, instanceNumber) {
+    const { frame, receipt } = createResponsiveReceipt(data, instanceNumber);
+    target.replaceWith(frame);
+    syncReceiptToCountryMap(frame, receipt);
+    return frame;
+  }
+
   async function loadReceiptData(source) {
     if (!source) {
       return DEFAULT_RECEIPT;
@@ -148,15 +201,15 @@
 
     try {
       const data = await loadReceiptData(source);
-      target.replaceWith(createReceipt(data, instanceNumber));
+      replaceWithResponsiveReceipt(target, data, instanceNumber);
     } catch (error) {
       /*
        * Opening index.html directly from Finder can block local JSON fetches.
        * The component still renders its Figma defaults; a local server will
        * load budget-receipt.json normally.
-       */
+      */
       console.warn(error);
-      target.replaceWith(createReceipt(DEFAULT_RECEIPT, instanceNumber));
+      replaceWithResponsiveReceipt(target, DEFAULT_RECEIPT, instanceNumber);
     }
   }
 
@@ -178,7 +231,9 @@
         throw new TypeError("BudgetReceipt.mount needs a valid DOM element.");
       }
 
-      target.replaceChildren(createReceipt(data, Date.now()));
+      const { frame, receipt } = createResponsiveReceipt(data, Date.now());
+      target.replaceChildren(frame);
+      syncReceiptToCountryMap(frame, receipt);
     }
   });
 

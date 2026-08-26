@@ -126,9 +126,9 @@
 
 .cuisine-icon {
   display: block;
-  flex: 0 0 60px;
-  width: 60px;
-  height: 60px;
+  flex: 0 0 var(--country-section-icon-size, 60px);
+  width: var(--country-section-icon-size, 60px);
+  height: var(--country-section-icon-size, 60px);
 }
 
 .cuisine-chapter-copy {

@@ -202,13 +202,13 @@
 .faq-item-question-text {
   width: 930px;
   font-family: var(--type-family-body), sans-serif;
-  font-size: var(--type-size-nav-ul);
+  font-size: var(--type-size-body);
   font-weight: var(--type-weight-strong);
   line-height: normal;
 }
 
 .faq-item.is-open .faq-item-question-text {
-  font-size: 25px;
+  font-size: var(--type-size-body);
 }
 
 .faq-item-answer {
@@ -217,7 +217,7 @@
   margin: 0;
   overflow: hidden;
   font-family: var(--type-family-body), sans-serif;
-  font-size: 19px;
+  font-size: var(--type-size-body);
   font-weight: var(--type-weight-regular);
   line-height: 27px;
   text-indent: 86px;

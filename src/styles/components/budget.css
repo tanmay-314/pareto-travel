@@ -31,6 +31,19 @@
  * Height is content-driven: every added line item extends the receipt while
  * the lower divider, total, paper and perforated edges remain bottom-aligned.
  */
+.budget-receipt-frame {
+  position: relative;
+  width: 554px;
+}
+
+.budget-receipt-frame > .budget-receipt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(var(--budget-receipt-scale, 1));
+  transform-origin: top left;
+}
+
 .budget-receipt {
   position: relative;
   isolation: isolate;
