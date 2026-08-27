@@ -41,13 +41,13 @@
   const positionForIndex = (sequenceIndex) =>
     `${FIRST_POSITION + POSITION_STEP * sequenceIndex}%`;
 
-  const assetImage = ({ src, alt, fallback, className = "inter-city-icon" }) => `
-    <img
-      class="${className}"
-      src="${escapeHtml(src || "")}"
-      alt="${escapeHtml(alt)}"
-      data-inter-city-asset
-    />
+  const assetImage = ({ src, alt, fallback }) => `
+    <span
+      class="inter-city-icon"
+      data-inter-city-icon
+      data-src="${escapeHtml(src || "")}"
+      ${alt ? `role="img" aria-label="${escapeHtml(alt)}"` : 'aria-hidden="true"'}
+    ></span>
     <span class="inter-city-icon-fallback" aria-hidden="true">${escapeHtml(fallback)}</span>
   `;
 
@@ -117,7 +117,7 @@
 
     return `
       <article class="ticket" aria-label="${escapeHtml(`${origin} to ${destination} by ${mode}`)}">
-        <img class="ticket-background" src="${escapeHtml(assets.ticket || "")}" alt="" data-inter-city-asset />
+        <img class="ticket-background" src="${escapeHtml(assets.ticket || "")}" alt="" />
         <span class="ticket-border" aria-hidden="true"></span>
         ${
           leg.recommended
@@ -200,13 +200,26 @@
       </div>
     `;
 
-    root.querySelectorAll("[data-inter-city-asset]").forEach((image) => {
-      const markLoaded = () => image.classList.add("is-loaded");
-      const markFailed = () => image.classList.add("is-failed");
+    root.querySelectorAll("[data-inter-city-icon]").forEach((icon) => {
+      const source = icon.dataset.src;
+      const image = new Image();
+      const markLoaded = () => {
+        icon.style.setProperty(
+          "--inter-city-icon-image",
+          `url("${image.currentSrc || image.src}")`,
+        );
+        icon.classList.add("is-loaded");
+      };
+      const markFailed = () => icon.classList.add("is-failed");
 
       image.addEventListener("load", markLoaded, { once: true });
       image.addEventListener("error", markFailed, { once: true });
+      image.src = source;
       if (image.complete && image.naturalWidth > 0) markLoaded();
+    });
+
+    root.querySelectorAll(".ticket-background").forEach((image) => {
+      image.addEventListener("error", () => image.classList.add("is-failed"), { once: true });
     });
 
     syncIconSizeToCountryMap(root);

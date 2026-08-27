@@ -24,13 +24,11 @@
 }
 
 .country-intro-name,
-.country-intro-subtitle,
 .country-intro-overview {
   width: 100%;
 }
 
-.country-intro-name,
-.country-intro-subtitle {
+.country-intro-name {
   font-family: var(--type-family-display), sans-serif;
   font-style: normal;
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
@@ -46,12 +44,6 @@
   line-height: var(--type-line-height-heading, 72px);
 }
 
-.country-intro-subtitle {
-  font-size: var(--type-size-country-subtitle);
-  font-weight: var(--type-weight-regular);
-  line-height: var(--type-line-height-sub-heading, 48px);
-}
-
 .country-intro-overview {
   font-family: var(--type-family-body), sans-serif;
   font-size: var(--type-size-body);
@@ -64,10 +56,6 @@
 @media (max-width: 600px) {
   .country-intro-name {
     font-size: clamp(42px, 12vw, var(--type-size-page-title));
-  }
-
-  .country-intro-subtitle {
-    font-size: clamp(28px, 8vw, var(--type-size-country-subtitle));
   }
 }
 

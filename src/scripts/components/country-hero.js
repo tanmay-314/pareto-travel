@@ -74,7 +74,6 @@ function normalizeConfig(data, source) {
 
   return {
     name: requiredText(data.name, "name"),
-    subtitle: requiredText(data.subtitle, "subtitle"),
     overview: requiredText(data.overview, "overview"),
     map: {
       src: resolvedMapSource.href,
@@ -105,18 +104,16 @@ function loadSource(source) {
 
 function renderNormalizedCountryHero(root, config) {
   const name = root.querySelector("[data-country-name]");
-  const subtitle = root.querySelector("[data-country-subtitle]");
   const overview = root.querySelector("[data-country-overview]");
   const map = root.querySelector("[data-country-map]");
   const mapShape = root.querySelector("[data-country-map-shape]");
   const locations = root.querySelector("[data-country-map-locations]");
 
-  if (!name || !subtitle || !overview || !map || !mapShape || !locations) {
+  if (!name || !overview || !map || !mapShape || !locations) {
     throw new Error("Country hero markup is missing a required mount point.");
   }
 
   name.textContent = config.name;
-  subtitle.textContent = config.subtitle;
   overview.textContent = config.overview;
   map.style.setProperty("--map-image", `url("${config.map.src}")`);
   map.setAttribute("aria-label", `Destinations in ${config.name}`);

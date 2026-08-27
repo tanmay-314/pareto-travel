@@ -109,7 +109,15 @@
   display: block;
   width: var(--country-section-icon-size, 60px);
   height: var(--country-section-icon-size, 60px);
-  object-fit: contain;
+  background-color: var(--color-icon-secondary);
+  -webkit-mask-image: var(--inter-city-icon-image);
+  mask-image: var(--inter-city-icon-image);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
 }
 
 .inter-city-icon-fallback {
@@ -118,9 +126,9 @@
   display: grid;
   width: calc(var(--country-section-icon-size, 60px) - 8px);
   height: calc(var(--country-section-icon-size, 60px) - 8px);
-  border: 2px dotted var(--inter-city-text-secondary);
+  border: 2px dotted var(--color-icon-secondary);
   border-radius: 50%;
-  color: var(--inter-city-text-secondary);
+  color: var(--color-icon-secondary);
   font-family: var(--type-family-display);
   font-size: 10px;
   place-items: center;

@@ -110,7 +110,6 @@
   --type-size-logo: var(--primitive-scale-x-large);
   --type-size-section-title: var(--primitive-scale-sub-heading);
   --type-size-page-title: var(--primitive-scale-heading);
-  --type-size-country-subtitle: var(--primitive-scale-xx-large);
 
   /* Semantic: body links */
   --type-link-decoration-line: var(--primitive-text-decoration-line-underline);
