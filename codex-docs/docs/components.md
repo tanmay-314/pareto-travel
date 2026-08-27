@@ -113,9 +113,9 @@ Update the paths below when components are integrated.
 
 - Root: `.polaroid-list` (the country page currently mounts it at `#polaroid-list`)
 - Inputs: ordered day entries, place, copy, image, image alt, rotation
-- Key behavior: deal in once on first viewport entry; hover previews exposed cards; click, tap, or keyboard selection promotes a day to the front and updates its visible `DAY X OF Y` label
+- Key behavior: the complete deck is centered in its visual viewport; it deals in once on first viewport entry; hover previews exposed cards; click, tap, or keyboard selection promotes a day to the front and updates its visible `DAY X OF Y` label
 - Keyboard and touch: the active card is in the tab order; arrow keys, Home, and End select days; horizontal swipes select adjacent days on touch screens
-- Motion: shuffle animations use only transforms, opacity, and shadow; reduced-motion users receive a short crossfade instead of spatial motion
+- Motion: shuffle animations use only transforms and opacity; reduced-motion users receive a short crossfade instead of spatial motion
 - Image rule: photo and frame scale together; image region remains 1:1, typically authored at 360 × 360 px
 - Placeholder rule: no teal placeholder unless explicitly requested
 - Implementation paths: `src/scripts/components/itinerary.js`, `src/styles/components/itinerary.css`, and `src/data/countries/<slug>/itinerary.json`

@@ -17,7 +17,7 @@
 }
 
 .annual-travel-dial {
-  width: var(--annual-travel-dial-size, 600px);
+  width: var(--annual-travel-dial-size, 480px);
   max-width: 100%;
   aspect-ratio: 1;
   margin: 0;
@@ -33,7 +33,7 @@
 
 .annual-travel-dial[data-motion="spin"] .annual-travel-dial__ring {
   transform-box: view-box;
-  transform-origin: 300px 300px;
+  transform-origin: 240px 240px;
   animation: annual-travel-dial-enter var(--dial-enter-duration)
     cubic-bezier(0.16, 1, 0.3, 1) both;
   will-change: transform;
@@ -41,7 +41,7 @@
 
 .annual-travel-dial[data-motion="continuous"] .annual-travel-dial__ring {
   transform-box: view-box;
-  transform-origin: 300px 300px;
+  transform-origin: 240px 240px;
   animation: annual-travel-dial-rotate var(--dial-spin-duration) linear infinite;
   will-change: transform;
 }
@@ -179,7 +179,7 @@
 }
 
 .best-months > .country-section-title,
-.best-months-editorial {
+.best-months-graphic {
   margin-inline-start: calc(
     var(--space-xxl) - var(--best-months-page-gutter)
   );
@@ -197,7 +197,7 @@
   flex-direction: column;
   gap: var(--space-lg);
   min-width: 0;
-  padding: var(--space-sm) clamp(var(--space-xxl), 6vw, 115px) var(--space-sm) 0;
+  padding-block: var(--space-sm);
 }
 
 .best-months-editorial p {
@@ -207,25 +207,9 @@
 }
 
 .best-months-graphic {
-  position: relative;
   display: grid;
   min-width: 0;
-  padding-inline-start: clamp(var(--space-xxl), 6vw, 115px);
   place-items: center;
-}
-
-.best-months-graphic::before {
-  position: absolute;
-  inset-block: 0;
-  inset-inline-start: 0;
-  width: 4px;
-  background: radial-gradient(
-      circle,
-      var(--color-border-default) 2px,
-      transparent 2.2px
-    )
-    center top / 4px 12px repeat-y;
-  content: "";
 }
 
 @media (max-width: 1500px) {
@@ -253,18 +237,5 @@
 
   .best-months-editorial {
     padding: 0;
-  }
-
-  .best-months-graphic {
-    padding: var(--space-xxl) 0 0;
-  }
-
-  .best-months-graphic::before {
-    inset-block: 0 auto;
-    inset-inline: 0;
-    width: auto;
-    height: 4px;
-    background-size: 12px 4px;
-    background-repeat: repeat-x;
   }
 }

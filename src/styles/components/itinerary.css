@@ -24,7 +24,11 @@
   isolation: isolate;
   opacity: 1;
   transform: translate3d(
-    calc(var(--itinerary-card-x, 0px) + var(--itinerary-interaction-x, 0px)),
+    calc(
+      var(--itinerary-deck-offset, 0px) +
+        var(--itinerary-card-x, 0px) +
+        var(--itinerary-interaction-x, 0px)
+    ),
     var(--itinerary-interaction-y, 0px),
     0
   );
@@ -58,14 +62,7 @@
   height: 100%;
   transform: rotate(var(--polaroid-resting-rotation));
   transform-origin: center;
-  box-shadow: 0 8px 18px rgba(69, 42, 56, 0.12);
-  transition:
-    transform 200ms cubic-bezier(.22, 1, .36, 1),
-    box-shadow 200ms ease;
-}
-
-.itinerary-polaroid.is-active .itinerary-polaroid-tilt {
-  box-shadow: 0 16px 34px rgba(69, 42, 56, 0.24);
+  transition: transform 200ms cubic-bezier(.22, 1, .36, 1);
 }
 
 .itinerary-polaroid-surface:focus-visible {
@@ -87,7 +84,6 @@
     .itinerary-polaroid-surface:hover
     .itinerary-polaroid-tilt {
     transform: rotate(var(--polaroid-preview-rotation, 0deg));
-    box-shadow: 0 18px 34px rgba(69, 42, 56, 0.22);
   }
 }
 
@@ -203,7 +199,7 @@
   }
 
   .itinerary-polaroid-tilt {
-    transition-property: box-shadow;
+    transition-property: none;
   }
 
   .polaroid-list.is-awaiting-deal .itinerary-polaroid {
@@ -261,28 +257,12 @@
 }
 
 .itinerary-editorial {
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
   min-width: 0;
   min-height: 460px;
-  padding: 4px 0 0 50px;
-}
-
-.itinerary-editorial::before {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 4px;
-  background: radial-gradient(
-      circle,
-      var(--color-border-default) 2px,
-      transparent 2.2px
-    )
-    center top / 4px 12px repeat-y;
-  content: "";
+  padding: 4px 0 0;
 }
 
 .itinerary-editorial-copy {
@@ -310,10 +290,6 @@
   .itinerary-layout {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  .itinerary-editorial {
-    padding-left: var(--space-xxl);
-  }
 }
 
 @media (max-width: 900px) {
@@ -336,15 +312,6 @@
 
   .itinerary-editorial {
     min-height: 0;
-    padding: var(--space-xxl) 0 0;
-  }
-
-  .itinerary-editorial::before {
-    right: 0;
-    bottom: auto;
-    width: auto;
-    height: 4px;
-    background-size: 12px 4px;
-    background-repeat: repeat-x;
+    padding: 0;
   }
 }

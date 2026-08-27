@@ -19,13 +19,13 @@ const VALID_STATES = new Set(["best", "good", "avoid"]);
 const sourceCache = new Map();
 let dialInstanceId = 0;
 
-const DIAL_SIZE = 600;
-const DIAL_TO_MAP_SIZE_RATIO = 5 / 6;
+const DIAL_VIEWBOX_SIZE = 480;
+const DIAL_TO_MAP_SIZE_RATIO = 2 / 3;
 const dialResizeCleanups = new WeakMap();
 
 const geometry = {
-  centerX: DIAL_SIZE / 2,
-  centerY: DIAL_SIZE / 2,
+  centerX: DIAL_VIEWBOX_SIZE / 2,
+  centerY: DIAL_VIEWBOX_SIZE / 2,
   dotRadius: 3,
   ringRadius: 230,
   labelRadius: 190,
@@ -175,7 +175,7 @@ export function renderAnnualTravelDial(container, rawConfig) {
   const descriptionId = `annual-dial-description-${dialInstanceId}`;
   const svg = svgNode("svg", {
     class: "annual-travel-dial__svg",
-    viewBox: `0 0 ${DIAL_SIZE} ${DIAL_SIZE}`,
+    viewBox: `0 0 ${DIAL_VIEWBOX_SIZE} ${DIAL_VIEWBOX_SIZE}`,
     role: "img",
     "aria-labelledby": `${titleId} ${descriptionId}`,
     preserveAspectRatio: "xMidYMid meet",
@@ -190,8 +190,8 @@ export function renderAnnualTravelDial(container, rawConfig) {
     title,
     description,
     svgNode("rect", {
-      width: DIAL_SIZE,
-      height: DIAL_SIZE,
+      width: DIAL_VIEWBOX_SIZE,
+      height: DIAL_VIEWBOX_SIZE,
       fill: "var(--dial-background)",
     }),
     svgNode("circle", {

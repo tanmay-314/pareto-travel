@@ -481,6 +481,8 @@
         availableWidth > 0 ? availableWidth / stackWidth : mapScale;
       const scale = Math.min(mapScale, availableScale, 1);
       const polaroidWidth = FIGMA_SIZE.width * scale;
+      const deckWidth = stackWidth * scale;
+      const deckOffset = Math.max((availableWidth - deckWidth) / 2, 0);
       root.style.setProperty(
         "--country-map-polaroid-scale",
         scale,
@@ -493,6 +495,7 @@
         "--country-map-polaroid-height",
         `${FIGMA_SIZE.height * scale}px`,
       );
+      root.style.setProperty("--itinerary-deck-offset", `${deckOffset}px`);
       root.style.setProperty("--itinerary-stack-scale", scale);
       root.querySelectorAll("[data-itinerary-card]").forEach((card) => {
         const offset = Number.parseFloat(card.dataset.stackOffset) || 0;
