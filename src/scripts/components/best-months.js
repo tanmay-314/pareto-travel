@@ -265,6 +265,47 @@ function showError(container, error) {
   container.removeAttribute("aria-busy");
 }
 
+function appendFormattedEditorialText(paragraph, text) {
+  let cursor = 0;
+
+  for (const match of text.matchAll(/\*\*(.+?)\*\*/g)) {
+    if (match.index > cursor) {
+      paragraph.append(document.createTextNode(text.slice(cursor, match.index)));
+    }
+
+    const strong = document.createElement("strong");
+    strong.textContent = match[1];
+    paragraph.append(strong);
+    cursor = match.index + match[0].length;
+  }
+
+  if (cursor < text.length) {
+    paragraph.append(document.createTextNode(text.slice(cursor)));
+  }
+}
+
+export function renderBestMonthsEditorial(container, rawEditorial) {
+  if (!container) return null;
+
+  const paragraphs = Array.isArray(rawEditorial)
+    ? rawEditorial.filter(
+        (paragraph) =>
+          typeof paragraph === "string" && paragraph.trim().length > 0,
+      )
+    : [];
+
+  container.replaceChildren(
+    ...paragraphs.map((text) => {
+      const paragraph = document.createElement("p");
+      appendFormattedEditorialText(paragraph, text);
+      return paragraph;
+    }),
+  );
+  container.hidden = paragraphs.length === 0;
+
+  return container;
+}
+
 export async function setDialCountry(container, countryKey) {
   const source = container.dataset.source || "../data/country/cambodia/best-months.json";
   container.dataset.country = countryKey;
@@ -272,7 +313,14 @@ export async function setDialCountry(container, countryKey) {
 
   try {
     const data = await loadSource(source);
-    renderAnnualTravelDial(container, data.countries?.[countryKey]);
+    const countryConfig = data.countries?.[countryKey];
+    renderAnnualTravelDial(container, countryConfig);
+    renderBestMonthsEditorial(
+      container
+        .closest(".best-months")
+        ?.querySelector("[data-best-months-editorial]"),
+      countryConfig?.editorial,
+    );
   } catch (error) {
     showError(container, error);
   }

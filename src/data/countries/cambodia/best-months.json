@@ -4,6 +4,11 @@
       "country": "Cambodia",
       "centerLabel": "THE SWEET SPOT",
       "centerValue": "NOV → FEB",
+      "editorial": [
+        "**November to February**: The wet season is the ideal time to visit Cambodia, but beware, it’s also the most crowded.",
+        "**June to September**: We traveled during the relative lull of August, with far fewer crowds, but the magnificence of Angkor Wat also dimmed.",
+        "**March to May, October**: The other months are too hot and dry to make for a pleasant visit."
+      ],
       "months": {
         "jan": "best",
         "feb": "best",
