@@ -5,11 +5,12 @@
 
 .itinerary-polaroid {
   --polaroid-rotation: 0deg;
+  --polaroid-resting-rotation: var(--polaroid-rotation);
   --polaroid-scale: 0.9836065574;
 
   position: absolute;
   top: 0;
-  left: var(--itinerary-card-x, 0px);
+  left: 0;
   z-index: var(--itinerary-card-z, 1);
   width: var(
     --country-map-polaroid-width,
@@ -21,6 +22,16 @@
   );
   margin: 0;
   isolation: isolate;
+  opacity: 1;
+  transform: translate3d(
+    calc(var(--itinerary-card-x, 0px) + var(--itinerary-interaction-x, 0px)),
+    var(--itinerary-interaction-y, 0px),
+    0
+  );
+  transition:
+    transform 200ms cubic-bezier(.22, 1, .36, 1),
+    opacity 200ms ease;
+  will-change: transform;
 }
 
 .itinerary-polaroid-surface {
@@ -29,18 +40,89 @@
   left: 0;
   width: 412px;
   height: 460px;
+  padding: 0;
+  border: 0;
+  appearance: none;
+  background: transparent;
+  text-align: initial;
   transform: scale(
     var(--country-map-polaroid-scale, var(--polaroid-scale))
   );
   transform-origin: top left;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .itinerary-polaroid-tilt {
   position: relative;
   width: 100%;
   height: 100%;
-  transform: rotate(var(--polaroid-rotation));
+  transform: rotate(var(--polaroid-resting-rotation));
   transform-origin: center;
+  box-shadow: 0 8px 18px rgba(69, 42, 56, 0.12);
+  transition:
+    transform 200ms cubic-bezier(.22, 1, .36, 1),
+    box-shadow 200ms ease;
+}
+
+.itinerary-polaroid.is-active .itinerary-polaroid-tilt {
+  box-shadow: 0 16px 34px rgba(69, 42, 56, 0.24);
+}
+
+.itinerary-polaroid-surface:focus-visible {
+  outline: none;
+}
+
+.itinerary-polaroid-surface:focus-visible .itinerary-polaroid-tilt {
+  outline: 3px solid var(--color-border-strong);
+  outline-offset: 7px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .itinerary-polaroid:not(.is-active):has(.itinerary-polaroid-surface:hover) {
+    --itinerary-interaction-x: 26px;
+    --itinerary-interaction-y: -10px;
+  }
+
+  .itinerary-polaroid:not(.is-active)
+    .itinerary-polaroid-surface:hover
+    .itinerary-polaroid-tilt {
+    transform: rotate(var(--polaroid-preview-rotation, 0deg));
+    box-shadow: 0 18px 34px rgba(69, 42, 56, 0.22);
+  }
+}
+
+.polaroid-list.is-shuffling .itinerary-polaroid,
+.polaroid-list.is-shuffling .itinerary-polaroid-tilt {
+  transition-delay: var(--itinerary-shuffle-delay, 0ms);
+  transition-duration: 460ms;
+}
+
+.polaroid-list.is-shuffling .itinerary-polaroid {
+  transition-timing-function: cubic-bezier(.22, 1, .36, 1);
+}
+
+.polaroid-list.is-shuffling .itinerary-polaroid.is-lifting {
+  --itinerary-interaction-x: 24px;
+  --itinerary-interaction-y: -12px;
+}
+
+.polaroid-list.is-awaiting-deal .itinerary-polaroid {
+  --itinerary-interaction-x: -40px;
+  --itinerary-interaction-y: 24px;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.polaroid-list.is-awaiting-deal .itinerary-polaroid-tilt {
+  transform: rotate(-6deg);
+}
+
+.polaroid-list.is-dealing .itinerary-polaroid,
+.polaroid-list.is-dealing .itinerary-polaroid-tilt {
+  transition-delay: var(--itinerary-deal-delay, 0ms);
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(.22, 1, .36, 1);
 }
 
 .itinerary-polaroid-photo {
@@ -110,8 +192,35 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .itinerary-polaroid,
+  .itinerary-polaroid-tilt {
+    transition-duration: 120ms;
+    transition-delay: 0ms;
+  }
+
   .itinerary-polaroid {
-    transition: none;
+    transition-property: opacity;
+  }
+
+  .itinerary-polaroid-tilt {
+    transition-property: box-shadow;
+  }
+
+  .polaroid-list.is-awaiting-deal .itinerary-polaroid {
+    --itinerary-interaction-x: 0px;
+    --itinerary-interaction-y: 0px;
+
+    opacity: 1;
+  }
+
+  .polaroid-list.is-awaiting-deal .itinerary-polaroid-tilt,
+  .polaroid-list.is-shuffling .itinerary-polaroid-tilt {
+    transform: rotate(var(--polaroid-resting-rotation));
+  }
+
+  .polaroid-list.is-shuffling .itinerary-polaroid {
+    opacity: 0.72;
+    transform: translate3d(var(--itinerary-card-x, 0px), 0, 0);
   }
 }
 
@@ -121,6 +230,7 @@
   width: 100%;
   height: var(--country-map-polaroid-height, 460px);
   isolation: isolate;
+  touch-action: pan-y;
 }
 
 .itinerary {

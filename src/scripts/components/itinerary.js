@@ -35,6 +35,7 @@
   });
 
   const COUNTRY_MAP_FIGMA_WIDTH = 720;
+  const deckCleanups = new WeakMap();
   function normaliseRotation(value) {
     const rotation = String(value || DEFAULTS.rotation);
     return ALLOWED_ROTATIONS.includes(rotation)
@@ -45,6 +46,12 @@
   function rotationToCss(value) {
     const figmaDegrees = Number.parseFloat(normaliseRotation(value));
     return `${figmaDegrees * -1}deg`;
+  }
+
+  function getStackOffset(position, count) {
+    return count > 1
+      ? (FIGMA_SIZE.stackTravel * position) / (count - 1)
+      : 0;
   }
 
   function createText(className, text) {
@@ -78,12 +85,12 @@
     };
   }
 
-  function create(config) {
+  function create(config, interactive = false) {
     const options = { ...DEFAULTS, ...config };
     const imageOptions = normaliseImage(options);
     const scale = imageOptions.size / FIGMA_SIZE.photo;
     const polaroid = document.createElement("article");
-    const surface = document.createElement("div");
+    const surface = document.createElement(interactive ? "button" : "div");
     const tilt = document.createElement("div");
     const photo = document.createElement("div");
     const frame = document.createElement("img");
@@ -91,7 +98,10 @@
 
     polaroid.className = "itinerary-polaroid";
     polaroid.setAttribute("role", "listitem");
+    polaroid.dataset.itineraryCard = "";
     polaroid.dataset.rotation = normaliseRotation(options.rotation);
+    polaroid.dataset.dayLabel = options.dayNumber;
+    polaroid.dataset.location = options.location;
     polaroid.style.setProperty("--polaroid-scale", scale);
     polaroid.style.setProperty(
       "--polaroid-width",
@@ -103,6 +113,13 @@
     );
 
     surface.className = "itinerary-polaroid-surface";
+    if (interactive) {
+      surface.type = "button";
+      surface.setAttribute(
+        "aria-label",
+        `Select ${options.dayNumber}: ${options.location}`,
+      );
+    }
 
     tilt.className = "itinerary-polaroid-tilt";
     tilt.style.setProperty(
@@ -155,23 +172,262 @@
       typeof target === "string" ? document.querySelector(target) : target;
     if (!root) throw new Error("Itinerary mount target was not found.");
     const count = days.length;
-    const divisor = Math.max(count - 1, 1);
+    deckCleanups.get(root)?.();
     const cards = days.map((day, index) => {
-      const card = create(day);
-      const offset = count > 1 ? (FIGMA_SIZE.stackTravel * index) / divisor : 0;
+      const card = create(day, true);
+      const offset = getStackOffset(index, count);
       const scale =
         Number.parseFloat(
           root.style.getPropertyValue("--itinerary-stack-scale"),
         ) || 1;
       card.style.setProperty("--itinerary-card-z", count - index);
+      card.style.setProperty("--itinerary-deal-delay", `${index * 100}ms`);
       card.dataset.stackOffset = offset;
+      card.dataset.dayIndex = index;
       card.style.setProperty("--itinerary-card-x", `${offset * scale}px`);
       return card;
     });
 
     root.dataset.dayCount = count;
     root.replaceChildren(...cards);
+    if (cards.length) enhanceDeck(root, cards);
     return root.children;
+  }
+
+  function getDayOrdinal(card, fallback) {
+    const match = card.dataset.dayLabel?.match(/\d+/);
+    return match ? Number.parseInt(match[0], 10) : fallback + 1;
+  }
+
+  function getRestingRotation(card, rank) {
+    if (rank === 0) return "0deg";
+    if (rank === 1) return rotationToCss("2°");
+
+    const configured = rotationToCss(card.dataset.rotation);
+    return configured === "0deg"
+      ? rank % 2 === 0
+        ? "-4deg"
+        : "4deg"
+      : configured;
+  }
+
+  function enhanceDeck(root, cards) {
+    let activeIndex = 0;
+    let isShuffling = false;
+    let touchStart = null;
+    let suppressClick = false;
+    const timers = new Set();
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    );
+
+    const later = (callback, delay) => {
+      const timer = window.setTimeout(() => {
+        timers.delete(timer);
+        callback();
+      }, delay);
+      timers.add(timer);
+      return timer;
+    };
+
+    const updateLayout = () => {
+      const count = cards.length;
+      const order = cards.map((_, rank) => (activeIndex + rank) % count);
+      const scale =
+        Number.parseFloat(
+          root.style.getPropertyValue("--itinerary-stack-scale"),
+        ) || 1;
+
+      order.forEach((cardIndex, rank) => {
+        const card = cards[cardIndex];
+        const control = card.querySelector(".itinerary-polaroid-surface");
+        const day = card.querySelector(".itinerary-polaroid-day");
+        const ordinal = getDayOrdinal(card, cardIndex);
+        const isActive = rank === 0;
+        const offset = getStackOffset(rank, count);
+        const restingRotation = getRestingRotation(card, rank);
+        const rotationValue = Number.parseFloat(restingRotation) || 0;
+
+        card.dataset.stackOffset = offset;
+        card.dataset.deckRank = rank;
+        card.style.setProperty("--itinerary-card-x", `${offset * scale}px`);
+        card.style.setProperty("--itinerary-card-z", count - rank);
+        card.style.setProperty(
+          "--itinerary-shuffle-delay",
+          `${rank * 18}ms`,
+        );
+        card.style.setProperty("--polaroid-resting-rotation", restingRotation);
+        card.style.setProperty(
+          "--polaroid-preview-rotation",
+          `${rotationValue * 0.35}deg`,
+        );
+        card.classList.toggle("is-active", isActive);
+        control.tabIndex = isActive ? 0 : -1;
+        control.setAttribute("aria-pressed", String(isActive));
+        control.setAttribute(
+          "aria-label",
+          isActive
+            ? `Day ${ordinal} of ${count} selected: ${card.dataset.location}`
+            : `Select day ${ordinal} of ${count}: ${card.dataset.location}`,
+        );
+        day.textContent = isActive
+          ? `DAY ${ordinal} OF ${count}`
+          : card.dataset.dayLabel;
+      });
+    };
+
+    const selectCard = (nextIndex, moveFocus = false) => {
+      if (
+        isShuffling ||
+        nextIndex === activeIndex ||
+        nextIndex < 0 ||
+        nextIndex >= cards.length
+      ) {
+        if (moveFocus && nextIndex === activeIndex) {
+          cards[activeIndex]
+            .querySelector(".itinerary-polaroid-surface")
+            ?.focus();
+        }
+        return;
+      }
+
+      isShuffling = true;
+      const selectedCard = cards[nextIndex];
+      const stageDelay = reduceMotion.matches ? 55 : 100;
+      const finishDelay = reduceMotion.matches ? 160 : 580;
+      selectedCard.style.setProperty("--itinerary-shuffle-delay", "0ms");
+      root.classList.add("is-shuffling");
+      selectedCard.classList.add("is-lifting");
+
+      later(() => {
+        activeIndex = nextIndex;
+        updateLayout();
+        selectedCard.classList.remove("is-lifting");
+        if (moveFocus) {
+          selectedCard
+            .querySelector(".itinerary-polaroid-surface")
+            ?.focus({ preventScroll: true });
+        }
+      }, stageDelay);
+
+      later(() => {
+        root.classList.remove("is-shuffling");
+        isShuffling = false;
+      }, finishDelay);
+    };
+
+    const handleClick = (event) => {
+      const card = event.target.closest("[data-itinerary-card]");
+      if (!card || !root.contains(card)) return;
+      if (suppressClick) {
+        event.preventDefault();
+        return;
+      }
+      selectCard(Number.parseInt(card.dataset.dayIndex, 10));
+    };
+
+    const handleKeydown = (event) => {
+      if (!event.target.closest(".itinerary-polaroid-surface")) return;
+      let nextIndex = activeIndex;
+
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        nextIndex = (activeIndex + 1) % cards.length;
+      } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        nextIndex = (activeIndex - 1 + cards.length) % cards.length;
+      } else if (event.key === "Home") {
+        nextIndex = 0;
+      } else if (event.key === "End") {
+        nextIndex = cards.length - 1;
+      } else {
+        return;
+      }
+
+      event.preventDefault();
+      selectCard(nextIndex, true);
+    };
+
+    const handleTouchStart = (event) => {
+      if (event.touches.length !== 1) return;
+      touchStart = {
+        x: event.touches[0].clientX,
+        y: event.touches[0].clientY,
+      };
+    };
+
+    const handleTouchEnd = (event) => {
+      if (!touchStart || !event.changedTouches.length) return;
+      const deltaX = event.changedTouches[0].clientX - touchStart.x;
+      const deltaY = event.changedTouches[0].clientY - touchStart.y;
+      touchStart = null;
+
+      if (Math.abs(deltaX) < 36 || Math.abs(deltaX) <= Math.abs(deltaY)) {
+        return;
+      }
+
+      suppressClick = true;
+      later(() => {
+        suppressClick = false;
+      }, 400);
+      const direction = deltaX < 0 ? 1 : -1;
+      const nextIndex =
+        (activeIndex + direction + cards.length) % cards.length;
+      selectCard(nextIndex);
+    };
+
+    const handleTouchCancel = () => {
+      touchStart = null;
+    };
+
+    const beginDeal = () => {
+      if (root.dataset.dealt === "true") return;
+      root.dataset.dealt = "true";
+      if (reduceMotion.matches) {
+        root.classList.remove("is-awaiting-deal");
+        return;
+      }
+      root.classList.add("is-dealing");
+      requestAnimationFrame(() => {
+        root.classList.remove("is-awaiting-deal");
+      });
+      later(() => root.classList.remove("is-dealing"), 650 + cards.length * 100);
+    };
+
+    root.classList.add("is-awaiting-deal");
+    updateLayout();
+    root.addEventListener("click", handleClick);
+    root.addEventListener("keydown", handleKeydown);
+    root.addEventListener("touchstart", handleTouchStart, { passive: true });
+    root.addEventListener("touchend", handleTouchEnd, { passive: true });
+    root.addEventListener("touchcancel", handleTouchCancel, { passive: true });
+
+    let dealObserver = null;
+    if ("IntersectionObserver" in window) {
+      dealObserver = new IntersectionObserver(
+        (entries) => {
+          if (!entries.some((entry) => entry.isIntersecting)) return;
+          dealObserver.disconnect();
+          requestAnimationFrame(() => requestAnimationFrame(beginDeal));
+        },
+        { threshold: 0.18 },
+      );
+      dealObserver.observe(root);
+    } else {
+      requestAnimationFrame(beginDeal);
+    }
+
+    const cleanup = () => {
+      dealObserver?.disconnect();
+      timers.forEach((timer) => window.clearTimeout(timer));
+      root.removeEventListener("click", handleClick);
+      root.removeEventListener("keydown", handleKeydown);
+      root.removeEventListener("touchstart", handleTouchStart);
+      root.removeEventListener("touchend", handleTouchEnd);
+      root.removeEventListener("touchcancel", handleTouchCancel);
+      root.classList.remove("is-awaiting-deal", "is-dealing", "is-shuffling");
+      delete root.dataset.dealt;
+      deckCleanups.delete(root);
+    };
+    deckCleanups.set(root, cleanup);
   }
 
   function renderEditorial(target, itinerary) {
@@ -218,7 +474,9 @@
       if (mapWidth <= 0) return;
 
       const mapScale = mapWidth / COUNTRY_MAP_FIGMA_WIDTH;
-      const stackWidth = FIGMA_SIZE.width + FIGMA_SIZE.stackTravel;
+      const cardCount = root.querySelectorAll("[data-itinerary-card]").length;
+      const stackWidth =
+        FIGMA_SIZE.width + (cardCount > 1 ? FIGMA_SIZE.stackTravel : 0);
       const availableScale =
         availableWidth > 0 ? availableWidth / stackWidth : mapScale;
       const scale = Math.min(mapScale, availableScale, 1);
@@ -236,7 +494,7 @@
         `${FIGMA_SIZE.height * scale}px`,
       );
       root.style.setProperty("--itinerary-stack-scale", scale);
-      Array.from(root.children).forEach((card) => {
+      root.querySelectorAll("[data-itinerary-card]").forEach((card) => {
         const offset = Number.parseFloat(card.dataset.stackOffset) || 0;
         card.style.setProperty("--itinerary-card-x", `${offset * scale}px`);
       });
@@ -333,8 +591,6 @@
     const listSelector = "#polaroid-list";
     if (!document.querySelector(listSelector)) return;
 
-    syncToCountryMap(listSelector, "[data-country-map]");
-
     loadItinerary(DATA_URL.href, {
       index: 0,
       selectors: {
@@ -343,9 +599,13 @@
         editorial: "#itinerary-editorial",
         facts: "#trip-facts",
       },
-    }).catch((error) => {
-      console.error("ParetoPolaroid:", error);
-    });
+    })
+      .then(() => {
+        syncToCountryMap(listSelector, "[data-country-map]");
+      })
+      .catch((error) => {
+        console.error("ParetoPolaroid:", error);
+      });
   }
 
   if (document.readyState === "loading") {
