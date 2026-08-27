@@ -130,10 +130,11 @@ Update the paths below when components are integrated.
 
 ### Cuisine/editorial section
 
-- Root: `[data-component="cuisine-section"]` or the established repository selector
-- Inputs: heading, editorial copy, image/artwork, captions, links, optional subsections
-- Key behavior: preserve the Figma editorial composition while allowing realistic copy lengths
-- Implementation paths: _record when integrated_
+- Root: `[data-cuisine-component]`
+- Inputs: `title`, up to three `chapters`, an `editorial` paragraph array, and an optional `detailLink`
+- Key behavior: render the three dishes inside the `540 × 600px` cuisine menu artefact, scale the full artefact to `3:4` of the live country-map width, pair it with editorial copy on desktop, and collapse to one column below `900px`
+- Compatibility: legacy `lede` and `paretoPick.copy` values are used when `editorial` is absent
+- Implementation paths: `src/scripts/components/cuisine.js`, `src/styles/components/cuisine.css`, and `src/data/countries/<slug>/cuisine.json`
 
 ### Country map and dot artwork
 

@@ -218,6 +218,33 @@ Illustrative shape:
 
 Use an anchor when the item navigates. Do not model it as a click handler without an `href`.
 
+## Cuisine
+
+Illustrative shape:
+
+```json
+{
+  "title": "CUISINE",
+  "chapters": [
+    {
+      "period": "BREAKFAST",
+      "icon": "../assets/components/cuisine/icon-morning.svg",
+      "dish": "Nom banh chok",
+      "description": "Cool rice noodles, green fish curry and herbs."
+    }
+  ],
+  "editorial": [
+    "A short introduction to the country’s food culture."
+  ],
+  "detailLink": {
+    "label": "Read the full cuisine guide",
+    "href": "#cuisine"
+  }
+}
+```
+
+`chapters` is capped at three by the current composition. `detailLink` is optional. Older data may use `lede` and `paretoPick.copy`; the component treats those values as editorial fallback copy.
+
 ## Asset references
 
 - Prefer paths rooted consistently from the served site root.

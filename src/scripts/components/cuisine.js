@@ -1,44 +1,39 @@
 (() => {
   "use strict";
 
-  const ICON_TO_MAP_SIZE_RATIO = 1 / 12;
+  const COUNTRY_MAP_FIGMA_WIDTH = 720;
+  const MENU_FIGMA_WIDTH = 540;
+  const MENU_FIGMA_HEIGHT = 600;
   const resizeCleanups = new WeakMap();
 
   const DEFAULT_DATA = {
     title: "CUISINE",
-    lede:
-      "A quick way into Cambodia’s food culture — what to order, when to eat it, and the dishes worth planning a day around.",
     chapters: [
       {
-        period: "MORNING",
-        icon: "./assets/icon-morning.svg",
+        period: "BREAKFAST",
+        icon: "../assets/components/cuisine/icon-morning.svg",
         dish: "Nom banh chok",
         description:
-          "Cool rice noodles, green fish curry and a fistful of herbs — Cambodia’s most quietly perfect breakfast.",
-        note: "GO BEFORE 9 AM · MARKET STALLS"
+          "Cool rice noodles, green fish curry and a fistful of herbs — Cambodia’s most quietly perfect breakfast."
       },
       {
-        period: "MIDDAY",
-        icon: "./assets/icon-afternoon.svg",
+        period: "LUNCH",
+        icon: "../assets/components/cuisine/icon-afternoon.svg",
         dish: "Fish amok",
         description:
-          "Freshwater fish steamed with coconut custard and kroeung. Subtle, aromatic, and much better than its tourist-menu reputation.",
-        note: "ORDER WITH RICE · SHAREABLE"
+          "Freshwater fish steamed with coconut custard and kroeung. Subtle, aromatic, and much better than its reputation."
       },
       {
-        period: "AFTER DARK",
-        icon: "./assets/icon-night.svg",
+        period: "DINNER",
+        icon: "../assets/components/cuisine/icon-night.svg",
         dish: "Beef lok lak",
         description:
-          "Peppery seared beef, crisp vegetables and a sharp lime dip: the easy crowd-pleaser after a temple-heavy day.",
-        note: "BEST WITH KAMPOT PEPPER"
+          "Peppery seared beef, crisp vegetables and a sharp lime dip: the easy crowd-pleaser after a temple-heavy day."
       }
     ],
-    paretoPick: {
-      label: "PARETO PICK",
-      copy:
-        "Spend less time chasing restaurant lists: one market breakfast, one home-style lunch, one good Kampot-pepper dinner."
-    }
+    editorial: [
+      "Cambodian cuisine, or Khmer cuisine, is subtle, aromatic, and deeply shaped by the country’s rivers, fertile plains, and tropical climate. Rice and freshwater fish form the backbone of everyday meals, accompanied by fragrant herbs, vegetables, fermented ingredients, and sauces that balance salty, sour, sweet, and occasionally bitter flavours."
+    ]
   };
 
   function escapeHtml(value = "") {
@@ -63,34 +58,72 @@
         >
 
         <div class="cuisine-chapter-copy">
-          <p class="cuisine-period">${escapeHtml(chapter.period)}</p>
-          <div class="cuisine-chapter-spacer" aria-hidden="true"></div>
-
-          <h3 class="cuisine-dish">${escapeHtml(chapter.dish)}</h3>
+          <h3 class="cuisine-item-title">
+            <span class="cuisine-period">${escapeHtml(chapter.period)}</span>
+            <span class="cuisine-item-title-separator" aria-hidden="true">|</span>
+            <span class="cuisine-dish">${escapeHtml(chapter.dish)}</span>
+          </h3>
           <p class="cuisine-description">${escapeHtml(chapter.description)}</p>
-
-          <div class="cuisine-chapter-spacer" aria-hidden="true"></div>
-          <p class="cuisine-note">${escapeHtml(chapter.note)}</p>
         </div>
       </article>
     `;
   }
 
-  function syncIconSizeToCountryMap(root) {
+  function getEditorial(data) {
+    if (Array.isArray(data.editorial)) {
+      return data.editorial.filter(Boolean);
+    }
+
+    return [data.lede, data.paretoPick?.copy].filter(Boolean);
+  }
+
+  function renderEditorial(data) {
+    const paragraphs = getEditorial(data);
+    const link = data.detailLink;
+    const hasLink = Boolean(link?.label && link?.href);
+
+    return `
+      <article class="cuisine-editorial"${paragraphs.length || hasLink ? "" : " hidden"}>
+        ${paragraphs
+          .map(
+            (paragraph) =>
+              `<p class="cuisine-editorial-copy">${escapeHtml(paragraph)}</p>`,
+          )
+          .join("")}
+        ${
+          hasLink
+            ? `<a class="cuisine-editorial-link" href="${escapeHtml(link.href)}">${escapeHtml(link.label)}</a>`
+            : ""
+        }
+      </article>
+    `;
+  }
+
+  function syncMenuToCountryMap(root) {
     const map = document.querySelector("[data-country-map]");
+    const frame = root.querySelector(".cuisine-menu-frame");
+    const menu = frame?.querySelector(".cuisine-menu");
     resizeCleanups.get(root)?.();
 
-    if (!map) return;
+    if (!frame || !menu) return;
 
-    const updateSize = (mapWidth = map.getBoundingClientRect().width) => {
+    const updateSize = (
+      mapWidth = map?.getBoundingClientRect().width || COUNTRY_MAP_FIGMA_WIDTH,
+    ) => {
       if (mapWidth <= 0) return;
-      root.style.setProperty(
-        "--country-section-icon-size",
-        `${mapWidth * ICON_TO_MAP_SIZE_RATIO}px`,
-      );
+      const scale = mapWidth / COUNTRY_MAP_FIGMA_WIDTH;
+      const scaledWidth = MENU_FIGMA_WIDTH * scale;
+      const scaledHeight = MENU_FIGMA_HEIGHT * scale;
+
+      root.style.setProperty("--cuisine-menu-scaled-width", `${scaledWidth}px`);
+      frame.style.width = `${scaledWidth}px`;
+      frame.style.height = `${scaledHeight}px`;
+      menu.style.setProperty("--cuisine-menu-scale", scale);
     };
 
     updateSize();
+
+    if (!map) return;
 
     if (typeof ResizeObserver === "function") {
       const observer = new ResizeObserver(([entry]) => {
@@ -114,33 +147,25 @@
       : DEFAULT_DATA.chapters;
 
     root.innerHTML = `
+      <h2 class="cuisine-title" id="cuisine-title">
+        ${escapeHtml(data.title || "CUISINE")}
+      </h2>
 
-      <div class="cuisine-title-row">
-        <h2 class="cuisine-title" id="cuisine-title">
-          ${escapeHtml(data.title || "CUISINE")}
-        </h2>
+      <div class="cuisine-layout">
+        <div class="cuisine-menu-frame">
+          <div class="cuisine-menu">
+            <span class="cuisine-menu-paper" aria-hidden="true"></span>
+            <div class="cuisine-chapters">
+              ${chapters.map(renderChapter).join("")}
+            </div>
+          </div>
+        </div>
 
-        <p class="cuisine-lede">${escapeHtml(data.lede)}</p>
+        ${renderEditorial(data)}
       </div>
-
-      <div class="cuisine-rule" aria-hidden="true"></div>
-
-      <div class="cuisine-chapters">
-        ${chapters.map(renderChapter).join("")}
-      </div>
-
-      <aside class="cuisine-pareto">
-        <span class="cuisine-pareto-marker" aria-hidden="true"></span>
-        <span class="cuisine-pareto-label">
-          ${escapeHtml(data.paretoPick?.label || "PARETO PICK")}
-        </span>
-        <p class="cuisine-pareto-copy">
-          ${escapeHtml(data.paretoPick?.copy || "")}
-        </p>
-      </aside>
     `;
 
-    syncIconSizeToCountryMap(root);
+    syncMenuToCountryMap(root);
   }
 
   async function loadData(root) {
