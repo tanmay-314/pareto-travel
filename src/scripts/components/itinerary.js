@@ -31,12 +31,10 @@
     width: 412,
     height: 460,
     photo: 360,
+    stackTravel: 360,
   });
 
   const COUNTRY_MAP_FIGMA_WIDTH = 720;
-  const POLAROID_TO_MAP_WIDTH_RATIO =
-    FIGMA_SIZE.width / COUNTRY_MAP_FIGMA_WIDTH;
-
   function normaliseRotation(value) {
     const rotation = String(value || DEFAULTS.rotation);
     return ALLOWED_ROTATIONS.includes(rotation)
@@ -92,6 +90,7 @@
     const caption = document.createElement("div");
 
     polaroid.className = "itinerary-polaroid";
+    polaroid.setAttribute("role", "listitem");
     polaroid.dataset.rotation = normaliseRotation(options.rotation);
     polaroid.style.setProperty("--polaroid-scale", scale);
     polaroid.style.setProperty(
@@ -155,8 +154,49 @@
     const root =
       typeof target === "string" ? document.querySelector(target) : target;
     if (!root) throw new Error("Itinerary mount target was not found.");
-    root.replaceChildren(...days.map(create));
+    const count = days.length;
+    const divisor = Math.max(count - 1, 1);
+    const cards = days.map((day, index) => {
+      const card = create(day);
+      const offset = count > 1 ? (FIGMA_SIZE.stackTravel * index) / divisor : 0;
+      const scale =
+        Number.parseFloat(
+          root.style.getPropertyValue("--itinerary-stack-scale"),
+        ) || 1;
+      card.style.setProperty("--itinerary-card-z", count - index);
+      card.dataset.stackOffset = offset;
+      card.style.setProperty("--itinerary-card-x", `${offset * scale}px`);
+      return card;
+    });
+
+    root.dataset.dayCount = count;
+    root.replaceChildren(...cards);
     return root.children;
+  }
+
+  function renderEditorial(target, itinerary) {
+    const root =
+      typeof target === "string" ? document.querySelector(target) : target;
+    if (!root) return null;
+
+    const paragraphs = Array.isArray(itinerary.editorial)
+      ? itinerary.editorial.filter(Boolean)
+      : [];
+    const content = paragraphs.map((text) =>
+      createText("itinerary-editorial-copy", text),
+    );
+
+    if (itinerary.detailLink?.label && itinerary.detailLink?.href) {
+      const link = document.createElement("a");
+      link.className = "itinerary-editorial-link";
+      link.href = itinerary.detailLink.href;
+      link.textContent = itinerary.detailLink.label;
+      content.push(link);
+    }
+
+    root.replaceChildren(...content);
+    root.hidden = content.length === 0;
+    return root;
   }
 
   function syncToCountryMap(target, mapTarget) {
@@ -169,10 +209,20 @@
 
     if (!root || !map) return null;
 
-    const updateScale = (width = map.getBoundingClientRect().width) => {
-      if (width <= 0) return;
-      const polaroidWidth = width * POLAROID_TO_MAP_WIDTH_RATIO;
-      const scale = polaroidWidth / FIGMA_SIZE.width;
+    const layoutContainer = root.parentElement;
+
+    const updateScale = () => {
+      const mapWidth = map.getBoundingClientRect().width;
+      const availableWidth =
+        layoutContainer?.getBoundingClientRect().width || 0;
+      if (mapWidth <= 0) return;
+
+      const mapScale = mapWidth / COUNTRY_MAP_FIGMA_WIDTH;
+      const stackWidth = FIGMA_SIZE.width + FIGMA_SIZE.stackTravel;
+      const availableScale =
+        availableWidth > 0 ? availableWidth / stackWidth : mapScale;
+      const scale = Math.min(mapScale, availableScale, 1);
+      const polaroidWidth = FIGMA_SIZE.width * scale;
       root.style.setProperty(
         "--country-map-polaroid-scale",
         scale,
@@ -185,15 +235,19 @@
         "--country-map-polaroid-height",
         `${FIGMA_SIZE.height * scale}px`,
       );
+      root.style.setProperty("--itinerary-stack-scale", scale);
+      Array.from(root.children).forEach((card) => {
+        const offset = Number.parseFloat(card.dataset.stackOffset) || 0;
+        card.style.setProperty("--itinerary-card-x", `${offset * scale}px`);
+      });
     };
 
     updateScale();
 
     if (typeof ResizeObserver === "function") {
-      const observer = new ResizeObserver(([entry]) => {
-        updateScale(entry.contentRect.width);
-      });
+      const observer = new ResizeObserver(updateScale);
       observer.observe(map);
+      if (layoutContainer) observer.observe(layoutContainer);
       return () => observer.disconnect();
     }
 
@@ -239,6 +293,10 @@
     );
 
     if (title) title.textContent = itinerary.title || "ITINERARY";
+    renderEditorial(
+      selectors.editorial || "#itinerary-editorial",
+      itinerary,
+    );
     /*renderTripFacts(selectors.facts || "#trip-facts", itinerary);*/
     return renderItinerary(listSelector, itinerary.days);
   }
@@ -282,6 +340,7 @@
       selectors: {
         list: listSelector,
         title: "#itinerary-title",
+        editorial: "#itinerary-editorial",
         facts: "#trip-facts",
       },
     }).catch((error) => {

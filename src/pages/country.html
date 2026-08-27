@@ -112,12 +112,19 @@
 
     </section>
 
-    <section class="itinerary" id="itinerary" aria-label="Itinerary days">
+    <section class="itinerary" id="itinerary" aria-labelledby="itinerary-title">
       <h2 class="country-section-title" id="itinerary-title"></h2>
-      <div 
-        class="polaroid-list"
-        id="polaroid-list"
-      ></div>
+      <div class="itinerary-layout">
+        <div class="itinerary-visual">
+          <div
+            class="polaroid-list"
+            id="polaroid-list"
+            role="list"
+            aria-label="Itinerary days"
+          ></div>
+        </div>
+        <article class="itinerary-editorial" id="itinerary-editorial"></article>
+      </div>
     </section>
 
     <section class="best-months" id="best-months" aria-label="Best time to visit">

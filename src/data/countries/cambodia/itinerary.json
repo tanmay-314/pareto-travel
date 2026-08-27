@@ -7,11 +7,20 @@
       "route": "SIEM REAP → PHNOM PENH",
       "pace": "BALANCED",
       "bestFor": "FIRST VISIT",
+      "editorial": [
+        "Siem Reap rewards an early start. Begin before sunrise, when Angkor Wat is still a silhouette and the causeway belongs to monks, photographers and the first birds of morning.",
+        "Spend the rest of the day moving slowly through Angkor Thom and Ta Prohm. The temples are close on a map, but each deserves time: for worn carvings, quiet courtyards and trees that have become part of the architecture.",
+        "On day two, trade grandeur for texture. Explore the smaller temples, eat well in town and leave enough space for an unplanned stop. Cambodia’s magic is not only in what has endured—it is in the calm surrounding it."
+      ],
+      "detailLink": {
+        "label": "View detailed 2-day Cambodia itinerary",
+        "href": "#itinerary"
+      },
       "days": [
         {
           "dayNumber": "DAY 1",
           "location": "SIEM REAP",
-          "rotation": "-4°",
+          "rotation": "0°",
           "image": {
             "src": "../assets/images/art-angkor-wat.svg",
             "alt": "",

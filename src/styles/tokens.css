@@ -43,7 +43,7 @@
 
   /* Primitive: text decoration */
   --primitive-text-decoration-line-underline: underline;
-  --primitive-text-decoration-style-solid: solid;
+  --primitive-text-decoration-style-dotted: dotted;
   --primitive-text-decoration-thickness-20-percent: 20%;
   --primitive-text-decoration-offset-auto: auto;
   --primitive-text-decoration-skip-ink-enabled: auto;
@@ -113,7 +113,7 @@
 
   /* Semantic: body links */
   --type-link-decoration-line: var(--primitive-text-decoration-line-underline);
-  --type-link-decoration-style: var(--primitive-text-decoration-style-solid);
+  --type-link-decoration-style: var(--primitive-text-decoration-style-dotted);
   --type-link-decoration-thickness: var(--primitive-text-decoration-thickness-20-percent);
   --type-link-underline-offset: var(--primitive-text-decoration-offset-auto);
   --type-link-decoration-skip-ink: var(--primitive-text-decoration-skip-ink-enabled);
