@@ -15,7 +15,7 @@
 
   box-sizing: border-box;
   width: 100%;
-  min-height: 1080px;
+  min-height: 0;
   padding: clamp(64px, 5.625vw, 108px) var(--cuisine-page-gutter)
     clamp(64px, 5.73vw, 110px);
   margin-top: var(--space-xxl);
@@ -44,10 +44,8 @@
 
 .cuisine-layout {
   display: grid;
-  grid-template-columns:
-    minmax(0, var(--cuisine-menu-scaled-width))
-    minmax(0, 620px);
-  gap: clamp(var(--space-xxl), 3.91vw, 75px);
+  grid-template-columns: minmax(0, 900px) minmax(0, 1fr);
+  gap: var(--space-xxl);
   align-items: start;
   width: 100%;
 }
@@ -236,17 +234,7 @@
 
 @media (max-width: 1500px) {
   .cuisine-layout {
-    grid-template-columns:
-      minmax(0, var(--cuisine-menu-scaled-width))
-      minmax(0, 620px);
-  }
-}
-
-@media (max-width: 1300px) {
-  .cuisine-layout {
-    grid-template-columns:
-      minmax(0, var(--cuisine-menu-scaled-width))
-      minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

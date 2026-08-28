@@ -134,23 +134,25 @@ Illustrative shape:
 ```json
 {
   "schemaVersion": 1,
-  "countryName": "Mexico",
   "days": 7,
   "people": 2,
-  "currency": "INR",
-  "categories": [
+  "year": 2026,
+  "lineItems": [
     {
-      "id": "accommodation",
-      "label": "Accommodation",
-      "amount": 0
+      "description": "STAYS · 7 NIGHTS",
+      "value": "$700"
     }
   ],
-  "total": 0,
-  "notes": []
+  "total": "$700",
+  "editorial": [
+    "A short explanation of what the estimate covers."
+  ]
 }
 ```
 
-Decide whether `total` is authored or calculated and document one source of truth. If calculated, do not trust a duplicated authored total.
+The current receipt presents five ordered line items and an authored, formatted
+total. Include the currency symbol in each displayed value. Editorial copy is
+stored as an ordered paragraph array and appears beside the receipt on desktop.
 
 ## Annual dial
 

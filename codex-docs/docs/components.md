@@ -103,11 +103,11 @@ Update the paths below when components are integrated.
 
 ### Budget receipt
 
-- Root: `[data-component="budget-receipt"]`
-- Inputs: country, number of days, number of people, currency, categories, amounts, total, notes
-- Key behavior: render configurable receipt content without changing its Figma geometry
+- Root: `[data-budget-receipt]`
+- Inputs: number of days, number of people, year, five ordered line items, total, and an `editorial` paragraph array
+- Key behavior: render configurable receipt content in the fixed `420 × 540px` receipt geometry, scale it with the country map, and align its editorial with the shared country-section grid
 - Accessibility: use real text; announce totals in a logical reading order
-- Implementation paths: _record when integrated_
+- Implementation paths: `src/scripts/components/budget.js`, `src/styles/components/budget.css`, `src/assets/components/budget/`, and `src/data/countries/<slug>/budget.json`
 
 ### Polaroid itinerary
 

@@ -2,22 +2,43 @@
   "use strict";
 
   const COUNTRY_MAP_FIGMA_WIDTH = 720;
-  const RECEIPT_FIGMA_WIDTH = 554;
+  const RECEIPT_FIGMA_WIDTH = 420;
+  const RECEIPT_FIGMA_HEIGHT = 540;
   const receiptResizeCleanups = new WeakMap();
+  const RECEIPT_ASSETS = Object.freeze({
+    perforation: new URL(
+      "../../assets/components/budget/perforation.svg",
+      import.meta.url
+    ).href,
+    top: new URL(
+      "../../assets/components/budget/receipt-top.svg",
+      import.meta.url
+    ).href,
+    separatorHeader: new URL(
+      "../../assets/components/budget/separator-1.svg",
+      import.meta.url
+    ).href,
+    separatorTotal: new URL(
+      "../../assets/components/budget/separator-2.svg",
+      import.meta.url
+    ).href
+  });
 
   const DEFAULT_RECEIPT = Object.freeze({
-    country: "MIDDLE EARTH",
-    days: 0,
-    people: 0,
-    currency: "USD",
+    days: 5,
+    people: 2,
+    year: "2025",
     lineItems: [
-      { description: "STAYS · 0 NIGHTS", value: "$0" },
-      { description: "FOOD & DRINKS", value: "$0" },
-      { description: "EXPERIENCES", value: "$0" },
-      { description: "INTRA-CITY TRAVEL", value: "$0" },
-      { description: "MISCELANEOUS", value: "$0" }
+      { description: "STAYS · 5 NIGHTS", value: "$420" },
+      { description: "FOOD & DRINKS", value: "$210" },
+      { description: "EXPERIENCES", value: "$160" },
+      { description: "INTER-CITY TRAVEL", value: "$100" },
+      { description: "MISCELLANEOUS", value: "$50" }
     ],
-    total: "$0"
+    total: "$940",
+    editorial: [
+      "This five-day estimate covers two travellers sharing rooms and splitting transport. Cambodia rewards a flexible budget: guesthouses and local food keep daily costs low, while Angkor passes, private transfers and a few considered splurges account for most of the total."
+    ]
   });
 
   function text(value, fallback) {
@@ -35,17 +56,23 @@
       : DEFAULT_RECEIPT.lineItems;
 
     return {
-      country: text(source.country, DEFAULT_RECEIPT.country),
       days: text(source.days, DEFAULT_RECEIPT.days),
       people: text(source.people, DEFAULT_RECEIPT.people),
-      currency: text(source.currency, DEFAULT_RECEIPT.currency),
-      lineItems: sourceItems.map(function (item) {
-        return {
-          description: text(item && item.description, "LINE ITEM"),
-          value: text(item && item.value, "—")
-        };
-      }),
-      total: text(source.total, DEFAULT_RECEIPT.total)
+      year: text(source.year, DEFAULT_RECEIPT.year),
+      lineItems: sourceItems
+        .slice(0, DEFAULT_RECEIPT.lineItems.length)
+        .map(function (item) {
+          return {
+            description: text(item && item.description, "LINE ITEM"),
+            value: text(item && item.value, "—")
+          };
+        }),
+      total: text(source.total, DEFAULT_RECEIPT.total),
+      editorial: Array.isArray(source.editorial)
+        ? source.editorial.filter(function (paragraph) {
+            return typeof paragraph === "string" && paragraph.trim().length > 0;
+          })
+        : DEFAULT_RECEIPT.editorial
     };
   }
 
@@ -63,13 +90,15 @@
     return node;
   }
 
-  function createRule(modifier) {
-    const rule = element(
-      "span",
-      "budget-receipt__rule budget-receipt__rule--" + modifier
+  function createDecorativeImage(modifier, source) {
+    const image = element(
+      "img",
+      "budget-receipt__decoration budget-receipt__decoration--" + modifier
     );
-    rule.setAttribute("aria-hidden", "true");
-    return rule;
+    image.src = source;
+    image.alt = "";
+    image.setAttribute("aria-hidden", "true");
+    return image;
   }
 
   function createLineItems(items) {
@@ -91,26 +120,38 @@
     return list;
   }
 
-  function createReceipt(data, instanceNumber) {
+  function renderEditorial(target, data) {
+    if (!target) return;
+
+    const receipt = normalizeReceipt(data);
+    const paragraphs = receipt.editorial.map(function (content) {
+      return element("p", "budget-editorial-copy", content);
+    });
+
+    target.replaceChildren(...paragraphs);
+    target.hidden = paragraphs.length === 0;
+  }
+
+  function createReceipt(data) {
     const receipt = normalizeReceipt(data);
     const article = element("article", "budget-receipt");
-    const countryId = "budget-receipt-country-" + instanceNumber;
-
-    article.setAttribute("aria-labelledby", countryId);
+    article.setAttribute(
+      "aria-label",
+      "Budget estimate for " +
+        receipt.days +
+        " days and " +
+        receipt.people +
+        " people in " +
+        receipt.year
+    );
 
     const paper = element("span", "budget-receipt__paper");
     paper.setAttribute("aria-hidden", "true");
 
-    const header = element("header", "budget-receipt__header");
-    const brand = element("p", "budget-receipt__brand", "PARETO TRAVEL");
-    const country = element("h2", "budget-receipt__country", receipt.country);
-    country.id = countryId;
-    header.append(brand, country);
-
     const meta = element(
       "p",
       "budget-receipt__meta",
-      receipt.days + " DAYS ·  " + receipt.people + " PEOPLE ·  " + receipt.currency
+      receipt.days + " DAYS · " + receipt.people + " PAX · " + receipt.year
     );
 
     const total = element("footer", "budget-receipt__total");
@@ -119,12 +160,12 @@
     total.append(totalLabel, totalValue);
 
     article.append(
+      createDecorativeImage("perforation", RECEIPT_ASSETS.perforation),
       paper,
-      createRule("top"),
-      createRule("header"),
-      createRule("total"),
-      createRule("bottom"),
-      header,
+      createDecorativeImage("top", RECEIPT_ASSETS.top),
+      createDecorativeImage("header-rule", RECEIPT_ASSETS.separatorHeader),
+      createDecorativeImage("total-rule", RECEIPT_ASSETS.separatorTotal),
+      createDecorativeImage("bottom-rule", RECEIPT_ASSETS.separatorTotal),
       meta,
       createLineItems(receipt.lineItems),
       total
@@ -138,7 +179,8 @@
     receiptResizeCleanups.get(frame)?.();
 
     if (!map) {
-      frame.style.height = `${receipt.offsetHeight}px`;
+      frame.style.width = `${RECEIPT_FIGMA_WIDTH}px`;
+      frame.style.height = `${RECEIPT_FIGMA_HEIGHT}px`;
       return;
     }
 
@@ -148,7 +190,7 @@
       const scale = mapWidth / COUNTRY_MAP_FIGMA_WIDTH;
 
       frame.style.width = `${RECEIPT_FIGMA_WIDTH * scale}px`;
-      frame.style.height = `${receipt.offsetHeight * scale}px`;
+      frame.style.height = `${RECEIPT_FIGMA_HEIGHT * scale}px`;
       receipt.style.setProperty("--budget-receipt-scale", scale);
     };
 
@@ -168,15 +210,15 @@
     });
   }
 
-  function createResponsiveReceipt(data, instanceNumber) {
+  function createResponsiveReceipt(data) {
     const frame = element("div", "budget-receipt-frame");
-    const receipt = createReceipt(data, instanceNumber);
+    const receipt = createReceipt(data);
     frame.append(receipt);
     return { frame, receipt };
   }
 
-  function replaceWithResponsiveReceipt(target, data, instanceNumber) {
-    const { frame, receipt } = createResponsiveReceipt(data, instanceNumber);
+  function replaceWithResponsiveReceipt(target, data) {
+    const { frame, receipt } = createResponsiveReceipt(data);
     target.replaceWith(frame);
     syncReceiptToCountryMap(frame, receipt);
     return frame;
@@ -196,42 +238,47 @@
     return response.json();
   }
 
-  async function mountReceipt(target, instanceNumber) {
+  async function mountReceipt(target) {
     const source = target.dataset.source;
+    const editorial = target
+      .closest(".budget")
+      ?.querySelector("[data-budget-editorial]");
 
     try {
       const data = await loadReceiptData(source);
-      replaceWithResponsiveReceipt(target, data, instanceNumber);
+      renderEditorial(editorial, data);
+      replaceWithResponsiveReceipt(target, data);
     } catch (error) {
       /*
        * Opening index.html directly from Finder can block local JSON fetches.
        * The component still renders its Figma defaults; a local server will
-       * load budget-receipt.json normally.
+       * load budget.json normally.
       */
       console.warn(error);
-      replaceWithResponsiveReceipt(target, DEFAULT_RECEIPT, instanceNumber);
+      renderEditorial(editorial, DEFAULT_RECEIPT);
+      replaceWithResponsiveReceipt(target, DEFAULT_RECEIPT);
     }
   }
 
   function initBudgetReceipts() {
     const targets = document.querySelectorAll("[data-budget-receipt]");
 
-    targets.forEach(function (target, index) {
-      mountReceipt(target, index + 1);
+    targets.forEach(function (target) {
+      mountReceipt(target);
     });
   }
 
   window.BudgetReceipt = Object.freeze({
     defaults: DEFAULT_RECEIPT,
     create: function (data) {
-      return createReceipt(data, Date.now());
+      return createReceipt(data);
     },
     mount: function (target, data) {
       if (!(target instanceof Element)) {
         throw new TypeError("BudgetReceipt.mount needs a valid DOM element.");
       }
 
-      const { frame, receipt } = createResponsiveReceipt(data, Date.now());
+      const { frame, receipt } = createResponsiveReceipt(data);
       target.replaceChildren(frame);
       syncReceiptToCountryMap(frame, receipt);
     }

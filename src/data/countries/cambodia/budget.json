@@ -1,11 +1,10 @@
 {
-  "country": "CAMBODIA",
-  "days": 2,
+  "days": 5,
   "people": 2,
-  "currency": "USD",
+  "year": 2025,
   "lineItems": [
     {
-      "description": "STAYS · 2 NIGHTS",
+      "description": "STAYS · 5 NIGHTS",
       "value": "$420"
     },
     {
@@ -17,17 +16,16 @@
       "value": "$160"
     },
     {
-      "description": "INTRA-CITY TRAVEL",
+      "description": "INTER-CITY TRAVEL",
       "value": "$100"
     },
     {
-      "description": "MISCELANEOUS",
+      "description": "MISCELLANEOUS",
       "value": "$50"
-    },
-    {
-      "description": "BRIBES & TIPS",
-      "value": "$20"
     }
   ],
-  "total": "$960"
+  "total": "$940",
+  "editorial": [
+    "This five-day estimate covers two travellers sharing rooms and splitting transport. Cambodia rewards a flexible budget: guesthouses and local food keep daily costs low, while Angkor passes, private transfers and a few considered splurges account for most of the total."
+  ]
 }

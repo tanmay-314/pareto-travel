@@ -157,15 +157,22 @@
     ></section>
 
 
-    <section class="budget" id="budget" aria-label="Budget">
+    <section class="budget" id="budget" aria-labelledby="budget-title">
       <h2 class="country-section-title" id="budget-title">Budget</h2>
-      
-      <div
+
+      <div class="budget-layout">
+        <div
           class="budget-receipt"
           data-budget-receipt
           data-source="../data/countries/cambodia/budget.json"
           aria-live="polite"
-      ></div>
+        ></div>
+
+        <article
+          class="budget-editorial"
+          data-budget-editorial
+        ></article>
+      </div>
     </section>
 
       <section
