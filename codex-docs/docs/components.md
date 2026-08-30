@@ -105,7 +105,7 @@ Update the paths below when components are integrated.
 
 - Root: `[data-budget-receipt]`
 - Inputs: number of days, number of people, year, five ordered line items, total, and an `editorial` paragraph array
-- Key behavior: render configurable receipt content in the fixed `420 × 540px` receipt geometry, scale it with the country map, and align its editorial with the shared country-section grid
+- Key behavior: render configurable receipt content in the fixed `420 × 540px` receipt geometry, keep its width at `7:12` of the live country-map width, and align its editorial with the shared country-section grid
 - Accessibility: use real text; announce totals in a logical reading order
 - Implementation paths: `src/scripts/components/budget.js`, `src/styles/components/budget.css`, `src/assets/components/budget/`, and `src/data/countries/<slug>/budget.json`
 

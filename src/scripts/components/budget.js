@@ -2,7 +2,9 @@
   "use strict";
 
   const COUNTRY_MAP_FIGMA_WIDTH = 720;
-  const RECEIPT_FIGMA_WIDTH = 420;
+  const RECEIPT_TO_MAP_WIDTH_RATIO = 7 / 12;
+  const RECEIPT_FIGMA_WIDTH =
+    COUNTRY_MAP_FIGMA_WIDTH * RECEIPT_TO_MAP_WIDTH_RATIO;
   const RECEIPT_FIGMA_HEIGHT = 540;
   const receiptResizeCleanups = new WeakMap();
   const RECEIPT_ASSETS = Object.freeze({
@@ -187,9 +189,10 @@
     const updateLayout = () => {
       const mapWidth = map.getBoundingClientRect().width;
       if (mapWidth <= 0) return;
-      const scale = mapWidth / COUNTRY_MAP_FIGMA_WIDTH;
+      const scaledWidth = mapWidth * RECEIPT_TO_MAP_WIDTH_RATIO;
+      const scale = scaledWidth / RECEIPT_FIGMA_WIDTH;
 
-      frame.style.width = `${RECEIPT_FIGMA_WIDTH * scale}px`;
+      frame.style.width = `${scaledWidth}px`;
       frame.style.height = `${RECEIPT_FIGMA_HEIGHT * scale}px`;
       receipt.style.setProperty("--budget-receipt-scale", scale);
     };
