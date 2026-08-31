@@ -51,11 +51,13 @@
 
     </div>
 
-    <section
-      class="country-hero"
-      data-country-hero
-      data-source="../data/countries/cambodia/country.json"
-    >
+    <div class="country-page">
+      <main class="country-page-content">
+        <section
+          class="country-hero"
+          data-country-hero
+          data-source="../data/countries/cambodia/country.json"
+        >
 
         <div class="country-intro">
 
@@ -100,17 +102,7 @@
           ></div>
         </div>
 
-
-        <!-- Fix the data-config path -->
-        <nav
-            class="country-navigation"
-            data-country-navigation
-            data-config="../data/components/country-navigation.json"
-            aria-label="On this country page"
-        ></nav>
-
-
-    </section>
+        </section>
 
     <section class="itinerary" id="itinerary" aria-labelledby="itinerary-title">
       <h2 class="country-section-title" id="itinerary-title"></h2>
@@ -183,14 +175,76 @@
         aria-label="Inter-city travel"
       ></section>
 
-    <section
-        class="faqs"
-        id="faqs"
-        data-faqs
-        data-source="../data/countries/cambodia/faqs.json"
-        aria-label="Frequently asked questions"
+        <section
+          class="faqs"
+          id="faqs"
+          data-faqs
+          data-source="../data/countries/cambodia/faqs.json"
+          aria-label="Frequently asked questions"
+        ></section>
+      </main>
+
+      <aside
+        class="country-navigation-rail"
+        data-country-navigation-drawer
+        data-state="closed"
       >
-      </section>
+        <button
+          class="country-navigation-trigger"
+          type="button"
+          aria-label="Open section navigation"
+          aria-controls="country-navigation-panel"
+          aria-expanded="false"
+        >
+          <img
+            src="../assets/components/country-navigation/drawer-open.svg"
+            alt=""
+            width="63"
+            height="30"
+            draggable="false"
+          >
+        </button>
+
+        <div
+          class="country-navigation-panel"
+          id="country-navigation-panel"
+          aria-hidden="true"
+          inert
+        >
+          <img
+            class="country-navigation-panel-background"
+            src="../assets/components/country-navigation/drawer.svg"
+            alt=""
+            width="299"
+            height="1084"
+            draggable="false"
+          >
+
+          <div class="country-navigation-content">
+            <button
+              class="country-navigation-close"
+              type="button"
+              aria-label="Close section navigation"
+            >
+              <img
+                src="../assets/components/country-navigation/icon-xmark-drawer.svg"
+                alt=""
+                width="30"
+                height="30"
+                draggable="false"
+              >
+            </button>
+
+            <nav
+              class="country-navigation"
+              data-country-navigation
+              data-config="../data/components/country-navigation.json"
+              aria-label="On this country page"
+            ></nav>
+          </div>
+        </div>
+      </aside>
+    </div>
 
 
   </body>

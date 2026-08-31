@@ -1,5 +1,5 @@
 {
-  "width": 167,
+  "width": 166,
   "height": 450,
   "assets": {
     "pole": "../../assets/components/country-navigation/pole.svg",
@@ -25,55 +25,61 @@
       "label": "Best Time",
       "target": "#best-months",
       "asset": "bestTime",
-      "width": 160,
-      "height": 39,
-      "x": 6.33,
-      "y": 85.91
+      "width": 158,
+      "height": 30,
+      "x": 7,
+      "y": 90,
+      "rotation": 3
     },
     {
       "label": "City Guides",
       "target": "#city-guides",
       "asset": "cityGuides",
-      "width": 159,
-      "height": 36,
-      "x": 6.53,
-      "y": 147.24
+      "width": 158,
+      "height": 30,
+      "x": 7,
+      "y": 150,
+      "rotation": -2
     },
     {
       "label": "Cuisine",
       "target": "#cuisine",
       "asset": "cuisine",
-      "width": 161,
-      "height": 44,
-      "x": -1,
-      "y": 203.18
+      "width": 158,
+      "height": 30,
+      "x": 1,
+      "y": 210,
+      "rotation": 5,
+      "flipX": true
     },
     {
       "label": "Inter City",
-      "target": "#travel",
+      "target": "#inter-city-travel",
       "asset": "interCity",
       "width": 158,
       "height": 30,
-      "x": 0,
+      "x": 1,
       "y": 270
     },
     {
       "label": "Budget",
       "target": "#budget",
       "asset": "budget",
-      "width": 160,
-      "height": 41,
-      "x": 8.15,
-      "y": 324.54
+      "width": 158,
+      "height": 30,
+      "x": 7,
+      "y": 330,
+      "rotation": 4
     },
     {
       "label": "FAQs",
       "target": "#faqs",
       "asset": "faqs",
-      "width": 159,
-      "height": 33,
-      "x": 8.75,
-      "y": 388.62
+      "width": 158,
+      "height": 30,
+      "x": 7,
+      "y": 390,
+      "rotation": -1
     }
   ]
 }

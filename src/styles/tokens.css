@@ -69,6 +69,7 @@
   --color-icon-primary: var(--primitive-color-plum-primary);
   --color-icon-secondary: var(--primitive-color-plum-secondary);
   --color-icon-tertiary: var(--primitive-color-plum-tertiary);
+  --color-icon-teal: var(--primitive-color-teal);
   --color-icon-hover: var(--primitive-color-teal);
 
   /* Semantic: accents */

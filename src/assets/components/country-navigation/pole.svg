@@ -1,42 +1,84 @@
-<svg width="6" height="450" viewBox="0 0 6 450" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="3" cy="3" r="3" fill="#85586F"/>
-<circle cx="3" cy="63" r="3" fill="#85586F"/>
-<circle cx="3" cy="123" r="3" fill="#85586F"/>
-<circle cx="3" cy="183" r="3" fill="#85586F"/>
-<circle cx="3" cy="243" r="3" fill="#85586F"/>
-<circle cx="3" cy="303" r="3" fill="#85586F"/>
-<circle cx="3" cy="363" r="3" fill="#85586F"/>
-<circle cx="3" cy="423" r="3" fill="#85586F"/>
-<circle cx="3" cy="9" r="3" fill="#85586F"/>
-<circle cx="3" cy="69" r="3" fill="#85586F"/>
-<circle cx="3" cy="129" r="3" fill="#85586F"/>
-<circle cx="3" cy="189" r="3" fill="#85586F"/>
-<circle cx="3" cy="249" r="3" fill="#85586F"/>
-<circle cx="3" cy="309" r="3" fill="#85586F"/>
-<circle cx="3" cy="369" r="3" fill="#85586F"/>
-<circle cx="3" cy="429" r="3" fill="#85586F"/>
-<circle cx="3" cy="15" r="3" fill="#85586F"/>
-<circle cx="3" cy="75" r="3" fill="#85586F"/>
-<circle cx="3" cy="135" r="3" fill="#85586F"/>
-<circle cx="3" cy="195" r="3" fill="#85586F"/>
-<circle cx="3" cy="255" r="3" fill="#85586F"/>
-<circle cx="3" cy="315" r="3" fill="#85586F"/>
-<circle cx="3" cy="375" r="3" fill="#85586F"/>
-<circle cx="3" cy="435" r="3" fill="#85586F"/>
-<circle cx="3" cy="21" r="3" fill="#85586F"/>
-<circle cx="3" cy="81" r="3" fill="#85586F"/>
-<circle cx="3" cy="141" r="3" fill="#85586F"/>
-<circle cx="3" cy="201" r="3" fill="#85586F"/>
-<circle cx="3" cy="261" r="3" fill="#85586F"/>
-<circle cx="3" cy="321" r="3" fill="#85586F"/>
-<circle cx="3" cy="381" r="3" fill="#85586F"/>
-<circle cx="3" cy="441" r="3" fill="#85586F"/>
-<circle cx="3" cy="27" r="3" fill="#85586F"/>
-<circle cx="3" cy="87" r="3" fill="#85586F"/>
-<circle cx="3" cy="147" r="3" fill="#85586F"/>
-<circle cx="3" cy="207" r="3" fill="#85586F"/>
-<circle cx="3" cy="267" r="3" fill="#85586F"/>
-<circle cx="3" cy="327" r="3" fill="#85586F"/>
-<circle cx="3" cy="387" r="3" fill="#85586F"/>
-<circle cx="3" cy="447" r="3" fill="#85586F"/>
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="12" height="450" viewBox="0 0 12 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="pole-lean">
+<circle id="Ellipse 27562" cx="3" cy="3" r="3" fill="#85586F"/>
+<circle id="Ellipse 27572" cx="3" cy="63" r="3" fill="#85586F"/>
+<circle id="Ellipse 27582" cx="3" cy="123" r="3" fill="#85586F"/>
+<circle id="Ellipse 27592" cx="3" cy="183" r="3" fill="#85586F"/>
+<circle id="Ellipse 27602" cx="3" cy="243" r="3" fill="#85586F"/>
+<circle id="Ellipse 27612" cx="3" cy="303" r="3" fill="#85586F"/>
+<circle id="Ellipse 27622" cx="3" cy="363" r="3" fill="#85586F"/>
+<circle id="Ellipse 27632" cx="3" cy="423" r="3" fill="#85586F"/>
+<circle id="Ellipse 27564" cx="3" cy="9" r="3" fill="#85586F"/>
+<circle id="Ellipse 27573" cx="3" cy="69" r="3" fill="#85586F"/>
+<circle id="Ellipse 27583" cx="3" cy="129" r="3" fill="#85586F"/>
+<circle id="Ellipse 27593" cx="3" cy="189" r="3" fill="#85586F"/>
+<circle id="Ellipse 27603" cx="3" cy="249" r="3" fill="#85586F"/>
+<circle id="Ellipse 27613" cx="3" cy="309" r="3" fill="#85586F"/>
+<circle id="Ellipse 27623" cx="3" cy="369" r="3" fill="#85586F"/>
+<circle id="Ellipse 27633" cx="3" cy="429" r="3" fill="#85586F"/>
+<circle id="Ellipse 27566" cx="3" cy="15" r="3" fill="#85586F"/>
+<circle id="Ellipse 27574" cx="3" cy="75" r="3" fill="#85586F"/>
+<circle id="Ellipse 27584" cx="3" cy="135" r="3" fill="#85586F"/>
+<circle id="Ellipse 27594" cx="3" cy="195" r="3" fill="#85586F"/>
+<circle id="Ellipse 27604" cx="3" cy="255" r="3" fill="#85586F"/>
+<circle id="Ellipse 27614" cx="3" cy="315" r="3" fill="#85586F"/>
+<circle id="Ellipse 27624" cx="3" cy="375" r="3" fill="#85586F"/>
+<circle id="Ellipse 27634" cx="3" cy="435" r="3" fill="#85586F"/>
+<circle id="Ellipse 27568" cx="3" cy="21" r="3" fill="#85586F"/>
+<circle id="Ellipse 27575" cx="3" cy="81" r="3" fill="#85586F"/>
+<circle id="Ellipse 27585" cx="3" cy="141" r="3" fill="#85586F"/>
+<circle id="Ellipse 27595" cx="3" cy="201" r="3" fill="#85586F"/>
+<circle id="Ellipse 27605" cx="3" cy="261" r="3" fill="#85586F"/>
+<circle id="Ellipse 27615" cx="3" cy="321" r="3" fill="#85586F"/>
+<circle id="Ellipse 27625" cx="3" cy="381" r="3" fill="#85586F"/>
+<circle id="Ellipse 27635" cx="3" cy="441" r="3" fill="#85586F"/>
+<circle id="Ellipse 27570" cx="3" cy="27" r="3" fill="#85586F"/>
+<circle id="Ellipse 27576" cx="3" cy="87" r="3" fill="#85586F"/>
+<circle id="Ellipse 27586" cx="3" cy="147" r="3" fill="#85586F"/>
+<circle id="Ellipse 27596" cx="3" cy="207" r="3" fill="#85586F"/>
+<circle id="Ellipse 27606" cx="3" cy="267" r="3" fill="#85586F"/>
+<circle id="Ellipse 27616" cx="3" cy="327" r="3" fill="#85586F"/>
+<circle id="Ellipse 27626" cx="3" cy="387" r="3" fill="#85586F"/>
+<circle id="Ellipse 27636" cx="3" cy="447" r="3" fill="#85586F"/>
+<circle id="Ellipse 27563" cx="9" cy="3" r="3" fill="#85586F"/>
+<circle id="Ellipse 27577" cx="9" cy="63" r="3" fill="#85586F"/>
+<circle id="Ellipse 27587" cx="9" cy="123" r="3" fill="#85586F"/>
+<circle id="Ellipse 27597" cx="9" cy="183" r="3" fill="#85586F"/>
+<circle id="Ellipse 27607" cx="9" cy="243" r="3" fill="#85586F"/>
+<circle id="Ellipse 27617" cx="9" cy="303" r="3" fill="#85586F"/>
+<circle id="Ellipse 27627" cx="9" cy="363" r="3" fill="#85586F"/>
+<circle id="Ellipse 27637" cx="9" cy="423" r="3" fill="#85586F"/>
+<circle id="Ellipse 27565" cx="9" cy="9" r="3" fill="#85586F"/>
+<circle id="Ellipse 27578" cx="9" cy="69" r="3" fill="#85586F"/>
+<circle id="Ellipse 27588" cx="9" cy="129" r="3" fill="#85586F"/>
+<circle id="Ellipse 27598" cx="9" cy="189" r="3" fill="#85586F"/>
+<circle id="Ellipse 27608" cx="9" cy="249" r="3" fill="#85586F"/>
+<circle id="Ellipse 27618" cx="9" cy="309" r="3" fill="#85586F"/>
+<circle id="Ellipse 27628" cx="9" cy="369" r="3" fill="#85586F"/>
+<circle id="Ellipse 27638" cx="9" cy="429" r="3" fill="#85586F"/>
+<circle id="Ellipse 27567" cx="9" cy="15" r="3" fill="#85586F"/>
+<circle id="Ellipse 27579" cx="9" cy="75" r="3" fill="#85586F"/>
+<circle id="Ellipse 27589" cx="9" cy="135" r="3" fill="#85586F"/>
+<circle id="Ellipse 27599" cx="9" cy="195" r="3" fill="#85586F"/>
+<circle id="Ellipse 27609" cx="9" cy="255" r="3" fill="#85586F"/>
+<circle id="Ellipse 27619" cx="9" cy="315" r="3" fill="#85586F"/>
+<circle id="Ellipse 27629" cx="9" cy="375" r="3" fill="#85586F"/>
+<circle id="Ellipse 27639" cx="9" cy="435" r="3" fill="#85586F"/>
+<circle id="Ellipse 27569" cx="9" cy="21" r="3" fill="#85586F"/>
+<circle id="Ellipse 27580" cx="9" cy="81" r="3" fill="#85586F"/>
+<circle id="Ellipse 27590" cx="9" cy="141" r="3" fill="#85586F"/>
+<circle id="Ellipse 27600" cx="9" cy="201" r="3" fill="#85586F"/>
+<circle id="Ellipse 27610" cx="9" cy="261" r="3" fill="#85586F"/>
+<circle id="Ellipse 27620" cx="9" cy="321" r="3" fill="#85586F"/>
+<circle id="Ellipse 27630" cx="9" cy="381" r="3" fill="#85586F"/>
+<circle id="Ellipse 27640" cx="9" cy="441" r="3" fill="#85586F"/>
+<circle id="Ellipse 27571" cx="9" cy="27" r="3" fill="#85586F"/>
+<circle id="Ellipse 27581" cx="9" cy="87" r="3" fill="#85586F"/>
+<circle id="Ellipse 27591" cx="9" cy="147" r="3" fill="#85586F"/>
+<circle id="Ellipse 27601" cx="9" cy="207" r="3" fill="#85586F"/>
+<circle id="Ellipse 27611" cx="9" cy="267" r="3" fill="#85586F"/>
+<circle id="Ellipse 27621" cx="9" cy="327" r="3" fill="#85586F"/>
+<circle id="Ellipse 27631" cx="9" cy="387" r="3" fill="#85586F"/>
+<circle id="Ellipse 27641" cx="9" cy="447" r="3" fill="#85586F"/>
+</g>
 </svg>
