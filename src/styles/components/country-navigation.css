@@ -35,6 +35,23 @@
   pointer-events: none;
 }
 
+.country-navigation-rail::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: var(--primitive-color-black);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 220ms ease, visibility 0s linear 220ms;
+}
+
+.country-navigation-rail[data-state="open"]::before {
+  opacity: 0.25;
+  visibility: visible;
+  transition: opacity 220ms ease, visibility 0s;
+}
+
 .country-navigation-trigger,
 .country-navigation-close {
   position: absolute;
