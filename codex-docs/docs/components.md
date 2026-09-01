@@ -136,6 +136,15 @@ Update the paths below when components are integrated.
 - Compatibility: legacy `lede` and `paretoPick.copy` values are used when `editorial` is absent
 - Implementation paths: `src/scripts/components/cuisine.js`, `src/styles/components/cuisine.css`, and `src/data/countries/<slug>/cuisine.json`
 
+### Inter-city travel
+
+- Root: `[data-inter-city-travel]`
+- Inputs: one or more ordered `legs`, exactly one more ordered `places` than legs, optional `title` and `editorial`, and ticket/mode asset paths
+- Key behavior: render one ticket per journey leg, size the stack to the rendered ticket count, and alternate even-numbered tickets into the staggered position
+- Responsive behavior: scale the complete ticket stack when its frame is narrower than the fixed ticket composition
+- Fallback: reject empty journey lists or a place/leg count mismatch with an actionable component error
+- Implementation paths: `src/scripts/components/inter-city-travel.js`, `src/styles/components/inter-city-travel.css`, `src/assets/components/inter-city-travel/`, and `src/data/countries/<slug>/inter-city-travel.json`
+
 ### Country map and dot artwork
 
 - Root: component-specific or decorative asset container

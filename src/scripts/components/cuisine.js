@@ -7,7 +7,7 @@
   const resizeCleanups = new WeakMap();
 
   const DEFAULT_DATA = {
-    title: "CUISINE",
+    title: "MEALS YOU CAN'T MISS",
     chapters: [
       {
         period: "BREAKFAST",
@@ -148,7 +148,7 @@
 
     root.innerHTML = `
       <h2 class="cuisine-title" id="cuisine-title">
-        ${escapeHtml(data.title || "CUISINE")}
+        ${escapeHtml(data.title || "MEALS YOU CAN'T MISS")}
       </h2>
 
       <div class="cuisine-layout">

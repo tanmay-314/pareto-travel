@@ -52,7 +52,6 @@
 .inter-city-ticket-stack-frame {
   position: relative;
   width: min(558px, 100%);
-  height: 588px;
 }
 
 .inter-city-ticket-stack {
@@ -61,7 +60,6 @@
   left: 0;
   display: flex;
   width: 558px;
-  height: 588px;
   flex-direction: column;
   gap: 24px;
   transform: scale(var(--inter-city-ticket-stack-scale, 1));
@@ -76,7 +74,7 @@
   color: var(--inter-city-text);
 }
 
-.inter-city-ticket:nth-child(2) {
+.inter-city-ticket:nth-child(even) {
   margin-left: 108px;
 }
 
@@ -111,12 +109,22 @@
   pointer-events: none;
 }
 
-.inter-city-ticket-route {
+.inter-city-ticket-route-row {
   position: absolute;
   z-index: 1;
-  top: 41px;
-  left: 126px;
-  width: 186px;
+  top: 35px;
+  right: 24px;
+  left: 24px;
+  display: grid;
+  height: 24px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 6px;
+}
+
+.inter-city-ticket-route {
+  width: 100%;
+  min-width: 0;
   height: 6px;
   background-image: radial-gradient(
     circle,
@@ -140,7 +148,10 @@
 
 .inter-city-ticket-origin,
 .inter-city-ticket-destination {
-  top: 35px;
+  position: static;
+  z-index: auto;
+  width: auto;
+  max-width: 156px;
   height: 24px;
   overflow: hidden;
   font-family: var(--type-family-display), monospace;
@@ -153,13 +164,11 @@
 }
 
 .inter-city-ticket-origin {
-  left: 24px;
-  width: 172px;
+  justify-self: start;
 }
 
 .inter-city-ticket-destination {
-  right: 24px;
-  width: 198px;
+  justify-self: end;
   text-align: right;
 }
 
@@ -191,8 +200,9 @@
 
 .inter-city-ticket-mode,
 .inter-city-ticket-duration {
-  top: 69px;
-  width: 80px;
+  position: static;
+  z-index: auto;
+  width: auto;
   height: 18px;
   overflow: hidden;
   color: var(--inter-city-text-secondary);
@@ -206,12 +216,14 @@
   white-space: nowrap;
 }
 
-.inter-city-ticket-mode {
+.inter-city-ticket-meta {
+  position: absolute;
+  z-index: 2;
+  top: 69px;
   left: 25px;
-}
-
-.inter-city-ticket-duration {
-  left: 77px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .inter-city-ticket-rule {

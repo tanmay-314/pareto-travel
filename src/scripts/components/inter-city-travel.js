@@ -42,7 +42,6 @@
   };
 
   const TICKET_STACK_WIDTH = 558;
-  const TICKET_STACK_HEIGHT = 588;
   const resizeCleanups = new WeakMap();
 
   const escapeHtml = (value = "") =>
@@ -71,8 +70,8 @@
       throw new RangeError("The number of places must be exactly one more than the number of legs.");
     }
 
-    if (data.legs.length !== 3) {
-      throw new RangeError("This Figma composition supports exactly three journey tickets.");
+    if (data.legs.length === 0) {
+      throw new RangeError("Inter-city data requires at least one journey leg.");
     }
   };
 
@@ -93,9 +92,11 @@
           aria-hidden="true"
         >
 
-        <span class="inter-city-ticket-route" aria-hidden="true"></span>
-        <p class="inter-city-ticket-origin">${escapeHtml(origin)}</p>
-        <p class="inter-city-ticket-destination">${escapeHtml(destination)}</p>
+        <div class="inter-city-ticket-route-row">
+          <p class="inter-city-ticket-origin">${escapeHtml(origin)}</p>
+          <span class="inter-city-ticket-route" aria-hidden="true"></span>
+          <p class="inter-city-ticket-destination">${escapeHtml(destination)}</p>
+        </div>
 
         <span class="inter-city-ticket-icon-shell" aria-hidden="true">
           <span
@@ -105,8 +106,10 @@
           ></span>
         </span>
 
-        <p class="inter-city-ticket-mode">${escapeHtml(mode)}</p>
-        <p class="inter-city-ticket-duration">${escapeHtml(leg.duration || "")}</p>
+        <div class="inter-city-ticket-meta">
+          <p class="inter-city-ticket-mode">${escapeHtml(mode)}</p>
+          <p class="inter-city-ticket-duration">${escapeHtml(leg.duration || "")}</p>
+        </div>
         <span class="inter-city-ticket-rule" aria-hidden="true"></span>
         <p class="inter-city-ticket-note">${escapeHtml(leg.note || "")}</p>
       </article>
@@ -164,7 +167,7 @@
       if (availableWidth <= 0) return;
 
       const scale = Math.min(1, availableWidth / TICKET_STACK_WIDTH);
-      frame.style.height = `${TICKET_STACK_HEIGHT * scale}px`;
+      frame.style.height = `${stack.offsetHeight * scale}px`;
       stack.style.setProperty("--inter-city-ticket-stack-scale", scale);
     };
 
