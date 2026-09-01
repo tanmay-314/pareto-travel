@@ -178,16 +178,21 @@
   margin-top: var(--space-xxl);
 }
 
-.best-months > .country-section-title,
-.best-months-graphic {
+.best-months > .country-section-title {
   margin-inline-start: calc(
+    var(--space-xxl) - var(--best-months-page-gutter)
+  );
+}
+
+.best-months-graphic {
+  margin-inline-end: calc(
     var(--space-xxl) - var(--best-months-page-gutter)
   );
 }
 
 .best-months-layout {
   display: grid;
-  grid-template-columns: minmax(0, 900px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 900px);
   gap: var(--space-xxl);
   align-items: stretch;
 }
@@ -197,7 +202,9 @@
   flex-direction: column;
   gap: var(--space-lg);
   min-width: 0;
-  padding-block: var(--space-sm);
+  margin-inline-start: calc(
+    var(--space-xxl) - var(--best-months-page-gutter)
+  );
 }
 
 .best-months-editorial p {
@@ -233,9 +240,5 @@
 
   .best-months-layout {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .best-months-editorial {
-    padding: 0;
   }
 }
