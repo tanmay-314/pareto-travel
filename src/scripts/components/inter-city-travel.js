@@ -1,14 +1,52 @@
-(function () {
+(() => {
   "use strict";
 
-  const POSITION_STEP = 14.94;
-  const FIRST_POSITION = 5.18;
-  const ICON_TO_MAP_SIZE_RATIO = 1 / 12;
-  const TICKET_TO_MAP_WIDTH_RATIO = 45 / 72;
+  const DEFAULT_DATA = {
+    title: "GOING FROM PLACE TO PLACE",
+    editorial: [
+      "Cambodian cuisine, or Khmer cuisine, is subtle, aromatic, and deeply shaped by the country’s rivers, fertile plains, and tropical climate.",
+      "Rice and freshwater fish form the backbone of everyday meals, accompanied by fragrant herbs, vegetables, fermented ingredients, and sauces that balance salty, sour, sweet, and occasionally bitter flavours."
+    ],
+    assets: {
+      ticket: "../assets/components/inter-city-travel/ticket.svg",
+      modes: {
+        airplane: "../assets/icons/icon-airplane.svg",
+        bus: "../assets/icons/icon-bus.svg",
+        train: "../assets/icons/icon-train.svg",
+        car: "../assets/icons/icon-car.svg"
+      }
+    },
+    places: [
+      { name: "SIEM REAP" },
+      { name: "PHNOM PENH" },
+      { name: "BATTAMBANG" },
+      { name: "KAMPOT" }
+    ],
+    legs: [
+      {
+        mode: "bus",
+        duration: "6 HRS",
+        note: "Take a daytime service. You trade romance for frequency, directness and a city-centre arrival."
+      },
+      {
+        mode: "train",
+        duration: "5 HRS",
+        note: "The slower leg becomes part of the trip. Check the operating day before building the itinerary around it."
+      },
+      {
+        mode: "car",
+        duration: "4 HRS",
+        note: "An awkward cross-country connection. A private transfer saves the backtrack and works well when shared."
+      }
+    ]
+  };
+
+  const TICKET_STACK_WIDTH = 558;
+  const TICKET_STACK_HEIGHT = 588;
   const resizeCleanups = new WeakMap();
 
-  const escapeHtml = (value) =>
-    String(value ?? "")
+  const escapeHtml = (value = "") =>
+    String(value)
       .replaceAll("&", "&amp;")
       .replaceAll("<", "&lt;")
       .replaceAll(">", "&gt;")
@@ -33,175 +71,72 @@
       throw new RangeError("The number of places must be exactly one more than the number of legs.");
     }
 
-    if (data.places.length !== 4 || data.legs.length !== 3) {
-      throw new RangeError("This Figma component supports exactly four places and three legs.");
+    if (data.legs.length !== 3) {
+      throw new RangeError("This Figma composition supports exactly three journey tickets.");
     }
-  };
-
-  const positionForIndex = (sequenceIndex) =>
-    `${FIRST_POSITION + POSITION_STEP * sequenceIndex}%`;
-
-  const assetImage = ({ src, alt, fallback }) => `
-    <span
-      class="inter-city-icon"
-      data-inter-city-icon
-      data-src="${escapeHtml(src || "")}"
-      ${alt ? `role="img" aria-label="${escapeHtml(alt)}"` : 'aria-hidden="true"'}
-    ></span>
-    <span class="inter-city-icon-fallback" aria-hidden="true">${escapeHtml(fallback)}</span>
-  `;
-
-  const renderStop = (place, placeIndex, assets) => {
-    const sequenceIndex = placeIndex * 2;
-    const label = `${place.name || ""}\n${place.caption || ""}`.trim();
-
-    return `
-      <li
-        class="inter-city-stop${placeIndex === 3 ? " inter-city-stop--last" : ""}"
-        style="--position: ${positionForIndex(sequenceIndex)}"
-        aria-label="${escapeHtml(label.replace("\n", ", "))}"
-      >
-        <span class="inter-city-icon-shell">
-          ${assetImage({
-            src: assets.mapPin,
-            alt: "",
-            fallback: "PIN"
-          })}
-        </span>
-        <span class="inter-city-stop-copy">${escapeHtml(label)}</span>
-      </li>
-    `;
-  };
-
-  const renderLegMarker = (leg, legIndex, assets) => {
-    const sequenceIndex = legIndex * 2 + 1;
-    const mode = normalizeMode(leg.mode);
-    const summary = `${mode} · ${leg.duration || ""}`.toUpperCase();
-
-    return `
-      <li
-        class="inter-city-leg"
-        style="--position: ${positionForIndex(sequenceIndex)}"
-        aria-label="${escapeHtml(summary)}"
-      >
-        <span class="inter-city-leg-summary">${escapeHtml(summary)}</span>
-        <span class="inter-city-icon-shell">
-          ${assetImage({
-            src: assets.modes?.[mode],
-            alt: `${mode} icon`,
-            fallback: mode.slice(0, 5).toUpperCase()
-          })}
-        </span>
-      </li>
-    `;
-  };
-
-  const renderJourney = (data) => {
-    const sequence = [];
-
-    data.places.forEach((place, placeIndex) => {
-      sequence.push(renderStop(place, placeIndex, data.assets || {}));
-      if (data.legs[placeIndex]) {
-        sequence.push(renderLegMarker(data.legs[placeIndex], placeIndex, data.assets || {}));
-      }
-    });
-
-    return sequence.join("");
   };
 
   const renderTicket = (leg, legIndex, places, assets) => {
     const origin = places[legIndex]?.name || "";
     const destination = places[legIndex + 1]?.name || "";
-    const mode = normalizeMode(leg.mode).toUpperCase();
-    const legLabel = `LEG ${String(legIndex + 1).padStart(2, "0")}`;
+    const mode = normalizeMode(leg.mode);
+    const icon = assets.modes?.[mode] || "";
 
     return `
-      <article class="ticket" aria-label="${escapeHtml(`${origin} to ${destination} by ${mode}`)}">
-        <img class="ticket-background" src="${escapeHtml(assets.ticket || "")}" alt="" />
-        <span class="ticket-border" aria-hidden="true"></span>
-        ${
-          leg.recommended
-            ? '<span class="ticket-recommended">PARETO PICK</span>'
-            : ""
-        }
-        <p class="ticket-leg">${escapeHtml(legLabel)}</p>
-        <p class="ticket-origin">${escapeHtml(origin)}</p>
-        <span class="ticket-arrow" aria-hidden="true">→</span>
-        <p class="ticket-destination">${escapeHtml(destination)}</p>
-        <p class="ticket-mode">${escapeHtml(mode)}</p>
-        <p class="ticket-duration">${escapeHtml(leg.duration)}</p>
-        <span class="ticket-perforation" aria-hidden="true"></span>
-        <p class="ticket-note">${escapeHtml(leg.note)}</p>
+      <article class="inter-city-ticket" aria-label="${escapeHtml(`${origin} to ${destination} by ${mode}`)}">
+        <img
+          class="inter-city-ticket-background"
+          src="${escapeHtml(assets.ticket || DEFAULT_DATA.assets.ticket)}"
+          alt=""
+          width="452"
+          height="184"
+          aria-hidden="true"
+        >
+
+        <span class="inter-city-ticket-route" aria-hidden="true"></span>
+        <p class="inter-city-ticket-origin">${escapeHtml(origin)}</p>
+        <p class="inter-city-ticket-destination">${escapeHtml(destination)}</p>
+
+        <span class="inter-city-ticket-icon-shell" aria-hidden="true">
+          <span
+            class="inter-city-ticket-icon"
+            data-inter-city-icon
+            data-src="${escapeHtml(icon)}"
+          ></span>
+        </span>
+
+        <p class="inter-city-ticket-mode">${escapeHtml(mode)}</p>
+        <p class="inter-city-ticket-duration">${escapeHtml(leg.duration || "")}</p>
+        <span class="inter-city-ticket-rule" aria-hidden="true"></span>
+        <p class="inter-city-ticket-note">${escapeHtml(leg.note || "")}</p>
       </article>
     `;
   };
 
-  const syncIconSizeToCountryMap = (root) => {
-    const map = document.querySelector("[data-country-map]");
-    resizeCleanups.get(root)?.();
-
-    if (!map) return;
-
-    const updateSize = (mapWidth = map.getBoundingClientRect().width) => {
-      if (mapWidth <= 0) return;
-      const iconSize = mapWidth * ICON_TO_MAP_SIZE_RATIO;
-      const ticketWidth = mapWidth * TICKET_TO_MAP_WIDTH_RATIO;
-      root.style.setProperty("--country-section-icon-size", `${iconSize}px`);
-      root.style.setProperty(
-        "--country-section-icon-half-size",
-        `${iconSize / 2}px`,
-      );
-      root.style.setProperty(
-        "--inter-city-ticket-width",
-        `${ticketWidth}px`,
-      );
-    };
-
-    updateSize();
-
-    if (typeof ResizeObserver === "function") {
-      const observer = new ResizeObserver(([entry]) => {
-        updateSize(entry.contentRect.width);
-      });
-      observer.observe(map);
-      resizeCleanups.set(root, () => observer.disconnect());
-      return;
+  const getEditorial = (data) => {
+    if (Array.isArray(data.editorial)) {
+      return data.editorial.filter(Boolean);
     }
 
-    const handleResize = () => updateSize();
-    window.addEventListener("resize", handleResize);
-    resizeCleanups.set(root, () => {
-      window.removeEventListener("resize", handleResize);
-    });
+    return DEFAULT_DATA.editorial;
   };
 
-  const render = (root, data) => {
-    validateData(data);
+  const renderEditorial = (data) => `
+    <article class="inter-city-editorial">
+      ${getEditorial(data)
+        .map(
+          (paragraph) =>
+            `<p class="inter-city-editorial-copy">${escapeHtml(paragraph)}</p>`,
+        )
+        .join("")}
+    </article>
+  `;
 
-    root.classList.add("inter-city");
-    root.innerHTML = `
-      <div class="inter-city-inner">
-        <header class="inter-city-header">
-          <h2 class="inter-city-title">${escapeHtml(data.title || "INTER-CITY TRAVEL")}</h2>
-        </header>
-        <hr class="inter-city-rule" />
-        <div class="inter-city-journey-scroll" tabindex="0" aria-label="Journey route">
-          <ol class="inter-city-journey">
-            ${renderJourney(data)}
-          </ol>
-        </div>
-        <div class="inter-city-tickets-scroll" tabindex="0" aria-label="Journey leg notes">
-          <div class="inter-city-tickets">
-            ${data.legs
-              .map((leg, index) => renderTicket(leg, index, data.places, data.assets || {}))
-              .join("")}
-          </div>
-        </div>
-      </div>
-    `;
-
+  const hydrateIcons = (root) => {
     root.querySelectorAll("[data-inter-city-icon]").forEach((icon) => {
       const source = icon.dataset.src;
+      if (!source) return;
+
       const image = new Image();
       const markLoaded = () => {
         icon.style.setProperty(
@@ -210,26 +145,85 @@
         );
         icon.classList.add("is-loaded");
       };
-      const markFailed = () => icon.classList.add("is-failed");
 
       image.addEventListener("load", markLoaded, { once: true });
-      image.addEventListener("error", markFailed, { once: true });
       image.src = source;
       if (image.complete && image.naturalWidth > 0) markLoaded();
     });
+  };
 
-    root.querySelectorAll(".ticket-background").forEach((image) => {
-      image.addEventListener("error", () => image.classList.add("is-failed"), { once: true });
-    });
+  const syncTicketStack = (root) => {
+    const frame = root.querySelector(".inter-city-ticket-stack-frame");
+    const stack = frame?.querySelector(".inter-city-ticket-stack");
+    resizeCleanups.get(root)?.();
 
-    syncIconSizeToCountryMap(root);
+    if (!frame || !stack) return;
+
+    const updateSize = () => {
+      const availableWidth = frame.getBoundingClientRect().width;
+      if (availableWidth <= 0) return;
+
+      const scale = Math.min(1, availableWidth / TICKET_STACK_WIDTH);
+      frame.style.height = `${TICKET_STACK_HEIGHT * scale}px`;
+      stack.style.setProperty("--inter-city-ticket-stack-scale", scale);
+    };
+
+    updateSize();
+
+    if (typeof ResizeObserver === "function") {
+      const observer = new ResizeObserver(updateSize);
+      observer.observe(frame);
+      resizeCleanups.set(root, () => observer.disconnect());
+      return;
+    }
+
+    window.addEventListener("resize", updateSize);
+    resizeCleanups.set(root, () => window.removeEventListener("resize", updateSize));
+  };
+
+  const render = (root, data) => {
+    validateData(data);
+
+    const assets = {
+      ...DEFAULT_DATA.assets,
+      ...(data.assets || {}),
+      modes: {
+        ...DEFAULT_DATA.assets.modes,
+        ...(data.assets?.modes || {})
+      }
+    };
+
+    root.classList.add("inter-city");
+    root.innerHTML = `
+      <div class="inter-city-inner">
+        <h2 class="inter-city-title" id="inter-city-title">
+          ${escapeHtml(data.title || DEFAULT_DATA.title)}
+        </h2>
+
+        <div class="inter-city-layout">
+          <div class="inter-city-ticket-stack-frame">
+            <div class="inter-city-ticket-stack" aria-label="Journey leg notes">
+              ${data.legs
+                .map((leg, index) => renderTicket(leg, index, data.places, assets))
+                .join("")}
+            </div>
+          </div>
+
+          ${renderEditorial(data)}
+        </div>
+      </div>
+    `;
+
+    root.setAttribute("aria-labelledby", "inter-city-title");
+    root.removeAttribute("aria-label");
+    hydrateIcons(root);
+    syncTicketStack(root);
   };
 
   const renderError = (root, error) => {
     root.innerHTML = `
       <p class="inter-city-error" role="alert">
         The inter-city component could not load. ${escapeHtml(error.message)}
-        Serve this folder through a local web server rather than opening the HTML file directly.
       </p>
     `;
   };

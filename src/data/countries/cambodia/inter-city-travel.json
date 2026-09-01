@@ -1,8 +1,11 @@
 {
-  "title": "INTER-CITY TRAVEL",
+  "title": "GOING FROM PLACE TO PLACE",
+  "editorial": [
+    "Cambodian cuisine, or Khmer cuisine, is subtle, aromatic, and deeply shaped by the country’s rivers, fertile plains, and tropical climate.",
+    "Rice and freshwater fish form the backbone of everyday meals, accompanied by fragrant herbs, vegetables, fermented ingredients, and sauces that balance salty, sour, sweet, and occasionally bitter flavours."
+  ],
   "assets": {
-    "mapPin": "../assets/icons/icon-map-pin.svg",
-    "ticket": "https://www.figma.com/api/mcp/asset/2c127d8c-8a2f-46c2-a6e4-cd31fe77edb6.png",
+    "ticket": "../assets/components/inter-city-travel/ticket.svg",
     "modes": {
       "airplane": "../assets/icons/icon-airplane.svg",
       "bus": "../assets/icons/icon-bus.svg",
@@ -19,19 +22,19 @@
   "legs": [
     {
       "mode": "bus",
-      "duration": "6 HR",
+      "duration": "6 HRS",
       "recommended": false,
       "note": "Take a daytime service. You trade romance for frequency, directness and a city-centre arrival."
     },
     {
       "mode": "train",
-      "duration": "5 HR",
+      "duration": "5 HRS",
       "recommended": false,
       "note": "The slower leg becomes part of the trip. Check the operating day before building the itinerary around it."
     },
     {
       "mode": "car",
-      "duration": "4 HR",
+      "duration": "4 HRS",
       "recommended": false,
       "note": "An awkward cross-country connection. A private transfer saves the backtrack and works well when shared."
     }
