@@ -13,7 +13,7 @@
   background: var(--inter-city-bg-canvas);
   color: var(--inter-city-text-primary);
   font-family: var(--type-family-body);
-  padding: 28px var(--space-xxl) 32px;
+  padding-block: 28px 32px;
   margin-top: 16px;
 }
 

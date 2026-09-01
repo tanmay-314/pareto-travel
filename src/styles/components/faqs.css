@@ -21,7 +21,7 @@
   width: 100%;
   max-width: 1920px;
   min-height: 0;
-  padding: 28px var(--space-xxl) 40px;
+  padding-block: 28px 40px;
   margin-top: 16px;
   overflow: hidden;
   color: var(--faq-text-primary);
@@ -292,7 +292,7 @@
 @media (max-width: 1200px) {
   .faqs {
     min-height: 0;
-    padding: 40px var(--primitive-scale-sub-heading);
+    padding-block: 40px;
   }
 
   .faqs-title-row {
@@ -335,7 +335,7 @@
 @media (max-width: 700px) {
   .faqs {
     gap: 16px;
-    padding: 32px 20px;
+    padding-block: 32px;
   }
 
   .faqs-title-row {

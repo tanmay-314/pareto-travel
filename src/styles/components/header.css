@@ -2,7 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--space-lg) var(--space-xl);
+    padding-top: var(--space-lg);
+    padding-right: var(--space-xxxl);
+    padding-bottom: var(--space-lg);
+    padding-left: var(--space-xxxl);
     background-color: var(--color-bg-header);
 }
 

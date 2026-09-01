@@ -230,15 +230,7 @@
 }
 
 .itinerary {
-  --itinerary-page-gutter: clamp(var(--space-xxl), 6.1vw, 117px);
-
-  padding: var(--space-xxl) var(--itinerary-page-gutter);
-}
-
-.itinerary > .country-section-title {
-  margin-inline-start: calc(
-    var(--space-xxl) - var(--itinerary-page-gutter)
-  );
+  padding-block: var(--space-xxl);
 }
 
 .itinerary-layout {
@@ -250,10 +242,9 @@
 }
 
 .itinerary-visual {
+  justify-self: start;
+  width: 100%;
   min-width: 0;
-  margin-inline-start: calc(
-    var(--space-xxl) - var(--itinerary-page-gutter)
-  );
 }
 
 .itinerary-editorial {
@@ -294,8 +285,6 @@
 
 @media (max-width: 900px) {
   .itinerary {
-    --itinerary-page-gutter: var(--space-lg);
-
     width: 100%;
     max-width: 100vw;
   }

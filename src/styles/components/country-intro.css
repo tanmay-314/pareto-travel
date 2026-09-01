@@ -11,7 +11,7 @@
   gap: var(--space-sm);
   width: clamp(360px, 40vw, var(--country-intro-width));
   color: var(--color-text-primary, #85586f);  
-  padding: var(--space-xxl);
+  padding-block: var(--space-xxl);
 }
 
 .country-intro-title-group {
