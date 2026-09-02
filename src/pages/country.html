@@ -24,7 +24,6 @@
 
     <script type="module" src="../scripts/components/country-navigation.js"></script>
     <script type="module" src="../scripts/components/country-hero.js"></script>
-    <script type="module" src="../scripts/components/country-rating.js"></script>
     <script type="module" src="../scripts/components/itinerary.js"></script>
     <script type="module" src="../scripts/components/inter-city-travel.js"></script>
     <script type="module" src="../scripts/components/best-months.js"></script>
@@ -73,13 +72,6 @@
           think the country witnessed a genocide only 50 years ago. Overall,
           we recommend Cambodia for its temples and tranquility.
         </p>
-
-        <div
-          class="country-rating"
-          data-country-rating
-          data-source="../data/countries/cambodia/country.json"
-          aria-label="Country ratings"
-        ></div>
 
         </div>
 
@@ -183,6 +175,7 @@
           id="faqs"
           data-faqs
           data-source="../data/countries/cambodia/faqs.json"
+          data-country-source="../data/countries/cambodia/country.json"
           aria-label="Frequently asked questions"
         ></section>
       </main>

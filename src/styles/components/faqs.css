@@ -79,6 +79,10 @@
 }
 
 .quick-reference {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
   width: 430px;
   height: 600px;
   padding: 28px var(--space-xl);
@@ -87,10 +91,7 @@
   background: var(--faq-bg-subtle);
 }
 
-.quick-reference-title,
-.quick-reference-subtitle,
-.quick-reference-label,
-.quick-reference-value {
+.quick-reference-title {
   margin: 0;
 }
 
@@ -100,46 +101,6 @@
   font-weight: var(--type-weight-strong);
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
   line-height: 29px;
-}
-
-.quick-reference-subtitle,
-.quick-reference-label {
-  font-family: var(--type-family-display), monospace;
-  font-size: var(--type-size-label);
-  font-weight: var(--type-weight-emphasis);
-  font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
-  letter-spacing: 0.08em;
-  line-height: 17px;
-}
-
-.quick-reference-subtitle {
-  color: var(--faq-text-accent);
-}
-
-.quick-reference-list {
-  display: grid;
-  gap: 16px;
-  margin: var(--space-md) 0 0;
-}
-
-.quick-reference-item {
-  margin: 0;
-}
-
-.quick-reference-label {
-  color: var(--faq-text-secondary);
-}
-
-.quick-reference-value {
-  font-family: var(--type-family-body), sans-serif;
-  font-size: var(--type-size-body);
-  font-weight: var(--type-weight-strong);
-  line-height: var(--type-line-height-body);
-}
-
-.quick-reference-item--note .quick-reference-value {
-  font-size: var(--type-size-body);
-  font-weight: var(--type-weight-regular);
 }
 
 .faq-list {

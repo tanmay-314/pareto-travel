@@ -103,9 +103,11 @@ are resolved relative to `country.json` and must point to a same-origin asset.
 
 ## Country rating
 
-Country ratings live in the top-level `ratings` array in `country.json` because
-they are part of the country introduction. The array contains exactly five ordered
-categories. Scores use a `0`–`5` scale and may change only in `0.5` increments:
+Country ratings live in the top-level `ratings` array in `country.json` and are
+rendered in the FAQ section's `{COUNTRY} REVIEW` quick-reference card. Keeping
+them with shared country data lets the card derive its title and rating values
+from one canonical source. The array contains exactly five ordered categories.
+Scores use a `0`–`5` scale and may change only in `0.5` increments:
 
 ```json
 {

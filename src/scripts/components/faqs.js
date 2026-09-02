@@ -1,3 +1,5 @@
+import { renderCountryRating } from "./country-rating.js";
+
 (function () {
   "use strict";
 
@@ -30,31 +32,31 @@
     return icon;
   }
 
-  function createQuickReference(data) {
-    const aside = createElement("aside", "quick-reference");
-    aside.setAttribute("aria-labelledby", "quick-reference-title");
+  function createQuickReference(countryData, titleId) {
+    const countryName = typeof countryData?.name === "string"
+      ? countryData.name.trim()
+      : "";
 
-    const title = createElement("h2", "quick-reference-title", data.title);
-    title.id = "quick-reference-title";
-    aside.appendChild(title);
-    aside.appendChild(createElement("p", "quick-reference-subtitle", data.subtitle));
-
-    const list = createElement("dl", "quick-reference-list");
-    (data.items || []).forEach(function (item) {
-      const group = createElement("div", "quick-reference-item");
-      group.appendChild(createElement("dt", "quick-reference-label", item.label));
-      group.appendChild(createElement("dd", "quick-reference-value", item.value));
-      list.appendChild(group);
-    });
-
-    if (data.note) {
-      const note = createElement("div", "quick-reference-item quick-reference-item--note");
-      note.appendChild(createElement("dt", "quick-reference-label", data.note.label));
-      note.appendChild(createElement("dd", "quick-reference-value", data.note.value));
-      list.appendChild(note);
+    if (!countryName) {
+      throw new Error("FAQ review needs a country name.");
     }
 
-    aside.appendChild(list);
+    const aside = createElement("aside", "quick-reference");
+    aside.setAttribute("aria-labelledby", titleId);
+
+    const title = createElement(
+      "h2",
+      "quick-reference-title",
+      countryName.toUpperCase() + " REVIEW"
+    );
+    title.id = titleId;
+    aside.appendChild(title);
+
+    const rating = createElement("div", "country-rating");
+    rating.setAttribute("aria-label", countryName + " ratings");
+    renderCountryRating(rating, countryData);
+    aside.appendChild(rating);
+
     return aside;
   }
 
@@ -96,14 +98,15 @@
     return row;
   }
 
-  function render(root, data) {
+  function render(root, data, countryData) {
     root.replaceChildren();
 
     const titleRow = createElement("div", "faqs-title-row");
     titleRow.appendChild(createElement("h1", "faqs-title", data.sectionTitle || "FAQS"));
 
     const body = createElement("div", "faqs-body");
-    body.appendChild(createQuickReference(data.quickReference || {}));
+    const quickReferenceTitleId = (root.id || "faqs") + "-review-title";
+    body.appendChild(createQuickReference(countryData, quickReferenceTitleId));
 
     const list = createElement("div", "faq-list");
     list.dataset.allowMultiple = String(Boolean(data.allowMultiple));
@@ -139,14 +142,29 @@
     root.appendChild(body);
   }
 
+  async function fetchJson(source, label) {
+    const response = await fetch(new URL(source, document.baseURI));
+    if (!response.ok) {
+      throw new Error(label + " data request failed with status " + response.status);
+    }
+
+    return response.json();
+  }
+
   async function init(root) {
     const source = root.dataset.source || "../data/countries/cambodia/faqs.json";
+    const countrySource = root.dataset.countrySource;
 
     try {
-      const response = await fetch(new URL(source, document.baseURI));
-      if (!response.ok) throw new Error("FAQ data request failed with status " + response.status);
-      const data = await response.json();
-      render(root, data);
+      if (!countrySource) {
+        throw new Error("FAQ review needs a data-country-source attribute.");
+      }
+
+      const [data, countryData] = await Promise.all([
+        fetchJson(source, "FAQ"),
+        fetchJson(countrySource, "Country")
+      ]);
+      render(root, data, countryData);
       return root;
     } catch (error) {
       root.replaceChildren(createElement("p", "faqs-error", "Unable to load the FAQ content."));
