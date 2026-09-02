@@ -208,6 +208,8 @@
         </h2>
 
         <div class="inter-city-layout">
+          ${renderEditorial(data)}
+
           <div class="inter-city-ticket-stack-frame">
             <div class="inter-city-ticket-stack" aria-label="Journey leg notes">
               ${data.legs
@@ -215,8 +217,6 @@
                 .join("")}
             </div>
           </div>
-
-          ${renderEditorial(data)}
         </div>
       </div>
     `;

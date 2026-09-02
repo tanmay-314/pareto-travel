@@ -190,6 +190,7 @@
 .cuisine-dish {
   color: var(--cuisine-text);
   font-family: var(--type-family-body), sans-serif;
+  text-transform: uppercase;
 }
 
 .cuisine-description,

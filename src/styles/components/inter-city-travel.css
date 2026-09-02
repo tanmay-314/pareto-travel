@@ -45,8 +45,8 @@
 .inter-city-layout {
   display: grid;
   grid-template-columns:
-    var(--inter-city-ticket-stack-width, 558px)
-    minmax(0, 620px);
+    minmax(0, 620px)
+    var(--inter-city-ticket-stack-width, 558px);
   gap: 90px;
   align-items: start;
 }
@@ -289,8 +289,8 @@
 
   .inter-city-layout {
     grid-template-columns:
-      minmax(0, var(--inter-city-ticket-stack-width, 558px))
-      minmax(0, 620px);
+      minmax(0, 620px)
+      minmax(0, var(--inter-city-ticket-stack-width, 558px));
     gap: clamp(48px, 6vw, 90px);
   }
 }
