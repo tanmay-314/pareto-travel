@@ -29,31 +29,24 @@
   },
   "items": [
     {
-      "id": "visa",
+      "id": "safety",
       "index": "01",
-      "question": "Do I need a visa for Cambodia?",
-      "answer": "Most travellers can use an e-visa or obtain a visa on arrival. The e-visa is the calmer option: apply before the trip, print a copy, and check that your entry point accepts it.",
+      "question": "How safe is Cambodia?",
+      "answer": "We felt very safe in Cambodia. We walked around Siem Reap past 10:00 PM and took a few inner lanes to our venues. They were more rustic than the tourist traps, but they also felt safe.",
       "open": true
     },
     {
-      "id": "safety",
+      "id": "english",
       "index": "02",
-      "question": "Is Cambodia safe for first-time visitors?",
-      "answer": "Replace this placeholder with the final safety guidance.",
+      "question": "Is English commonly understood?",
+      "answer": "At least in Siem Reap, the answer is yes.",
       "open": false
     },
     {
-      "id": "money",
+      "id": "weather",
       "index": "03",
-      "question": "Should I carry cash or rely on cards?",
-      "answer": "Replace this placeholder with the final cash and card guidance.",
-      "open": false
-    },
-    {
-      "id": "advance-bookings",
-      "index": "04",
-      "question": "What should I book before arriving?",
-      "answer": "Replace this placeholder with the final advance-booking guidance.",
+      "question": "What could ruin my stay in Cambodia?",
+      "answer": "Depending on when you go, the weather may play spoilsport—especially on sunset tours, because evening showers are more common.",
       "open": false
     }
   ]

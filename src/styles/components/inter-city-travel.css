@@ -44,14 +44,16 @@
 
 .inter-city-layout {
   display: grid;
-  grid-template-columns: 558px minmax(0, 620px);
+  grid-template-columns:
+    var(--inter-city-ticket-stack-width, 558px)
+    minmax(0, 620px);
   gap: 90px;
   align-items: start;
 }
 
 .inter-city-ticket-stack-frame {
   position: relative;
-  width: min(558px, 100%);
+  width: min(var(--inter-city-ticket-stack-width, 558px), 100%);
 }
 
 .inter-city-ticket-stack {
@@ -111,13 +113,13 @@
 
 .inter-city-ticket-route-row {
   position: absolute;
-  z-index: 1;
-  top: 35px;
+  z-index: 3;
+  top: 17px;
   right: 24px;
   left: 24px;
   display: grid;
-  height: 24px;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  height: 60px;
+  grid-template-columns: auto minmax(0, 1fr) 60px minmax(0, 1fr) auto;
   align-items: center;
   column-gap: 6px;
 }
@@ -173,14 +175,10 @@
 }
 
 .inter-city-ticket-icon-shell {
-  position: absolute;
-  z-index: 3;
-  top: 17px;
-  left: 187px;
   display: block;
   width: 60px;
   height: 60px;
-  background: var(--inter-city-paper);
+  background: transparent;
 }
 
 .inter-city-ticket-icon {
@@ -290,7 +288,9 @@
   }
 
   .inter-city-layout {
-    grid-template-columns: minmax(0, 558px) minmax(0, 620px);
+    grid-template-columns:
+      minmax(0, var(--inter-city-ticket-stack-width, 558px))
+      minmax(0, 620px);
     gap: clamp(48px, 6vw, 90px);
   }
 }

@@ -39,7 +39,7 @@
     ],
     total: "$940",
     editorial: [
-      "This five-day estimate covers two travellers sharing rooms and splitting transport. Cambodia rewards a flexible budget: guesthouses and local food keep daily costs low, while Angkor passes, private transfers and a few considered splurges account for most of the total."
+      "Cambodia was fairly affordable."
     ]
   });
 

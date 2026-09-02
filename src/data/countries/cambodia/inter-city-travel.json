@@ -1,42 +1,27 @@
 {
   "title": "GOING FROM PLACE TO PLACE",
   "editorial": [
-    "Cambodian cuisine, or Khmer cuisine, is subtle, aromatic, and deeply shaped by the country’s rivers, fertile plains, and tropical climate.",
-    "Rice and freshwater fish form the backbone of everyday meals, accompanied by fragrant herbs, vegetables, fermented ingredients, and sauces that balance salty, sour, sweet, and occasionally bitter flavours."
+    "Since we only visited Siem Reap, there was no internal travel.",
+    "If Phnom Penh is your port of entry, your best option is to fly to Siem Reap. Sunrise tours leave around 5:00 AM, so plan your travel accordingly."
   ],
   "assets": {
     "ticket": "../assets/components/inter-city-travel/ticket.svg",
     "modes": {
-      "airplane": "../assets/icons/icon-airplane.svg",
+      "flight": "../assets/icons/icon-flight.svg",
       "bus": "../assets/icons/icon-bus.svg",
       "train": "../assets/icons/icon-train.svg",
       "car": "../assets/icons/icon-car.svg"
     }
   },
   "places": [
-    { "name": "SIEM REAP", "caption": "START" },
-    { "name": "PHNOM PENH", "caption": "2 NIGHTS" },
-    { "name": "BATTAMBANG", "caption": "2 NIGHTS" },
-    { "name": "KAMPOT", "caption": "FINISH" }
+    { "name": "PHNOM PENH", "caption": "PORT OF ENTRY" },
+    { "name": "SIEM REAP", "caption": "ANGKOR GATEWAY" }
   ],
   "legs": [
     {
-      "mode": "bus",
-      "duration": "6 HRS",
-      "recommended": false,
-      "note": "Take a daytime service. You trade romance for frequency, directness and a city-centre arrival."
-    },
-    {
-      "mode": "train",
-      "duration": "5 HRS",
-      "recommended": false,
-      "note": "The slower leg becomes part of the trip. Check the operating day before building the itinerary around it."
-    },
-    {
-      "mode": "car",
-      "duration": "4 HRS",
-      "recommended": false,
-      "note": "An awkward cross-country connection. A private transfer saves the backtrack and works well when shared."
+      "mode": "flight",
+      "duration": "1 HR",
+      "note": "Fly to Siem Reap and arrive in time for the next morning’s 5:00 AM sunrise-tour departure."
     }
   ]
 }

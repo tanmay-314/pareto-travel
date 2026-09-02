@@ -4,44 +4,36 @@
   const DEFAULT_DATA = {
     title: "GOING FROM PLACE TO PLACE",
     editorial: [
-      "Cambodian cuisine, or Khmer cuisine, is subtle, aromatic, and deeply shaped by the country’s rivers, fertile plains, and tropical climate.",
-      "Rice and freshwater fish form the backbone of everyday meals, accompanied by fragrant herbs, vegetables, fermented ingredients, and sauces that balance salty, sour, sweet, and occasionally bitter flavours."
+      "Since we only visited Siem Reap, there was no internal travel.",
+      "If Phnom Penh is your port of entry, your best option is to fly to Siem Reap. Sunrise tours leave around 5:00 AM, so plan your travel accordingly."
     ],
     assets: {
       ticket: "../assets/components/inter-city-travel/ticket.svg",
       modes: {
-        airplane: "../assets/icons/icon-airplane.svg",
+        flight: "../assets/icons/icon-flight.svg",
         bus: "../assets/icons/icon-bus.svg",
         train: "../assets/icons/icon-train.svg",
         car: "../assets/icons/icon-car.svg"
       }
     },
     places: [
-      { name: "SIEM REAP" },
       { name: "PHNOM PENH" },
-      { name: "BATTAMBANG" },
-      { name: "KAMPOT" }
+      { name: "SIEM REAP" }
     ],
     legs: [
       {
-        mode: "bus",
-        duration: "6 HRS",
-        note: "Take a daytime service. You trade romance for frequency, directness and a city-centre arrival."
-      },
-      {
-        mode: "train",
-        duration: "5 HRS",
-        note: "The slower leg becomes part of the trip. Check the operating day before building the itinerary around it."
-      },
-      {
-        mode: "car",
-        duration: "4 HRS",
-        note: "An awkward cross-country connection. A private transfer saves the backtrack and works well when shared."
+        mode: "flight",
+        duration: "1 HR",
+        note: "Fly to Siem Reap and arrive in time for the next morning’s 5:00 AM sunrise-tour departure."
       }
     ]
   };
 
-  const TICKET_STACK_WIDTH = 558;
+  const COUNTRY_MAP_FIGMA_WIDTH = 720;
+  const TICKET_TO_MAP_WIDTH_RATIO = 5 / 8;
+  const TICKET_FIGMA_WIDTH =
+    COUNTRY_MAP_FIGMA_WIDTH * TICKET_TO_MAP_WIDTH_RATIO;
+  const TICKET_STACK_FIGMA_WIDTH = 558;
   const resizeCleanups = new WeakMap();
 
   const escapeHtml = (value = "") =>
@@ -54,8 +46,10 @@
 
   const normalizeMode = (mode) => {
     const value = String(mode || "").trim().toLowerCase();
-    return value === "plane" || value === "air" ? "airplane" : value;
+    return ["plane", "air", "airplane"].includes(value) ? "flight" : value;
   };
+
+  const getModeLabel = (mode) => normalizeMode(mode);
 
   const validateData = (data) => {
     if (!data || typeof data !== "object") {
@@ -79,10 +73,11 @@
     const origin = places[legIndex]?.name || "";
     const destination = places[legIndex + 1]?.name || "";
     const mode = normalizeMode(leg.mode);
+    const modeLabel = getModeLabel(leg.mode);
     const icon = assets.modes?.[mode] || "";
 
     return `
-      <article class="inter-city-ticket" aria-label="${escapeHtml(`${origin} to ${destination} by ${mode}`)}">
+      <article class="inter-city-ticket" aria-label="${escapeHtml(`${origin} to ${destination} by ${modeLabel}`)}">
         <img
           class="inter-city-ticket-background"
           src="${escapeHtml(assets.ticket || DEFAULT_DATA.assets.ticket)}"
@@ -95,19 +90,19 @@
         <div class="inter-city-ticket-route-row">
           <p class="inter-city-ticket-origin">${escapeHtml(origin)}</p>
           <span class="inter-city-ticket-route" aria-hidden="true"></span>
+          <span class="inter-city-ticket-icon-shell" aria-hidden="true">
+            <span
+              class="inter-city-ticket-icon"
+              data-inter-city-icon
+              data-src="${escapeHtml(icon)}"
+            ></span>
+          </span>
+          <span class="inter-city-ticket-route" aria-hidden="true"></span>
           <p class="inter-city-ticket-destination">${escapeHtml(destination)}</p>
         </div>
 
-        <span class="inter-city-ticket-icon-shell" aria-hidden="true">
-          <span
-            class="inter-city-ticket-icon"
-            data-inter-city-icon
-            data-src="${escapeHtml(icon)}"
-          ></span>
-        </span>
-
         <div class="inter-city-ticket-meta">
-          <p class="inter-city-ticket-mode">${escapeHtml(mode)}</p>
+          <p class="inter-city-ticket-mode">${escapeHtml(modeLabel)}</p>
           <p class="inter-city-ticket-duration">${escapeHtml(leg.duration || "")}</p>
         </div>
         <span class="inter-city-ticket-rule" aria-hidden="true"></span>
@@ -156,6 +151,7 @@
   };
 
   const syncTicketStack = (root) => {
+    const map = document.querySelector("[data-country-map]");
     const frame = root.querySelector(".inter-city-ticket-stack-frame");
     const stack = frame?.querySelector(".inter-city-ticket-stack");
     resizeCleanups.get(root)?.();
@@ -163,10 +159,18 @@
     if (!frame || !stack) return;
 
     const updateSize = () => {
-      const availableWidth = frame.getBoundingClientRect().width;
-      if (availableWidth <= 0) return;
+      const mapWidth =
+        map?.getBoundingClientRect().width || COUNTRY_MAP_FIGMA_WIDTH;
+      if (mapWidth <= 0) return;
 
-      const scale = Math.min(1, availableWidth / TICKET_STACK_WIDTH);
+      const ticketWidth = mapWidth * TICKET_TO_MAP_WIDTH_RATIO;
+      const scale = ticketWidth / TICKET_FIGMA_WIDTH;
+      const stackWidth = TICKET_STACK_FIGMA_WIDTH * scale;
+      root.style.setProperty(
+        "--inter-city-ticket-stack-width",
+        `${stackWidth}px`,
+      );
+      frame.style.width = `${stackWidth}px`;
       frame.style.height = `${stack.offsetHeight * scale}px`;
       stack.style.setProperty("--inter-city-ticket-stack-scale", scale);
     };
@@ -175,7 +179,7 @@
 
     if (typeof ResizeObserver === "function") {
       const observer = new ResizeObserver(updateSize);
-      observer.observe(frame);
+      if (map) observer.observe(map);
       resizeCleanups.set(root, () => observer.disconnect());
       return;
     }
