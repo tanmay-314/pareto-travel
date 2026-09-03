@@ -1,6 +1,6 @@
 :root {
-  --country-nav-width: 166px;
-  --country-nav-height: 450px;
+  --country-nav-width: 328px;
+  --country-nav-height: 180px;
   --country-nav-pole-width: 12px;
   --country-nav-base: var(--color-icon-primary);
   --country-nav-active: var(--color-icon-primary);
@@ -17,148 +17,27 @@
   min-width: 0;
 }
 
-.country-navigation-rail {
-  --country-drawer-scale: 1;
-  --country-drawer-width: 300px;
-  --country-drawer-open-width: 63px;
-  --country-drawer-open-height: 30px;
-  --country-drawer-trigger-top: 256px;
-  --country-drawer-panel-top: -8px;
-  --country-drawer-overscan: 8px;
-  --country-drawer-background-left: 1px;
-  --country-drawer-background-width: 299px;
-  --country-drawer-shadow-extension: 4px;
-  --country-drawer-slide-gutter: 8px;
-  position: fixed;
-  z-index: 100;
-  inset: 0 0 auto auto;
-  width: var(--country-drawer-width);
-  height: 100svh;
-  pointer-events: none;
-}
-
-.country-navigation-rail::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-color: var(--primitive-color-black);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 220ms ease, visibility 0s linear 220ms;
-}
-
-.country-navigation-rail[data-state="open"]::before {
-  opacity: 0.25;
-  visibility: visible;
-  transition: opacity 220ms ease, visibility 0s;
-}
-
-.country-navigation-trigger,
-.country-navigation-close {
-  position: absolute;
-  display: block;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.country-navigation-trigger img,
-.country-navigation-close img,
-.country-navigation-panel-background {
-  display: block;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  user-select: none;
-}
-
-.country-navigation-trigger {
-  z-index: 1;
-  top: var(--country-drawer-trigger-top);
-  right: 0;
-  width: var(--country-drawer-open-width);
-  height: var(--country-drawer-open-height);
-  pointer-events: auto;
-  transition: opacity 120ms ease, visibility 120ms ease;
-}
-
-.country-navigation-panel {
-  position: absolute;
-  top: var(--country-drawer-panel-top);
-  right: 0;
-  width: var(--country-drawer-width);
-  height: calc(100svh + var(--country-drawer-overscan));
-  overflow: visible;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateX(calc(100% + var(--country-drawer-slide-gutter)));
-  transition: transform 220ms ease, visibility 0s linear 220ms;
-}
-
-.country-navigation-panel-background {
-  position: absolute;
-  top: 0;
-  left: var(--country-drawer-background-left);
-  width: var(--country-drawer-background-width);
-  max-width: none;
-  height: calc(100% + var(--country-drawer-shadow-extension));
-}
-
-.country-navigation-content {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 300px;
-  height: 663px;
-  pointer-events: none;
-  transform: scale(var(--country-drawer-scale));
-  transform-origin: top right;
-}
-
-.country-navigation-close {
-  z-index: 2;
-  top: 14px;
-  right: 6px;
-  width: 30px;
-  height: 30px;
-  pointer-events: auto;
-}
-
-.country-navigation-rail[data-state="open"] .country-navigation-trigger {
-  visibility: hidden;
-  opacity: 0;
-}
-
-.country-navigation-rail[data-state="open"] .country-navigation-panel {
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateX(0);
-  transition: transform 220ms ease, visibility 0s;
-}
-
 .country-navigation {
-  position: absolute;
-  z-index: 1;
-  top: 213px;
-  left: 67px;
+  position: relative;
+  align-self: center;
+  flex: 0 0 auto;
   width: var(--country-nav-width);
+  max-width: 100%;
   height: var(--country-nav-height);
-  pointer-events: auto;
 }
 
 .country-navigation-surface {
   position: absolute;
   top: 0;
   left: 0;
+  transform: scale(var(--country-nav-scale, 1));
+  transform-origin: top left;
 }
 
 .country-navigation-pole {
   position: absolute;
   top: 0;
-  left: 74px;
+  left: 158px;
   width: var(--country-nav-pole-width);
   height: var(--country-nav-height);
   background-color: var(--country-nav-base);
@@ -220,16 +99,8 @@
   font-family: var(--type-family-display);
 }
 
-@media (max-width: 760px) {
-  .country-navigation-rail {
-    display: none;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .country-navigation-board,
-  .country-navigation-trigger,
-  .country-navigation-panel {
+  .country-navigation-board {
     transition: none;
   }
 }

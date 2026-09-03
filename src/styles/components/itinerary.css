@@ -123,7 +123,7 @@
 
 .itinerary-polaroid-photo {
   position: absolute;
-  z-index: 0;
+  z-index: 1;
   top: 24px;
   left: 24px;
   width: 360px;
@@ -142,7 +142,7 @@
 
 .itinerary-polaroid-frame {
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   inset: 0;
   display: block;
   width: 100%;
@@ -164,12 +164,13 @@
 }
 
 .itinerary-polaroid-day {
-  height: 14px;
+  height: 18px;
   margin: 0;
   overflow: hidden;
   font-family: var(--type-family-display), monospace;
   font-size: var(--type-size-label);
   font-weight: var(--type-weight-emphasis);
+  line-height: 1.5;
   letter-spacing: 0.96px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -180,7 +181,7 @@
   margin: 4px 0 0;
   overflow: hidden;
   font-family: var(--type-family-display), monospace;
-  font-size:   var(--type-size-body);
+  font-size: var(--type-size-polaroid-location);
   font-weight: var(--type-weight-strong);
   letter-spacing: 0;
   white-space: nowrap;

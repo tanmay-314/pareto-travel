@@ -2,13 +2,13 @@
 
 This file gives a new Codex session a quick snapshot of active work. Keep it brief and update it whenever priorities or known constraints materially change.
 
-Last updated: YYYY-MM-DD
+Last updated: 2026-09-02
 
 ## Current objective
 
 <!-- One or two sentences describing the current milestone. -->
 
-- Define the next production milestone.
+- Integrate the redesigned in-hero country navigation and continue refining the reusable country page.
 
 ## Current implementation
 
@@ -47,6 +47,7 @@ Update this list with file paths and implementation status once the files are pr
 <!-- Keep only the most useful recent entries. Move durable decisions to docs/decisions.md. -->
 
 - Added repository guidance for Codex.
+- Replaced the country-page side drawer with the six-link navigation signpost inside the country hero and removed City Guides from page navigation.
 
 ## Handoff notes
 

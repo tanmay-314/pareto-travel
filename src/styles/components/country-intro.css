@@ -8,8 +8,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-sm);
-  width: clamp(360px, 40vw, var(--country-intro-width));
+  gap: var(--space-lg);
+  width: min(40vw, var(--country-intro-width));
+  min-width: 300px;
   color: var(--color-text-primary, #85586f);  
   padding-block: var(--space-xxl);
 }
@@ -54,6 +55,11 @@
 }
 
 @media (max-width: 600px) {
+  .country-intro {
+    width: 100%;
+    min-width: 0;
+  }
+
   .country-intro-name {
     font-size: clamp(42px, 12vw, var(--type-size-page-title));
   }

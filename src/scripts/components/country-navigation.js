@@ -1,9 +1,8 @@
 const DEFAULT_CONFIG_URL = "./data/components/country-navigation.json";
 const COUNTRY_MAP_FIGMA_WIDTH = 720;
-const DRAWER_TO_MAP_WIDTH_RATIO = 5 / 12;
-const DRAWER_OPEN_TO_MAP_WIDTH_RATIO = 7 / 80;
+const NAVIGATION_WIDTH = 328;
+const NAVIGATION_HEIGHT = 180;
 const navigationBehaviorCleanups = new WeakMap();
-const navigationDrawerCleanups = new WeakMap();
 const navigationResizeCleanups = new WeakMap();
 
 function createBoard(board, assets) {
@@ -112,151 +111,42 @@ function addNavigationBehavior(navigation) {
   });
 }
 
-function addDrawerBehavior(navigation) {
-  const drawer = navigation.closest("[data-country-navigation-drawer]");
-  if (!drawer) return;
+function syncNavigationToCountryMap(navigation) {
+  navigationResizeCleanups.get(navigation)?.();
 
-  navigationDrawerCleanups.get(drawer)?.();
-
-  const trigger = drawer.querySelector(".country-navigation-trigger");
-  const panel = drawer.querySelector(".country-navigation-panel");
-  const closeButton = drawer.querySelector(".country-navigation-close");
-  if (!trigger || !panel || !closeButton) return;
-
-  const setOpen = (isOpen, returnFocus = false) => {
-    drawer.dataset.state = isOpen ? "open" : "closed";
-    trigger.setAttribute("aria-expanded", String(isOpen));
-    panel.setAttribute("aria-hidden", String(!isOpen));
-    panel.inert = !isOpen;
-
-    if (isOpen) {
-      window.requestAnimationFrame(() => {
-        if (drawer.dataset.state === "open") {
-          closeButton.focus({ preventScroll: true });
-        }
-      });
-    } else if (returnFocus) {
-      window.requestAnimationFrame(() => {
-        if (drawer.dataset.state === "closed") {
-          trigger.focus({ preventScroll: true });
-        }
-      });
-    }
-  };
-
-  const handleTriggerClick = () => setOpen(true);
-  const handleCloseClick = () => setOpen(false, true);
-  const handleKeydown = (event) => {
-    if (event.key !== "Escape" || drawer.dataset.state !== "open") return;
-    event.preventDefault();
-    setOpen(false, true);
-  };
-  const handleNavigationSelect = () => {
-    const focusIsInsidePanel = panel.contains(document.activeElement);
-    setOpen(false, focusIsInsidePanel);
-  };
-
-  trigger.addEventListener("click", handleTriggerClick);
-  closeButton.addEventListener("click", handleCloseClick);
-  document.addEventListener("keydown", handleKeydown);
-  navigation.addEventListener(
-    "country-navigation:select",
-    handleNavigationSelect
-  );
-
-  navigationDrawerCleanups.set(drawer, () => {
-    trigger.removeEventListener("click", handleTriggerClick);
-    closeButton.removeEventListener("click", handleCloseClick);
-    document.removeEventListener("keydown", handleKeydown);
-    navigation.removeEventListener(
-      "country-navigation:select",
-      handleNavigationSelect
-    );
-  });
-}
-
-function syncDrawerToCountryMap(navigation) {
-  const drawer = navigation.closest("[data-country-navigation-drawer]");
   const map = navigation
-    .closest(".country-page")
+    .closest("[data-country-hero]")
     ?.querySelector("[data-country-map]");
-  if (!drawer) return;
+  if (!map) return;
 
-  navigationResizeCleanups.get(drawer)?.();
-
-  const updateSize = (
-    mapWidth = map?.getBoundingClientRect().width || COUNTRY_MAP_FIGMA_WIDTH
-  ) => {
+  const updateSize = () => {
+    const mapWidth = map.getBoundingClientRect().width;
     if (mapWidth <= 0) return;
 
     const scale = mapWidth / COUNTRY_MAP_FIGMA_WIDTH;
-    const drawerWidth = mapWidth * DRAWER_TO_MAP_WIDTH_RATIO;
-    const drawerOpenWidth = mapWidth * DRAWER_OPEN_TO_MAP_WIDTH_RATIO;
-
-    drawer.style.setProperty("--country-drawer-scale", scale);
-    drawer.style.setProperty("--country-drawer-width", `${drawerWidth}px`);
-    drawer.style.setProperty(
-      "--country-drawer-open-width",
-      `${drawerOpenWidth}px`
-    );
-    drawer.style.setProperty(
-      "--country-drawer-open-height",
-      `${30 * scale}px`
-    );
-    drawer.style.setProperty(
-      "--country-drawer-trigger-top",
-      `${256 * scale}px`
-    );
-    drawer.style.setProperty(
-      "--country-drawer-panel-top",
-      `${-8 * scale}px`
-    );
-    drawer.style.setProperty(
-      "--country-drawer-overscan",
-      `${8 * scale}px`
-    );
-    drawer.style.setProperty(
-      "--country-drawer-background-left",
-      `${scale}px`
-    );
-    drawer.style.setProperty(
-      "--country-drawer-background-width",
-      `${299 * scale}px`
-    );
-    drawer.style.setProperty(
-      "--country-drawer-shadow-extension",
-      `${4 * scale}px`
-    );
-    drawer.style.setProperty(
-      "--country-drawer-slide-gutter",
-      `${8 * scale}px`
-    );
+    navigation.style.width = `${NAVIGATION_WIDTH * scale}px`;
+    navigation.style.height = `${NAVIGATION_HEIGHT * scale}px`;
+    navigation.style.setProperty("--country-nav-scale", scale);
   };
 
   updateSize();
 
-  if (!map) return;
-
   if (typeof ResizeObserver === "function") {
-    const observer = new ResizeObserver(([entry]) => {
-      updateSize(entry.contentRect.width);
-    });
+    const observer = new ResizeObserver(updateSize);
     observer.observe(map);
-    navigationResizeCleanups.set(drawer, () => observer.disconnect());
+    navigationResizeCleanups.set(navigation, () => observer.disconnect());
     return;
   }
 
-  const handleResize = () => updateSize();
-  window.addEventListener("resize", handleResize);
-  navigationResizeCleanups.set(drawer, () => {
-    window.removeEventListener("resize", handleResize);
+  window.addEventListener("resize", updateSize);
+  navigationResizeCleanups.set(navigation, () => {
+    window.removeEventListener("resize", updateSize);
   });
 }
 
 async function renderCountryNavigation(navigation) {
   const configUrl = navigation.dataset.config || DEFAULT_CONFIG_URL;
-  addDrawerBehavior(navigation);
-  syncDrawerToCountryMap(navigation);
+  syncNavigationToCountryMap(navigation);
 
   try {
     const response = await fetch(configUrl);

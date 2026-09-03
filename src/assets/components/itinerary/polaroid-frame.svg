@@ -674,4 +674,5 @@
 <path d="M3 387H405V453H3V387Z" fill="white"/>
 <path d="M387 21H405V387H387V21Z" fill="white"/>
 <path d="M3 21H21V387H3V21Z" fill="white"/>
+<path d="M21 21H387V387H21V21Z" fill="white"/>
 </svg>

@@ -132,9 +132,10 @@ Update the paths below when components are integrated.
 
 - Root: `[data-component="country-navigation"]`
 - Inputs: label, destination, rotation, current/active state
-- Key behavior: each board is clickable and visibly highlighted on hover and focus
+- Key behavior: the six-board signpost renders inside the country hero; each board is clickable and visibly highlighted on hover and focus
 - Semantics: use anchors for navigation
-- Implementation paths: _record when integrated_
+- Responsive behavior: the 328 × 180px composition scales with the live country-map width at a 328:720 width ratio
+- Implementation paths: `src/scripts/components/country-navigation.js`, `src/styles/components/country-navigation.css`, `src/data/components/country-navigation.json`, and `src/assets/components/country-navigation/`
 
 ### Cuisine/editorial section
 
