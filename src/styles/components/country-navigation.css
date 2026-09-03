@@ -9,8 +9,8 @@
 
 .country-page {
   width: 100%;
-  padding-right: var(--space-xxxl);
-  padding-left: var(--space-xxxl);
+  padding-right: var(--space-6xl);
+  padding-left: var(--space-6xl);
 }
 
 .country-page-content {

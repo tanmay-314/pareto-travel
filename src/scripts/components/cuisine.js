@@ -148,7 +148,7 @@
       : DEFAULT_DATA.chapters;
 
     root.innerHTML = `
-      <h2 class="cuisine-title" id="cuisine-title">
+      <h2 class="cuisine-title country-sub-heading" id="cuisine-title">
         ${escapeHtml(data.title || "MEALS YOU CAN'T MISS")}
       </h2>
 

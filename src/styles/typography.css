@@ -147,7 +147,23 @@ a:hover {
     font-family: var(--type-family-display);
     font-size: var(--type-size-section-title);
     font-weight: var(--type-weight-emphasis);
-    line-height: var(--type-line-height-body);
+    line-height: 60px;
     text-transform: uppercase;
     margin-bottom: var(--space-xxl);
+}
+
+/* Figma component 861:30319: sub-heading followed by a 4px dotted rule. */
+.country-sub-heading::after {
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin-top: var(--space-xs);
+  background-image: radial-gradient(
+    circle at 2px 2px,
+    var(--color-border-subtle) 0 2px,
+    transparent 2.1px
+  );
+  background-repeat: repeat-x;
+  background-size: 8px 4px;
+  content: "";
 }

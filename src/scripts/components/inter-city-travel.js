@@ -203,7 +203,7 @@
     root.classList.add("inter-city");
     root.innerHTML = `
       <div class="inter-city-inner">
-        <h2 class="inter-city-title" id="inter-city-title">
+        <h2 class="inter-city-title country-sub-heading" id="inter-city-title">
           ${escapeHtml(data.title || DEFAULT_DATA.title)}
         </h2>
 

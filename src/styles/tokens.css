@@ -40,6 +40,7 @@
   --primitive-scale-x-large: 30px;
   --primitive-scale-xx-large: 36px;
   --primitive-scale-xxx-large: 72px;
+  --primitive-scale-6xl: 144px;
   --primitive-scale-sub-heading: 48px;
   --primitive-scale-heading: 60px;
 
@@ -93,6 +94,7 @@
   --space-xl: var(--primitive-scale-x-large);
   --space-xxl: var(--primitive-scale-xx-large);
   --space-xxxl: var(  --primitive-scale-xxx-large);
+  --space-6xl: var(--primitive-scale-6xl);
   /* Semantic: sizing */
   --size-dot-base: var(--primitive-scale-base);
 

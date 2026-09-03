@@ -53,11 +53,10 @@
   font-size: var(--type-size-section-title);
   font-weight: var(--type-weight-emphasis);
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
-  line-height: 64px;
+  line-height: 60px;
   white-space: nowrap;
 }
 
-.faqs-rule,
 .faq-item-rule {
   flex: 0 0 6px;
   width: 100%;
@@ -305,7 +304,7 @@
 
   .faqs-title {
     font-size: 44px;
-    line-height: 52px;
+    line-height: 1.1;
   }
 
   .quick-reference {

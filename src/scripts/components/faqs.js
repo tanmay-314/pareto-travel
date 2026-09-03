@@ -102,7 +102,13 @@ import { renderCountryRating } from "./country-rating.js";
     root.replaceChildren();
 
     const titleRow = createElement("div", "faqs-title-row");
-    titleRow.appendChild(createElement("h1", "faqs-title", data.sectionTitle || "FAQS"));
+    titleRow.appendChild(
+      createElement(
+        "h1",
+        "faqs-title country-sub-heading",
+        data.sectionTitle || "FAQS"
+      )
+    );
 
     const body = createElement("div", "faqs-body");
     const quickReferenceTitleId = (root.id || "faqs") + "-review-title";
@@ -138,7 +144,6 @@ import { renderCountryRating } from "./country-rating.js";
 
     body.appendChild(list);
     root.appendChild(titleRow);
-    root.appendChild(createElement("div", "faqs-rule"));
     root.appendChild(body);
   }
 

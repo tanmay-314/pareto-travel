@@ -3,9 +3,9 @@
     justify-content: space-between;
     align-items: center;
     padding-top: var(--space-lg);
-    padding-right: var(--space-xxxl);
+    padding-right: var(--space-6xl);
     padding-bottom: var(--space-lg);
-    padding-left: var(--space-xxxl);
+    padding-left: var(--space-6xl);
     background-color: var(--color-bg-header);
 }
 

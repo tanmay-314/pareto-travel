@@ -88,7 +88,7 @@ Update the paths below when components are integrated.
 - Score scale: `0`–`5` in half-star increments; full, partial, and tertiary stars are rendered from exported Figma assets
 - Mounting: the FAQ review renders it directly from `country.json`; standalone usage can set `data-source` on `[data-country-rating]`
 - Accessibility: each row is a description-list pair and exposes a text equivalent such as “Nature: 3.5 out of 5 stars”
-- Responsive behavior: the component keeps the Figma 30 px star size and caps its 330 px frame at the available width
+- Responsive behavior: each star tracks the live country-map width at a 1:24 ratio (30 px at the map's 720 px maximum); the five-star strip updates through `ResizeObserver`
 - Fallback: invalid or unavailable data hides only the rating block and logs an actionable error
 - Implementation paths: `src/scripts/components/country-rating.js`, `src/styles/components/country-rating.css`, `src/assets/components/country-rating/`, and `src/data/countries/<slug>/country.json`
 

@@ -21,7 +21,7 @@
           "location": "SIEM REAP",
           "rotation": "0°",
           "image": {
-            "src": "../assets/images/art-angkor-wat.svg",
+            "src": "../assets/countries/cambodia/art-360/art-frame-kh-apsara-dance-360.svg",
             "alt": "",
             "position": "50% 50%",
             "size": 360
@@ -29,10 +29,10 @@
         },
         {
           "dayNumber": "DAY 2",
-          "location": "SIEM REAP",
+          "location": "ANGKOR WAT",
           "rotation": "2°",
           "image": {
-            "src": "../assets/images/art-bacalar.svg",
+            "src": "../assets/countries/cambodia/art-360/art-frame-kh-angkor-wat-360.svg",
             "alt": "",
             "position": "50% 50%",
             "size": 360
