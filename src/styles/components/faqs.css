@@ -48,6 +48,7 @@
 }
 
 .faqs-title {
+  width: 100%;
   margin: 0;
   font-family: var(--type-family-display), monospace;
   font-size: var(--type-size-section-title);

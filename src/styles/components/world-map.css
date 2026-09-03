@@ -1,19 +1,22 @@
-.map-container {
+#map-container {
     position: relative;
     width: 100%;
     height: auto;
 
-    padding: var(--space-md);
+    padding-right: var(--space-6xl);
+    padding-left: var(--space-6xl);
 }
 
 .map {
     position: relative;
-    width: 100vw;
+    width: min(100%, 1816px);
     height: auto;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .world-map {
-    width: min(100%, 1816px);
+    width: 100%;
     aspect-ratio: 227 / 110;
 
     display: block;
