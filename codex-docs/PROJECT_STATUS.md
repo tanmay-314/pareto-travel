@@ -2,7 +2,7 @@
 
 This file gives a new Codex session a quick snapshot of active work. Keep it brief and update it whenever priorities or known constraints materially change.
 
-Last updated: 2026-09-02
+Last updated: 2026-09-03
 
 ## Current objective
 
@@ -17,7 +17,7 @@ Known reusable design/component areas include:
 - annual travel dial;
 - budget receipt;
 - polaroid itinerary;
-- country navigation sign boards;
+- country navigation passport stamps;
 - country maps and dot artwork;
 - cuisine/editorial sections;
 - shared tokens, typography, reset, and global styles.
@@ -47,7 +47,7 @@ Update this list with file paths and implementation status once the files are pr
 <!-- Keep only the most useful recent entries. Move durable decisions to docs/decisions.md. -->
 
 - Added repository guidance for Codex.
-- Replaced the country-page side drawer with the six-link navigation signpost inside the country hero and removed City Guides from page navigation.
+- Replaced the previous country-page navigation with the six-link passport-stamp group from Figma.
 
 ## Handoff notes
 

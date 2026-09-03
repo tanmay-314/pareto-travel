@@ -2,7 +2,7 @@
 
 ## Project purpose
 
-Pareto Travel is an editorial travel website built from a Figma design system. Country pages combine reusable, data-driven components such as country maps, annual travel dials, budget receipts, polaroid itineraries, cuisine sections, and sign-board navigation.
+Pareto Travel is an editorial travel website built from a Figma design system. Country pages combine reusable, data-driven components such as country maps, annual travel dials, budget receipts, polaroid itineraries, cuisine sections, and passport-stamp navigation.
 
 The project should remain understandable to a developer learning frontend engineering. Prefer clear, conventional HTML, CSS, and JavaScript over abstractions that hide how the page works.
 
@@ -183,7 +183,7 @@ Preserve these established expectations when working on the relevant components:
 - **Annual dial:** the ring may rotate continuously, but all month labels remain upright at zero degrees and maintain clear distance from the rotating ring. Respect `prefers-reduced-motion`.
 - **Polaroid itinerary:** the inserted photo and polaroid frame scale together at 1:1. The intended photo insert is square, typically `360 × 360` px. Do not add a teal placeholder unless explicitly requested.
 - **Budget receipt:** country name, trip duration, traveller count, categories, amounts, currency, and totals should remain configurable. Preserve the receipt design exactly.
-- **Country navigation:** each sign board is a semantic link or button as appropriate, supports label and rotation configuration, is keyboard accessible, and has a visible hover/focus treatment.
+- **Country navigation:** each passport stamp is a semantic link, supports label, country name, year, and -5° to 5° rotation configuration, is keyboard accessible, and has a visible hover/focus treatment.
 - **Country maps and dot art:** use supplied/exported vector assets and preserve the established dotted visual language. Do not hand-author thousands of SVG path or ellipse lines inside HTML when an external SVG asset can be referenced.
 
 ## HTML rules
@@ -201,7 +201,7 @@ Preserve these established expectations when working on the relevant components:
 - Build mobile-first unless the current component is explicitly anchored to a fixed editorial canvas.
 - Use logical properties where they improve internationalization and readability.
 - Prefer Grid and Flexbox over absolute positioning for page structure.
-- Use absolute positioning when it is intrinsic to the Figma composition, such as layered artwork or deliberately rotated sign boards.
+- Use absolute positioning when it is intrinsic to the Figma composition, such as layered artwork or deliberately rotated passport stamps.
 - Avoid `!important` unless overriding an unavoidable third-party or legacy rule; explain any use in a comment.
 - Avoid broad global selectors in component styles.
 - Preserve visible focus styles.

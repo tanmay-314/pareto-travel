@@ -18,7 +18,7 @@ Implemented:
 
 - world-map landing page artwork and country hotspots;
 - a data-driven Cambodia hero and annotated country map;
-- a six-link in-hero country navigation signpost;
+- a six-link in-hero passport-stamp navigation group;
 - interactive polaroid itinerary;
 - annual best-months travel dial;
 - cuisine editorial/menu section;
@@ -155,7 +155,7 @@ destinations are not implemented in this repository.
 [`src/pages/country.html`](src/pages/country.html) currently renders Cambodia in
 this order:
 
-1. hero, overview, signpost navigation, and annotated country map;
+1. hero, overview, passport-stamp navigation, and annotated country map;
 2. two-day itinerary;
 3. best time to visit;
 4. cuisine;

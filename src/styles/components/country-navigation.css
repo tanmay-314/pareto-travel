@@ -1,10 +1,8 @@
 :root {
-  --country-nav-width: 328px;
-  --country-nav-height: 180px;
-  --country-nav-pole-width: 12px;
-  --country-nav-base: var(--color-icon-primary);
-  --country-nav-active: var(--color-icon-primary);
-  --country-nav-hover: var(--color-icon-teal, #588584);
+  --country-nav-width: 594.029px;
+  --country-nav-height: 213.86px;
+  --country-nav-color: var(--color-text-primary);
+  --country-nav-hover: var(--color-text-accent);
 }
 
 .country-page {
@@ -19,11 +17,12 @@
 
 .country-navigation {
   position: relative;
-  align-self: center;
+  align-self: flex-start;
   flex: 0 0 auto;
   width: var(--country-nav-width);
   max-width: 100%;
   height: var(--country-nav-height);
+  color: var(--country-nav-color);
 }
 
 .country-navigation-surface {
@@ -34,73 +33,137 @@
   transform-origin: top left;
 }
 
-.country-navigation-pole {
-  position: absolute;
-  top: 0;
-  left: 158px;
-  width: var(--country-nav-pole-width);
-  height: var(--country-nav-height);
-  background-color: var(--country-nav-base);
-  -webkit-mask: var(--country-nav-pole-image) center / contain no-repeat;
-  mask: var(--country-nav-pole-image) center / contain no-repeat;
-  pointer-events: none;
-  user-select: none;
-}
-
-.country-navigation-board {
+.country-navigation-stamp {
   position: absolute;
   display: block;
-  color: var(--country-nav-base);
+  color: inherit;
   text-decoration: none;
-  transform: rotate(var(--board-rotation, 0deg)) scaleX(var(--board-scale-x, 1));
+  transform: rotate(var(--stamp-rotation, 0deg));
   transform-origin: center;
-  transition: color 150ms ease;
+  transition: color 150ms ease, transform 150ms ease;
   -webkit-tap-highlight-color: transparent;
 }
 
-.country-navigation-sign {
+.country-navigation-stamp-content {
+  position: absolute;
+  inset: 0;
+  color: currentColor;
+}
+
+.country-navigation-stamp-frame,
+.country-navigation-stamp-dot,
+.country-navigation-stamp-arrow {
+  position: absolute;
   display: block;
-  width: 100%;
-  height: 100%;
   background-color: currentColor;
-  -webkit-mask-image: var(--country-nav-sign-image);
-  mask-image: var(--country-nav-sign-image);
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  mask-size: contain;
   pointer-events: none;
   user-select: none;
 }
 
-.country-navigation-board[aria-current="location"] {
-  color: var(--country-nav-active);
+.country-navigation-stamp-frame {
+  inset: 0;
+  -webkit-mask: var(--stamp-frame-image) center / 100% 100% no-repeat;
+  mask: var(--stamp-frame-image) center / 100% 100% no-repeat;
 }
 
-.country-navigation-board:hover,
-.country-navigation-board:focus-visible {
+.country-navigation-stamp-dot {
+  left: var(--stamp-dot-x);
+  top: var(--stamp-dot-y);
+  width: 2.222222%;
+  height: 4.761905%;
+  -webkit-mask: var(--stamp-dot-image) center / 100% 100% no-repeat;
+  mask: var(--stamp-dot-image) center / 100% 100% no-repeat;
+}
+
+.country-navigation-stamp-label,
+.country-navigation-stamp-meta {
+  position: absolute;
+  margin: 0;
+  color: currentColor;
+  font-family: var(--type-family-display), monospace;
+  font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
+  font-weight: var(--type-weight-emphasis);
+  line-height: normal;
+  text-align: center;
+}
+
+.country-navigation-stamp-label {
+  top: 25%;
+  left: 50%;
+  width: 88.888889%;
+  font-size: var(--type-size-nav-ul);
+  transform: translateX(-50%);
+}
+
+.country-navigation-stamp-meta {
+  top: 61.904762%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52.222222%;
+  height: 16.666667%;
+  gap: 4px;
+  font-size: var(--type-size-label);
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.country-navigation-stamp-arrow {
+  width: 10%;
+  height: 7.142857%;
+  -webkit-mask: var(--stamp-arrow-image) center / 100% 100% no-repeat;
+  mask: var(--stamp-arrow-image) center / 100% 100% no-repeat;
+}
+
+.country-navigation-stamp-arrow--left {
+  top: 66.666667%;
+  left: 11.111111%;
+  transform: scaleX(-1);
+}
+
+.country-navigation-stamp-arrow--right {
+  top: 65.47619%;
+  left: 78.888889%;
+}
+
+.country-navigation-stamp[aria-current="location"]
+  .country-navigation-stamp-label {
   color: var(--country-nav-hover);
+  text-decoration: underline dotted;
+  text-underline-offset: 0.15em;
 }
 
-.country-navigation-board:focus-visible {
+.country-navigation-stamp:hover,
+.country-navigation-stamp:focus-visible {
+  color: var(--country-nav-hover);
+  transform: rotate(var(--stamp-rotation, 0deg)) translateY(-2px);
+}
+
+.country-navigation-stamp:focus-visible {
   outline: 2px solid var(--country-nav-hover);
-  outline-offset: 2px;
+  outline-offset: 4px;
 }
 
 .country-navigation[data-status="error"]::after {
-  content: "Navigation unavailable";
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
-  color: var(--country-nav-active);
-  font-family: var(--type-family-display);
+  color: var(--country-nav-color);
+  font-family: var(--type-family-display), monospace;
+  content: "Navigation unavailable";
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .country-navigation-board {
+  .country-navigation-stamp {
     transition: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .country-page {
+    padding-right: var(--space-lg);
+    padding-left: var(--space-lg);
   }
 }

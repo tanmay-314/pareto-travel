@@ -15,7 +15,7 @@ Pareto Travel uses an editorial travel aesthetic with:
 - soft plum for supporting treatments;
 - teal as a complementary accent;
 - grid- and dot-based maps, artwork, and icons;
-- intentionally composed, occasionally rotated physical-object metaphors such as receipts, polaroids, and sign boards.
+- intentionally composed, occasionally rotated physical-object metaphors such as receipts, polaroids, and passport stamps.
 
 Preserve this language. Do not replace it with generic cards, shadows, gradients, or rounded SaaS-style UI unless Figma explicitly shows them.
 

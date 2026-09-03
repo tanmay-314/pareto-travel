@@ -1,69 +1,21 @@
 {
-  "width": 328,
-  "height": 180,
+  "schemaVersion": 2,
+  "width": 594.029,
+  "height": 213.86,
+  "countryName": "CAMBODIA",
+  "year": "2025",
   "assets": {
-    "pole": "../../assets/components/country-navigation/pole.svg",
-    "itinerary": "../../assets/components/country-navigation/nav-itinerary.svg",
-    "bestTime": "../../assets/components/country-navigation/nav-best-time.svg",
-    "cuisine": "../../assets/components/country-navigation/nav-cuisine.svg",
-    "interCity": "../../assets/components/country-navigation/nav-inter-city.svg",
-    "budget": "../../assets/components/country-navigation/nav-budget.svg",
-    "faqs": "../../assets/components/country-navigation/nav-faqs.svg"
+    "frame": "../../assets/components/country-navigation/stamp-frame.svg",
+    "dot": "../../assets/components/country-navigation/stamp-dot.svg",
+    "arrowLeft": "../../assets/components/country-navigation/stamp-arrow-left.svg",
+    "arrowRight": "../../assets/components/country-navigation/stamp-arrow-right.svg"
   },
-  "boards": [
-    {
-      "label": "Best Time",
-      "target": "#best-months",
-      "asset": "bestTime",
-      "width": 158,
-      "height": 30,
-      "x": 4,
-      "y": 18
-    },
-    {
-      "label": "Itinerary",
-      "target": "#itinerary",
-      "asset": "itinerary",
-      "width": 158,
-      "height": 30,
-      "x": 164,
-      "y": 12
-    },
-    {
-      "label": "Inter City",
-      "target": "#inter-city-travel",
-      "asset": "interCity",
-      "width": 158,
-      "height": 30,
-      "x": 5,
-      "y": 72
-    },
-    {
-      "label": "Cuisine",
-      "target": "#cuisine",
-      "asset": "cuisine",
-      "width": 158,
-      "height": 30,
-      "x": 163,
-      "y": 66
-    },
-    {
-      "label": "FAQs",
-      "target": "#faqs",
-      "asset": "faqs",
-      "width": 158,
-      "height": 30,
-      "x": 5,
-      "y": 126
-    },
-    {
-      "label": "Budget",
-      "target": "#budget",
-      "asset": "budget",
-      "width": 158,
-      "height": 30,
-      "x": 164,
-      "y": 120
-    }
+  "stamps": [
+    { "label": "ITINERARY", "target": "#itinerary", "rotation": -1, "x": 2.71, "y": 7.68 },
+    { "label": "BEST TIME", "target": "#best-months", "rotation": 3, "x": 206.71, "y": 7.68 },
+    { "label": "CUISINE", "target": "#cuisine", "rotation": -5, "x": 410.71, "y": 7.68 },
+    { "label": "INTER-CITY", "target": "#inter-city-travel", "rotation": 4, "x": 2.71, "y": 123.68 },
+    { "label": "BUDGET", "target": "#budget", "rotation": -2, "x": 206.71, "y": 123.68 },
+    { "label": "FAQS", "target": "#faqs", "rotation": 0, "x": 410.71, "y": 123.68 }
   ]
 }

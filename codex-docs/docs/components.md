@@ -131,10 +131,10 @@ Update the paths below when components are integrated.
 ### Country navigation
 
 - Root: `[data-component="country-navigation"]`
-- Inputs: label, destination, rotation, current/active state
-- Key behavior: the six-board signpost renders inside the country hero; each board is clickable and visibly highlighted on hover and focus
+- Inputs: country name, year, stamp label, destination, rotation from -5° to 5°, and current/active state
+- Key behavior: the six passport stamps render as a 3 × 2 group inside the country hero; each stamp is clickable and visibly highlighted on hover and focus
 - Semantics: use anchors for navigation
-- Responsive behavior: the 328 × 180px composition scales with the live country-map width at a 328:720 width ratio
+- Responsive behavior: the group scales from the live country-map width using the shared 720px Figma baseline; each 180 × 84px stamp is therefore exactly one quarter of the map width, with all nested decoration and text scaling together
 - Implementation paths: `src/scripts/components/country-navigation.js`, `src/styles/components/country-navigation.css`, `src/data/components/country-navigation.json`, and `src/assets/components/country-navigation/`
 
 ### Cuisine/editorial section

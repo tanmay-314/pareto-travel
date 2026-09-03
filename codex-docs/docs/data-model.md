@@ -208,19 +208,27 @@ Illustrative shape:
 
 ```json
 {
-  "schemaVersion": 1,
-  "items": [
+  "schemaVersion": 2,
+  "countryName": "CAMBODIA",
+  "year": "2025",
+  "stamps": [
     {
-      "id": "cuisine",
-      "label": "Cuisine",
-      "href": "#cuisine",
-      "rotationDegrees": -3
+      "label": "CUISINE",
+      "target": "#cuisine",
+      "rotation": -5,
+      "x": 410.71,
+      "y": 7.68
     }
   ]
 }
 ```
 
-Use an anchor when the item navigates. Do not model it as a click handler without an `href`.
+`width` and `height` define the group coordinate space. Each stamp's `x` and
+`y` locate its unrotated 180 × 84px base inside that space. Rotation must be
+between -5 and 5 degrees. The whole group scales from the live country map's
+720px Figma baseline, keeping each 180px-wide stamp at a 1:4 ratio with the
+map and scaling its nested text and artwork at the same rate. Use an anchor
+when the item navigates; do not model it as a click handler without an `href`.
 
 ## Cuisine
 
