@@ -2,8 +2,8 @@
   "use strict";
 
   const COUNTRY_MAP_FIGMA_WIDTH = 720;
-  const MENU_FIGMA_WIDTH = 540;
-  const MENU_FIGMA_HEIGHT = 600;
+  const MENU_FIGMA_WIDTH = 420;
+  const MENU_FIGMA_HEIGHT = 540;
   const resizeCleanups = new WeakMap();
 
   const DEFAULT_DATA = {

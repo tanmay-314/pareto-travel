@@ -6,12 +6,20 @@
     mask: var(--map-image) center / contain no-repeat;
     -webkit-mask: var(--map-image) center / contain no-repeat;
 
-    transition: background-color 180ms ease;
+    transform-origin: center;
+    transition: background-color 180ms ease, transform 150ms ease;
 }
 
 .world-map-country:hover,
 .world-map-country:focus-visible {
     background-color: var(--color-icon-hover);
+    transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .world-map-country {
+        transition: none;
+    }
 }
 
 #us {

@@ -110,7 +110,7 @@
   color: var(--budget-receipt-muted);
   font-family: var(--budget-receipt-font);
   font-size: var(--type-size-logo);
-  font-weight: var(--type-weight-strong);
+  font-weight: var(--type-weight-medium);
   letter-spacing: -0.8px;
   white-space: nowrap;
 }

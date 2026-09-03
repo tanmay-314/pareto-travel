@@ -1,6 +1,6 @@
 /*
  * cuisine
- * Figma menu artefact: 1002:26818
+ * Figma menu artefact: 1188:651
  * Desktop source frame: 1920 × 1080
  */
 
@@ -10,7 +10,7 @@
   --cuisine-menu-shadow: var(--color-text-secondary, #ba97a3);
   --cuisine-text: var(--color-text-primary, #85586f);
   --cuisine-text-secondary: var(--color-text-secondary, #ba97a3);
-  --cuisine-menu-scaled-width: 540px;
+  --cuisine-menu-scaled-width: 420px;
 
   box-sizing: border-box;
   width: 100%;
@@ -51,8 +51,8 @@
 .cuisine-menu-frame {
   position: relative;
   justify-self: start;
-  width: 540px;
-  height: 600px;
+  width: 420px;
+  height: 540px;
   margin-inline: 0;
 }
 
@@ -61,9 +61,9 @@
   top: 0;
   left: 0;
   isolation: isolate;
-  width: 540px;
-  min-width: 540px;
-  height: 600px;
+  width: 420px;
+  min-width: 420px;
+  height: 540px;
   overflow: visible;
   transform: scale(var(--cuisine-menu-scale, 1));
   transform-origin: top left;
@@ -132,15 +132,15 @@
   position: relative;
   z-index: 1;
   display: flex;
-  width: 480px;
-  max-width: calc(100% - 60px);
-  height: 585px;
-  margin: 4px 30px 11px;
+  width: 414px;
+  max-width: calc(100% - 6px);
+  height: 534px;
+  margin: 3px;
   overflow: hidden;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-xxl);
+  gap: var(--space-sm);
 }
 
 .cuisine-chapter {
@@ -149,7 +149,7 @@
   min-width: 0;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-xs);
   overflow: hidden;
 }
 
@@ -161,7 +161,7 @@
 }
 
 .cuisine-chapter-copy {
-  width: 100%;
+  width: 270px;
   min-width: 0;
   color: var(--cuisine-text);
   text-align: center;
@@ -205,7 +205,7 @@
 }
 
 .cuisine-description {
-  max-width: 480px;
+  max-width: 270px;
   font-family: var(--type-family-body), sans-serif;
 }
 

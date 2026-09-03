@@ -240,7 +240,7 @@
   width: 402px;
   height: 54px;
   overflow: hidden;
-  font-family: "Anek Latin", "Instrument Sans", sans-serif;
+  font-family: var(--type-family-body);
   font-size: 14px;
   font-style: normal;
   font-variation-settings: "wdth" 100;
