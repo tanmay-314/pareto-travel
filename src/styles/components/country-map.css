@@ -70,6 +70,14 @@
   width: max-content;
   max-width: 108px;
   text-align: center;
+  font-family: var(--type-family-display), monospace;
+  font-size: clamp(
+    var(--type-size-label),
+    3.3333333333cqw,
+    var(--type-size-map-label)
+  );
+  font-weight: var(--type-weight-emphasis);
+  text-transform: uppercase;
   color: currentColor;
 }
 

@@ -170,18 +170,17 @@
 .cuisine-item-title {
   margin: 0;
   color: var(--cuisine-text);
-  font-family: var(--type-family-body), sans-serif;
+  font-family: var(--type-family-display), monospace;
   font-size: var(--type-size-body);
   font-style: normal;
   font-weight: var(--type-weight-strong);
   line-height: 36px;
 }
 
-.cuisine-period,
-.cuisine-item-title-separator {
+.cuisine-period {
   margin: 0;
   color: var(--cuisine-text-secondary);
-  font-family: var(--type-family-body), sans-serif;
+  font-family: var(--type-family-display), monospace;
   font-size: var(--type-size-body);
   font-weight: var(--type-weight-emphasis);
   letter-spacing: 1.8px;
@@ -189,7 +188,7 @@
 
 .cuisine-dish {
   color: var(--cuisine-text);
-  font-family: var(--type-family-body), sans-serif;
+  font-family: var(--type-family-display), monospace;
   text-transform: uppercase;
 }
 

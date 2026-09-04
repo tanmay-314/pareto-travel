@@ -61,7 +61,6 @@
         <div class="cuisine-chapter-copy">
           <h3 class="cuisine-item-title">
             <span class="cuisine-period">${escapeHtml(chapter.period)}</span>
-            <span class="cuisine-item-title-separator" aria-hidden="true">|</span>
             <span class="cuisine-dish">${escapeHtml(chapter.dish)}</span>
           </h3>
           <p class="cuisine-description">${escapeHtml(chapter.description)}</p>
