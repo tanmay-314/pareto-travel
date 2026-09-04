@@ -212,7 +212,7 @@
 
 .cuisine-description {
   max-width: 240px;
-  font-family: "Anek Latin", var(--type-family-body), sans-serif;
+  font-family: var(--type-family-body), sans-serif;
   line-height: 27px;
 }
 

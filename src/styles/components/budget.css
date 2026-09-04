@@ -6,7 +6,7 @@
 }
 
 /*
- * Component geometry mirrors Figma node 1038:43942. The fixed frame is scaled
+ * Component geometry mirrors Figma node 1244:10592. The fixed frame is scaled
  * as one unit so its type, exported decorations, and spacing stay aligned.
  */
 .budget-receipt-frame {
@@ -65,8 +65,8 @@
 }
 
 .budget-receipt__decoration--top {
-  top: 48px;
-  left: 30px;
+  top: 34px;
+  left: 24px;
   width: 360px;
   height: 6px;
 }
@@ -79,17 +79,17 @@
 }
 
 .budget-receipt__decoration--header-rule {
-  top: 129px;
+  top: 115px;
   left: 24px;
 }
 
 .budget-receipt__decoration--total-rule {
-  bottom: 129px;
+  bottom: 115px;
   left: 24px;
 }
 
 .budget-receipt__decoration--bottom-rule {
-  bottom: 50px;
+  bottom: 36px;
   left: 24px;
 }
 
@@ -105,27 +105,37 @@
 .budget-receipt__meta {
   position: absolute;
   z-index: 3;
-  top: 75px;
-  left: 30px;
-  color: var(--budget-receipt-muted);
+  top: 61px;
+  left: 65.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 289px;
+  height: 29px;
+  color: var(--budget-receipt-ink);
   font-family: var(--budget-receipt-font);
-  font-size: var(--type-size-logo);
-  font-weight: var(--type-weight-medium);
-  letter-spacing: -0.8px;
+  font-size: var(--type-size-budget-item, 24px);
+  font-weight: var(--type-weight-strong);
   white-space: nowrap;
+}
+
+.budget-receipt__meta-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs, 6px);
 }
 
 .budget-receipt__line-items {
   position: absolute;
   z-index: 3;
-  top: 165px;
+  top: 150px;
   left: 30px;
   display: flex;
   flex-direction: column;
   width: 360px;
   margin: 0;
   padding: 0;
-  gap: var(--space-xl, 30px);
+  gap: var(--space-xxl, 36px);
 }
 
 .budget-receipt__line-item {
@@ -136,21 +146,29 @@
 }
 
 .budget-receipt__line-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 18px;
   min-width: 0;
   overflow: hidden;
-  color: var(--budget-receipt-ink);
-  font-size: var(--type-size-body);
-  font-weight: var(--type-weight-strong);
+  color: var(--budget-receipt-muted);
+  font-size: var(--type-size-budget-item, 24px);
+  font-weight: var(--type-weight-emphasis);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .budget-receipt__line-value {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 18px;
   min-width: 0;
   overflow: hidden;
-  color: var(--budget-receipt-ink);
-  font-size: var(--type-size-body);
-  font-weight: var(--type-weight-strong);
+  color: var(--budget-receipt-muted);
+  font-size: var(--type-size-budget-item, 24px);
+  font-weight: var(--type-weight-emphasis);
   text-align: right;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -159,7 +177,7 @@
 .budget-receipt__total {
   position: absolute;
   z-index: 3;
-  top: 430px;
+  top: 444px;
   right: 30px;
   left: 30px;
   display: flex;
@@ -169,13 +187,13 @@
 
 .budget-receipt__total-label {
   color: var(--budget-receipt-ink);
-  font-size: var(--type-size-logo);
-  font-weight: var(--type-weight-emphasis);
+  font-size: var(--type-size-budget-item, 24px);
+  font-weight: var(--type-weight-strong);
 }
 
 .budget-receipt__total-value {
   color: var(--budget-receipt-ink);
-  font-size: var(--type-size-logo);
+  font-size: var(--type-size-budget-item, 24px);
   font-weight: var(--type-weight-strong);
   text-align: right;
   white-space: nowrap;

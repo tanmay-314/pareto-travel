@@ -114,6 +114,7 @@
   --type-size-nav-ul: var(--primitive-scale-large);
   --type-size-polaroid-location: var(--primitive-scale-large);
   --type-size-map-label: var(--primitive-scale-large);
+  --type-size-budget-item: var(--primitive-scale-large);
   --type-size-logo: var(--primitive-scale-x-large);
   --type-size-section-title: var(--primitive-scale-sub-heading);
   --type-size-page-title: var(--primitive-scale-heading);

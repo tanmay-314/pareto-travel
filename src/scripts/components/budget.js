@@ -150,10 +150,24 @@
     const paper = element("span", "budget-receipt__paper");
     paper.setAttribute("aria-hidden", "true");
 
-    const meta = element(
-      "p",
-      "budget-receipt__meta",
-      receipt.days + " DAYS · " + receipt.people + " PAX · " + receipt.year
+    const meta = element("p", "budget-receipt__meta");
+    const days = element("span", "budget-receipt__meta-group");
+    const people = element("span", "budget-receipt__meta-group");
+
+    days.append(
+      element("span", "budget-receipt__meta-value", receipt.days),
+      element("span", "budget-receipt__meta-label", "DAYS")
+    );
+    people.append(
+      element("span", "budget-receipt__meta-value", receipt.people),
+      element("span", "budget-receipt__meta-label", "PAX")
+    );
+    meta.append(
+      days,
+      element("span", "budget-receipt__meta-separator", "·"),
+      people,
+      element("span", "budget-receipt__meta-separator", "·"),
+      element("span", "budget-receipt__meta-year", receipt.year)
     );
 
     const total = element("footer", "budget-receipt__total");
