@@ -148,7 +148,8 @@ Update the paths below when components are integrated.
 ### Inter-city travel
 
 - Root: `[data-inter-city-travel]`
-- Inputs: one or more ordered `legs`, exactly one more ordered `places` than legs, optional `title` and `editorial`, and ticket/mode asset paths
+- Inputs: one or more ordered `legs` with mode, duration, and an optional `recommended` flag; exactly one more ordered `places` than legs; optional `title` and `editorial`; and ticket/mode asset paths
+- Ticket content: show only the origin, destination, transport icon, combined mode/duration, and optional Pareto Pick label; do not render body copy inside a ticket
 - Key behavior: render one ticket per journey leg, size the stack to the rendered ticket count, and alternate even-numbered tickets into the staggered position
 - Responsive behavior: scale the complete ticket stack when its frame is narrower than the fixed ticket composition
 - Fallback: reject empty journey lists or a place/leg count mismatch with an actionable component error

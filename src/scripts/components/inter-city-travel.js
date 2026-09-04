@@ -23,8 +23,7 @@
     legs: [
       {
         mode: "flight",
-        duration: "1 HR",
-        note: "Fly to Siem Reap and arrive in time for the next morning’s 5:00 AM sunrise-tour departure."
+        duration: "1 HR"
       }
     ]
   };
@@ -75,21 +74,29 @@
     const mode = normalizeMode(leg.mode);
     const modeLabel = getModeLabel(leg.mode);
     const icon = assets.modes?.[mode] || "";
+    const transportDetails = [modeLabel, leg.duration].filter(Boolean).join(" · ");
+    const accessibleLabel = [
+      `${origin} to ${destination}`,
+      modeLabel ? `by ${modeLabel}` : "",
+      leg.duration || "",
+    ]
+      .filter(Boolean)
+      .join(", ");
 
     return `
-      <article class="inter-city-ticket" aria-label="${escapeHtml(`${origin} to ${destination} by ${modeLabel}`)}">
+      <article class="inter-city-ticket" aria-label="${escapeHtml(accessibleLabel)}">
         <img
           class="inter-city-ticket-background"
           src="${escapeHtml(assets.ticket || DEFAULT_DATA.assets.ticket)}"
           alt=""
           width="452"
-          height="184"
+          height="190"
           aria-hidden="true"
         >
 
+        ${leg.recommended ? '<span class="inter-city-ticket-recommended">Pareto Pick</span>' : ""}
         <div class="inter-city-ticket-route-row">
           <p class="inter-city-ticket-origin">${escapeHtml(origin)}</p>
-          <span class="inter-city-ticket-route" aria-hidden="true"></span>
           <span class="inter-city-ticket-icon-shell" aria-hidden="true">
             <span
               class="inter-city-ticket-icon"
@@ -97,16 +104,10 @@
               data-src="${escapeHtml(icon)}"
             ></span>
           </span>
-          <span class="inter-city-ticket-route" aria-hidden="true"></span>
           <p class="inter-city-ticket-destination">${escapeHtml(destination)}</p>
         </div>
-
-        <div class="inter-city-ticket-meta">
-          <p class="inter-city-ticket-mode">${escapeHtml(modeLabel)}</p>
-          <p class="inter-city-ticket-duration">${escapeHtml(leg.duration || "")}</p>
-        </div>
         <span class="inter-city-ticket-rule" aria-hidden="true"></span>
-        <p class="inter-city-ticket-note">${escapeHtml(leg.note || "")}</p>
+        <p class="inter-city-ticket-transport-details">${escapeHtml(transportDetails)}</p>
       </article>
     `;
   };
@@ -211,7 +212,7 @@
           ${renderEditorial(data)}
 
           <div class="inter-city-ticket-stack-frame">
-            <div class="inter-city-ticket-stack" aria-label="Journey leg notes">
+            <div class="inter-city-ticket-stack" aria-label="Journey tickets">
               ${data.legs
                 .map((leg, index) => renderTicket(leg, index, data.places, assets))
                 .join("")}

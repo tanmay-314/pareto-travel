@@ -216,7 +216,7 @@ Cambodia's content lives in
 | `itinerary.json` | itinerary metadata, editorial copy, detail link, and ordered days |
 | `best-months.json` | center label/value, editorial guidance, and 12 month states |
 | `cuisine.json` | section title, up to three meal chapters, icons, dishes, and editorial copy |
-| `inter-city-travel.json` | places, route legs, modes, durations, notes, and ticket/icon assets |
+| `inter-city-travel.json` | places, route legs, modes, durations, recommendation flags, and ticket/icon assets |
 | `budget.json` | trip length, party size, year, five line items, total, and editorial copy |
 | `faqs.json` | section title, accordion mode, and ordered questions/answers |
 

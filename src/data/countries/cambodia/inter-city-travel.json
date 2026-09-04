@@ -20,8 +20,7 @@
   "legs": [
     {
       "mode": "flight",
-      "duration": "1 HR",
-      "note": "Fly to Siem Reap and arrive in time for the next morning’s 5:00 AM sunrise-tour departure."
+      "duration": "1 HR"
     }
   ]
 }

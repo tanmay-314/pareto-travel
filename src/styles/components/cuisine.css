@@ -1,6 +1,6 @@
 /*
  * cuisine
- * Figma menu artefact: 1188:651
+ * Figma menu artefact: 1226:10510
  * Desktop source frame: 1920 × 1080
  */
 
@@ -140,17 +140,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-sm);
+  gap: 60px;
 }
 
 .cuisine-chapter {
   display: flex;
   width: 100%;
   min-width: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  overflow: hidden;
+}
+
+.cuisine-chapter-label {
+  display: flex;
+  width: 98px;
+  min-width: 98px;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-xs);
-  overflow: hidden;
+  gap: 2px;
 }
 
 .cuisine-icon {
@@ -161,20 +171,21 @@
 }
 
 .cuisine-chapter-copy {
-  width: 270px;
+  width: 240px;
   min-width: 0;
   color: var(--cuisine-text);
-  text-align: center;
+  text-align: left;
 }
 
 .cuisine-item-title {
   margin: 0;
   color: var(--cuisine-text);
   font-family: var(--type-family-display), monospace;
-  font-size: var(--type-size-body);
+  font-size: var(--type-size-nav-ul);
   font-style: normal;
   font-weight: var(--type-weight-strong);
   line-height: 36px;
+  text-transform: uppercase;
 }
 
 .cuisine-period {
@@ -183,13 +194,9 @@
   font-family: var(--type-family-display), monospace;
   font-size: var(--type-size-body);
   font-weight: var(--type-weight-emphasis);
-  letter-spacing: 1.8px;
-}
-
-.cuisine-dish {
-  color: var(--cuisine-text);
-  font-family: var(--type-family-display), monospace;
-  text-transform: uppercase;
+  line-height: 36px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .cuisine-description,
@@ -204,8 +211,9 @@
 }
 
 .cuisine-description {
-  max-width: 270px;
-  font-family: var(--type-family-body), sans-serif;
+  max-width: 240px;
+  font-family: "Anek Latin", var(--type-family-body), sans-serif;
+  line-height: 27px;
 }
 
 .cuisine-editorial {

@@ -14,21 +14,21 @@
         icon: "../assets/components/cuisine/icon-morning.svg",
         dish: "Nom banh chok",
         description:
-          "Cool rice noodles, green fish curry and a fistful of herbs — Cambodia’s most quietly perfect breakfast."
+          "Cool rice noodles, green fish curry and a fistful of herbs"
       },
       {
         period: "LUNCH",
         icon: "../assets/components/cuisine/icon-afternoon.svg",
         dish: "Fish amok",
         description:
-          "Freshwater fish steamed with coconut custard and kroeung. Subtle, aromatic, and much better than its reputation."
+          "Freshwater fish steamed with coconut custard and kroeung"
       },
       {
         period: "DINNER",
         icon: "../assets/components/cuisine/icon-night.svg",
         dish: "Beef lok lak",
         description:
-          "Peppery seared beef, crisp vegetables and a sharp lime dip: the easy crowd-pleaser after a temple-heavy day."
+          "Peppery seared beef, crisp vegetables and a sharp lime dip"
       }
     ],
     editorial: [
@@ -49,20 +49,20 @@
   function renderChapter(chapter) {
     return `
       <article class="cuisine-chapter">
-        <img
-          class="cuisine-icon"
-          src="${escapeHtml(chapter.icon)}"
-          alt=""
-          width="60"
-          height="60"
-          aria-hidden="true"
-        >
+        <div class="cuisine-chapter-label">
+          <img
+            class="cuisine-icon"
+            src="${escapeHtml(chapter.icon)}"
+            alt=""
+            width="60"
+            height="60"
+            aria-hidden="true"
+          >
+          <p class="cuisine-period">${escapeHtml(chapter.period)}</p>
+        </div>
 
         <div class="cuisine-chapter-copy">
-          <h3 class="cuisine-item-title">
-            <span class="cuisine-period">${escapeHtml(chapter.period)}</span>
-            <span class="cuisine-dish">${escapeHtml(chapter.dish)}</span>
-          </h3>
+          <h3 class="cuisine-item-title">${escapeHtml(chapter.dish)}</h3>
           <p class="cuisine-description">${escapeHtml(chapter.description)}</p>
         </div>
       </article>
