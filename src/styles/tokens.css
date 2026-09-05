@@ -60,6 +60,7 @@
   /* Semantic: text */
   --color-text-primary: var(--primitive-color-plum-primary);
   --color-text-secondary: var(--primitive-color-plum-secondary);
+  --type-color-text-secondary: var(--color-text-secondary);
   --color-text-inverse: var(--primitive-color-cream);
   --color-text-accent: var(--primitive-color-teal);
 

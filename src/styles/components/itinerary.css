@@ -167,8 +167,9 @@
   height: 18px;
   margin: 0;
   overflow: hidden;
+  color: var(--type-color-text-secondary);
   font-family: var(--type-family-display), monospace;
-  font-size: var(--type-size-label);
+  font-size: var(--type-size-body);
   font-weight: var(--type-weight-emphasis);
   line-height: 1.5;
   letter-spacing: 0.96px;
@@ -178,7 +179,7 @@
 
 .itinerary-polaroid-location {
   height: 24px;
-  margin: 4px 0 0;
+  margin: var(--space-xs) 0 0;
   overflow: hidden;
   font-family: var(--type-family-display), monospace;
   font-size: var(--type-size-polaroid-location);
