@@ -27,6 +27,37 @@ Alternatives considered:
 
 ## Decisions
 
+### ADR-006 — Generate committed static country entry pages
+
+- Date: 2026-09-05
+- Status: Accepted
+
+Context:
+The landing page establishes `/countries/<slug>.html` as the public URL shape,
+while a plain static server cannot rewrite many paths to one HTML document. The
+country page must remain reusable and the repository should not require a
+runtime server or frontend build framework.
+
+Decision:
+Keep `src/pages/country.html` as the single authored template. Generate and
+commit one `src/countries/<slug>.html` entry for each country whose
+`country.json` has `status: published`. Each entry declares its generated slug;
+the controller validates that slug against its country document before
+assigning component data sources.
+
+Consequences:
+Public URLs work on a basic static server and contain useful fallback HTML and
+SEO metadata. Contributors must rerun the standard-library Python generator
+when published country metadata or the shared template changes. Generated
+files must not be edited directly.
+
+Alternatives considered:
+- Query-string URLs such as `/pages/country.html?country=mexico`: rejected
+  because they would replace the public URL pattern already used by the site.
+- Host-specific rewrite rules: rejected because there is no production host
+  configuration and local behavior should match deployed static behavior.
+- Handwritten country pages: rejected because duplicated markup would drift.
+
 ### ADR-001 — Use a reusable, data-driven country page
 
 - Date: 2026-08-21

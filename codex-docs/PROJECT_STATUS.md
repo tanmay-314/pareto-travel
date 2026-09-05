@@ -2,13 +2,14 @@
 
 This file gives a new Codex session a quick snapshot of active work. Keep it brief and update it whenever priorities or known constraints materially change.
 
-Last updated: 2026-09-03
+Last updated: 2026-09-05
 
 ## Current objective
 
 <!-- One or two sentences describing the current milestone. -->
 
-- Integrate the redesigned in-hero country navigation and continue refining the reusable country page.
+- Continue refining the reusable country page and add country content through
+  the generated public-entry workflow.
 
 ## Current implementation
 
@@ -21,6 +22,7 @@ Known reusable design/component areas include:
 - country maps and dot artwork;
 - cuisine/editorial sections;
 - shared tokens, typography, reset, and global styles.
+- generated `/countries/<slug>.html` pages with validated country data sources.
 
 Update this list with file paths and implementation status once the files are present in the repository.
 
@@ -48,6 +50,8 @@ Update this list with file paths and implementation status once the files are pr
 
 - Added repository guidance for Codex.
 - Replaced the previous country-page navigation with the six-link passport-stamp group from Figma.
+- Replaced Cambodia-specific template and component sources with an explicit,
+  documented generated country-entry strategy.
 
 ## Handoff notes
 

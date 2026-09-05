@@ -19,11 +19,6 @@ const MONTHS = [
 
 const VALID_STATES = new Set(["best", "good", "avoid"]);
 let dialInstanceId = 0;
-const DEFAULT_DATA_URL = new URL(
-  "../../data/countries/cambodia/best-months.json",
-  import.meta.url,
-).href;
-
 const DIAL_VIEWBOX_SIZE = 544;
 const DIAL_CENTER = 270;
 const DIAL_TO_MAP_SIZE_RATIO = 3 / 4;
@@ -333,11 +328,15 @@ export function renderBestMonthsEditorial(container, rawEditorial) {
 }
 
 export async function setDialCountry(container, countryKey) {
-  const source = container.dataset.source || DEFAULT_DATA_URL;
+  const source = container.dataset.source;
   container.dataset.country = countryKey;
   container.setAttribute("aria-busy", "true");
 
   try {
+    if (!source) {
+      throw new Error("Best-months dial needs a data-source attribute.");
+    }
+
     const data = await fetchJson(source, { label: "Best-months data" });
     const countryConfig = data.countries?.[countryKey];
     renderAnnualTravelDial(container, countryConfig);

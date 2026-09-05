@@ -2,8 +2,6 @@
   "schemaVersion": 2,
   "width": 594.029,
   "height": 213.86,
-  "countryName": "CAMBODIA",
-  "year": "2025",
   "assets": {
     "frame": "../../assets/components/country-navigation/stamp-frame.svg",
     "dot": "../../assets/components/country-navigation/stamp-dot.svg",

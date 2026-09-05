@@ -90,8 +90,9 @@ Use external assets for detailed SVGs and imagery. HTML or JSON should reference
 
 ## Runtime flow
 
-1. The browser opens a country URL or template with a country slug.
-2. The controller resolves the slug without trusting arbitrary filesystem input.
+1. The browser opens a generated `/countries/<slug>.html` entry page.
+2. The generated entry declares its slug; the controller validates its syntax
+   and confirms it matches a published `country.json` document.
 3. It fetches country metadata and required section data.
 4. It validates or normalizes data at module boundaries.
 5. It renders shared page regions.
@@ -111,14 +112,21 @@ Avoid circular imports and hidden global state.
 
 ## URL and slug handling
 
-Use the routing pattern already present in the repository. Common static-site options include:
+Public country URLs use `/countries/<slug>.html`. Files under `src/countries/`
+are generated from `src/pages/country.html` by
+`scripts/generate-country-pages.py` and committed so the site remains directly
+servable without a build step. The generator creates entries only for country
+documents whose `status` is `published`.
 
-- `/country.html?country=mexico`
-- `/countries/mexico/` with server routing or generated entry files
+The generated entry owns the URL-to-slug mapping through
+`data-country-slug`. The controller does not derive a slug from arbitrary URL
+text. It accepts lowercase kebab-case only, fetches the matching
+`data/countries/<slug>/country.json`, and requires that document's slug and
+publication status to match before initializing any component.
 
-Do not switch patterns casually. Treat public URLs as a compatibility boundary.
-
-Normalize slugs to lowercase kebab-case and validate them against known country data before building fetch paths.
+Treat this URL format as a compatibility boundary. Run the generator after
+adding or changing published country metadata and use its `--check` mode in
+automated checks.
 
 ## Error handling
 

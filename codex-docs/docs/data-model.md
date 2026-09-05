@@ -88,7 +88,13 @@ section data:
 {
   "schemaVersion": 1,
   "slug": "cambodia",
+  "status": "published",
   "name": "Cambodia",
+  "visitedYear": 2025,
+  "seo": {
+    "title": "Cambodia travel guide | Pareto Travel",
+    "description": "A concise search and social description."
+  },
   "subtitle": "Wat and Peace",
   "overview": "Country overview copy.",
   "map": {
@@ -98,8 +104,11 @@ section data:
 }
 ```
 
-`name`, `subtitle`, `overview`, `map.src`, and `map.alt` are required. Map paths
-are resolved relative to `country.json` and must point to a same-origin asset.
+`slug`, `status`, `name`, `visitedYear`, `seo.title`, `seo.description`,
+`overview`, `map.src`, and `map.alt` are required for a generated public page.
+The slug must match its data-directory name and use lowercase kebab-case. Only
+`published` documents receive an entry page. Map paths are resolved relative to
+`country.json` and must point to a same-origin asset.
 
 ## Country rating
 

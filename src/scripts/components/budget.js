@@ -25,20 +25,18 @@ const RECEIPT_ASSETS = Object.freeze({
 });
 
 export const DEFAULT_RECEIPT = Object.freeze({
-  days: 5,
-  people: 2,
-  year: "2025",
+  days: "—",
+  people: "—",
+  year: "—",
   lineItems: [
-    { description: "STAYS · 5 NIGHTS", value: "$420" },
-    { description: "FOOD & DRINKS", value: "$210" },
-    { description: "EXPERIENCES", value: "$160" },
-    { description: "INTER-CITY TRAVEL", value: "$100" },
-    { description: "MISCELLANEOUS", value: "$50" }
+    { description: "STAYS", value: "—" },
+    { description: "FOOD & DRINKS", value: "—" },
+    { description: "EXPERIENCES", value: "—" },
+    { description: "INTER-CITY TRAVEL", value: "—" },
+    { description: "MISCELLANEOUS", value: "—" }
   ],
-  total: "$940",
-  editorial: [
-    "Cambodia was fairly affordable."
-  ]
+  total: "—",
+  editorial: []
 });
 
 function text(value, fallback) {
@@ -225,7 +223,7 @@ function replaceWithResponsiveReceipt(target, data) {
 
 async function loadReceiptData(source) {
   if (!source) {
-    return DEFAULT_RECEIPT;
+    throw new Error("Budget receipt needs a data-source attribute.");
   }
 
   return fetchJson(source, { label: "Budget data" });
@@ -242,14 +240,15 @@ export async function mountReceiptFromSource(target) {
     renderEditorial(editorial, data);
     replaceWithResponsiveReceipt(target, data);
   } catch (error) {
-    /*
-     * Opening index.html directly from Finder can block local JSON fetches.
-     * The component still renders its Figma defaults; a local server will
-     * load budget.json normally.
-    */
-    console.warn(error);
-    renderEditorial(editorial, DEFAULT_RECEIPT);
-    replaceWithResponsiveReceipt(target, DEFAULT_RECEIPT);
+    const message = element(
+      "p",
+      "budget-receipt-error",
+      "The budget estimate could not be loaded.",
+    );
+    message.setAttribute("role", "alert");
+    target.replaceChildren(message);
+    if (editorial) editorial.hidden = true;
+    throw error;
   }
 }
 

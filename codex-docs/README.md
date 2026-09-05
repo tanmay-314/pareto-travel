@@ -86,10 +86,10 @@ Country and component data is loaded with `fetch()`, so do not open pages direct
 Use the repository’s documented server command when one exists. If the project has no tooling, any simple static server is sufficient, for example:
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 8000 --directory src
 ```
 
-Then open `http://localhost:8000`.
+Then open `http://localhost:8000/pages/index.html`.
 
 ## Stylesheet order
 
@@ -110,9 +110,12 @@ Add page and component styles after these files.
 2. Add the country metadata and section JSON files required by the template.
 3. Add images, maps, and icons under the established asset directories.
 4. Use relative asset references consistent with existing country data.
-5. Validate JSON syntax and required fields.
-6. Serve the site locally and verify every populated section.
-7. Test missing optional sections to ensure the page degrades gracefully.
+5. Set `status` to `published` after all required content is ready.
+6. Run `python3 scripts/generate-country-pages.py` and commit the generated
+   `src/countries/<slug>.html` entry.
+7. Validate JSON syntax and required fields.
+8. Serve the site locally and verify every populated section.
+9. Test missing optional sections to ensure the page degrades gracefully.
 
 See `docs/data-model.md` for the contracts.
 

@@ -1,10 +1,5 @@
 import { fetchJson, findCountryMap, observeResize } from "../lib/component-utils.js";
 
-const DATA_URL = new URL(
-  "../../data/countries/cambodia/itinerary.json",
-  import.meta.url,
-);
-
 const FRAME_URL = new URL(
   "../../assets/components/itinerary/polaroid-frame.svg",
   import.meta.url,
@@ -519,7 +514,11 @@ export function renderPage(itinerary, selectors = {}) {
   return renderItinerary(listSelector, itinerary.days);
 }
 
-export async function loadItinerary(source = DATA_URL.href, options = {}) {
+export async function loadItinerary(source, options = {}) {
+  if (!source) {
+    throw new Error("Itinerary needs a data-source attribute.");
+  }
+
   const data = await fetchJson(source, { label: "Itinerary data" });
   const itineraryIndex = Number.parseInt(options.index, 10) || 0;
   const itinerary = data.itineraries?.[itineraryIndex];
@@ -537,7 +536,7 @@ export async function initialiseItinerary(scope = document) {
   const list = scope.querySelector(listSelector);
   if (!list) return null;
 
-  const itinerary = await loadItinerary(DATA_URL.href, {
+  const itinerary = await loadItinerary(list.dataset.source, {
     index: 0,
     selectors: {
       list: listSelector,

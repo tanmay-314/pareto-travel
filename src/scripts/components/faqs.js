@@ -2,11 +2,6 @@ import { renderCountryRating } from "./country-rating.js";
 import { fetchJson } from "../lib/component-utils.js";
 
 const ROOT_SELECTOR = "[data-faqs]";
-const DEFAULT_DATA_URL = new URL(
-  "../../data/countries/cambodia/faqs.json",
-  import.meta.url,
-).href;
-
 function createElement(tagName, className, text) {
   const node = document.createElement(tagName);
   if (className) node.className = className;
@@ -150,10 +145,14 @@ export function render(root, data, countryData) {
 }
 
 export async function init(root) {
-  const source = root.dataset.source || DEFAULT_DATA_URL;
+  const source = root.dataset.source;
   const countrySource = root.dataset.countrySource;
 
   try {
+    if (!source) {
+      throw new Error("FAQ component needs a data-source attribute.");
+    }
+
     if (!countrySource) {
       throw new Error("FAQ review needs a data-country-source attribute.");
     }

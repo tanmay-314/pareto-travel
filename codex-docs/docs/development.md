@@ -13,10 +13,25 @@ This project is intended to work as a straightforward static frontend unless the
 If there is no server command, use:
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 8000 --directory src
 ```
 
-Then visit `http://localhost:8000`.
+Then visit `http://localhost:8000/pages/index.html`.
+
+## Generating country entry pages
+
+The source template is `src/pages/country.html`; do not edit generated files
+under `src/countries/` directly. After changing a published country's metadata
+or adding a country, run:
+
+```bash
+python3 scripts/generate-country-pages.py
+python3 scripts/generate-country-pages.py --check
+```
+
+The generator validates lowercase kebab-case slugs, requires the data-directory
+name to match `country.json`, and emits pages only when `status` is `published`.
+Commit the generated entry pages with the source and data changes.
 
 ## Working with Codex in VS Code
 

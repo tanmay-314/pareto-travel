@@ -12,7 +12,7 @@ created.
 
 ## Current status
 
-Last reviewed against the repository: **3 September 2026**.
+Last reviewed against the repository: **5 September 2026**.
 
 Implemented:
 
@@ -25,14 +25,14 @@ Implemented:
 - inter-city travel ticket;
 - budget receipt;
 - FAQ accordion and five-category country rating;
+- generated `/countries/<slug>.html` entry pages backed by one shared template;
 - shared design tokens, typography, global styles, accessibility states, and
   reduced-motion handling.
 
 Still incomplete:
 
 - Cambodia is the only country with complete section JSON;
-- the landing-page country links point to `/countries/*.html`, but those pages
-  do not exist yet;
+- only Cambodia currently has published country data and a generated page;
 - the header links for Destinations, Months, and About are placeholders;
 - there is no production deployment configuration;
 - there is no automated test, lint, formatting, or asset build pipeline;
@@ -49,25 +49,18 @@ handoff notes.
 Only a modern browser and a local HTTP server are required. The JSON components
 use `fetch()`, so opening the HTML with a `file://` URL will not work reliably.
 
-From the repository root:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then open:
-
-- landing page: <http://localhost:8000/src/pages/index.html>
-- Cambodia country page: <http://localhost:8000/src/pages/country.html>
-
-Alternatively, serve `src` as the web root:
+From the repository root, serve `src` as the web root:
 
 ```bash
 python3 -m http.server 8000 --directory src
 ```
 
-Then use `/pages/index.html` and `/pages/country.html`. No `npm install` or
-compile command is needed.
+Then open:
+
+- landing page: <http://localhost:8000/pages/index.html>
+- Cambodia country page: <http://localhost:8000/countries/cambodia.html>
+
+No `npm install` or compile command is needed.
 
 The pages import Google Fonts, so the complete typography requires an internet
 connection. Local fallback families are used if the fonts cannot load.
@@ -80,7 +73,9 @@ pareto-travel/
 ├── src/
 │   ├── pages/
 │   │   ├── index.html                 # world-map landing page
-│   │   └── country.html               # current Cambodia composition
+│   │   └── country.html               # shared country-page source template
+│   ├── countries/
+│   │   └── cambodia.html              # committed generated public entry
 │   ├── data/
 │   │   ├── components/
 │   │   │   └── country-navigation.json
@@ -102,14 +97,17 @@ pareto-travel/
 │       ├── icons/
 │       ├── images/                    # editorial illustrations
 │       └── maps/                      # world and country-overlay SVGs
+├── scripts/
+│   └── generate-country-pages.py      # country entry-page generator
 └── codex-docs/
     ├── AGENTS.md                      # repository guidance for Codex
     ├── PROJECT_STATUS.md              # current objective and handoff
     └── docs/                          # architecture and contribution guides
 ```
 
-The top-level `dist/` and `scripts/` directories are currently empty and are
-not part of the runtime.
+The top-level `dist/` directory is currently empty and is not part of the
+runtime. Generated country pages are committed, so generation is not required
+to serve the site.
 
 ## How the site works
 
@@ -135,10 +133,11 @@ artifact-style components preserve their Figma geometry internally and scale in
 relation to the live country-map width with `ResizeObserver` (falling back to a
 window resize listener).
 
-The country-page bootstrap owns initialization but is not a router. The current
-`country.html` still directly declares Cambodia's data sources. Turning the
-template into many public country URLs will require a documented slug/routing
-strategy or generated country entry pages.
+The country URL maps to a committed generated HTML entry. That entry declares a
+lowercase kebab-case slug, and the country-page bootstrap validates it against
+the corresponding published `country.json` before assigning every component's
+data source. The bootstrap coordinates data loading but does not parse or route
+URL paths.
 
 ## Pages
 
@@ -150,13 +149,14 @@ navigation, a base world map, and overlays for:
 - United States, Mexico, Costa Rica, Colombia, Brazil, Peru, Bolivia, and Chile;
 - Iceland, Turkey, Greece, India, Sri Lanka, Malaysia, Singapore, and Cambodia.
 
-The SVG overlays exist and are linked, but their `/countries/<slug>.html`
-destinations are not implemented in this repository.
+The SVG overlays exist, but only Cambodia is interactive while it is the only
+published country. Add a link when the matching generated page exists.
 
 ### Country page
 
-[`src/pages/country.html`](src/pages/country.html) currently renders Cambodia in
-this order:
+[`src/pages/country.html`](src/pages/country.html) is the shared source template.
+[`src/countries/cambodia.html`](src/countries/cambodia.html) is its current
+generated public entry and renders sections in this order:
 
 1. hero, overview, passport-stamp navigation, and annotated country map;
 2. two-day itinerary;
@@ -176,7 +176,7 @@ people who prefer reduced motion.
 | --- | --- | --- | --- |
 | Country hero/map | `[data-country-hero]` | `country.json` | `country-hero.js`, `country-intro.css`, `country-map.css` |
 | Country navigation | `[data-country-navigation]` | `data/components/country-navigation.json` | `country-navigation.js`, `country-navigation.css` |
-| Polaroid itinerary | `#polaroid-list` | `itinerary.json` | `itinerary.js`, `itinerary.css` |
+| Polaroid itinerary | `[data-itinerary]` | `itinerary.json` | `itinerary.js`, `itinerary.css` |
 | Best-months dial | `.annual-travel-dial[data-country]` | `best-months.json` | `best-months.js`, `best-months.css` |
 | Cuisine | `[data-cuisine-component]` | `cuisine.json` | `cuisine.js`, `cuisine.css` |
 | Inter-city travel | `[data-inter-city-travel]` | `inter-city-travel.json` | `inter-city-travel.js`, `inter-city-travel.css` |
@@ -197,8 +197,9 @@ request caching, and resize cleanup live in `src/scripts/lib/component-utils.js`
 - The FAQ component can allow one or multiple open answers; Cambodia currently
   allows one. It emits a `faqchange` custom event.
 - Country navigation emits `country-navigation:select` on activation.
-- The hero keeps its fallback HTML and records a fallback state if its source
-  cannot be loaded or validated.
+- Generated hero HTML contains the correct country fallback. If required
+  country metadata cannot be loaded or validated, the controller replaces the
+  page with a country-unavailable state and does not initialize components.
 - Other components log actionable loading/rendering errors and either show a
   local error state, hide invalid optional output, or preserve a safe default.
 - User-authored strings should be assigned with `textContent` or escaped before
@@ -216,7 +217,7 @@ Cambodia's content lives in
 
 | File | Owns |
 | --- | --- |
-| `country.json` | slug, country name, overview, five ratings, map asset, and map locations |
+| `country.json` | publication state, slug, country name, visit year, SEO, overview, five ratings, map asset, and map locations |
 | `itinerary.json` | itinerary metadata, editorial copy, detail link, and ordered days |
 | `best-months.json` | center label/value, editorial guidance, and 12 month states |
 | `cuisine.json` | section title, up to three meal chapters, icons, dishes, and editorial copy |
@@ -245,19 +246,19 @@ for component-specific expectations.
 
 ## Adding another country
 
-The current page is not yet driven by a URL slug, so adding data alone will not
-create a reachable country page.
-
 1. Create `src/data/countries/<country-slug>/` with the same section filenames
    used by Cambodia.
 2. Add the country's map, world-map overlay, illustrations, and any other assets
    under the matching `src/assets/` areas.
-3. Keep the established JSON shapes and update content-specific paths and alt
+3. Set `country.json`'s slug to the directory name, add `visitedYear` and SEO
+   metadata, and set `status` to `published` only when the page is ready.
+4. Keep the established JSON shapes and update content-specific paths and alt
    text.
-4. Create or generate a country entry page, or first implement an approved slug
-   loader/routing scheme for the shared template.
-5. Add or update the landing-page link.
-6. Validate every JSON file and asset URL, then test every populated section and
+5. Run `python3 scripts/generate-country-pages.py` and commit the generated
+   `src/countries/<country-slug>.html` file. Use `--check` to verify that
+   committed entries are current.
+6. Add the landing-page link only after the generated entry exists.
+7. Validate every JSON file and asset URL, then test every populated section and
    intentional missing/optional state through the HTTP server.
 
 Do not silently introduce a second data organization scheme. If a schema must

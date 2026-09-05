@@ -84,7 +84,7 @@ function resolveAsset(path, fieldName, baseUrl) {
   return assetUrl.href;
 }
 
-function normalizeConfig(config, baseUrl) {
+function normalizeConfig(config, baseUrl, metadata = {}) {
   if (!config || typeof config !== "object") {
     throw new Error("Country navigation data must be an object.");
   }
@@ -100,8 +100,8 @@ function normalizeConfig(config, baseUrl) {
   return {
     width: positiveNumber(config.width, "width"),
     height: positiveNumber(config.height, "height"),
-    countryName: requiredText(config.countryName, "countryName"),
-    year: requiredText(config.year, "year"),
+    countryName: requiredText(metadata.countryName, "countryName"),
+    year: requiredText(metadata.year, "year"),
     assets: {
       frame: resolveAsset(config.assets?.frame, "assets.frame", baseUrl),
       dot: resolveAsset(config.assets?.dot, "assets.dot", baseUrl),
@@ -284,7 +284,10 @@ async function renderCountryNavigation(navigation) {
     const data = await fetchJson(resolvedConfigUrl, {
       label: "Country navigation data",
     });
-    const config = normalizeConfig(data, new URL(".", resolvedConfigUrl));
+    const config = normalizeConfig(data, new URL(".", resolvedConfigUrl), {
+      countryName: navigation.dataset.countryName,
+      year: navigation.dataset.year,
+    });
     const surface = document.createElement("div");
     surface.className = "country-navigation-surface";
     surface.style.width = `${config.width}px`;

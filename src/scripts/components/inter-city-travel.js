@@ -2,10 +2,7 @@ import { fetchJson, findCountryMap, observeResize } from "../lib/component-utils
 
 const DEFAULT_DATA = {
   title: "GOING FROM PLACE TO PLACE",
-  editorial: [
-    "Since we only visited Siem Reap, there was no internal travel.",
-    "If Phnom Penh is your port of entry, your best option is to fly to Siem Reap. Sunrise tours leave around 5:00 AM, so plan your travel accordingly."
-  ],
+  editorial: [],
   assets: {
     ticket: "../assets/components/inter-city-travel/ticket.svg",
     modes: {
@@ -14,17 +11,7 @@ const DEFAULT_DATA = {
       train: "../assets/icons/icon-train.svg",
       car: "../assets/icons/icon-car.svg"
     }
-  },
-  places: [
-    { name: "PHNOM PENH" },
-    { name: "SIEM REAP" }
-  ],
-  legs: [
-    {
-      mode: "flight",
-      duration: "1 HR"
-    }
-  ]
+  }
 };
 
 const COUNTRY_MAP_FIGMA_WIDTH = 720;
@@ -32,11 +19,6 @@ const TICKET_TO_MAP_WIDTH_RATIO = 5 / 8;
 const TICKET_FIGMA_WIDTH =
   COUNTRY_MAP_FIGMA_WIDTH * TICKET_TO_MAP_WIDTH_RATIO;
 const TICKET_STACK_FIGMA_WIDTH = 558;
-const DEFAULT_DATA_URL = new URL(
-  "../../data/countries/cambodia/inter-city-travel.json",
-  import.meta.url,
-).href;
-
 const escapeHtml = (value = "") =>
   String(value)
     .replaceAll("&", "&amp;")
@@ -223,12 +205,16 @@ const renderError = (root, error) => {
   `;
 };
 
-export const mount = async (root, source = DEFAULT_DATA_URL) => {
+export const mount = async (root, source) => {
   if (!(root instanceof Element)) {
     throw new TypeError("InterCityTravel.mount requires a DOM element.");
   }
 
   try {
+    if (!source) {
+      throw new Error("Inter-city component needs a data-source attribute.");
+    }
+
     const data = await fetchJson(source, { label: "Inter-city data" });
     render(root, data);
     return root;
@@ -242,7 +228,7 @@ export const mountAll = (scope = document) => {
   const roots = scope.querySelectorAll("[data-inter-city-travel]");
   return Promise.all(
     [...roots].map((root) =>
-      mount(root, root.dataset.source || DEFAULT_DATA_URL),
+      mount(root, root.dataset.source),
     ),
   );
 };

@@ -119,7 +119,7 @@ Update the paths below when components are integrated.
 
 ### Polaroid itinerary
 
-- Root: `.polaroid-list` (the country page currently mounts it at `#polaroid-list`)
+- Root: `[data-itinerary]` (the country page currently mounts it at `#polaroid-list`)
 - Inputs: ordered day entries, place, copy, image, image alt, rotation
 - Key behavior: the complete deck is centered in its visual viewport; it deals in once on first viewport entry; hover previews exposed cards; click, tap, or keyboard selection promotes a day to the front and updates its visible `DAY X OF Y` label
 - Keyboard and touch: the active card is in the tab order; arrow keys, Home, and End select days; horizontal swipes select adjacent days on touch screens
@@ -130,8 +130,10 @@ Update the paths below when components are integrated.
 
 ### Country navigation
 
-- Root: `[data-component="country-navigation"]`
-- Inputs: country name, year, stamp label, destination, rotation from -5° to 5°, and current/active state
+- Root: `[data-country-navigation]`
+- Inputs: country name and visit year assigned by the country-page controller;
+  shared stamp labels, destinations, and rotations from -5° to 5° loaded from
+  `country-navigation.json`
 - Key behavior: the six passport stamps render as a 3 × 2 group inside the country hero; each stamp is clickable and visibly highlighted on hover and focus
 - Semantics: use anchors for navigation
 - Responsive behavior: the group scales from the live country-map width using the shared 720px Figma baseline; each 180 × 84px stamp is therefore exactly one quarter of the map width, with all nested decoration and text scaling together

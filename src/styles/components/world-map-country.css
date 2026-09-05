@@ -16,6 +16,10 @@
     transform: translateY(-2px);
 }
 
+.world-map-country:not([href]) {
+    pointer-events: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .world-map-country {
         transition: none;

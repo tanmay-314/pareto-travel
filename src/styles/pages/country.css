@@ -1,0 +1,29 @@
+.country-unavailable {
+  display: grid;
+  gap: var(--space-lg);
+  align-content: center;
+  min-height: 60svh;
+  max-width: 720px;
+  padding: var(--space-6xl);
+  margin-inline: auto;
+  color: var(--color-text-primary);
+}
+
+.country-unavailable__message {
+  font-family: var(--type-family-body), sans-serif;
+  font-size: var(--type-size-body);
+  line-height: var(--type-line-height-body);
+}
+
+.country-unavailable__link {
+  width: fit-content;
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 600px) {
+  .country-unavailable {
+    padding: var(--space-xl);
+  }
+}
