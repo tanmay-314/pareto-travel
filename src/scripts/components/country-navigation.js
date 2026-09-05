@@ -1,10 +1,14 @@
-const DEFAULT_CONFIG_URL = "./data/components/country-navigation.json";
+import { fetchJson, findCountryMap, observeResize, resolveUrl } from "../lib/component-utils.js";
+
+const DEFAULT_CONFIG_URL = new URL(
+  "../../data/components/country-navigation.json",
+  import.meta.url,
+).href;
 const COUNTRY_MAP_FIGMA_WIDTH = 720;
 const STAMP_WIDTH = 180;
 const STAMP_HEIGHT = 84;
 const MAX_ROTATION = 5;
 const navigationBehaviorCleanups = new WeakMap();
-const navigationResizeCleanups = new WeakMap();
 
 const STAMP_DOT_POSITIONS = Object.freeze([
   [20, 6], [13, 10], [163, 10], [163, 69],
@@ -257,15 +261,11 @@ function addNavigationBehavior(navigation) {
 }
 
 function syncNavigationToCountryMap(navigation, config) {
-  navigationResizeCleanups.get(navigation)?.();
-
-  const map = navigation
-    .closest("[data-country-hero]")
-    ?.querySelector("[data-country-map]");
+  const map = findCountryMap(navigation);
 
   if (!map) return;
 
-  const updateSize = () => {
+  observeResize(navigation, map, () => {
     const mapWidth = map.getBoundingClientRect().width;
     if (mapWidth <= 0) return;
 
@@ -273,20 +273,6 @@ function syncNavigationToCountryMap(navigation, config) {
     navigation.style.width = `${config.width * scale}px`;
     navigation.style.height = `${config.height * scale}px`;
     navigation.style.setProperty("--country-nav-scale", scale);
-  };
-
-  updateSize();
-
-  if (typeof ResizeObserver === "function") {
-    const observer = new ResizeObserver(updateSize);
-    observer.observe(map);
-    navigationResizeCleanups.set(navigation, () => observer.disconnect());
-    return;
-  }
-
-  window.addEventListener("resize", updateSize);
-  navigationResizeCleanups.set(navigation, () => {
-    window.removeEventListener("resize", updateSize);
   });
 }
 
@@ -294,10 +280,11 @@ async function renderCountryNavigation(navigation) {
   const configUrl = navigation.dataset.config || DEFAULT_CONFIG_URL;
 
   try {
-    const response = await fetch(configUrl);
-    if (!response.ok) throw new Error(`Could not load ${configUrl}`);
-
-    const config = normalizeConfig(await response.json(), new URL(".", response.url));
+    const resolvedConfigUrl = resolveUrl(configUrl);
+    const data = await fetchJson(resolvedConfigUrl, {
+      label: "Country navigation data",
+    });
+    const config = normalizeConfig(data, new URL(".", resolvedConfigUrl));
     const surface = document.createElement("div");
     surface.className = "country-navigation-surface";
     surface.style.width = `${config.width}px`;
@@ -314,8 +301,12 @@ async function renderCountryNavigation(navigation) {
   }
 }
 
-document
-  .querySelectorAll("[data-country-navigation]")
-  .forEach(renderCountryNavigation);
+export function loadCountryNavigations(scope = document) {
+  return Promise.all(
+    [...scope.querySelectorAll("[data-country-navigation]")].map(
+      renderCountryNavigation,
+    ),
+  );
+}
 
 export { renderCountryNavigation };

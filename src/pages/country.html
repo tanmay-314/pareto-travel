@@ -22,23 +22,19 @@
     <link rel="stylesheet" href="../styles/components/faqs.css" />
     <link rel="stylesheet" href="../styles/components/inter-city-travel.css" />
 
-    <script type="module" src="../scripts/components/country-navigation.js"></script>
-    <script type="module" src="../scripts/components/country-hero.js"></script>
-    <script type="module" src="../scripts/components/itinerary.js"></script>
-    <script type="module" src="../scripts/components/inter-city-travel.js"></script>
-    <script type="module" src="../scripts/components/best-months.js"></script>
-    <script type="module" src="../scripts/components/budget.js"></script>
-    <script type="module" src="../scripts/components/cuisine.js"></script>
-    <script type="module" src="../scripts/components/faqs.js"></script>
+    <script type="module" src="../scripts/country-page.js"></script>
   </head>
   
   <body>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     
     <div class="header">
 
       <a
         class="logo"
         href="index.html"
+        aria-label="Pareto Travel home"
         style="--map-image: url('../../assets/icons/logo.svg');"
       ></a>
 
@@ -51,7 +47,7 @@
     </div>
 
     <div class="country-page">
-      <main class="country-page-content">
+      <main class="country-page-content" id="main-content">
         <section
           class="country-hero"
           data-country-hero
@@ -75,7 +71,6 @@
 
         <nav
           class="country-navigation"
-          data-component="country-navigation"
           data-country-navigation
           data-config="../data/components/country-navigation.json"
           aria-label="On this country page"
@@ -152,7 +147,7 @@
 
 
     <section
-      class="inter-city-travel"
+      class="inter-city"
       id="inter-city-travel"
       data-inter-city-travel
       data-source="../data/countries/cambodia/inter-city-travel.json"
@@ -190,3 +185,4 @@
 
 
   </body>
+</html>

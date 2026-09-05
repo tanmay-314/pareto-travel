@@ -101,15 +101,6 @@ a:hover {
   color: var(--color-text-primary);
 }
 
-/* Existing landing-page typography */
-
-.brand__word {
-  font-family: var(--type-family-display), monospace;
-  font-size: var(--type-size-logo);
-  font-weight: var(--type-weight-strong);
-  line-height: 1;
-}
-
 .site-nav a {
   font-family: var(--type-family-display), monospace;
   color: var(--color-text-primary);

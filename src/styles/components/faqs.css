@@ -8,11 +8,8 @@
   --faq-bg-canvas: var(--color-bg-canvas, #fefcf3);
   --faq-bg-subtle: rgb(240 219 219 / 48%);
   --faq-text-primary: var(--color-text-primary, #85586f);
-  --faq-text-secondary: #ba97a3;
   --faq-text-accent: #588584;
   --faq-rule: #f0dbdb;
-  --faq-font-display: var(--type-family-display, "Bitcount Grid Single");
-  --faq-font-body: var(--type-family-body, "Iosevka Charon Mono");
 
   display: flex;
   flex-direction: column;
@@ -28,7 +25,6 @@
   background: var(--faq-bg-canvas);
 }
 
-.faqs-loading,
 .faqs-error {
   margin: 0;
   font: var(--type-weight-strong) 19px/1.4 var(--type-family-body), sans-serif;
@@ -354,10 +350,4 @@
   .faq-item-icon-dot {
     transition: none;
   }
-}
-
-/* Optional standalone-demo styling; remove when embedding in the project. */
-.faqs-demo {
-  margin: 0;
-  background: #ffffff;
 }

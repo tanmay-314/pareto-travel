@@ -1,4 +1,4 @@
-const sourceCache = new Map();
+import { fetchJson } from "../lib/component-utils.js";
 
 const ICONS = Object.freeze({
   "map-pin": new URL("../../assets/icons/icon-map-pin.svg", import.meta.url).href,
@@ -85,23 +85,6 @@ function normalizeConfig(data, source) {
   };
 }
 
-function loadSource(source) {
-  if (!sourceCache.has(source)) {
-    sourceCache.set(
-      source,
-      fetch(source).then((response) => {
-        if (!response.ok) {
-          throw new Error(`Could not load ${source} (${response.status}).`);
-        }
-
-        return response.json();
-      }),
-    );
-  }
-
-  return sourceCache.get(source);
-}
-
 function renderNormalizedCountryHero(root, config) {
   const name = root.querySelector("[data-country-name]");
   const overview = root.querySelector("[data-country-overview]");
@@ -162,7 +145,7 @@ export async function mountCountryHero(root) {
   root.setAttribute("aria-busy", "true");
 
   try {
-    const data = await loadSource(source);
+    const data = await fetchJson(source, { label: "Country hero data" });
     renderCountryHero(root, data, new URL(source, document.baseURI));
   } catch (error) {
     root.removeAttribute("aria-busy");
@@ -171,16 +154,8 @@ export async function mountCountryHero(root) {
   }
 }
 
-export function loadCountryHeroes() {
+export function loadCountryHeroes(scope = document) {
   return Promise.all(
-    [...document.querySelectorAll("[data-country-hero]")].map(mountCountryHero),
+    [...scope.querySelectorAll("[data-country-hero]")].map(mountCountryHero),
   );
 }
-
-window.CountryHero = Object.freeze({
-  render: renderCountryHero,
-  mount: mountCountryHero,
-  loadAll: loadCountryHeroes,
-});
-
-loadCountryHeroes();

@@ -199,28 +199,6 @@
   white-space: nowrap;
 }
 
-.budget-receipt[data-state="error"] {
-  width: 420px;
-  height: 180px;
-  min-height: 180px;
-  padding: 40px;
-  background: var(--budget-receipt-paper);
-}
-
-.budget-receipt-error {
-  margin: 0;
-  color: var(--budget-receipt-ink);
-  font: var(--type-weight-emphasis) 14px/1.5 var(--type-family-display), ui-monospace, monospace;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-  }
-}
-
 .budget {
   padding-block: var(--space-xxl);
   margin-top: var(--space-xxl);

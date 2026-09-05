@@ -1,3 +1,5 @@
+import { fetchJson, findCountryMap, observeResize } from "../lib/component-utils.js";
+
 const SVG_NS = "http://www.w3.org/2000/svg";
 
 const MONTHS = [
@@ -16,10 +18,14 @@ const MONTHS = [
 ];
 
 const VALID_STATES = new Set(["best", "good", "avoid"]);
-const sourceCache = new Map();
 let dialInstanceId = 0;
+const DEFAULT_DATA_URL = new URL(
+  "../../data/countries/cambodia/best-months.json",
+  import.meta.url,
+).href;
 
-const DIAL_VIEWBOX_SIZE = 540;
+const DIAL_VIEWBOX_SIZE = 544;
+const DIAL_CENTER = 270;
 const DIAL_TO_MAP_SIZE_RATIO = 3 / 4;
 const COMPASS_HOVER_DEGREES = 4;
 const DOTTED_RING_ASSET_URL = new URL(
@@ -30,11 +36,9 @@ const COMPASS_NEEDLE_ASSET_URL = new URL(
   "../../assets/components/best-months/compass-needle.svg",
   import.meta.url,
 ).href;
-const dialResizeCleanups = new WeakMap();
-
 const geometry = {
-  centerX: DIAL_VIEWBOX_SIZE / 2,
-  centerY: DIAL_VIEWBOX_SIZE / 2,
+  centerX: DIAL_CENTER,
+  centerY: DIAL_CENTER,
   dotRadius: 3,
   ringRadius: 230,
   labelRadius: 190,
@@ -185,34 +189,17 @@ function buildMonthSegment(month, monthIndex, state) {
 }
 
 function syncToCountryMap(container) {
-  const map = document.querySelector("[data-country-map]");
-  dialResizeCleanups.get(container)?.();
+  const map = findCountryMap(container);
 
   if (!map) return;
 
-  const updateSize = (mapWidth = map.getBoundingClientRect().width) => {
+  observeResize(container, map, () => {
+    const mapWidth = map.getBoundingClientRect().width;
     if (mapWidth <= 0) return;
     container.style.setProperty(
       "--annual-travel-dial-size",
       `${mapWidth * DIAL_TO_MAP_SIZE_RATIO}px`,
     );
-  };
-
-  updateSize();
-
-  if (typeof ResizeObserver === "function") {
-    const observer = new ResizeObserver(([entry]) => {
-      updateSize(entry.contentRect.width);
-    });
-    observer.observe(map);
-    dialResizeCleanups.set(container, () => observer.disconnect());
-    return;
-  }
-
-  const handleResize = () => updateSize();
-  window.addEventListener("resize", handleResize);
-  dialResizeCleanups.set(container, () => {
-    window.removeEventListener("resize", handleResize);
   });
 }
 
@@ -296,23 +283,6 @@ export function renderAnnualTravelDial(container, rawConfig) {
   container.removeAttribute("aria-busy");
 }
 
-async function loadSource(source) {
-  if (!sourceCache.has(source)) {
-    sourceCache.set(
-      source,
-      fetch(source).then((response) => {
-        if (!response.ok) {
-          throw new Error(`Could not load ${source} (${response.status}).`);
-        }
-
-        return response.json();
-      }),
-    );
-  }
-
-  return sourceCache.get(source);
-}
-
 function showError(container, error) {
   const message = document.createElement("p");
   message.className = "annual-travel-dial__error";
@@ -363,12 +333,12 @@ export function renderBestMonthsEditorial(container, rawEditorial) {
 }
 
 export async function setDialCountry(container, countryKey) {
-  const source = container.dataset.source || "../data/country/cambodia/best-months.json";
+  const source = container.dataset.source || DEFAULT_DATA_URL;
   container.dataset.country = countryKey;
   container.setAttribute("aria-busy", "true");
 
   try {
-    const data = await loadSource(source);
+    const data = await fetchJson(source, { label: "Best-months data" });
     const countryConfig = data.countries?.[countryKey];
     renderAnnualTravelDial(container, countryConfig);
     renderBestMonthsEditorial(
@@ -382,18 +352,10 @@ export async function setDialCountry(container, countryKey) {
   }
 }
 
-export async function loadAnnualTravelDials() {
-  const dials = document.querySelectorAll(".annual-travel-dial[data-country]");
+export async function loadAnnualTravelDials(scope = document) {
+  const dials = scope.querySelectorAll(".annual-travel-dial[data-country]");
 
   await Promise.all(
     [...dials].map((dial) => setDialCountry(dial, dial.dataset.country)),
   );
 }
-
-window.AnnualTravelDial = {
-  render: renderAnnualTravelDial,
-  setCountry: setDialCountry,
-  loadAll: loadAnnualTravelDials,
-};
-
-loadAnnualTravelDials();

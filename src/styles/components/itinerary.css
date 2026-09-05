@@ -1,8 +1,3 @@
-:root {
-  --color-text-primary: #85586f;
-  --font-family-display: "Bitcount Grid Single", monospace;
-}
-
 .itinerary-polaroid {
   --polaroid-rotation: 0deg;
   --polaroid-resting-rotation: var(--polaroid-rotation);

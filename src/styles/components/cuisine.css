@@ -10,8 +10,6 @@
   --cuisine-menu-shadow: var(--color-text-secondary, #ba97a3);
   --cuisine-text: var(--color-text-primary, #85586f);
   --cuisine-text-secondary: var(--color-text-secondary, #ba97a3);
-  --cuisine-menu-scaled-width: 420px;
-
   box-sizing: border-box;
   width: 100%;
   min-height: 0;

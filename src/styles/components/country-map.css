@@ -43,11 +43,14 @@
 
 .country-map-marker--primary {
   color: var(--color-icon-primary);
+}
+
+.country-map-marker[href] {
   cursor: pointer;
 }
 
-.country-map-marker--primary:hover,
-.country-map-marker--primary:focus-visible {
+.country-map-marker[href]:hover,
+.country-map-marker[href]:focus-visible {
   color: var(--color-icon-hover);
 }
 

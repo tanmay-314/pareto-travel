@@ -17,11 +17,14 @@
   
   <body>
 
+    <a class="skip-link" href="#map-container">Skip to main content</a>
+
     <div class="header">
 
       <a
         class="logo"
         href="index.html"
+        aria-label="Pareto Travel home"
         style="--map-image: url('../../assets/icons/logo.svg');"
       ></a>
 
@@ -34,20 +37,23 @@
 
     </div>
 
-    <div id="map-container">
+    <main id="map-container">
 
       <div class="map">
 
-        <a
+        <div
           class="world-map"
           id="world-map"
+          role="img"
+          aria-label="World map"
           style="--map-image: url('../../assets/maps/world-map.svg');"
-        ></a>
+        ></div>
 
         <a 
           class="world-map-country"
           id="us"
           href="/countries/united-states.html"
+          aria-label="United States"
           style="--map-image: url('../../assets/maps/world-map-us.svg');"
         ></a>
 
@@ -55,6 +61,7 @@
           class="world-map-country"
           id="mx"
           href="/countries/mexico.html"
+          aria-label="Mexico"
           style="--map-image: url('../../assets/maps/world-map-mx.svg');"
         ></a>
 
@@ -62,6 +69,7 @@
           class="world-map-country"
           id="cr"
           href="/countries/costa-rica.html"
+          aria-label="Costa Rica"
           style="--map-image: url('../../assets/maps/world-map-cr.svg');"
         ></a>
 
@@ -69,6 +77,7 @@
           class="world-map-country"
           id="co"
           href="/countries/colombia.html"
+          aria-label="Colombia"
           style="--map-image: url('../../assets/maps/world-map-co.svg');"
         ></a>
 
@@ -76,6 +85,7 @@
           class="world-map-country"
           id="br"
           href="/countries/brazil.html"
+          aria-label="Brazil"
           style="--map-image: url('../../assets/maps/world-map-br.svg');"
         ></a>
 
@@ -83,6 +93,7 @@
           class="world-map-country"
           id="pe"
           href="/countries/peru.html"
+          aria-label="Peru"
           style="--map-image: url('../../assets/maps/world-map-pe.svg');"
         ></a>
 
@@ -90,6 +101,7 @@
           class="world-map-country"
           id="bo"
           href="/countries/bolivia.html"
+          aria-label="Bolivia"
           style="--map-image: url('../../assets/maps/world-map-bo.svg');"
         ></a>
 
@@ -97,6 +109,7 @@
           class="world-map-country"
           id="cl"
           href="/countries/chile.html"
+          aria-label="Chile"
           style="--map-image: url('../../assets/maps/world-map-cl.svg');"
         ></a>
 
@@ -104,6 +117,7 @@
           class="world-map-country"
           id="is"
           href="/countries/iceland.html"
+          aria-label="Iceland"
           style="--map-image: url('../../assets/maps/world-map-is.svg');"
         ></a>
 
@@ -111,6 +125,7 @@
           class="world-map-country"
           id="tr"
           href="/countries/turkey.html"
+          aria-label="Turkey"
           style="--map-image: url('../../assets/maps/world-map-tr.svg');"
         ></a>
 
@@ -118,6 +133,7 @@
           class="world-map-country"
           id="gr"
           href="/countries/greece.html"
+          aria-label="Greece"
           style="--map-image: url('../../assets/maps/world-map-gr.svg');"
         ></a>
 
@@ -125,6 +141,7 @@
           class="world-map-country"
           id="in"
           href="/countries/india.html"
+          aria-label="India"
           style="--map-image: url('../../assets/maps/world-map-in.svg');"
         ></a>
 
@@ -132,6 +149,7 @@
           class="world-map-country"
           id="lk"
           href="/countries/sri-lanka.html"
+          aria-label="Sri Lanka"
           style="--map-image: url('../../assets/maps/world-map-lk.svg');"
         ></a>
 
@@ -139,6 +157,7 @@
           class="world-map-country"
           id="my"
           href="/countries/malaysia.html"
+          aria-label="Malaysia"
           style="--map-image: url('../../assets/maps/world-map-my.svg');"
         ></a>
 
@@ -146,19 +165,21 @@
           class="world-map-country"
           id="sg"
           href="/countries/singapore.html"
+          aria-label="Singapore"
           style="--map-image: url('../../assets/maps/world-map-sg.svg');"
         ></a>
 
         <a 
           class="world-map-country"
           id="kh"
-          href="/countries/cambodia.html"
+          href="country.html"
+          aria-label="Cambodia"
           style="--map-image: url('../../assets/maps/world-map-kh.svg');"
         ></a>
 
       </div>
 
-    </div>
+    </main>
 
 
 

@@ -14,8 +14,8 @@
     }
   },
   "places": [
-    { "name": "PHNOM PENH", "caption": "PORT OF ENTRY" },
-    { "name": "SIEM REAP", "caption": "ANGKOR GATEWAY" }
+    { "name": "PHNOM PENH" },
+    { "name": "SIEM REAP" }
   ],
   "legs": [
     {

@@ -3,15 +3,7 @@
   --dial-best: #85586f;
   --dial-good: #ba97a3;
   --dial-avoid: #f0dbdb;
-  --dial-font: "Bitcount Grid Single", monospace;
   --dial-compass-hover-duration: 7s;
-}
-
-.page-shell {
-  display: grid;
-  min-height: 100svh;
-  place-items: center;
-  padding: var(--space-lg);
 }
 
 .annual-travel-dial {
@@ -95,18 +87,6 @@
   color: var(--dial-best);
   font: var(--type-weight-strong) 16px/1.5 var(--type-family-display), "Courier New", monospace;
   text-align: center;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }
 
 .best-months {

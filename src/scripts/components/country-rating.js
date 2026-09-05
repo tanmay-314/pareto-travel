@@ -1,8 +1,7 @@
-const sourceCache = new Map();
+import { fetchJson, findCountryMap, observeResize } from "../lib/component-utils.js";
 
 const STAR_COUNT = 5;
 const STAR_TO_MAP_SIZE_RATIO = 1 / 24;
-const ratingResizeCleanups = new WeakMap();
 const STAR_ASSETS = Object.freeze({
   primary: new URL(
     "../../assets/components/country-rating/icon-star.svg",
@@ -63,23 +62,6 @@ function normalizeRatings(data) {
   return data.ratings.map(normalizeRating);
 }
 
-function loadSource(source) {
-  if (!sourceCache.has(source)) {
-    sourceCache.set(
-      source,
-      fetch(source).then((response) => {
-        if (!response.ok) {
-          throw new Error(`Could not load ${source} (${response.status}).`);
-        }
-
-        return response.json();
-      }),
-    );
-  }
-
-  return sourceCache.get(source);
-}
-
 function getStarState(score, index) {
   if (index < Math.floor(score)) {
     return "primary";
@@ -126,12 +108,12 @@ function createRatingRow(rating) {
 }
 
 function syncStarSizeToCountryMap(root) {
-  const map = document.querySelector("[data-country-map]");
-  ratingResizeCleanups.get(root)?.();
+  const map = findCountryMap(root);
 
   if (!map) return;
 
-  const updateSize = (mapWidth = map.getBoundingClientRect().width) => {
+  observeResize(root, map, () => {
+    const mapWidth = map.getBoundingClientRect().width;
     if (mapWidth <= 0) return;
 
     const starSize = mapWidth * STAR_TO_MAP_SIZE_RATIO;
@@ -140,23 +122,6 @@ function syncStarSizeToCountryMap(root) {
       "--country-rating-stars-width",
       `${starSize * STAR_COUNT}px`,
     );
-  };
-
-  updateSize();
-
-  if (typeof ResizeObserver === "function") {
-    const observer = new ResizeObserver(([entry]) => {
-      updateSize(entry.contentRect.width);
-    });
-    observer.observe(map);
-    ratingResizeCleanups.set(root, () => observer.disconnect());
-    return;
-  }
-
-  const handleResize = () => updateSize();
-  window.addEventListener("resize", handleResize);
-  ratingResizeCleanups.set(root, () => {
-    window.removeEventListener("resize", handleResize);
   });
 }
 
@@ -181,7 +146,7 @@ export async function mountCountryRating(root) {
   root.setAttribute("aria-busy", "true");
 
   try {
-    const data = await loadSource(source);
+    const data = await fetchJson(source, { label: "Country rating data" });
     renderCountryRating(root, data);
   } catch (error) {
     root.removeAttribute("aria-busy");
@@ -190,16 +155,8 @@ export async function mountCountryRating(root) {
   }
 }
 
-export function loadCountryRatings() {
+export function loadCountryRatings(scope = document) {
   return Promise.all(
-    [...document.querySelectorAll("[data-country-rating]")].map(mountCountryRating),
+    [...scope.querySelectorAll("[data-country-rating]")].map(mountCountryRating),
   );
 }
-
-window.CountryRating = Object.freeze({
-  render: renderCountryRating,
-  mount: mountCountryRating,
-  loadAll: loadCountryRatings,
-});
-
-loadCountryRatings();

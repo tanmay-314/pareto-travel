@@ -86,7 +86,10 @@ pareto-travel/
 │   │   │   └── country-navigation.json
 │   │   └── countries/
 │   │       └── cambodia/              # one JSON file per page section
-│   ├── scripts/components/            # component rendering and behavior
+│   ├── scripts/
+│   │   ├── country-page.js            # page initialization and debug APIs
+│   │   ├── components/                # component rendering and behavior
+│   │   └── lib/component-utils.js     # shared fetch and resize utilities
 │   ├── styles/
 │   │   ├── reset.css
 │   │   ├── tokens.css
@@ -105,26 +108,26 @@ pareto-travel/
     └── docs/                          # architecture and contribution guides
 ```
 
-The top-level `dist/` and `scripts/` directories are currently empty, and the
-top-level `px` file is an empty placeholder. They are not part of the runtime.
+The top-level `dist/` and `scripts/` directories are currently empty and are
+not part of the runtime.
 
 ## How the site works
 
-The browser loads a static page and its foundation styles, followed by the
-styles and scripts for that page's components. Component scripts discover mount
-points through `data-*` attributes, fetch JSON from each mount point's
-`data-source`, validate or normalize the data, construct semantic DOM, and bind
-their own interactions.
+The browser loads a static page and its foundation styles, followed by a single
+country-page bootstrap. The bootstrap initializes side-effect-free component
+modules, which discover mount points through `data-*` attributes, fetch JSON,
+validate or normalize the data, construct semantic DOM, and bind interactions.
 
 ```text
 HTML page
   ├── reset → tokens → typography → global CSS
   ├── component CSS
   └── data-* mount points
-       └── component JavaScript
-            ├── fetch country/section JSON
-            ├── validate and render
-            └── bind interaction, sizing, and motion behavior
+       └── country-page bootstrap
+            └── component modules
+                 ├── fetch country/section JSON
+                 ├── validate and render
+                 └── bind interaction, sizing, and motion behavior
 ```
 
 Detailed component artwork is kept in external SVG files. Several physical
@@ -132,10 +135,10 @@ artifact-style components preserve their Figma geometry internally and scale in
 relation to the live country-map width with `ResizeObserver` (falling back to a
 window resize listener).
 
-There is not yet a separate country-page controller or router. The current
-`country.html` directly declares Cambodia's data sources. Turning the template
-into many public country URLs will require a documented slug/routing strategy or
-generated country entry pages.
+The country-page bootstrap owns initialization but is not a router. The current
+`country.html` still directly declares Cambodia's data sources. Turning the
+template into many public country URLs will require a documented slug/routing
+strategy or generated country entry pages.
 
 ## Pages
 
@@ -181,7 +184,8 @@ people who prefer reduced motion.
 | FAQs/review | `[data-faqs]` | `faqs.json` + `country.json` | `faqs.js`, `country-rating.js`, matching CSS |
 
 All implementation paths in the table are below `src/scripts/components/` or
-`src/styles/components/` unless otherwise stated.
+`src/styles/components/` unless otherwise stated. Shared JSON fetching, retryable
+request caching, and resize cleanup live in `src/scripts/lib/component-utils.js`.
 
 ### Interaction and fallback behavior
 
