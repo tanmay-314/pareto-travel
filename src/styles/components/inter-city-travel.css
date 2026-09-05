@@ -71,8 +71,8 @@
 .inter-city-ticket {
   position: relative;
   width: 450px;
-  height: 186px;
-  flex: 0 0 186px;
+  height: 180px;
+  flex: 0 0 180px;
   color: var(--inter-city-text);
 }
 
@@ -88,7 +88,7 @@
   display: block;
   width: 452px;
   max-width: none;
-  height: 190px;
+  height: 184px;
   pointer-events: none;
 }
 
@@ -164,7 +164,7 @@
 .inter-city-ticket-rule {
   position: absolute;
   z-index: 2;
-  top: 103px;
+  top: 99px;
   left: 24px;
   width: 396px;
   height: 4px;
@@ -178,7 +178,7 @@
 }
 
 .inter-city-ticket-transport-details {
-  top: 129px;
+  top: 126px;
   left: 126px;
   width: 221px;
   height: 18px;

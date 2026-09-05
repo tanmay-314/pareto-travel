@@ -3,10 +3,8 @@
   --dial-best: #85586f;
   --dial-good: #ba97a3;
   --dial-avoid: #f0dbdb;
-  --dial-center-fill: #f0dbdb;
   --dial-font: "Bitcount Grid Single", monospace;
-  --dial-enter-duration: 1800ms;
-  --dial-spin-duration: 24s;
+  --dial-compass-hover-duration: 7s;
 }
 
 .page-shell {
@@ -17,11 +15,11 @@
 }
 
 .annual-travel-dial {
-  width: var(--annual-travel-dial-size, 480px);
+  width: var(--annual-travel-dial-size, 540px);
   max-width: 100%;
   aspect-ratio: 1;
   margin: 0;
-  overflow: hidden;
+  overflow: visible;
   background: var(--dial-background);
 }
 
@@ -29,105 +27,45 @@
   display: block;
   width: 100%;
   height: 100%;
+  overflow: visible;
 }
 
-.annual-travel-dial[data-motion="spin"] .annual-travel-dial__ring {
+.annual-travel-dial__compass--animated {
   transform-box: view-box;
-  transform-origin: 240px 240px;
-  animation: annual-travel-dial-enter var(--dial-enter-duration)
-    cubic-bezier(0.16, 1, 0.3, 1) both;
+  transform-origin: 270px 270px;
+  animation: annual-travel-dial-compass-hover
+    var(--dial-compass-hover-duration) ease-in-out infinite;
   will-change: transform;
 }
 
-.annual-travel-dial[data-motion="continuous"] .annual-travel-dial__ring {
-  transform-box: view-box;
-  transform-origin: 240px 240px;
-  animation: annual-travel-dial-rotate var(--dial-spin-duration) linear infinite;
-  will-change: transform;
-}
-
-.annual-travel-dial[data-motion="spin"] .annual-travel-dial__month {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: annual-travel-dial-counter-enter var(--dial-enter-duration)
-    cubic-bezier(0.16, 1, 0.3, 1) both;
-  will-change: transform;
-}
-
-.annual-travel-dial[data-motion="continuous"] .annual-travel-dial__month {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: annual-travel-dial-counter-rotate var(--dial-spin-duration) linear
-    infinite;
-  will-change: transform;
-}
-
-@keyframes annual-travel-dial-enter {
-  from {
-    transform: rotate(-360deg);
+@keyframes annual-travel-dial-compass-hover {
+  0%,
+  10%,
+  100% {
+    transform: rotate(var(--dial-compass-start-angle));
   }
 
-  to {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes annual-travel-dial-rotate {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes annual-travel-dial-counter-enter {
-  from {
-    transform: rotate(360deg);
-  }
-
-  to {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes annual-travel-dial-counter-rotate {
-  to {
-    transform: rotate(-360deg);
+  50%,
+  60% {
+    transform: rotate(var(--dial-compass-end-angle));
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .annual-travel-dial[data-motion="spin"] .annual-travel-dial__ring,
-  .annual-travel-dial[data-motion="continuous"] .annual-travel-dial__ring,
-  .annual-travel-dial[data-motion="spin"] .annual-travel-dial__month,
-  .annual-travel-dial[data-motion="continuous"] .annual-travel-dial__month {
+  .annual-travel-dial__compass--animated {
     animation: none;
+    transform: rotate(var(--dial-compass-rest-angle));
   }
 }
 
-.annual-travel-dial__month,
-.annual-travel-dial__center-label,
-.annual-travel-dial__center-value {
+.annual-travel-dial__month {
   font-family: var(--type-family-display), "Courier New", monospace;
   font-style: normal;
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
 }
 
 .annual-travel-dial__month {
-  font-size: var(--type-size-body);
-  font-weight: var(--type-weight-strong);
-  text-anchor: middle;
-}
-
-.annual-travel-dial__center-label {
-  fill: var(--dial-good);
-  font-size: var(--type-size-body);
-  font-weight: var(--type-weight-regular);
-  letter-spacing: 1.8px;
-  text-anchor: middle;
-}
-
-.annual-travel-dial__center-value {
-  fill: var(--dial-best);
-  font-size: 34px;
+  font-size: var(--type-size-map-label, 24px);
   font-weight: var(--type-weight-strong);
   text-anchor: middle;
 }

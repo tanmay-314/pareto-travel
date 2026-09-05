@@ -90,7 +90,7 @@
           src="${escapeHtml(assets.ticket || DEFAULT_DATA.assets.ticket)}"
           alt=""
           width="452"
-          height="190"
+          height="184"
           aria-hidden="true"
         >
 

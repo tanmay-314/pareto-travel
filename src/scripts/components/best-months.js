@@ -19,8 +19,17 @@ const VALID_STATES = new Set(["best", "good", "avoid"]);
 const sourceCache = new Map();
 let dialInstanceId = 0;
 
-const DIAL_VIEWBOX_SIZE = 480;
-const DIAL_TO_MAP_SIZE_RATIO = 2 / 3;
+const DIAL_VIEWBOX_SIZE = 540;
+const DIAL_TO_MAP_SIZE_RATIO = 3 / 4;
+const COMPASS_HOVER_DEGREES = 4;
+const DOTTED_RING_ASSET_URL = new URL(
+  "../../assets/components/best-months/dotted-ring.svg",
+  import.meta.url,
+).href;
+const COMPASS_NEEDLE_ASSET_URL = new URL(
+  "../../assets/components/best-months/compass-needle.svg",
+  import.meta.url,
+).href;
 const dialResizeCleanups = new WeakMap();
 
 const geometry = {
@@ -31,7 +40,6 @@ const geometry = {
   labelRadius: 190,
   dotsPerMonth: 12,
   monthArcDegrees: 24,
-  centerCircleRadius: 124,
 };
 
 function svgNode(name, attributes = {}) {
@@ -95,6 +103,46 @@ function makeAccessibleSummary(config) {
       return `${state}: ${monthNames.join(", ") || "none"}`;
     })
     .join("; ");
+}
+
+function getPrimaryBestSeason(months) {
+  const bestMonths = MONTHS.map(({ key }) => months[key] === "best");
+  const bestMonthCount = bestMonths.filter(Boolean).length;
+
+  if (bestMonthCount === 0 || bestMonthCount === MONTHS.length) {
+    return null;
+  }
+
+  const runs = [];
+
+  bestMonths.forEach((isBest, index) => {
+    const previousIndex = (index - 1 + MONTHS.length) % MONTHS.length;
+
+    if (!isBest || bestMonths[previousIndex]) return;
+
+    let length = 1;
+    while (
+      length < MONTHS.length &&
+      bestMonths[(index + length) % MONTHS.length]
+    ) {
+      length += 1;
+    }
+
+    runs.push({ startIndex: index, length });
+  });
+
+  const primaryRun = runs.reduce((longest, run) =>
+    run.length > longest.length ? run : longest,
+  );
+  const normalizedStartIndex =
+    primaryRun.startIndex > MONTHS.length / 2
+      ? primaryRun.startIndex - MONTHS.length
+      : primaryRun.startIndex;
+
+  const startAngle = normalizedStartIndex * 30;
+  const endAngle = (normalizedStartIndex + primaryRun.length - 1) * 30;
+
+  return { centerAngle: (startAngle + endAngle) / 2 };
 }
 
 function buildMonthSegment(month, monthIndex, state) {
@@ -189,16 +237,14 @@ export function renderAnnualTravelDial(container, rawConfig) {
   svg.append(
     title,
     description,
-    svgNode("rect", {
-      width: DIAL_VIEWBOX_SIZE,
-      height: DIAL_VIEWBOX_SIZE,
-      fill: "var(--dial-background)",
-    }),
-    svgNode("circle", {
-      cx: geometry.centerX,
-      cy: geometry.centerY,
-      r: geometry.centerCircleRadius,
-      fill: "var(--dial-center-fill)",
+    svgNode("image", {
+      class: "annual-travel-dial__frame",
+      href: DOTTED_RING_ASSET_URL,
+      x: 0,
+      y: 0,
+      width: 542,
+      height: 544,
+      preserveAspectRatio: "none",
     }),
   );
 
@@ -211,24 +257,34 @@ export function renderAnnualTravelDial(container, rawConfig) {
   });
 
   svg.append(ring);
-
-  const centerLabel = svgNode("text", {
-    class: "annual-travel-dial__center-label",
-    x: geometry.centerX,
-    y: geometry.centerY - 27,
-    "dominant-baseline": "middle",
+  const compass = svgNode("image", {
+    class: "annual-travel-dial__compass",
+    href: COMPASS_NEEDLE_ASSET_URL,
+    x: 242.48,
+    y: 106,
+    width: 54.328,
+    height: 333,
+    preserveAspectRatio: "none",
   });
-  centerLabel.textContent = config.centerLabel;
+  const bestSeason = getPrimaryBestSeason(config.months);
 
-  const centerValue = svgNode("text", {
-    class: "annual-travel-dial__center-value",
-    x: geometry.centerX,
-    y: geometry.centerY + 14,
-    "dominant-baseline": "middle",
-  });
-  centerValue.textContent = config.centerValue;
+  if (bestSeason) {
+    compass.classList.add("annual-travel-dial__compass--animated");
+    compass.style.setProperty(
+      "--dial-compass-start-angle",
+      `${bestSeason.centerAngle - COMPASS_HOVER_DEGREES}deg`,
+    );
+    compass.style.setProperty(
+      "--dial-compass-end-angle",
+      `${bestSeason.centerAngle + COMPASS_HOVER_DEGREES}deg`,
+    );
+    compass.style.setProperty(
+      "--dial-compass-rest-angle",
+      `${bestSeason.centerAngle}deg`,
+    );
+  }
 
-  svg.append(centerLabel, centerValue);
+  svg.append(compass);
 
   const caption = container.querySelector("figcaption");
   container.replaceChildren(svg);
