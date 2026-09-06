@@ -2,9 +2,7 @@
     position: relative;
     width: 100%;
     height: auto;
-
-    padding-right: var(--space-6xl);
-    padding-left: var(--space-6xl);
+    padding-inline: clamp(var(--space-lg), 7.5vw, var(--space-6xl));
 }
 
 .map {

@@ -28,32 +28,76 @@
     list-style-type: none;
 }
 
+.nav-toggle {
+    display: none;
+}
+
 @media (max-width: 900px) {
     .header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--space-sm);
+        --mobile-logo-width: min(62vw, 264px);
+        --mobile-menu-size: min(7.0454545vw, 30px);
+
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--space-lg);
         padding: var(--space-lg);
     }
 
     .logo {
         /* Keep the artwork readable independently of the desktop map ratio. */
         flex: none;
-        width: min(100%, 264px);
+        width: var(--mobile-logo-width);
+    }
+
+    .nav-toggle {
+        position: relative;
+        display: grid;
+        place-items: center;
+        flex: 0 0 max(44px, var(--mobile-menu-size));
+        width: max(44px, var(--mobile-menu-size));
+        height: max(44px, var(--mobile-menu-size));
+        margin-left: auto;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: transparent;
+    }
+
+    .nav-toggle img {
+        position: relative;
+        width: var(--mobile-menu-size);
+        height: var(--mobile-menu-size);
+    }
+
+    .nav-toggle:hover img {
+        opacity: 0.75;
+    }
+
+    .nav-toggle:focus-visible {
+        outline-offset: 4px;
     }
 
     .nav {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        column-gap: var(--space-lg);
-        row-gap: var(--space-xs);
-        width: 100%;
+        position: absolute;
+        z-index: 10;
+        inset: 100% var(--space-lg) auto;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
         margin: 0;
-        padding: 0;
+        padding: var(--space-sm) var(--space-lg);
+        background-color: var(--color-bg-surface);
+        box-shadow: 0 12px 24px rgb(44 47 50 / 12%);
+    }
+
+    .nav-toggle[aria-expanded="true"] + .nav {
+        display: flex;
     }
 
     .nav .site-nav a {
-        display: inline-flex;
+        display: flex;
         align-items: center;
         min-height: 44px;
         font-size: var(--type-size-body);

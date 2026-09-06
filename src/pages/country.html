@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="../styles/components/inter-city-travel.css" />
 
     <script type="module" src="../scripts/country-page.js"></script>
+    <script type="module" src="../scripts/header.js"></script>
   </head>
   
   <body>
@@ -41,7 +42,17 @@
         <img src="../assets/icons/logo.svg" alt="" />
       </a>
 
-      <ul class="nav">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+        aria-label="Open navigation menu"
+      >
+        <img src="../assets/icons/icon-menu.svg" alt="" />
+      </button>
+
+      <ul class="nav" id="site-navigation">
         <li class="site-nav"><a href="/countries/destinations.html">DESTINATIONS</a></li>
         <li class="site-nav"><a href="/countries/months.html">MONTHS</a></li>
         <li class="site-nav"><a href="/countries/about.html">ABOUT</a></li>
