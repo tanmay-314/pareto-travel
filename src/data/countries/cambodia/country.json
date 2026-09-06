@@ -12,28 +12,27 @@
   "ratings": [
     {
       "id": "culture",
-      "label": "Culture",
-      "score": 4
+      "rating": "great"
     },
     {
       "id": "nature",
-      "label": "Nature",
-      "score": 3.5
+      "rating": "great"
     },
     {
-      "id": "cities",
-      "label": "Cities",
-      "score": 3
+      "id": "adventure",
+      "rating": "good"
+    },
+    {
+      "id": "city-life",
+      "rating": "good"
+    },
+    {
+      "id": "food",
+      "rating": "good"
     },
     {
       "id": "safety",
-      "label": "Safety",
-      "score": 2
-    },
-    {
-      "id": "budget",
-      "label": "Budget",
-      "score": 5
+      "rating": "great"
     }
   ],
   "map": {

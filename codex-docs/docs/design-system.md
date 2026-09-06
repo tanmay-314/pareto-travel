@@ -29,6 +29,7 @@ Known primitives:
 | Plum | `#85586F` |
 | Soft plum | `#F0DBDB` |
 | Teal | `#588584` |
+| Caviar | `#2C2F32` |
 
 Use the actual names already defined in `styles/tokens.css`. The table documents values, not permission to rename existing variables.
 

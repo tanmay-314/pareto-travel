@@ -1,113 +1,115 @@
-import { fetchJson, findCountryMap, observeResize } from "../lib/component-utils.js";
+import {
+  fetchJson,
+  findCountryMap,
+  observeResize,
+} from "../lib/component-utils.js";
 
-const STAR_COUNT = 5;
-const STAR_TO_MAP_SIZE_RATIO = 1 / 24;
-const STAR_ASSETS = Object.freeze({
-  primary: new URL(
-    "../../assets/components/country-rating/icon-star.svg",
+const RATING_TO_MAP_WIDTH_RATIO = 5 / 6;
+
+const RATING_PARAMETERS = Object.freeze([
+  Object.freeze({ id: "culture", label: "Culture" }),
+  Object.freeze({ id: "nature", label: "Nature" }),
+  Object.freeze({ id: "adventure", label: "Adventure" }),
+  Object.freeze({ id: "city-life", label: "City Life" }),
+  Object.freeze({ id: "food", label: "Food" }),
+  Object.freeze({ id: "safety", label: "Safety" }),
+]);
+
+const RATING_STATES = new Set(["great", "good", "not-great"]);
+const RATING_LABELS = Object.freeze({
+  great: "great",
+  good: "good",
+  "not-great": "not great",
+});
+
+const ICON_ASSETS = Object.freeze({
+  info: new URL(
+    "../../assets/icons/icon-i.svg",
     import.meta.url,
   ).href,
-  partial: new URL(
-    "../../assets/components/country-rating/icon-star-partial.svg",
-    import.meta.url,
-  ).href,
-  tertiary: new URL(
-    "../../assets/components/country-rating/icon-star-tertiary.svg",
+  heart: new URL(
+    "../../assets/icons/icon-heart.svg",
     import.meta.url,
   ).href,
 });
-
-function requiredText(value, fieldName) {
-  if (typeof value !== "string" || !value.trim()) {
-    throw new Error(`Country rating data needs a non-empty ${fieldName}.`);
-  }
-
-  return value.trim();
-}
-
-function normalizeRating(rating, index) {
-  const fieldName = `ratings[${index}]`;
-
-  if (!rating || typeof rating !== "object") {
-    throw new Error(`Country rating data needs a valid ${fieldName}.`);
-  }
-
-  if (
-    !Number.isFinite(rating.score)
-    || rating.score < 0
-    || rating.score > STAR_COUNT
-    || !Number.isInteger(rating.score * 2)
-  ) {
-    throw new Error(
-      `Country rating data needs ${fieldName}.score between 0 and 5 in half-star steps.`,
-    );
-  }
-
-  return {
-    id: requiredText(rating.id, `${fieldName}.id`),
-    label: requiredText(rating.label, `${fieldName}.label`),
-    score: rating.score,
-  };
-}
 
 function normalizeRatings(data) {
   if (!data || typeof data !== "object" || !Array.isArray(data.ratings)) {
     throw new Error("Country rating data needs a ratings array.");
   }
 
-  if (data.ratings.length !== STAR_COUNT) {
-    throw new Error("Country rating data needs exactly five rating categories.");
+  if (data.ratings.length !== RATING_PARAMETERS.length) {
+    throw new Error("Country rating data needs exactly six rating parameters.");
   }
 
-  return data.ratings.map(normalizeRating);
+  return RATING_PARAMETERS.map((parameter, index) => {
+    const rating = data.ratings[index];
+
+    if (!rating || typeof rating !== "object") {
+      throw new Error(`Country rating data needs a valid ratings[${index}].`);
+    }
+
+    if (rating.id !== parameter.id) {
+      throw new Error(
+        `Country rating ratings[${index}].id must be "${parameter.id}".`,
+      );
+    }
+
+    if (!RATING_STATES.has(rating.rating)) {
+      throw new Error(
+        `Country rating "${parameter.id}" must be great, good, or not-great.`,
+      );
+    }
+
+    return { ...parameter, rating: rating.rating };
+  });
 }
 
-function getStarState(score, index) {
-  if (index < Math.floor(score)) {
-    return "primary";
-  }
-
-  if (index === Math.floor(score) && score % 1 === 0.5) {
-    return "partial";
-  }
-
-  return "tertiary";
-}
-
-function createRatingRow(rating) {
-  const row = document.createElement("div");
-  row.className = "country-rating__row";
-  row.dataset.ratingId = rating.id;
-
-  const descriptor = document.createElement("dt");
-  descriptor.className = "country-rating__descriptor";
-  descriptor.textContent = rating.label;
-
-  const stars = document.createElement("dd");
-  stars.className = "country-rating__stars";
-  stars.setAttribute("role", "img");
-  stars.setAttribute(
+function createRatingTile(parameter) {
+  const tile = document.createElement("li");
+  tile.className = `country-rating__tile country-rating__tile--${parameter.rating}`;
+  tile.dataset.ratingId = parameter.id;
+  tile.setAttribute(
     "aria-label",
-    `${rating.label}: ${rating.score} out of ${STAR_COUNT} stars`,
+    `${parameter.label}: ${RATING_LABELS[parameter.rating]}`,
   );
 
-  for (let index = 0; index < STAR_COUNT; index += 1) {
-    const state = getStarState(rating.score, index);
-    const star = document.createElement("img");
-    star.className = `country-rating__star country-rating__star--${state}`;
-    star.src = STAR_ASSETS[state];
-    star.alt = "";
-    star.width = 30;
-    star.height = 30;
-    star.setAttribute("aria-hidden", "true");
-    stars.append(star);
-  }
+  const content = document.createElement("span");
+  content.className = "country-rating__tile-content";
+  content.setAttribute("aria-hidden", "true");
 
-  row.append(descriptor, stars);
-  return row;
+  const ring = document.createElement("img");
+  ring.className = "country-rating__ring";
+  ring.src = new URL(
+    "../../assets/components/faq-quick-reference/dotted-ring.svg",
+    import.meta.url,
+  ).href;
+  ring.alt = "";
+  ring.width = 182;
+  ring.height = 184;
+
+  const icons = document.createElement("span");
+  icons.className = "country-rating__icons";
+
+  const info = document.createElement("span");
+  info.className = "country-rating__icon country-rating__icon--info";
+  info.style.setProperty("--rating-icon", `url("${ICON_ASSETS.info}")`);
+
+  const heart = document.createElement("span");
+  heart.className = "country-rating__icon country-rating__icon--heart";
+  heart.style.setProperty("--rating-icon", `url("${ICON_ASSETS.heart}")`);
+
+  const label = document.createElement("span");
+  label.className = "country-rating__label";
+  label.textContent = parameter.label.toUpperCase();
+
+  icons.append(info, heart);
+  content.append(ring, icons, label);
+  tile.append(content);
+  return tile;
 }
 
-function syncStarSizeToCountryMap(root) {
+function syncToCountryMap(root) {
   const map = findCountryMap(root);
 
   if (!map) return;
@@ -116,24 +118,23 @@ function syncStarSizeToCountryMap(root) {
     const mapWidth = map.getBoundingClientRect().width;
     if (mapWidth <= 0) return;
 
-    const starSize = mapWidth * STAR_TO_MAP_SIZE_RATIO;
-    root.style.setProperty("--country-rating-star-size", `${starSize}px`);
     root.style.setProperty(
-      "--country-rating-stars-width",
-      `${starSize * STAR_COUNT}px`,
+      "--country-rating-width",
+      `${mapWidth * RATING_TO_MAP_WIDTH_RATIO}px`,
     );
   });
 }
 
 export function renderCountryRating(root, data) {
   const ratings = normalizeRatings(data);
-  const list = document.createElement("dl");
+  const list = document.createElement("ul");
   list.className = "country-rating__list";
-  list.append(...ratings.map(createRatingRow));
+  list.setAttribute("aria-label", "Travel ratings");
+  list.append(...ratings.map(createRatingTile));
   root.replaceChildren(list);
-  syncStarSizeToCountryMap(root);
   root.removeAttribute("aria-busy");
   root.dataset.state = "ready";
+  syncToCountryMap(root);
 }
 
 export async function mountCountryRating(root) {

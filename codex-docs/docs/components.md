@@ -84,19 +84,19 @@ Update the paths below when components are integrated.
 ### Country rating
 
 - Root: `.country-rating` for direct rendering or `[data-country-rating]` for standalone mounting
-- Inputs: exactly five ordered rating objects with `id`, `label`, and numeric `score`
-- Score scale: `0`–`5` in half-star increments; full, partial, and tertiary stars are rendered from exported Figma assets
+- Inputs: exactly six ordered rating objects for Culture, Nature, Adventure, City Life, Food, and Safety
+- Rating states: `great`, `good`, and `not-great`, rendered with the primary, secondary, and tertiary icon color tokens respectively
 - Mounting: the FAQ review renders it directly from `country.json`; standalone usage can set `data-source` on `[data-country-rating]`
-- Accessibility: each row is a description-list pair and exposes a text equivalent such as “Nature: 3.5 out of 5 stars”
-- Responsive behavior: each star tracks the live country-map width at a 1:24 ratio (30 px at the map's 720 px maximum); the five-star strip updates through `ResizeObserver`
+- Accessibility: each magnet exposes a text equivalent such as “Nature: good”
+- Responsive behavior: the Figma 600 × 420 three-by-two magnet layout tracks the live country-map width at a 5:6 ratio; its tiles, gaps, labels, and icons scale together
 - Fallback: invalid or unavailable data hides only the rating block and logs an actionable error
-- Implementation paths: `src/scripts/components/country-rating.js`, `src/styles/components/country-rating.css`, `src/assets/components/country-rating/`, and `src/data/countries/<slug>/country.json`
+- Implementation paths: `src/scripts/components/country-rating.js`, `src/styles/components/country-rating.css`, `src/assets/components/faq-quick-reference/`, `src/assets/icons/`, and `src/data/countries/<slug>/country.json`
 
 ### FAQ review
 
 - Root: `[data-faqs]`, with `data-source` for FAQ content and `data-country-source` for the country name and ratings
 - Inputs: `sectionTitle`, `allowMultiple`, and ordered FAQ `items` from `faqs.json`; `name` and `ratings` come from `country.json`
-- Key behavior: the quick-reference column renders `{COUNTRY} REVIEW` followed by the reusable country-rating component
+- Key behavior: FAQs render in the left column and the transparent, title-free country-rating graphic renders in the right column
 - Data ownership: the country name and rating values remain canonical in `country.json` and are not duplicated in FAQ data
 - Implementation paths: `src/scripts/components/faqs.js`, `src/styles/components/faqs.css`, and `src/data/countries/<slug>/{faqs,country}.json`
 

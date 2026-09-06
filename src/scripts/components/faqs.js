@@ -29,7 +29,7 @@ function createDottedIcon() {
   return icon;
 }
 
-function createQuickReference(countryData, titleId) {
+function createQuickReference(countryData) {
   const countryName = typeof countryData?.name === "string"
     ? countryData.name.trim()
     : "";
@@ -39,15 +39,7 @@ function createQuickReference(countryData, titleId) {
   }
 
   const aside = createElement("aside", "quick-reference");
-  aside.setAttribute("aria-labelledby", titleId);
-
-  const title = createElement(
-    "h2",
-    "quick-reference-title",
-    countryName.toUpperCase() + " REVIEW"
-  );
-  title.id = titleId;
-  aside.appendChild(title);
+  aside.setAttribute("aria-label", countryName + " travel ratings");
 
   const rating = createElement("div", "country-rating");
   rating.setAttribute("aria-label", countryName + " ratings");
@@ -108,14 +100,15 @@ export function render(root, data, countryData) {
   );
 
   const body = createElement("div", "faqs-body");
-  const quickReferenceTitleId = (root.id || "faqs") + "-review-title";
-  body.appendChild(createQuickReference(countryData, quickReferenceTitleId));
 
   const list = createElement("div", "faq-list");
   list.dataset.allowMultiple = String(Boolean(data.allowMultiple));
   (data.items || []).forEach(function (item, index) {
     list.appendChild(createFaqItem(item, index));
   });
+
+  body.appendChild(list);
+  body.appendChild(createQuickReference(countryData));
 
   list.addEventListener("click", function (event) {
     const button = event.target.closest(".faq-item-question");
@@ -139,7 +132,6 @@ export function render(root, data, countryData) {
     );
   });
 
-  body.appendChild(list);
   root.appendChild(titleRow);
   root.appendChild(body);
 }

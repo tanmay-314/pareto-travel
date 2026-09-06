@@ -125,7 +125,7 @@
   font-style: normal;
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
   font-weight: var(--type-weight-strong, 600);
-  line-height: 22px;
+  line-height: 1;
   white-space: nowrap;
 }
 

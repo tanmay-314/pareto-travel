@@ -115,28 +115,28 @@ The slug must match its data-directory name and use lowercase kebab-case. Only
 Country ratings live in the top-level `ratings` array in `country.json` and are
 rendered in the FAQ section's `{COUNTRY} REVIEW` quick-reference card. Keeping
 them with shared country data lets the card derive its title and rating values
-from one canonical source. The array contains exactly five ordered categories.
-Scores use a `0`–`5` scale and may change only in `0.5` increments:
+from one canonical source. The array contains exactly six ordered parameters:
+Culture, Nature, Adventure, City Life, Food, and Safety. Each uses `great`,
+`good`, or `not-great`:
 
 ```json
 {
   "ratings": [
     {
       "id": "culture",
-      "label": "Culture",
-      "score": 4
+      "rating": "great"
     },
     {
       "id": "nature",
-      "label": "Nature",
-      "score": 3.5
+      "rating": "good"
     }
   ]
 }
 ```
 
-Keep the category order consistent across countries so comparisons remain
-predictable. Labels are authored display text; IDs use lowercase kebab-case.
+Keep the parameter order consistent across countries so comparisons remain
+predictable. IDs use lowercase kebab-case; display labels come from the fixed
+parameter definitions in the component.
 
 ## Budget receipt
 
