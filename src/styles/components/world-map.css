@@ -25,3 +25,10 @@
     mask: var(--map-image) center / contain no-repeat;
     -webkit-mask: var(--map-image) center / contain no-repeat;
 }
+
+@media (max-width: 900px) {
+    #map-container {
+        padding-right: var(--space-lg);
+        padding-left: var(--space-lg);
+    }
+}

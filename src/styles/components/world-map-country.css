@@ -138,3 +138,22 @@
     width: min(100%*96/1816, 96px);
     aspect-ratio: 16 / 7;
 }
+
+@media (max-width: 900px) {
+    #us { width: 23.7885%; }
+    #mx { width: 8.2599%; }
+    #bo { width: 3.9648%; }
+    #br { width: 12.5551%; }
+    #cl { width: 4.2952%; }
+    #co { width: 3.6344%; }
+    #cr { width: 0.9912%; }
+    #gr { width: 1.9824%; }
+    #in { width: 8.5903%; }
+    #is { width: 2.6432%; }
+    #kh { width: 1.6520%; }
+    #lk { width: 0.6608%; }
+    #my { width: 6.2775%; }
+    #pe { width: 4.2952%; }
+    #sg { width: 0.3304%; }
+    #tr { width: 5.2863%; }
+}
