@@ -166,6 +166,18 @@
   width: 60px;
   height: 60px;
   flex: 0 0 60px;
+  background-color: var(
+    --type-color-icon-secondary,
+    var(--color-icon-secondary)
+  );
+  -webkit-mask-image: var(--cuisine-icon-image);
+  mask-image: var(--cuisine-icon-image);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
 }
 
 .cuisine-chapter-copy {

@@ -22,14 +22,10 @@ function renderChapter(chapter) {
   return `
     <article class="cuisine-chapter">
       <div class="cuisine-chapter-label">
-        <img
+        <span
           class="cuisine-icon"
-          src="${escapeHtml(chapter.icon)}"
-          alt=""
-          width="60"
-          height="60"
           aria-hidden="true"
-        >
+        ></span>
         <p class="cuisine-period">${escapeHtml(chapter.period)}</p>
       </div>
 
@@ -39,6 +35,16 @@ function renderChapter(chapter) {
       </div>
     </article>
   `;
+}
+
+function applyCuisineIcons(root, chapters) {
+  root.querySelectorAll(".cuisine-icon").forEach((icon, index) => {
+    const source = chapters[index]?.icon;
+    if (!source) return;
+
+    const url = new URL(source, document.baseURI).href;
+    icon.style.setProperty("--cuisine-icon-image", `url("${url}")`);
+  });
 }
 
 function getEditorial(data) {
@@ -116,6 +122,7 @@ export function renderCuisine(root, data) {
     </div>
   `;
 
+  applyCuisineIcons(root, chapters);
   syncMenuToCountryMap(root);
 }
 

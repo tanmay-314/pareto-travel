@@ -2,6 +2,15 @@ import { renderCountryRating } from "./country-rating.js";
 import { fetchJson } from "../lib/component-utils.js";
 
 const ROOT_SELECTOR = "[data-faqs]";
+const ACCORDION_OPEN_ICON = new URL(
+  "../../assets/icons/icon-accordion-open.svg",
+  import.meta.url
+).href;
+const ACCORDION_CLOSE_ICON = new URL(
+  "../../assets/icons/icon-accordion-close.svg",
+  import.meta.url
+).href;
+
 function createElement(tagName, className, text) {
   const node = document.createElement(tagName);
   if (className) node.className = className;
@@ -9,22 +18,11 @@ function createElement(tagName, className, text) {
   return node;
 }
 
-function createDottedIcon() {
+function createAccordionIcon() {
   const icon = createElement("span", "faq-item-icon");
   icon.setAttribute("aria-hidden", "true");
-
-  ["h1", "h2", "h3", "h4", "h5"].forEach(function (position) {
-    icon.appendChild(createElement("span", "faq-item-icon-dot faq-item-icon-dot--" + position));
-  });
-
-  ["v1", "v2", "v4", "v5"].forEach(function (position) {
-    icon.appendChild(
-      createElement(
-        "span",
-        "faq-item-icon-dot faq-item-icon-dot--vertical faq-item-icon-dot--" + position
-      )
-    );
-  });
+  icon.dataset.openIcon = ACCORDION_OPEN_ICON;
+  icon.dataset.closeIcon = ACCORDION_CLOSE_ICON;
 
   return icon;
 }
@@ -52,10 +50,13 @@ function createQuickReference(countryData) {
 function setExpanded(row, expanded) {
   const button = row.querySelector(".faq-item-question");
   const answer = row.querySelector(".faq-item-answer");
+  const icon = row.querySelector(".faq-item-icon");
 
   row.classList.toggle("is-open", expanded);
   button.setAttribute("aria-expanded", String(expanded));
   answer.hidden = !expanded;
+  const iconUrl = expanded ? icon.dataset.closeIcon : icon.dataset.openIcon;
+  icon.style.setProperty("--faq-item-icon-image", `url("${iconUrl}")`);
 }
 
 function createFaqItem(item, position) {
@@ -72,7 +73,7 @@ function createFaqItem(item, position) {
   button.setAttribute("aria-controls", answerId);
   button.appendChild(createElement("span", "faq-item-index", item.index || String(position + 1).padStart(2, "0")));
   button.appendChild(createElement("span", "faq-item-question-text", item.question));
-  button.appendChild(createDottedIcon());
+  button.appendChild(createAccordionIcon());
 
   const answer = createElement("p", "faq-item-answer", item.answer || "");
   answer.id = answerId;
@@ -94,7 +95,7 @@ export function render(root, data, countryData) {
   titleRow.appendChild(
     createElement(
       "h2",
-      "faqs-title country-sub-heading",
+      "faqs-title country-section-title country-sub-heading",
       data.sectionTitle || "FAQS"
     )
   );
