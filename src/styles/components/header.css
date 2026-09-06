@@ -12,18 +12,12 @@
 .logo {
     display: block;
     width: min(100%*378/1816, 378px);
-    aspect-ratio: 21 / 5;
-    
-    background-color: var(--color-icon-primary);
-
-    mask: var(--map-image) center / contain no-repeat;
-    -webkit-mask: var(--map-image) center / contain no-repeat;
-
-    transition: background-color 180ms ease;
 }
-.logo:hover,
-.logo:focus-visible {
-    background-color: var(--color-icon-hover);
+
+.logo img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .nav {

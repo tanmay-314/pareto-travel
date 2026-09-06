@@ -109,6 +109,10 @@
   white-space: nowrap;
 }
 
+.country-navigation-stamp-country {
+  text-transform: uppercase;
+}
+
 .country-navigation-stamp-arrow {
   width: 10%;
   height: 7.142857%;

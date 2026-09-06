@@ -173,6 +173,7 @@ function createStamp(stamp, config) {
   meta.className = "country-navigation-stamp-meta";
 
   const country = document.createElement("span");
+  country.className = "country-navigation-stamp-country";
   country.textContent = config.countryName;
 
   const year = document.createElement("span");

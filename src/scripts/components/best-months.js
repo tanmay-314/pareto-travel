@@ -242,10 +242,10 @@ export function renderAnnualTravelDial(container, rawConfig) {
   const compass = svgNode("image", {
     class: "annual-travel-dial__compass",
     href: COMPASS_NEEDLE_ASSET_URL,
-    x: 242.48,
-    y: 106,
-    width: 54.328,
-    height: 333,
+    x: 243,
+    y: 108,
+    width: 54.001,
+    height: 331,
     preserveAspectRatio: "none",
   });
   const bestSeason = getPrimaryBestSeason(config.months);
