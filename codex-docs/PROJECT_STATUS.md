@@ -22,7 +22,8 @@ Known reusable design/component areas include:
 - country maps and dot artwork;
 - cuisine/editorial sections;
 - shared tokens, typography, reset, and global styles.
-- generated `/countries/<slug>.html` pages with validated country data sources.
+- extensionless `/countries/<slug>` routes backed by generated pages with
+  validated country data sources.
 
 Update this list with file paths and implementation status once the files are present in the repository.
 

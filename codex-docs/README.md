@@ -89,7 +89,7 @@ Use the repository’s documented server command when one exists. If the project
 python3 -m http.server 8000 --directory src
 ```
 
-Then open `http://localhost:8000/pages/index.html`.
+Then open `http://localhost:8000/`.
 
 ## Stylesheet order
 

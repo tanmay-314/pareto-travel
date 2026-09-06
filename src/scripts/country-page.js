@@ -164,7 +164,7 @@ export function renderCountryUnavailable(error, scope = document) {
 
     const link = document.createElement("a");
     link.className = "country-unavailable__link";
-    link.href = "../pages/index.html";
+    link.href = "/";
     link.textContent = "Back to destinations";
 
     section.append(title, message, link);

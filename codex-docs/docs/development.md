@@ -16,7 +16,7 @@ If there is no server command, use:
 python3 -m http.server 8000 --directory src
 ```
 
-Then visit `http://localhost:8000/pages/index.html`.
+Then visit `http://localhost:8000/`.
 
 ## Generating country entry pages
 

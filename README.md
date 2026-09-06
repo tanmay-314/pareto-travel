@@ -25,7 +25,7 @@ Implemented:
 - inter-city travel ticket;
 - budget receipt;
 - FAQ accordion and five-category country rating;
-- generated `/countries/<slug>.html` entry pages backed by one shared template;
+- extensionless `/countries/<slug>` URLs backed by generated HTML entry files;
 - shared design tokens, typography, global styles, accessibility states, and
   reduced-motion handling.
 
@@ -57,7 +57,7 @@ python3 -m http.server 8000 --directory src
 
 Then open:
 
-- landing page: <http://localhost:8000/pages/index.html>
+- landing page: <http://localhost:8000/>
 - Cambodia country page: <http://localhost:8000/countries/cambodia.html>
 
 No `npm install` or compile command is needed.
@@ -71,8 +71,8 @@ connection. Local fallback families are used if the fonts cannot load.
 pareto-travel/
 ├── README.md
 ├── src/
+│   ├── index.html                     # world-map landing page
 │   ├── pages/
-│   │   ├── index.html                 # world-map landing page
 │   │   └── country.html               # shared country-page source template
 │   ├── countries/
 │   │   └── cambodia.html              # committed generated public entry
@@ -143,7 +143,7 @@ URL paths.
 
 ### Landing page
 
-[`src/pages/index.html`](src/pages/index.html) renders the logo, primary
+[`src/index.html`](src/index.html) renders the logo, primary
 navigation, a base world map, and overlays for:
 
 - United States, Mexico, Costa Rica, Colombia, Brazil, Peru, Bolivia, and Chile;
