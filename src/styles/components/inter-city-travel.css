@@ -37,7 +37,7 @@
   font-size: var(--type-size-section-title, 48px);
   font-style: normal;
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
-  font-weight: var(--type-weight-emphasis, 500);
+  font-weight: var(--type-weight-regular);
   line-height: 60px;
   text-transform: uppercase;
 }
@@ -124,7 +124,7 @@
   font-size: var(--type-size-nav-ul, 24px);
   font-style: normal;
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
-  font-weight: var(--type-weight-strong, 600);
+  font-weight: var(--type-weight-regular);
   line-height: 1;
   transform: translateY(2px);
   white-space: nowrap;
@@ -189,7 +189,7 @@
   font-size: var(--type-size-nav-ul, 24px);
   font-style: normal;
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
-  font-weight: var(--type-weight-emphasis, 500);
+  font-weight: var(--type-weight-regular);
   line-height: 18px;
   text-align: center;
   text-transform: uppercase;

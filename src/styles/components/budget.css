@@ -2,7 +2,7 @@
   --budget-receipt-paper: var(--color-bg-surface, #ffffff);
   --budget-receipt-ink: var(--color-text-primary, #85586f);
   --budget-receipt-muted: var(--color-text-secondary, #ba97a3);
-  --budget-receipt-font: "Bitcount Grid Single", ui-monospace, monospace;
+  --budget-receipt-font: var(--type-family-display), ui-monospace, monospace;
 }
 
 /*
@@ -115,7 +115,7 @@
   color: var(--budget-receipt-ink);
   font-family: var(--budget-receipt-font);
   font-size: var(--type-size-budget-item, 24px);
-  font-weight: var(--type-weight-strong);
+  font-weight: var(--type-weight-regular);
   white-space: nowrap;
 }
 
@@ -154,7 +154,7 @@
   overflow: hidden;
   color: var(--budget-receipt-muted);
   font-size: var(--type-size-budget-item, 24px);
-  font-weight: var(--type-weight-emphasis);
+  font-weight: var(--type-weight-regular);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -168,7 +168,7 @@
   overflow: hidden;
   color: var(--budget-receipt-muted);
   font-size: var(--type-size-budget-item, 24px);
-  font-weight: var(--type-weight-emphasis);
+  font-weight: var(--type-weight-regular);
   text-align: right;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -188,13 +188,13 @@
 .budget-receipt__total-label {
   color: var(--budget-receipt-ink);
   font-size: var(--type-size-budget-item, 24px);
-  font-weight: var(--type-weight-strong);
+  font-weight: var(--type-weight-regular);
 }
 
 .budget-receipt__total-value {
   color: var(--budget-receipt-ink);
   font-size: var(--type-size-budget-item, 24px);
-  font-weight: var(--type-weight-strong);
+  font-weight: var(--type-weight-regular);
   text-align: right;
   white-space: nowrap;
 }

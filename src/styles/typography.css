@@ -34,7 +34,7 @@ h6,
 .type-section-title {
   color: var(--color-text-primary);
   font-family: var(--type-family-display), monospace;
-  font-weight: var(--type-weight-strong);
+  font-weight: var(--type-weight-regular);
   text-wrap: balance;
 }
 
@@ -105,7 +105,7 @@ a:hover {
   font-family: var(--type-family-display), monospace;
   color: var(--color-text-primary);
   font-size: var(--type-size-nav-ul);
-  font-weight: var(--type-weight-emphasis);
+  font-weight: var(--type-weight-regular);
   line-height: 1;
   text-decoration: none;
 }
@@ -137,7 +137,7 @@ a:hover {
 .country-section-title {
     font-family: var(--type-family-display);
     font-size: var(--type-size-section-title);
-    font-weight: var(--type-weight-emphasis);
+    font-weight: var(--type-weight-regular);
     line-height: 60px;
     text-transform: uppercase;
     margin-bottom: var(--space-xxl);

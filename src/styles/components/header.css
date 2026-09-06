@@ -9,10 +9,10 @@
     background-color: var(--color-bg-canvas);
 }
 
-.logo {    
-display: block;
-    width: min(100%*360/1816, 360px);
-    aspect-ratio: 20 / 3;
+.logo {
+    display: block;
+    width: min(100%*378/1816, 378px);
+    aspect-ratio: 21 / 5;
     
     background-color: var(--color-icon-primary);
 

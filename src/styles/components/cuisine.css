@@ -33,7 +33,7 @@
   margin: 0 0 40px;
   color: var(--cuisine-text);
   font-size: var(--type-size-section-title);
-  font-weight: var(--type-weight-emphasis);
+  font-weight: var(--type-weight-regular);
   line-height: 60px;
   text-transform: uppercase;
 }
@@ -181,7 +181,7 @@
   font-family: var(--type-family-display), monospace;
   font-size: var(--type-size-nav-ul);
   font-style: normal;
-  font-weight: var(--type-weight-strong);
+  font-weight: var(--type-weight-regular);
   line-height: 36px;
   text-transform: uppercase;
 }
@@ -191,7 +191,7 @@
   color: var(--cuisine-text-secondary);
   font-family: var(--type-family-display), monospace;
   font-size: var(--type-size-body);
-  font-weight: var(--type-weight-emphasis);
+  font-weight: var(--type-weight-regular);
   line-height: 36px;
   text-align: center;
   white-space: nowrap;

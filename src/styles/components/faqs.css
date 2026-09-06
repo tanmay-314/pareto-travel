@@ -47,7 +47,7 @@
   margin: 0;
   font-family: var(--type-family-display), monospace;
   font-size: var(--type-size-section-title);
-  font-weight: var(--type-weight-emphasis);
+  font-weight: var(--type-weight-regular);
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
   line-height: 60px;
   white-space: nowrap;
@@ -136,7 +136,7 @@
 .faq-item-index {
   font-family: var(--type-family-display), monospace;
   font-size: 32px;
-  font-weight: var(--type-weight-strong);
+  font-weight: var(--type-weight-regular);
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
   line-height: var(--type-line-height-body);
   color: var(--faq-rule);

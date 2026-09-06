@@ -37,7 +37,7 @@
 
 .country-intro-name {
   font-size: var(--type-size-page-title);
-  font-weight: var(--type-weight-strong);
+  font-weight: var(--type-weight-regular);
   text-transform: uppercase;
 }
 

@@ -101,7 +101,7 @@
   font-family: var(--type-family-display), monospace;
   font-size: clamp(12px, 3vw, 24px);
   font-size: 13.333cqi;
-  font-weight: var(--type-weight-strong);
+  font-weight: var(--type-weight-regular);
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
   line-height: normal;
   text-align: center;

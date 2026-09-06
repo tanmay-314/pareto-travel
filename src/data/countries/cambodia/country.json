@@ -16,19 +16,19 @@
     },
     {
       "id": "nature",
-      "rating": "great"
+      "rating": "good"
     },
     {
       "id": "adventure",
-      "rating": "good"
+      "rating": "not-great"
     },
     {
       "id": "city-life",
-      "rating": "good"
+      "rating": "not-great"
     },
     {
       "id": "food",
-      "rating": "good"
+      "rating": "not-great"
     },
     {
       "id": "safety",

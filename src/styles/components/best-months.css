@@ -58,7 +58,7 @@
 
 .annual-travel-dial__month {
   font-size: var(--type-size-map-label, 24px);
-  font-weight: var(--type-weight-strong);
+  font-weight: var(--type-weight-regular);
   text-anchor: middle;
 }
 
@@ -85,7 +85,7 @@
   place-items: center;
   padding: var(--space-lg);
   color: var(--dial-best);
-  font: var(--type-weight-strong) 16px/1.5 var(--type-family-display), "Courier New", monospace;
+  font: var(--type-weight-regular) 16px/1.5 var(--type-family-display), "Courier New", monospace;
   text-align: center;
 }
 
