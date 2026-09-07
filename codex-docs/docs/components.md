@@ -84,13 +84,13 @@ Update the paths below when components are integrated.
 ### Country rating
 
 - Root: `.country-rating` for direct rendering or `[data-country-rating]` for standalone mounting
-- Inputs: exactly six ordered rating objects for Culture, Nature, Adventure, City Life, Food, and Safety
+- Inputs: exactly six ordered rating objects for Culture, Nature, Adventure, Cities, Food, and Safety
 - Rating states: `great`, `good`, and `not-great`, rendered with the primary, secondary, and tertiary icon color tokens respectively
 - Mounting: the FAQ review renders it directly from `country.json`; standalone usage can set `data-source` on `[data-country-rating]`
 - Accessibility: each magnet exposes a text equivalent such as “Nature: good”
-- Responsive behavior: the Figma 600 × 420 three-by-two magnet layout tracks the live country-map width at a 5:6 ratio; its tiles, gaps, labels, and icons scale together
+- Responsive behavior: the Figma 540 × 360 three-by-two layout (node `1482:12614`) uses 150px magnets, 45px column gaps, and 60px row gaps; its width stays at `3:4` of the live country-map width and remains constrained by its container
 - Fallback: invalid or unavailable data hides only the rating block and logs an actionable error
-- Implementation paths: `src/scripts/components/country-rating.js`, `src/styles/components/country-rating.css`, `src/assets/components/faq-quick-reference/`, `src/assets/icons/`, and `src/data/countries/<slug>/country.json`
+- Implementation paths: `src/scripts/components/country-rating.js`, `src/styles/components/country-rating.css`, `src/assets/components/country-rating/`, `src/assets/icons/`, and `src/data/countries/<slug>/country.json`
 
 ### FAQ review
 
@@ -152,8 +152,8 @@ Update the paths below when components are integrated.
 - Root: `[data-inter-city-travel]`
 - Inputs: one or more ordered `legs` with mode, duration, and an optional `recommended` flag; exactly one more ordered `places` than legs; optional `title` and `editorial`; and ticket/mode asset paths
 - Ticket content: show only the origin, destination, transport icon, combined mode/duration, and optional Pareto Pick label; do not render body copy inside a ticket
-- Key behavior: render one ticket per journey leg, size the stack to the rendered ticket count, and alternate even-numbered tickets into the staggered position
-- Responsive behavior: scale the complete ticket stack when its frame is narrower than the fixed ticket composition
+- Key behavior: render one ticket per journey leg in the `540px`-wide Figma composition, size the stack to the rendered ticket count, and alternate even-numbered tickets into the staggered position
+- Responsive behavior: keep the stack at `3:4` of the live country-map width, constrain it to its grid column, use equal columns below `1500px`, and collapse to one column below `900px`
 - Fallback: reject empty journey lists or a place/leg count mismatch with an actionable component error
 - Implementation paths: `src/scripts/components/inter-city-travel.js`, `src/styles/components/inter-city-travel.css`, `src/assets/components/inter-city-travel/`, and `src/data/countries/<slug>/inter-city-travel.json`
 

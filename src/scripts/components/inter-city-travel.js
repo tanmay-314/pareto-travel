@@ -15,10 +15,9 @@ const DEFAULT_DATA = {
 };
 
 const COUNTRY_MAP_FIGMA_WIDTH = 720;
-const TICKET_TO_MAP_WIDTH_RATIO = 5 / 8;
-const TICKET_FIGMA_WIDTH =
-  COUNTRY_MAP_FIGMA_WIDTH * TICKET_TO_MAP_WIDTH_RATIO;
-const TICKET_STACK_FIGMA_WIDTH = 558;
+const TICKET_STACK_TO_MAP_WIDTH_RATIO = 3 / 4;
+const TICKET_STACK_FIGMA_WIDTH =
+  COUNTRY_MAP_FIGMA_WIDTH * TICKET_STACK_TO_MAP_WIDTH_RATIO;
 const escapeHtml = (value = "") =>
   String(value)
     .replaceAll("&", "&amp;")
@@ -146,9 +145,14 @@ const syncTicketStack = (root) => {
       map?.getBoundingClientRect().width || COUNTRY_MAP_FIGMA_WIDTH;
     if (mapWidth <= 0) return;
 
-    const ticketWidth = mapWidth * TICKET_TO_MAP_WIDTH_RATIO;
-    const scale = ticketWidth / TICKET_FIGMA_WIDTH;
-    const stackWidth = TICKET_STACK_FIGMA_WIDTH * scale;
+    const stackTargetWidth =
+      mapWidth * TICKET_STACK_TO_MAP_WIDTH_RATIO;
+    const availableWidth = frame.parentElement?.getBoundingClientRect().width;
+    const stackWidth = Math.min(
+      stackTargetWidth,
+      availableWidth > 0 ? availableWidth : stackTargetWidth,
+    );
+    const scale = stackWidth / TICKET_STACK_FIGMA_WIDTH;
     root.style.setProperty(
       "--inter-city-ticket-stack-width",
       `${stackWidth}px`,

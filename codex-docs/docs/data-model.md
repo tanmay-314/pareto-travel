@@ -116,7 +116,7 @@ Country ratings live in the top-level `ratings` array in `country.json` and are
 rendered in the FAQ section's `{COUNTRY} REVIEW` quick-reference card. Keeping
 them with shared country data lets the card derive its title and rating values
 from one canonical source. The array contains exactly six ordered parameters:
-Culture, Nature, Adventure, City Life, Food, and Safety. Each uses `great`,
+Culture, Nature, Adventure, Cities, Food, and Safety. Each uses `great`,
 `good`, or `not-great`:
 
 ```json

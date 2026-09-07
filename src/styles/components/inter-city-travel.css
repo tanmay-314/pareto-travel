@@ -44,16 +44,14 @@
 
 .inter-city-layout {
   display: grid;
-  grid-template-columns:
-    minmax(0, 620px)
-    var(--inter-city-ticket-stack-width, 558px);
-  gap: 90px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 900px);
+  gap: var(--space-xxl);
   align-items: start;
 }
 
 .inter-city-ticket-stack-frame {
   position: relative;
-  width: min(var(--inter-city-ticket-stack-width, 558px), 100%);
+  width: min(var(--inter-city-ticket-stack-width, 540px), 100%);
 }
 
 .inter-city-ticket-stack {
@@ -61,23 +59,23 @@
   top: 0;
   left: 0;
   display: flex;
-  width: 558px;
+  width: 540px;
   flex-direction: column;
-  gap: 24px;
+  gap: 18px;
   transform: scale(var(--inter-city-ticket-stack-scale, 1));
   transform-origin: top left;
 }
 
 .inter-city-ticket {
   position: relative;
-  width: 450px;
-  height: 180px;
-  flex: 0 0 180px;
+  width: 432px;
+  height: 186px;
+  flex: 0 0 186px;
   color: var(--inter-city-text);
 }
 
 .inter-city-ticket:nth-child(even) {
-  margin-left: 108px;
+  margin-left: 90px;
 }
 
 .inter-city-ticket-background {
@@ -179,7 +177,7 @@
 }
 
 .inter-city-ticket-transport-details {
-  top: 126px;
+  top: 129px;
   left: 126px;
   width: 221px;
   height: 18px;
@@ -260,21 +258,19 @@
   }
 
   .inter-city-layout {
-    grid-template-columns:
-      minmax(0, 620px)
-      minmax(0, var(--inter-city-ticket-stack-width, 558px));
-    gap: clamp(48px, 6vw, 90px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-xxl);
   }
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 900px) {
   .inter-city {
     padding-block: 96px;
   }
 
   .inter-city-layout {
     grid-template-columns: minmax(0, 1fr);
-    gap: 64px;
+    gap: var(--space-xxl);
   }
 }
 

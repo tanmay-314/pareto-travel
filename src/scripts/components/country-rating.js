@@ -4,13 +4,13 @@ import {
   observeResize,
 } from "../lib/component-utils.js";
 
-const RATING_TO_MAP_WIDTH_RATIO = 5 / 6;
+const RATING_TO_MAP_WIDTH_RATIO = 3 / 4;
 
 const RATING_PARAMETERS = Object.freeze([
   Object.freeze({ id: "culture", label: "Culture" }),
   Object.freeze({ id: "nature", label: "Nature" }),
   Object.freeze({ id: "adventure", label: "Adventure" }),
-  Object.freeze({ id: "city-life", label: "City Life" }),
+  Object.freeze({ id: "city-life", label: "Cities" }),
   Object.freeze({ id: "food", label: "Food" }),
   Object.freeze({ id: "safety", label: "Safety" }),
 ]);
@@ -78,15 +78,28 @@ function createRatingTile(parameter) {
   content.className = "country-rating__tile-content";
   content.setAttribute("aria-hidden", "true");
 
-  const ring = document.createElement("img");
-  ring.className = "country-rating__ring";
-  ring.src = new URL(
-    "../../assets/components/faq-quick-reference/dotted-ring.svg",
-    import.meta.url,
-  ).href;
-  ring.alt = "";
-  ring.width = 182;
-  ring.height = 184;
+  // Exact Figma artwork; the unshadowed dots follow the 113-point ring.
+  const artwork = (name, className) => {
+    const image = document.createElement("img");
+    image.className = className;
+    image.src = new URL(
+      `../../assets/components/country-rating/${name}.svg`,
+      import.meta.url,
+    ).href;
+    image.alt = "";
+    return image;
+  };
+  const disc = artwork("disc", "country-rating__disc");
+  const shadow = artwork("shadowed-dots", "country-rating__shadow");
+  content.append(disc, shadow);
+  for (let index = 0; index < 113; index += 1) {
+    if (index > 20 && index < 77) continue;
+    const angle = (index * 2 * Math.PI) / 113;
+    const dot = artwork("dot", "country-rating__dot");
+    dot.style.left = `${((72 + 72 * Math.sin(angle)) / 150) * 100}%`;
+    dot.style.top = `${((72 - 72 * Math.cos(angle)) / 150) * 100}%`;
+    content.append(dot);
+  }
 
   const icons = document.createElement("span");
   icons.className = "country-rating__icons";
@@ -104,7 +117,7 @@ function createRatingTile(parameter) {
   label.textContent = parameter.label.toUpperCase();
 
   icons.append(info, heart);
-  content.append(ring, icons, label);
+  content.append(icons, label);
   tile.append(content);
   return tile;
 }
