@@ -44,12 +44,13 @@
 
 .inter-city-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 900px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-xxl);
   align-items: start;
 }
 
 .inter-city-ticket-stack-frame {
+  justify-self: center;
   position: relative;
   width: min(var(--inter-city-ticket-stack-width, 540px), 100%);
 }

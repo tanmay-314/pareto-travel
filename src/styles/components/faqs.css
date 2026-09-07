@@ -62,7 +62,7 @@
 
 .faqs-body {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 900px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
   gap: var(--space-xxl);
   width: 100%;
@@ -197,7 +197,7 @@
 /* Keep both columns fluid until the stacked layout takes over. */
 @media (max-width: 1919px) {
   .faqs-body {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 900px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(var(--space-xxl), 4vw, 64px);
   }
 

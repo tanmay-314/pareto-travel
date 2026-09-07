@@ -487,7 +487,10 @@ export function syncToCountryMap(target, mapTarget) {
       "--country-map-polaroid-height",
       `${FIGMA_SIZE.height * scale}px`,
     );
-    root.style.setProperty("--itinerary-deck-offset", "0px");
+    root.style.setProperty(
+      "--itinerary-deck-offset",
+      `${Math.max(0, (availableWidth - stackWidth * scale) / 2)}px`,
+    );
     root.style.setProperty("--itinerary-stack-scale", scale);
     root.querySelectorAll("[data-itinerary-card]").forEach((card) => {
       const offset = Number.parseFloat(card.dataset.stackOffset) || 0;

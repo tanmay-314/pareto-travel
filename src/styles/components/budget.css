@@ -205,12 +205,12 @@
 }
 
 .budget-receipt-frame {
-  justify-self: start;
+  justify-self: center;
 }
 
 .budget-layout {
   display: grid;
-  grid-template-columns: minmax(0, 900px) minmax(0, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-xxl);
   align-items: start;
   width: 100%;

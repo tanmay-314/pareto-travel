@@ -40,7 +40,7 @@
 
 .cuisine-layout {
   display: grid;
-  grid-template-columns: minmax(0, 900px) minmax(0, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-xxl);
   align-items: start;
   width: 100%;
@@ -48,7 +48,7 @@
 
 .cuisine-menu-frame {
   position: relative;
-  justify-self: start;
+  justify-self: center;
   width: 420px;
   height: 540px;
   margin-inline: 0;

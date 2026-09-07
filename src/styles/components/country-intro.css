@@ -65,17 +65,28 @@
   }
 }
 
-/*Added by @tanmay314*/
-
+/* Give the intro and map equal halves of the page. */
 .country-hero {
-  display:flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-xxl);
+  align-items: start;
   width: 100%;
 }
 
-@media (max-width: 1220px) {
+.country-hero > .country-intro {
+  width: 100%;
+  min-width: 0;
+  max-width: var(--country-intro-width);
+}
+
+.country-hero > .country-map {
+  justify-self: center;
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
   .country-hero {
-    flex-wrap: wrap;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
