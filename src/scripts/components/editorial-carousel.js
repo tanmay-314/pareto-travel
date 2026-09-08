@@ -34,6 +34,7 @@ export function renderEditorialCarousel(root, screens, {
   const slides = screens.map((screen, index) => {
     const slide = document.createElement("section");
     slide.className = classes("slide");
+    if (screen.className) slide.classList.add(screen.className);
     slide.setAttribute("role", "group");
     slide.setAttribute("aria-roledescription", "slide");
     slide.setAttribute("aria-label", `${index + 1} of ${screens.length}: ${screen.label}`);

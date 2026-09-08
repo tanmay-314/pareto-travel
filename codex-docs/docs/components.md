@@ -121,7 +121,7 @@ Update the paths below when components are integrated.
 - Root: `[data-budget-receipt]`
 - Inputs: number of days, number of people, year, five ordered line items, total, an overview `editorial` paragraph array, and optional `categories` with `title` and `editorial` paragraphs.
 - Key behavior: render configurable receipt content in the fixed `420 × 540px` receipt geometry, keep its width at `7:12` of the live country-map width, and align its editorial with the shared country-section grid
-- Editorial carousel: overview followed by each category; Cambodia has six screens. The shared controls provide bounded arrows, keyboard and swipe navigation, equal dots with scaled 4px slot gaps, and map-relative sizing. The content grid matches best months at a minimum of 420px and grows to the longest screen. Without categories, legacy editorial paragraphs render as before.
+- Editorial carousel: overview followed by each category and an optional combined alternatives screen; Cambodia has seven screens. The final screen uses bold body-font subheadings and the shared 18px editorial body size. The shared controls provide bounded arrows, keyboard and swipe navigation, equal dots with scaled 4px slot gaps, and map-relative sizing. The content grid matches best months at a minimum of 420px and grows to the longest screen. Without categories, legacy editorial paragraphs render as before.
 - Accessibility: use real text; announce totals in a logical reading order
 - Implementation paths: `src/scripts/components/budget.js`, `src/styles/components/budget.css`, `src/assets/components/budget/`, and `src/data/countries/<slug>/budget.json`
 
@@ -163,6 +163,7 @@ Update the paths below when components are integrated.
 - Root: `[data-inter-city-travel]`
 - Inputs: one or more ordered `legs` with mode, duration, and an optional `recommended` flag; exactly one more ordered `places` than legs; optional `title` and `editorial`; and ticket/mode asset paths
 - Ticket content: show only the origin, destination, transport icon, combined mode/duration, and optional Pareto Pick label; do not render body copy inside a ticket
+- No-travel variant (Figma `1530:52750`): use `places` names `NO TICKET` and `REQUIRED` with one leg containing `mode: "none"` and `message: "ENJOY!"`. The mode uses `icon-smiley.svg` (overridable through `assets.modes.none`) and the message replaces mode/duration in the lower row.
 - Key behavior: render one ticket per journey leg in the `540px`-wide Figma composition, size the stack to the rendered ticket count, and alternate even-numbered tickets into the staggered position
 - Responsive behavior: keep the stack at `3:4` of the live country-map width, constrain it to its grid column, use equal columns below `1500px`, and collapse to one column below `900px`
 - Fallback: reject empty journey lists or a place/leg count mismatch with an actionable component error

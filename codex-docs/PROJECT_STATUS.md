@@ -47,7 +47,7 @@ Update this list with file paths and implementation status once the files are pr
 
 ## Recently completed
 
-- Added the six-screen budget carousel using the shared editorial controls.
+- Added the seven-screen budget carousel (including bigger/smaller-budget guidance) using the shared editorial controls.
 
 - Added the four-screen best-months carousel and shared its controls with the itinerary carousel.
 

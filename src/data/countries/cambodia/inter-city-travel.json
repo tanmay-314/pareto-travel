@@ -9,21 +9,22 @@
       "flight": "../assets/icons/icon-flight.svg",
       "bus": "../assets/icons/icon-bus.svg",
       "train": "../assets/icons/icon-train.svg",
-      "car": "../assets/icons/icon-car.svg"
+      "car": "../assets/icons/icon-car.svg",
+      "none": "../assets/icons/icon-smiley.svg"
     }
   },
   "places": [
     {
-      "name": "PHNOM PENH"
+      "name": "NO TICKET"
     },
     {
-      "name": "SIEM REAP"
+      "name": "REQUIRED"
     }
   ],
   "legs": [
     {
-      "mode": "flight",
-      "duration": "1 HR"
+      "mode": "none",
+      "message": "ENJOY!"
     }
   ]
 }

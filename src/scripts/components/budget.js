@@ -80,6 +80,15 @@ function normalizeReceipt(data) {
               ? category.editorial.filter((paragraph) => typeof paragraph === "string" && paragraph.trim())
               : [],
           }))
+      : [],
+    alternatives: Array.isArray(source.alternatives)
+      ? source.alternatives.filter((item) => item && typeof item.title === "string")
+          .map((item) => ({
+            title: item.title,
+            editorial: Array.isArray(item.editorial)
+              ? item.editorial.filter((paragraph) => typeof paragraph === "string" && paragraph.trim())
+              : [],
+          }))
       : []
   };
 }
@@ -134,14 +143,27 @@ function renderEditorial(target, data) {
 
   const receipt = normalizeReceipt(data);
   if (receipt.categories.length) {
-    renderEditorialCarousel(target, [
+    const screens = [
       { label: "Overview", editorial: receipt.editorial },
       ...receipt.categories.map((category) => ({
         label: category.title,
         title: category.title,
         editorial: category.editorial,
       })),
-    ], {
+    ];
+    if (receipt.alternatives.length) {
+      const editorial = [];
+      const headings = [];
+      receipt.alternatives.forEach((alternative) => {
+        headings.push(editorial.length);
+        editorial.push(alternative.title, ...alternative.editorial);
+      });
+      screens.push({
+        label: "Bigger or smaller budget", editorial, headings,
+        className: "budget-carousel-alternatives",
+      });
+    }
+    renderEditorialCarousel(target, screens, {
       label: "Budget details", controlLabel: "budget", className: "budget-carousel",
     });
     return;

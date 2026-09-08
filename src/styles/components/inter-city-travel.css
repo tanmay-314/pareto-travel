@@ -195,6 +195,16 @@
   white-space: nowrap;
 }
 
+.inter-city-ticket--no-travel {
+  --inter-city-text: var(--inter-city-text-secondary);
+}
+
+.inter-city-ticket--no-travel .inter-city-ticket-transport-details {
+  top: 130px;
+  left: 138px;
+  width: 165px;
+}
+
 .inter-city-ticket-recommended {
   position: absolute;
   z-index: 3;

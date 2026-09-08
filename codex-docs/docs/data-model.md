@@ -166,8 +166,9 @@ total. Include the currency symbol in each displayed value. Editorial copy is
 stored as an ordered paragraph array and appears beside the receipt on desktop.
 Optional `categories` entries have `title` and `editorial` paragraph arrays;
 when present, they enable an overview-plus-categories carousel. Cambodia has
-five categories, giving six screens. Its previous bigger/smaller-budget copy
-is retained in `alternatives` as data, outside the supplied six-screen design.
+five categories plus an `alternatives` array of title/editorial objects.
+Alternatives render together on a final screen with bold subheadings, giving
+seven screens and seven tracking dots.
 
 ## Annual dial
 
@@ -196,6 +197,27 @@ screen per day. The optional title defaults to the day number and location.
 Legacy itineraries without day editorials still render overview paragraphs
 and the detail link. The carousel replaces that link with in-place navigation.
 Cambodia uses three screens: Overview, Day 1 – Siem Reap, Day 2 – Angkor Wat.
+
+## Inter-city travel
+
+Provide ordered `places` (objects with `name`) and one or more `legs` with
+`mode`, `duration`, and an optional `recommended` flag. There must be exactly
+one more place than legs. Optional `title`, `editorial`, and `assets` configure
+the section heading, paragraphs, and ticket/mode images.
+
+For an itinerary with no inter-city travel, keep the same shape:
+
+```json
+{
+  "places": [{ "name": "NO TICKET" }, { "name": "REQUIRED" }],
+  "legs": [{ "mode": "none", "message": "ENJOY!" }]
+}
+```
+
+`mode: "none"` selects the smiley icon and displays the optional `message`
+instead of transport mode/duration. The message defaults to empty when omitted;
+other modes retain their normal mode/duration row. Override the smiley path
+with `assets.modes.none` when needed.
 
 ## Country navigation
 

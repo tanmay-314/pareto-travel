@@ -9,7 +9,8 @@ const DEFAULT_DATA = {
       flight: "../assets/icons/icon-flight.svg",
       bus: "../assets/icons/icon-bus.svg",
       train: "../assets/icons/icon-train.svg",
-      car: "../assets/icons/icon-car.svg"
+      car: "../assets/icons/icon-car.svg",
+      none: "../assets/icons/icon-smiley.svg"
     }
   }
 };
@@ -55,19 +56,24 @@ const renderTicket = (leg, legIndex, places, assets) => {
   const origin = places[legIndex]?.name || "";
   const destination = places[legIndex + 1]?.name || "";
   const mode = normalizeMode(leg.mode);
+  const noTravel = mode === "none";
   const modeLabel = getModeLabel(leg.mode);
   const icon = assets.modes?.[mode] || "";
-  const transportDetails = [modeLabel, leg.duration].filter(Boolean).join(" · ");
-  const accessibleLabel = [
-    `${origin} to ${destination}`,
-    modeLabel ? `by ${modeLabel}` : "",
-    leg.duration || "",
-  ]
-    .filter(Boolean)
-    .join(", ");
+  const transportDetails = noTravel
+    ? leg.message || ""
+    : [modeLabel, leg.duration].filter(Boolean).join(" · ");
+  const accessibleLabel = noTravel
+    ? [origin, destination, transportDetails].filter(Boolean).join(" ")
+    : [
+        `${origin} to ${destination}`,
+        modeLabel ? `by ${modeLabel}` : "",
+        leg.duration || "",
+      ]
+        .filter(Boolean)
+        .join(", ");
 
   return `
-    <article class="inter-city-ticket" aria-label="${escapeHtml(accessibleLabel)}">
+    <article class="inter-city-ticket${noTravel ? " inter-city-ticket--no-travel" : ""}" aria-label="${escapeHtml(accessibleLabel)}">
       <img
         class="inter-city-ticket-background"
         src="${escapeHtml(assets.ticket || DEFAULT_DATA.assets.ticket)}"
