@@ -46,6 +46,7 @@
 }
 
 .country-intro-overview {
+  white-space: pre-line;
   font-family: var(--type-family-body), sans-serif;
   font-size: var(--type-size-body);
   font-weight: var(--type-weight-regular);

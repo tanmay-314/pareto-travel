@@ -1,32 +1,51 @@
 {
-  "days": 5,
+  "days": 2,
   "people": 2,
   "year": 2025,
   "lineItems": [
     {
-      "description": "STAYS · 5 NIGHTS",
-      "value": "$420"
+      "description": "STAYS · 2 NIGHTS",
+      "value": "$60"
     },
     {
       "description": "FOOD & DRINKS",
-      "value": "$210"
-    },
-    {
-      "description": "EXPERIENCES",
-      "value": "$160"
-    },
-    {
-      "description": "INTER-CITY TRAVEL",
       "value": "$100"
     },
     {
+      "description": "EXPERIENCES",
+      "value": "$193"
+    },
+    {
+      "description": "AIRPORT TRANSFERS",
+      "value": "$46"
+    },
+    {
       "description": "MISCELLANEOUS",
-      "value": "$50"
+      "value": "$60"
     }
   ],
-  "total": "$940",
+  "total": "$440",
   "editorial": [
-    "Cambodia is one of the easier places in Southeast Asia to enjoy without watching every dollar. Comfortable stays, tuk-tuks and casual meals are generally affordable, while spending a little more can buy a noticeable upgrade.",
-    "The main splurge is Angkor: temple passes, a good guide and an early-morning tuk-tuk can add up quickly. US dollars are widely accepted, but keep some small-denomination Cambodian riel handy for markets, snacks and short rides."
+    "Cambodia was fairly affordable. Our mid-August visit benefited from off-peak prices.",
+    "We recorded about $440 for two people over two nights, excluding flights into and out of Siem Reap.",
+    "We found food in Siem Reap expensive relative to what was on offer.",
+    "Stays",
+    "Pandora Suite d’Angkor, a small hotel with a pool, cost us around $30 per night. Once again, we saved money by avoiding peak season.",
+    "Food & Drinks",
+    "Food and drinks came to about $100, excluding the buffet included with the Apsara show.",
+    "We didn’t drink or party much, so our spending won’t tell you much about nightlife costs.",
+    "Experiences",
+    "We noted about $75 for Angkor passes, $28 for the guided tour and a $20 tip for our wonderful guide.",
+    "The Apsara dance and buffet cost another $70 for two, and gave us both an introduction to Cambodian tradition and our favourite meal of the trip.",
+    "Inter-City Travel",
+    "We didn’t travel between cities, but the airport bus cost $8 each, and the Grab taxi back cost $30.",
+    "Miscellaneous",
+    "Our visas were $30 each.",
+    "SIM cards would be an additional expense; we didn’t record an amount for them here.",
+    "What if we had a bigger budget?",
+    "With a bigger budget, we wouldn’t change much about this short stay — perhaps we’d tip our guide more.",
+    "What if we had a smaller budget?",
+    "With a smaller budget, we’d bring snacks to reduce meal spending and consider skipping the Apsara performance if its price felt too steep.",
+    "Budget note: The receipt’s reconstructed line items add up to about $459, so the breakdown and our recorded total differ by about $19; both are approximate trip notes, not current quotes."
   ]
 }

@@ -1,8 +1,7 @@
 {
   "title": "GOING FROM PLACE TO PLACE",
   "editorial": [
-    "Since we only visited Siem Reap, there was no internal travel.",
-    "If Phnom Penh is your port of entry, your best option is to fly to Siem Reap. Sunrise tours leave around 5:00 AM, so plan your travel accordingly."
+    "We only visited Siem Reap, so we didn’t travel between Cambodian cities. The Phnom Penh–Siem Reap route shown here is an option for a longer itinerary, rather than a journey we took. If Phnom Penh is your port of entry, we’d plan to reach Siem Reap the day before the temple tour. Let your arrival and departure times shape the itinerary: sunrise means an early start."
   ],
   "assets": {
     "ticket": "../assets/components/inter-city-travel/ticket.svg",
@@ -14,8 +13,12 @@
     }
   },
   "places": [
-    { "name": "PHNOM PENH" },
-    { "name": "SIEM REAP" }
+    {
+      "name": "PHNOM PENH"
+    },
+    {
+      "name": "SIEM REAP"
+    }
   ],
   "legs": [
     {
