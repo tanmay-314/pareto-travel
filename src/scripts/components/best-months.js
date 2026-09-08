@@ -289,13 +289,13 @@ function showError(container, error) {
 function appendFormattedEditorialText(paragraph, text) {
   let cursor = 0;
 
-  for (const match of text.matchAll(/\*\*(.+?)\*\*/g)) {
+  for (const match of text.matchAll(/\*\*(.+?)\*\*|\*([^*]+?)\*/g)) {
     if (match.index > cursor) {
       paragraph.append(document.createTextNode(text.slice(cursor, match.index)));
     }
 
-    const strong = document.createElement("strong");
-    strong.textContent = match[1];
+    const strong = document.createElement(match[1] ? "strong" : "em");
+    strong.textContent = match[1] || match[2];
     paragraph.append(strong);
     cursor = match.index + match[0].length;
   }
