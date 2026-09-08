@@ -139,6 +139,10 @@ async function loadData(root) {
 export async function initCuisine(root) {
   try {
     const data = await loadData(root);
+    if (!data.chapters?.length && !data.editorial?.length) {
+      root.remove();
+      return;
+    }
     renderCuisine(root, data);
   } catch (error) {
     const message = document.createElement("p");

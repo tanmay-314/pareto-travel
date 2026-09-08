@@ -1,0 +1,44 @@
+{
+  "countries": {
+    "bolivia": {
+      "country": "Bolivia",
+      "editorial": [
+        "It really depends on what you fancy. The odds of experiencing the mirror reflection are much higher in the wet season, but the pristineness of the salt flats are on display in the dry season. Our pick is the start of the dry season, where there might yet be residual water that delivers a mirror effect.  "
+      ],
+      "months": {
+        "jan": "good",
+        "feb": "good",
+        "mar": "good",
+        "apr": "avoid",
+        "may": "avoid",
+        "jun": "avoid",
+        "jul": "best",
+        "aug": "best",
+        "sep": "best",
+        "oct": "best"
+      },
+      "seasons": [
+        {
+          "title": "July to October",
+          "editorial": [
+            "We visited in late October, right around the end of the dry season. The endless stretches of white salt was spectacular. And we were lucky to experience the “largest mirror on earth” thanks to some residual water. If we visited a few weeks, we would have missed this. ",
+            "The highlight of the trip for us were the cactus islands (especially Incahuasi), which according to our guide, are potentially inaccessible during the wetter months. "
+          ]
+        },
+        {
+          "title": "January to March",
+          "editorial": [
+            "During the wet season, a layer of water covers the salt turning the region into a giant mirror. From the pictures we saw online, we wouldn’t swap the ethereal otherworldliness of the white desert for the more earthly reflective land. ",
+            "That said, if this is what works best for your schedule, it’s certainly worth the visit!"
+          ]
+        },
+        {
+          "title": "April to June ",
+          "editorial": [
+            "The shoulder season is best avoided. Coming on the heels of the wet season, the water recedes into what can be described as puddles, but has not dried enough for the salt to shine in all it’s glory."
+          ]
+        }
+      ]
+    }
+  }
+}

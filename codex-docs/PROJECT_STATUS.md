@@ -2,7 +2,7 @@
 
 This file gives a new Codex session a quick snapshot of active work. Keep it brief and update it whenever priorities or known constraints materially change.
 
-Last updated: 2026-09-08
+Last updated: 2026-09-09
 
 ## Current objective
 
@@ -47,6 +47,11 @@ Update this list with file paths and implementation status once the files are pr
 
 ## Recently completed
 
+- Added Bolivia’s three-screen inter-city editorial carousel using shared controls and map-relative scaling.
+
+- Imported Bolivia’s Notion editorial and published its available sections; renamed the FAQ
+  section heading to EVERYTHING ELSE YOU NEED TO KNOW.
+
 - Added the seven-screen budget carousel (including bigger/smaller-budget guidance) using the shared editorial controls.
 
 - Added the four-screen best-months carousel and shared its controls with the itinerary carousel.
@@ -60,6 +65,31 @@ Update this list with file paths and implementation status once the files are pr
   documented generated country-entry strategy.
 
 ## Handoff notes
+
+- Bolivia source: https://app.notion.com/p/Bolivia-Salt-of-the-Earth-d1a978cb32244c8c9db28e745bb66f98
+  (read 2026-09-09). Overview, all five itinerary days, seasonal guidance, and
+  transport paragraphs were copied verbatim, preserving paragraph order.
+- Bolivia is now `published` at `/countries/bolivia`, linked from the world map. Meals and FAQ answers are empty; budget ellipses and
+  `[Country]` question placeholders remain as authored. No receipt amounts,
+  party size, visit year, ratings, map locations, or itinerary images were
+  invented. Publication adds SEO title/description and references the existing Bolivia map asset.
+- Seasonal data records only the ten months covered by the source. November,
+  December, and dial center labels still need editorial input before the dial
+  can render. The text recommends the start of the dry season but describes
+  late October as its end; preserve both statements pending author review.
+- The source’s unfinished “If we visited a few weeks” sentence and its claim
+  about legal child labour remain unchanged and need editorial review. The
+  five-day itinerary has five day entries; no budget arithmetic is available.
+- Published incomplete sections are omitted automatically: meals, budget, and
+  unanswered FAQs. Seasonal text renders while the incomplete dial stays hidden.
+  Visit year is optional, and navigation only links to available sections.
+- Publication verification: generated both country pages and passed `--check`.
+  At 1440px and 390px, verified Bolivia’s actual public entry, itinerary and
+  seasonal navigation, omitted sections, and the homepage link; checked Cambodia
+  for regressions. No browser console, page, or HTTP errors.
+- Generation also refreshed Cambodia’s stale fallback overview from its existing
+  JSON. `git diff --check` flags one source-preserved trailing space there; the
+  generated file was not hand-edited.
 
 <!-- Add temporary context that the next coding session would otherwise lose. -->
 

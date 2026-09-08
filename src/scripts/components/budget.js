@@ -283,6 +283,10 @@ export async function mountReceiptFromSource(target) {
 
   try {
     const data = await loadReceiptData(source);
+    if (!data.lineItems?.length) {
+      target.closest(".budget")?.remove();
+      return;
+    }
     renderEditorial(editorial, data);
     replaceWithResponsiveReceipt(target, data);
   } catch (error) {

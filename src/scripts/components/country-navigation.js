@@ -101,7 +101,7 @@ function normalizeConfig(config, baseUrl, metadata = {}) {
     width: positiveNumber(config.width, "width"),
     height: positiveNumber(config.height, "height"),
     countryName: requiredText(metadata.countryName, "countryName"),
-    year: requiredText(metadata.year, "year"),
+    year: metadata.year || "",
     assets: {
       frame: resolveAsset(config.assets?.frame, "assets.frame", baseUrl),
       dot: resolveAsset(config.assets?.dot, "assets.dot", baseUrl),
@@ -293,7 +293,9 @@ async function renderCountryNavigation(navigation) {
     surface.className = "country-navigation-surface";
     surface.style.width = `${config.width}px`;
     surface.style.height = `${config.height}px`;
-    surface.append(...config.stamps.map((stamp) => createStamp(stamp, config)));
+    surface.append(...config.stamps
+      .filter((stamp) => document.querySelector(stamp.target))
+      .map((stamp) => createStamp(stamp, config)));
 
     navigation.replaceChildren(surface);
     syncNavigationToCountryMap(navigation, config);

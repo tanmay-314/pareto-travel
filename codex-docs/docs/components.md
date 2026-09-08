@@ -111,7 +111,7 @@ Update the paths below when components are integrated.
 
 ### Shared editorial carousel
 
-- Implementation: `src/scripts/components/editorial-carousel.js` and `src/styles/components/editorial-carousel.css`; itinerary, best months, and budget use it.
+- Implementation: `src/scripts/components/editorial-carousel.js` and `src/styles/components/editorial-carousel.css`; itinerary, best months, budget, and inter-city travel use it.
 - `renderEditorialCarousel(root, screens, options)` accepts screens with `label`, optional `title`, `editorial` paragraphs and optional heading indexes. Options set accessible labels, a component class alias, and an `onSelect(index)` callback. The returned `select(index, notify)` supports synchronization without feedback loops.
 - Controls reuse the supplied arrow assets and equal 6px Figma dots, scaling with country-map width / 720. Arrows remain 1:24 of map width; 4px gaps between 8px slots place dot centers 12px apart at the Figma baseline. Pagination width is `12 × screen count × map width / 720`.
 - Re-rendering disconnects the previous resize observer and replaces event-owning DOM. Call `destroyEditorialCarousel(root)` before rendering a non-carousel fallback.
@@ -162,6 +162,7 @@ Update the paths below when components are integrated.
 
 - Root: `[data-inter-city-travel]`
 - Inputs: one or more ordered `legs` with mode, duration, and an optional `recommended` flag; exactly one more ordered `places` than legs; optional `title` and `editorial`; and ticket/mode asset paths
+- Editorial carousel: legs with an `editorial` paragraph array contribute one screen after the overview. Bolivia has three screens: Overview, Santa Cruz to Sucre, and Sucre to Uyuni. Optional leg `title` overrides the route-derived heading. Shared controls provide arrows, keyboard and swipe navigation, three tracking dots, and map-relative scaling. A 420px minimum text height grows to the longest screen; repeated rendering cleans up the old carousel observer. Legacy data without leg editorials keeps its paragraph layout.
 - Ticket content: show only the origin, destination, transport icon, combined mode/duration, and optional Pareto Pick label; do not render body copy inside a ticket
 - No-travel variant (Figma `1530:52750`): use `places` names `NO TICKET` and `REQUIRED` with one leg containing `mode: "none"` and `message: "ENJOY!"`. The mode uses `icon-smiley.svg` (overridable through `assets.modes.none`) and the message replaces mode/duration in the lower row.
 - Key behavior: render one ticket per journey leg in the `540px`-wide Figma composition, size the stack to the rendered ticket count, and alternate even-numbered tickets into the staggered position
@@ -193,3 +194,10 @@ Update the paths below when components are integrated.
 ## Changing a public contract
 
 Treat selectors, data keys, `data-*` attributes, exported functions, events, and expected asset shapes as public interfaces. Preserve compatibility where practical. If a breaking change is necessary, update every usage and document the migration in the same change.
+
+### Partial country content
+
+Country navigation initializes after section loading and only includes existing
+section targets. Its year is optional. Cuisine, budget, and FAQ loaders omit
+unfinished sections (see `data-model.md`); FAQ ratings are optional. Best-months
+editorials remain visible when the dial lacks complete month/center settings.

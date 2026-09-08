@@ -27,6 +27,8 @@ Use the supplied draft as the editorial source and the current repository’s co
 
 Inspect the actual shapes rather than copying documentation examples: some examples are illustrative. For example, the current budget uses formatted currency strings, and current ratings use six categorical parameters. Preserve IDs, assets, map coordinates, ratings, visit year, publication state, and component settings when the source does not justify changes. Do not invent missing country assets or publish a new country solely because a draft exists.
 
+For transport tickets, display one ticket per route by default, keeping its first occurrence and treating the reverse direction as the same route. For example, show Santa Cruz → Sucre once; do not add Sucre → Santa Cruz unless the user explicitly requests a separate return ticket. Keep `places` and `legs` consistent with the component contract, and preserve all source editorial text about return journeys verbatim.
+
 ## Edit faithfully
 
 - Preserve the source’s paragraph boundaries, explicit line breaks, subsection labels, and order. Map each source paragraph to a separate editorial array entry; never merge paragraphs to shorten the copy. Keep subsection labels on separate lines rather than folding them into prose. For a scalar field such as `overview`, retain paragraph separators as `\n\n` and explicit within-paragraph breaks as `\n`; ensure the renderer displays them (the country overview uses `white-space: pre-line`). Do not insert line breaks for incidental visual wrapping in Notion.

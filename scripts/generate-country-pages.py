@@ -50,7 +50,7 @@ def load_published_countries() -> list[dict[str, str]]:
         if data.get("status") != "published":
             continue
 
-        if not isinstance(data.get("visitedYear"), int):
+        if data.get("visitedYear") is not None and not isinstance(data["visitedYear"], int):
             raise ValueError(f"{country_path}: visitedYear must be an integer")
 
         for filename in REQUIRED_SECTION_FILES:

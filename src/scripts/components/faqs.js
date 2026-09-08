@@ -96,7 +96,7 @@ export function render(root, data, countryData) {
     createElement(
       "h2",
       "faqs-title country-section-title country-sub-heading",
-      data.sectionTitle || "FAQS"
+      data.sectionTitle || "EVERYTHING ELSE YOU NEED TO KNOW"
     )
   );
 
@@ -109,7 +109,9 @@ export function render(root, data, countryData) {
   });
 
   body.appendChild(list);
-  body.appendChild(createQuickReference(countryData));
+  if (countryData.ratings?.length) {
+    body.appendChild(createQuickReference(countryData));
+  }
 
   list.addEventListener("click", function (event) {
     const button = event.target.closest(".faq-item-question");
@@ -154,7 +156,12 @@ export async function init(root) {
       fetchJson(source, { label: "FAQ data" }),
       fetchJson(countrySource, { label: "Country data" })
     ]);
-    render(root, data, countryData);
+    const items = (data.items || []).filter((item) => item.answer?.trim());
+    if (!items.length && !countryData.ratings?.length) {
+      root.remove();
+      return root;
+    }
+    render(root, { ...data, items }, countryData);
     return root;
   } catch (error) {
     root.replaceChildren(createElement("p", "faqs-error", "Unable to load the FAQ content."));

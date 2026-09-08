@@ -1,4 +1,5 @@
 import { fetchJson, findCountryMap, observeResize } from "../lib/component-utils.js";
+import { renderEditorialCarousel, destroyEditorialCarousel } from "./editorial-carousel.js";
 
 const DEFAULT_DATA = {
   title: "GOING FROM PLACE TO PLACE",
@@ -171,6 +172,7 @@ const syncTicketStack = (root) => {
 
 export const render = (root, data) => {
   validateData(data);
+  destroyEditorialCarousel(root.querySelector(".inter-city-editorial"));
 
   const assets = {
     ...DEFAULT_DATA.assets,
@@ -203,11 +205,30 @@ export const render = (root, data) => {
 
   root.setAttribute("aria-labelledby", "inter-city-title");
   root.removeAttribute("aria-label");
+  const editorialLegs = data.legs
+    .map((leg, index) => ({ leg, index }))
+    .filter(({ leg }) => Array.isArray(leg.editorial) && leg.editorial.length);
+  if (editorialLegs.length) {
+    renderEditorialCarousel(root.querySelector(".inter-city-editorial"), [
+      { label: "Overview", editorial: getEditorial(data) },
+      ...editorialLegs.map(({ leg, index }) => {
+        const title = leg.title || `${data.places[index].name} to ${data.places[index + 1].name}`;
+        return {
+          label: title, title,
+          editorial: leg.editorial.filter((paragraph) => typeof paragraph === "string" && paragraph.trim()),
+        };
+      }),
+    ], {
+      label: "Inter-city travel details", controlLabel: "inter-city travel",
+      className: "inter-city-carousel",
+    });
+  }
   hydrateIcons(root);
   syncTicketStack(root);
 };
 
 const renderError = (root, error) => {
+  destroyEditorialCarousel(root.querySelector(".inter-city-editorial"));
   root.innerHTML = `
     <p class="inter-city-error" role="alert">
       The inter-city component could not load. ${escapeHtml(error.message)}

@@ -108,25 +108,25 @@
   top: 30px;
   left: 24px;
   display: grid;
-  width: 402px;
+  width: 396px;
   height: 60px;
-  grid-template-columns: 162px 60px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 60px minmax(0, 1fr);
+  column-gap: 12px;
   align-items: center;
 }
 
 .inter-city-ticket-origin,
 .inter-city-ticket-destination {
   width: 100%;
-  height: 24px;
-  overflow: hidden;
+  min-width: 0;
   font-family: var(--type-family-display), monospace;
   font-size: var(--type-size-nav-ul, 24px);
   font-style: normal;
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
   font-weight: var(--type-weight-regular);
-  line-height: 1;
-  transform: translateY(2px);
-  white-space: nowrap;
+  line-height: 1.2;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .inter-city-ticket-origin {
@@ -178,31 +178,23 @@
 }
 
 .inter-city-ticket-transport-details {
-  top: 129px;
-  left: 126px;
-  width: 221px;
-  height: 18px;
-  overflow: hidden;
+  top: 120px;
+  left: 24px;
+  width: 396px;
   color: var(--inter-city-text-secondary);
   font-family: var(--type-family-display), monospace;
   font-size: var(--type-size-nav-ul, 24px);
   font-style: normal;
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
   font-weight: var(--type-weight-regular);
-  line-height: 18px;
+  line-height: 30px;
   text-align: center;
   text-transform: uppercase;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
 }
 
 .inter-city-ticket--no-travel {
   --inter-city-text: var(--inter-city-text-secondary);
-}
-
-.inter-city-ticket--no-travel .inter-city-ticket-transport-details {
-  top: 130px;
-  left: 138px;
-  width: 165px;
 }
 
 .inter-city-ticket-recommended {
@@ -245,6 +237,15 @@
   font-style: normal;
   font-weight: var(--type-weight-regular, 400);
   line-height: 27px;
+}
+
+.inter-city-editorial:has(.inter-city-carousel) {
+  width: 100%;
+  min-width: 0;
+}
+
+.inter-city-carousel {
+  --editorial-carousel-min-height: 420px;
 }
 
 .inter-city-error {

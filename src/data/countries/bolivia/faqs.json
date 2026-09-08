@@ -6,21 +6,21 @@
       "id": "safety",
       "index": "01",
       "question": "How safe is [Country]?",
-      "answer": "We felt very safe in Cambodia. We walked around Siem Reap past 10:00 PM. We also took a few inner lanes to one of our venues, which were more rustic than the tourist traps, but were also safe.",
-      "open": true
+      "answer": "",
+      "open": false
     },
     {
       "id": "english",
       "index": "02",
       "question": "Is English commonly understood?",
-      "answer": "At least in Siem Reap, the answer is yes.",
+      "answer": "",
       "open": false
     },
     {
       "id": "weather",
       "index": "03",
       "question": "What could ruin my stay in [Country]?",
-      "answer": "Depending on when you go, the weather may play spoilsport, especially if you do the sunset tours as evening showers are more common during the monsoon.",
+      "answer": "",
       "open": false
     }
   ]

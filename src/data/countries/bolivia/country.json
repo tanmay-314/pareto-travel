@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "slug": "bolivia",
+  "status": "published",
+  "name": "Bolivia",
+  "overview": "Salt Bae-livia, amirite? Okay, we'll stop peppering in puns. \n\nIt feels right for Bolivia to be the country named after the continent’s liberator (Simon Bolivar for the unaware). Of all the countries we have visited in South America, Bolivia remains closest to it's indigenous roots.\n\nIt’s people are the poorest in this part of the world, but they are also the purest (in our opinion, of course).",
+  "map": {
+    "src": "../../../assets/countries/bolivia/country-map.svg",
+    "alt": "Map of Bolivia"
+  },
+  "seo": {
+    "title": "Bolivia travel guide | Pareto Travel",
+    "description": "Explore Bolivia with a five-day itinerary, seasonal guidance for the Uyuni salt flats, and practical inter-city travel notes."
+  }
+}

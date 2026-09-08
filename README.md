@@ -32,7 +32,8 @@ Implemented:
 Still incomplete:
 
 - Cambodia is the only country with complete section JSON;
-- only Cambodia currently has published country data and a generated page;
+- Cambodia and Bolivia have published country data and generated pages;
+- Bolivia currently publishes its overview, itinerary, seasonal text, and transport;
 - the header links for Destinations, Months, and About are placeholders;
 - there is no production deployment configuration;
 - there is no automated test, lint, formatting, or asset build pipeline;
@@ -149,8 +150,8 @@ navigation, a base world map, and overlays for:
 - United States, Mexico, Costa Rica, Colombia, Brazil, Peru, Bolivia, and Chile;
 - Iceland, Turkey, Greece, India, Sri Lanka, Malaysia, Singapore, and Cambodia.
 
-The SVG overlays exist, but only Cambodia is interactive while it is the only
-published country. Add a link when the matching generated page exists.
+The SVG overlays exist; Cambodia and Bolivia link to their generated pages.
+Add further links when matching generated pages exist.
 
 ### Country page
 

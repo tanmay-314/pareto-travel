@@ -81,7 +81,7 @@ function validateCountry(country, slug) {
     throw new Error(`Country "${slug}" is not published.`);
   }
 
-  if (!Number.isInteger(country.visitedYear)) {
+  if (country.visitedYear != null && !Number.isInteger(country.visitedYear)) {
     throw new Error("Country data needs an integer visitedYear.");
   }
 
@@ -137,7 +137,7 @@ export async function configureCountryPage(scope = document) {
 
   const navigation = requiredMount(scope, "[data-country-navigation]");
   navigation.dataset.countryName = country.name;
-  navigation.dataset.year = String(country.visitedYear);
+  navigation.dataset.year = String(country.visitedYear ?? "");
 
   document.documentElement.dataset.countryStatus = "ready";
   return country;
@@ -225,7 +225,6 @@ export async function initializeCountryPage(scope = document) {
 
   const initializers = [
     ["CountryHero", () => loadCountryHeroes(scope)],
-    ["CountryNavigation", () => loadCountryNavigations(scope)],
     ["ParetoPolaroid", () => initialiseItinerary(scope)],
     ["InterCityTravel", () => mountAllInterCityTravel(scope)],
     ["AnnualTravelDial", () => loadAnnualTravelDials(scope)],
@@ -234,7 +233,7 @@ export async function initializeCountryPage(scope = document) {
     ["ParetoEditorialFaqs", () => initAllFaqs(scope)],
   ];
 
-  return Promise.all(
+  const results = await Promise.all(
     initializers.map(async ([label, initialize]) => {
       try {
         return await initialize();
@@ -244,6 +243,8 @@ export async function initializeCountryPage(scope = document) {
       }
     }),
   );
+  await loadCountryNavigations(scope);
+  return results;
 }
 
 onDomReady(async () => {

@@ -356,7 +356,15 @@ export async function setDialCountry(container, countryKey) {
 
     const data = await fetchJson(source, { label: "Best-months data" });
     const countryConfig = data.countries?.[countryKey];
-    renderAnnualTravelDial(container, countryConfig);
+    const hasDial = countryConfig?.centerLabel && countryConfig?.centerValue
+      && MONTHS.every(({ key }) => countryConfig.months?.[key]);
+    if (hasDial) {
+      container.hidden = false;
+      renderAnnualTravelDial(container, countryConfig);
+    } else {
+      container.hidden = true;
+      container.setAttribute("aria-busy", "false");
+    }
     renderBestMonthsEditorial(
       container
         .closest(".best-months")

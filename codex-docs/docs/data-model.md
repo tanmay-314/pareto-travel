@@ -104,10 +104,12 @@ section data:
 }
 ```
 
-`slug`, `status`, `name`, `visitedYear`, `seo.title`, `seo.description`,
+`slug`, `status`, `name`, `seo.title`, `seo.description`,
 `overview`, `map.src`, and `map.alt` are required for a generated public page.
 The slug must match its data-directory name and use lowercase kebab-case. Only
-`published` documents receive an entry page. Map paths are resolved relative to
+`published` documents receive an entry page. `visitedYear` is optional; when
+provided it must be an integer, and when absent the navigation omits the year.
+Map paths are resolved relative to
 `country.json` and must point to a same-origin asset.
 
 ## Country rating
@@ -200,10 +202,21 @@ Cambodia uses three screens: Overview, Day 1 – Siem Reap, Day 2 – Angkor Wat
 
 ## Inter-city travel
 
+Ticket location names display in uppercase. By default, author one ticket per
+route: omit repeated and reverse-direction legs unless explicitly requested.
+For example, Bolivia lists Santa Cruz → Sucre and Sucre → Uyuni, without return
+tickets. Keep return-trip details in the editorial when supplied by the source.
+
 Provide ordered `places` (objects with `name`) and one or more `legs` with
 `mode`, `duration`, and an optional `recommended` flag. There must be exactly
 one more place than legs. Optional `title`, `editorial`, and `assets` configure
 the section heading, paragraphs, and ticket/mode images.
+
+A leg may include an `editorial` string array and optional `title`. When at
+least one leg has editorial content, the section renders a carousel: the
+top-level `editorial` is the overview, followed by each leg with copy. Leg
+headings default to “Origin to Destination”. Existing data with no leg copy
+retains its plain paragraph rendering. Tickets still display route details only.
 
 For an itinerary with no inter-city travel, keep the same shape:
 
@@ -304,3 +317,14 @@ For a breaking change:
 4. increment the relevant schema version;
 5. update examples and component documentation;
 6. test at least two countries and all affected optional states.
+
+## Incomplete published guides
+
+A country may be published before every section is complete. Keep all section
+JSON files, but leave unknown content absent rather than copying demo values.
+The page omits cuisine with no chapters/editorial, budgets with no line items,
+and FAQs with neither answered questions nor ratings. Unanswered FAQ items are
+not displayed. Navigation loads after sections and excludes removed targets.
+Seasonal editorials render independently of the dial; the dial stays hidden
+until its center labels and all twelve month states are supplied. Invalid
+supplied dial states still fail validation. Itinerary images remain optional.
