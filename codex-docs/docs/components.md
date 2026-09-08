@@ -123,6 +123,7 @@ Update the paths below when components are integrated.
 - Root: `[data-itinerary]` (the country page currently mounts it at `#polaroid-list`)
 - Inputs: ordered day entries, place, copy, image, image alt, rotation
 - Key behavior: the complete deck is centered in its visual viewport; it deals in once on first viewport entry; hover previews exposed cards; click, tap, or keyboard selection promotes a day to the front and updates its visible `DAY X OF Y` label
+- Day linking: clicking or keyboard-activating a polaroid opens its corresponding editorial screen, including when the card is already at the front. Deck keyboard and swipe selection also open the selected day. Carousel arrows, keyboard navigation, and swipes also bring the corresponding day card to the front without moving keyboard focus away from the carousel. Rapid carousel navigation retains the latest day while a shuffle finishes. The overview remains the initial screen and preserves the current front card when revisited. `renderItinerary(target, days, onSelectDay)` optionally reports the zero-based selected day to the page composition.
 - Keyboard and touch: the active card is in the tab order; arrow keys, Home, and End select days; horizontal swipes select adjacent days on touch screens
 - Motion: shuffle animations use only transforms and opacity; reduced-motion users receive a short crossfade instead of spatial motion
 - Image rule: photo and frame scale together; image region remains 1:1, typically authored at 360 × 360 px

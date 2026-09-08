@@ -30,6 +30,8 @@ const FIGMA_SIZE = Object.freeze({
 
 const COUNTRY_MAP_FIGMA_WIDTH = 720;
 const deckCleanups = new WeakMap();
+const deckSelections = new WeakMap();
+const editorialSelections = new WeakMap();
 function normaliseRotation(value) {
   const rotation = String(value || DEFAULTS.rotation);
   return ALLOWED_ROTATIONS.includes(rotation)
@@ -161,7 +163,7 @@ export function mount(target, config) {
   return element;
 }
 
-export function renderItinerary(target, days) {
+export function renderItinerary(target, days, onSelectDay) {
   const root =
     typeof target === "string" ? document.querySelector(target) : target;
   if (!root) throw new Error("Itinerary mount target was not found.");
@@ -184,7 +186,7 @@ export function renderItinerary(target, days) {
 
   root.dataset.dayCount = count;
   root.replaceChildren(...cards);
-  if (cards.length) enhanceDeck(root, cards);
+  if (cards.length) enhanceDeck(root, cards, onSelectDay);
   return root.children;
 }
 
@@ -205,9 +207,10 @@ function getRestingRotation(card, rank) {
     : configured;
 }
 
-function enhanceDeck(root, cards) {
+function enhanceDeck(root, cards, onSelectDay) {
   let activeIndex = 0;
   let isShuffling = false;
+  let pendingIndex = null;
   let touchStart = null;
   let suppressClick = false;
   const timers = new Set();
@@ -270,7 +273,15 @@ function enhanceDeck(root, cards) {
     });
   };
 
-  const selectCard = (nextIndex, moveFocus = false) => {
+  const selectCard = (nextIndex, moveFocus = false, notify = true) => {
+    if (isShuffling && !notify) {
+      // Keep the latest carousel destination while the current shuffle finishes.
+      pendingIndex = nextIndex;
+    }
+    if (notify && !isShuffling && nextIndex >= 0 && nextIndex < cards.length) {
+      // The front card can still open its day from the overview or another screen.
+      onSelectDay?.(nextIndex);
+    }
     if (
       isShuffling ||
       nextIndex === activeIndex ||
@@ -307,8 +318,14 @@ function enhanceDeck(root, cards) {
     later(() => {
       root.classList.remove("is-shuffling");
       isShuffling = false;
+      if (pendingIndex !== null) {
+        const next = pendingIndex;
+        pendingIndex = null;
+        selectCard(next, false, false);
+      }
     }, finishDelay);
   };
+  deckSelections.set(root, (index) => selectCard(index, false, false));
 
   const handleClick = (event) => {
     const card = event.target.closest("[data-itinerary-card]");
@@ -420,17 +437,19 @@ function enhanceDeck(root, cards) {
     root.classList.remove("is-awaiting-deal", "is-dealing", "is-shuffling");
     delete root.dataset.dealt;
     deckCleanups.delete(root);
+    deckSelections.delete(root);
   };
   deckCleanups.set(root, cleanup);
 }
 
-function renderEditorial(target, itinerary) {
+function renderEditorial(target, itinerary, onSelectDay) {
   const root =
     typeof target === "string" ? document.querySelector(target) : target;
   if (!root) return null;
+  editorialSelections.delete(root);
 
   if (itinerary.days.some((day) => Array.isArray(day.editorial))) {
-    return renderEditorialCarousel(root, itinerary);
+    return renderEditorialCarousel(root, itinerary, onSelectDay);
   }
 
   const paragraphs = Array.isArray(itinerary.editorial)
@@ -453,7 +472,7 @@ function renderEditorial(target, itinerary) {
   return root;
 }
 
-function renderEditorialCarousel(root, itinerary) {
+function renderEditorialCarousel(root, itinerary, onSelectDay) {
   const carousel = document.createElement("div");
   carousel.className = "itinerary-carousel";
   carousel.setAttribute("role", "region");
@@ -529,7 +548,7 @@ function renderEditorialCarousel(root, itinerary) {
   status.setAttribute("aria-live", "polite");
   status.setAttribute("aria-atomic", "true");
   let activeIndex = 0;
-  const select = (index) => {
+  const select = (index, notify = true) => {
     activeIndex = Math.max(0, Math.min(index, slides.length - 1));
     slides.forEach((slide, i) => {
       const active = i === activeIndex;
@@ -550,6 +569,7 @@ function renderEditorialCarousel(root, itinerary) {
     back.disabled = activeIndex === 0;
     forward.disabled = activeIndex === slides.length - 1;
     status.textContent = `${screens[activeIndex].label}, screen ${activeIndex + 1} of ${slides.length}`;
+    if (notify && activeIndex > 0) onSelectDay?.(activeIndex - 1);
   };
   back.addEventListener("click", () => select(activeIndex - 1));
   forward.addEventListener("click", () => select(activeIndex + 1));
@@ -574,6 +594,7 @@ function renderEditorialCarousel(root, itinerary) {
   carousel.append(back, viewport, forward, pagination, status);
   root.replaceChildren(carousel);
   root.hidden = false;
+  editorialSelections.set(root, select);
   select(0);
   return root;
 }
@@ -634,16 +655,23 @@ export function renderPage(itinerary, selectors = {}) {
   }
 
   const listSelector = selectors.list || "#polaroid-list";
+  const list = typeof listSelector === "string"
+    ? document.querySelector(listSelector)
+    : listSelector;
   const title = document.querySelector(
     selectors.title || "#itinerary-title",
   );
 
   if (title) title.textContent = itinerary.title || "ITINERARY";
-  renderEditorial(
+  const editorial = renderEditorial(
     selectors.editorial || "#itinerary-editorial",
     itinerary,
+    (dayIndex) => deckSelections.get(list)?.(dayIndex),
   );
-  return renderItinerary(listSelector, itinerary.days);
+  return renderItinerary(listSelector, itinerary.days, (dayIndex) => {
+    // Screen zero is the overview; the remaining screens follow the day order.
+    editorialSelections.get(editorial)?.(dayIndex + 1, false);
+  });
 }
 
 export async function loadItinerary(source, options = {}) {
