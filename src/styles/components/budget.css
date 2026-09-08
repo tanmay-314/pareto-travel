@@ -229,6 +229,10 @@
   margin: 0;
 }
 
+.budget-carousel {
+  --editorial-carousel-min-height: 420px;
+}
+
 @media (max-width: 1500px) {
   .budget-layout {
     grid-template-columns: repeat(2, minmax(0, 1fr));

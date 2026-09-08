@@ -1,4 +1,5 @@
 import { fetchJson, findCountryMap, observeResize } from "../lib/component-utils.js";
+import { renderEditorialCarousel, destroyEditorialCarousel } from "./editorial-carousel.js";
 
 const COUNTRY_MAP_FIGMA_WIDTH = 720;
 const RECEIPT_TO_MAP_WIDTH_RATIO = 7 / 12;
@@ -70,7 +71,16 @@ function normalizeReceipt(data) {
       ? source.editorial.filter(function (paragraph) {
           return typeof paragraph === "string" && paragraph.trim().length > 0;
         })
-      : DEFAULT_RECEIPT.editorial
+      : DEFAULT_RECEIPT.editorial,
+    categories: Array.isArray(source.categories)
+      ? source.categories.filter((category) => category && typeof category.title === "string")
+          .map((category) => ({
+            title: category.title,
+            editorial: Array.isArray(category.editorial)
+              ? category.editorial.filter((paragraph) => typeof paragraph === "string" && paragraph.trim())
+              : [],
+          }))
+      : []
   };
 }
 
@@ -120,8 +130,22 @@ function createLineItems(items) {
 
 function renderEditorial(target, data) {
   if (!target) return;
+  destroyEditorialCarousel(target);
 
   const receipt = normalizeReceipt(data);
+  if (receipt.categories.length) {
+    renderEditorialCarousel(target, [
+      { label: "Overview", editorial: receipt.editorial },
+      ...receipt.categories.map((category) => ({
+        label: category.title,
+        title: category.title,
+        editorial: category.editorial,
+      })),
+    ], {
+      label: "Budget details", controlLabel: "budget", className: "budget-carousel",
+    });
+    return;
+  }
   const paragraphs = receipt.editorial.map(function (content) {
     return element("p", "budget-editorial-copy", content);
   });

@@ -164,6 +164,10 @@ Illustrative shape:
 The current receipt presents five ordered line items and an authored, formatted
 total. Include the currency symbol in each displayed value. Editorial copy is
 stored as an ordered paragraph array and appears beside the receipt on desktop.
+Optional `categories` entries have `title` and `editorial` paragraph arrays;
+when present, they enable an overview-plus-categories carousel. Cambodia has
+five categories, giving six screens. Its previous bigger/smaller-budget copy
+is retained in `alternatives` as data, outside the supplied six-screen design.
 
 ## Annual dial
 

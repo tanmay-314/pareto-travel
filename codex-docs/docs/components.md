@@ -111,7 +111,7 @@ Update the paths below when components are integrated.
 
 ### Shared editorial carousel
 
-- Implementation: `src/scripts/components/editorial-carousel.js` and `src/styles/components/editorial-carousel.css`; both itinerary and best months use it.
+- Implementation: `src/scripts/components/editorial-carousel.js` and `src/styles/components/editorial-carousel.css`; itinerary, best months, and budget use it.
 - `renderEditorialCarousel(root, screens, options)` accepts screens with `label`, optional `title`, `editorial` paragraphs and optional heading indexes. Options set accessible labels, a component class alias, and an `onSelect(index)` callback. The returned `select(index, notify)` supports synchronization without feedback loops.
 - Controls reuse the supplied arrow assets and equal 6px Figma dots, scaling with country-map width / 720. Arrows remain 1:24 of map width; 4px gaps between 8px slots place dot centers 12px apart at the Figma baseline. Pagination width is `12 × screen count × map width / 720`.
 - Re-rendering disconnects the previous resize observer and replaces event-owning DOM. Call `destroyEditorialCarousel(root)` before rendering a non-carousel fallback.
@@ -119,14 +119,15 @@ Update the paths below when components are integrated.
 ### Budget receipt
 
 - Root: `[data-budget-receipt]`
-- Inputs: number of days, number of people, year, five ordered line items, total, and an `editorial` paragraph array
+- Inputs: number of days, number of people, year, five ordered line items, total, an overview `editorial` paragraph array, and optional `categories` with `title` and `editorial` paragraphs.
 - Key behavior: render configurable receipt content in the fixed `420 × 540px` receipt geometry, keep its width at `7:12` of the live country-map width, and align its editorial with the shared country-section grid
+- Editorial carousel: overview followed by each category; Cambodia has six screens. The shared controls provide bounded arrows, keyboard and swipe navigation, equal dots with scaled 4px slot gaps, and map-relative sizing. The content grid matches best months at a minimum of 420px and grows to the longest screen. Without categories, legacy editorial paragraphs render as before.
 - Accessibility: use real text; announce totals in a logical reading order
 - Implementation paths: `src/scripts/components/budget.js`, `src/styles/components/budget.css`, `src/assets/components/budget/`, and `src/data/countries/<slug>/budget.json`
 
 ### Polaroid itinerary
 
-- Editorial carousel: when days include `editorial` arrays, `#itinerary-editorial` renders overview plus one screen per day, using the supplied arrows and exported Figma pagination dots. Previous/next navigation stops at the ends; Left/Right, Home/End, and horizontal swipes navigate. Hidden slides are inert; screen changes are announced. All screens share a content-sized grid row (at least 460px) to avoid clipping or height jumps; reduced motion disables the fade. Re-rendering replaces the carousel and its listeners. Legacy itineraries without day editorials retain their paragraph/link rendering.
+- Editorial carousel: when days include `editorial` arrays, `#itinerary-editorial` renders overview plus one screen per day, using the supplied arrows and exported Figma pagination dots. Previous/next navigation stops at the ends; Left/Right, Home/End, and horizontal swipes navigate. Hidden slides are inert; screen changes are announced. All screens share a content-sized grid row (at least 420px, matching best months and budget) to avoid clipping or height jumps; reduced motion disables the fade. Re-rendering replaces the carousel and its listeners. Legacy itineraries without day editorials retain their paragraph/link rendering.
 - Root: `[data-itinerary]` (the country page currently mounts it at `#polaroid-list`)
 - Inputs: ordered day entries, place, copy, image, image alt, rotation
 - Key behavior: the complete deck is centered in its visual viewport; it deals in once on first viewport entry; hover previews exposed cards; click, tap, or keyboard selection promotes a day to the front and updates its visible `DAY X OF Y` label

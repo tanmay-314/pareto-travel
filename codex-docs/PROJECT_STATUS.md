@@ -47,6 +47,8 @@ Update this list with file paths and implementation status once the files are pr
 
 ## Recently completed
 
+- Added the six-screen budget carousel using the shared editorial controls.
+
 - Added the four-screen best-months carousel and shared its controls with the itinerary carousel.
 
 <!-- Keep only the most useful recent entries. Move durable decisions to docs/decisions.md. -->

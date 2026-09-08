@@ -78,7 +78,7 @@ Each reusable component owns:
 
 Components must support multiple instances where reasonable.
 
-The itinerary and best-months components share `editorial-carousel.js` and its
+The itinerary, best-months, and budget components share `editorial-carousel.js` and its
 stylesheet for editorial navigation, accessibility, and map-relative controls.
 Each section supplies its own screens and retains its own visual component.
 
