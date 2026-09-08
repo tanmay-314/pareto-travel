@@ -187,29 +187,19 @@ Month ordering is meaningful. Validate that all required months appear once when
 
 ## Polaroid itinerary
 
-Illustrative shape:
+The runtime reads `{ "itineraries": [...] }`. Each itinerary has `id`,
+`country`, `title`, an overview `editorial` string array, optional zero-based
+`editorialHeadings` indexes for bold overview headings, optional `detailLink`,
+and an ordered `days` array. Each day supplies `dayNumber`, `location`,
+`rotation` (a supported degree string), and `image` (`src`, `alt`, `position`,
+`size`). Photo and frame scale together; the photo region is square.
 
-```json
-{
-  "schemaVersion": 1,
-  "days": [
-    {
-      "id": "day-1",
-      "dayNumber": 1,
-      "place": "Kyoto",
-      "title": "",
-      "summary": "",
-      "image": {
-        "src": "/assets/images/japan/day-1.webp",
-        "alt": ""
-      },
-      "rotationDegrees": -2
-    }
-  ]
-}
-```
-
-Images should be square or safely crop to the component’s 1:1 image region. Rotation is configuration, not content embedded in CSS selectors.
+Days may additionally supply `title` and an `editorial` paragraph array.
+Providing day editorials enables the text carousel: overview first, then one
+screen per day. The optional title defaults to the day number and location.
+Legacy itineraries without day editorials still render overview paragraphs
+and the detail link. The carousel replaces that link with in-place navigation.
+Cambodia uses three screens: Overview, Day 1 – Siem Reap, Day 2 – Angkor Wat.
 
 ## Country navigation
 

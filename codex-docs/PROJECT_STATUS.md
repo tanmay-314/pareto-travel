@@ -2,7 +2,7 @@
 
 This file gives a new Codex session a quick snapshot of active work. Keep it brief and update it whenever priorities or known constraints materially change.
 
-Last updated: 2026-09-05
+Last updated: 2026-09-08
 
 ## Current objective
 
@@ -49,6 +49,7 @@ Update this list with file paths and implementation status once the files are pr
 
 <!-- Keep only the most useful recent entries. Move durable decisions to docs/decisions.md. -->
 
+- Added the Cambodia itinerary editorial carousel from Figma: overview, Day 1, and Day 2, with supplied arrows, pagination, keyboard and swipe navigation.
 - Added repository guidance for Codex.
 - Replaced the previous country-page navigation with the six-link passport-stamp group from Figma.
 - Replaced Cambodia-specific template and component sources with an explicit,

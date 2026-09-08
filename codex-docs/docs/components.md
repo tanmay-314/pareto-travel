@@ -119,6 +119,7 @@ Update the paths below when components are integrated.
 
 ### Polaroid itinerary
 
+- Editorial carousel: when days include `editorial` arrays, `#itinerary-editorial` renders overview plus one screen per day, using the supplied arrows and exported Figma pagination dots. Previous/next navigation stops at the ends; Left/Right, Home/End, and horizontal swipes navigate. Hidden slides are inert; screen changes are announced. All screens share a content-sized grid row (at least 460px) to avoid clipping or height jumps; reduced motion disables the fade. Re-rendering replaces the carousel and its listeners. Legacy itineraries without day editorials retain their paragraph/link rendering.
 - Root: `[data-itinerary]` (the country page currently mounts it at `#polaroid-list`)
 - Inputs: ordered day entries, place, copy, image, image alt, rotation
 - Key behavior: the complete deck is centered in its visual viewport; it deals in once on first viewport entry; hover previews exposed cards; click, tap, or keyboard selection promotes a day to the front and updates its visible `DAY X OF Y` label

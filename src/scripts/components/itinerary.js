@@ -429,6 +429,10 @@ function renderEditorial(target, itinerary) {
     typeof target === "string" ? document.querySelector(target) : target;
   if (!root) return null;
 
+  if (itinerary.days.some((day) => Array.isArray(day.editorial))) {
+    return renderEditorialCarousel(root, itinerary);
+  }
+
   const paragraphs = Array.isArray(itinerary.editorial)
     ? itinerary.editorial.filter(Boolean)
     : [];
@@ -446,6 +450,131 @@ function renderEditorial(target, itinerary) {
 
   root.replaceChildren(...content);
   root.hidden = content.length === 0;
+  return root;
+}
+
+function renderEditorialCarousel(root, itinerary) {
+  const carousel = document.createElement("div");
+  carousel.className = "itinerary-carousel";
+  carousel.setAttribute("role", "region");
+  carousel.setAttribute("aria-roledescription", "carousel");
+  carousel.setAttribute("aria-label", "Itinerary details");
+  const viewport = document.createElement("div");
+  viewport.className = "itinerary-carousel-viewport";
+  const screens = [
+    { label: "Overview", editorial: itinerary.editorial, headings: itinerary.editorialHeadings },
+    ...itinerary.days.map((day) => ({
+      label: day.title || `${day.dayNumber} - ${day.location}`,
+      title: day.title || `${day.dayNumber} - ${day.location}`,
+      editorial: day.editorial,
+    })),
+  ];
+  const slides = screens.map((screen, index) => {
+    const slide = document.createElement("section");
+    slide.className = "itinerary-carousel-slide";
+    slide.setAttribute("role", "group");
+    slide.setAttribute("aria-roledescription", "slide");
+    slide.setAttribute("aria-label", `${index + 1} of ${screens.length}: ${screen.label}`);
+    if (screen.title) {
+      const heading = document.createElement("h3");
+      heading.className = "itinerary-carousel-title";
+      heading.textContent = screen.title;
+      slide.append(heading);
+    }
+    (screen.editorial || []).forEach((text, paragraphIndex) => {
+      const paragraph = createText("itinerary-editorial-copy", text);
+      if (screen.headings?.includes(paragraphIndex)) {
+        const heading = document.createElement("h3");
+        heading.className = "itinerary-carousel-subheading";
+        heading.textContent = text;
+        slide.append(heading);
+      } else {
+        slide.append(paragraph);
+      }
+    });
+    viewport.append(slide);
+    return slide;
+  });
+  const arrow = (direction, label) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `itinerary-carousel-arrow itinerary-carousel-${direction}`;
+    button.setAttribute("aria-label", label);
+    const icon = document.createElement("img");
+    icon.src = new URL(`../../assets/icons/icon-carousel-${direction}.svg`, import.meta.url).href;
+    icon.alt = "";
+    icon.width = 30;
+    icon.height = 30;
+    button.append(icon);
+    const hover = icon.cloneNode();
+    hover.className = "itinerary-carousel-arrow-hover";
+    hover.src = new URL(`../../assets/icons/icon-carousel-${direction}-hover.svg`, import.meta.url).href;
+    button.append(hover);
+    return button;
+  };
+  const back = arrow("back", "Previous itinerary screen");
+  const forward = arrow("fwd", "Next itinerary screen");
+  const pagination = document.createElement("div");
+  pagination.className = "itinerary-carousel-pagination";
+  pagination.setAttribute("aria-hidden", "true");
+  const dots = screens.map(() => {
+    const dot = document.createElement("img");
+    dot.alt = "";
+    dot.width = 8;
+    dot.height = 12;
+    pagination.append(dot);
+    return dot;
+  });
+  const status = createText("visually-hidden", "");
+  status.setAttribute("aria-live", "polite");
+  status.setAttribute("aria-atomic", "true");
+  let activeIndex = 0;
+  const select = (index) => {
+    activeIndex = Math.max(0, Math.min(index, slides.length - 1));
+    slides.forEach((slide, i) => {
+      const active = i === activeIndex;
+      slide.inert = !active;
+      slide.setAttribute("aria-hidden", String(!active));
+      slide.classList.toggle("is-active", active);
+      dots[i].src = new URL(`../../assets/icons/icon-carousel-state-${active ? "active" : "inactive"}.svg`, import.meta.url).href;
+    });
+    // Move focus before hiding an arrow at either end of the carousel.
+    if (activeIndex === 0 && document.activeElement === back) {
+      forward.disabled = false;
+      forward.focus();
+    }
+    if (activeIndex === slides.length - 1 && document.activeElement === forward) {
+      back.disabled = false;
+      back.focus();
+    }
+    back.disabled = activeIndex === 0;
+    forward.disabled = activeIndex === slides.length - 1;
+    status.textContent = `${screens[activeIndex].label}, screen ${activeIndex + 1} of ${slides.length}`;
+  };
+  back.addEventListener("click", () => select(activeIndex - 1));
+  forward.addEventListener("click", () => select(activeIndex + 1));
+  carousel.addEventListener("keydown", (event) => {
+    const destinations = { ArrowLeft: activeIndex - 1, ArrowRight: activeIndex + 1, Home: 0, End: slides.length - 1 };
+    if (!(event.key in destinations)) return;
+    event.preventDefault();
+    select(destinations[event.key]);
+  });
+  let touchStart = null;
+  viewport.addEventListener("touchstart", (event) => {
+    touchStart = event.touches.length === 1 ? event.touches[0] : null;
+  }, { passive: true });
+  viewport.addEventListener("touchend", (event) => {
+    if (!touchStart || !event.changedTouches.length) return;
+    const dx = event.changedTouches[0].clientX - touchStart.clientX;
+    const dy = event.changedTouches[0].clientY - touchStart.clientY;
+    touchStart = null;
+    if (Math.abs(dx) > 36 && Math.abs(dx) > Math.abs(dy)) select(activeIndex + (dx < 0 ? 1 : -1));
+  }, { passive: true });
+  viewport.addEventListener("touchcancel", () => { touchStart = null; }, { passive: true });
+  carousel.append(back, viewport, forward, pagination, status);
+  root.replaceChildren(carousel);
+  root.hidden = false;
+  select(0);
   return root;
 }
 
