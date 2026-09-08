@@ -47,6 +47,8 @@ Update this list with file paths and implementation status once the files are pr
 
 ## Recently completed
 
+- Added the four-screen best-months carousel and shared its controls with the itinerary carousel.
+
 <!-- Keep only the most useful recent entries. Move durable decisions to docs/decisions.md. -->
 
 - Added the Cambodia itinerary editorial carousel from Figma: overview, Day 1, and Day 2, with supplied arrows, pagination, keyboard and swipe navigation.

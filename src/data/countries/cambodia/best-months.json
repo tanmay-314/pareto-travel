@@ -5,15 +5,8 @@
       "centerLabel": "THE SWEET SPOT",
       "centerValue": "NOV → FEB",
       "editorial": [
-        "**November to February**",
-        "Ideally, you’d want to visit Cambodia between *November to February* during the “winter” season (I use “ “ because winter just means cool summer in this part of the world). But the moderate weather brings the massive crowds. According to the tour guides and as well as some video evidence, there are TWENTY times more people than we encountered in the wet season.",
-        "I will admit though, the video evidence we saw did capture Angkor Wat in all its grandeur, unbothered by skies above it (more on this in a bit).",
-        "**June to September**",
-        "We visited in mid-August, smack in the middle of the wet season. The views of Angkor Wat were splendid enough, albeit slightly dulled by intermittent cloud cover. But we got to be up close and take great pictures. And in the afternoon, we pretty much had the World Heritage Site to ourselves.",
-        "And while it’s technically wet season, the early morning showers aren’t a common occurrence, so you don’t have to worry about rain playing spoilsport (at least for the sunrise tour).",
-        "Our stay was also significantly cheaper on account of visiting during non-peak season.",
-        "**March to May, October**",
-        "While winter has the best views and the monsoon has sparser crowds, the rest of the year is best avoided due to the extreme heat. Take it from someone whose spent a lifetime in the tropics, muggy weather can ruin the best of moments."
+        "Ideally, you’d want to visit Cambodia between November to February during the “winter” season (I use “” because winter just means cool summer in this part of the world).",
+        "That said, we thoroughly enjoyed our visit in mid-August, smack in the middle of the wet season."
       ],
       "months": {
         "jan": "best",
@@ -28,7 +21,30 @@
         "oct": "avoid",
         "nov": "best",
         "dec": "best"
-      }
+      },
+      "seasons": [
+        {
+          "title": "November to February",
+          "editorial": [
+            "Similar to Mt Fuji, for the best views under clear skies, go during winter. But beware that mild climate draws massive crowds.",
+            "According to the tour guides and as well as some video evidence, there are TWENTY times more people than we encountered in the wet season. Admittedly, the video evidence we saw did capture Angkor Wat in all its grandeur, unbothered by fickle weather (more on this in a bit)."
+          ]
+        },
+        {
+          "title": "June to September",
+          "editorial": [
+            "In our August trip, the splendor of Angkor Wat was only slightly dulled by intermittent cloud cover. But we got to be up close and take great pictures (that we used in our wedding invite). And in the afternoon, we pretty much had the World Heritage Site to ourselves.",
+            "And while it’s technically wet season, the early morning showers aren’t a common occurrence, so you don’t have to worry about rain playing spoilsport (at least for the sunrise tour).",
+            "Our stay was also significantly cheaper on account of visiting during non-peak season."
+          ]
+        },
+        {
+          "title": "March to May, October",
+          "editorial": [
+            "While winter has the best views and the monsoon has sparser crowds, the rest of the year is best avoided due to the extreme heat. Take it from someone whose spent a lifetime in the tropics, muggy weather can ruin the best of moments."
+          ]
+        }
+      ]
     }
   }
 }

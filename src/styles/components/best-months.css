@@ -108,6 +108,10 @@
   min-width: 0;
 }
 
+.best-months-carousel {
+  --editorial-carousel-min-height: 420px;
+}
+
 .best-months-editorial p {
   width: 100%;
   max-width: 620px;

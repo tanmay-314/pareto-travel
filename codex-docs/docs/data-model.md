@@ -167,23 +167,15 @@ stored as an ordered paragraph array and appears beside the receipt on desktop.
 
 ## Annual dial
 
-Illustrative shape:
+The runtime reads `{ "countries": { "<slug>": { ... } } }` from
+`best-months.json`. A country supplies `country`, `centerLabel`, `centerValue`,
+and `months`, keyed `jan` through `dec` with `best`, `good`, or `avoid` values.
 
-```json
-{
-  "schemaVersion": 1,
-  "rotationDurationSeconds": 60,
-  "months": [
-    {
-      "id": "jan",
-      "label": "JAN",
-      "rating": "recommended"
-    }
-  ]
-}
-```
-
-Month ordering is meaningful. Validate that all required months appear once when the design requires a full year.
+`editorial` is a string array. Optional `seasons` is an ordered array of
+`{ "title": "November to February", "editorial": ["..."] }` objects.
+When seasons are present, editorial becomes the overview screen followed by
+one screen per season. Without seasons, the existing paragraph renderer
+supports `**bold**` and `*italic*` emphasis. Carousel paragraphs are plain text.
 
 ## Polaroid itinerary
 

@@ -1,4 +1,5 @@
 import { fetchJson, findCountryMap, observeResize } from "../lib/component-utils.js";
+import { renderEditorialCarousel, destroyEditorialCarousel } from "./editorial-carousel.js";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 
@@ -305,8 +306,9 @@ function appendFormattedEditorialText(paragraph, text) {
   }
 }
 
-export function renderBestMonthsEditorial(container, rawEditorial) {
+export function renderBestMonthsEditorial(container, rawEditorial, seasons = []) {
   if (!container) return null;
+  destroyEditorialCarousel(container);
 
   const paragraphs = Array.isArray(rawEditorial)
     ? rawEditorial.filter(
@@ -314,6 +316,21 @@ export function renderBestMonthsEditorial(container, rawEditorial) {
           typeof paragraph === "string" && paragraph.trim().length > 0,
       )
     : [];
+
+  if (Array.isArray(seasons) && seasons.length) {
+    renderEditorialCarousel(container, [
+      { label: "Overview", editorial: paragraphs },
+      ...seasons.map((season) => ({
+        label: season.title,
+        title: season.title,
+        editorial: season.editorial,
+      })),
+    ], {
+      label: "Best months to visit", controlLabel: "best-months",
+      className: "best-months-carousel",
+    });
+    return container;
+  }
 
   container.replaceChildren(
     ...paragraphs.map((text) => {
@@ -345,6 +362,7 @@ export async function setDialCountry(container, countryKey) {
         .closest(".best-months")
         ?.querySelector("[data-best-months-editorial]"),
       countryConfig?.editorial,
+      countryConfig?.seasons,
     );
   } catch (error) {
     showError(container, error);

@@ -100,14 +100,21 @@ Update the paths below when components are integrated.
 - Data ownership: the country name and rating values remain canonical in `country.json` and are not duplicated in FAQ data
 - Implementation paths: `src/scripts/components/faqs.js`, `src/styles/components/faqs.css`, and `src/data/countries/<slug>/{faqs,country}.json`
 
-### Annual dial
+### Best months and annual dial
 
-- Root: `[data-component="annual-dial"]`
-- Inputs: ordered months, month rating/state, rotation duration
-- Key behavior: rotating ring; month labels remain upright and separated from the ring
-- Accessibility: textual month/state information must not depend on animation
-- Motion: continuous motion may run by default; disable or simplify for reduced motion
-- Implementation paths: _record when integrated_
+- Roots: `.annual-travel-dial[data-country]` and `[data-best-months-editorial]`.
+- Inputs: country name, center label/value, twelve month states, overview `editorial`, and optional `seasons` entries with `title` and `editorial` paragraphs.
+- Editorial: overview plus one screen per season; Cambodia has four screens. The shared carousel handles bounded arrows, Left/Right and Home/End keys, swipes, live announcements, inert hidden screens, and map-relative controls. The text grid is at least 420px tall and grows to its longest screen to keep headings visible and avoid clipping or height jumps.
+- Legacy paragraph arrays without seasons retain formatted bold/italic text rendering.
+- Dial: the existing compass oscillates around the best season; labels stay upright. Reduced motion stops the compass and suppresses carousel fades.
+- Implementation: `src/scripts/components/best-months.js`, `src/styles/components/best-months.css`, and `src/data/countries/<slug>/best-months.json`.
+
+### Shared editorial carousel
+
+- Implementation: `src/scripts/components/editorial-carousel.js` and `src/styles/components/editorial-carousel.css`; both itinerary and best months use it.
+- `renderEditorialCarousel(root, screens, options)` accepts screens with `label`, optional `title`, `editorial` paragraphs and optional heading indexes. Options set accessible labels, a component class alias, and an `onSelect(index)` callback. The returned `select(index, notify)` supports synchronization without feedback loops.
+- Controls reuse the supplied arrow assets and equal 6px Figma dots, scaling with country-map width / 720. Arrows remain 1:24 of map width; 4px gaps between 8px slots place dot centers 12px apart at the Figma baseline. Pagination width is `12 × screen count × map width / 720`.
+- Re-rendering disconnects the previous resize observer and replaces event-owning DOM. Call `destroyEditorialCarousel(root)` before rendering a non-carousel fallback.
 
 ### Budget receipt
 
@@ -123,6 +130,7 @@ Update the paths below when components are integrated.
 - Root: `[data-itinerary]` (the country page currently mounts it at `#polaroid-list`)
 - Inputs: ordered day entries, place, copy, image, image alt, rotation
 - Key behavior: the complete deck is centered in its visual viewport; it deals in once on first viewport entry; hover previews exposed cards; click, tap, or keyboard selection promotes a day to the front and updates its visible `DAY X OF Y` label
+- Carousel control sizing: a resize observer scales controls from the live country-map width / 720. Each arrow is map width / 24. Pagination retains 8 × 12px dot slots, 6px active and inactive ellipses, 4px gaps between slots, and 1px/3px outer padding at the Figma baseline; total width is `12 × screen count × map width / 720`. Arrow buttons retain a minimum 44px height for interaction. The observer is cleaned up on re-render.
 - Day linking: clicking or keyboard-activating a polaroid opens its corresponding editorial screen, including when the card is already at the front. Deck keyboard and swipe selection also open the selected day. Carousel arrows, keyboard navigation, and swipes also bring the corresponding day card to the front without moving keyboard focus away from the carousel. Rapid carousel navigation retains the latest day while a shuffle finishes. The overview remains the initial screen and preserves the current front card when revisited. `renderItinerary(target, days, onSelectDay)` optionally reports the zero-based selected day to the page composition.
 - Keyboard and touch: the active card is in the tab order; arrow keys, Home, and End select days; horizontal swipes select adjacent days on touch screens
 - Motion: shuffle animations use only transforms and opacity; reduced-motion users receive a short crossfade instead of spatial motion
