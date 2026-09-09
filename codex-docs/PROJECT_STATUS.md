@@ -47,6 +47,9 @@ Update this list with file paths and implementation status once the files are pr
 
 ## Recently completed
 
+- Added the shared Figma Destinations overlay with map-relative scaling, region
+  stamp artwork, published guide links, and keyboard/close controls.
+
 - Added Bolivia’s three-screen inter-city editorial carousel using shared controls and map-relative scaling.
 
 - Imported Bolivia’s Notion editorial and published its available sections; renamed the FAQ

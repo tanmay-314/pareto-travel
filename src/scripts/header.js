@@ -1,3 +1,5 @@
+import { initializeDestinations } from "./components/destinations.js";
+
 const MOBILE_NAV_QUERY = "(max-width: 900px)";
 
 function initializeHeader(header) {
@@ -12,6 +14,8 @@ function initializeHeader(header) {
 
     if (returnFocus) toggle.focus();
   };
+
+  initializeDestinations(header, closeMenu);
 
   toggle.addEventListener("click", () => {
     const willOpen = toggle.getAttribute("aria-expanded") !== "true";

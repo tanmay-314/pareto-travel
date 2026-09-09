@@ -17,6 +17,7 @@ Last reviewed against the repository: **5 September 2026**.
 Implemented:
 
 - world-map landing page artwork and country hotspots;
+- shared Destinations overlay with 16 illustrated stamps grouped by region;
 - a data-driven Cambodia hero and annotated country map;
 - a six-link in-hero passport-stamp navigation group;
 - interactive polaroid itinerary;
@@ -34,7 +35,7 @@ Still incomplete:
 - Cambodia is the only country with complete section JSON;
 - Cambodia and Bolivia have published country data and generated pages;
 - Bolivia currently publishes its overview, itinerary, seasonal text, and transport;
-- the header links for Destinations, Months, and About are placeholders;
+- the header links for Months and About are placeholders;
 - there is no production deployment configuration;
 - there is no automated test, lint, formatting, or asset build pipeline;
 - some internal documentation describes architectural goals as well as current

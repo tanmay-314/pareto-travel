@@ -1,0 +1,125 @@
+{
+  "regions": [
+    {
+      "name": "North America",
+      "countries": [
+        {
+          "name": "United States",
+          "caption": "Statue of Liberty,New York City",
+          "artwork": "../../assets/components/destinations/united-states.svg",
+          "href": null
+        },
+        {
+          "name": "Mexico",
+          "caption": "El Castillo,Chichen-Itza",
+          "artwork": "../../assets/components/destinations/mexico.svg",
+          "href": null
+        },
+        {
+          "name": "Costa Rica",
+          "caption": "Cloud Forest,Monteverde",
+          "artwork": "../../assets/components/destinations/costa-rica.svg",
+          "href": null
+        }
+      ]
+    },
+    {
+      "name": "South America",
+      "countries": [
+        {
+          "name": "Brazil",
+          "caption": "Christ the Redeemer,Rio de Janeiro",
+          "artwork": "../../assets/components/destinations/brazil.svg",
+          "href": null
+        },
+        {
+          "name": "Peru",
+          "caption": "Machu Picchu,Machu Picchu",
+          "artwork": "../../assets/components/destinations/peru.svg",
+          "href": null
+        },
+        {
+          "name": "Colombia",
+          "caption": "El Pe\u00f1on,Guatape",
+          "artwork": "../../assets/components/destinations/colombia.svg",
+          "href": null
+        },
+        {
+          "name": "Chile",
+          "caption": "Ahu Tongariki,Rapa Nui",
+          "artwork": "../../assets/components/destinations/chile.svg",
+          "href": null
+        },
+        {
+          "name": "Bolivia",
+          "caption": "Salt Flats,Uyuni",
+          "artwork": "../../assets/components/destinations/bolivia.svg",
+          "href": "/countries/bolivia"
+        }
+      ]
+    },
+    {
+      "name": "Europe",
+      "countries": [
+        {
+          "name": "Turkey",
+          "caption": "Hagia Sophia,Istanbul",
+          "artwork": "../../assets/components/destinations/turkey.svg",
+          "href": null
+        },
+        {
+          "name": "Greece",
+          "caption": "Church of Agios Spyridon,Santorini",
+          "artwork": "../../assets/components/destinations/greece.svg",
+          "href": null
+        },
+        {
+          "name": "Iceland",
+          "caption": "Basalt Columns,Reynisfjara Beach",
+          "artwork": "../../assets/components/destinations/iceland.svg",
+          "href": null
+        }
+      ]
+    },
+    {
+      "name": "South Asia",
+      "countries": [
+        {
+          "name": "India",
+          "caption": "Taj Mahal,Agra",
+          "artwork": "../../assets/components/destinations/india.svg",
+          "href": null
+        },
+        {
+          "name": "Sri Lanka",
+          "caption": "Fortress,Sigiriya",
+          "artwork": "../../assets/components/destinations/sri-lanka.svg",
+          "href": null
+        }
+      ]
+    },
+    {
+      "name": "Southeast Asia",
+      "countries": [
+        {
+          "name": "Malaysia",
+          "caption": "Petronas Towers,Kuala Lumpur",
+          "artwork": "../../assets/components/destinations/malaysia.svg",
+          "href": null
+        },
+        {
+          "name": "Cambodia",
+          "caption": "Angkor Wat,Siem Reap",
+          "artwork": "../../assets/components/destinations/cambodia.svg",
+          "href": "/countries/cambodia"
+        },
+        {
+          "name": "Singapore",
+          "caption": "Marina Bay Sands,Singapore",
+          "artwork": "../../assets/components/destinations/singapore.svg",
+          "href": null
+        }
+      ]
+    }
+  ]
+}

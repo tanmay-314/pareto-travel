@@ -201,3 +201,20 @@ Country navigation initializes after section loading and only includes existing
 section targets. Its year is optional. Cuisine, budget, and FAQ loaders omit
 unfinished sections (see `data-model.md`); FAQ ratings are optional. Best-months
 editorials remain visible when the dial lacks complete month/center settings.
+
+## Destinations overlay
+
+`header.js` initializes `components/destinations.js` from a header button with
+`data-destinations-trigger`. The native modal dialog uses the supplied close icon,
+locks background scrolling, supports Escape, and restores focus to the trigger
+(or the mobile menu button). Styles live in `styles/components/header.css`.
+
+`data/components/destinations.json` owns the ordered regions and countries. Each
+country has `name`, `caption`, an `artwork` URL relative to that JSON, and a nullable
+`href`. Only published guides receive links. The SVG artwork is exported from
+Figma node `1565:202613` into `assets/components/destinations/`.
+
+The 1440px composition scales to twice the live country-map width using the shared
+resize observer. Pages without a country map use the same 360–720px map sizing
+rule as the country pages. The composition retains its three-column stamp grid.
+On narrow screens, the frame is capped to the viewport width.
