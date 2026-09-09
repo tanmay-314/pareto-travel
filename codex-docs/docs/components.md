@@ -214,7 +214,10 @@ country has `name`, `caption`, an `artwork` URL relative to that JSON, and a nul
 `href`. Only published guides receive links. The SVG artwork is exported from
 Figma node `1565:202613` into `assets/components/destinations/`.
 
-The 1440px composition scales to twice the live country-map width using the shared
-resize observer. Pages without a country map use the same 360–720px map sizing
-rule as the country pages. The composition retains its three-column stamp grid.
-On narrow screens, the frame is capped to the viewport width.
+The right-aligned frame uses `min(100vw, max(600px, 50vw))`: half the viewport
+above 1200px, a stable 600px width between 600px and 1200px, and full width on
+screens narrower than 600px. These ranges meet without a size jump, so narrowing
+the viewport never enlarges the frame. CSS owns sizing; the shared resize observer scales the
+1440px composition to the actual dialog width, preserving the three-column grid.
+The close icon remains 30px within a 44px button, with at least 60px of clearance
+above the content. A dimmed backdrop keeps the underlying page visible.

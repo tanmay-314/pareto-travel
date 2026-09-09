@@ -14,14 +14,17 @@
 }
 
 .destinations-overlay {
+    /* Half-width on desktop, a stable tablet width, and full-width on phones. */
+    --destinations-width: min(100vw, max(600px, 50vw));
+
     position: fixed;
     inset: 0;
-    width: var(--destinations-width, 1440px);
+    width: var(--destinations-width);
     height: 100%;
     height: 100dvh;
     max-width: 100%;
     max-height: none;
-    margin: 0 auto;
+    margin: 0 0 0 auto;
     padding: 0;
     overflow-x: hidden;
     overflow-y: auto;
@@ -32,7 +35,7 @@
 }
 
 .destinations-overlay::backdrop {
-    background: var(--color-bg-canvas);
+    background: color-mix(in srgb, var(--color-text-neutral) 25%, transparent);
 }
 
 .destinations-overlay:focus-visible {
@@ -43,7 +46,7 @@
     position: fixed;
     z-index: 1;
     top: 5px;
-    right: calc(max(0px, (100vw - var(--destinations-width, 1440px)) / 2) + 5px);
+    right: 5px;
     display: grid;
     place-items: center;
     width: 44px;
@@ -54,13 +57,13 @@
 }
 
 .destinations-overlay__close img {
-    width: calc(30px * var(--destinations-scale, 1));
-    height: calc(30px * var(--destinations-scale, 1));
+    width: 30px;
+    height: 30px;
 }
 
 .destinations-overlay__content {
     width: 1440px;
-    padding: var(--space-6xl) 85px;
+    padding: max(var(--space-6xl), calc(60px / var(--destinations-scale, 1))) 85px var(--space-6xl);
     zoom: var(--destinations-scale, 1);
     display: flex;
     flex-direction: column;

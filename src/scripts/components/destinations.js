@@ -1,4 +1,4 @@
-import { findCountryMap, observeResize } from "../lib/component-utils.js";
+import { observeResize } from "../lib/component-utils.js";
 
 const dataUrl = new URL("../../data/components/destinations.json", import.meta.url);
 
@@ -26,17 +26,13 @@ export function initializeDestinations(header, closeMenu) {
   dialog.append(close, content);
   document.body.append(dialog);
 
-  // The Figma destinations frame is 1440px wide beside a 720px country map.
-  const map = findCountryMap(header);
+  // CSS owns the viewport breakpoints; scale the 1440px artwork to the frame.
   const syncFrameSize = () => {
-    const mapWidth = map?.getBoundingClientRect().width
-      || Math.min(720, Math.max(360, window.innerWidth * 0.4));
-    const width = Math.min(document.documentElement.clientWidth, mapWidth * 2);
-    dialog.style.setProperty("--destinations-width", `${width}px`);
+    const width = dialog.clientWidth;
+    if (!width) return;
     dialog.style.setProperty("--destinations-scale", width / 1440);
   };
-  observeResize(dialog, map || document.documentElement, syncFrameSize);
-  window.addEventListener("resize", syncFrameSize);
+  observeResize(dialog, dialog, syncFrameSize);
 
   let loaded = false;
   let previousOverflow;
@@ -103,8 +99,8 @@ export function initializeDestinations(header, closeMenu) {
     closeMenu();
     previousOverflow = document.documentElement.style.overflow;
     document.documentElement.style.overflow = "hidden";
-    syncFrameSize();
     dialog.showModal();
+    syncFrameSize();
     dialog.scrollTop = 0;
     loadDestinations();
   });

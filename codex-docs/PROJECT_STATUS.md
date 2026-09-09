@@ -47,7 +47,7 @@ Update this list with file paths and implementation status once the files are pr
 
 ## Recently completed
 
-- Added the shared Figma Destinations overlay with map-relative scaling, region
+- Added the shared Figma Destinations overlay with continuous responsive sizing (50% desktop, 600px tablet, full-width phones), region
   stamp artwork, published guide links, and keyboard/close controls.
 
 - Added Bolivia’s three-screen inter-city editorial carousel using shared controls and map-relative scaling.
