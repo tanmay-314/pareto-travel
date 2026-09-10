@@ -32,3 +32,13 @@
         padding-left: var(--space-lg);
     }
 }
+
+@media (max-width: 444px) {
+    .landing-page #map-container {
+        padding: 0;
+    }
+
+    .landing-page #map-container > .map {
+        display: none;
+    }
+}

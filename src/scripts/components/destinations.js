@@ -1,6 +1,7 @@
 import { observeResize } from "../lib/component-utils.js";
 
 const dataUrl = new URL("../../data/components/destinations.json", import.meta.url);
+const MOBILE_VIEW_QUERY = "(max-width: 444px)";
 
 export function initializeDestinations(header, closeMenu) {
   const trigger = header.querySelector("[data-destinations-trigger]");
@@ -37,6 +38,23 @@ export function initializeDestinations(header, closeMenu) {
   let loaded = false;
   let previousOverflow;
   let returnTarget;
+
+  function openDestinations({ automatic = false } = {}) {
+    if (dialog.open) return;
+    returnTarget = automatic
+      ? null
+      : window.matchMedia("(max-width: 900px)").matches
+        ? header.querySelector(".nav-toggle")
+        : trigger;
+    closeMenu();
+    previousOverflow = document.documentElement.style.overflow;
+    document.documentElement.style.overflow = "hidden";
+    trigger.setAttribute("aria-expanded", "true");
+    dialog.showModal();
+    syncFrameSize();
+    dialog.scrollTop = 0;
+    loadDestinations();
+  }
 
   async function loadDestinations() {
     if (loaded) return;
@@ -92,21 +110,37 @@ export function initializeDestinations(header, closeMenu) {
     }
   }
 
-  trigger.addEventListener("click", () => {
-    if (dialog.open) return;
-    returnTarget = window.matchMedia("(max-width: 900px)").matches
-      ? header.querySelector(".nav-toggle") : trigger;
-    closeMenu();
-    previousOverflow = document.documentElement.style.overflow;
-    document.documentElement.style.overflow = "hidden";
-    dialog.showModal();
-    syncFrameSize();
-    dialog.scrollTop = 0;
+  const mapContainer = document.querySelector("#map-container");
+  const mobileLandingQuery = window.matchMedia(MOBILE_VIEW_QUERY);
+  if (mapContainer && mobileLandingQuery.matches) {
+    const primary = document.createElement("section");
+    primary.className = "destinations-primary";
+    primary.id = "destinations-primary";
+    primary.setAttribute("aria-label", "Destinations");
+    primary.append(content);
+    mapContainer.style.padding = "0";
+    mapContainer.replaceChildren(primary);
+    dialog.remove();
+    trigger.removeAttribute("aria-haspopup");
+    trigger.removeAttribute("aria-expanded");
+    trigger.setAttribute("aria-controls", primary.id);
+    trigger.addEventListener("click", () => {
+      closeMenu();
+      primary.scrollIntoView({ block: "start" });
+    });
+    observeResize(dialog, primary, () => {
+      const width = primary.clientWidth;
+      if (width) primary.style.setProperty("--destinations-scale", width / 1440);
+    });
     loadDestinations();
-  });
+    return;
+  }
+
+  trigger.addEventListener("click", () => openDestinations());
   const closeDestinations = () => {
     dialog.close();
     document.documentElement.style.overflow = previousOverflow;
+    trigger.setAttribute("aria-expanded", "false");
     returnTarget?.focus({ preventScroll: true });
   };
   close.addEventListener("click", closeDestinations);
@@ -127,4 +161,5 @@ export function initializeDestinations(header, closeMenu) {
       first.focus();
     }
   });
+
 }

@@ -70,6 +70,13 @@
     gap: var(--space-xl);
 }
 
+.destinations-primary {
+    width: 100%;
+    min-height: 100svh;
+    overflow: hidden;
+    background: var(--color-bg-canvas);
+}
+
 .destinations-overlay__heading {
     margin-bottom: var(--space-sm);
     font-size: var(--type-size-section-title);
@@ -264,5 +271,30 @@ a.destination-stamp:hover {
         align-items: center;
         min-height: 44px;
         font-size: var(--type-size-body);
+    }
+}
+
+@media (max-width: 444px) {
+    .landing-page .nav-toggle {
+        display: none;
+    }
+
+    .landing-page .nav {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 0 0 auto;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .landing-page .nav .site-nav {
+        display: none;
+    }
+
+    .landing-page .nav .site-nav[data-mobile-primary-nav] {
+        display: block;
     }
 }

@@ -221,3 +221,12 @@ the viewport never enlarges the frame. CSS owns sizing; the shared resize observ
 1440px composition to the actual dialog width, preserving the three-column grid.
 The close icon remains 30px within a 44px button, with at least 60px of clearance
 above the content. A dimmed backdrop keeps the underlying page visible.
+
+On the landing page at 444px and narrower, Destinations replaces the world map
+inside the main page flow. It is not a dialog in this mode and has no close
+control; the map is hidden before JavaScript runs. Country pages and wider
+landing-page viewports continue to open Destinations as a dialog from the header
+control. The header navigation retains its independent 900px menu breakpoint.
+On the mobile landing view at 444px and narrower, the hamburger is removed and
+the header exposes only the About link inline beside the logo. Country pages
+retain the standard mobile menu.
