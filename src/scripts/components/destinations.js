@@ -4,17 +4,17 @@ const dataUrl = new URL("../../data/components/destinations.json", import.meta.u
 const MOBILE_VIEW_QUERY = "(max-width: 444px)";
 
 export function initializeDestinations(header, closeMenu) {
-  const trigger = header.querySelector("[data-destinations-trigger]");
+  const trigger = header.querySelector("[data-places-trigger]");
   if (!trigger) return;
 
   const dialog = document.createElement("dialog");
-  dialog.className = "destinations-overlay";
-  dialog.setAttribute("aria-label", "Destinations");
+  dialog.className = "places-overlay";
+  dialog.setAttribute("aria-label", "Places");
 
   const close = document.createElement("button");
   close.type = "button";
-  close.className = "destinations-overlay__close";
-  close.setAttribute("aria-label", "Close destinations");
+  close.className = "places-overlay__close";
+  close.setAttribute("aria-label", "Close places");
   close.autofocus = true;
   const icon = document.createElement("img");
   icon.src = new URL("../../assets/icons/icon-overlay-close.svg", import.meta.url);
@@ -23,7 +23,7 @@ export function initializeDestinations(header, closeMenu) {
   close.append(icon);
 
   const content = document.createElement("div");
-  content.className = "destinations-overlay__content";
+  content.className = "places-overlay__content";
   dialog.append(close, content);
   document.body.append(dialog);
 
@@ -31,7 +31,7 @@ export function initializeDestinations(header, closeMenu) {
   const syncFrameSize = () => {
     const width = dialog.clientWidth;
     if (!width) return;
-    dialog.style.setProperty("--destinations-scale", width / 1440);
+    dialog.style.setProperty("--places-scale", width / 1440);
   };
   observeResize(dialog, dialog, syncFrameSize);
 
@@ -58,7 +58,7 @@ export function initializeDestinations(header, closeMenu) {
 
   async function loadDestinations() {
     if (loaded) return;
-    content.textContent = "Loading destinations…";
+    content.textContent = "Loading places…";
     content.setAttribute("aria-busy", "true");
     try {
       const response = await fetch(dataUrl);
@@ -67,12 +67,12 @@ export function initializeDestinations(header, closeMenu) {
       const regions = document.createDocumentFragment();
       for (const region of data.regions) {
         const section = document.createElement("section");
-        section.className = "destinations-overlay__region";
+        section.className = "places-overlay__region";
         const heading = document.createElement("h2");
-        heading.className = "destinations-overlay__heading country-sub-heading";
+        heading.className = "places-overlay__heading country-sub-heading";
         heading.textContent = region.name;
         const grid = document.createElement("div");
-        grid.className = "destinations-overlay__grid";
+        grid.className = "places-overlay__grid";
         for (const country of region.countries) {
           const card = document.createElement(country.href ? "a" : "figure");
           card.className = "destination-stamp";
@@ -98,8 +98,8 @@ export function initializeDestinations(header, closeMenu) {
       content.replaceChildren(regions);
       loaded = true;
     } catch (error) {
-      console.error("Unable to load destinations:", error);
-      content.textContent = "Destinations could not be loaded. ";
+      console.error("Unable to load places:", error);
+      content.textContent = "Places could not be loaded. ";
       const retry = document.createElement("button");
       retry.type = "button";
       retry.textContent = "Try again";
@@ -114,9 +114,9 @@ export function initializeDestinations(header, closeMenu) {
   const mobileLandingQuery = window.matchMedia(MOBILE_VIEW_QUERY);
   if (mapContainer && mobileLandingQuery.matches) {
     const primary = document.createElement("section");
-    primary.className = "destinations-primary";
-    primary.id = "destinations-primary";
-    primary.setAttribute("aria-label", "Destinations");
+    primary.className = "places-primary";
+    primary.id = "places-primary";
+    primary.setAttribute("aria-label", "Places");
     primary.append(content);
     mapContainer.style.padding = "0";
     mapContainer.replaceChildren(primary);
@@ -130,7 +130,7 @@ export function initializeDestinations(header, closeMenu) {
     });
     observeResize(dialog, primary, () => {
       const width = primary.clientWidth;
-      if (width) primary.style.setProperty("--destinations-scale", width / 1440);
+      if (width) primary.style.setProperty("--places-scale", width / 1440);
     });
     loadDestinations();
     return;

@@ -202,10 +202,10 @@ section targets. Its year is optional. Cuisine, budget, and FAQ loaders omit
 unfinished sections (see `data-model.md`); FAQ ratings are optional. Best-months
 editorials remain visible when the dial lacks complete month/center settings.
 
-## Destinations overlay
+## Places overlay
 
 `header.js` initializes `components/destinations.js` from a header button with
-`data-destinations-trigger`. The native modal dialog uses the supplied close icon,
+`data-places-trigger`. The native modal dialog uses the supplied close icon,
 locks background scrolling, supports Escape, and restores focus to the trigger
 (or the mobile menu button). Styles live in `styles/components/header.css`.
 
@@ -222,11 +222,10 @@ the viewport never enlarges the frame. CSS owns sizing; the shared resize observ
 The close icon remains 30px within a 44px button, with at least 60px of clearance
 above the content. A dimmed backdrop keeps the underlying page visible.
 
-On the landing page at 444px and narrower, Destinations replaces the world map
+On the landing page at 444px and narrower, Places replaces the world map
 inside the main page flow. It is not a dialog in this mode and has no close
 control; the map is hidden before JavaScript runs. Country pages and wider
-landing-page viewports continue to open Destinations as a dialog from the header
+landing-page viewports continue to open Places as a dialog from the header
 control. The header navigation retains its independent 900px menu breakpoint.
-On the mobile landing view at 444px and narrower, the hamburger is removed and
-the header exposes only the About link inline beside the logo. Country pages
-retain the standard mobile menu.
+At 444px and narrower on every page, the hamburger is removed and the header
+exposes only the About link inline beside the logo.
