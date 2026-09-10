@@ -1,0 +1,27 @@
+{
+  "sectionTitle": "Anything Else You Need to Know?",
+  "allowMultiple": false,
+  "items": [
+    {
+      "id": "safety",
+      "index": "01",
+      "question": "How safe is [Country]?",
+      "answer": "",
+      "open": false
+    },
+    {
+      "id": "english",
+      "index": "02",
+      "question": "Is English commonly understood?",
+      "answer": "",
+      "open": false
+    },
+    {
+      "id": "weather",
+      "index": "03",
+      "question": "What could ruin my stay in [Country]?",
+      "answer": "",
+      "open": false
+    }
+  ]
+}

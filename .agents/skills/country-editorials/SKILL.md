@@ -19,7 +19,7 @@ Use the supplied draft as the editorial source and the current repository’s co
 | --- | --- |
 | Overview | `country.json`: `overview`; leave SEO unchanged unless explicitly requested |
 | Itinerary, day notes, extra-time ideas | `itinerary.json`: `itineraries[]`, `editorial`, ordered `days` |
-| Seasonal guidance | `best-months.json`: `countries[slug]`, `editorial`, `months`, center labels |
+| Seasonal guidance | `best-months.json`: `countries[slug]`, `editorial`, `months` |
 | Meals | `cuisine.json`: `editorial`; `chapters` only where supported by the source |
 | Transport | `inter-city-travel.json`: `editorial`, places and legs when supported |
 | Costs and budget alternatives | `budget.json`: days, people, lineItems, total, editorial |

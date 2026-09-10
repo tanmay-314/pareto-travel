@@ -175,8 +175,7 @@ seven screens and seven tracking dots.
 ## Annual dial
 
 The runtime reads `{ "countries": { "<slug>": { ... } } }` from
-`best-months.json`. A country supplies `country`, `centerLabel`, `centerValue`,
-and `months`, keyed `jan` through `dec` with `best`, `good`, or `avoid` values.
+`best-months.json`. A country supplies `country` and `months`, keyed `jan` through `dec` with `best`, `good`, or `avoid` values.
 
 `editorial` is a string array. Optional `seasons` is an ordered array of
 `{ "title": "November to February", "editorial": ["..."] }` objects.
@@ -326,5 +325,5 @@ The page omits cuisine with no chapters/editorial, budgets with no line items,
 and FAQs with neither answered questions nor ratings. Unanswered FAQ items are
 not displayed. Navigation loads after sections and excludes removed targets.
 Seasonal editorials render independently of the dial; the dial stays hidden
-until its center labels and all twelve month states are supplied. Invalid
+until all twelve month states are supplied. Invalid
 supplied dial states still fail validation. Itinerary images remain optional.

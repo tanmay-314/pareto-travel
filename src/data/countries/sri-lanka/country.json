@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "slug": "sri-lanka",
+  "status": "published",
+  "name": "Sri Lanka",
+  "overview": "Separated only by a strait, Sri Lanka is a world apart from the subcontinental mainland. Calmness prevails on the island, one that is hard-earned after decades of civil war.\n\nIf the misty tea hills and tropical shores weren’t enchanting enough, the delightful Sri Lankan smiles that greet you across the island will assuredly to warm the cockles of your heart.  ",
+  "map": {
+    "src": "../../../assets/countries/sri-lanka/country-map.svg",
+    "alt": "Map of Sri Lanka"
+  },
+  "seo": {
+    "title": "Sri Lanka travel guide | Pareto Travel",
+    "description": "Explore Sri Lanka with a five-day itinerary through Sigiriya, Ella, Mirissa, and Colombo, seasonal guidance, and inter-city travel routes."
+  }
+}

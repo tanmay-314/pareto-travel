@@ -15,7 +15,9 @@
         "jul": "best",
         "aug": "best",
         "sep": "best",
-        "oct": "best"
+        "oct": "best",
+        "nov": "avoid",
+        "dec": "avoid"
       },
       "seasons": [
         {
@@ -33,7 +35,7 @@
           ]
         },
         {
-          "title": "April to June ",
+          "title": "April to June, November & December",
           "editorial": [
             "The shoulder season is best avoided. Coming on the heels of the wet season, the water recedes into what can be described as puddles, but has not dried enough for the salt to shine in all it’s glory."
           ]

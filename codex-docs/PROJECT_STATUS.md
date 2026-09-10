@@ -47,6 +47,12 @@ Update this list with file paths and implementation status once the files are pr
 
 ## Recently completed
 
+- Published Sri Lanka’s available overview, five-day itinerary, seasonal copy, and
+  taxi routes at `/countries/sri-lanka`, linked from the map and Destinations.
+  The month dial covers all twelve months; missing meals, budget, FAQs, and
+  ratings remain omitted. See
+  [Sri Lanka handoff](sri-lanka-editorial-handoff.md) for source and verification.
+
 - Added the shared Figma Destinations overlay with continuous responsive sizing (50% desktop, 600px tablet, full-width phones), region
   stamp artwork, published guide links, and keyboard/close controls.
 
@@ -76,15 +82,15 @@ Update this list with file paths and implementation status once the files are pr
   `[Country]` question placeholders remain as authored. No receipt amounts,
   party size, visit year, ratings, map locations, or itinerary images were
   invented. Publication adds SEO title/description and references the existing Bolivia map asset.
-- Seasonal data records only the ten months covered by the source. November,
-  December, and dial center labels still need editorial input before the dial
-  can render. The text recommends the start of the dry season but describes
+- Seasonal data covers all twelve months. November and December are classified
+  as `avoid` per the user's instruction, completing the dial data.
+  The text recommends the start of the dry season but describes
   late October as its end; preserve both statements pending author review.
 - The source’s unfinished “If we visited a few weeks” sentence and its claim
   about legal child labour remain unchanged and need editorial review. The
   five-day itinerary has five day entries; no budget arithmetic is available.
 - Published incomplete sections are omitted automatically: meals, budget, and
-  unanswered FAQs. Seasonal text renders while the incomplete dial stays hidden.
+  unanswered FAQs. Seasonal text and the completed dial can both render.
   Visit year is optional, and navigation only links to available sections.
 - Publication verification: generated both country pages and passed `--check`.
   At 1440px and 390px, verified Bolivia’s actual public entry, itinerary and

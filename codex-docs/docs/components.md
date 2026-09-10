@@ -103,7 +103,7 @@ Update the paths below when components are integrated.
 ### Best months and annual dial
 
 - Roots: `.annual-travel-dial[data-country]` and `[data-best-months-editorial]`.
-- Inputs: country name, center label/value, twelve month states, overview `editorial`, and optional `seasons` entries with `title` and `editorial` paragraphs.
+- Inputs: country name, twelve month states, overview `editorial`, and optional `seasons` entries with `title` and `editorial` paragraphs.
 - Editorial: overview plus one screen per season; Cambodia has four screens. The shared carousel handles bounded arrows, Left/Right and Home/End keys, swipes, live announcements, inert hidden screens, and map-relative controls. The text grid is at least 420px tall and grows to its longest screen to keep headings visible and avoid clipping or height jumps.
 - Legacy paragraph arrays without seasons retain formatted bold/italic text rendering.
 - Dial: the existing compass oscillates around the best season; labels stay upright. Reduced motion stops the compass and suppresses carousel fades.

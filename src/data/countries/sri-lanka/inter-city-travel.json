@@ -1,0 +1,36 @@
+{
+  "title": "Going from Place to Place",
+  "editorial": [],
+  "places": [
+    {
+      "name": "Colombo"
+    },
+    {
+      "name": "Sigiriya"
+    },
+    {
+      "name": "Ella"
+    },
+    {
+      "name": "Mirissa"
+    },
+    {
+      "name": "Colombo"
+    }
+  ],
+  "legs": [
+    {
+      "mode": "car"
+    },
+    {
+      "mode": "car",
+      "duration": "4-hour"
+    },
+    {
+      "mode": "car"
+    },
+    {
+      "mode": "car"
+    }
+  ]
+}

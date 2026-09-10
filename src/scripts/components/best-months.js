@@ -76,14 +76,12 @@ function validateConfig(config) {
     throw new Error("The selected country is missing from the data file.");
   }
 
-  if (!config.centerLabel || !config.centerValue || !config.months) {
-    throw new Error("Country data needs centerLabel, centerValue, and months.");
+  if (!config.months) {
+    throw new Error("Country data needs months.");
   }
 
   return {
     country: config.country || "Selected country",
-    centerLabel: String(config.centerLabel),
-    centerValue: String(config.centerValue),
     months: Object.fromEntries(
       MONTHS.map(({ key, label }) => [
         key,
@@ -215,7 +213,7 @@ export function renderAnnualTravelDial(container, rawConfig) {
   const title = svgNode("title", { id: titleId });
   title.textContent = `${config.country} annual travel dial`;
   const description = svgNode("desc", { id: descriptionId });
-  description.textContent = `${config.centerLabel}: ${config.centerValue}. ${makeAccessibleSummary(config)}.`;
+  description.textContent = `${makeAccessibleSummary(config)}.`;
 
   svg.append(
     title,
@@ -356,8 +354,7 @@ export async function setDialCountry(container, countryKey) {
 
     const data = await fetchJson(source, { label: "Best-months data" });
     const countryConfig = data.countries?.[countryKey];
-    const hasDial = countryConfig?.centerLabel && countryConfig?.centerValue
-      && MONTHS.every(({ key }) => countryConfig.months?.[key]);
+    const hasDial = MONTHS.every(({ key }) => countryConfig?.months?.[key]);
     if (hasDial) {
       container.hidden = false;
       renderAnnualTravelDial(container, countryConfig);
