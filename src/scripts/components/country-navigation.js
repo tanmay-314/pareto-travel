@@ -266,11 +266,13 @@ function syncNavigationToCountryMap(navigation, config) {
 
   if (!map) return;
 
-  observeResize(navigation, map, () => {
+  observeResize(navigation, [map, navigation.parentElement], () => {
     const mapWidth = map.getBoundingClientRect().width;
     if (mapWidth <= 0) return;
 
-    const scale = mapWidth / COUNTRY_MAP_FIGMA_WIDTH;
+    const scale = window.matchMedia("(max-width: 444px)").matches
+      ? navigation.parentElement.getBoundingClientRect().width / config.width
+      : mapWidth / COUNTRY_MAP_FIGMA_WIDTH;
     navigation.style.width = `${config.width * scale}px`;
     navigation.style.height = `${config.height * scale}px`;
     navigation.style.setProperty("--country-nav-scale", scale);

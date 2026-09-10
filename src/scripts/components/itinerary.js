@@ -515,7 +515,9 @@ export function syncToCountryMap(target, mapTarget) {
       FIGMA_SIZE.width + (cardCount > 1 ? FIGMA_SIZE.stackTravel : 0);
     const availableScale =
       availableWidth > 0 ? availableWidth / stackWidth : mapScale;
-    const scale = Math.min(mapScale, availableScale, 1);
+    const scale = window.matchMedia("(max-width: 444px)").matches
+      ? availableScale
+      : Math.min(mapScale, availableScale, 1);
     const polaroidWidth = FIGMA_SIZE.width * scale;
     root.style.setProperty(
       "--country-map-polaroid-scale",

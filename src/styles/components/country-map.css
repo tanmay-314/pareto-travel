@@ -89,3 +89,9 @@
     transition: none;
   }
 }
+
+@media (max-width: 444px) {
+  .country-map {
+    width: 100%;
+  }
+}

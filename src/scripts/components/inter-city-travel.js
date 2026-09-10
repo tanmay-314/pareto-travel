@@ -147,7 +147,7 @@ const syncTicketStack = (root) => {
 
   if (!frame || !stack) return;
 
-  observeResize(root, map, () => {
+  observeResize(root, [map, frame.parentElement], () => {
     const mapWidth =
       map?.getBoundingClientRect().width || COUNTRY_MAP_FIGMA_WIDTH;
     if (mapWidth <= 0) return;
@@ -155,10 +155,13 @@ const syncTicketStack = (root) => {
     const stackTargetWidth =
       mapWidth * TICKET_STACK_TO_MAP_WIDTH_RATIO;
     const availableWidth = frame.parentElement?.getBoundingClientRect().width;
-    const stackWidth = Math.min(
-      stackTargetWidth,
-      availableWidth > 0 ? availableWidth : stackTargetWidth,
-    );
+    const stackWidth =
+      window.matchMedia("(max-width: 444px)").matches && availableWidth > 0
+        ? availableWidth
+        : Math.min(
+            stackTargetWidth,
+            availableWidth > 0 ? availableWidth : stackTargetWidth,
+          );
     const scale = stackWidth / TICKET_STACK_FIGMA_WIDTH;
     root.style.setProperty(
       "--inter-city-ticket-stack-width",

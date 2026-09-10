@@ -151,3 +151,9 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+@media (max-width: 444px) {
+  .annual-travel-dial {
+    width: 100%;
+  }
+}

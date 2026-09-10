@@ -241,10 +241,12 @@ function syncReceiptToCountryMap(frame, receipt) {
     return;
   }
 
-  observeResize(frame, map, () => {
+  observeResize(frame, [map, frame.parentElement], () => {
     const mapWidth = map.getBoundingClientRect().width;
     if (mapWidth <= 0) return;
-    const scaledWidth = mapWidth * RECEIPT_TO_MAP_WIDTH_RATIO;
+    const scaledWidth = window.matchMedia("(max-width: 444px)").matches
+      ? frame.parentElement.getBoundingClientRect().width
+      : mapWidth * RECEIPT_TO_MAP_WIDTH_RATIO;
     const scale = scaledWidth / RECEIPT_FIGMA_WIDTH;
 
     frame.style.width = `${scaledWidth}px`;

@@ -84,11 +84,13 @@ function syncMenuToCountryMap(root) {
 
   if (!frame || !menu) return;
 
-  observeResize(root, map, () => {
+  observeResize(root, [map, frame.parentElement], () => {
     const mapWidth =
       map?.getBoundingClientRect().width || COUNTRY_MAP_FIGMA_WIDTH;
     if (mapWidth <= 0) return;
-    const scale = mapWidth / COUNTRY_MAP_FIGMA_WIDTH;
+    const scale = window.matchMedia("(max-width: 444px)").matches
+      ? frame.parentElement.getBoundingClientRect().width / MENU_FIGMA_WIDTH
+      : mapWidth / COUNTRY_MAP_FIGMA_WIDTH;
     const scaledWidth = MENU_FIGMA_WIDTH * scale;
     const scaledHeight = MENU_FIGMA_HEIGHT * scale;
 
