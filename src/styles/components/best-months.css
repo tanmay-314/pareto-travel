@@ -124,6 +124,12 @@
   place-items: center;
 }
 
+@media (max-width: 444px) {
+  .best-months-graphic {
+    order: -1;
+  }
+}
+
 @media (max-width: 1500px) {
   .best-months-layout {
     grid-template-columns: repeat(2, minmax(0, 1fr));
