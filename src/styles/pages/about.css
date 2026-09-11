@@ -8,6 +8,16 @@
   margin-block-start: var(--space-xxxl);
 }
 
+.about-page h1 {
+  font-family: var(--type-family-display), sans-serif;
+  font-size: var(--type-size-page-title);
+  font-weight: var(--type-weight-regular);
+  font-style: normal;
+  font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
+  line-height: var(--type-line-height-heading, 72px);
+  text-transform: uppercase;
+}
+
 .about-page h2 {
   font-size: var(--type-size-section-title);
   line-height: 60px;
@@ -72,5 +82,11 @@
     grid-template-columns: minmax(0, 1fr);
     max-width: 412px;
     margin-inline: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-page h1 {
+    font-size: clamp(42px, 12vw, var(--type-size-page-title));
   }
 }
