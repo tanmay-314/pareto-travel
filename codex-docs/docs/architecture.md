@@ -120,6 +120,11 @@ Avoid circular imports and hidden global state.
 The landing page is served from `/` by `src/index.html`. Requests to the former
 `/pages/index.html` URL are permanently redirected to `/` by `vercel.json`.
 
+The About page is static semantic HTML in `src/about.html`, served at `/about`.
+It preserves the Notion editorial and references local `about-us-` artwork,
+with page styles in `styles/pages/about.css` and the shared header script.
+The former `/countries/about` placeholder redirects to `/about`.
+
 Public country URLs use `/countries/<slug>`. Vercel's `cleanUrls` setting maps
 those routes to HTML files under `src/countries/`, which are generated from
 `src/pages/country.html` by

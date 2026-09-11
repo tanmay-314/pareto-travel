@@ -5,6 +5,11 @@
       "source": "/pages/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/countries/about",
+      "destination": "/about",
+      "permanent": true
     }
   ]
 }

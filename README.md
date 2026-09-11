@@ -34,8 +34,8 @@ Still incomplete:
 
 - Fifteen countries have section JSON and generated pages; missing totals,
   month classifications, and illustrations are omitted while prose renders;
-- the header links for Months and About are placeholders;
-- there is no production deployment configuration;
+- the header link for Months is a placeholder;
+- Vercel serves the static site with clean URLs configured in `vercel.json`;
 - there is no automated test, lint, formatting, or asset build pipeline;
 - some internal documentation describes architectural goals as well as current
   behavior, so the source under `src/` remains authoritative.
@@ -153,6 +153,13 @@ navigation, a base world map, and overlays for:
 The SVG overlays exist; all except India link to their generated pages.
 See [editorial handoff](codex-docs/country-editorials-handoff.md) for coverage
 and unresolved source issues.
+
+### About page
+
+`src/about.html` serves `/about`, with verbatim editorial text from the Notion
+About page and the four local `about-us-` SVGs. Its responsive layout lives in
+`src/styles/pages/about.css` and it reuses the shared header. The former
+`/countries/about` URL redirects to `/about`. Locally, open `/about.html`.
 
 ### Country page
 
