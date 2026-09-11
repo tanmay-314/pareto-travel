@@ -9,8 +9,8 @@
 }
 
 .about-page h2 {
-  font-size: var(  --type-size-section-title);
-  line-height: 1.2;
+  font-size: var(--type-size-section-title);
+  line-height: 60px;
   text-wrap: initial;
   text-transform: uppercase;
 }
@@ -54,6 +54,13 @@
 
 .about-skip-link:focus {
   transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .about-page h2 {
+    font-size: var(--type-size-logo);
+    line-height: 1.1;
+  }
 }
 
 @media (max-width: 620px) {
