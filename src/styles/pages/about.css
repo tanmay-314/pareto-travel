@@ -18,6 +18,16 @@
   margin-block-start: var(--space-lg);
 }
 
+.about-page__censor-dots {
+  display: inline-block;
+  width: 30px;
+  height: 6px;
+  vertical-align: middle;
+  background-image: radial-gradient(circle at 3px 3px, currentColor 3px, transparent 3px);
+  background-size: 12px 6px;
+  background-repeat: repeat-x;
+}
+
 .about-page__gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
