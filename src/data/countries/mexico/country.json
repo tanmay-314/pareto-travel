@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "slug": "mexico",
+  "status": "published",
+  "name": "Mexico",
+  "map": {
+    "src": "../../../assets/countries/mexico/country-map.svg",
+    "alt": "Map of Mexico"
+  },
+  "overview": "“Viva Mexico!”, I scream as a military parade rolls through the centre of Mexico City. By dumb luck, we landed for Mexican Independence Day, which is one way to make a first impression.\n\nMexico is one of those countries whose popular image is simultaneously accurate and wildly incomplete. Yes, there are tacos, pyramids and Caribbean waters. There is also a 20-million-plus megacity that stays out late, ancient civilisations layered on top of each other, and a social warmth that repeatedly showed up when we needed help.\n\nOur six days were geographically inefficient but emotionally efficient: Mexico City, Teotihuacan, Chichen Itza and Bacalar. Fallen empires, sunken waters, rising city.",
+  "seo": {
+    "title": "Mexico travel guide | Pareto Travel",
+    "description": "“Viva Mexico!”, I scream as a military parade rolls through the centre of Mexico City. By dumb luck, we landed for Mexican Independence Day, which is one way to make a first impression."
+  }
+}

@@ -1,26 +1,26 @@
 {
-  "sectionTitle": "EVERYTHING ELSE YOU NEED TO KNOW",
+  "sectionTitle": "Anything Else You Need to Know?",
   "allowMultiple": false,
   "items": [
     {
       "id": "safety",
       "index": "01",
-      "question": "How safe is [Country]?",
-      "answer": "",
+      "question": "How safe is Bolivia?",
+      "answer": "We felt safe in Uyuni and had several reassuring encounters with locals. Santa Cruz and Sucre felt rougher around the edges but not threatening in our short time there. Use ordinary precautions around overnight transport and terminals.",
       "open": false
     },
     {
       "id": "english",
       "index": "02",
       "question": "Is English commonly understood?",
-      "answer": "",
+      "answer": "No. Spanish is extremely useful. Around organised tours you may find some English, but everyday transport and restaurants are easier if you can manage basic Spanish.",
       "open": false
     },
     {
       "id": "weather",
       "index": "03",
-      "question": "What could ruin my stay in [Country]?",
-      "answer": "",
+      "question": "What could ruin my stay in Bolivia?",
+      "answer": "Altitude sickness, easily. It turned our first Uyuni day into recovery time and should be treated as a real itinerary constraint rather than an inconvenience.\n\nAlso verify current visa, vaccination and entry requirements before travelling. Rules and enforcement can change, and the airport counter is a terrible place to discover that.",
       "open": false
     }
   ]

@@ -1,0 +1,46 @@
+{
+  "countries": {
+    "united-states": {
+      "country": "United States",
+      "editorial": [
+        "We did much of our leisure travel in June and July, and for this exact coast-to-coast itinerary summer is the easiest answer."
+      ],
+      "seasons": [
+        {
+          "title": "June to August",
+          "editorial": [
+            "Long days make national parks and road trips easier, Niagara operates in its full tourist mode and you do not have to build the entire route around snow.",
+            "The downside is peak crowds, especially in Yosemite and other headline parks."
+          ]
+        },
+        {
+          "title": "September & October",
+          "editorial": [
+            "These can be excellent alternatives if you're willing to layer up as you move east. Crowds ease and many destinations remain accessible."
+          ]
+        },
+        {
+          "title": "November to March",
+          "editorial": [
+            "Don't be seduced by a cheap airfare into assuming the same itinerary works year-round. Large parts of the country have serious winter weather, short daylight hours and seasonal closures or limited access.",
+            "Los Angeles may be delightful while New York freezes. America is large enough for both statements to be true simultaneously."
+          ]
+        }
+      ],
+      "months": {
+        "jan": "avoid",
+        "feb": "avoid",
+        "mar": "avoid",
+        "apr": "good",
+        "may": "good",
+        "jun": "best",
+        "jul": "best",
+        "aug": "best",
+        "sep": "best",
+        "oct": "good",
+        "nov": "avoid",
+        "dec": "avoid"
+      }
+    }
+  }
+}

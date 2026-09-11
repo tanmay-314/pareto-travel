@@ -1,0 +1,22 @@
+{
+  "editorial": [
+    "We don't have a reliable trip-level expense total from this journey, so there is no point pretending otherwise.",
+    "The expensive components are predictable: domestic flights, the Sacred Valley-Machu Picchu transport chain and the Machu Picchu visit itself. Everyday meals and city wandering are easier to manage."
+  ],
+  "categories": [],
+  "alternatives": [
+    {
+      "title": "What if we had a bigger budget?",
+      "editorial": [
+        "We'd buy comfort where logistics are annoying: better train timings, well-located hotels and perhaps a higher-end meal in Lima. We would not rush to make Machu Picchu itself more luxurious—the setting already wins."
+      ]
+    },
+    {
+      "title": "What if we had a smaller budget?",
+      "editorial": [
+        "Keep Lima brief, prioritise Cusco and Machu Picchu, and book the transport chain early. Peru is the sort of place where poor planning can cost more than modest accommodation ever will."
+      ]
+    }
+  ],
+  "title": "What it's Going to Cost"
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "slug": "costa-rica",
+  "status": "published",
+  "name": "Costa Rica",
+  "map": {
+    "src": "../../../assets/countries/costa-rica/country-map.svg",
+    "alt": "Map of Costa Rica"
+  },
+  "overview": "Pura vida. Hello, thanks, goodbye, life philosophy—Costa Rica has somehow compressed an entire national mood into two words.\n\nThe phrase literally gets translated as “pure life”, but the version we experienced felt closer to “life, without unnecessary complication”. That makes Costa Rica a slightly unusual travel destination. There isn't one monument or city that explains the country. The appeal is cumulative: cloud forests, wildlife, adrenaline, easy conversations with strangers and the sense that nature has been allowed to remain the main character.\n\nOur trip was short and heavily biased towards Monteverde. That also means this is less a definitive Costa Rica itinerary and more the version we'd happily do again.",
+  "seo": {
+    "title": "Costa Rica travel guide | Pareto Travel",
+    "description": "Pura vida. Hello, thanks, goodbye, life philosophy—Costa Rica has somehow compressed an entire national mood into two words."
+  }
+}

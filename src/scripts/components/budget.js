@@ -142,7 +142,7 @@ function renderEditorial(target, data) {
   destroyEditorialCarousel(target);
 
   const receipt = normalizeReceipt(data);
-  if (receipt.categories.length) {
+  if (receipt.categories.length || receipt.alternatives.length) {
     const screens = [
       { label: "Overview", editorial: receipt.editorial },
       ...receipt.categories.map((category) => ({
@@ -285,8 +285,19 @@ export async function mountReceiptFromSource(target) {
 
   try {
     const data = await loadReceiptData(source);
+    const title = target.closest(".budget")?.querySelector("#budget-title");
+    if (title && typeof data.title === "string") title.textContent = data.title;
     if (!data.lineItems?.length) {
-      target.closest(".budget")?.remove();
+      const hasEditorial = data.editorial?.some((text) => text.trim() && text.trim() !== "…")
+        || [...(data.categories || []), ...(data.alternatives || [])]
+          .some((item) => item.editorial?.some((text) => text.trim() && text.trim() !== "…"));
+      if (hasEditorial) {
+        renderEditorial(editorial, data);
+        target.closest(".budget-layout")?.classList.add("country-editorial-only");
+        target.remove();
+      } else {
+        target.closest(".budget")?.remove();
+      }
       return;
     }
     renderEditorial(editorial, data);

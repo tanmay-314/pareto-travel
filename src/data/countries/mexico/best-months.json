@@ -1,0 +1,27 @@
+{
+  "countries": {
+    "mexico": {
+      "country": "Mexico",
+      "editorial": [
+        "Mexico is too geographically varied for one perfect season.",
+        "For this exact itinerary, we liked September despite the heat and occasional rain because Independence Day gave Mexico City extraordinary energy. The Yucatan, however, can be hot and humid.",
+        "If you care more about comfortable city weather than national festivities, the cooler, drier months are easier. For coastal plans, check the regional weather rather than applying a single Mexico-wide rule."
+      ],
+      "seasons": [],
+      "months": {
+        "jan": "best",
+        "feb": "best",
+        "mar": "best",
+        "apr": "best",
+        "may": "good",
+        "jun": "good",
+        "jul": "good",
+        "aug": "avoid",
+        "sep": "avoid",
+        "oct": "avoid",
+        "nov": "good",
+        "dec": "best"
+      }
+    }
+  }
+}

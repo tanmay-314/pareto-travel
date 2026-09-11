@@ -1,0 +1,26 @@
+{
+  "countries": {
+    "malaysia": {
+      "country": "Malaysia",
+      "editorial": [
+        "We visited in August, which is not Langkawi's driest period, and got some gloomy weather. It did not ruin the trip, but the island would obviously benefit from clearer skies.",
+        "For this KL-plus-Langkawi itinerary, we'd favour the drier months on the west coast if dates are flexible. Kuala Lumpur itself is hot and humid year-round, so weather optimisation matters more for the beach than the city."
+      ],
+      "seasons": [],
+      "months": {
+        "jan": "best",
+        "feb": "best",
+        "mar": "best",
+        "apr": "good",
+        "may": "good",
+        "jun": "good",
+        "jul": "good",
+        "aug": "good",
+        "sep": "avoid",
+        "oct": "avoid",
+        "nov": "good",
+        "dec": "best"
+      }
+    }
+  }
+}

@@ -124,6 +124,10 @@ export function renderCuisine(root, data) {
     </div>
   `;
 
+  if (!chapters.length) {
+    root.querySelector(".cuisine-menu-frame")?.remove();
+    root.querySelector(".cuisine-layout")?.classList.add("country-editorial-only");
+  }
   applyCuisineIcons(root, chapters);
   syncMenuToCountryMap(root);
 }

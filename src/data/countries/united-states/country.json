@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "slug": "united-states",
+  "status": "published",
+  "name": "United States",
+  "map": {
+    "src": "../../../assets/countries/united-states/country-map.svg",
+    "alt": "Map of United States"
+  },
+  "overview": "I haven't just travelled the United States; I've lived here. For five whole years. In my time there—which was rudely interrupted by a pandemic—I made my way to most places you'd think of when you hear the words “United States”.\n\nMy first impression, formed during a visit to Walmart within hours of landing, was the abundance of things. For the right price, you can find almost anything in this country, no matter which corner of the world the thing originally came from.\n\nMy second and more lasting impression was of how organised it is. Things generally work. Systems are reliable enough that you stop noticing them—until you desperately need a human to bend one. If you're trying to skip an airport queue because your flight is leaving, you want empathy, not a perfectly functioning process explaining why you're doomed.\n\nLastly, there are two Americas. And I don't mean politically. There is the reel America exported by Hollywood—New York skyscrapers, Los Angeles sunshine, Las Vegas casinos, Hawaiian beaches—and there is the real America of highways, strip malls and towns that can look oddly interchangeable across state lines.\n\nHence, Uniform Systems of Abundance.",
+  "seo": {
+    "title": "United States travel guide | Pareto Travel",
+    "description": "I haven't just travelled the United States; I've lived here. For five whole years. In my time there—which was rudely interrupted by a pandemic—I made my way to most places you'd think of when you hear the words “United States”."
+  }
+}

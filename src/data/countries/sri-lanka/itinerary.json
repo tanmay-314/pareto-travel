@@ -5,23 +5,25 @@
       "country": "Sri Lanka",
       "title": "Teardrop of Joy - 5 Day Itinerary",
       "editorial": [
-        "Colombo is the only way in or out of Sri Lanka, so your journey will begin and end in the capital. Our loop across the island took us from the hilltop of Sigiriya to the hill station of Ella, and eventually the beaches of Mirissa. ",
+        "Colombo is the obvious way in or out for most international travellers, so our loop began and ended in the capital. In five days we went from the hilltop of Sigiriya to the hill station of Ella, and eventually the beaches of Mirissa.",
         "What if we had more time?",
-        "We’d take the long route from Dambulla to Ella, with pitstops in Kandy (for the Buddha tooth temple) and Nuwara Eliya (for tea estates)."
+        "We’d take the long route from Dambulla to Ella, with pitstops in Kandy for the Temple of the Tooth and Nuwara Eliya for the tea country.",
+        "With another couple of days, we’d also be tempted to slow down rather than add destinations. Sri Lanka rewards lingering more than rushing."
       ],
       "editorialHeadings": [
         1
       ],
       "days": [
         {
-          "dayNumber": "DAY 1",
-          "location": "SIGIRIYA",
-          "title": "DAY 1 - SIGIRIYA",
+          "dayNumber": "Day 1",
+          "location": "Sigiriya",
+          "title": "Day 1 - Sigiriya",
           "editorial": [
-            "We landed early in the morning in Colombo and took a pre-booked taxi to Sigiriya. ",
-            "Along the way, we stopped at Dambulla to visit the tranquil Buddhist cave temple. We were amazed by how intricate the artwork was on the roof of the cave.",
-            "We took a nap on reaching our stay in Sigiriya and set off for the climb at about 4:00 PM. It took us about an hour to reach the top of the hill. It might take a wee bit longer if you choose to pause and soak in the spectacular sights along the way. ",
-            "You can avail of a guide for both the cave temple and Sigiriya fortress, but we chose introspection over information. "
+            "We landed early in Colombo and took a pre-booked taxi towards Sigiriya, stopping at Dambulla along the way.",
+            "The Dambulla cave temple was one of the calmest places on the trip. The artwork covering the cave ceilings is far more intricate than the outside prepares you for, while the reclining Buddha statues appear almost to emerge from the rock itself.",
+            "We reached Sigiriya, took a nap and started the climb around 4:00 PM. It took us roughly an hour to get to the top, although you could easily spend longer stopping for views.",
+            "You can hire guides at both Dambulla and Sigiriya, but we chose introspection over information. Nobody pestered us about it, which improved the experience considerably.",
+            "Sigiriya is a little like Machu Picchu lite—less dramatic, far easier to reach and roughly a millennium older. The site was also exceptionally clean despite receiving visitors from everywhere."
           ],
           "image": {
             "src": "../assets/countries/sri-lanka/art-360/art-frame-lk-day-1-sigiriya.svg",
@@ -31,14 +33,14 @@
           }
         },
         {
-          "dayNumber": "DAY 2",
-          "location": "ELLA",
-          "title": "DAY 2 -  ELLA",
+          "dayNumber": "Day 2",
+          "location": "Ella",
+          "title": "Day 2 - Ella",
           "editorial": [
-            "We left for Ella (by pre-booked taxi once again) early on Day 2. In our 4-hour ride, we were struck by how calmly Sri Lankan drivers navigated narrow roads without needing to honk!",
-            "Ella is a bougie town teeming with foreign tourists. The vibes are closer to Southeast Asia than the subcontinent.",
-            "We walked along train tracks to the picturesque Nine Arches bridge. If you stay long enough, you’ll be able to grab photos against the backdrop of a train chugging along the bridge. ",
-            "We proceeded to hike to Little Adam’s peak to take in wonderful views of the setting sun. "
+            "Leave early for Ella.",
+            "Our four-hour taxi ride was almost as memorable as the destination because the driver simply… drove. No incessant honking, no phone calls every five minutes, no attempt to turn a mountain road into a qualifying lap.",
+            "Ella is bougie in the nicest possible way: misty hills and tea country wrapped around cafés, guesthouses and lots of foreign travellers. It reminded us of Munnar if Munnar had borrowed some of Langkawi’s tourist infrastructure.",
+            "Walk along the train tracks to the Nine Arches Bridge, then continue towards Little Adam’s Peak for sunset. There is a shorter route from town, which we discovered only after choosing the scenic-but-longer version."
           ],
           "image": {
             "src": "../assets/countries/sri-lanka/art-360/art-frame-lk-day-2-nine-arches.svg",
@@ -48,12 +50,14 @@
           }
         },
         {
-          "dayNumber": "DAY 3",
-          "location": "ELLA + MIRISSA",
-          "title": "DAY 3 - ELLA + MIRISSA   ",
+          "dayNumber": "Day 3",
+          "location": "Ella + Mirissa",
+          "title": "Day 3 - Ella + Mirissa",
           "editorial": [
-            "Our second day in Ella was spent retracing steps of the first, with another stroll down to the Nine Arches. The lushness of the rainforests even in mid-March is a most magical feeling. ",
-            "After check out, we took our third taxi ride of the trip down to Mirissa and reached just in time for sunset. Mirissa in the evening is exactly what you’d want from a laidback beach town with an air of relaxation descending as the sun goes down. "
+            "We liked the Nine Arches walk enough to repeat it the next morning.",
+            "Even in mid-March, the hills were astonishingly lush. Sri Lanka often felt more rainforest-green than large parts of the Indian subcontinent, with a variety of trees and vegetation that made the drive south feel continuously scenic.",
+            "After checking out, drive down to Mirissa. The highway stretch towards the south coast was excellent and dramatically faster than the narrow hill roads.",
+            "We reached Mirissa around sunset, which is exactly when a beach town should introduce itself. The pace drops, the light softens and suddenly doing nothing feels like an itinerary item."
           ],
           "image": {
             "src": "../assets/countries/sri-lanka/art-360/art-frame-lk-day-3-adams-peak.svg",
@@ -63,12 +67,14 @@
           }
         },
         {
-          "dayNumber": "DAY 4",
-          "location": "MIRISSA",
-          "title": "DAY 4 - MIRISSA ",
+          "dayNumber": "Day 4",
+          "location": "Mirissa",
+          "title": "Day 4 - Mirissa",
           "editorial": [
-            "We decided to sleep in rather than partake in water activities (whale watching and snorkelling are popular choices). ",
-            "We weren’t done lazing for the day, as for the very reasonable price of 2,000 Lankan rupees each (~$7), we got beach beds with complimentary coconut water and iced coffee. "
+            "We slept in instead of going whale-watching or snorkelling. No regrets.",
+            "Most water activities leave early because the sea is calmer in the morning, so decide the night before whether you actually want to participate. We chose laziness.",
+            "For around 2,000 Sri Lankan rupees each when we visited, we got beach beds with coconut water and iced coffee included. That felt like an extremely rational exchange of money for happiness.",
+            "Spend the evening walking the beach. Mirissa and Ella both used warm, soft lighting particularly well; a small detail, but one that made their tourist areas feel much calmer than places lit like cricket stadiums."
           ],
           "image": {
             "src": "../assets/countries/sri-lanka/art-360/art-frame-lk-day-4-mirissa.svg",
@@ -78,13 +84,14 @@
           }
         },
         {
-          "dayNumber": "DAY 5",
-          "location": "COLOMBO",
-          "title": "DAY 5 - COLOMBO",
+          "dayNumber": "Day 5",
+          "location": "Colombo",
+          "title": "Day 5 - Colombo",
           "editorial": [
-            "Our final taxi took us back to Colombo, which without a doubt, is the most civil city in South Asia. ",
-            "One of us had spent time in Colombo as a child, so we decided to reminisce along the Galle Face promenade. ",
-            "We were able to squeeze in a visit to the serene Seema Malakaya Temple, with Buddha statues overlooking an algal lake, before it was time to head to the airport. "
+            "Drive back to Colombo and leave enough buffer before your flight.",
+            "One of us had spent time here as a child, so we walked around Galle Face partly to reminisce. Colombo remains, in our view, the most orderly major city in South Asia.",
+            "We also stopped at Seema Malakaya, where Buddha statues overlook the lake in the middle of the city. Despite the traffic outside, the temple feels remarkably serene.",
+            "If you have time, One Galle Face is a polished modern mall nearby. It is exactly what you expect from a polished modern mall, which can be either praise or criticism depending on how long you have been travelling."
           ],
           "image": {
             "src": "../assets/countries/sri-lanka/art-360/art-frame-lk-day-5-buddha-temple.svg",

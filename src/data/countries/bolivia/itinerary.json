@@ -5,59 +5,64 @@
       "country": "Bolivia",
       "title": "Salt of the Earth - 5 Day Itinerary",
       "editorial": [
-        "While the salt flats of Uyuni are the primary attraction in Bolivia, your journey will most likely start by landing in Santa Cruz (unless you take a bus from Chile). From there you take a short but tumultuous flight to Sucre and an overnight bus to Uyuni. Spend at least a day in Uyuni before exploring the salt flats as the altitude may take a bit to acclimate to.  ",
+        "The Uyuni salt flats are the reason for the trip, but getting there is half the story: Santa Cruz, Sucre, an overnight bus and enough altitude to force humility into your schedule.",
         "What if we had more time?",
-        "If we had more time, we’d certainly visit Laguna Colorada, the red salt lake home to flamingoes."
+        "We'd take the longer three-day Uyuni circuit to Laguna Colorada, where the red lake and flamingoes add another surreal landscape to a country already overachieving in that department."
       ],
       "editorialHeadings": [
         1
       ],
       "days": [
         {
-          "dayNumber": "DAY 1",
+          "dayNumber": "Day 1",
           "location": "Santa Cruz + Sucre",
           "title": "Day 1 - Santa Cruz + Sucre",
           "editorial": [
-            "We didn’t leave Santa Cruz airport on Day 1 as our flight to Sucre was shortly after landing (see Day 5 for things do in Santa Cruz). ",
-            "Sucre is the most unassuming national capital we’ve been to. The infrastructure is at least a couple of decades behind it’s neighbours, but the people are decidedly nicer.",
-            "Get a spot near the bus terminal as there isn’t much else to do in Sucre. The bus to Uyuni is an overnight ride. Oh, and if you haven’t already, buy medicines for altitude sickness!"
+            "Land in Santa Cruz and connect to Sucre.",
+            "Our first Bolivian airport felt stuck a couple of decades in the past, and Sucre may be the most unassuming constitutional capital we've visited. The infrastructure around the bus terminal was basic enough to remind us of smaller Indian cities.",
+            "If your overnight bus leaves the same evening, stock up on water, snacks and whatever altitude medication you use before boarding."
           ]
         },
         {
-          "dayNumber": "DAY 2",
+          "dayNumber": "Day 2",
           "location": "Uyuni",
           "title": "Day 2 - Uyuni",
           "editorial": [
-            "We arrived in Uyuni in the wee hours of the morning and walked to our hotel. It’s a quaint little town that feels far-removed from the more westernised parts of Latin America. Unsurprisingly, it’s reminiscent of the Andean towns like Ollantaytambo in neighbouring Peru. ",
-            "Food is a bit hard to come by, as restaurants have limited operating hours. We visited Tika, a cute cafe with a pace of service that ensures you will devour your meal by the time it gets you!",
-            "The rest of the day was spent battling altitude sickness. "
+            "The overnight bus reaches Uyuni around dawn.",
+            "Do almost nothing on the first day. The town sits high enough for altitude sickness to turn sightseeing into a bad joke. One of us had throbbing headaches and light-headedness even with medication.",
+            "Uyuni itself is quaint and visibly Andean. Food can take patience; restaurants may have limited hours and service moves at a pace that encourages spiritual growth."
           ]
         },
         {
-          "dayNumber": "DAY 3",
-          "location": "Uyuni",
-          "title": "Day 3 - Uyuni",
+          "dayNumber": "Day 3",
+          "location": "Uyuni Salt Flats",
+          "title": "Day 3 - Uyuni Salt Flats",
           "editorial": [
-            "Finally, the main event is here. We did a day tour of the salt flats. The 3-day / 2-night tour that includes Laguna Colorada is the more popular option, but we didn’t feel up for long hours on the road especially after a long bus ride. Back when we went, there was no 2-day / 1-night option. ",
-            "Depending on when you go, you will witness the magnificence of the dry salt flats and / or the mirror reflection of it’s wetter avatar. Either way, you will have surreal pictures and videos to say the least. ",
-            "There’s a separate stargazing tour that you can take on a moonless night. Unfortunately, our visit coincided with a full moon."
+            "This is the main event.",
+            "We chose a one-day salt-flat tour rather than the longer circuit because we were not excited about more hours in a vehicle after the overnight bus.",
+            "The dry salt plain is spectacular on its own, but we got absurdly lucky: late-October residual water created patches of the famous mirror effect while the cactus islands were still accessible.",
+            "The result looks less like photography and more like your camera forgot which way gravity points."
           ]
         },
         {
-          "dayNumber": "DAY 4",
+          "dayNumber": "Day 4",
           "location": "Uyuni",
           "title": "Day 4 - Uyuni",
           "editorial": [
-            "Our last day in Uyuni was spent lazing around town until it was time for our bus. A word of caution: check with the locals about the bus terminal. Google Maps led us astray and we almost missed our ride! A cab driver came to our rescue and didn’t rip us off.",
-            "As sweet as Bolivians are, their economic hardships are inescapable. At times, we felt like there was sadness writ on many faces in Uyuni. More than once, we encountered child labour (which we later found out was legal in Bolivia!). "
+            "Give yourself a spare day rather than trying to flee immediately after the tour.",
+            "We spent ours wandering slowly and nearly missed the return bus because Google Maps sent us to the wrong terminal. A taxi driver rescued us at the last moment and, despite knowing we were desperate, charged us fairly.",
+            "That tiny interaction probably shaped our view of Bolivia as much as any monument.",
+            "If the moon cooperates, consider the separate stargazing trip. Ours did not; a bright full moon wiped out the Milky Way plan."
           ]
         },
         {
-          "dayNumber": "DAY 5",
+          "dayNumber": "Day 5",
           "location": "Sucre + Santa Cruz",
           "title": "Day 5 - Sucre + Santa Cruz",
           "editorial": [
-            "And so, we trudge back to Santa Cruz by road and air. If time permits, check out Plaza 24 de Septiembre (the main square), Catedral de Santa Cruz (next to the main square), and Mercado Los Pozos for local cuisine. "
+            "Take the overnight bus back to Sucre and fly to Santa Cruz.",
+            "If timings allow, see Plaza 24 de Septiembre, the cathedral and Mercado Los Pozos before leaving.",
+            "Do not underestimate the temperature swings. On our trip, an early morning near 10 degrees Celsius could turn into an afternoon around 30."
           ]
         }
       ]

@@ -1,0 +1,22 @@
+{
+  "editorial": [
+    "We don't have a complete expense total from the trip.",
+    "Mexico City was good value for a megacity, while moving rapidly across the country was what made the itinerary expensive. In Bacalar, everyday experiences could still be cheap—the private lagoon entry we used was only 60 pesos—but taxis and flights add up quickly."
+  ],
+  "categories": [],
+  "alternatives": [
+    {
+      "title": "What if we had a bigger budget?",
+      "editorial": [
+        "We'd spend it on time rather than luxury: an extra two or three days to slow the route down, and perhaps a nicer stay directly on Bacalar lagoon."
+      ]
+    },
+    {
+      "title": "What if we had a smaller budget?",
+      "editorial": [
+        "Stay in and around Mexico City. CDMX plus Teotihuacan delivers food, museums, neighbourhoods and monumental history without paying for multiple domestic hops."
+      ]
+    }
+  ],
+  "title": "What it's Going to Cost"
+}

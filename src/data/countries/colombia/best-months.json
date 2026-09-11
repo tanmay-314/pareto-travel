@@ -1,0 +1,26 @@
+{
+  "countries": {
+    "colombia": {
+      "country": "Colombia",
+      "editorial": [
+        "Colombia's geography makes blanket seasonal advice imperfect. Medellin's mild climate is forgiving, Cartagena stays hot and humid, and Bogota is cool because of altitude.",
+        "For this itinerary, prioritise the weather in Cartagena because that is where heat can most directly drain the fun out of the day. Shoulder periods with fewer visitors are attractive if you can tolerate occasional rain."
+      ],
+      "seasons": [],
+      "months": {
+        "jan": "best",
+        "feb": "best",
+        "mar": "best",
+        "apr": "good",
+        "may": "avoid",
+        "jun": "good",
+        "jul": "good",
+        "aug": "good",
+        "sep": "good",
+        "oct": "avoid",
+        "nov": "avoid",
+        "dec": "best"
+      }
+    }
+  }
+}

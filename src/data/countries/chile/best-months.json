@@ -1,0 +1,27 @@
+{
+  "countries": {
+    "chile": {
+      "country": "Chile",
+      "editorial": [
+        "Chile makes the “best month” question especially awkward because Rapa Nui, Santiago and Patagonia have different climates.",
+        "If Patagonia is the anchor, plan around its more navigable warmer months and accept that other parts of the trip may be imperfect. We visited in October and got both cloudy and beautifully clear days in Torres del Paine.",
+        "Rapa Nui is enjoyable across a broader range because its appeal is not dependent on snow, leaves or a single weather phenomenon."
+      ],
+      "seasons": [],
+      "months": {
+        "jan": "best",
+        "feb": "best",
+        "mar": "best",
+        "apr": "good",
+        "may": "avoid",
+        "jun": "avoid",
+        "jul": "avoid",
+        "aug": "avoid",
+        "sep": "avoid",
+        "oct": "good",
+        "nov": "best",
+        "dec": "best"
+      }
+    }
+  }
+}

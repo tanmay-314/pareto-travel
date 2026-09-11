@@ -1,0 +1,56 @@
+{
+  "itineraries": [
+    {
+      "id": "iceland-itinerary",
+      "country": "Iceland",
+      "title": "Alien Earth, Divine Sky - 4 Day Itinerary",
+      "editorial": [
+        "Four days is aggressive, but it worked because we treated the road trip as the destination and kept moving.",
+        "What if we had more time?",
+        "We'd add at least two days and push farther north for places such as Godafoss. More importantly, extra time gives you weather insurance. Iceland rewards flexibility more than frantic box-ticking."
+      ],
+      "editorialHeadings": [
+        1
+      ],
+      "days": [
+        {
+          "dayNumber": "Day 1",
+          "location": "Golden Circle",
+          "title": "Day 1 - Golden Circle",
+          "editorial": [
+            "Start with Thingvellir National Park, Geysir and Gullfoss.",
+            "This is Iceland's most obvious tourist circuit, which also makes it the easiest introduction to the country's greatest trick: natural features that would each be a headline attraction elsewhere are merely stops before lunch here."
+          ]
+        },
+        {
+          "dayNumber": "Day 2",
+          "location": "South Coast",
+          "title": "Day 2 - South Coast",
+          "editorial": [
+            "Drive the south coast through Skogafoss, Seljalandsfoss, Solheimasandur, Solheimajokull and Reynisfjara.",
+            "This is a long day, but visually ridiculous. Waterfalls give way to glaciers, glaciers to black sand and, somewhere in between, a plane wreck sits in the middle of nowhere looking exactly as dramatic as Instagram promised."
+          ]
+        },
+        {
+          "dayNumber": "Day 3",
+          "location": "East",
+          "title": "Day 3 - East",
+          "editorial": [
+            "Continue towards Jokulsarlon, Diamond Beach and Vestrahorn.",
+            "Jokulsarlon and Diamond Beach are a reminder that ice can apparently have personality. Chunks break off the glacier, float through the lagoon and wash up on black sand like someone staged the world's most expensive jewellery shoot."
+          ]
+        },
+        {
+          "dayNumber": "Day 4",
+          "location": "Reykjavik",
+          "title": "Day 4 - Reykjavik",
+          "editorial": [
+            "Return to Reykjavik, see Hallgrimskirkja and finish at the Blue Lagoon.",
+            "After three days of wind, wet roads and geological drama, soaking in hot water is not merely touristy—it is medicinal.",
+            "We also ate at Mama Reykjavik, where finding daal in Iceland felt like a small act of divine intervention."
+          ]
+        }
+      ]
+    }
+  ]
+}

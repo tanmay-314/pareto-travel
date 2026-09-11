@@ -1,0 +1,84 @@
+{
+  "itineraries": [
+    {
+      "id": "malaysia-itinerary",
+      "country": "Malaysia",
+      "title": "Truly, Madly, Deeply Asia - 6 Day Itinerary",
+      "editorial": [
+        "We split six days evenly between Kuala Lumpur and Langkawi. Three plus three felt right: enough city to eat aggressively, enough island to recover from it.",
+        "What if we had more time?",
+        "We'd add Penang before adding more Kuala Lumpur. Malaysia's food and cultural story gets even richer there, and George Town would fit naturally between the modern capital and the beach break."
+      ],
+      "editorialHeadings": [
+        1
+      ],
+      "days": [
+        {
+          "dayNumber": "Day 1",
+          "location": "Kuala Lumpur",
+          "title": "Day 1 - Kuala Lumpur",
+          "editorial": [
+            "Start on foot.",
+            "Kuala Lumpur surprised us with how walkable the centre was, even though the heat explains why many locals prefer not to demonstrate this during the day. We somehow logged 26,000 steps over eleven hours.",
+            "Walk through Petaling Street and Central Market, visit the National Mosque and finish at the Petronas Towers after dark.",
+            "The towers still look futuristic decades after being built, which is a serious achievement in a world where yesterday's skyscrapers often age like smartphones.",
+            "Then eat your way through Jalan Alor. Ten excellent beef satay sticks cost us about RM20. This is the correct use of money."
+          ]
+        },
+        {
+          "dayNumber": "Day 2",
+          "location": "Kuala Lumpur",
+          "title": "Day 2 - Kuala Lumpur",
+          "editorial": [
+            "Use the day for the Federal Territory Mosque and Thean Hou Temple, then wander through the city's cultural neighbourhoods.",
+            "Thean Hou at twilight, with lanterns coming alive as the sky darkens, was especially calming.",
+            "We were also struck by how comfortable public spaces felt for women: female Grab drivers, women working late, mixed-gender crowds at public performances and foreign tourists dressing as they wished without attracting much attention.",
+            "Ride-hailing was extremely affordable by our Bangalore benchmark. One 16-kilometre Grab cost RM17.50 when we visited."
+          ]
+        },
+        {
+          "dayNumber": "Day 3",
+          "location": "Kuala Lumpur",
+          "title": "Day 3 - Kuala Lumpur",
+          "editorial": [
+            "Keep the day deliberately loose and return to whichever neighbourhood won you over.",
+            "We ended up back at Jalan Alor on a Wednesday night and it was absolutely packed. We tried crab, sambal cockles, frog, beef and chicken skewers, mee goreng, oysters, jackfruit sticky rice and matcha ice cream in a single evening because self-control is for home.",
+            "One of the pleasures of KL is that the city feels busy without feeling combative. Market sellers would haggle but were generally polite enough that browsing remained enjoyable."
+          ]
+        },
+        {
+          "dayNumber": "Day 4",
+          "location": "Langkawi",
+          "title": "Day 4 - Langkawi",
+          "editorial": [
+            "Fly to Langkawi and do very little.",
+            "Stay around Pantai Cenang if you want restaurants and easy beach access. Our first beachside service experience moved at geological speed, which turned out to be a useful reminder that island time is not a metaphor.",
+            "Walk the beach around sunset and enjoy the fact that a busy Malaysian holiday island can still feel relaxed."
+          ]
+        },
+        {
+          "dayNumber": "Day 5",
+          "location": "Langkawi",
+          "title": "Day 5 - Langkawi",
+          "editorial": [
+            "Do the island-hopping tour.",
+            "We paid RM40 and felt it was worth exactly RM40—not a sen more, not a sen less.",
+            "Dayang Bunting required an additional RM20 per person when we went, and a half-hour kayak on the lake cost RM25. The weather was gloomy, but paddling through the lake was still the best part of the excursion.",
+            "Return to the beach for a long evening with no obligation to optimise anything."
+          ]
+        },
+        {
+          "dayNumber": "Day 6",
+          "location": "Langkawi",
+          "title": "Day 6 - Langkawi",
+          "editorial": [
+            "Make this the adrenaline day.",
+            "I finally went parasailing, which joins ziplining in the growing list of activities I spend weeks fearing and minutes enjoying.",
+            "We also attempted the Sky Bridge and discovered you cannot casually stroll up to it; access required a cable-car ticket that was RM90 per person when we visited. We decided the detour had already consumed enough of our time.",
+            "The bigger impression was how relaxed the beach felt. Our bags sat unattended while we went into the water and remained exactly where we left them."
+          ]
+        }
+      ]
+    }
+  ]
+}

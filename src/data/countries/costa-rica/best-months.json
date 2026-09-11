@@ -1,0 +1,27 @@
+{
+  "countries": {
+    "costa-rica": {
+      "country": "Costa Rica",
+      "editorial": [
+        "The dry season is the easiest time for a first visit, particularly if you are combining Monteverde with beaches or road travel.",
+        "That said, a cloud forest without clouds would be missing the point. Monteverde stays lush precisely because moisture is part of the ecosystem, so some mist and rain are features rather than bugs.",
+        "If lower prices and fewer visitors matter more than perfect skies, shoulder months can work well. Just build flexibility into outdoor plans."
+      ],
+      "seasons": [],
+      "months": {
+        "jan": "best",
+        "feb": "best",
+        "mar": "best",
+        "apr": "best",
+        "may": "good",
+        "jun": "good",
+        "jul": "good",
+        "aug": "good",
+        "sep": "avoid",
+        "oct": "avoid",
+        "nov": "good",
+        "dec": "good"
+      }
+    }
+  }
+}

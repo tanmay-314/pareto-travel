@@ -1,0 +1,27 @@
+{
+  "countries": {
+    "turkey": {
+      "country": "Turkey",
+      "editorial": [
+        "We visited in early June. Istanbul was hot but manageable and the crowds had not yet reached full summer madness.",
+        "For the version of this itinerary we'd choose again, late spring or early autumn strikes the best balance: long days, tolerable heat and fewer people than peak July-August.",
+        "Cappadocia adds another variable because balloon flights are weather-dependent. Whatever month you choose, a second morning there is worth more than obsessing over the statistically perfect date."
+      ],
+      "seasons": [],
+      "months": {
+        "jan": "avoid",
+        "feb": "avoid",
+        "mar": "good",
+        "apr": "best",
+        "may": "best",
+        "jun": "best",
+        "jul": "good",
+        "aug": "good",
+        "sep": "best",
+        "oct": "best",
+        "nov": "good",
+        "dec": "avoid"
+      }
+    }
+  }
+}

@@ -321,9 +321,18 @@ For a breaking change:
 
 A country may be published before every section is complete. Keep all section
 JSON files, but leave unknown content absent rather than copying demo values.
-The page omits cuisine with no chapters/editorial, budgets with no line items,
+The page omits cuisine with no chapters/editorial, budgets with no substantive editorial or line items,
 and FAQs with neither answered questions nor ratings. Unanswered FAQ items are
 not displayed. Navigation loads after sections and excludes removed targets.
 Seasonal editorials render independently of the dial; the dial stays hidden
 until all twelve month states are supplied. Invalid
 supplied dial states still fail validation. Itinerary images remain optional.
+
+Budget editorial and alternatives render without a receipt when line items are
+absent. Optional budget `title` preserves the source section heading. Cuisine
+without chapters omits the menu artwork. Itineraries with no
+images omit the polaroid deck while retaining the day editorial carousel.
+Transport accepts empty `places` and `legs` arrays together for editorial-only
+guidance; populated routes retain the existing places/legs validation.
+
+City Guides sections are omitted from all country pages at the user’s request.

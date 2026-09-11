@@ -1,0 +1,69 @@
+{
+  "itineraries": [
+    {
+      "id": "turkey-itinerary",
+      "country": "Turkey",
+      "title": "Continents Converge, Cultures Collide - 5 Day Itinerary",
+      "editorial": [
+        "We spent four of our five days in Istanbul with a quick flight to Cappadocia in between. In hindsight, the Istanbul-heavy split was right, but Cappadocia deserved one extra night.",
+        "What if we had more time?",
+        "Add a second morning in Cappadocia. Balloon flights can get cancelled when it is windy, so a spare day doubles as insurance and lets you watch the balloons rise from the ground after having flown in one yourself.",
+        "With another two days, we'd add Pamukkale for the white mineral terraces and Hierapolis."
+      ],
+      "editorialHeadings": [
+        1
+      ],
+      "days": [
+        {
+          "dayNumber": "Day 1",
+          "location": "Istanbul",
+          "title": "Day 1 - Istanbul",
+          "editorial": [
+            "Stay around Cihangir if you like neighbourhoods with personality. We landed into Istiklal Caddesi at night and found it absolutely heaving past midnight. After a long spell in sleepy Medford, it felt like somebody had turned life back on.",
+            "Eat a doner at Durumzade, walk without much of an agenda and let the city introduce itself."
+          ]
+        },
+        {
+          "dayNumber": "Day 2",
+          "location": "Istanbul",
+          "title": "Day 2 - Istanbul",
+          "editorial": [
+            "Spend the day around the historic peninsula: Misir Carsisi, Sultanahmet Square, Hagia Sophia and the Blue Mosque.",
+            "Hagia Sophia was one of the most serene buildings we visited anywhere. Even with tourists milling around, the scale and history have a calming effect. Dress requirements are enforced, so arrive appropriately covered and check current visitor access before going.",
+            "Sultanahmet is touristy in the most useful way: mosques on the skyline, restaurants and shops at street level, and very little visual clutter from modern high-rises."
+          ]
+        },
+        {
+          "dayNumber": "Day 3",
+          "location": "Istanbul",
+          "title": "Day 3 - Istanbul",
+          "editorial": [
+            "Head towards Galata and Karakoy. Galata Tower is the obvious landmark, but the surrounding streets are half the fun.",
+            "This is also a good day to simply eat your way around the city. We found Istanbul more interesting when we stopped treating every hour as a sightseeing slot."
+          ]
+        },
+        {
+          "dayNumber": "Day 4",
+          "location": "Cappadocia",
+          "title": "Day 4 - Cappadocia",
+          "editorial": [
+            "Take the earliest practical flight and make the balloon ride the centrepiece of the day.",
+            "I was nervous before take-off; five minutes later I was wondering what the fuss was about. The ride is astonishingly smooth, and floating over the fairy chimneys at sunrise is one of those rare tourist experiences that completely justifies the hype.",
+            "A guided valley tour fills out the rest of the day, though the town itself can feel quiet once the balloons land and the sun gets hot."
+          ]
+        },
+        {
+          "dayNumber": "Day 5",
+          "location": "Istanbul",
+          "title": "Day 5 - Istanbul",
+          "editorial": [
+            "Finish with the Grand Bazaar and Dolmabahce Palace.",
+            "We almost skipped the Grand Bazaar because we somehow convinced ourselves we'd already been there. Don't make that mistake.",
+            "Dolmabahce was the surprise highlight. The palace is pure, unapologetic opulence; one of its ceremonial rooms remains among the most extravagant interiors we've ever seen.",
+            "We tried squeezing in Topkapi too, ran out of time, and went back to Hagia Sophia instead. No regrets."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -7,19 +7,19 @@
           "name": "United States",
           "caption": "Statue of Liberty,New York City",
           "artwork": "../../assets/components/destinations/united-states.svg",
-          "href": null
+          "href": "/countries/united-states"
         },
         {
           "name": "Mexico",
           "caption": "El Castillo,Chichen-Itza",
           "artwork": "../../assets/components/destinations/mexico.svg",
-          "href": null
+          "href": "/countries/mexico"
         },
         {
           "name": "Costa Rica",
           "caption": "Cloud Forest,Monteverde",
           "artwork": "../../assets/components/destinations/costa-rica.svg",
-          "href": null
+          "href": "/countries/costa-rica"
         }
       ]
     },
@@ -30,25 +30,25 @@
           "name": "Brazil",
           "caption": "Christ the Redeemer,Rio de Janeiro",
           "artwork": "../../assets/components/destinations/brazil.svg",
-          "href": null
+          "href": "/countries/brazil"
         },
         {
           "name": "Peru",
           "caption": "Machu Picchu,Machu Picchu",
           "artwork": "../../assets/components/destinations/peru.svg",
-          "href": null
+          "href": "/countries/peru"
         },
         {
           "name": "Colombia",
-          "caption": "El Pe\u00f1on,Guatape",
+          "caption": "El Peñon,Guatape",
           "artwork": "../../assets/components/destinations/colombia.svg",
-          "href": null
+          "href": "/countries/colombia"
         },
         {
           "name": "Chile",
           "caption": "Ahu Tongariki,Rapa Nui",
           "artwork": "../../assets/components/destinations/chile.svg",
-          "href": null
+          "href": "/countries/chile"
         },
         {
           "name": "Bolivia",
@@ -65,19 +65,19 @@
           "name": "Turkey",
           "caption": "Hagia Sophia,Istanbul",
           "artwork": "../../assets/components/destinations/turkey.svg",
-          "href": null
+          "href": "/countries/turkey"
         },
         {
           "name": "Greece",
           "caption": "Church of Agios Spyridon,Santorini",
           "artwork": "../../assets/components/destinations/greece.svg",
-          "href": null
+          "href": "/countries/greece"
         },
         {
           "name": "Iceland",
           "caption": "Basalt Columns,Reynisfjara Beach",
           "artwork": "../../assets/components/destinations/iceland.svg",
-          "href": null
+          "href": "/countries/iceland"
         }
       ]
     },
@@ -105,7 +105,7 @@
           "name": "Malaysia",
           "caption": "Petronas Towers,Kuala Lumpur",
           "artwork": "../../assets/components/destinations/malaysia.svg",
-          "href": null
+          "href": "/countries/malaysia"
         },
         {
           "name": "Cambodia",
@@ -117,7 +117,7 @@
           "name": "Singapore",
           "caption": "Marina Bay Sands,Singapore",
           "artwork": "../../assets/components/destinations/singapore.svg",
-          "href": null
+          "href": "/countries/singapore"
         }
       ]
     }

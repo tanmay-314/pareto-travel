@@ -1,0 +1,20 @@
+{
+  "places": [
+    {
+      "name": "Kuala Lumpur"
+    },
+    {
+      "name": "Langkawi"
+    }
+  ],
+  "legs": [
+    {
+      "mode": "flight"
+    }
+  ],
+  "title": "Going from Place to Place",
+  "editorial": [
+    "Kuala Lumpur is easy with walking, rail and Grab. Ride-hailing was cheap enough that we used it whenever heat or distance made walking irrational.",
+    "Fly to Langkawi. On the island, Grab works for common routes, but attractions can be surprisingly far apart. The Sky Bridge, for example, was around half an hour from Pantai Cenang before we discovered the cable-car cost waiting at the other end."
+  ]
+}

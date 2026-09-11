@@ -5,14 +5,14 @@ Figma design system. It combines reusable HTML, CSS, and vanilla JavaScript
 components with country-specific JSON content and SVG artwork. There is no
 framework, package manager, bundler, database, or build step.
 
-The current working experience is a reusable country-page composition populated
-with Cambodia content. The landing page includes an interactive world map with
-16 country overlays, but pages for those map destinations have not yet been
-created.
+The current experience uses one reusable country-page composition for 15
+published guides. The landing page includes 16 country overlays; India remains
+unlinked because its editorial draft contains only placeholders.
 
 ## Current status
 
-Last reviewed against the repository: **5 September 2026**.
+Editorial coverage updated: **11 September 2026**. Component source remains the
+authority where older examples below differ.
 
 Implemented:
 
@@ -32,9 +32,8 @@ Implemented:
 
 Still incomplete:
 
-- Cambodia is the only country with complete section JSON;
-- Cambodia and Bolivia have published country data and generated pages;
-- Bolivia currently publishes its overview, itinerary, seasonal text, and transport;
+- Fifteen countries have section JSON and generated pages; missing totals,
+  month classifications, and illustrations are omitted while prose renders;
 - the header links for Months and About are placeholders;
 - there is no production deployment configuration;
 - there is no automated test, lint, formatting, or asset build pipeline;
@@ -151,8 +150,9 @@ navigation, a base world map, and overlays for:
 - United States, Mexico, Costa Rica, Colombia, Brazil, Peru, Bolivia, and Chile;
 - Iceland, Turkey, Greece, India, Sri Lanka, Malaysia, Singapore, and Cambodia.
 
-The SVG overlays exist; Cambodia and Bolivia link to their generated pages.
-Add further links when matching generated pages exist.
+The SVG overlays exist; all except India link to their generated pages.
+See [editorial handoff](codex-docs/country-editorials-handoff.md) for coverage
+and unresolved source issues.
 
 ### Country page
 

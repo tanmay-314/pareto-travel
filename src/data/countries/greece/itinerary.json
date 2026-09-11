@@ -1,0 +1,65 @@
+{
+  "itineraries": [
+    {
+      "id": "greece-itinerary",
+      "country": "Greece",
+      "title": "Ancient Ruins, Modern Spoils - 5 Day Itinerary",
+      "editorial": [
+        "Our five-day trip split naturally between Athens and Santorini, with Athens bookending the island visit.",
+        "What if we had more time?",
+        "We'd add another island rather than another day in Athens. Rhodes was our original thought, though the Greek islands are essentially a choose-your-own-adventure book."
+      ],
+      "editorialHeadings": [
+        1
+      ],
+      "days": [
+        {
+          "dayNumber": "Day 1",
+          "location": "Athens",
+          "title": "Day 1 - Athens",
+          "editorial": [
+            "Settle in and spend the evening around the tourist core below the Acropolis.",
+            "We caught a Greek play in English with the Acropolis as the backdrop. It was one of those experiences where the setting does most of the work—and we mean that as a compliment.",
+            "The surrounding streets are lively, full of rooftop restaurants, souvenir shops and people lingering well after dinner. Start with a gyro at Kostas; at roughly EUR3 when we visited, it was also a reminder that Athens can be surprisingly affordable for the Eurozone."
+          ]
+        },
+        {
+          "dayNumber": "Day 2",
+          "location": "Athens",
+          "title": "Day 2 - Athens",
+          "editorial": [
+            "Make this your ancient-Greece day: the Acropolis, Parthenon and Theatre of Dionysus.",
+            "We booked a mythology-focused tour and discovered the obvious downside of a mythology-focused tour: there was more mythology than history or architecture. If the engineering, politics and construction interest you more than the gods, choose your guide accordingly.",
+            "Later, wander through the old neighbourhoods and stop at Yiasemi. We still remember an excellent plate of bird livers that cost about EUR5."
+          ]
+        },
+        {
+          "dayNumber": "Day 3",
+          "location": "Santorini",
+          "title": "Day 3 - Santorini",
+          "editorial": [
+            "Fly or ferry to Santorini and resist the urge to schedule too much.",
+            "The island is as photogenic as advertised, but it is also more enjoyable once you stop treating every blue dome as a checklist item. Check in, walk the caldera-facing lanes and let sunset be the main event."
+          ]
+        },
+        {
+          "dayNumber": "Day 4",
+          "location": "Santorini",
+          "title": "Day 4 - Santorini",
+          "editorial": [
+            "Give Santorini a full unhurried day. This is where a well-located stay matters more than it does in Athens: the less time you spend commuting to the postcard views, the better.",
+            "We'd use the day for villages, a long lunch and another sunset rather than trying to manufacture a packed sightseeing itinerary."
+          ]
+        },
+        {
+          "dayNumber": "Day 5",
+          "location": "Athens",
+          "title": "Day 5 - Athens",
+          "editorial": [
+            "Return to Athens and climb Lycabettus Hill for a final view over the city. It is a good visual summary of Athens: dense modern sprawl with an ancient monument somehow still commanding the skyline."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "allowMultiple": false,
+  "items": [
+    {
+      "id": "safety",
+      "index": "01",
+      "open": false,
+      "question": "How safe is Chile?",
+      "answer": "Our experience in Chile was more uneasy than in most countries on this trip. We received repeated warnings about theft in central Santiago and had several uncomfortable interactions. This is personal experience, not a claim that every visitor will feel the same, but we'd be deliberate about neighbourhood, phones and bags in the capital.\n\nRapa Nui felt exceptionally peaceful; Patagonia's risks felt more logistical and environmental than social."
+    },
+    {
+      "id": "english",
+      "index": "02",
+      "open": false,
+      "question": "Is English commonly understood?",
+      "answer": "Not enough to rely on. Spanish helps throughout mainland Chile. Rapa Nui's tourist industry is used to international visitors, but even there a little Spanish makes travel easier."
+    },
+    {
+      "id": "weather",
+      "index": "03",
+      "open": false,
+      "question": "What could ruin my stay in Chile?",
+      "answer": "Assuming spectacular scenery means easy logistics. Patagonia requires preparation, Rapa Nui carries a remote-island premium, and Santiago rewards street awareness. Chile is incredible when the infrastructure around the experience is planned as carefully as the experience itself."
+    }
+  ],
+  "sectionTitle": "Anything Else You Need to Know?"
+}

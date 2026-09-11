@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "slug": "singapore",
+  "status": "published",
+  "name": "Singapore",
+  "map": {
+    "src": "../../../assets/countries/singapore/country-map.svg",
+    "alt": "Map of Singapore"
+  },
+  "overview": "Singapore is what happens when a city-state decides chaos is optional.\n\nComing from India, we spent an embarrassing amount of time admiring things nobody is supposed to notice on holiday: lane discipline, quiet construction sites, buses forming orderly queues, footpaths that simply continue existing when you need them.\n\nThe obvious version of Singapore is shiny towers and expensive malls. The more interesting version is the operating system underneath. Public spaces feel designed rather than improvised, nature has been folded into the city rather than pushed outside it, and even the street food has been given an organised home inside hawker centres.\n\nMiracle on the Malacca feels melodramatic until you spend four days watching the machinery work.",
+  "seo": {
+    "title": "Singapore travel guide | Pareto Travel",
+    "description": "Singapore is what happens when a city-state decides chaos is optional."
+  }
+}

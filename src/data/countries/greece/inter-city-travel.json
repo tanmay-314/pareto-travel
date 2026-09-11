@@ -1,0 +1,20 @@
+{
+  "places": [
+    {
+      "name": "Athens"
+    },
+    {
+      "name": "Santorini"
+    }
+  ],
+  "legs": [
+    {
+      "mode": "flight"
+    }
+  ],
+  "title": "Going from Place to Place",
+  "editorial": [
+    "Athens itself is compact enough that walking and public transport cover most of what a short-stay traveller needs.",
+    "Between Athens and Santorini, choose based on your itinerary rather than romance. Ferries make the Aegean part of the experience; flights save precious hours on a five-day trip. We optimised for time."
+  ]
+}

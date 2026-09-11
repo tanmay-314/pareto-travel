@@ -229,3 +229,12 @@ landing-page viewports continue to open Places as a dialog from the header
 control. The header navigation retains its independent 900px menu breakpoint.
 At 444px and narrower on every page, the hamburger is removed and the header
 exposes only the About link inline beside the logo.
+
+## Incomplete country editorials
+
+Budget prose and alternatives render without receipt totals; meals render without
+menu artwork when chapters are absent. Itineraries without images use the day
+editorial carousel alone. Seasonal guidance does not require month classifications.
+Transport supports empty places/legs together for prose without tickets.
+City Guides sections are omitted from all countries at the user’s request.
+See data-model.md and ../country-editorials-handoff.md.

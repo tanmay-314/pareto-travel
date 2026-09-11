@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "slug": "malaysia",
+  "status": "published",
+  "name": "Malaysia",
+  "map": {
+    "src": "../../../assets/countries/malaysia/country-map.svg",
+    "alt": "Map of Malaysia"
+  },
+  "overview": "Malaysia calls itself “Truly Asia”, which sounds like a slogan invented in a tourism-board conference room until you actually walk around Kuala Lumpur.\n\nThe city can feel like South Mumbai, Houston and Singapore in the same afternoon: fading colonial buildings, giant highways, glossy towers, Chinese temples, mosques, Tamil shop signs and food from basically every direction of the compass.\n\nThen you fly to Langkawi and the metropolis disappears into beaches, forested islands and parasailing operators asking whether you'd like to confront your fears for a reasonable fee.\n\nMalaysia is easy to travel, easy to eat in and remarkably easygoing for a country that contains so many cultures and rules at once. Truly, madly, deeply Asia.",
+  "seo": {
+    "title": "Malaysia travel guide | Pareto Travel",
+    "description": "Malaysia calls itself “Truly Asia”, which sounds like a slogan invented in a tourism-board conference room until you actually walk around Kuala Lumpur."
+  }
+}

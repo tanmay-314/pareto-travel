@@ -1,0 +1,27 @@
+{
+  "allowMultiple": false,
+  "items": [
+    {
+      "id": "safety",
+      "index": "01",
+      "open": false,
+      "question": "How safe is Greece?",
+      "answer": "We felt very safe throughout the trip. Athens can look rougher around the edges than some northern European capitals, but that was mostly an aesthetic impression rather than a feeling of danger."
+    },
+    {
+      "id": "english",
+      "index": "02",
+      "open": false,
+      "question": "Is English commonly understood?",
+      "answer": "In the tourist areas we visited, yes. Also, your brain adapts to the Greek alphabet faster than you expect, which makes signs feel much less intimidating after a day or two."
+    },
+    {
+      "id": "weather",
+      "index": "03",
+      "open": false,
+      "question": "What could ruin my stay in Greece?",
+      "answer": "Expecting ancient Greece to still exist. The ruins are extraordinary precisely because they are fragments of a civilisation inside a living modern country. Also: Santorini crowds. Go a little before or after peak summer if you can."
+    }
+  ],
+  "sectionTitle": "Anything Else You Need to Know?"
+}

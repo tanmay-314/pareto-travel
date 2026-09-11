@@ -1,0 +1,90 @@
+{
+  "itineraries": [
+    {
+      "id": "colombia-itinerary",
+      "country": "Colombia",
+      "title": "Dawn After the Don - 7 Day Itinerary",
+      "editorial": [
+        "We split seven days between Medellin, Guatape, Cartagena and a brief stop in Bogota.",
+        "What if we had more time?",
+        "We'd add the Cocora Valley and the coffee region. With another week, Colombia deserves a slower north-to-south trip rather than a sequence of flights."
+      ],
+      "editorialHeadings": [
+        1
+      ],
+      "days": [
+        {
+          "dayNumber": "Day 1",
+          "location": "Medellin",
+          "title": "Day 1 - Medellin",
+          "editorial": [
+            "Base yourself in Laureles if you want a neighbourhood that feels residential without being sleepy.",
+            "Our first impressions were immediately positive. Small grocery stores doubled as streetside cafés, people looked unusually well put-together and the city had a comfortable lived-in feel.",
+            "Start with Cafe Mondongo's for local food and resist the urge to reduce Medellin to its past."
+          ]
+        },
+        {
+          "dayNumber": "Day 2",
+          "location": "Medellin",
+          "title": "Day 2 - Medellin",
+          "editorial": [
+            "Spend a full day understanding the city's transformation.",
+            "Medellin's brick facades create a visual consistency, but the bigger story is how peaceful and green the city now feels despite a recent history of extreme violence.",
+            "We were struck by the number of trees almost everywhere. After hearing about the bombings of the 1980s and early 1990s, walking through the city in relative calm felt like the most important sight.",
+            "For dinner, try a bandeja paisa at El Pilon Guarceno."
+          ]
+        },
+        {
+          "dayNumber": "Day 3",
+          "location": "Guatape",
+          "title": "Day 3 - Guatape",
+          "editorial": [
+            "Take a day trip to Guatape and climb El Penol.",
+            "The town is adorable—colourful facades, bright streets and the sort of visual cheerfulness that invites lazy comparisons to Santorini after somebody opened the paintbox.",
+            "The view from the rock is the real payoff: water and little islands spreading in every direction."
+          ]
+        },
+        {
+          "dayNumber": "Day 4",
+          "location": "Cartagena",
+          "title": "Day 4 - Cartagena",
+          "editorial": [
+            "Fly to Cartagena and allow your brain to change continents without actually changing countries.",
+            "Cartagena feels distinctly Caribbean: more Afro-Caribbean influence, warmer nights, louder music and colonial streets that come alive after sunset.",
+            "Eat sancocho or seafood and save your energy for the evening."
+          ]
+        },
+        {
+          "dayNumber": "Day 5",
+          "location": "Cartagena",
+          "title": "Day 5 - Cartagena",
+          "editorial": [
+            "Explore the old town, but manage your expectations about the beaches.",
+            "Our experience with aggressive selling around tourist areas was tiring enough that we skipped several beach outings after reading similarly grim reviews. The old town itself was lovely; the friction around it was not.",
+            "The heat was also brutal. The actual temperature sat in the mid-30s, but the humidity made it feel far hotter. Plan an afternoon retreat and return after sundown when the city feels alive again."
+          ]
+        },
+        {
+          "dayNumber": "Day 6",
+          "location": "Cartagena",
+          "title": "Day 6 - Cartagena",
+          "editorial": [
+            "Walk the city walls towards sunset.",
+            "This was our favourite version of Cartagena: sea breeze, old stone, a setting sun and enough space to enjoy the place without feeling like every interaction was a transaction.",
+            "Outside the tourist core, the contrast in infrastructure and income is stark. It made Cartagena one of the more complicated places on our trip—beautiful, frustrating and hard to reduce to a clean verdict."
+          ]
+        },
+        {
+          "dayNumber": "Day 7",
+          "location": "Bogota",
+          "title": "Day 7 - Bogota",
+          "editorial": [
+            "We only had a few hours in Bogota between flights, so take this as a taste rather than a guide.",
+            "Plaza de Bolivar is worth the stop. The capital felt cooler, denser and grittier than Medellin, and wound down earlier on the Monday evening we were there.",
+            "Most importantly: eat pandebono. If Colombia had exported only this, diplomatic relations would still be secure."
+          ]
+        }
+      ]
+    }
+  ]
+}

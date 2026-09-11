@@ -1,0 +1,27 @@
+{
+  "countries": {
+    "brazil": {
+      "country": "Brazil",
+      "editorial": [
+        "Brazil refuses to give a clean answer.",
+        "The Amazon has wet and drier periods, Rio has its own seasonal rhythm, and Iguacu is spectacular at different water levels for different reasons. Trying to optimise all three can become a spreadsheet hobby.",
+        "Our approach would be to decide which experience matters most, choose its stronger season, then accept imperfect weather elsewhere. For us, the Amazon and Iguacu were the irreplaceable pieces."
+      ],
+      "seasons": [],
+      "months": {
+        "jan": "good",
+        "feb": "good",
+        "mar": "good",
+        "apr": "good",
+        "may": "good",
+        "jun": "good",
+        "jul": "best",
+        "aug": "best",
+        "sep": "best",
+        "oct": "good",
+        "nov": "good",
+        "dec": "good"
+      }
+    }
+  }
+}

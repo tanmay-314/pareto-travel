@@ -1,0 +1,27 @@
+{
+  "allowMultiple": false,
+  "items": [
+    {
+      "id": "safety",
+      "index": "01",
+      "open": false,
+      "question": "How safe is Peru?",
+      "answer": "We did not have any notable safety incidents on this route. Use normal precautions in Lima and around transport hubs, and focus just as much on altitude and health as on petty crime."
+    },
+    {
+      "id": "english",
+      "index": "02",
+      "open": false,
+      "question": "Is English commonly understood?",
+      "answer": "Enough for the main tourist circuit, but Spanish helps immediately once you step outside hotels, tours and major attractions."
+    },
+    {
+      "id": "weather",
+      "index": "03",
+      "open": false,
+      "question": "What could ruin my stay in Peru?",
+      "answer": "Altitude. It sounds like a footnote while planning and becomes a plot twist once you arrive in Cusco. Give yourself an acclimatisation day and don't schedule your hardest day immediately after landing."
+    }
+  ],
+  "sectionTitle": "Anything Else You Need to Know?"
+}

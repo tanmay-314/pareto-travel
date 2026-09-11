@@ -1,0 +1,33 @@
+{
+  "places": [
+    {
+      "name": "Manaus"
+    },
+    {
+      "name": "Rio de Janeiro"
+    },
+    {
+      "name": "Foz do Iguacu"
+    },
+    {
+      "name": "Sao Paulo"
+    }
+  ],
+  "legs": [
+    {
+      "mode": "flight"
+    },
+    {
+      "mode": "flight"
+    },
+    {
+      "mode": "flight"
+    }
+  ],
+  "title": "Going from Place to Place",
+  "editorial": [
+    "Fly. There is no romantic road-trip version of Manaus to Rio to Iguacu to Sao Paulo that fits eleven days.",
+    "Domestic flights save enormous distances but create fragility: delays, diversions and airport time accumulate. Leave buffers around anything you cannot afford to miss.",
+    "Within Rio and Sao Paulo, ride-hailing is straightforward. In the Amazon, boats become the road network."
+  ]
+}

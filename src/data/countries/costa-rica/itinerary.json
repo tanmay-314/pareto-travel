@@ -1,0 +1,59 @@
+{
+  "itineraries": [
+    {
+      "id": "costa-rica-itinerary",
+      "country": "Costa Rica",
+      "title": "Feet in the Sand, Head in the Clouds - 4 Day Itinerary",
+      "editorial": [
+        "We spent one night around San Jose and three days in Monteverde. If you have more time, Costa Rica becomes a much better trip once you add either a volcano or a beach.",
+        "What if we had more time?",
+        "We'd add Arenal for the volcano and Manuel Antonio for the beach. That gives you a fuller Costa Rican triangle: cloud forest, volcano and coast."
+      ],
+      "editorialHeadings": [
+        1
+      ],
+      "days": [
+        {
+          "dayNumber": "Day 1",
+          "location": "San Jose",
+          "title": "Day 1 - San Jose",
+          "editorial": [
+            "Treat San Jose primarily as an arrival point unless you have a specific reason to linger.",
+            "Our first impression was not particularly flattering. The city centre felt rough around the edges at night, and after arriving around midnight we even asked our Uber driver to wait until the host let us in.",
+            "By day, have a casado—the rice, beans, vegetables, plantain and protein plate that quickly became our dependable Costa Rican meal—and move on towards the greener part of the trip."
+          ]
+        },
+        {
+          "dayNumber": "Day 2",
+          "location": "Monteverde",
+          "title": "Day 2 - Monteverde",
+          "editorial": [
+            "Get to Monteverde, settle into the cloud-forest altitude and save the evening for a guided night walk.",
+            "This was one of the best things we did in Costa Rica. In a couple of hours we saw a sloth, scorpion, tarantula, viper, frogs, toucans and insects we would have walked past without ever knowing they existed.",
+            "The guide's superpower seemed to be spotting imperfections in the forest: the leaf that was not quite a leaf, the branch that moved wrong, the patch of darkness with eyes."
+          ]
+        },
+        {
+          "dayNumber": "Day 3",
+          "location": "Monteverde",
+          "title": "Day 3 - Monteverde",
+          "editorial": [
+            "Use the day for the forest and the social side of travel.",
+            "Monteverde attracts people who have made a deliberate effort to reach a misty town in the mountains, which probably explains why hostel conversations were unusually good. We ended up eating with people we'd met along the way and enjoyed the town as much for the company as for a specific attraction.",
+            "Eat another casado. They are balanced, filling and much better than inventing lunch from snacks."
+          ]
+        },
+        {
+          "dayNumber": "Day 4",
+          "location": "Monteverde",
+          "title": "Day 4 - Monteverde",
+          "editorial": [
+            "Go ziplining.",
+            "I had been afraid of it and somehow ended up doing ten lines. By the end, fear had been replaced by the very specific confidence of someone who has just voluntarily attached himself to a cable over a rainforest.",
+            "That is probably the right final note for Monteverde: Costa Rica is at its best when you participate rather than merely look at it."
+          ]
+        }
+      ]
+    }
+  ]
+}

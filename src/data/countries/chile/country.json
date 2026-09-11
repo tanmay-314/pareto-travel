@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "slug": "chile",
+  "status": "published",
+  "name": "Chile",
+  "map": {
+    "src": "../../../assets/countries/chile/country-map.svg",
+    "alt": "Map of Chile"
+  },
+  "overview": "Chile is absurdly long. Traversing it is roughly the kind of distance that makes normal countries ask for a passport halfway through.\n\nThat geography is the point. In one trip we went from Santiago to the most isolated inhabited island on Earth, then down to Patagonian lakes, glaciers and penguin colonies near the bottom of the continent.\n\nThe landscapes were extraordinary. Our interactions with the country were more complicated.\n\nRapa Nui was one of the most peaceful places we have ever been. Torres del Paine was beautiful enough to redeem a logistical disaster. Santiago, meanwhile, never made us completely relax. Chile stretched our imagination—and occasionally our patience.",
+  "seo": {
+    "title": "Chile travel guide | Pareto Travel",
+    "description": "Chile is absurdly long. Traversing it is roughly the kind of distance that makes normal countries ask for a passport halfway through."
+  }
+}

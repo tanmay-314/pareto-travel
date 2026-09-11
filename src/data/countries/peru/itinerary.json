@@ -1,0 +1,76 @@
+{
+  "itineraries": [
+    {
+      "id": "peru-itinerary",
+      "country": "Peru",
+      "title": "Re-Inca-rnation of a Lost City - 6 Day Itinerary",
+      "editorial": [
+        "We spent six days moving from Lima into the Andes and back. It is enough for the classic Machu Picchu route without turning every day into a race.",
+        "What if we had more time?",
+        "We'd add Paracas and Huacachina from Lima, or go much bigger and make time for the Amazon around Iquitos. Nazca is another obvious addition if the lines interest you enough to justify the detour."
+      ],
+      "editorialHeadings": [
+        1
+      ],
+      "days": [
+        {
+          "dayNumber": "Day 1",
+          "location": "Lima",
+          "title": "Day 1 - Lima",
+          "editorial": [
+            "Stay in Miraflores and let the first day be gentle.",
+            "Miraflores reminded us of Bandra: leafy, affluent, full of cafés and conspicuously removed from the rougher edges of the wider city. Lima is coastal but not in the sandy-beach sense—you are often looking down at the Pacific from cliffs rather than stepping directly onto it.",
+            "Eat ceviche. Then eat lomo saltado. Congratulations, you have understood the first draft of our Peruvian diet."
+          ]
+        },
+        {
+          "dayNumber": "Day 2",
+          "location": "Cusco",
+          "title": "Day 2 - Cusco",
+          "editorial": [
+            "Fly to Cusco and give your body time to understand what just happened.",
+            "The contrast with Lima is immediate. Cusco feels more indigenous, more Andean and more tied to the history that brought you to Peru in the first place.",
+            "Do less than you think you can on the first day. Altitude has a habit of turning ambitious itineraries into naps."
+          ]
+        },
+        {
+          "dayNumber": "Day 3",
+          "location": "Ollantaytambo + Aguas Calientes",
+          "title": "Day 3 - Ollantaytambo + Aguas Calientes",
+          "editorial": [
+            "Make your way through the Sacred Valley to Ollantaytambo and continue by train to Aguas Calientes.",
+            "Even without a long sightseeing list, this is one of the most atmospheric travel days of the trip. The towns and mountains gradually pull you away from metropolitan Peru and towards the world that makes Machu Picchu feel plausible.",
+            "Stay overnight in Aguas Calientes so the next morning belongs to the ruins rather than to transport logistics."
+          ]
+        },
+        {
+          "dayNumber": "Day 4",
+          "location": "Machu Picchu",
+          "title": "Day 4 - Machu Picchu",
+          "editorial": [
+            "This is the day.",
+            "Machu Picchu is among those rare places that survives having been photographed to death. The scale, setting and improbability of the city make it feel different in person from the familiar postcard.",
+            "Give yourself enough time to absorb it rather than treating it as a photoshoot with a train deadline attached."
+          ]
+        },
+        {
+          "dayNumber": "Day 5",
+          "location": "Cusco",
+          "title": "Day 5 - Cusco",
+          "editorial": [
+            "Return to Cusco and use the day for the city itself. After Machu Picchu, anything scheduled too aggressively risks feeling like an encore nobody asked for.",
+            "Walk, eat and let the altitude finally stop being the main character."
+          ]
+        },
+        {
+          "dayNumber": "Day 6",
+          "location": "Lima",
+          "title": "Day 6 - Lima",
+          "editorial": [
+            "Fly back to Lima for the final day and use it as a buffer before leaving Peru. Another meal in Miraflores is a more appealing ending than gambling an international connection on Andean flight timings."
+          ]
+        }
+      ]
+    }
+  ]
+}

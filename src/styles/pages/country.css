@@ -1,3 +1,15 @@
+:is(.budget-layout, .cuisine-layout, .inter-city-layout, .best-months-layout, .itinerary-layout).country-editorial-only {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.faq-item-answer,
+.editorial-carousel-copy,
+.cuisine-editorial-copy,
+.inter-city-editorial-copy,
+.budget-editorial-copy {
+  white-space: pre-line;
+}
+
 .country-unavailable {
   display: grid;
   gap: var(--space-lg);

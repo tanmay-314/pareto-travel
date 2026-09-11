@@ -362,6 +362,11 @@ export async function setDialCountry(container, countryKey) {
       container.hidden = true;
       container.setAttribute("aria-busy", "false");
     }
+    const section = container.closest(".best-months");
+    section?.querySelector(".best-months-layout")
+      ?.classList.toggle("country-editorial-only", !hasDial);
+    const graphic = section?.querySelector(".best-months-graphic");
+    if (graphic) graphic.hidden = !hasDial;
     renderBestMonthsEditorial(
       container
         .closest(".best-months")

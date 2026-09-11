@@ -44,6 +44,8 @@ export const validateData = (data) => {
     throw new TypeError("Inter-city data requires places and legs arrays.");
   }
 
+  if (data.places.length === 0 && data.legs.length === 0) return;
+
   if (data.places.length !== data.legs.length + 1) {
     throw new RangeError("The number of places must be exactly one more than the number of legs.");
   }
@@ -207,6 +209,14 @@ export const render = (root, data) => {
   `;
 
   root.setAttribute("aria-labelledby", "inter-city-title");
+  if (!data.legs.length) {
+    root.querySelector(".inter-city-ticket-stack-frame")?.remove();
+    root.querySelector(".inter-city-layout")?.classList.add("country-editorial-only");
+    if (!getEditorial(data).length) {
+      root.remove();
+      return;
+    }
+  }
   root.removeAttribute("aria-label");
   const editorialLegs = data.legs
     .map((leg, index) => ({ leg, index }))

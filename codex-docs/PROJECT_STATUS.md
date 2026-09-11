@@ -2,7 +2,7 @@
 
 This file gives a new Codex session a quick snapshot of active work. Keep it brief and update it whenever priorities or known constraints materially change.
 
-Last updated: 2026-09-09
+Last updated: 2026-09-11
 
 ## Current objective
 
@@ -46,6 +46,18 @@ Update this list with file paths and implementation status once the files are pr
 - None recorded yet.
 
 ## Recently completed
+
+- Filled the twelve missing best-months compasses using online seasonal research.
+  All fifteen published guides now have twelve month ratings; existing prose
+  and the three populated compasses are unchanged. See
+  [research and rating rationale](best-months-research.md).
+
+- Imported all 15 substantive Notion country drafts and made 12 new country
+  pages navigable with explicit user authorization. Budget, meals, seasonal,
+  itinerary, and transport prose handle absent supporting data. India is
+  placeholder-only; Japan, Kenya, and Tanzania are blank. See
+  [all-country editorial handoff](country-editorials-handoff.md) for sources,
+  unresolved discrepancies, and verification.
 
 - Published Sri Lanka’s available overview, five-day itinerary, seasonal copy, and
   taxi routes at `/countries/sri-lanka`, linked from the map and Destinations.

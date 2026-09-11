@@ -1,0 +1,20 @@
+{
+  "places": [
+    {
+      "name": "Istanbul"
+    },
+    {
+      "name": "Cappadocia"
+    }
+  ],
+  "legs": [
+    {
+      "mode": "flight"
+    }
+  ],
+  "title": "Going from Place to Place",
+  "editorial": [
+    "Istanbul is easy to explore with a mix of walking and public transport. The historic core rewards wandering, so don't over-engineer it.",
+    "For Cappadocia, fly from Istanbul. Our trip was short enough that an overnight bus would have eaten too much of the itinerary. If you add Pamukkale, check the current domestic flight options before locking the route; connections have changed since our trip."
+  ]
+}

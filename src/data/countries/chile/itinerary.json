@@ -1,0 +1,137 @@
+{
+  "itineraries": [
+    {
+      "id": "chile-itinerary",
+      "country": "Chile",
+      "title": "Narrow Land, Stretched Imagination - 12 Day Itinerary",
+      "editorial": [
+        "This is not a relaxed itinerary. Chile's shape means you are effectively taking several mini-trips connected by flights and long transfers.",
+        "What if we had more time?",
+        "We'd add the Atacama Desert and Valparaiso, but only after adding buffer days to the existing route. Chile punishes over-optimisation."
+      ],
+      "editorialHeadings": [
+        1
+      ],
+      "days": [
+        {
+          "dayNumber": "Day 1",
+          "location": "Santiago",
+          "title": "Day 1 - Santiago",
+          "editorial": [
+            "Use Santiago as the launchpad.",
+            "The city felt more North American than the rest of our South American trip: cleaner infrastructure, more people walking alone, lots of dogs and less of the spontaneous street-social energy we found elsewhere.",
+            "We were also repeatedly warned to be careful around the centre after dark. Near Plaza de Armas, a vendor told us to head home as evening set in. Take local warnings seriously rather than treating a capital's modern appearance as a safety guarantee."
+          ]
+        },
+        {
+          "dayNumber": "Day 2",
+          "location": "Rapa Nui",
+          "title": "Day 2 - Rapa Nui",
+          "editorial": [
+            "Fly to Rapa Nui and let the pace collapse.",
+            "Our first reaction was serenity. The island is tiny, green, ringed by blue water and so remote that ordinary urgency feels faintly ridiculous.",
+            "Then you see your first Moai.",
+            "Food is expensive because almost everything has to travel a very long way. A decent restaurant meal cost us about USD25, so we quickly discovered the joys of eggs, bread and groceries."
+          ]
+        },
+        {
+          "dayNumber": "Day 3",
+          "location": "Rapa Nui",
+          "title": "Day 3 - Rapa Nui",
+          "editorial": [
+            "Make this the proper Moai day, including Ahu Tongariki and the quarry area.",
+            "Words fail a little at Tongariki. A row of Moai staring inland against an empty horizon has a sense of mystery that survives every documentary and photograph you have seen beforehand.",
+            "Learning how the statues were carved, transported and raised makes the landscape even stranger. The island isn't merely a collection of statues; it is one giant archaeological story."
+          ]
+        },
+        {
+          "dayNumber": "Day 4",
+          "location": "Rapa Nui",
+          "title": "Day 4 - Rapa Nui",
+          "editorial": [
+            "Do less.",
+            "This was the most reluctant we felt leaving anywhere on the trip. Rapa Nui has surprisingly little to do once you have seen the main sites, and that is exactly the appeal. There is very little demanding your attention.",
+            "Even the airport is adorable."
+          ]
+        },
+        {
+          "dayNumber": "Day 5",
+          "location": "Santiago",
+          "title": "Day 5 - Santiago",
+          "editorial": [
+            "Return to Santiago and keep the day light.",
+            "We struggled with the food more than anywhere else on this South America trip. Our experience leaned towards dry meats and relatively few of the rice-and-bean combinations we'd grown used to elsewhere.",
+            "The bigger issue remained street awareness. We were told not to leave a bag on the floor at a restaurant because of theft risk, and later warned by passers-by not to hold phones visibly near the street."
+          ]
+        },
+        {
+          "dayNumber": "Day 6",
+          "location": "Torres del Paine",
+          "title": "Day 6 - Torres del Paine",
+          "editorial": [
+            "Fly south, get to Puerto Natales and rent a car for Torres del Paine.",
+            "Fill the tank before entering the park and understand your fuel range. When we visited, petrol stations were extremely sparse around the park, so we carried an additional 20-litre can.",
+            "Start with easier viewpoints around Laguna Amarga and the Paine river. Patagonia does not need a difficult hike to prove itself."
+          ]
+        },
+        {
+          "dayNumber": "Day 7",
+          "location": "Torres del Paine",
+          "title": "Day 7 - Torres del Paine",
+          "editorial": [
+            "Head towards Grey Glacier.",
+            "Glaciers remain one of nature's most unfair inventions: they look like somebody increased the saturation on reality. The Grey area alone justified a full day.",
+            "Driving after dark requires attention because wildlife can appear suddenly on the road."
+          ]
+        },
+        {
+          "dayNumber": "Day 8",
+          "location": "Torres del Paine",
+          "title": "Day 8 - Torres del Paine",
+          "editorial": [
+            "This was supposed to be our Base Las Torres day. It became a complete mess.",
+            "Access and accommodation logistics around the main hike were far more complicated—and expensive—than we expected. Our strongest advice is not to wing this part. Research the current trail access, transport and refugio system before arriving.",
+            "If the Base Torres hike is central to your trip, design the park stay around it rather than treating it as one more pin on Google Maps."
+          ]
+        },
+        {
+          "dayNumber": "Day 9",
+          "location": "Torres del Paine",
+          "title": "Day 9 - Torres del Paine",
+          "editorial": [
+            "The park redeemed itself under clearer skies.",
+            "We drove between Mirador Lago Nordenskjold, Salto Grande, Mirador Cuernos and Mirador Condor. This was Patagonia behaving exactly as advertised: blue glacial lakes, sharp mountains and landscapes that make yesterday's logistical rage feel slightly embarrassing."
+          ]
+        },
+        {
+          "dayNumber": "Day 10",
+          "location": "Punta Arenas",
+          "title": "Day 10 - Punta Arenas",
+          "editorial": [
+            "Travel down to Punta Arenas and take the day gently. After several days in the park, civilisation is mostly useful for hot food, a bed and not thinking about fuel cans."
+          ]
+        },
+        {
+          "dayNumber": "Day 11",
+          "location": "Punta Arenas",
+          "title": "Day 11 - Punta Arenas",
+          "editorial": [
+            "Take a wildlife excursion to Isla Magdalena and Isla Marta.",
+            "We walked among penguins, watched sea lions and heard birds everywhere. It is difficult to maintain adult composure around a field of penguins, and we did not try.",
+            "Punta Arenas also has a Hindu temple, which was sadly closed when we went and may be among the southernmost temples of its kind anywhere."
+          ]
+        },
+        {
+          "dayNumber": "Day 12",
+          "location": "Santiago",
+          "title": "Day 12 - Santiago",
+          "editorial": [
+            "Return to Santiago and keep a buffer before your international flight.",
+            "We finally ate Indian food after weeks on the road. At around USD20 per person it was expensive, but butter chicken and naan at that point felt like emotional infrastructure.",
+            "We skipped the Sky Costanera observation deck because USD13 each did not feel worth paying for another high-up view after Patagonia and Rapa Nui had already ruined ordinary panoramas for us."
+          ]
+        }
+      ]
+    }
+  ]
+}

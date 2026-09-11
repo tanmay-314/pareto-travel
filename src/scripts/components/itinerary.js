@@ -562,6 +562,14 @@ export function renderPage(itinerary, selectors = {}) {
     itinerary,
     (dayIndex) => deckSelections.get(list)?.(dayIndex),
   );
+  if (itinerary.days.every((day) => !normaliseImage(day).src)) {
+    list.hidden = true;
+    const visual = list.closest(".itinerary-visual");
+    if (visual) visual.hidden = true;
+    list.closest(".itinerary-layout")?.classList.add("country-editorial-only");
+    return list;
+  }
+  list.hidden = false;
   return renderItinerary(listSelector, itinerary.days, (dayIndex) => {
     // Screen zero is the overview; the remaining screens follow the day order.
     editorialSelections.get(editorial)?.(dayIndex + 1, false);

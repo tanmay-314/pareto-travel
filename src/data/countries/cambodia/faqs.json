@@ -1,19 +1,19 @@
 {
-  "sectionTitle": "EVERYTHING ELSE YOU NEED TO KNOW",
+  "sectionTitle": "FAQs",
   "allowMultiple": false,
   "items": [
     {
       "id": "safety",
       "index": "01",
       "question": "How safe is [Country]?",
-      "answer": "We felt very safe in Cambodia. We walked around Siem Reap past 10:00 PM. We also took a few inner lanes to one of our venues, which were more rustic than the tourist traps, but were also safe.",
+      "answer": "We felt very safe in Cambodia. We walked around Siem Reap past 10:00 PM. We also took a few inner lanes to one of our venues, which were more rustic than the tourist traps, but were also safe. ",
       "open": true
     },
     {
       "id": "english",
       "index": "02",
       "question": "Is English commonly understood?",
-      "answer": "At least in Siem Reap, the answer is yes.",
+      "answer": "At least in Siem Reap, the answer is yes. ",
       "open": false
     },
     {

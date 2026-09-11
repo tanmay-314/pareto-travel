@@ -1,0 +1,27 @@
+{
+  "allowMultiple": false,
+  "items": [
+    {
+      "id": "safety",
+      "index": "01",
+      "open": false,
+      "question": "How safe is Mexico?",
+      "answer": "We felt comfortable in the areas we visited, including walking around busy parts of Mexico City at night. That does not mean every neighbourhood is equal, so choose where you stay carefully and use normal urban precautions."
+    },
+    {
+      "id": "english",
+      "index": "02",
+      "open": false,
+      "question": "Is English commonly understood?",
+      "answer": "In tourist-facing places, often enough. Spanish becomes useful very quickly elsewhere, especially with drivers, markets and smaller restaurants."
+    },
+    {
+      "id": "weather",
+      "index": "03",
+      "open": false,
+      "question": "What could ruin my stay in Mexico?",
+      "answer": "Trying to cover the entire country in one trip. Mexico is enormous. Our six-day route worked because we accepted flights and long travel days; for most people, doing less will feel like more."
+    }
+  ],
+  "sectionTitle": "Anything Else You Need to Know?"
+}

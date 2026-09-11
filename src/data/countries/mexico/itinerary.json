@@ -1,0 +1,80 @@
+{
+  "itineraries": [
+    {
+      "id": "mexico-itinerary",
+      "country": "Mexico",
+      "title": "Fallen Empires, Sunken Waters, Rising City - 6 Day Itinerary",
+      "editorial": [
+        "This is a fast itinerary involving domestic flights. If you prefer slow travel, give Mexico more time or choose one region.",
+        "What if we had more time?",
+        "We'd add Oaxaca for the food and culture, and Tulum if we wanted more Caribbean coast. Mexico can easily absorb two weeks; six days barely scratches it."
+      ],
+      "editorialHeadings": [
+        1
+      ],
+      "days": [
+        {
+          "dayNumber": "Day 1",
+          "location": "Mexico City",
+          "title": "Day 1 - Mexico City",
+          "editorial": [
+            "Start around the Zocalo and Templo Mayor, then spend the evening in Roma Norte.",
+            "We arrived on Independence Day and found the centre swallowed by parade crowds for hours. Even without the national celebration, CDMX's public spaces are the attraction: people spill into streets, markets and squares rather than retreating indoors.",
+            "One tiny moment stayed with us. We walked through a restaurant inside a market because it happened to connect two public spaces. Nobody cared. There is a comfort with shared space here that makes the city feel lived-in rather than policed into neat compartments."
+          ]
+        },
+        {
+          "dayNumber": "Day 2",
+          "location": "Mexico City",
+          "title": "Day 2 - Mexico City",
+          "editorial": [
+            "Spend the day in Bosque de Chapultepec, Castillo de Chapultepec and the anthropology museum, then head towards Plaza Garibaldi or the historic centre in the evening.",
+            "Sunday night was particularly memorable: street performers, vendors, families and school kids were still out around 9:00 PM. CDMX is huge, but it rarely felt lonely.",
+            "Eat at Los Panchos if you can and try chiles en nogada when it is in season."
+          ]
+        },
+        {
+          "dayNumber": "Day 3",
+          "location": "Teotihuacan",
+          "title": "Day 3 - Teotihuacan",
+          "editorial": [
+            "Make the day trip to Teotihuacan.",
+            "The pyramids are visually imposing, but the guided context makes them much more interesting: how architecture echoed the surrounding mountains and how ceremonial structures connected human life with the sky.",
+            "It deserves more attention than a quick photo stop from Mexico City."
+          ]
+        },
+        {
+          "dayNumber": "Day 4",
+          "location": "Chichen Itza",
+          "title": "Day 4 - Chichen Itza",
+          "editorial": [
+            "Fly or travel east and devote the day to Chichen Itza and a cenote.",
+            "The Mayan cosmology is almost as memorable as the pyramid itself: sky, earth and underworld expressed through architecture, animals and agricultural cycles.",
+            "Then jump into Cenote Ik Kil. Ancient civilisation in the morning, giant sinkhole in the afternoon. Mexico is not subtle."
+          ]
+        },
+        {
+          "dayNumber": "Day 5",
+          "location": "Bacalar",
+          "title": "Day 5 - Bacalar",
+          "editorial": [
+            "Bacalar is the decompression day.",
+            "The lagoon is beautiful even if you do absolutely nothing, which was fortunate because we discovered that many activities shut on Wednesday. We skipped kayaking and simply floated.",
+            "There are inexpensive private entries to shallower parts of the lagoon; when we visited, one cost 60 pesos.",
+            "We also learned that getting an Uber out of Bacalar can be difficult. A random local helped call us a cab for no reason other than kindness, which neatly summarised a lot of our interactions in Mexico."
+          ]
+        },
+        {
+          "dayNumber": "Day 6",
+          "location": "Mexico City",
+          "title": "Day 6 - Mexico City",
+          "editorial": [
+            "Return to CDMX and use the final hours for whatever you missed.",
+            "Palacio de Bellas Artes did not do much for us, but tacos al pastor at El Caifan did. Choose accordingly.",
+            "One practical lesson: taxis were two to three times the cost of Uber during our trip, a discovery we made by paying tuition to the school of life."
+          ]
+        }
+      ]
+    }
+  ]
+}

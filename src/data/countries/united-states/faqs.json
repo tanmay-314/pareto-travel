@@ -1,0 +1,27 @@
+{
+  "allowMultiple": false,
+  "items": [
+    {
+      "id": "safety",
+      "index": "01",
+      "open": false,
+      "question": "How safe is the United States?",
+      "answer": "It varies enormously by city and neighbourhood. We generally felt comfortable in the places we lived and travelled, but the US is too large for a country-wide safety verdict to be useful.\n\nUse the same judgement you would in any major city, pay attention to neighbourhood-level advice and remember that a place feeling orderly does not mean every area is equally comfortable late at night."
+    },
+    {
+      "id": "english",
+      "index": "02",
+      "open": false,
+      "question": "Is English commonly understood?",
+      "answer": "Yes. If you speak English, language will be among the easiest parts of the trip."
+    },
+    {
+      "id": "weather",
+      "index": "03",
+      "open": false,
+      "question": "What could ruin my stay in the United States?",
+      "answer": "Underestimating distance.\n\nA destination being in the same state does not mean it is nearby. Los Angeles alone can consume hours of driving, and the country as a whole rewards itineraries built by region rather than by a list of famous names.\n\nThe second trap is assuming systems will bend for you. America works beautifully when you follow the process. Miss a deadline, a flight cut-off or a reservation rule and you may discover just how efficiently it can tell you no."
+    }
+  ],
+  "sectionTitle": "Anything Else You Need to Know?"
+}

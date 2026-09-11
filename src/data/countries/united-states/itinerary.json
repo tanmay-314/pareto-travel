@@ -1,0 +1,123 @@
+{
+  "itineraries": [
+    {
+      "id": "united-states-itinerary",
+      "country": "United States",
+      "title": "Uniform Systems of Abundance - 21 Day Itinerary",
+      "editorial": [
+        "The US is too large for one definitive itinerary. This is the classic first-timer route we'd recommend to someone flying a long way to get there: California, the desert southwest, New York, Niagara and Washington DC.",
+        "It is also suspiciously similar to the circuit every dutiful immigrant child plans when their parents visit.",
+        "What if we had more time?",
+        "Add Hawaii, Yellowstone, New England or Chicago—but not all four unless your definition of holiday includes living in airports.",
+        "The country rewards regional trips. A second US visit is usually better than forcing the entire map into the first."
+      ],
+      "editorialHeadings": [
+        2
+      ],
+      "days": [
+        {
+          "dayNumber": "Days 1-3",
+          "location": "Los Angeles",
+          "title": "Days 1-3 - Los Angeles",
+          "editorial": [
+            "Hop off the plane at LAX with a dream and a cardigan.",
+            "Los Angeles is America at its most exported: palm trees, movie mythology, giant roads, beaches and neighbourhoods that feel like separate cities stitched together by traffic.",
+            "Give it a few days because distances are deceptive. Hollywood, Santa Monica, downtown and the beaches may look like pins inside one city; your car will disagree.",
+            "LA is one of the two US cities we'd call unmissable on a first trip, partly because so much of global pop culture suddenly acquires a physical address."
+          ]
+        },
+        {
+          "dayNumber": "Days 4-5",
+          "location": "Pacific Coast Highway",
+          "title": "Days 4-5 - Pacific Coast Highway",
+          "editorial": [
+            "Drive north towards San Francisco and treat the road as the attraction.",
+            "Stop around Santa Barbara and Carmel-by-the-Sea rather than racing the entire stretch. The Pacific Coast Highway is one of the rare cases where renting a car in America feels romantic rather than merely mandatory.",
+            "If road conditions or time do not cooperate, shorten the coastal section. The point is the scenery, not proving you can endure ten hours behind a wheel."
+          ]
+        },
+        {
+          "dayNumber": "Days 6-7",
+          "location": "San Francisco",
+          "title": "Days 6-7 - San Francisco",
+          "editorial": [
+            "Spend a couple of days in San Francisco.",
+            "The city is compact by American standards and visually unlike most of the country: hills, water, old neighbourhoods and a skyline that doesn't need forty lanes of highway to introduce itself.",
+            "Use it as the urban breather between the coast drive and Yosemite."
+          ]
+        },
+        {
+          "dayNumber": "Days 8-9",
+          "location": "Yosemite",
+          "title": "Days 8-9 - Yosemite",
+          "editorial": [
+            "The National Park Service is one of the best things about the United States. Yosemite is a good place to understand why.",
+            "Give the park at least two days if you have driven all this way. The grand views are obvious, but the whole experience—roads, trails, visitor infrastructure and enormous protected landscapes—is part of what America does exceptionally well.",
+            "Book accommodation early in popular months. Staying far outside the park can turn a nature trip into a commuting experiment."
+          ]
+        },
+        {
+          "dayNumber": "Days 10-11",
+          "location": "Las Vegas + Grand Canyon",
+          "title": "Days 10-11 - Las Vegas + Grand Canyon",
+          "editorial": [
+            "Vegas, baby.",
+            "Las Vegas is cheap opulence engineered into a city: enormous hotels, casinos, fake versions of other countries and enough artificial light to be visible from your moral conscience.",
+            "Enjoy it for what it is, then drive towards the Grand Canyon for actual spectacle.",
+            "The contrast works well back-to-back. One is a monument to human excess; the other makes human beings feel pleasantly irrelevant."
+          ]
+        },
+        {
+          "dayNumber": "Day 12",
+          "location": "Fly East",
+          "title": "Day 12 - Fly East",
+          "editorial": [
+            "Return the car and fly to New York.",
+            "This is the moment to remember that crossing the United States is basically a domestic long-haul flight. Do not schedule a Broadway show two hours after landing and then blame geography."
+          ]
+        },
+        {
+          "dayNumber": "Days 13-16",
+          "location": "New York City",
+          "title": "Days 13-16 - New York City",
+          "editorial": [
+            "New York is the other unmissable city.",
+            "It is also, in our opinion, the only proper city in America: dense, walkable, loud, international and capable of feeding you almost any cuisine at almost any hour.",
+            "Four days is still a compromise. Use one for the obvious icons, one for museums, one for neighbourhoods and one for the version of New York you discover while doing everything else.",
+            "This is where America's diversity stops being an abstract census fact and becomes lunch."
+          ]
+        },
+        {
+          "dayNumber": "Days 17-18",
+          "location": "Niagara Falls",
+          "title": "Days 17-18 - Niagara Falls",
+          "editorial": [
+            "Head to Niagara and prepare to get wet.",
+            "The falls are one of those natural sights that justify their tourist infrastructure. If you have only seen them in pictures, the missing ingredient is scale—and the amount of water moving past you every second.",
+            "Season matters here. Winter can fundamentally change access and the experience, which is one reason our classic US route is biased towards warmer months."
+          ]
+        },
+        {
+          "dayNumber": "Days 19-20",
+          "location": "Washington DC",
+          "title": "Days 19-20 - Washington DC",
+          "editorial": [
+            "Finish in Washington DC.",
+            "The monuments and institutions provide a useful final chapter after three weeks of landscapes and commercial America. Much of the central sightseeing is unusually accessible, and the museum density makes DC excellent value for a major US city.",
+            "Say howdy to the President from the legal side of the fence."
+          ]
+        },
+        {
+          "dayNumber": "Day 21",
+          "location": "Real America",
+          "title": "Day 21 - Real America",
+          "editorial": [
+            "If logistics allow, spend part of the journey in one thoroughly ordinary American town.",
+            "Not a national park. Not Manhattan. Not Hollywood. Just a place with a Walmart, chain restaurants, wide roads and people going about their lives.",
+            "The sameness is the point. It gives you a better understanding of the country than visiting only places designed to appear on postcards."
+          ]
+        }
+      ]
+    }
+  ]
+}

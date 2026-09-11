@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "slug": "colombia",
+  "status": "published",
+  "name": "Colombia",
+  "map": {
+    "src": "../../../assets/countries/colombia/country-map.svg",
+    "alt": "Map of Colombia"
+  },
+  "overview": "India and Gandhi. South Africa and Mandela. Colombia and Escobar. El Patron is obviously not in the same moral category as the other gentlemen, but he is frustratingly hard to separate from the country's international story.\n\nWe arrived roughly three decades after Pablo Escobar's death and found a Colombia that had moved much further on than its reputation had. Medellin in particular was the revelation: green, modern, pleasant and almost absurdly transformed from the violence you read about.\n\nThen Cartagena reminded us that a country can contain completely different experiences within the same border. Caribbean, colonial, colourful—and, for us, far more exhausting.\n\nColombia's best quality may be the contrast. Dawn after the Don.",
+  "seo": {
+    "title": "Colombia travel guide | Pareto Travel",
+    "description": "India and Gandhi. South Africa and Mandela. Colombia and Escobar. El Patron is obviously not in the same moral category as the other gentlemen, but he is frustratingly hard to separate from the country's international story."
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "itineraries": [
+    {
+      "id": "brazil-itinerary",
+      "country": "Brazil",
+      "title": "The River, the Falls, the Redeemer - 11 Day Itinerary",
+      "editorial": [
+        "Eleven days sounds generous until you remember the size of Brazil. This route is fast, flight-heavy and worth it if you want radically different versions of the country in one trip.",
+        "What if we had more time?",
+        "We'd slow everything down before adding destinations. Give the Amazon another night, Rio another day and leave more breathing room around flights.",
+        "On a return trip, we'd explore the northeast rather than adding yet another stop to this one."
+      ],
+      "editorialHeadings": [
+        1
+      ],
+      "days": [
+        {
+          "dayNumber": "Day 1",
+          "location": "Manaus",
+          "title": "Day 1 - Manaus",
+          "editorial": [
+            "Land in Manaus and acclimatise to the heat.",
+            "It was brutally hot when we arrived, even before the jungle entered the itinerary. Eat local fish—Tambaqui de Banda was our introduction—and sleep early.",
+            "Manaus is the gateway, not merely a layover. The city exists because the Amazon is a transport network as much as a natural wonder."
+          ]
+        },
+        {
+          "dayNumber": "Day 2",
+          "location": "Amazon",
+          "title": "Day 2 - Amazon",
+          "editorial": [
+            "Head into the Amazon and see the Meeting of Waters, where the dark Rio Negro runs alongside the lighter Solimoes without immediately mixing.",
+            "The science is interesting—differences in temperature, density, velocity and chemistry—but the visual is what sticks. Two giant rivers sharing a boundary line in open water looks fake even when you are floating through it.",
+            "The environmental fragility was harder to ignore. Smoke hung over a rainforest that should be too humid to burn naturally, and extreme water temperatures had recently killed large numbers of river dolphins."
+          ]
+        },
+        {
+          "dayNumber": "Day 3",
+          "location": "Amazon",
+          "title": "Day 3 - Amazon",
+          "editorial": [
+            "Go deeper.",
+            "We spent the night sleeping in hammocks in the jungle after eating chicken and fish grilled over a campfire. There are trips where your hotel matters and trips where you wake up thinking, “What even is this life?” This was the latter.",
+            "One guide showed us how striking certain trees can carry sound kilometres through the forest—a reminder that humans had figured out communications infrastructure here long before telecom towers."
+          ]
+        },
+        {
+          "dayNumber": "Day 4",
+          "location": "Amazon",
+          "title": "Day 4 - Amazon",
+          "editorial": [
+            "Use the final jungle day to understand life along the river.",
+            "Families live kilometres apart on the banks, boats are the only practical transport and everyday supplies become expensive simply because moving goods through the Amazon is expensive.",
+            "Fishing, river transport and isolated settlements make the forest feel less like a tourist attraction and more like an inhabited world you have briefly been allowed into."
+          ]
+        },
+        {
+          "dayNumber": "Day 5",
+          "location": "Rio de Janeiro",
+          "title": "Day 5 - Rio de Janeiro",
+          "editorial": [
+            "Fly to Rio and stay around Copacabana or Ipanema.",
+            "Our first impression of Copacabana was surprisingly familiar: seaside apartment blocks and urban density gave us South Mumbai vibes, only with mountains casually rising behind the beach.",
+            "Eat feijoada. We had an excellent bowl for around USD8 near Copacabana. Black beans, beef and pork—dense enough to reset your relationship with lunch."
+          ]
+        },
+        {
+          "dayNumber": "Day 6",
+          "location": "Rio de Janeiro",
+          "title": "Day 6 - Rio de Janeiro",
+          "editorial": [
+            "Visit Christ the Redeemer and spend the rest of the day looking at Rio from as many angles as possible.",
+            "The statue itself is interesting; the setting is transcendent. Rio may be the most naturally scenic city we have visited: mountains, ocean, bays and islands all crammed into one urban frame.",
+            "Unlike some religious monuments, the atmosphere around Christ felt cheerful rather than solemn. Giant Jesus, selfie sticks, spectacular view. Everybody seemed fine with the arrangement."
+          ]
+        },
+        {
+          "dayNumber": "Day 7",
+          "location": "Rio de Janeiro",
+          "title": "Day 7 - Rio de Janeiro",
+          "editorial": [
+            "Leave some unscheduled time for the beaches and city.",
+            "The Cathedral of Saint Sebastian surprised us. Its interior has the same calming effect we felt inside Hagia Sophia: faith aside, people behaving quietly together can make a building feel peaceful.",
+            "Rio's inequality is visible too, and parts of the city require more awareness than the postcard suggests. Enjoy the beauty without sleepwalking through it."
+          ]
+        },
+        {
+          "dayNumber": "Day 8",
+          "location": "Foz do Iguacu",
+          "title": "Day 8 - Foz do Iguacu",
+          "editorial": [
+            "Fly to Foz do Iguacu and recover from the journey.",
+            "The town sits beside both Argentina and Paraguay, which is geographically delightful and logistically useful if you are extending the trip.",
+            "Foz itself felt polished and tourism-driven compared with Manaus, with prices to match."
+          ]
+        },
+        {
+          "dayNumber": "Day 9",
+          "location": "Iguacu Falls",
+          "title": "Day 9 - Iguacu Falls",
+          "editorial": [
+            "This is the second main event after the Amazon.",
+            "Take the falls seriously enough to get wet. Our boat ride through the rapids was short and exhilarating; the falls themselves were something else entirely.",
+            "I wrote in my notes that they were a spiritual experience, second only to the aurora borealis. Time has not improved that sentence, so we'll keep it.",
+            "Avoid overpaying for a “private tour” that is essentially a glorified transfer. We did and eventually got a refund."
+          ]
+        },
+        {
+          "dayNumber": "Day 10",
+          "location": "Sao Paulo",
+          "title": "Day 10 - Sao Paulo",
+          "editorial": [
+            "Fly to Sao Paulo and use the evening for food.",
+            "Our flight was diverted because of bad weather, which killed dinner plans with friends and neatly summarised the downside of a domestic-flight-heavy itinerary.",
+            "Sao Paulo felt more liveable than touristy. Our neighbourhood was quiet on a Sunday night, but restaurants stayed busy late. We found good ramen, which is not what Brazil brochures lead with."
+          ]
+        },
+        {
+          "dayNumber": "Day 11",
+          "location": "Sao Paulo",
+          "title": "Day 11 - Sao Paulo",
+          "editorial": [
+            "If museums are open, this is their day. Ours happened to be a Monday, which removed many of the obvious options.",
+            "We left Sao Paulo feeling it was a city we'd rather live in for a month than sightsee in for a day.",
+            "One final practical lesson came at the airport: international health and transit requirements can interact in unexpected ways. Check the current vaccination rules for Brazil and your onward destination before flying. Do not learn this at the check-in counter."
+          ]
+        }
+      ]
+    }
+  ]
+}

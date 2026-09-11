@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "slug": "turkey",
+  "status": "published",
+  "name": "Turkey",
+  "map": {
+    "src": "../../../assets/countries/turkey/country-map.svg",
+    "alt": "Map of Turkey"
+  },
+  "overview": "Let's get one tiny detail out of the way first: BYZANTIUM CONSTANTINOPLE ISTANBUL IS THE GREATEST CITY ON EARTH. Okay, moving on.\n\nBut seriously, has there been a city more consequential through human history? ChatGPT said Rome, which is the sort of technically-correct answer we will ignore.\n\nIstanbul is where Turkey's tagline makes sense. Europe and Asia don't merely meet here; they overlap. Mosques loom over nightlife, Ottoman palaces sit a tram ride from hipster cafés, and an Armenian restaurant can quietly exist in a neighbourhood shaped by a much messier history.\n\nThen there is Cappadocia, which feels like Turkey briefly handed the landscape department over to Dr. Seuss. The hot-air balloon ride alone warrants the detour.",
+  "seo": {
+    "title": "Turkey travel guide | Pareto Travel",
+    "description": "Let's get one tiny detail out of the way first: BYZANTIUM CONSTANTINOPLE ISTANBUL IS THE GREATEST CITY ON EARTH. Okay, moving on."
+  }
+}

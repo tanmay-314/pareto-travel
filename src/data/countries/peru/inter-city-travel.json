@@ -1,0 +1,32 @@
+{
+  "places": [
+    {
+      "name": "Lima"
+    },
+    {
+      "name": "Cusco"
+    },
+    {
+      "name": "Ollantaytambo"
+    },
+    {
+      "name": "Aguas Calientes"
+    }
+  ],
+  "legs": [
+    {
+      "mode": "flight"
+    },
+    {
+      "mode": "car"
+    },
+    {
+      "mode": "train"
+    }
+  ],
+  "title": "Going from Place to Place",
+  "editorial": [
+    "Fly between Lima and Cusco unless your itinerary is much longer than ours.",
+    "From Cusco, the route into the Sacred Valley and onward by train through Ollantaytambo to Aguas Calientes is part of the experience. Build in time for altitude, delays and the general reality that mountain travel does not care about your spreadsheet."
+  ]
+}

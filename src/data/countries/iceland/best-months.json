@@ -1,0 +1,27 @@
+{
+  "countries": {
+    "iceland": {
+      "country": "Iceland",
+      "editorial": [
+        "We went in early September, near the end of summer, and got lucky enough to see the aurora on two of four nights.",
+        "There is no single perfect month because Iceland makes you choose your superpower. Summer gives you long days and easier driving. Deeper winter increases your aurora odds but brings harsher weather and less daylight.",
+        "For our style of trip, the shoulder around late August to September is the sweet spot: enough usable daylight for the road and enough darkness for the sky to put on a show."
+      ],
+      "seasons": [],
+      "months": {
+        "jan": "avoid",
+        "feb": "avoid",
+        "mar": "avoid",
+        "apr": "good",
+        "may": "good",
+        "jun": "best",
+        "jul": "best",
+        "aug": "best",
+        "sep": "best",
+        "oct": "good",
+        "nov": "avoid",
+        "dec": "avoid"
+      }
+    }
+  }
+}

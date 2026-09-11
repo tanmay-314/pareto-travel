@@ -1,0 +1,62 @@
+{
+  "itineraries": [
+    {
+      "id": "singapore-itinerary",
+      "country": "Singapore",
+      "title": "Miracle on the Malacca - 4 Day Itinerary",
+      "editorial": [
+        "We organised our four days loosely around flora, fauna, the city and water. It sounds like a children's science textbook and worked surprisingly well.",
+        "What if we had more time?",
+        "We would not add a week. Singapore's strength is density: four or five days is enough to see a lot without feeling rushed.",
+        "With an extra day, we'd slow down and explore neighbourhoods more deliberately rather than add another major attraction."
+      ],
+      "editorialHeadings": [
+        1
+      ],
+      "days": [
+        {
+          "dayNumber": "Day 1",
+          "location": "Flora",
+          "title": "Day 1 - Flora",
+          "editorial": [
+            "Start with Gardens by the Bay.",
+            "The Flower Dome collects plants from around the world with the confidence of a country that apparently did not get the memo about tropical climate constraints. The Cloud Forest is the more theatrical sibling, especially before it gets dark enough to lose some of the visual detail.",
+            "Then walk. Singapore is exceptionally good at rewarding aimless walking because the basic pedestrian infrastructure does not betray you every fifteen minutes.",
+            "We arrived from months in India and found the absence of honking almost suspicious."
+          ]
+        },
+        {
+          "dayNumber": "Day 2",
+          "location": "Fauna",
+          "title": "Day 2 - Fauna",
+          "editorial": [
+            "Give most of the day to Singapore Zoo and stay for the Night Safari.",
+            "The zoo feels unusually natural; many enclosures manage not to register as cages. The Night Safari is stranger and better: animals appearing under carefully designed low light, with just enough fake moonlight to make the whole experience feel cinematic.",
+            "One practical note from our trip: food outlets inside attractions can close earlier than the attractions themselves. The main zoo cafe shut around 4:30 PM when the zoo remained open later, which is the sort of detail that becomes fascinating only when you are hungry."
+          ]
+        },
+        {
+          "dayNumber": "Day 3",
+          "location": "Terra",
+          "title": "Day 3 - Terra",
+          "editorial": [
+            "Use this as the city and neighbourhood day.",
+            "Walk through temple districts, markets, Orchard, Bugis and Arab Street. We found the malls less exciting than advertised—luxury retail is luxury retail—but the cultural layering is more interesting.",
+            "In Taoist and Buddhist temples, we noticed many of the worshippers were elderly. The same was true of some manual labour and hawker work, a small reminder that Singapore's economic miracle did not arrive at the same time for every generation.",
+            "Finish with dinner somewhere indulgent if the budget allows. Our Gyu-Kaku meal got wildly out of hand and ended at roughly SGD200 for two after a lot of wagyu. Delicious, financially educational."
+          ]
+        },
+        {
+          "dayNumber": "Day 4",
+          "location": "Aqua",
+          "title": "Day 4 - Aqua",
+          "editorial": [
+            "Keep the final day flexible and use the water as your organising principle: Marina Bay, the waterfront and whatever major attraction you have not yet fitted in.",
+            "By Day 4, the most memorable thing about Singapore was less an individual sight than the feeling that everything had been considered. When something seemed confusing, our default assumption became that we had misunderstood the system.",
+            "That is perhaps the country's greatest tourist attraction: competence as ambient entertainment."
+          ]
+        }
+      ]
+    }
+  ]
+}

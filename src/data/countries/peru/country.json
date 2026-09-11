@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "slug": "peru",
+  "status": "published",
+  "name": "Peru",
+  "map": {
+    "src": "../../../assets/countries/peru/country-map.svg",
+    "alt": "Map of Peru"
+  },
+  "overview": "It wouldn't surprise me if more people have heard of Machu Picchu than Peru itself. The lost Inca city absorbs most of the country's tourism imagination—and once you see it, you understand why.\n\nBut Machu Picchu is the main event, not the whole show. Lima sits dramatically on a cliff over the Pacific, Cusco feels visibly more indigenous than the capital, and the journey through Ollantaytambo and Aguas Calientes makes the destination feel earned rather than merely visited.\n\nThen there is the food, which Peruvians will correctly tell you is among the continent's great cuisines. I remain constitutionally incapable of ranking countries democratically, but the case is strong.",
+  "seo": {
+    "title": "Peru travel guide | Pareto Travel",
+    "description": "It wouldn't surprise me if more people have heard of Machu Picchu than Peru itself. The lost Inca city absorbs most of the country's tourism imagination—and once you see it, you understand why."
+  }
+}

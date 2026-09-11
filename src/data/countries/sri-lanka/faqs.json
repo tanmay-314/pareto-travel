@@ -5,22 +5,22 @@
     {
       "id": "safety",
       "index": "01",
-      "question": "How safe is [Country]?",
-      "answer": "",
+      "question": "How safe is Sri Lanka?",
+      "answer": "We felt very safe throughout the trip. Public spaces were comfortable, drivers were calm and we rarely experienced the sort of aggressive selling or staring that can make otherwise beautiful destinations tiring.\n\nThat is our experience rather than a guarantee, but Sri Lanka consistently felt easy to move through as a couple.",
       "open": false
     },
     {
       "id": "english",
       "index": "02",
       "question": "Is English commonly understood?",
-      "answer": "",
+      "answer": "In the tourist route we followed, yes. Hotels, drivers, restaurants and attractions were generally easy to navigate in English.",
       "open": false
     },
     {
       "id": "weather",
       "index": "03",
-      "question": "What could ruin my stay in [Country]?",
-      "answer": "",
+      "question": "What could ruin my stay in Sri Lanka?",
+      "answer": "Trying to see the entire island in five days. Travel times through the hills are slower than they look on a map, and Sri Lanka’s best quality is its calmness. If your itinerary forces you to spend every day checking the clock, you have engineered away part of the appeal.",
       "open": false
     }
   ]

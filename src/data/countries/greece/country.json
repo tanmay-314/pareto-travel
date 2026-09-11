@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "slug": "greece",
+  "status": "published",
+  "name": "Greece",
+  "map": {
+    "src": "../../../assets/countries/greece/country-map.svg",
+    "alt": "Map of Greece"
+  },
+  "overview": "What would the world be without Greece? It gave us democracy, philosophy and, according to people who enjoy starting regional food wars, hummus.\n\nThe funny thing is that Greece's reputation is so dominated by antiquity that it can set the wrong expectation. Athens is not an open-air museum populated by toga-clad philosophers. It is a modern, slightly scruffy European capital with cheap gyros, packed rooftop bars and 2,500-year-old ruins casually looming over everything.\n\nSantorini is the opposite problem: you know exactly what it looks like before you arrive. White buildings, blue domes, caldera views. And yet, at the right hour, it still works.",
+  "seo": {
+    "title": "Greece travel guide | Pareto Travel",
+    "description": "What would the world be without Greece? It gave us democracy, philosophy and, according to people who enjoy starting regional food wars, hummus."
+  }
+}

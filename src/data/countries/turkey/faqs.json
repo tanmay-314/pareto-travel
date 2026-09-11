@@ -1,0 +1,27 @@
+{
+  "allowMultiple": false,
+  "items": [
+    {
+      "id": "safety",
+      "index": "01",
+      "open": false,
+      "question": "How safe is Turkey?",
+      "answer": "We felt very safe in both Istanbul and Cappadocia. As with any major tourist city, keep normal street-smarts around crowded markets and transport hubs."
+    },
+    {
+      "id": "english",
+      "index": "02",
+      "open": false,
+      "question": "Is English commonly understood?",
+      "answer": "Not universally. Our Airbnb host spoke English well, but we wouldn't assume everyone will. Learning a handful of Turkish words helps, and pronunciation is surprisingly straightforward once you get used to letters such as C and C-cedilla."
+    },
+    {
+      "id": "weather",
+      "index": "03",
+      "open": false,
+      "question": "What could ruin my stay in Turkey?",
+      "answer": "Trying to do Cappadocia in one morning. A windy day can cancel balloon flights entirely, and that is a painful failure mode if you've built the detour around one experience. Give yourself a second shot."
+    }
+  ],
+  "sectionTitle": "Anything Else You Need to Know?"
+}

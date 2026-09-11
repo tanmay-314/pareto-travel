@@ -1,0 +1,22 @@
+{
+  "editorial": [
+    "We don't have a full expense log for this trip.",
+    "Monteverde's main costs are the activities—guided wildlife walks, ziplining and transport—while local sodas make everyday meals easier on the wallet. San Jose did not give us enough time to form a useful budget view."
+  ],
+  "categories": [],
+  "alternatives": [
+    {
+      "title": "What if we had a bigger budget?",
+      "editorial": [
+        "We'd spend it on a better-located forest lodge and more guided nature experiences. In Costa Rica, a great naturalist can add more value than a fancier room."
+      ]
+    },
+    {
+      "title": "What if we had a smaller budget?",
+      "editorial": [
+        "Choose one nature base and stay longer. Monteverde alone can fill several days without stacking expensive excursions back-to-back, and sodas keep meals reasonable."
+      ]
+    }
+  ],
+  "title": "What it's Going to Cost"
+}

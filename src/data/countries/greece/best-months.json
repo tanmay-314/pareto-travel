@@ -1,0 +1,27 @@
+{
+  "countries": {
+    "greece": {
+      "country": "Greece",
+      "editorial": [
+        "We visited in early June. Athens was pleasant, while Santorini was already starting to feel crowded.",
+        "If we planned the same trip again, we'd aim for late May or early June, or shift to September once the fiercest summer heat and crowds begin to ease.",
+        "Peak summer gives you reliable island weather but also the version of Santorini where everybody else had the exact same idea."
+      ],
+      "seasons": [],
+      "months": {
+        "jan": "avoid",
+        "feb": "avoid",
+        "mar": "avoid",
+        "apr": "good",
+        "may": "best",
+        "jun": "best",
+        "jul": "good",
+        "aug": "good",
+        "sep": "best",
+        "oct": "good",
+        "nov": "avoid",
+        "dec": "avoid"
+      }
+    }
+  }
+}

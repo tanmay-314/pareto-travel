@@ -1,0 +1,27 @@
+{
+  "countries": {
+    "peru": {
+      "country": "Peru",
+      "editorial": [
+        "For the classic Lima-Cusco-Machu Picchu route, the dry Andean months are the easiest bet, especially if clear mountain views matter to you.",
+        "The trade-off is obvious: better weather attracts more people. Shoulder months can give you a better balance if you are willing to tolerate a little uncertainty.",
+        "Whatever month you choose, remember that Lima and Cusco can feel like different countries climatically. Pack for both."
+      ],
+      "seasons": [],
+      "months": {
+        "jan": "avoid",
+        "feb": "avoid",
+        "mar": "good",
+        "apr": "good",
+        "may": "best",
+        "jun": "best",
+        "jul": "best",
+        "aug": "best",
+        "sep": "best",
+        "oct": "good",
+        "nov": "good",
+        "dec": "avoid"
+      }
+    }
+  }
+}

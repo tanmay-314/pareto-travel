@@ -1,0 +1,27 @@
+{
+  "allowMultiple": false,
+  "items": [
+    {
+      "id": "safety",
+      "index": "01",
+      "open": false,
+      "question": "How safe is Costa Rica?",
+      "answer": "Monteverde felt very safe to us. San Jose, particularly late at night, did not give us the same comfort. Our experience is anecdotal, but we'd be more deliberate about neighbourhood and arrival time in the capital."
+    },
+    {
+      "id": "english",
+      "index": "02",
+      "open": false,
+      "question": "Is English commonly understood?",
+      "answer": "In the tourist infrastructure around Monteverde, yes. Spanish helps elsewhere, especially with transport and local eateries."
+    },
+    {
+      "id": "weather",
+      "index": "03",
+      "open": false,
+      "question": "What could ruin my stay in Costa Rica?",
+      "answer": "Treating it like a monument-hopping holiday. Costa Rica's value comes from forests, animals, hikes, conversations and activities. If you schedule nature like an appointment and get irritated when weather intervenes, you are fighting the product."
+    }
+  ],
+  "sectionTitle": "Anything Else You Need to Know?"
+}

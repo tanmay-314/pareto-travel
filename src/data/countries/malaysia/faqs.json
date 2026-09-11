@@ -1,0 +1,27 @@
+{
+  "allowMultiple": false,
+  "items": [
+    {
+      "id": "safety",
+      "index": "01",
+      "open": false,
+      "question": "How safe is Malaysia?",
+      "answer": "We felt very safe in Kuala Lumpur and Langkawi. Public spaces were comfortable, roads were orderly and the beaches felt relaxed enough that we were not constantly guarding our belongings."
+    },
+    {
+      "id": "english",
+      "index": "02",
+      "open": false,
+      "question": "Is English commonly understood?",
+      "answer": "Yes, especially in Kuala Lumpur and tourist-facing Langkawi. Malaysia is one of the easier Southeast Asian countries to navigate in English."
+    },
+    {
+      "id": "weather",
+      "index": "03",
+      "open": false,
+      "question": "What could ruin my stay in Malaysia?",
+      "answer": "Trying to turn Langkawi into an attraction checklist. Weather can cancel the postcard, service can be slow and some sights cost more than the effort justifies. Use Kuala Lumpur for stimulation and Langkawi for decompression; asking each to behave like the other misses the point."
+    }
+  ],
+  "sectionTitle": "Anything Else You Need to Know?"
+}

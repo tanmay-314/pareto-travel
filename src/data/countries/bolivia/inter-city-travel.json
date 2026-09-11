@@ -1,10 +1,6 @@
 {
   "title": "Going from Place to Place",
-  "editorial": [
-    "We spent a lot of time in motion on this trip because the salt flats aren’t exactly easy to get to.",
-    "It was one of the reasons we weren’t up for spending more time in a car to visit the Laguna Colorada. ",
-    "As described in the itinerary, you’ll need to fly from Santa to Sucre, and then bus it to Uyuni from Sucre. Traverse the route back to check out of Bolivia."
-  ],
+  "editorial": [],
   "places": [
     {
       "name": "Santa Cruz"
@@ -21,16 +17,18 @@
       "mode": "flight",
       "duration": "35 MINS",
       "editorial": [
-        "This is a short half hour flight, but it’s not short on thrills! The small plane and strong winds will test the most ardent non-believers (including one of us). We took a flight back as well."
-      ]
+        "We flew. The flight is short but the combination of a small aircraft, elevation and wind produced memorable turbulence in both directions."
+      ],
+      "title": "Santa Cruz to Sucre"
     },
     {
       "mode": "bus",
       "duration": "8 HRS",
       "editorial": [
-        "There are overnight buses that depart around 9:00 PM and arrive in Uyuni around 5:00 AM. There were no sleeper buses where you can lay down fully, but the recliner seats were not too shabby. ",
-        "The buses don’t have air conditioning as the nights get chilly, but don’t have windows either, so ride can get stuffy. We took a bus back as well."
-      ]
+        "Overnight buses left around 9:00 PM and reached Uyuni in the early morning when we travelled. The seats reclined reasonably well, but it was still a long, stuffy ride.",
+        "Check your exact terminal with locals before departure. This is one of those places where blindly trusting the map nearly cost us the trip back."
+      ],
+      "title": "Sucre to Uyuni"
     }
   ]
 }
