@@ -9,9 +9,10 @@
 }
 
 .about-page h2 {
-  font-size: var(--type-size-logo);
+  font-size: var(  --type-size-section-title);
   line-height: 1.2;
   text-wrap: initial;
+  text-transform: uppercase;
 }
 
 .about-page p {
