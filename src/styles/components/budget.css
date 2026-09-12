@@ -146,6 +146,7 @@
 }
 
 .budget-receipt__line-description {
+  text-transform: uppercase;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -1,9 +1,29 @@
 {
   "title": "Meals You Can’t Miss",
-  "chapters": [],
+  "chapters": [
+    {
+      "period": "Breakfast",
+      "dish": "Hoppers with pol sambol",
+      "description": "",
+      "icon": "../assets/icons/icon-morning.svg"
+    },
+    {
+      "period": "Lunch",
+      "dish": "Rice with jackfruit, beetroot & chicken curries",
+      "description": "",
+      "icon": "../assets/icons/icon-afternoon.svg"
+    },
+    {
+      "period": "Dinner",
+      "dish": "Rice with fish curry",
+      "description": "",
+      "icon": "../assets/icons/icon-night.svg"
+    }
+  ],
   "editorial": [
-    "Sri Lankan rice and curry became our default meal, and that is not a complaint. A typical plate gives you rice with several vegetable preparations, dhal, sambol and whichever meat or fish you choose.",
-    "At Bentota Bake House near Dambulla we tried kiribath, dhal, sambol, egg and chicken curry. Matey Hut in Ella served one of our favourite meals of the trip: rice with several curries including chicken. Chamodya Homestay gave us egg hoppers and pol sambol, while Mirissa added seafood curries and all-you-can-eat spreads such as Dhana’s Curry Pot.",
-    "The food is usually less restaurant-theatrical than in neighbouring India, but we liked the homely balance of vegetables, lentils, coconut and meat. If your plate feels light on protein, order an extra meat dish rather than expecting the curry set to do all the lifting."
+    "Sri Lankan rice and curry was our staple meal, and that is not a complaint thanks to the variety of curries on offer. Sri Lankan meals are pretty balanced, but if you feel like it’s light on protein, you can always order an extra meat dish.  ",
+    "Our best breakfast was at Bentota Cake House in Dambulla, where we relished kiribath, pol sambhol, egg hoppers and chicken curry. For the quintessential Sri Lankan breakfast, try the hoppers and sambol. ",
+    "A typical lunch will have rice accompanied by a 2-4 vegetable and meat curries. Matey Hut was our mainstay in Ella, as is the case for many tourists. The jackfruit curry here is delectable! Be prepared for long lines during peak lunch and dinner times. ",
+    "For dinner, we chose to eat lighter. Rice with a single curry rather the elaborate spreads we devoured for lunch. In Mirissa, we had wonderful fish and prawn (shrimp) curries at the unassuming Twin Brothers seafood hut."
   ]
 }

@@ -238,3 +238,10 @@ editorial carousel alone. Seasonal guidance does not require month classificatio
 Transport supports empty places/legs together for prose without tickets.
 City Guides sections are omitted from all countries at the user’s request.
 See data-model.md and ../country-editorials-handoff.md.
+
+FAQ answer strings preserve explicit line breaks and paragraph separators with
+`white-space: pre-line` on `.faq-item-answer`.
+
+Budget receipt line-item labels always display in uppercase through
+`text-transform: uppercase` on `.budget-receipt__line-description`, preserving
+the authored strings in country JSON.

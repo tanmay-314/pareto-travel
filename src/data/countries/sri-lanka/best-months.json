@@ -3,39 +3,41 @@
     "sri-lanka": {
       "country": "Sri Lanka",
       "editorial": [
-        "Sri Lanka has distinct weather patterns across its north-east and south-west. For the route we took—Sigiriya, Ella, Mirissa and Colombo—we’d favour the drier season across the south and central highlands."
+        "Sri Lanka has distinct micro-climates along its north-east and south-west coasts. ",
+        "We’d argue that the route we took, the south-west and central highlands, are more worth your while than the north-east. So we suggest making the trip during the drier season in these parts; between December to April. "
       ],
       "seasons": [
         {
           "title": "December to April",
           "editorial": [
-            "We visited in mid-March, by when temperatures were beginning to creep into the mid-30s Celsius in the lowlands.",
-            "If that is not your cup of Ceylon tea, December through February should be more pleasant. The trade-off is peak-season crowds and higher prices."
+            "We visited in mid-March, by when temperatures were beginning to creep into the mid-30s °C (low-90s °F) particularly in Sigiriya and Mirissa. Ella remained pleasant owing to it’s elevation. ",
+            "If that is not your cup of Ceylon tea, December through February should be more pleasant. Needless to say, expect more people and higher prices during the coolest months. "
           ]
         },
         {
           "title": "May to September",
           "editorial": [
-            "This period is better suited to the north and east, including places such as Arugam Bay. The south coast and central highlands can receive much more rain, so it is a weaker fit for our exact itinerary."
+            "If you fancy surfing in Arugam Bay or witness the elephant congregation in Minneriya National Park (both in the north-east), then the months of May to September are the time to visit. ",
+            "Sigiriya, not too far from Minneriya, is still accessible albeit with higher humidity. But expect rain to play spoilsport in Ella and Mirissa.   "
           ]
         },
         {
           "title": "October & November",
           "editorial": [
-            "These transitional months can bring unsettled weather across much of the island. If your dates are flexible and this is a once-only trip, we’d choose a more predictable window."
+            "This is a weird time of the year with the south-west monsoon receding and the north-east monsoon gathering momentum. The weather is unpredictable across the island with the possibility of cyclones further dampening the odds of a great trip. "
           ]
         }
       ],
       "months": {
         "jan": "best",
         "feb": "best",
-        "mar": "good",
-        "apr": "good",
-        "may": "avoid",
-        "jun": "avoid",
-        "jul": "avoid",
-        "aug": "avoid",
-        "sep": "avoid",
+        "mar": "best",
+        "apr": "best",
+        "may": "good",
+        "jun": "good",
+        "jul": "good",
+        "aug": "good",
+        "sep": "good",
         "oct": "avoid",
         "nov": "avoid",
         "dec": "best"

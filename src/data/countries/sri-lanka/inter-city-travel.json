@@ -1,9 +1,9 @@
 {
   "title": "Going from Place to Place",
   "editorial": [
-    "We used pre-booked taxis for almost the entire trip: Colombo to Sigiriya, Sigiriya to Ella, Ella to Mirissa and Mirissa back to Colombo.",
-    "That is not the cheapest way to see Sri Lanka, but on a five-day trip it bought us a lot of time and flexibility. The roads vary dramatically—from winding hill routes around Ella to fast highways on the south coast—so distances alone are not a useful guide to journey time.",
-    "The famous train through the hill country would be the obvious addition on a longer itinerary. We skipped it because our five-day route was already compressed and road travel fit the stops better."
+    "We used pre-booked taxis for the entire trip: Colombo to Sigiriya, Sigiriya to Ella, Ella to Mirissa and Mirissa back to Colombo. Less Taxi was the service we used and can vouch for. ",
+    "Buses are cheaper ways to get around, but we preferred the flexibility of having our own vehicle. We also don’t recommend driving yourself unless you’re comfortable with winding roads up- and down-hill. ",
+    "If operational, the Kandy to Ella train ride is a popular choice that takes a more scenic route that cars can traverse. "
   ],
   "places": [
     {
@@ -24,17 +24,20 @@
   ],
   "legs": [
     {
-      "mode": "car"
+      "mode": "car",
+      "duration": "4 hrs"
     },
     {
       "mode": "car",
-      "duration": "4-hour"
+      "duration": "5 hrs"
     },
     {
-      "mode": "car"
+      "mode": "car",
+      "duration": "3.5 hrs"
     },
     {
-      "mode": "car"
+      "mode": "car",
+      "duration": "2.5 hrs"
     }
   ]
 }

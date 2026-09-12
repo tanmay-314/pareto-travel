@@ -1,24 +1,84 @@
 {
   "editorial": [
-    "We didn’t keep a clean end-to-end expense sheet, so there is no honest trip total to publish.",
-    "A few anchors from our trip are more useful anyway. Beach beds in Mirissa with drinks cost about 2,000 LKR per person. A good, simple meal at Savour Street in Colombo was around 1,200 LKR per person. Private taxis were our biggest recurring expense because we chose speed over public transport.",
-    "Sri Lanka felt good value overall, especially relative to how easy and polished the tourist experience was."
+    "Excluding flights in and out of the country, we spent close to $660 on our trip. ",
+    "The taxi rides between places accounted for nearly 40% of the expenses, as our visit coincided with the start of the US-Iran war that caused fuel shortages in Sri Lanka. "
   ],
   "alternatives": [
     {
       "title": "What if we had a bigger budget?",
       "editorial": [
-        "We’d spend it on stays rather than more activities: a beautiful tea-country property around Ella or Nuwara Eliya, and a beachfront room in Mirissa where sunset requires no logistics.",
-        "We might also keep the private-car strategy throughout, because on a short trip time is the luxury that matters."
+        "We were very satisfied with the quality of our stays, but if you have a bigger budget, you can choose to stay in a tea estate in Ella or Nuwara Eliya or on a beachfront property in Mirissa. "
       ]
     },
     {
       "title": "What if we had a smaller budget?",
       "editorial": [
-        "Use trains and buses for the longer legs, stay in homestays and eat rice-and-curry meals at local restaurants. The headline experiences—Dambulla, Sigiriya, the Nine Arches walk and the beach—do not require luxury spending."
+        "Swap private taxis for buses to shave off two-thirds of the inter-city travel budget. Makes far more sense for solo travellers. "
       ]
     }
   ],
-  "categories": [],
-  "title": "What it’s Going to Cost"
+  "categories": [
+    {
+      "title": "STAYS",
+      "editorial": [
+        "Our nights in Sigiriya, Ella, and Mirissa cost us in the range of $45 to $60. ",
+        "In Sigiriya, we stayed in an adorable treehouse hosted by the wonderful Asitha, who was kind enough to take us to / fro Sigiriya in his tuk-tuk. Asitha prepared an incredible dinner for us after our climb.",
+        "At Ella, our stay was at the charming Chamodya homestay hosted by Lilu, who served us a complimentary breakfast. ",
+        "Our two nights in Mirissa were spent in close proximity to the beach at Lali and Chani’s guesthouse.",
+        "Expect prices to be slightly higher between December to February. "
+      ]
+    },
+    {
+      "title": "FOOD",
+      "editorial": [
+        "The two of us spent $125 on food over the course of five days as food is fairly cheap in Sri Lanka (you’re splurging on exotic crab). For instance, the hearty rice with five curries (four vegetable, one meat) at Matey Hut, Ella cost only $5!"
+      ]
+    },
+    {
+      "title": "EXPERIENCES",
+      "editorial": [
+        "We paid $20 each for tickets to Sigiriya (we got a SAARC national discount, so unless you’re from the seven subcontinental countries, expect to pay closer to $40), $3 each for the Dambulla cave temple, and $7 each for beds at Mirissa beach. ",
+        "Whale watching and snorkelling in Mirissa would set you back $60 and $20 respectively. "
+      ]
+    },
+    {
+      "title": "INTER-CITY TRAVEL",
+      "editorial": [
+        "Each of our four-hour sojourns cost in the range of $60 to $70, easily the steepest expense on our trip. We highly recommend pre-booking your taxis if you travel during the peak season. "
+      ]
+    },
+    {
+      "title": "MISCELLANEOUS",
+      "editorial": [
+        "Our visas were free. Please factor in the cost of SIM cards if you need them. "
+      ]
+    }
+  ],
+  "title": "What it’s Going to Cost",
+  "days": 5,
+  "people": 2,
+  "year": 2026,
+  "lineItems": [
+    {
+      "description": "Stays * 4 nights",
+      "value": "$215"
+    },
+    {
+      "description": "Food",
+      "value": "$125"
+    },
+    {
+      "description": "Experiences",
+      "value": "$40"
+    },
+    {
+      "description": "Inter-city travel",
+      "value": "$270"
+    },
+    {
+      "description": "Miscellaneous",
+      "value": "$0"
+    }
+  ],
+  "total": "$660"
 }

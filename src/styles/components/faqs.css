@@ -153,6 +153,7 @@
 }
 
 .faq-item-answer {
+  white-space: pre-line;
   width: 100%;
   height: auto;
   margin: 0;
