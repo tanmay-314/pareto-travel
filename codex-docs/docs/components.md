@@ -245,3 +245,6 @@ FAQ answer strings preserve explicit line breaks and paragraph separators with
 Budget receipt line-item labels always display in uppercase through
 `text-transform: uppercase` on `.budget-receipt__line-description`, preserving
 the authored strings in country JSON.
+
+Cuisine meal-period labels (breakfast, lunch, and dinner) always display in
+uppercase through `text-transform: uppercase` on `.cuisine-period`.

@@ -54,3 +54,47 @@ The twelve initially missing month maps were subsequently filled at the user’s
 request using online research. All fifteen published compasses are complete.
 See [sources and classifications](best-months-research.md); source prose remains
 unchanged and City Guides remain removed.
+
+## Malaysia refresh — 14 September 2026
+
+Source: https://app.notion.com/p/Malaysia-24a6869db21e80ccba42f8fff550c177
+
+Fetched successfully through the connected Notion tool. The response included
+the complete editorial through the last FAQ, with no reported truncation or
+unknown blocks. Refreshed the overview, five-day itinerary, seasonal subsections,
+meals, transport, and budget categories/alternatives verbatim. All three FAQs
+already matched. September is now good and November avoid, matching the supplied
+seasonal ranges. Kept one Kuala Lumpur–Langkawi flight ticket with the authored
+one-hour duration. Preserved SEO, publication state, assets, and stable IDs.
+Inline link labels render as plain text under the existing editorial contract;
+private Notion links were not added as public CTAs.
+
+Author review (source wording and amounts remain unchanged):
+
+- Five itinerary days and five accommodation nights are supplied; arrival and
+  departure timing is not detailed. The $340 accommodation total does not
+  reconcile with five nights at the stated $80/$90 nightly rates.
+- Receipt rows sum to $915, consistent with “a little over $900”; no exact total
+  is authored, so the receipt total stays unknown rather than introducing a
+  calculated value. Party size is inferred as two from $55 per person and $110
+  inter-city travel. No visit year was inferred from the building's “as of 2025”.
+- For two people, $35 parasailing plus $20 island hopping per person implies
+  $110, but the authored experiences receipt row is $100.
+- Sky Bridge is $23 in the itinerary and $22 in the budget. The itinerary's $10
+  island-hopping price and budget's $20 including kayaking have different scope.
+- The Penang-to-Langkawi taxi instruction, Batu Caves statue identification,
+  diabetes ranking, and near-guaranteed clear skies warrant author review;
+  these claims were not independently fact-checked or corrected.
+- The source's Airbnb hyperlink targets the page ID listed above for Costa Rica.
+  Its visible label is retained; the private target is not exposed publicly.
+
+Verification: all 85 source paragraphs, subsection labels, questions, and receipt
+rows match in order, allowing only markup/serialization equivalents. All seven
+JSON files parse. Page generation and `--check` pass. The generated page and all
+seven JSON endpoints returned HTTP 200 and matched local bytes. Overview breaks
+are present in generated HTML and the existing pre-line CSS remains in place.
+`git diff --check` reports two source-preserved trailing spaces in the generated
+Malaysia overview. Browser execution tools were unavailable, so mobile/desktop
+visual checks, console/network inspection, and itinerary/FAQ interaction checks
+could not be performed for this refresh. Existing Sri Lanka and cuisine component
+work was left intact. No deployment or Notion mutation was performed.

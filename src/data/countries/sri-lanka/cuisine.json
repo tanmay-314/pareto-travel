@@ -3,20 +3,20 @@
   "chapters": [
     {
       "period": "Breakfast",
-      "dish": "Hoppers with pol sambol",
-      "description": "",
+      "dish": "HOPPERS & SAMBOL",
+      "description": "Fermented rice crepes with a spicy coconut relish.",
       "icon": "../assets/icons/icon-morning.svg"
     },
     {
       "period": "Lunch",
-      "dish": "Rice with jackfruit, beetroot & chicken curries",
-      "description": "",
+      "dish": "RICE & CURRIES",
+      "description": "Jackfruit, beetroot, and chicken curries infused with coconut milk.",
       "icon": "../assets/icons/icon-afternoon.svg"
     },
     {
       "period": "Dinner",
-      "dish": "Rice with fish curry",
-      "description": "",
+      "dish": "RICE & CURRY",
+      "description": "Freshly caught fish or prawn curry infused with coconut milk.",
       "icon": "../assets/icons/icon-night.svg"
     }
   ],

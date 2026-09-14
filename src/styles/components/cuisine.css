@@ -199,6 +199,7 @@
 }
 
 .cuisine-period {
+  text-transform: uppercase;
   margin: 0;
   color: var(--cuisine-text-secondary);
   font-family: var(--type-family-display), monospace;

@@ -3,10 +3,31 @@
     "malaysia": {
       "country": "Malaysia",
       "editorial": [
-        "We visited in August, which is not Langkawi's driest period, and got some gloomy weather. It did not ruin the trip, but the island would obviously benefit from clearer skies.",
-        "For this KL-plus-Langkawi itinerary, we'd favour the drier months on the west coast if dates are flexible. Kuala Lumpur itself is hot and humid year-round, so weather optimisation matters more for the beach than the city."
+        "First, we acknowledge that there’s a whole other side to Malaysia that we left unexplored. If your trip includes Borneo, then our suggestions may not be the most appropriate. ",
+        "With that out of the way, our recommendation is to visit during December to March. "
       ],
-      "seasons": [],
+      "seasons": [
+        {
+          "title": "December to March: ",
+          "editorial": [
+            "This is the cool and dry season on the western coast, along which Kuala Lumpur, Langkawi, and Penang lie. You can be pretty much assured of pristine skies during this time, making it the ideal weather for Langkawi in particular. ",
+            "As always, peak season implies bigger crowds and higher costs."
+          ]
+        },
+        {
+          "title": "April to September:",
+          "editorial": [
+            "We visited Malaysia in August. It’s more humid than the winter months with the occasional showers disrupting your day. ",
+            "We did get caught in the rains in Kuala Lumpur a couple of times, and there were dark clouds dampening the beach experience in Langkawi. But we would still encourage visiting during this time, especially if you’re on a tight budget. "
+          ]
+        },
+        {
+          "title": "October & November:",
+          "editorial": [
+            "This is the peak of the wet season on the west coast, so is best avoided. The rains are heavier and more persistent than the transitional months. "
+          ]
+        }
+      ],
       "months": {
         "jan": "best",
         "feb": "best",
@@ -16,9 +37,9 @@
         "jun": "good",
         "jul": "good",
         "aug": "good",
-        "sep": "avoid",
+        "sep": "good",
         "oct": "avoid",
-        "nov": "good",
+        "nov": "avoid",
         "dec": "best"
       }
     }

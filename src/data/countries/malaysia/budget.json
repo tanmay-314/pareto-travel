@@ -1,15 +1,54 @@
 {
   "editorial": [
-    "Malaysia delivered very good value to us.",
-    "Reference points: a 16-kilometre Grab in Kuala Lumpur cost RM17.50, ten beef satay sticks were RM20, the Langkawi island-hopping tour was RM40, Dayang Bunting entry RM20 per person and the lake kayak RM25. The Sky Bridge cable car was the outlier at RM90 per person.",
-    "Food and local transport were cheap enough that we rarely felt the need to optimise every purchase."
+    "Malaysia is great value for money. It has the infrastructure to rival developed nations, but expenses stay pretty low. ",
+    "Excluding flights in and out of Malaysia, our trip cost us a little over $900. "
   ],
-  "categories": [],
+  "categories": [
+    {
+      "title": "STAYS",
+      "editorial": [
+        "We spent $340 for 5 nights. ",
+        "In Kuala Lumpur, we chose to stay in Bukit Bintang, one of the most popular areas in the city. We picked an Airbnb in an upscale apartment complex for $90 a night.",
+        "In Langkawi, we picked Cenang Plaza Beach Hotel which was practically on the beach. It was one of the more affordable places in Langkawi at $80 a night.",
+        "Expect prices to be significantly higher during the peak months. "
+      ]
+    },
+    {
+      "title": "FOOD & DRINKS",
+      "editorial": [
+        "So we went overboard eating and it set us back $300. ",
+        "Food is very reasonable, with a plate of nasi lemak priced in the $4-$6 range. Meat in particular is cheap with 10 sticks of beef satay available for $5. "
+      ]
+    },
+    {
+      "title": "INTER-CITY TRAVEL",
+      "editorial": [
+        "We flew from Kuala Lumpur to Langkawi for $55 per person. ",
+        "Our flight out of Malaysia was from Langkawi, so we didn’t have to make the trip back to Kuala Lumpur. If you’re not as lucky, add another $100 to your budget. "
+      ]
+    },
+    {
+      "title": "EXPERIENCES",
+      "editorial": [
+        "Parasailing was the highlight of our time in Langkawi and was priced at $35 per person. ",
+        "The island hopping tour (including kayaking in Dayang Bunting) cost $20 per person. ",
+        "You can take the Sky Bridge cable car for $22 per person, which did not seem worth it to us."
+      ]
+    },
+    {
+      "title": "MISCELLANEOUS",
+      "editorial": [
+        "We spent $65 on Grab taxis over the course of our trip. If you don’t like walking as much as we do, it could cost twice as much. Grab rides are pretty cheap. For instance, a 16km (10mi) ride in Kuala Lumpur only cost $4. ",
+        "We did not have to pay for visas. ",
+        "Lastly, you want to account for SIM cards if you need them. "
+      ]
+    }
+  ],
   "alternatives": [
     {
       "title": "What if we had a bigger budget?",
       "editorial": [
-        "We'd upgrade the Langkawi stay and book a better private or small-group boat day. Kuala Lumpur did not make us crave luxury because so much of its pleasure comes from streets, markets and casual food."
+        "We’d upgrade our Langkawi stay to a higher-end resort. "
       ]
     },
     {
@@ -19,5 +58,30 @@
       ]
     }
   ],
-  "title": "What it's Going to Cost"
+  "title": "What it's Going to Cost",
+  "days": 5,
+  "people": 2,
+  "lineItems": [
+    {
+      "description": "Stays * 5 nights",
+      "value": "$340"
+    },
+    {
+      "description": "Food & Drinks",
+      "value": "$300"
+    },
+    {
+      "description": "Inter-city travel",
+      "value": "$110"
+    },
+    {
+      "description": "Experiences",
+      "value": "$100"
+    },
+    {
+      "description": "Miscellaneous",
+      "value": "$65"
+    }
+  ],
+  "total": "—"
 }
