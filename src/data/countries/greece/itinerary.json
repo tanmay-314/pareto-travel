@@ -3,60 +3,54 @@
     {
       "id": "greece-itinerary",
       "country": "Greece",
-      "title": "Ancient Ruins, Modern Spoils - 5 Day Itinerary",
+      "title": "Ancient Ruins, Modern Spoils - 4-Day Itinerary",
       "editorial": [
-        "Our five-day trip split naturally between Athens and Santorini, with Athens bookending the island visit.",
+        "Our four-day trip split naturally between Athens and Santorini. We spent an extra few hours in Athens on a fifth day to fly out of Greece, but there are international flights out of Santorini as well. ",
         "What if we had more time?",
-        "We'd add another island rather than another day in Athens. Rhodes was our original thought, though the Greek islands are essentially a choose-your-own-adventure book."
+        "We’d add another island. Our preference would be Crete, but Mykonos, Naxos, Paros, and Rhodes are other options. The islands are essentially a choose-your-own-adventure. "
       ],
       "editorialHeadings": [
         1
       ],
       "days": [
         {
-          "dayNumber": "Day 1",
-          "location": "Athens",
-          "title": "Day 1 - Athens",
+          "dayNumber": "DAY 1",
+          "location": "ATHENS",
+          "title": "DAY 1 - ATHENS",
           "editorial": [
-            "Settle in and spend the evening around the tourist core below the Acropolis.",
-            "We caught a Greek play in English with the Acropolis as the backdrop. It was one of those experiences where the setting does most of the work—and we mean that as a compliment.",
-            "The surrounding streets are lively, full of rooftop restaurants, souvenir shops and people lingering well after dinner. Start with a gyro at Kostas; at roughly EUR3 when we visited, it was also a reminder that Athens can be surprisingly affordable for the Eurozone."
+            "We settled into Athens by circling the tourist core below the Acropolis. The European-ness of the vibrant rooftop cafes and souvenir shops is unmistakable!",
+            "As the sun was setting, we watched a Greek play (in English) against the backdrop of the Acropolis. It was quite a surreal experience.  "
           ]
         },
         {
-          "dayNumber": "Day 2",
-          "location": "Athens",
-          "title": "Day 2 - Athens",
+          "dayNumber": "DAY 2",
+          "location": "ATHENS",
+          "title": "DAY 2 - ATHENS",
           "editorial": [
-            "Make this your ancient-Greece day: the Acropolis, Parthenon and Theatre of Dionysus.",
-            "We booked a mythology-focused tour and discovered the obvious downside of a mythology-focused tour: there was more mythology than history or architecture. If the engineering, politics and construction interest you more than the gods, choose your guide accordingly.",
-            "Later, wander through the old neighbourhoods and stop at Yiasemi. We still remember an excellent plate of bird livers that cost about EUR5."
+            "This was the day that we got the Greece we came for: the Acropolis, Parthenon, and the Theatre of Dionysus. ",
+            "We booked a mythology-focused tour and were somewhat disappointed that the entire focus was on mythology as opposed to history or architecture. If the latter interest you more, then choose your tour more wisely than we did. ",
+            "In the evening, we walked up Lycabettus Hill for the sunset views. It was a good visual summary of Athens capturing the modern sprawl amidst ancient monuments. "
           ]
         },
         {
-          "dayNumber": "Day 3",
-          "location": "Santorini",
-          "title": "Day 3 - Santorini",
+          "dayNumber": "DAY 3",
+          "location": "SANTORINI",
+          "title": "DAY 3 - SANTORINI",
           "editorial": [
-            "Fly or ferry to Santorini and resist the urge to schedule too much.",
-            "The island is as photogenic as advertised, but it is also more enjoyable once you stop treating every blue dome as a checklist item. Check in, walk the caldera-facing lanes and let sunset be the main event."
+            "We flew into Santorini the next morning by Volotea, the worst airline imaginable. Think Ryanair minus the Twitter humour. ",
+            "The pristineness of Santorini, especially the afternoon spent lounging in our resort’s outdoor jacuzzi, helped us cool down. ",
+            "After lunch, we took the bus into Oia, the part of the island most famously associated with it (think white buildings and blue domes). ",
+            "We got in line (and it wasn’t even peak season yet) for the money shot. There’s a strange sense of camaraderie in Santorini, where everyone’s trying to help each other get the best pictures! ",
+            "We roamed around the island at night, taking in sights of the parties that were kicking off. We did not partake in the partying though."
           ]
         },
         {
-          "dayNumber": "Day 4",
-          "location": "Santorini",
-          "title": "Day 4 - Santorini",
+          "dayNumber": "DAY 4",
+          "location": "SANTORINI",
+          "title": "DAY 4 - SANTORINI",
           "editorial": [
-            "Give Santorini a full unhurried day. This is where a well-located stay matters more than it does in Athens: the less time you spend commuting to the postcard views, the better.",
-            "We'd use the day for villages, a long lunch and another sunset rather than trying to manufacture a packed sightseeing itinerary."
-          ]
-        },
-        {
-          "dayNumber": "Day 5",
-          "location": "Athens",
-          "title": "Day 5 - Athens",
-          "editorial": [
-            "Return to Athens and climb Lycabettus Hill for a final view over the city. It is a good visual summary of Athens: dense modern sprawl with an ancient monument somehow still commanding the skyline."
+            "Our second day in Santorini was much of the same, except we were satisfied with the photos from the day prior and gave that a miss. ",
+            "It’s a small island where people come to forget about real world things like the concept of time. There’s not a lot to do (at least not on our budget) and that’s part of the charm.  "
           ]
         }
       ]

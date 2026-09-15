@@ -1,8 +1,29 @@
 {
-  "chapters": [],
+  "chapters": [
+    {
+      "period": "BREAKFAST",
+      "dish": "KOULORI",
+      "description": "Bagel-like ring covered in toasted sesame seeds",
+      "icon": "../assets/icons/icon-morning.svg"
+    },
+    {
+      "period": "LUNCH",
+      "dish": "MOUSSAKA",
+      "description": "Layers of eggplant, minced meat, tomato sauce, and béchamel sauce",
+      "icon": "../assets/icons/icon-afternoon.svg"
+    },
+    {
+      "period": "DINNER",
+      "dish": "GYROS",
+      "description": "Grilled meat in pita with tomatoes, onions, fries, and Tzatziki",
+      "icon": "../assets/icons/icon-night.svg"
+    }
+  ],
   "title": "Meals You Can't Miss",
   "editorial": [
-    "The humble gyro did more for us than several elaborate meals. Kostas is an easy recommendation.",
-    "At Yiasemi, the inexpensive bird livers were a standout. Beyond that, lean into grilled meats, seafood, salads, yoghurt and whatever pastry happens to be staring at you from a bakery window."
+    "We knew about gyros and salads before coming to Greece, and in all honesty, those were our staples. ",
+    "Kostas in Athens is a legendary join for gyros. And it lived up to the hype!",
+    "We were also blown away by the bird livers served at Yiasemi, a rooftop bistro in Plaka, Athens.",
+    "Melitini, a fancy Greek tapas spot, was our favourite in Oia, Santorini. "
   ]
 }

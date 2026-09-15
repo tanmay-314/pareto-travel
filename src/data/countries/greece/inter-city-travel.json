@@ -9,12 +9,13 @@
   ],
   "legs": [
     {
-      "mode": "flight"
+      "mode": "flight",
+      "duration": "1 hr"
     }
   ],
   "title": "Going from Place to Place",
   "editorial": [
-    "Athens itself is compact enough that walking and public transport cover most of what a short-stay traveller needs.",
-    "Between Athens and Santorini, choose based on your itinerary rather than romance. Ferries make the Aegean part of the experience; flights save precious hours on a five-day trip. We optimised for time."
+    "From Athens to Santorini, we regretfully flew Volotea as it was the cheapest airline. They charged us a stupid amount of money for not checking in advance, which we couldn’t because their damned website didn’t work! Unsurprisingly, they no longer fly that route. But the alternatives don’t appear to be much better. ",
+    "You could opt for a ferry, which takes 5-8 hours depending on the number of stops. A one-way ticket would cost you between $40 to $60. "
   ]
 }

@@ -98,3 +98,43 @@ Malaysia overview. Browser execution tools were unavailable, so mobile/desktop
 visual checks, console/network inspection, and itinerary/FAQ interaction checks
 could not be performed for this refresh. Existing Sri Lanka and cuisine component
 work was left intact. No deployment or Notion mutation was performed.
+
+## Greece refresh — 15 September 2026
+
+Source: https://app.notion.com/p/Greece-3b96869db21e8087a1a4e14264f26a75
+
+Read the complete connected Notion response through the final FAQ; no truncation
+or unknown blocks were reported. Updated the overview, four-day itinerary,
+seasonal subsections and explicit month ratings, meal chapters and prose,
+transport, and budget. FAQs already matched. Source copy, paragraph boundaries,
+labels, spelling, and order are preserved; inline link labels render as plain
+text under the existing component contract. Kept one Athens–Santorini flight
+route, using the authored 1 hr duration. Preserved SEO, publication status, assets,
+and stable IDs. No visit year was inferred.
+
+Source issues retained for author review:
+
+- Four itinerary days/four nights plus an extra few hours on day five are
+  explicitly described; the receipt uses four days. Party size is two, supported
+  by the meal and expense descriptions.
+- Receipt rows correctly total the authored $1450. Two nights each at $135 and
+  $82 imply $434, compared with the supplied stays total of $435.
+- Ferry tickets at $40–$60 each for two people imply savings of $245–$285 against
+  the $365 flight spend, rather than the claimed $300.
+- The experiences total of $250 reconciles if the $50 entrance amount is per
+  person for the combined sites and the $20 tip is shared. “$50 each for entrance
+  to the Acropolis and the Agora” is ambiguous about whether each refers to
+  people or sites; no clarification was inserted into the copy.
+- No independent fact-check was performed on airline-route/service claims or
+  other travel claims. Source spelling such as “KOULORI” and “legendary join”
+  remains unchanged. No unfinished placeholders were found.
+
+Verification: all 64 prose passages/headings and 22 structured rows compared
+verbatim in source order, allowing equivalent markup/serialization. All seven
+JSON files parse. Receipt arithmetic, preserved metadata, and generated overview
+paragraph breaks checked; pre-line styling remains in place. Generated pages and
+`--check` pass. Greece HTML and all seven JSON files returned HTTP 200 with bytes
+matching local files. `git diff --check` reports one source-preserved trailing
+space line in the generated overview. Browser execution tools were unavailable,
+so desktop/mobile visual checks, console/network inspection, and itinerary/FAQ
+interaction checks were not performed. No deployment or Notion mutation.

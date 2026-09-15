@@ -1,22 +1,82 @@
 {
   "editorial": [
-    "We didn't preserve a complete expense ledger for Greece, so there is no honest trip total to give you.",
-    "Athens surprised us on the cheaper side—EUR3 gyros and a EUR5 plate at Yiasemi were memorable examples—while Santorini predictably did the opposite. Location and accommodation on the island will swing your budget far more than food in Athens."
+    "Perhaps our expectations were coloured by its currency being the Euro, but Greece was surprisingly affordable. Athens was especially cheap compared to Istanbul, which was interesting considering Greece’s higher per capita incomes. "
   ],
-  "categories": [],
+  "categories": [
+    {
+      "title": "STAYS",
+      "editorial": [
+        "Our four nights cost $435, with the beautiful Anafi suite in Santorini accounting for $135 per night (which by the way, is par for the course in the Aegean islands). ",
+        "Athens was much cheaper at $82 a night in a residential building only 10 minutes from the Acropolis.  "
+      ]
+    },
+    {
+      "title": "FOOD",
+      "editorial": [
+        "Gyros at local legend Kostas in Athens cost $3, whereas the rolls at Istanbul’s equivalent, Durumzade, cost twice as much. ",
+        "Even the fanciest lunch we had in Santorini (at Melitini) was about $70 for two.  "
+      ]
+    },
+    {
+      "title": "EXPERIENCES",
+      "editorial": [
+        "Our mythology tour of ancient Athens was $65 per person plus a $20 tip. Additionally, we paid $50 each for entrance to the Acropolis and the Agora. ",
+        "Unfortunately, we were underwhelmed by the tour. We’d mention the tour operator, but those details aren’t mentioned on our receipts!"
+      ]
+    },
+    {
+      "title": "INTER-CITY TRAVELS",
+      "editorial": [
+        "We forked out $365 to Volotea airlines, including an unnecessary $60 fine, for the honour of flying us to Santorini. ",
+        "It’s mostly low-cost airlines operating this route, so if you’re not pressed for time, take the boat. "
+      ]
+    },
+    {
+      "title": "MISCELLANEOUS",
+      "editorial": [
+        "Our visas cost about $90 each. We spent in the range of $20 on moving around the island of Santorini. We walked all across Athens. "
+      ]
+    }
+  ],
   "alternatives": [
     {
       "title": "What if we had a bigger budget?",
       "editorial": [
-        "Spend it on the Santorini stay. We would choose a nicer property closer to the caldera and town rather than upgrading anything in Athens."
+        "We’d splurge more in Santorini stay. We would choose a fancier property closer to the caldera and town rather than upgrading anything in Athens."
       ]
     },
     {
       "title": "What if we had a smaller budget?",
       "editorial": [
-        "Keep Athens comfortable and inexpensive, then shorten or stay farther from the postcard-core in Santorini. Greece does not require fine dining to eat well."
+        "Take the ferry from Athens to Santorini. If we did, it would’ve saved us $300 (and a lot of anguish). "
       ]
     }
   ],
-  "title": "What it's Going to Cost"
+  "title": "What it's Going to Cost",
+  "days": 4,
+  "people": 2,
+  "year": 2022,
+  "lineItems": [
+    {
+      "description": "STAYS * 4 NIGHTS",
+      "value": "$435"
+    },
+    {
+      "description": "FOOD & DRINKS",
+      "value": "$200"
+    },
+    {
+      "description": "EXPERIENCES",
+      "value": "$250"
+    },
+    {
+      "description": "INTER-CITY TRAVEL",
+      "value": "$365"
+    },
+    {
+      "description": "MISCELLANEOUS",
+      "value": "$200"
+    }
+  ],
+  "total": "$1450"
 }

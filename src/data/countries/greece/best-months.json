@@ -3,21 +3,46 @@
     "greece": {
       "country": "Greece",
       "editorial": [
-        "We visited in early June. Athens was pleasant, while Santorini was already starting to feel crowded.",
-        "If we planned the same trip again, we'd aim for late May or early June, or shift to September once the fiercest summer heat and crowds begin to ease.",
-        "Peak summer gives you reliable island weather but also the version of Santorini where everybody else had the exact same idea."
+        "We visited in early June. Athens was pleasant, while Santorini was heating up both in celsius and crowds. And we recommend visiting around this time to have an optimal experience.  "
       ],
-      "seasons": [],
+      "seasons": [
+        {
+          "title": "APRIL TO JUNE",
+          "editorial": [
+            "Spring / early summer is NOT the most popular time to visit, which is exactly why we recommend it. ",
+            "Santorini felt crowded as it is during the shoulder season, and we can’t begin to imagine what it must be like during the summer peak. "
+          ]
+        },
+        {
+          "title": "JULY & AUGUST",
+          "editorial": [
+            "Don’t. Just don’t. Unless you really want to party, in which case, you may actually appreciate the crowds. "
+          ]
+        },
+        {
+          "title": "SEPTEMBER & OCTOBER",
+          "editorial": [
+            "Warm seas and thinning crowds make early autumn is a pretty good time to visit as well.",
+            "One word of caution though - You may find that the hospitality workers are exhausted from the summer rush, so the quality of service may be ever so slightly worse than in spring / early summer. "
+          ]
+        },
+        {
+          "title": "NOVEMBER TO MARCH",
+          "editorial": [
+            "Winter is low season, which means a lot of businesses in the Aegean islands shut shop. Athens alone is not enough of a draw to visit Greece, so we’d avoid this time. "
+          ]
+        }
+      ],
       "months": {
         "jan": "avoid",
         "feb": "avoid",
         "mar": "avoid",
-        "apr": "good",
+        "apr": "best",
         "may": "best",
         "jun": "best",
-        "jul": "good",
-        "aug": "good",
-        "sep": "best",
+        "jul": "avoid",
+        "aug": "avoid",
+        "sep": "good",
         "oct": "good",
         "nov": "avoid",
         "dec": "avoid"
