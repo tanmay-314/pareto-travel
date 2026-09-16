@@ -25,6 +25,7 @@
     },
     {
       "name": "South America",
+      "rowGap": "compact",
       "countries": [
         {
           "name": "Brazil",
@@ -102,6 +103,12 @@
       "name": "Southeast Asia",
       "countries": [
         {
+          "name": "Vietnam",
+          "caption": "Ha Long Bay,Ha Long Bay",
+          "artwork": "../../assets/components/destinations/vietnam.svg",
+          "href": null
+        },
+        {
           "name": "Malaysia",
           "caption": "Petronas Towers,Kuala Lumpur",
           "artwork": "../../assets/components/destinations/malaysia.svg",
@@ -118,6 +125,17 @@
           "caption": "Marina Bay Sands,Singapore",
           "artwork": "../../assets/components/destinations/singapore.svg",
           "href": "/countries/singapore"
+        }
+      ]
+    },
+    {
+      "name": "East Asia",
+      "countries": [
+        {
+          "name": "Japan",
+          "caption": "Mt Fuji,Mt Fuji",
+          "artwork": "../../assets/components/destinations/japan.svg",
+          "href": null
         }
       ]
     }

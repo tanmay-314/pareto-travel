@@ -73,6 +73,9 @@ export function initializeDestinations(header, closeMenu) {
         heading.textContent = region.name;
         const grid = document.createElement("div");
         grid.className = "places-overlay__grid";
+        if (region.rowGap === "compact") {
+          grid.classList.add("places-overlay__grid--compact");
+        }
         for (const country of region.countries) {
           const card = document.createElement(country.href ? "a" : "figure");
           card.className = "destination-stamp";

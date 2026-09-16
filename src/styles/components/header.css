@@ -92,7 +92,11 @@
 .places-overlay__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 390px));
-    gap: 60px var(--space-xl);
+    gap: var(--space-xl);
+}
+
+.places-overlay__grid--compact {
+    row-gap: var(--space-sm);
 }
 
 .destination-stamp {

@@ -126,8 +126,8 @@
 }
 
 #sg {
-    left: 76.3216%;
-    top: 57.9545%;
+    left: 75.9361%;
+    top: 57.1591%;
     width: min(100%*6/1816, 6px);
     aspect-ratio: 1 / 1;
 }
@@ -137,6 +137,20 @@
     top: 27.1591%;
     width: min(100%*96/1816, 96px);
     aspect-ratio: 16 / 7;
+}
+
+#vn {
+    left: 74.9449%;
+    top: 41.4773%;
+    width: min(100%*48/1816, 48px);
+    aspect-ratio: 1 / 2;
+}
+
+#jp {
+    left: 82.5441%;
+    top: 24.4318%;
+    width: min(100%*54/1816, 54px);
+    aspect-ratio: 9 / 16;
 }
 
 @media (max-width: 900px) {
@@ -156,4 +170,6 @@
     #pe { width: 4.2952%; }
     #sg { width: 0.3304%; }
     #tr { width: 5.2863%; }
+    #vn { width: 2.6432%; }
+    #jp { width: 2.9736%; }
 }

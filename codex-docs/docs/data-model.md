@@ -296,6 +296,12 @@ Illustrative shape:
 
 ## Validation and normalization
 
+Places content lives in `data/components/destinations.json`. Its ordered
+`regions` contain `name` and `countries`; optional `rowGap: "compact"` selects
+the compact row spacing, while omitted or unrecognized values use the default.
+Each country supplies `name`, `caption`, `artwork` (relative to the JSON), and
+`href` (null for an unpublished guide).
+
 At every component boundary:
 
 1. Confirm required objects and arrays exist.

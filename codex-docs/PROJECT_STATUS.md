@@ -2,7 +2,7 @@
 
 This file gives a new Codex session a quick snapshot of active work. Keep it brief and update it whenever priorities or known constraints materially change.
 
-Last updated: 2026-09-11
+Last updated: 2026-09-16
 
 ## Current objective
 
@@ -46,6 +46,15 @@ Update this list with file paths and implementation status once the files are pr
 - None recorded yet.
 
 ## Recently completed
+
+- Updated the world map from Figma `1617:85803`: added Japan and Vietnam,
+  refreshed Malaysia's SVG, and corrected Singapore's position. Places now has
+  18 stamps across six regions with exact Japan/Vietnam artwork and Figma row
+  gaps. Japan and Vietnam remain unlinked pending published guides. Japan's
+  caption matches the corrected Figma text `Mt Fuji,Mt Fuji`.
+  Verified 390, 768, 1440, and 1920px layouts, map coordinates, all stamp images,
+  keyboard focus/close behavior, shared About-page Places, and reduced motion;
+  no browser errors. Asset validation and `git diff --check` passed.
 
 - Added `/about` from the [Notion About page](https://app.notion.com/p/About-3d86869db21e806eae33e707ad4af698), preserving wording and paragraph order, using all four local `about-us-` images. Connected the homepage and generated country headers, with a redirect from `/countries/about`. Verified 390, 768, 1440, and 1920px layouts, all gallery images, the tablet menu, and visible keyboard focus; no browser errors.
 
