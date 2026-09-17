@@ -3,23 +3,37 @@
     "costa-rica": {
       "country": "Costa Rica",
       "editorial": [
-        "The dry season is the easiest time for a first visit, particularly if you are combining Monteverde with beaches or road travel.",
-        "That said, a cloud forest without clouds would be missing the point. Monteverde stays lush precisely because moisture is part of the ecosystem, so some mist and rain are features rather than bugs.",
-        "If lower prices and fewer visitors matter more than perfect skies, shoulder months can work well. Just build flexibility into outdoor plans."
+        "Costa Rica has tropical temperatures throughout the year, but condensation levels vary. ",
+        "If Monteverde is your main port of call, as it was for us, plan a trip between May and November.",
+        "If you prefer drier weather (and plan to hit the beaches), visit during December to April. "
       ],
-      "seasons": [],
+      "seasons": [
+        {
+          "title": "MAY TO NOVEMBER",
+          "editorial": [
+            "We visited in October, which is the peak of the wet season. While there were afternoon showers during our stay in Monteverde, but more importantly, the clouds part of the cloud forest did not disappoint. "
+          ]
+        },
+        {
+          "title": "DECEMBER TO APRIL",
+          "editorial": [
+            "Afternoon showers could ruin a beach vacation however, and if Playa Manuel Antonio is on your itinerary, then you’re better off visiting during the dry season. ",
+            "There’s definitely a trade-off here as Monteverde may not be as ethereal as when the clouds converge upon it. "
+          ]
+        }
+      ],
       "months": {
-        "jan": "best",
-        "feb": "best",
-        "mar": "best",
-        "apr": "best",
-        "may": "good",
-        "jun": "good",
-        "jul": "good",
-        "aug": "good",
-        "sep": "avoid",
-        "oct": "avoid",
-        "nov": "good",
+        "jan": "good",
+        "feb": "good",
+        "mar": "good",
+        "apr": "good",
+        "may": "best",
+        "jun": "best",
+        "jul": "best",
+        "aug": "best",
+        "sep": "best",
+        "oct": "best",
+        "nov": "best",
         "dec": "good"
       }
     }

@@ -1,9 +1,27 @@
 {
-  "chapters": [],
+  "chapters": [
+    {
+      "period": "BREAKFAST",
+      "icon": "../assets/icons/icon-morning.svg",
+      "dish": "GALLO PINTO",
+      "description": "Rice and beans with onions, peppers, cilantro, and tangy salsa lizano"
+    },
+    {
+      "period": "LUNCH",
+      "icon": "../assets/icons/icon-afternoon.svg",
+      "dish": "CASADO",
+      "description": "Rice and beans with a meat, a salad, sweet plantains, and tortilla"
+    },
+    {
+      "period": "DINNER",
+      "icon": "../assets/icons/icon-night.svg",
+      "dish": "ARROZ CON POLLO",
+      "description": "Rice with chicken, veggies, and spices"
+    }
+  ],
   "title": "Meals You Can't Miss",
   "editorial": [
-    "Try a casado early. It became our default: rice, beans, salad, vegetables, fried plantain and a choice of meat.",
-    "We liked Soda la Amistad, Sabor Tico and Soda la Coati in Monteverde. In San Jose, we ate at La Criollita and Cafe Rojo.",
-    "Costa Rican food is comforting rather than theatrical. If you arrive expecting Mexico-level culinary fireworks, you may miss the point."
+    "Costa Rica has probably the most wholesome food we’ve had on our travels. The casado is the most perfectly balanced meal with all the macronutrients one would want. ",
+    "In Monteverde, our go to spots were Soda la Amistad, Sabor Tico, and Soda la Coati. In San Jose, we dined at La Criollita and Cafe Rojo. "
   ]
 }
