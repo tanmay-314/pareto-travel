@@ -10,8 +10,7 @@
   "legs": [
     {
       "mode": "bus",
-      "duration": "5 hours",
-      "recommended": true
+      "duration": "5 hours"
     }
   ],
   "title": "Going from Place to Place",

@@ -86,7 +86,6 @@ const renderTicket = (leg, legIndex, places, assets) => {
         aria-hidden="true"
       >
 
-      ${leg.recommended ? '<span class="inter-city-ticket-recommended">Pareto Pick</span>' : ""}
       <div class="inter-city-ticket-route-row">
         <p class="inter-city-ticket-origin">${escapeHtml(origin)}</p>
         <span class="inter-city-ticket-icon-shell" aria-hidden="true">

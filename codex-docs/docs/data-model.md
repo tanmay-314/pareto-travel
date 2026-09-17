@@ -207,7 +207,7 @@ For example, Bolivia lists Santa Cruz → Sucre and Sucre → Uyuni, without ret
 tickets. Keep return-trip details in the editorial when supplied by the source.
 
 Provide ordered `places` (objects with `name`) and one or more `legs` with
-`mode`, `duration`, and an optional `recommended` flag. There must be exactly
+`mode` and `duration`. There must be exactly
 one more place than legs. Optional `title`, `editorial`, and `assets` configure
 the section heading, paragraphs, and ticket/mode images.
 

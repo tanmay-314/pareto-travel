@@ -203,30 +203,6 @@
   --inter-city-text: var(--inter-city-text-secondary);
 }
 
-.inter-city-ticket-recommended {
-  position: absolute;
-  z-index: 3;
-  top: 14px;
-  left: 330px;
-  display: flex;
-  width: 96px;
-  height: 24px;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 10px;
-  border: 1px solid var(--color-text-accent, #588584);
-  border-radius: 12px;
-  background: var(--color-bg-subtle, #f0dbdb);
-  color: var(--color-text-accent, #588584);
-  font-family: "Anek Latin", sans-serif;
-  font-size: 10px;
-  font-variation-settings: "wdth" 100;
-  font-weight: var(--type-weight-strong, 600);
-  line-height: 14px;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
 .inter-city-editorial {
   display: flex;
   width: 620px;

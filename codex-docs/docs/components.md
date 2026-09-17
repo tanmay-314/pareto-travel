@@ -161,9 +161,9 @@ Update the paths below when components are integrated.
 ### Inter-city travel
 
 - Root: `[data-inter-city-travel]`
-- Inputs: one or more ordered `legs` with mode, duration, and an optional `recommended` flag; exactly one more ordered `places` than legs; optional `title` and `editorial`; and ticket/mode asset paths
+- Inputs: one or more ordered `legs` with mode and duration; exactly one more ordered `places` than legs; optional `title` and `editorial`; and ticket/mode asset paths
 - Editorial carousel: legs with an `editorial` paragraph array contribute one screen after the overview. Bolivia has three screens: Overview, Santa Cruz to Sucre, and Sucre to Uyuni. Optional leg `title` overrides the route-derived heading. Shared controls provide arrows, keyboard and swipe navigation, three tracking dots, and map-relative scaling. A 420px minimum text height grows to the longest screen; repeated rendering cleans up the old carousel observer. Legacy data without leg editorials keeps its paragraph layout.
-- Ticket content: show only the origin, destination, transport icon, combined mode/duration, and optional Pareto Pick label; do not render body copy inside a ticket
+- Ticket content: show only the origin, destination, transport icon, and combined mode/duration; do not render recommendation badges or body copy inside a ticket
 - No-travel variant (Figma `1530:52750`): use `places` names `NO TICKET` and `REQUIRED` with one leg containing `mode: "none"` and `message: "ENJOY!"`. The mode uses `icon-smiley.svg` (overridable through `assets.modes.none`) and the message replaces mode/duration in the lower row.
 - Key behavior: render one ticket per journey leg in the `540px`-wide Figma composition, size the stack to the rendered ticket count, and alternate even-numbered tickets into the staggered position
 - Responsive behavior: keep the stack at `3:4` of the live country-map width, constrain it to its grid column, use equal columns below `1500px`, and collapse to one column below `900px`
