@@ -4,6 +4,11 @@ Researched 11 September 2026. Added all twelve month classifications to the twel
 previously empty compasses. Cambodia, Bolivia, and Sri Lanka retain their existing
 ratings. No source editorial was rewritten.
 
+Costa Rica's row below records the original research decision. Its current dial
+was superseded on 17 September 2026 by the supplied draft's Monteverde preference:
+May–November Best, December–April Good. See the
+[Costa Rica editorial handoff](costa-rica-editorial-handoff.md).
+
 The categories below are editorial judgments inferred from seasonal evidence and
 the route on each country page, not ratings assigned by the cited organizations.
 Best means a preferred travel window; Good means workable with seasonal tradeoffs;

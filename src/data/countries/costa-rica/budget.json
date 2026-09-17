@@ -1,22 +1,81 @@
 {
   "editorial": [
-    "We don't have a full expense log for this trip.",
-    "Monteverde's main costs are the activities—guided wildlife walks, ziplining and transport—while local sodas make everyday meals easier on the wallet. San Jose did not give us enough time to form a useful budget view."
+    "We spent a little under $800 in Costa Rica, which doesn’t include flights into and out of the country. "
   ],
-  "categories": [],
+  "categories": [
+    {
+      "title": "STAYS",
+      "editorial": [
+        "We enjoyed a super affordable stay ($28 a night) at Monteverde Backpackers.",
+        "Our Airbnb in San Jose was a bit more expensive ($42 a night), but it was in a safe-ish neighbourhood close to the downtown area. "
+      ]
+    },
+    {
+      "title": "FOOD",
+      "editorial": [
+        "We spent about $250 on food, which was very reasonable for the amount we ate. The sumptuous casado cost about $10-$12 a meal (back in 2023)."
+      ]
+    },
+    {
+      "title": "EXPERIENCES",
+      "editorial": [
+        "The bulk of our expenses were in this bucket. ",
+        "We spent about $15 each on the Gold Museum tour and another $7 each on the National Theatre tour in San Jose.",
+        "In Monteverde, the ziplining cost about $75 each, while the night walk was $30 each. The entrance to the cloud forest was $25 per person."
+      ]
+    },
+    {
+      "title": "INTER-CITY TRAVEL",
+      "editorial": [
+        "The bus rides from San Jose to Monteverde were only $7 each, pretty reasonable for a 5-hour ride! "
+      ]
+    },
+    {
+      "title": "MISCELLANEOUS",
+      "editorial": [
+        "Unless things have changed, if you have a USA or Canada visa, you don’t need a separate visa for Costa Rica. One of us didn’t, so that added $30 to our budget. ",
+        "We spent $25 on Uber within San Jose. Given how unsafe the city is, we don’t recommend walking after sundown. "
+      ]
+    }
+  ],
   "alternatives": [
     {
       "title": "What if we had a bigger budget?",
       "editorial": [
-        "We'd spend it on a better-located forest lodge and more guided nature experiences. In Costa Rica, a great naturalist can add more value than a fancier room."
+        "The days in the hostel are etched in our memory. We wouldn’t swap that for fancier lodging. "
       ]
     },
     {
       "title": "What if we had a smaller budget?",
       "editorial": [
-        "Choose one nature base and stay longer. Monteverde alone can fill several days without stacking expensive excursions back-to-back, and sodas keep meals reasonable."
+        "Cut back on the time and money spent in San Jose and move to Monteverde expeditiously. "
       ]
     }
   ],
-  "title": "What it's Going to Cost"
+  "title": "What it's Going to Cost",
+  "days": 4,
+  "year": 2023,
+  "lineItems": [
+    {
+      "description": "STAYS * 4 NIGHTS",
+      "value": "$140"
+    },
+    {
+      "description": "FOOD",
+      "value": "$250"
+    },
+    {
+      "description": "EXPERIENCES",
+      "value": "$305"
+    },
+    {
+      "description": "INTER-CITY TRAVEL",
+      "value": "$30"
+    },
+    {
+      "description": "MISCELLANEOUS",
+      "value": "$55"
+    }
+  ],
+  "total": "$780"
 }
