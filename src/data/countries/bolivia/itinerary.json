@@ -21,7 +21,13 @@
             "Land in Santa Cruz and connect to Sucre.",
             "Our first Bolivian airport felt stuck a couple of decades in the past, and Sucre may be the most unassuming constitutional capital we've visited. The infrastructure around the bus terminal was basic enough to remind us of smaller Indian cities.",
             "If your overnight bus leaves the same evening, stock up on water, snacks and whatever altitude medication you use before boarding."
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/bolivia/art-360/day-1-sucre.svg",
+            "alt": "Sucre, Bolivia",
+            "position": "50% 50%",
+            "size": 360
+          }
         },
         {
           "dayNumber": "Day 2",
@@ -31,7 +37,13 @@
             "The overnight bus reaches Uyuni around dawn.",
             "Do almost nothing on the first day. The town sits high enough for altitude sickness to turn sightseeing into a bad joke. One of us had throbbing headaches and light-headedness even with medication.",
             "Uyuni itself is quaint and visibly Andean. Food can take patience; restaurants may have limited hours and service moves at a pace that encourages spiritual growth."
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/bolivia/art-360/day-2-art-bolivia-city-street.svg",
+            "alt": "City street in Bolivia",
+            "position": "50% 50%",
+            "size": 360
+          }
         },
         {
           "dayNumber": "Day 3",
@@ -42,7 +54,13 @@
             "We chose a one-day salt-flat tour rather than the longer circuit because we were not excited about more hours in a vehicle after the overnight bus.",
             "The dry salt plain is spectacular on its own, but we got absurdly lucky: late-October residual water created patches of the famous mirror effect while the cactus islands were still accessible.",
             "The result looks less like photography and more like your camera forgot which way gravity points."
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/bolivia/art-360/day-3-art-uyuni.svg",
+            "alt": "Uyuni Salt Flats",
+            "position": "50% 50%",
+            "size": 360
+          }
         },
         {
           "dayNumber": "Day 4",
@@ -53,7 +71,13 @@
             "We spent ours wandering slowly and nearly missed the return bus because Google Maps sent us to the wrong terminal. A taxi driver rescued us at the last moment and, despite knowing we were desperate, charged us fairly.",
             "That tiny interaction probably shaped our view of Bolivia as much as any monument.",
             "If the moon cooperates, consider the separate stargazing trip. Ours did not; a bright full moon wiped out the Milky Way plan."
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/bolivia/art-360/day-4-art-dakar-bolivia.svg",
+            "alt": "Dakar monument in Bolivia",
+            "position": "50% 50%",
+            "size": 360
+          }
         },
         {
           "dayNumber": "Day 5",
@@ -63,7 +87,13 @@
             "Take the overnight bus back to Sucre and fly to Santa Cruz.",
             "If timings allow, see Plaza 24 de Septiembre, the cathedral and Mercado Los Pozos before leaving.",
             "Do not underestimate the temperature swings. On our trip, an early morning near 10 degrees Celsius could turn into an afternoon around 30."
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/bolivia/art-360/day-5-santa-cruz.svg",
+            "alt": "Santa Cruz, Bolivia",
+            "position": "50% 50%",
+            "size": 360
+          }
         }
       ]
     }
