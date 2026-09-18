@@ -24,7 +24,13 @@
             "The National Mosque felt very peaceful, almost spiritual instead of religious (a stark contrast to places of worship in India). ",
             "And what can we say about the Petronas Towers that hasn’t been said already. They’re truly a spectacle that have stood the test of time! ",
             "Our last destination of the day was Jalan Alor food street. More on that later. "
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/malaysia/art-360/day-1-art-kuala-lumpur-petronas.svg",
+            "alt": "Petronas Towers in Kuala Lumpur",
+            "position": "50% 50%",
+            "size": 360
+          }
         },
         {
           "dayNumber": "Day 2",
@@ -36,7 +42,13 @@
             "Afterwards, we visited the Federal Territory Mosque, where we were given a fairly objective walkthrough of Islam and the Quran. Unlike some other parts of Asia of varying faiths, Malaysians don’t seem to wear religion on their sleeves.   ",
             "In the evening, we walked up to the Thean Hou Temple, adorned by lanterns that come alive as darkness descends. It was the most peaceful we had felt in a long time. ",
             "The night ended around our Airbnb in Bukit Bintang dancing along to street performers in the area. "
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/malaysia/art-360/day-2-art-penang-temple.svg",
+            "alt": "Temple in Penang",
+            "position": "50% 50%",
+            "size": 360
+          }
         },
         {
           "dayNumber": "Day 3",
@@ -46,7 +58,13 @@
             "We kept the day deliberately loose and returned to our favourite spots from the previous days, particularly Jalan Alor. ",
             "We also caught a glimpse of the Merdeka 118 Tower, the second-tallest building in the world (as of 2025).",
             "We took the short flight to Langkawi and walked the beach around sunset. It was satisfying to know that a busy holiday island can still feel relaxed. "
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/malaysia/art-360/day-3-art-kuala-lumpur-batu.svg",
+            "alt": "Batu Caves in Kuala Lumpur",
+            "position": "50% 50%",
+            "size": 360
+          }
         },
         {
           "dayNumber": "Day 4",
@@ -56,7 +74,13 @@
             "We did the island-hopping tour. We paid RM40 ($10) and it felt worth exactly that amount - not a sen more or less. ",
             "We kayaked for a half-hour in Dayang Bunting. While the weather was gloomy, paddling through the lake was still the best part of the excursion. ",
             "In the evening, we were back on the beach optimizing for absolutely nothing. "
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/malaysia/art-360/day-4-art-langkawi-beach.svg",
+            "alt": "Beach in Langkawi",
+            "position": "50% 50%",
+            "size": 360
+          }
         },
         {
           "dayNumber": "Day 5",
@@ -67,7 +91,13 @@
             "We went parasailing over the waters, which joins ziplining across the valleys of Costa Rica in the growing list of activities one of us fears for weeks, but enjoys in minutes. ",
             "We also attempted to visit the Sky Bridge, but discovered you cannot casually stroll up to it. Access required a RM90 ($23) per person cable-car ticket. We decided against it, but it’s among the most popular things to do in Langkawi. ",
             "The beach beckoned instead and we spent the rest of our time relaxing. Our bags sat unattended while we waded into the waters, which is a testament to how safe Malaysia is in general. "
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/malaysia/art-360/day-5-art-langkawi-parasailing.svg",
+            "alt": "Parasailing in Langkawi",
+            "position": "50% 50%",
+            "size": 360
+          }
         }
       ]
     }
