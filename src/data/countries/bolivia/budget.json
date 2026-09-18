@@ -1,22 +1,82 @@
 {
   "editorial": [
-    "We did not retain a full expense sheet, but Bolivia was inexpensive in everyday terms and disproportionately expensive in the specific logistics required to reach and tour Uyuni.",
-    "The trip is a stack of flights, buses and a guided salt-flat excursion. Local food and basic accommodation were not the budget problem."
+    "Despite being a developing economy, Bolivia is not inexpensive. This is not uncommon for countries that depend on tourism to subsidise the rest of the economy. ",
+    "We spent $1000 over the course of 5 days, including $215 on visas. "
   ],
   "alternatives": [
     {
       "title": "What if we had a bigger budget?",
       "editorial": [
-        "We'd buy comfort in transit: better accommodation before and after the overnight buses, and we'd take the three-day salt-flat/Laguna Colorada circuit with a reputable operator."
+        "With more money, we’d spend more time in Bolivia by taking the three-day tour that included Laguna Colorada. "
       ]
     },
     {
       "title": "What if we had a smaller budget?",
       "editorial": [
-        "Keep the same route but stay simple. Bolivia is one of the easier places to cut accommodation and food costs without sacrificing the headline experience. The salt-flat tour is the thing not to economise into unreliability."
+        "We kept things pretty tight, so there’s not a lot of room to cut corners!"
       ]
     }
   ],
-  "categories": [],
-  "title": "What it's Going to Cost"
+  "categories": [
+    {
+      "title": "STAYS",
+      "editorial": [
+        "Our nights in Sucre and Santa Cruz were inexpensive at about $15 a night. But Uyuni was $200 for three nights at the Cagnapa hotel.",
+        "It’s important to pick a place with heating in Uyuni, which pushes up the prices. "
+      ]
+    },
+    {
+      "title": "FOOD & DRINKS",
+      "editorial": [
+        "Similar to the stays, food was inexpensive in Sucre and Santa Cruz, but steeply priced in Uyuni. A meal for two at the popular Tika in Uyuni cost about $25. ",
+        "Service in Uyuni is painfully slow, so don’t wait till you’re hangry to grab a bite.  "
+      ]
+    },
+    {
+      "title": "EXPERIENCES",
+      "editorial": [
+        "The day-long tour of the salt flats was $60 per person. Our guide took incredible photos and videos, so a $30 tip felt fair (we would have been more generous if we weren’t running out of cash). "
+      ]
+    },
+    {
+      "title": "INTER-CITY TRAVEL",
+      "editorial": [
+        "The round trip between Santa Cruz and Sucre cost us $70 each. And buses to and fro Uyuni was $26 each. "
+      ]
+    },
+    {
+      "title": "MISCELLANEOUS",
+      "editorial": [
+        "At least in 2023, Bolivia had a hefty visa fee of around $110 per person! ",
+        "Luckily, Ubers were super cheap and only cost us $10 in total to get from the airports to our destinations. "
+      ]
+    }
+  ],
+  "title": "What it's Going to Cost",
+  "days": 5,
+  "people": 2,
+  "year": 2023,
+  "lineItems": [
+    {
+      "description": "STAYS * 5 NIGHTS",
+      "value": "$230"
+    },
+    {
+      "description": "FOOD",
+      "value": "$200"
+    },
+    {
+      "description": "EXPERIENCES",
+      "value": "$150"
+    },
+    {
+      "description": "INTER-CITY TRAVEL",
+      "value": "$190"
+    },
+    {
+      "description": "MISCELLANEOUS",
+      "value": "$230"
+    }
+  ],
+  "total": "$1000"
 }
