@@ -17,6 +17,18 @@ function requiredText(value, fieldName) {
   return value.trim();
 }
 
+function normalizePosition(position, fieldName) {
+  for (const coordinate of ["x", "y"]) {
+    const value = position?.[coordinate];
+    if (!Number.isFinite(value) || value < 0 || value > MAP_COORDINATE_SIZE) {
+      throw new Error(
+        `Country hero data needs ${fieldName}.${coordinate} between 0 and ${MAP_COORDINATE_SIZE}.`,
+      );
+    }
+  }
+  return { x: position.x, y: position.y };
+}
+
 function normalizeLocation(location, index) {
   const fieldName = `map.locations[${index}]`;
 
@@ -35,14 +47,25 @@ function normalizeLocation(location, index) {
     throw new Error(`Country hero data has an unsupported ${fieldName}.state.`);
   }
 
-  for (const coordinate of ["x", "y"]) {
-    const value = location[coordinate];
-
-    if (!Number.isFinite(value) || value < 0 || value > MAP_COORDINATE_SIZE) {
-      throw new Error(
-        `Country hero data needs ${fieldName}.${coordinate} between 0 and ${MAP_COORDINATE_SIZE}.`,
-      );
+  const position = normalizePosition(location, fieldName);
+  const labelPosition = location.labelPosition == null
+    ? null
+    : normalizePosition(location.labelPosition, `${fieldName}.labelPosition`);
+  if (labelPosition) {
+    const lineHeight = location.labelPosition.lineHeight ?? 24;
+    if (lineHeight !== 22 && lineHeight !== 24) {
+      throw new Error(`Country hero data needs a valid ${fieldName}.labelPosition.lineHeight.`);
     }
+    labelPosition.lineHeight = lineHeight;
+  }
+  let connector = null;
+  if (location.connector != null) {
+    const origin = normalizePosition(location.connector, `${fieldName}.connector`);
+    const dots = location.connector.dots;
+    if (!Number.isInteger(dots) || dots < 1 || dots > 60 || origin.x + (dots - 1) * 12 + 6 > MAP_COORDINATE_SIZE) {
+      throw new Error(`Country hero data needs a valid ${fieldName}.connector.dots.`);
+    }
+    connector = { ...origin, dots };
   }
 
   const href = location.href == null
@@ -54,8 +77,9 @@ function normalizeLocation(location, index) {
     label: requiredText(location.label, `${fieldName}.label`),
     icon,
     state,
-    x: location.x,
-    y: location.y,
+    ...position,
+    labelPosition,
+    connector,
     href,
   };
 }
@@ -126,7 +150,25 @@ function createMapMarker(location) {
   label.className = "country-map-marker-label";
   label.textContent = location.label;
 
+  if (location.labelPosition) {
+    label.classList.add("country-map-marker-label--offset");
+    label.style.left = `${((location.labelPosition.x - location.x) / MAP_COORDINATE_SIZE) * 100}cqw`;
+    label.style.top = `${((location.labelPosition.y - location.y) / MAP_COORDINATE_SIZE) * 100}cqw`;
+    label.style.lineHeight = location.labelPosition.lineHeight / 18;
+  }
+
   marker.append(icon, label);
+  if (location.connector) {
+    const connector = document.createElement("span");
+    connector.className = "country-map-marker-connector";
+    connector.setAttribute("aria-hidden", "true");
+    connector.style.left = `${((location.connector.x - location.x) / MAP_COORDINATE_SIZE) * 100}cqw`;
+    connector.style.top = `${((location.connector.y - location.y) / MAP_COORDINATE_SIZE) * 100}cqw`;
+    for (let i = 0; i < location.connector.dots; i += 1) {
+      connector.append(document.createElement("span"));
+    }
+    marker.append(connector);
+  }
   return marker;
 }
 

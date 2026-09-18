@@ -5,7 +5,53 @@
   "name": "Malaysia",
   "map": {
     "src": "../../../assets/countries/malaysia/country-map.svg",
-    "alt": "Map of Malaysia"
+    "alt": "Map of Malaysia",
+    "locations": [
+      {
+        "id": "langkawi",
+        "label": "LANGKAWI",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 36,
+        "y": 221,
+        "labelPosition": {
+          "x": 193.5,
+          "y": 263,
+          "lineHeight": 22
+        },
+        "connector": {
+          "x": 78,
+          "y": 269,
+          "dots": 6
+        }
+      },
+      {
+        "id": "penang",
+        "label": "PENANG",
+        "icon": "map-pin",
+        "state": "secondary",
+        "x": 60,
+        "y": 270,
+        "labelPosition": {
+          "x": 194.5,
+          "y": 311,
+          "lineHeight": 22
+        },
+        "connector": {
+          "x": 102,
+          "y": 318,
+          "dots": 5
+        }
+      },
+      {
+        "id": "kuala-lumpur",
+        "label": "KUALA LUMPUR",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 108,
+        "y": 354
+      }
+    ]
   },
   "overview": "In the late 90s, Malaysia promoted itself to tourists as “Truly Asia”. Three decades later, we can vouch for the slogan. \n\nMalaysia, a Muslim-majority country with significant Chinese and Indian diasporas, can truly lay claim to represent Asia in its entirety. A walk across Kuala Lumpur can take you from old-timey colonial buildings to some of the tallest structures in the world. \n\nThe marketing has been muted in recent years, making Malaysia a somewhat underrated gem in Southeast Asia.",
   "seo": {

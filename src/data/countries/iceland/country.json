@@ -5,7 +5,41 @@
   "name": "Iceland",
   "map": {
     "src": "../../../assets/countries/iceland/country-map.svg",
-    "alt": "Map of Iceland"
+    "alt": "Map of Iceland",
+    "locations": [
+      {
+        "id": "reykjavik",
+        "label": "REYKJAVIK",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 168,
+        "y": 426
+      },
+      {
+        "id": "west",
+        "label": "WEST",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 258,
+        "y": 378
+      },
+      {
+        "id": "north",
+        "label": "NORTH",
+        "icon": "map-pin",
+        "state": "secondary",
+        "x": 426,
+        "y": 252
+      },
+      {
+        "id": "east",
+        "label": "EAST",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 504,
+        "y": 414
+      }
+    ]
   },
   "overview": "Visiting another planet may or may not be possible within our lifetimes, so Iceland is the next best thing.\n\nThe place feels like Earth before Earth finished rendering: glaciers, geysers, black beaches, lava fields and waterfalls dropped across a landscape with almost no visual clutter.\n\nPlenty of countries are beautiful. Iceland is different because the scenery keeps changing its mind. One hour you are staring at a waterfall, the next at a glacier, then a beach that looks like it belongs in a dystopian film.\n\nAnd if the aurora shows up at night, the whole trip becomes unfair to everywhere else.",
   "seo": {

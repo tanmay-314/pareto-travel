@@ -5,7 +5,33 @@
   "name": "Greece",
   "map": {
     "src": "../../../assets/countries/greece/country-map.svg",
-    "alt": "Map of Greece"
+    "alt": "Map of Greece",
+    "locations": [
+      {
+        "id": "athens",
+        "label": "ATHENS",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 306,
+        "y": 336
+      },
+      {
+        "id": "santorini",
+        "label": "SANTORINI",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 426,
+        "y": 468
+      },
+      {
+        "id": "crete",
+        "label": "CRETE",
+        "icon": "map-pin",
+        "state": "secondary",
+        "x": 384,
+        "y": 564
+      }
+    ]
   },
   "overview": "What would the world be without Greece? The cradle of western civilisation has given us democracy, philosophy, and feta cheese (in that order of importance).\n\nIf images of antiquity flood your mind when you think of Greece, then the modern, slightly rough around the edges Athens may underwhelm. Santorini on the other hand is exactly as advertised on Instagram.  \n\nGreece deserves a visit, if nothing else, to admire how far humanity has come since Socrates, Plato, and Aristotle were pondering the meaning of life back in the day. ",
   "seo": {

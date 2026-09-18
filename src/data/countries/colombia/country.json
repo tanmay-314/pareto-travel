@@ -5,7 +5,41 @@
   "name": "Colombia",
   "map": {
     "src": "../../../assets/countries/colombia/country-map.svg",
-    "alt": "Map of Colombia"
+    "alt": "Map of Colombia",
+    "locations": [
+      {
+        "id": "cartagena",
+        "label": "CARTAGENA",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 282,
+        "y": 102
+      },
+      {
+        "id": "bogota",
+        "label": "BOGOTA",
+        "icon": "airplane",
+        "state": "primary",
+        "x": 357,
+        "y": 336
+      },
+      {
+        "id": "medellin",
+        "label": "MEDELLIN",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 276,
+        "y": 264
+      },
+      {
+        "id": "valle-de-cocora",
+        "label": "VALLE\nDE COCORA",
+        "icon": "map-pin",
+        "state": "secondary",
+        "x": 291,
+        "y": 347
+      }
+    ]
   },
   "overview": "India and Gandhi. South Africa and Mandela. Colombia and Escobar. El Patron is obviously not in the same moral category as the other gentlemen, but he is frustratingly hard to separate from the country's international story.\n\nWe arrived roughly three decades after Pablo Escobar's death and found a Colombia that had moved much further on than its reputation had. Medellin in particular was the revelation: green, modern, pleasant and almost absurdly transformed from the violence you read about.\n\nThen Cartagena reminded us that a country can contain completely different experiences within the same border. Caribbean, colonial, colourful—and, for us, far more exhausting.\n\nColombia's best quality may be the contrast. Dawn after the Don.",
   "seo": {

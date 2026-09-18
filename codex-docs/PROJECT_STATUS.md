@@ -2,7 +2,7 @@
 
 This file gives a new Codex session a quick snapshot of active work. Keep it brief and update it whenever priorities or known constraints materially change.
 
-Last updated: 2026-09-16
+Last updated: 2026-09-19
 
 ## Current objective
 
@@ -46,6 +46,12 @@ Update this list with file paths and implementation status once the files are pr
 - None recorded yet.
 
 ## Recently completed
+
+- Positioned the landing-page tagline to match updated Figma `1663:101448`,
+  at the desktop map's lower edge beneath Africa and above the header at 900px
+  and below. Verified eight widths
+  from 320px to 1920px: no text clipping, horizontal overflow, or browser errors;
+  mobile destination cards and keyboard focus remain available.
 
 - Updated the world map from Figma `1617:85803`: added Japan and Vietnam,
   refreshed Malaysia's SVG, and corrected Singapore's position. Places now has

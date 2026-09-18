@@ -31,11 +31,8 @@
   position: absolute;
   left: var(--marker-x);
   top: var(--marker-y);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 8.3333333333%;
-  max-width: var(--country-map-icon-width);
+  width: 9.0277777778%;
+  aspect-ratio: 65 / 104;
   color: var(--color-icon-secondary);
   text-decoration: none;
   pointer-events: auto;
@@ -60,8 +57,10 @@
 }
 
 .country-map-marker-icon {
-  flex: 0 0 auto;
-  width: 100%;
+  position: absolute;
+  left: 4.6153846154%;
+  top: 0;
+  width: 92.3076923077%;
   aspect-ratio: var(--country-map-icon-aspect-ratio);
   background-color: currentColor;
   mask: var(--marker-icon) center / contain no-repeat;
@@ -70,18 +69,38 @@
 }
 
 .country-map-marker-label {
+  position: absolute;
+  left: 49.2307692308%;
+  top: 8.3333333333cqw;
+  transform: translateX(-50%);
   width: max-content;
-  max-width: 108px;
   text-align: center;
   font-family: var(--type-family-display), monospace;
-  font-size: clamp(
-    var(--type-size-label),
-    3.3333333333cqw,
-    var(--type-size-map-label)
-  );
+  font-size: 2.5cqw;
+  line-height: 1.3333333333;
   font-weight: var(--type-weight-regular);
+  font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
+  white-space: pre;
   text-transform: uppercase;
   color: currentColor;
+}
+
+.country-map-marker--secondary .country-map-marker-label {
+  line-height: 1.2222222222;
+}
+
+.country-map-marker-connector {
+  position: absolute;
+  display: flex;
+  gap: 0.8333333333cqw;
+  pointer-events: none;
+}
+
+.country-map-marker-connector > span {
+  width: 0.8333333333cqw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: currentColor;
 }
 
 @media (prefers-reduced-motion: reduce) {

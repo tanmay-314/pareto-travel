@@ -41,19 +41,19 @@
     "locations": [
       {
         "id": "angkor-wat",
-        "label": "Angkor Wat",
+        "label": "ANGKOR WAT",
         "icon": "map-pin",
         "state": "primary",
-        "x": 201,
-        "y": 198
+        "x": 195,
+        "y": 210
       },
       {
         "id": "phnom-penh",
-        "label": "Phnom Penh",
-        "icon": "airplane",
+        "label": "PHNOM PENH",
+        "icon": "map-pin",
         "state": "secondary",
-        "x": 315,
-        "y": 444
+        "x": 312,
+        "y": 431
       }
     ]
   }

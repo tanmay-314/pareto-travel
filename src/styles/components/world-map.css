@@ -1,3 +1,26 @@
+.landing-page {
+    --landing-map-width: min(calc(100vw - 2 * var(--space-6xl)), 1816px);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.landing-tagline {
+    order: 1;
+    align-self: center;
+    width: var(--landing-map-width);
+    /* Figma: text starts 708px across and 25px above the 1816px map's bottom. */
+    margin: calc(var(--landing-map-width) * -25 / 1816) 0 var(--space-xl);
+    padding-left: calc(var(--landing-map-width) * 708 / 1816);
+    color: var(--color-text-secondary);
+    font-family: var(--type-family-display), monospace;
+    font-size: var(--type-size-logo);
+    font-weight: var(--type-weight-regular);
+    line-height: 1.2;
+    text-align: left;
+    white-space: nowrap;
+}
+
 #map-container {
     position: relative;
     width: 100%;
@@ -27,6 +50,17 @@
 }
 
 @media (max-width: 900px) {
+    .landing-tagline {
+        order: -1;
+        align-self: stretch;
+        width: auto;
+        margin: var(--space-lg) var(--space-lg) 0;
+        padding-left: 0;
+        font-size: clamp(var(--type-size-body), 4vw, var(--type-size-logo));
+        text-align: center;
+        white-space: normal;
+    }
+
     #map-container {
         padding-right: var(--space-lg);
         padding-left: var(--space-lg);

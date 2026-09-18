@@ -6,7 +6,49 @@
   "overview": "Separated only by a strait, Sri Lanka is a world apart from the mainland subcontinent. Calmness prevails on the island, one that feels hard-earned after decades of civil war. \n\nIf the misty hills and balmy shores weren’t enchanting enough, the delightful Sri Lankan smiles that greet you across the island will assuredly leave you feeling fuzzy. ",
   "map": {
     "src": "../../../assets/countries/sri-lanka/country-map.svg",
-    "alt": "Map of Sri Lanka"
+    "alt": "Map of Sri Lanka",
+    "locations": [
+      {
+        "id": "sigiriya",
+        "label": "SIGIRIYA",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 324,
+        "y": 300
+      },
+      {
+        "id": "ella",
+        "label": "ELLA",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 372,
+        "y": 420
+      },
+      {
+        "id": "kandy",
+        "label": "KANDY",
+        "icon": "map-pin",
+        "state": "secondary",
+        "x": 318,
+        "y": 396
+      },
+      {
+        "id": "mirissa",
+        "label": "MIRISSA",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 294,
+        "y": 516
+      },
+      {
+        "id": "colombo",
+        "label": "COLOMBO",
+        "icon": "airplane",
+        "state": "primary",
+        "x": 234,
+        "y": 438
+      }
+    ]
   },
   "seo": {
     "title": "Sri Lanka travel guide | Pareto Travel",

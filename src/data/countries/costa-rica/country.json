@@ -5,7 +5,33 @@
   "name": "Costa Rica",
   "map": {
     "src": "../../../assets/countries/costa-rica/country-map.svg",
-    "alt": "Map of Costa Rica"
+    "alt": "Map of Costa Rica",
+    "locations": [
+      {
+        "id": "monteverde",
+        "label": "MONTEVERDE",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 216,
+        "y": 203
+      },
+      {
+        "id": "manuel-antonio",
+        "label": "MANUEL ANTONIO",
+        "icon": "map-pin",
+        "state": "secondary",
+        "x": 378,
+        "y": 384
+      },
+      {
+        "id": "san-jose",
+        "label": "SAN JOSE",
+        "icon": "airplane",
+        "state": "primary",
+        "x": 381,
+        "y": 294
+      }
+    ]
   },
   "overview": "Pura vida. Hello, thanks, goodbye, and the answer to life itself. Costa Rica has somehow compressed an entire national mood into two words.\n\nThe phrase literally gets translated as “pure life”, but what we experienced felt closer to “life sans complications”. Come to Costa Rica for the vibes. Come to Costa Rica to experience, captured best in the cloud forests of Monteverde (and not so much in the capital, San Jose). ",
   "seo": {

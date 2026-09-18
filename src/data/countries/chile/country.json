@@ -5,7 +5,59 @@
   "name": "Chile",
   "map": {
     "src": "../../../assets/countries/chile/country-map.svg",
-    "alt": "Map of Chile"
+    "alt": "Map of Chile",
+    "locations": [
+      {
+        "id": "rapa-nui",
+        "label": "RAPA NUI",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 45,
+        "y": 164
+      },
+      {
+        "id": "santiago",
+        "label": "SANTIAGO",
+        "icon": "airplane",
+        "state": "primary",
+        "x": 351,
+        "y": 246
+      },
+      {
+        "id": "torres-del-paine",
+        "label": "TORRES DEL PAINE",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 324,
+        "y": 449,
+        "labelPosition": {
+          "x": 225.5,
+          "y": 491,
+          "lineHeight": 22
+        },
+        "connector": {
+          "x": 318,
+          "y": 497,
+          "dots": 3
+        }
+      },
+      {
+        "id": "punta-arenas",
+        "label": "PUNTA ARENAS",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 348,
+        "y": 498
+      },
+      {
+        "id": "atacama",
+        "label": "ATACAMA",
+        "icon": "map-pin",
+        "state": "secondary",
+        "x": 372,
+        "y": 132
+      }
+    ]
   },
   "overview": "Chile is absurdly long. Traversing it is roughly the kind of distance that makes normal countries ask for a passport halfway through.\n\nThat geography is the point. In one trip we went from Santiago to the most isolated inhabited island on Earth, then down to Patagonian lakes, glaciers and penguin colonies near the bottom of the continent.\n\nThe landscapes were extraordinary. Our interactions with the country were more complicated.\n\nRapa Nui was one of the most peaceful places we have ever been. Torres del Paine was beautiful enough to redeem a logistical disaster. Santiago, meanwhile, never made us completely relax. Chile stretched our imagination—and occasionally our patience.",
   "seo": {

@@ -5,7 +5,49 @@
   "name": "Brazil",
   "map": {
     "src": "../../../assets/countries/brazil/country-map.svg",
-    "alt": "Map of Brazil"
+    "alt": "Map of Brazil",
+    "locations": [
+      {
+        "id": "amazon",
+        "label": "AMAZON",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 246,
+        "y": 120
+      },
+      {
+        "id": "rio",
+        "label": "RIO",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 498,
+        "y": 390
+      },
+      {
+        "id": "sao-paulo",
+        "label": "SAO\nPAULO",
+        "icon": "airplane",
+        "state": "primary",
+        "x": 438,
+        "y": 405
+      },
+      {
+        "id": "lencois-maranhenses",
+        "label": "LENCOIS MARANHENSES",
+        "icon": "map-pin",
+        "state": "secondary",
+        "x": 474,
+        "y": 114
+      },
+      {
+        "id": "iguazu-falls",
+        "label": "IGUAZU\nFALLS",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 342,
+        "y": 438
+      }
+    ]
   },
   "overview": "“Gracias! Sorry, obrigado!”, I tell a Brazilian immigration officer. Portuguese and Spanish are similar enough to create confidence and different enough to punish it.\n\nBrazil does something similar with travel expectations. You arrive thinking beaches, football and samba, then discover that a single trip can include the Amazon rainforest, one of the world's great cityscapes and waterfalls violent enough to make an atheist briefly reconsider his position.\n\nThe harder question is when to go. Brazil is so large that the ideal weather in one region can be the wrong season in another. We accepted the compromise and did Manaus, the Amazon, Rio, Iguacu and Sao Paulo in one long sweep.\n\nThe river, the falls, the Redeemer—and several domestic flights questioning our life choices.",
   "seo": {

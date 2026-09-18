@@ -5,7 +5,91 @@
   "name": "United States",
   "map": {
     "src": "../../../assets/countries/united-states/country-map.svg",
-    "alt": "Map of United States"
+    "alt": "Map of United States",
+    "locations": [
+      {
+        "id": "la",
+        "label": "LA",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 54,
+        "y": 336
+      },
+      {
+        "id": "grand-canyon",
+        "label": "GRAND\nCANYON",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 144,
+        "y": 324,
+        "labelPosition": {
+          "x": 254.5,
+          "y": 355
+        },
+        "connector": {
+          "x": 186,
+          "y": 372,
+          "dots": 3
+        }
+      },
+      {
+        "id": "vegas",
+        "label": "VEGAS",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 102,
+        "y": 318
+      },
+      {
+        "id": "disney-world",
+        "label": "DISNEY\nWORLD",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 540,
+        "y": 450
+      },
+      {
+        "id": "yellowstone",
+        "label": "YELLOWSTONE",
+        "icon": "map-pin",
+        "state": "secondary",
+        "x": 174,
+        "y": 198
+      },
+      {
+        "id": "dc",
+        "label": "DC",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 582,
+        "y": 276
+      },
+      {
+        "id": "ny",
+        "label": "NY",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 606,
+        "y": 228,
+        "labelPosition": {
+          "x": 695,
+          "y": 268
+        },
+        "connector": {
+          "x": 648,
+          "y": 276,
+          "dots": 3
+        }
+      },
+      {
+        "id": "niagara-falls",
+        "label": "NIAGARA\nFALLS",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 528,
+        "y": 204
+      }
+    ]
   },
   "overview": "I haven't just travelled the United States; I've lived here. For five whole years. In my time there—which was rudely interrupted by a pandemic—I made my way to most places you'd think of when you hear the words “United States”.\n\nMy first impression, formed during a visit to Walmart within hours of landing, was the abundance of things. For the right price, you can find almost anything in this country, no matter which corner of the world the thing originally came from.\n\nMy second and more lasting impression was of how organised it is. Things generally work. Systems are reliable enough that you stop noticing them—until you desperately need a human to bend one. If you're trying to skip an airport queue because your flight is leaving, you want empathy, not a perfectly functioning process explaining why you're doomed.\n\nLastly, there are two Americas. And I don't mean politically. There is the reel America exported by Hollywood—New York skyscrapers, Los Angeles sunshine, Las Vegas casinos, Hawaiian beaches—and there is the real America of highways, strip malls and towns that can look oddly interchangeable across state lines.\n\nHence, Uniform Systems of Abundance.",
   "seo": {

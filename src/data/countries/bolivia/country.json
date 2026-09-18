@@ -6,7 +6,41 @@
   "overview": "Salt Bae-livia, amirite? Okay, we'll stop peppering in puns.\n\nIt feels right for Bolivia to be named after the man that decolonised the continent (Simon Bolivar for the uninitiated). Of all of the South Americans, Bolivia is closest to its indigenous roots.  \n\nBolivians are the poorest of South Americans, but in opinion, they’re also the purest. We were met with a kindness in Bolivia, even in moments where opportunism would have been almost understandable.",
   "map": {
     "src": "../../../assets/countries/bolivia/country-map.svg",
-    "alt": "Map of Bolivia"
+    "alt": "Map of Bolivia",
+    "locations": [
+      {
+        "id": "salt-flats",
+        "label": "SALT FLATS",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 168,
+        "y": 468
+      },
+      {
+        "id": "sucre",
+        "label": "SUCRE",
+        "icon": "airplane",
+        "state": "primary",
+        "x": 255,
+        "y": 413
+      },
+      {
+        "id": "santa-cruz",
+        "label": "SANTA CRUZ",
+        "icon": "airplane",
+        "state": "primary",
+        "x": 339,
+        "y": 364
+      },
+      {
+        "id": "laguna-colorada",
+        "label": "LAGUNA COLORADA",
+        "icon": "map-pin",
+        "state": "secondary",
+        "x": 162,
+        "y": 570
+      }
+    ]
   },
   "seo": {
     "title": "Bolivia travel guide | Pareto Travel",
