@@ -21,7 +21,13 @@
             "San Jose should strictly be your port of arrival. ",
             "Unfortunately, our impression of the city was less than flattering. Prostitution is rampant, which is not a problem in and of itself, if it weren’t for the unsavoury elements propping up the business. ",
             "We toured the National Theatre during the day, and cooped up in our Airbnb after sundown."
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/costa-rica/art-360/day-1-art-frame-theatre.svg",
+            "alt": "National Theatre in San Jose",
+            "position": "50% 50%",
+            "size": 360
+          }
         },
         {
           "dayNumber": "Day 2",
@@ -31,7 +37,13 @@
             "We took the bus from San Jose to Monteverde (about 5 hours away) and immediately felt better about our trip!",
             "Monteverde had a wonderful welcoming vibe exemplified by our hostel, Monteverde Backpackers. Filled with travellers from across the world (mainly Europe), it had the communal feeling you want from a hostel. ",
             "After dark, we did a night tour of the forest. In a couple of hours, we saw a sloth, a scorpion, a tarantula, a viper, and toucans of various hues. Our guide’s fascinating personality elevated the experience.  "
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/costa-rica/art-360/day-2-art-frame-waterfall.svg",
+            "alt": "Waterfall in Costa Rica",
+            "position": "50% 50%",
+            "size": 360
+          }
         },
         {
           "dayNumber": "Day 3",
@@ -43,7 +55,13 @@
             "In the afternoon, we learnt why it’s called a “cloud” forest. The mist descending on the hills is a spectacle. One that must experienced for a camera cannot capture the dreamlike atmosphere the clouds create. ",
             "The evening was spent back in the hostel, with conversations over cooking. ",
             "One of us was also preparing themselves for the next day…"
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/costa-rica/art-360/day-3-art-frame-mountain.svg",
+            "alt": "Mountains in Monteverde",
+            "position": "50% 50%",
+            "size": 360
+          }
         },
         {
           "dayNumber": "Day 4",
@@ -54,7 +72,13 @@
             "If you’re scared of heights, it will be the most terrifying day of your life. ",
             "But somehow, we did it. And boy was it worth it! ",
             "As a famous ad punchline back in India goes, “Darr ke aage jeet hai”. “Beyond fear lies victory”."
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/costa-rica/art-360/day-4-art-frame-zipline.svg",
+            "alt": "Zip-lining in Monteverde",
+            "position": "50% 50%",
+            "size": 360
+          }
         }
       ]
     }

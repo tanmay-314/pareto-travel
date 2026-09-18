@@ -20,7 +20,13 @@
           "editorial": [
             "We settled into Athens by circling the tourist core below the Acropolis. The European-ness of the vibrant rooftop cafes and souvenir shops is unmistakable!",
             "As the sun was setting, we watched a Greek play (in English) against the backdrop of the Acropolis. It was quite a surreal experience.  "
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/greece/art-360/day-1-art-frame-acropolis-night.svg",
+            "alt": "Acropolis at night in Athens",
+            "position": "50% 50%",
+            "size": 360
+          }
         },
         {
           "dayNumber": "DAY 2",
@@ -30,7 +36,13 @@
             "This was the day that we got the Greece we came for: the Acropolis, Parthenon, and the Theatre of Dionysus. ",
             "We booked a mythology-focused tour and were somewhat disappointed that the entire focus was on mythology as opposed to history or architecture. If the latter interest you more, then choose your tour more wisely than we did. ",
             "In the evening, we walked up Lycabettus Hill for the sunset views. It was a good visual summary of Athens capturing the modern sprawl amidst ancient monuments. "
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/greece/art-360/day-2-art-frame-parthenon.svg",
+            "alt": "Parthenon in Athens",
+            "position": "50% 50%",
+            "size": 360
+          }
         },
         {
           "dayNumber": "DAY 3",
@@ -42,7 +54,13 @@
             "After lunch, we took the bus into Oia, the part of the island most famously associated with it (think white buildings and blue domes). ",
             "We got in line (and it wasn’t even peak season yet) for the money shot. There’s a strange sense of camaraderie in Santorini, where everyone’s trying to help each other get the best pictures! ",
             "We roamed around the island at night, taking in sights of the parties that were kicking off. We did not partake in the partying though."
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/greece/art-360/day-3-art-frame-santorini-dome.svg",
+            "alt": "Blue dome in Santorini",
+            "position": "50% 50%",
+            "size": 360
+          }
         },
         {
           "dayNumber": "DAY 4",
@@ -51,7 +69,13 @@
           "editorial": [
             "Our second day in Santorini was much of the same, except we were satisfied with the photos from the day prior and gave that a miss. ",
             "It’s a small island where people come to forget about real world things like the concept of time. There’s not a lot to do (at least not on our budget) and that’s part of the charm.  "
-          ]
+          ],
+          "image": {
+            "src": "../assets/countries/greece/art-360/day-4-art-frame-santorini-cliffs.svg",
+            "alt": "Cliffs in Santorini",
+            "position": "50% 50%",
+            "size": 360
+          }
         }
       ]
     }
