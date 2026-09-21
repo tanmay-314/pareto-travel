@@ -48,8 +48,9 @@ Update this list with file paths and implementation status once the files are pr
 ## Recently completed
 
 - Positioned the landing-page tagline to match updated Figma `1663:101448`,
-  at the desktop map's lower edge beneath Africa and above the header at 900px
-  and below. Verified eight widths
+  at the desktop map's lower edge beneath Africa. The responsive placement at
+  900px and below now follows the header, above the map or mobile destinations.
+  Verified the updated placement at eight widths
   from 320px to 1920px: no text clipping, horizontal overflow, or browser errors;
   mobile destination cards and keyboard focus remain available.
 

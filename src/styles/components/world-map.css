@@ -51,7 +51,7 @@
 
 @media (max-width: 900px) {
     .landing-tagline {
-        order: -1;
+        order: 0;
         align-self: stretch;
         width: auto;
         margin: var(--space-lg) var(--space-lg) 0;

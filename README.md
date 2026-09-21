@@ -153,7 +153,7 @@ navigation, a base world map, and overlays for:
 
 The SVG overlays exist; all except India, Japan, and Vietnam link to their generated pages.
 The tagline “WANDER LESS, WONDER MORE.” sits at the map’s lower edge beneath Africa on desktop
-and above the header at widths of 900px and below.
+and below the header, above the map or mobile destinations, at widths of 900px and below.
 See [editorial handoff](codex-docs/country-editorials-handoff.md) for coverage
 and unresolved source issues.
 
