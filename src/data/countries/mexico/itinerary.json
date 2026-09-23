@@ -3,75 +3,82 @@
     {
       "id": "mexico-itinerary",
       "country": "Mexico",
-      "title": "Fallen Empires, Sunken Waters, Rising City - 6 Day Itinerary",
+      "title": "Rising City, Fallen Empires, Sunken Waters - 6 Day Itinerary",
       "editorial": [
-        "This is a fast itinerary involving domestic flights. If you prefer slow travel, give Mexico more time or choose one region.",
+        "While we Pareto travelled our way in six days, Mexico is one of the places that rewards slower immersive travel because of how much it has to offer.",
+        "Our trip spanned Mexico City, Chichen-itza, and Bacalar.",
         "What if we had more time?",
-        "We'd add Oaxaca for the food and culture, and Tulum if we wanted more Caribbean coast. Mexico can easily absorb two weeks; six days barely scratches it."
+        "Oaxaca is the one that just missed out. It’s one of the cultural and culinary centres of Mexico.",
+        "We were deliberate in choosing the laid back Bacalar as our beach destination in Mexico, but the livelier Cabo and Cancun are very popular destinations as well."
       ],
       "editorialHeadings": [
-        1
+        2
       ],
       "days": [
         {
-          "dayNumber": "Day 1",
-          "location": "Mexico City",
-          "title": "Day 1 - Mexico City",
+          "dayNumber": "DAY 1",
+          "location": "MEXICO CITY",
+          "title": "DAY 1 - MEXICO CITY",
           "editorial": [
-            "Start around the Zocalo and Templo Mayor, then spend the evening in Roma Norte.",
-            "We arrived on Independence Day and found the centre swallowed by parade crowds for hours. Even without the national celebration, CDMX's public spaces are the attraction: people spill into streets, markets and squares rather than retreating indoors.",
-            "One tiny moment stayed with us. We walked through a restaurant inside a market because it happened to connect two public spaces. Nobody cared. There is a comfort with shared space here that makes the city feel lived-in rather than policed into neat compartments."
+            "Even if you’re not in town for Independence Day, we recommend starting the trip around the Zocalo (main square) and Templo Mayor for a peek into the past and present of Mexican civilisation.",
+            "In the evening, we checked out the bougie Roma Norte neighbourhood, famed for its art galleries (that we skipped).",
+            "Having travelled from the United States, we couldn’t help but appreciate how public spaces were truly public. As tourists, we didn’t feel awkward just standing around and observing life.",
+            "CDMX arguably has the perfect amount of urban density. Somewhere between 15 to 20 million people live here, but the city is expansive enough to accommodate them without resembling an suburban sprawl like a lot of American cities."
           ]
         },
         {
-          "dayNumber": "Day 2",
-          "location": "Mexico City",
-          "title": "Day 2 - Mexico City",
+          "dayNumber": "DAY 2",
+          "location": "MEXICO CITY",
+          "title": "DAY 2 - MEXICO CITY",
           "editorial": [
-            "Spend the day in Bosque de Chapultepec, Castillo de Chapultepec and the anthropology museum, then head towards Plaza Garibaldi or the historic centre in the evening.",
-            "Sunday night was particularly memorable: street performers, vendors, families and school kids were still out around 9:00 PM. CDMX is huge, but it rarely felt lonely.",
-            "Eat at Los Panchos if you can and try chiles en nogada when it is in season."
+            "We visited the wonderful Bosque de Chapultepec, a huge park that hosts the Castillo de Chapultepec (castle) and the Museum of Anthropology.",
+            "The afternoon was spent in Plaza Garibaldi enjoying the music of Mariachi bands.",
+            "By the evening, we were back at the Zocalo, which had a bustling atmosphere for a Sunday night! There were families out and about, street performers putting on spectacles, vendors doing vendor things."
           ]
         },
         {
-          "dayNumber": "Day 3",
-          "location": "Teotihuacan",
-          "title": "Day 3 - Teotihuacan",
+          "dayNumber": "DAY 3",
+          "location": "TEOTIHUACAN",
+          "title": "DAY 3 - TEOTIHUACAN",
           "editorial": [
-            "Make the day trip to Teotihuacan.",
-            "The pyramids are visually imposing, but the guided context makes them much more interesting: how architecture echoed the surrounding mountains and how ceremonial structures connected human life with the sky.",
-            "It deserves more attention than a quick photo stop from Mexico City."
+            "We made an early start to Day 3 with a guided tour of Teotihuacan, about an hour from the city centre.",
+            "CDMX is often associated with the Aztec civilisation, but Teotihuacan precedes the Aztecs by almost a millennium! There’s ambiguity about who exactly lived in Teotihuacan, but it’s estimated that it was the most populous city in the Americas at its peak between 1 AD to 500 AD.",
+            "The engineering ingenuity of the pyramids of Teotihuacan is very fascinating! The pyramids are shaped like the surrounding mountains in order to mimic contours of the mountains and prevent things from sliding down the pyramid.",
+            "On the way back to the city, our tour bus stopped at the Guadalupe Basilica, the foremost place of worship in Mexico.",
+            "Our day concluded with a late night flight to Merida, the closes airport to Chichen-itza."
           ]
         },
         {
-          "dayNumber": "Day 4",
-          "location": "Chichen Itza",
-          "title": "Day 4 - Chichen Itza",
+          "dayNumber": "DAY 4",
+          "location": "CHICHEN-ITZA",
+          "title": "DAY 4 - CHICHEN-ITZA",
           "editorial": [
-            "Fly or travel east and devote the day to Chichen Itza and a cenote.",
-            "The Mayan cosmology is almost as memorable as the pyramid itself: sky, earth and underworld expressed through architecture, animals and agricultural cycles.",
-            "Then jump into Cenote Ik Kil. Ancient civilisation in the morning, giant sinkhole in the afternoon. Mexico is not subtle."
+            "We took a 7:15 AM bus from Merida to Chichen-itza, arriving in the latter two hours later. We do recommend reaching around this time (or even earlier) to beat the heat!",
+            "We hadn’t pre-booked a tour, but were easily able to seek the services of a tour guide upon our arrival.",
+            "The Mayan pyramids of Chichen-itza are considered one of the seven wonders of world, and it’s easy to see why! While Teotihuacan was massive, Chichen-itza is intricate.",
+            "Mayan cosmology, with the sky, earth, and the underworld represented by the quetzal, snake, and jaguar bears resemblance to that of the Inca. Except the Inca swap the feline and the snake is their symbolism. All of this is fascinating as there’s no evidence of the two civilisations ever interacting!",
+            "We cooled off in the afternoon by jumping into Cenote Ik Kil, a giant sinkhole (one of thousands in this part of Mexico).",
+            "In the evening, we caught a bus to Bacalar, which took about 4.5 hours."
           ]
         },
         {
-          "dayNumber": "Day 5",
-          "location": "Bacalar",
-          "title": "Day 5 - Bacalar",
+          "dayNumber": "DAY 5",
+          "location": "BACALAR",
+          "title": "DAY 5 - BACALAR",
           "editorial": [
-            "Bacalar is the decompression day.",
-            "The lagoon is beautiful even if you do absolutely nothing, which was fortunate because we discovered that many activities shut on Wednesday. We skipped kayaking and simply floated.",
-            "There are inexpensive private entries to shallower parts of the lagoon; when we visited, one cost 60 pesos.",
-            "We also learned that getting an Uber out of Bacalar can be difficult. A random local helped call us a cab for no reason other than kindness, which neatly summarised a lot of our interactions in Mexico."
+            "After a pretty hectic trip so far, it was finally time for us to decompress.",
+            "While our trip started out with the good fortune of Independence Day celebrations, we ran out of luck in Bacalar. We were in town on Wednesday, which is the one day of the week where activities (like kayaking) aren’t available!",
+            "We settled for floating in the lagoon and perhaps, doing nothing was the best thing to do in these turquoise waters.",
+            "We rode bicycles around town in the evening in a failed attempt to visit another cenote!"
           ]
         },
         {
-          "dayNumber": "Day 6",
-          "location": "Mexico City",
-          "title": "Day 6 - Mexico City",
+          "dayNumber": "DAY 6",
+          "location": "BACALAR + MEXICO CITY",
+          "title": "DAY 6 - BACALAR + MEXICO CITY",
           "editorial": [
-            "Return to CDMX and use the final hours for whatever you missed.",
-            "Palacio de Bellas Artes did not do much for us, but tacos al pastor at El Caifan did. Choose accordingly.",
-            "One practical lesson: taxis were two to three times the cost of Uber during our trip, a discovery we made by paying tuition to the school of life."
+            "Our way out of Bacalar was a bit more exciting than we would’ve liked. We struggled to get an Uber to Chetumal airport (about 45 minutes away). Luckily, a good samaritan came to our assistance and called a taxi driver friend of his to drop us off. He had no reason to help us out besides his own kindness, which captured a lot of our interactions in Mexico.",
+            "We flew back to CDMX and had a few hours to kill before our flight out of the country. We visited the Palacio de Bellas Artes (”Palace of Fine Arts”), but were not super impressed by the displays."
           ]
         }
       ]

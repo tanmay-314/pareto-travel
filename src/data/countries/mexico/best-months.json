@@ -3,19 +3,39 @@
     "mexico": {
       "country": "Mexico",
       "editorial": [
-        "Mexico is too geographically varied for one perfect season.",
-        "For this exact itinerary, we liked September despite the heat and occasional rain because Independence Day gave Mexico City extraordinary energy. The Yucatan, however, can be hot and humid.",
-        "If you care more about comfortable city weather than national festivities, the cooler, drier months are easier. For coastal plans, check the regional weather rather than applying a single Mexico-wide rule."
+        "There isn’t a one-size fits all answer for Mexico, but we recommend going with the best time to visit the Yucatan peninsula, home to Chichen-itza and Bacalar as well as Cancun and Tulum. As this is the tropical part of Mexico, December to April has the most pleasant weather."
       ],
-      "seasons": [],
+      "seasons": [
+        {
+          "title": "DECEMBER TO APRIL",
+          "editorial": [
+            "The winter months offer the best weather, but also attracts plenty of tourists from Mexico’s northern neighbour, particularly around Spring Break in March. Expect significantly higher prices on your stays.",
+            "While not as grand as the ones in Brazil, Mexico has carnival celebrations during February."
+          ]
+        },
+        {
+          "title": "MAY & NOVEMBER",
+          "editorial": [
+            "The shoulder months have fewer tourists and more reasonable prices, but May could be pretty hot in Yucatan.",
+            "If you wish to partake in local festivities, then Día de los Muertos (”Day of the Dead”) is celebrated between October 31 and November 2. It is the most vibrant festival in Mexico."
+          ]
+        },
+        {
+          "title": "JUNE TO OCTOBER",
+          "editorial": [
+            "While we don’t recommend travelling in the wet season, our trip was in September, but we were fortunate to not have our trip disrupted. We encountered the occasional shower, but none that dampened our spirits.",
+            "Chichen-itza and Bacalar were very hot and humid, so if that bothers you, then this definitely isn’t the right time."
+          ]
+        }
+      ],
       "months": {
         "jan": "best",
         "feb": "best",
         "mar": "best",
         "apr": "best",
         "may": "good",
-        "jun": "good",
-        "jul": "good",
+        "jun": "avoid",
+        "jul": "avoid",
         "aug": "avoid",
         "sep": "avoid",
         "oct": "avoid",

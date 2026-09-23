@@ -18,5 +18,29 @@
       ]
     }
   ],
-  "title": "What it's Going to Cost"
+  "title": "What it's Going to Cost",
+  "days": 6,
+  "year": 2023,
+  "lineItems": [
+    {
+      "description": "STAYS * 5 NIGHTS",
+      "value": "190"
+    },
+    {
+      "description": "FOOD",
+      "value": "350"
+    },
+    {
+      "description": "EXPERIENCES",
+      "value": "300"
+    },
+    {
+      "description": "INTER-CITY TRAVEL",
+      "value": "485"
+    },
+    {
+      "description": "MISCELLANEOUS",
+      "value": "215"
+    }
+  ]
 }
