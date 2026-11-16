@@ -305,3 +305,32 @@
 .itinerary-carousel {
   --editorial-carousel-min-height: 420px;
 }
+
+.itinerary-editorial--linked {
+  justify-self: end;
+  width: 100%;
+  max-width: 590px;
+  min-height: 0;
+  padding: 0;
+  gap: 27px;
+}
+
+.itinerary-editorial--linked > * {
+  line-height: 27px;
+  white-space: pre-line;
+}
+
+.itinerary-editorial-subheading {
+  margin: 0;
+  font-family: var(--type-family-body), monospace;
+  font-size: var(--type-size-body);
+  font-weight: var(--type-weight-bold);
+  text-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .itinerary-editorial--linked {
+    justify-self: start;
+    max-width: none;
+  }
+}

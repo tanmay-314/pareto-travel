@@ -8,6 +8,16 @@
       "editorial": [
         "Our four nights cost $435, with the beautiful Anafi suite in Santorini accounting for $135 per night (which by the way, is par for the course in the Aegean islands). ",
         "Athens was much cheaper at $82 a night in a residential building only 10 minutes from the Acropolis.  "
+      ],
+      "links": [
+        {
+          "text": "Anafi suite",
+          "href": "https://www.airbnb.co.in/rooms/43968031"
+        },
+        {
+          "text": "residential building",
+          "href": "https://www.airbnb.co.in/rooms/32247642"
+        }
       ]
     },
     {
@@ -34,7 +44,7 @@
     {
       "title": "MISCELLANEOUS",
       "editorial": [
-        "Our visas cost about $90 each. We spent in the range of $20 on moving around the island of Santorini. We walked all across Athens. "
+        "Our visas cost about $90 each. We spent in the range of $20 on moving around the island of Santorini. We walked all across Athens."
       ]
     }
   ],
@@ -42,7 +52,7 @@
     {
       "title": "What if we had a bigger budget?",
       "editorial": [
-        "We’d splurge more in Santorini stay. We would choose a fancier property closer to the caldera and town rather than upgrading anything in Athens."
+        "We’d splurge more on the Santorini stay. Pick a fancier property closer to the caldera and town rather than upgrading anything in Athens."
       ]
     },
     {
@@ -78,5 +88,9 @@
       "value": "$200"
     }
   ],
-  "total": "$1450"
+  "total": "$1450",
+  "detailLink": {
+    "label": "View budget breakdown",
+    "href": "/countries/greece/budget"
+  }
 }

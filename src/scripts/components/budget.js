@@ -142,6 +142,20 @@ function renderEditorial(target, data) {
   destroyEditorialCarousel(target);
 
   const receipt = normalizeReceipt(data);
+  const hasDetailLink = data.detailLink?.label && data.detailLink?.href;
+  target.classList.toggle("budget-editorial--linked", Boolean(hasDetailLink));
+  if (hasDetailLink) {
+    const content = receipt.editorial.map((copy) => element("p", "budget-editorial-copy", copy));
+    receipt.alternatives.forEach((alternative) => {
+      content.push(element("h3", "budget-editorial-subheading", alternative.title));
+      content.push(...alternative.editorial.map((copy) => element("p", "budget-editorial-copy", copy)));
+    });
+    const link = element("a", "budget-editorial-link", data.detailLink.label);
+    link.href = data.detailLink.href;
+    target.replaceChildren(...content, link);
+    target.hidden = false;
+    return;
+  }
   if (receipt.categories.length || receipt.alternatives.length) {
     const screens = [
       { label: "Overview", editorial: receipt.editorial },

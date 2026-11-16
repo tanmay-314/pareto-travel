@@ -10,10 +10,10 @@ This project is intended to work as a straightforward static frontend unless the
 4. Start the repository’s documented local server.
 5. Open the browser developer console before testing changes.
 
-If there is no server command, use:
+Start the server with clean-URL support:
 
 ```bash
-python3 -m http.server 8000 --directory src
+python3 scripts/serve.py
 ```
 
 Then visit `http://localhost:8000/`.
@@ -22,7 +22,7 @@ Then visit `http://localhost:8000/`.
 
 The source template is `src/pages/country.html`; do not edit generated files
 under `src/countries/` directly. After changing a published country's metadata
-or adding a country, run:
+or adding a country, or editing linked itinerary/budget content, run:
 
 ```bash
 python3 scripts/generate-country-pages.py

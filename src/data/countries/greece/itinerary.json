@@ -5,9 +5,9 @@
       "country": "Greece",
       "title": "Ancient Ruins, Modern Spoils - 4-Day Itinerary",
       "editorial": [
-        "Our four-day trip split naturally between Athens and Santorini. We spent an extra few hours in Athens on a fifth day to fly out of Greece, but there are international flights out of Santorini as well. ",
+        "Our four-day trip was evenly split between Athens and Santorini. We spent an extra few hours in Athens on a fifth day to fly out of Greece, but there are international flights departing Santorini as well. ",
         "What if we had more time?",
-        "We’d add another island. Our preference would be Crete, but Mykonos, Naxos, Paros, and Rhodes are other options. The islands are essentially a choose-your-own-adventure. "
+        "We’d add another island. Our preference would be Crete for the pink sand beaches, but you could opt for Mykonos, Naxos, Paros, and Rhodes depending on what you fancy.  "
       ],
       "editorialHeadings": [
         1
@@ -18,8 +18,8 @@
           "location": "ATHENS",
           "title": "DAY 1 - ATHENS",
           "editorial": [
-            "We settled into Athens by circling the tourist core below the Acropolis. The European-ness of the vibrant rooftop cafes and souvenir shops is unmistakable!",
-            "As the sun was setting, we watched a Greek play (in English) against the backdrop of the Acropolis. It was quite a surreal experience.  "
+            "We settled into Athens by strolling around Plaka, the tourist district below the Acropolis. The charming rooftop cafes give the area a classic European feel. We recommend making this part of town your base.",
+            "In the evening, we watched a rooftop rendition of a Greek play (in English) against the backdrop of an illuminated Acropolis. It was quite a dreamy experience and arguably the highlight of our stay in the city!  "
           ],
           "image": {
             "src": "../assets/countries/greece/art-360/day-1-art-frame-acropolis-night.svg",
@@ -33,9 +33,10 @@
           "location": "ATHENS",
           "title": "DAY 2 - ATHENS",
           "editorial": [
-            "This was the day that we got the Greece we came for: the Acropolis, Parthenon, and the Theatre of Dionysus. ",
-            "We booked a mythology-focused tour and were somewhat disappointed that the entire focus was on mythology as opposed to history or architecture. If the latter interest you more, then choose your tour more wisely than we did. ",
-            "In the evening, we walked up Lycabettus Hill for the sunset views. It was a good visual summary of Athens capturing the modern sprawl amidst ancient monuments. "
+            "This was the day we got the Greece we came for: the Acropolis, Parthenon, and the Theatre of Dionysus. ",
+            "Unless Medusa has turned your heart into stone, the ancient citadel leaves you awestruck. We take technological advancements for granted today, but when you’re surrounded by 2,500 years old structures, you begin to comprehend how hard earned human civilisation is.    ",
+            "The only disappointment came from our choice of a mythology-focused tour, where we learnt more about the idiosyncrasies of Greek Gods than the history of the architecture around us. ",
+            "Later in the day, we watched the sun set from the top of Lycabettus Hill (a fairly easy climb). It’s the perfect place to capture the essence of Athens, a bustling metropolis adorned with beautiful monuments.   "
           ],
           "image": {
             "src": "../assets/countries/greece/art-360/day-2-art-frame-parthenon.svg",
@@ -49,11 +50,10 @@
           "location": "SANTORINI",
           "title": "DAY 3 - SANTORINI",
           "editorial": [
-            "We flew into Santorini the next morning by Volotea, the worst airline imaginable. Think Ryanair minus the Twitter humour. ",
-            "The pristineness of Santorini, especially the afternoon spent lounging in our resort’s outdoor jacuzzi, helped us cool down. ",
-            "After lunch, we took the bus into Oia, the part of the island most famously associated with it (think white buildings and blue domes). ",
-            "We got in line (and it wasn’t even peak season yet) for the money shot. There’s a strange sense of camaraderie in Santorini, where everyone’s trying to help each other get the best pictures! ",
-            "We roamed around the island at night, taking in sights of the parties that were kicking off. We did not partake in the partying though."
+            "We flew into Santorini the next morning by Volotea, the worst airline imaginable. Think Ryanair without the Twitter jokes. ",
+            "Luckily, the pristine-ness of Santorini and the afternoon spent lounging in our resort’s outdoor jacuzzi, turned things around. ",
+            "After lunch, we took the bus into Oia, the part of the island you see in people’s Instagram photos. We had to get in a long line (mind you, it wasn’t even peak season yet) for the money shot against the blue dome backdrop. There’s a strange sense of camaraderie in Santorini, where everyone’s helping each other get the perfect picture! ",
+            "We roamed around our side of the island (Imerovigli), walking past parties that were kicking off. We tucked in early though. "
           ],
           "image": {
             "src": "../assets/countries/greece/art-360/day-3-art-frame-santorini-dome.svg",
@@ -67,8 +67,9 @@
           "location": "SANTORINI",
           "title": "DAY 4 - SANTORINI",
           "editorial": [
-            "Our second day in Santorini was much of the same, except we were satisfied with the photos from the day prior and gave that a miss. ",
-            "It’s a small island where people come to forget about real world things like the concept of time. There’s not a lot to do (at least not on our budget) and that’s part of the charm.  "
+            "Our second day in Santorini was much of the same, except we were satisfied with the photos from the day prior and gave that bit a miss. ",
+            "There is a black sand beach in Kamari, the south east of the island. But the only way to get there is via private car, which we decided wasn’t worth the hassle. ",
+            "Ultimately, Santorini is a small island where people come to forget about real world things like the concept of time. There’s not a lot to do (at least not on our budget) and that’s part of the charm."
           ],
           "image": {
             "src": "../assets/countries/greece/art-360/day-4-art-frame-santorini-cliffs.svg",
@@ -77,7 +78,11 @@
             "size": 360
           }
         }
-      ]
+      ],
+      "detailLink": {
+        "label": "View daily itinerary",
+        "href": "/countries/greece/itinerary"
+      }
     }
   ]
 }

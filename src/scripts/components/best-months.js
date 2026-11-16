@@ -304,7 +304,7 @@ function appendFormattedEditorialText(paragraph, text) {
   }
 }
 
-export function renderBestMonthsEditorial(container, rawEditorial, seasons = []) {
+export function renderBestMonthsEditorial(container, rawEditorial, seasons = [], layout) {
   if (!container) return null;
   destroyEditorialCarousel(container);
 
@@ -316,6 +316,7 @@ export function renderBestMonthsEditorial(container, rawEditorial, seasons = [])
     : [];
 
   if (Array.isArray(seasons) && seasons.length) {
+    container.classList.remove("best-months-editorial--continuous");
     renderEditorialCarousel(container, [
       { label: "Overview", editorial: paragraphs },
       ...seasons.map((season) => ({
@@ -330,6 +331,7 @@ export function renderBestMonthsEditorial(container, rawEditorial, seasons = [])
     return container;
   }
 
+  container.classList.toggle("best-months-editorial--continuous", layout === "continuous");
   container.replaceChildren(
     ...paragraphs.map((text) => {
       const paragraph = document.createElement("p");
@@ -373,6 +375,7 @@ export async function setDialCountry(container, countryKey) {
         ?.querySelector("[data-best-months-editorial]"),
       countryConfig?.editorial,
       countryConfig?.seasons,
+      countryConfig?.editorialLayout,
     );
   } catch (error) {
     showError(container, error);

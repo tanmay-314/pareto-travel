@@ -1,0 +1,215 @@
+.country-detail {
+  width: min(100% - 2 * var(--space-lg), 900px);
+  margin-inline: auto;
+  padding-block: var(--space-xxl) var(--space-xxxl);
+}
+
+.country-detail > * + * {
+  margin-block-start: var(--space-xxl);
+}
+
+.country-detail h1 {
+  font-size: var(--type-size-section-title);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.country-detail__body {
+  display: grid;
+  gap: var(--space-xxxl);
+}
+
+.country-detail__section {
+  scroll-margin-top: var(--space-xl);
+}
+
+.country-detail__section h2 {
+  font-size: var(--type-size-logo);
+  line-height: 1.2;
+}
+
+.country-detail__section p {
+  max-width: 720px;
+  margin-block-start: 27px;
+  line-height: 27px;
+  white-space: pre-line;
+}
+
+.country-detail__section--itinerary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 360px);
+  gap: var(--space-xxl);
+  align-items: start;
+}
+
+.country-detail__section--polaroid-right .country-detail__polaroid {
+  grid-column: 2;
+  justify-self: end;
+}
+
+.country-detail__section--polaroid-left .country-detail__polaroid {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+}
+
+.country-detail__section--polaroid-left .country-detail__section-copy {
+  grid-column: 2;
+}
+
+.country-detail__polaroid {
+  position: relative;
+  width: min(100%, 360px);
+  aspect-ratio: 412 / 460;
+  margin: 0;
+}
+
+.country-detail__polaroid-photo {
+  position: absolute;
+  z-index: 1;
+  top: 5.2174%;
+  left: 5.8252%;
+  width: 87.3786%;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.country-detail__polaroid-photo img,
+.country-detail__polaroid-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.country-detail__polaroid-photo img {
+  object-fit: cover;
+}
+
+.country-detail__polaroid-frame {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+}
+
+.country-detail__polaroid-caption {
+  position: absolute;
+  z-index: 2;
+  top: 86.5217%;
+  left: 5.8252%;
+  display: flex;
+  flex-direction: column;
+  width: 88.3495%;
+  color: var(--color-text-primary);
+  font-family: var(--type-family-display), monospace;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.country-detail__polaroid-day {
+  color: var(--type-color-text-secondary);
+  font-size: clamp(9px, 1.1vw, var(--type-size-label));
+  letter-spacing: 0.08em;
+}
+
+.country-detail__polaroid-location {
+  margin-top: 1.3043%;
+  font-size: clamp(16px, 1.7vw, var(--type-size-polaroid-location));
+}
+
+.country-detail__back {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 44px;
+  color: var(--color-text-primary);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line-height-body);
+  text-decoration: none;
+}
+
+.country-detail__back-icon {
+  display: block;
+  flex: none;
+  /* Scale the 240 × 60 artwork to one text line, preserving its 4:1 ratio.
+     lh follows the link's line height; native SVG dimensions stay untouched. */
+  block-size: 1lh;
+  inline-size: auto;
+  max-inline-size: none;
+}
+
+/* Reuse the exact artwork as a mask for the site's teal interaction state. */
+.country-detail__back::after {
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 50%;
+  inline-size: 4lh;
+  block-size: 1lh;
+  transform: translateY(-50%);
+  background-color: var(--color-icon-hover);
+  -webkit-mask: url("../../assets/icons/icon-back.svg") center / contain no-repeat;
+  mask: url("../../assets/icons/icon-back.svg") center / contain no-repeat;
+  opacity: 0;
+  pointer-events: none;
+  content: "";
+}
+
+.country-detail__back:focus-visible::after {
+  opacity: 1;
+}
+
+.country-detail__back:focus-visible .country-detail__back-icon {
+  opacity: 0;
+}
+
+@media (hover: hover) {
+  .country-detail__back:hover::after {
+    opacity: 1;
+  }
+
+  .country-detail__back:hover .country-detail__back-icon {
+    opacity: 0;
+  }
+}
+
+.country-detail-skip {
+  position: absolute;
+  z-index: 1000;
+  top: var(--space-sm);
+  left: var(--space-lg);
+  padding: var(--space-sm);
+  transform: translateY(-200%);
+  background: var(--color-bg-canvas);
+}
+
+.country-detail-skip:focus {
+  transform: none;
+}
+
+@media (max-width: 600px) {
+  .country-detail h1 {
+    font-size: var(--type-size-logo);
+  }
+
+  .country-detail__section--itinerary .country-detail__polaroid {
+    grid-column: 1;
+    grid-row: 1;
+    width: min(100%, 300px);
+  }
+
+  .country-detail__section--itinerary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .country-detail__section--itinerary .country-detail__section-copy {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .country-detail__section--polaroid-right .country-detail__polaroid {
+    justify-self: end;
+  }
+
+  .country-detail__section--polaroid-left .country-detail__polaroid {
+    justify-self: start;
+  }
+}

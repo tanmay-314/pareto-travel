@@ -53,13 +53,20 @@ use `fetch()`, so opening the HTML with a `file://` URL will not work reliably.
 From the repository root, serve `src` as the web root:
 
 ```bash
-python3 -m http.server 8000 --directory src
+python3 scripts/serve.py
 ```
 
 Then open:
 
 - landing page: <http://localhost:8000/>
 - Cambodia country page: <http://localhost:8000/countries/cambodia.html>
+- Greece guide: <http://localhost:8000/countries/greece>
+- Greece daily itinerary: <http://localhost:8000/countries/greece/itinerary>
+- Greece budget breakdown: <http://localhost:8000/countries/greece/budget>
+
+The local server resolves extensionless HTML routes, including country detail
+pages. Use `--port 8001` to choose another port. The standard Python HTTP server
+still serves explicit `.html` files, but does not resolve the site's clean links.
 
 No `npm install` or compile command is needed.
 
@@ -181,6 +188,12 @@ generated public entry and renders sections in this order:
 The country navigation tracks the section near the upper part of the viewport,
 sets `aria-current`, and scrolls to sections. Smooth scrolling is disabled for
 people who prefer reduced motion.
+
+Greece is the first guide using the linked editorial layout from Figma
+`1680:40382`: itinerary and budget summaries link to generated detail pages,
+and seasonal guidance appears together. The detail pages reuse the existing
+day/category JSON, preserve source links, and are readable without JavaScript.
+Other countries retain their editorial carousels.
 
 ## Component map
 

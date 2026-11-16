@@ -3,19 +3,19 @@
     {
       "period": "BREAKFAST",
       "dish": "KOULORI",
-      "description": "Bagel-like ring covered in toasted sesame seeds",
+      "description": "Circular bread ring covered in toasted sesame seeds",
       "icon": "../assets/icons/icon-morning.svg"
     },
     {
       "period": "LUNCH",
       "dish": "MOUSSAKA",
-      "description": "Layers of eggplant, minced meat, tomato sauce, and béchamel sauce",
+      "description": "Layers of eggplant and potatoes with a spiced minced meat, tomato sauce, and creamy béchamel sauce",
       "icon": "../assets/icons/icon-afternoon.svg"
     },
     {
       "period": "DINNER",
       "dish": "GYROS",
-      "description": "Grilled meat in pita with tomatoes, onions, fries, and Tzatziki",
+      "description": "Tender pieces of grilled meat served in a warm pita with fresh tomatoes, onions, fries, and creamy Tzatziki",
       "icon": "../assets/icons/icon-night.svg"
     }
   ],

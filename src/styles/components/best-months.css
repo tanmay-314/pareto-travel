@@ -118,6 +118,20 @@
   margin: 0;
 }
 
+.best-months-editorial--continuous {
+  gap: 27px;
+}
+
+.best-months-editorial--continuous p {
+  max-width: 792px;
+  line-height: 27px;
+  white-space: pre-line;
+}
+
+.best-months-editorial--continuous strong {
+  font-weight: var(--type-weight-bold);
+}
+
 .best-months-graphic {
   display: grid;
   min-width: 0;

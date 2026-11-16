@@ -1,5 +1,22 @@
 # Data Model
 
+## Linked editorials (Greece pilot)
+
+- An itinerary's optional `detailLink: {label, href}` selects a summary with a
+  real link instead of an editorial carousel when `href` is not an in-page
+  fragment. The ordered `days[].editorial` remains the detail-page source.
+  `editorialHeadings` marks overview paragraph indices rendered as subheadings.
+- Budget supports the same optional `detailLink`. Its main-page copy uses
+  `editorial` followed by `alternatives`, while `categories` supplies the detail
+  page. Optional category `links: [{text, href}]` preserves HTTP(S) links within
+  plain-text paragraphs without introducing HTML into JSON.
+- Local links `/countries/<slug>/itinerary` and `/countries/<slug>/budget` opt
+  into generated detail HTML. Run the existing generator after editing them.
+- Best-months prose without `seasons` renders continuously; the optional
+  `editorialLayout: "continuous"` uses the new Figma spacing and width. Existing
+  inline bold/emphasis formatting remains supported.
+- Greece alone uses these new options. Other country data is unchanged.
+
 ## Goals
 
 Country data should make it possible to render many country pages from one reusable template without mixing content into component code.

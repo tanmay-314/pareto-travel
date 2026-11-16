@@ -450,18 +450,28 @@ function renderEditorial(target, itinerary, onSelectDay) {
   editorialSelections.delete(root);
   destroyEditorialCarousel(root);
 
-  if (itinerary.days.some((day) => Array.isArray(day.editorial))) {
+  // Legacy in-page placeholders do not opt a country into linked detail pages.
+  const hasDetailLink = itinerary.detailLink?.label && itinerary.detailLink?.href
+    && !itinerary.detailLink.href.startsWith("#");
+  root.classList.toggle("itinerary-editorial--linked", Boolean(hasDetailLink));
+  if (!hasDetailLink && itinerary.days.some((day) => Array.isArray(day.editorial))) {
     return renderItineraryCarousel(root, itinerary, onSelectDay);
   }
 
   const paragraphs = Array.isArray(itinerary.editorial)
     ? itinerary.editorial.filter(Boolean)
     : [];
-  const content = paragraphs.map((text) =>
-    createText("itinerary-editorial-copy", text),
-  );
+  const content = paragraphs.map((text, index) => {
+    if (itinerary.editorialHeadings?.includes(index)) {
+      const heading = document.createElement("h3");
+      heading.className = "itinerary-editorial-subheading";
+      heading.textContent = text;
+      return heading;
+    }
+    return createText("itinerary-editorial-copy", text);
+  });
 
-  if (itinerary.detailLink?.label && itinerary.detailLink?.href) {
+  if (hasDetailLink) {
     const link = document.createElement("a");
     link.className = "itinerary-editorial-link";
     link.href = itinerary.detailLink.href;

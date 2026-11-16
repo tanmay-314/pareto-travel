@@ -82,6 +82,12 @@ The itinerary, best-months, and budget components share `editorial-carousel.js` 
 stylesheet for editorial navigation, accessibility, and map-relative controls.
 Each section supplies its own screens and retains its own visual component.
 
+Greece opts into linked itinerary and budget editorials through `detailLink`.
+The guide renders the overview and optional alternatives; the generator renders
+days/categories as semantic HTML using `src/pages/country-detail.html`.
+These detail pages load only the shared header script, and their article content
+and return links work without JavaScript. Other countries keep their carousels.
+
 ### Data
 
 JSON owns country-specific content and configuration. It may be organized as one country document or focused section documents. Use the repository’s established approach consistently.
@@ -141,6 +147,13 @@ publication status to match before initializing any component.
 Treat this URL format as a compatibility boundary. Run the generator after
 adding or changing published country metadata and use its `--check` mode in
 automated checks.
+
+The generator also creates `/countries/<slug>/itinerary` and
+`/countries/<slug>/budget` when the corresponding JSON `detailLink.href`
+matches that route. It checks nested generated pages and removes stale generated
+entries on regeneration. Run it after editing detail-page content as well as
+country metadata. `python3 scripts/serve.py` mirrors these clean routes locally,
+resolving the country's `.html` entry before its detail-page directory.
 
 ## Error handling
 

@@ -2,7 +2,7 @@
 
 This file gives a new Codex session a quick snapshot of active work. Keep it brief and update it whenever priorities or known constraints materially change.
 
-Last updated: 2026-09-19
+Last updated: 2026-10-06
 
 ## Current objective
 
@@ -46,6 +46,13 @@ Update this list with file paths and implementation status once the files are pr
 - None recorded yet.
 
 ## Recently completed
+
+- Piloted linked editorials for Greece from Figma `1680:40382` and the current
+  Notion draft: daily itinerary and budget detail pages, continuous seasonal
+  prose, and verbatim editorial updates. Other country carousels remain intact.
+  The existing generator owns both new pages; a small Python preview server
+  supports their clean URLs locally. See [Greece handoff](greece-linked-editorials-handoff.md)
+  for sources, verification, and remaining editorial notes.
 
 - Positioned the landing-page tagline to match updated Figma `1663:101448`,
   at the desktop map's lower edge beneath Africa. The responsive placement at

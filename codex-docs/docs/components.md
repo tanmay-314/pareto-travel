@@ -1,5 +1,20 @@
 # Component Guide
 
+## Linked editorial variant
+
+The itinerary and budget mounts also support overview copy with a `detailLink`
+instead of carousel controls. Itinerary keeps its polaroid selection behavior;
+budget keeps its receipt. Overview subheadings and budget alternatives are
+visible together, followed by a keyboard-accessible dotted link. Existing
+carousels remain the default when there is no detail link; an old in-page
+itinerary placeholder such as `#itinerary` does not opt into this variant.
+
+The country-page generator renders linked day/category prose using
+`src/pages/country-detail.html` and `src/styles/pages/country-detail.css`.
+Each detail page includes a skip link, section navigation, and return links to
+the relevant country section. Its content works without JavaScript. See the
+[data contract](data-model.md#linked-editorials-greece-pilot).
+
 ## Purpose
 
 This document defines how reusable Pareto Travel components are structured and integrated. Add a short contract entry here whenever a new shared component is introduced.
