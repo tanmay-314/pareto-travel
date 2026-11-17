@@ -97,7 +97,7 @@
 }
 
 .inter-city-journey-leg--left .inter-city-journey-icon {
-  transform: rotate(180deg);
+  transform: scaleX(-1);
 }
 
 .inter-city-journey-duration {

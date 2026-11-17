@@ -213,7 +213,7 @@ export function createReceipt(data) {
   const totalValue = element("strong", "budget-receipt__total-value", receipt.total);
   total.append(totalLabel, totalValue);
 
-  article.append(createRule(), meta, createRule(), createLineItems(receipt.lineItems), createRule(), total, createRule());
+  article.append(meta, createRule(), createLineItems(receipt.lineItems), createRule(), total, createRule());
 
   return article;
 }
