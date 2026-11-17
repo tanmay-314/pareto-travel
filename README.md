@@ -6,8 +6,8 @@ components with country-specific JSON content and SVG artwork. There is no
 framework, package manager, bundler, database, or build step.
 
 The current experience uses one reusable country-page composition for 15
-published guides. The landing page includes 18 country overlays; India, Japan,
-and Vietnam remain unlinked until their guides are published.
+published guides. The landing page includes 17 country overlays; India and Japan
+remain unlinked until their guides are published.
 
 ## Current status
 
@@ -156,9 +156,9 @@ navigation, a base world map, and overlays for:
 
 - United States, Mexico, Costa Rica, Colombia, Brazil, Peru, Bolivia, and Chile;
 - Iceland, Turkey, Greece, India, Sri Lanka, Malaysia, Singapore, Cambodia,
-  Vietnam, and Japan.
+  and Japan.
 
-The SVG overlays exist; all except India, Japan, and Vietnam link to their generated pages.
+The SVG overlays exist; all except India and Japan link to their generated pages.
 The tagline “WANDER LESS, WONDER MORE.” sits at the map’s lower edge beneath Africa on desktop
 and below the header, above the map or mobile destinations, at widths of 900px and below.
 See [editorial handoff](codex-docs/country-editorials-handoff.md) for coverage

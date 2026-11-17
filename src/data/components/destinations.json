@@ -103,12 +103,6 @@
       "name": "Southeast Asia",
       "countries": [
         {
-          "name": "Vietnam",
-          "caption": "Ha Long Bay,Ha Long Bay",
-          "artwork": "../../assets/components/destinations/vietnam.svg",
-          "href": null
-        },
-        {
           "name": "Malaysia",
           "caption": "Petronas Towers,Kuala Lumpur",
           "artwork": "../../assets/components/destinations/malaysia.svg",

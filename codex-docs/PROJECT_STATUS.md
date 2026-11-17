@@ -2,7 +2,7 @@
 
 This file gives a new Codex session a quick snapshot of active work. Keep it brief and update it whenever priorities or known constraints materially change.
 
-Last updated: 2026-10-06
+Last updated: 2026-11-17
 
 ## Current objective
 
@@ -46,6 +46,10 @@ Update this list with file paths and implementation status once the files are pr
 - None recorded yet.
 
 ## Recently completed
+
+- Removed Vietnam from the homepage map and shared Places data, along with
+  its map styles and SVG assets. There are now 17 destinations; no Vietnam
+  guide data or generated public route existed.
 
 - Piloted linked editorials for Greece from Figma `1680:40382` and the current
   Notion draft: daily itinerary and budget detail pages, continuous seasonal

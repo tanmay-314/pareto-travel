@@ -230,10 +230,10 @@ country has `name`, `caption`, an `artwork` URL relative to that JSON, and a nul
 `href`. Only published guides receive links. The SVG artwork is exported from
 Figma node `1565:202613` into `assets/components/destinations/`.
 
-There are 18 stamps across six regions, including Vietnam first in Southeast
+There are 17 stamps across six regions, including Malaysia first in Southeast
 Asia and Japan in East Asia. Regions optionally accept `rowGap: "compact"`
-for the 12px row gap used by South America; the default gap is 30px. India,
-Japan, and Vietnam render as unlinked figures until their guides are published.
+for the 12px row gap used by South America; the default gap is 30px. India and
+Japan render as unlinked figures until their guides are published.
 
 The right-aligned frame uses `min(100vw, max(600px, 50vw))`: half the viewport
 above 1200px, a stable 600px width between 600px and 1200px, and full width on
