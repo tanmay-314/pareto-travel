@@ -13,18 +13,6 @@
       "none": "../assets/icons/icon-smiley.svg"
     }
   },
-  "places": [
-    {
-      "name": "NO TICKET"
-    },
-    {
-      "name": "REQUIRED"
-    }
-  ],
-  "legs": [
-    {
-      "mode": "none",
-      "message": "ENJOY!"
-    }
-  ]
+  "places": [],
+  "legs": []
 }

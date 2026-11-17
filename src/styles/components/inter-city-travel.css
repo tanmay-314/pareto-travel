@@ -1,6 +1,6 @@
 /*
  * Inter-city travel
- * Figma source: 1115:42663 (1920 x 1080)
+ * Figma source: 1734:60531 (480px combined journey)
  */
 
 .inter-city {
@@ -43,7 +43,7 @@
 }
 
 @media (max-width: 444px) {
-  .inter-city-ticket-stack-frame {
+  .inter-city-journey-frame {
     order: -1;
   }
 }
@@ -55,152 +55,83 @@
   align-items: start;
 }
 
-.inter-city-ticket-stack-frame {
+.inter-city-journey-frame {
+  position: relative;
   justify-self: center;
-  position: relative;
-  width: min(var(--inter-city-ticket-stack-width, 540px), 100%);
+  width: min(480px, 100%);
 }
 
-.inter-city-ticket-stack {
+.inter-city-journey {
   position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 540px;
-  flex-direction: column;
-  gap: 18px;
-  transform: scale(var(--inter-city-ticket-stack-scale, 1));
+  width: 480px;
   transform-origin: top left;
-}
-
-.inter-city-ticket {
-  position: relative;
-  width: 432px;
-  height: 186px;
-  flex: 0 0 186px;
-  color: var(--inter-city-text);
-}
-
-.inter-city-ticket:nth-child(even) {
-  margin-left: 90px;
-}
-
-.inter-city-ticket-background {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 452px;
-  max-width: none;
-  height: 184px;
-  pointer-events: none;
-}
-
-.inter-city-ticket-origin,
-.inter-city-ticket-destination,
-.inter-city-ticket-transport-details {
-  z-index: 2;
-  margin: 0;
-}
-
-.inter-city-ticket-transport-details {
-  position: absolute;
-}
-
-.inter-city-ticket-route-row {
-  position: absolute;
-  z-index: 2;
-  top: 30px;
-  left: 24px;
-  display: grid;
-  width: 396px;
-  height: 60px;
-  grid-template-columns: minmax(0, 1fr) 60px minmax(0, 1fr);
-  column-gap: 12px;
-  align-items: center;
-}
-
-.inter-city-ticket-origin,
-.inter-city-ticket-destination {
-  width: 100%;
-  min-width: 0;
   font-family: var(--type-family-display), monospace;
   font-size: var(--type-size-nav-ul, 24px);
-  font-style: normal;
+  font-weight: var(--type-weight-regular, 400);
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
-  font-weight: var(--type-weight-regular);
-  line-height: 1.2;
   text-transform: uppercase;
-  overflow-wrap: anywhere;
 }
 
-.inter-city-ticket-origin {
-  grid-column: 1;
+.inter-city-journey-legs {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.inter-city-ticket-destination {
-  grid-column: 3;
-  text-align: right;
+.inter-city-route-dot,
+.inter-city-journey-icon,
+.inter-city-journey-duration,
+.inter-city-journey-stop {
+  position: absolute;
 }
 
-.inter-city-ticket-icon-shell {
-  grid-column: 2;
-  display: block;
-  width: 60px;
-  height: 60px;
-  background: transparent;
-}
+.inter-city-route-dot { max-width: none; }
 
-.inter-city-ticket-icon {
-  display: block;
+.inter-city-journey-icon {
+  left: 210px;
   width: 60px;
   height: 60px;
   background-color: var(--inter-city-text);
-  -webkit-mask-image: var(--inter-city-icon-image);
-  mask-image: var(--inter-city-icon-image);
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  mask-size: contain;
+  mask: var(--inter-city-icon-image) center / contain no-repeat;
+  -webkit-mask: var(--inter-city-icon-image) center / contain no-repeat;
 }
 
-.inter-city-ticket-rule {
-  position: absolute;
-  z-index: 2;
-  top: 99px;
-  left: 24px;
-  width: 396px;
-  height: 4px;
-  background-image: radial-gradient(
-    circle at 2px 2px,
-    var(--color-border-subtle, #f0dbdb) 0 2px,
-    transparent 2.1px
-  );
-  background-repeat: repeat-x;
-  background-size: 8px 4px;
+.inter-city-journey-leg--left .inter-city-journey-icon {
+  transform: rotate(180deg);
 }
 
-.inter-city-ticket-transport-details {
-  top: 120px;
-  left: 24px;
-  width: 396px;
+.inter-city-journey-duration {
+  width: max-content;
+  transform: translateX(-50%);
   color: var(--inter-city-text-secondary);
+  font-size: var(--type-size-body, 18px);
+  line-height: 24px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.inter-city-journey-stop {
+  left: 0;
   font-family: var(--type-family-display), monospace;
   font-size: var(--type-size-nav-ul, 24px);
   font-style: normal;
-  font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
-  font-weight: var(--type-weight-regular);
-  line-height: 30px;
-  text-align: center;
-  text-transform: uppercase;
+  font-weight: var(--type-weight-regular, 400);
+  max-width: 198px;
+  margin: 0;
+  line-height: 22px;
   overflow-wrap: anywhere;
 }
 
-.inter-city-ticket--no-travel {
-  --inter-city-text: var(--inter-city-text-secondary);
+.inter-city-journey-stop > span {
+  padding-inline: 6px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.inter-city-journey-stop--right {
+  left: auto;
+  right: 0;
+  text-align: right;
 }
 
 .inter-city-editorial {

@@ -5,21 +5,18 @@ const DEFAULT_DATA = {
   title: "GOING FROM PLACE TO PLACE",
   editorial: [],
   assets: {
-    ticket: "../assets/components/inter-city-travel/ticket.svg",
     modes: {
       flight: "../assets/icons/icon-flight.svg",
-      bus: "../assets/icons/icon-bus.svg",
+      bus: "../assets/components/inter-city-travel/journey-bus.svg",
       train: "../assets/icons/icon-train.svg",
-      car: "../assets/icons/icon-car.svg",
+      car: "../assets/components/inter-city-travel/journey-car.svg",
       none: "../assets/icons/icon-smiley.svg"
     }
   }
 };
 
-const COUNTRY_MAP_FIGMA_WIDTH = 720;
-const TICKET_STACK_TO_MAP_WIDTH_RATIO = 3 / 4;
-const TICKET_STACK_FIGMA_WIDTH =
-  COUNTRY_MAP_FIGMA_WIDTH * TICKET_STACK_TO_MAP_WIDTH_RATIO;
+const JOURNEY_WIDTH = 480;
+const JOURNEY_TO_MAP_WIDTH_RATIO = JOURNEY_WIDTH / 720;
 const escapeHtml = (value = "") =>
   String(value)
     .replaceAll("&", "&amp;")
@@ -55,52 +52,37 @@ export const validateData = (data) => {
   }
 };
 
-const renderTicket = (leg, legIndex, places, assets) => {
-  const origin = places[legIndex]?.name || "";
-  const destination = places[legIndex + 1]?.name || "";
-  const mode = normalizeMode(leg.mode);
-  const noTravel = mode === "none";
-  const modeLabel = getModeLabel(leg.mode);
-  const icon = assets.modes?.[mode] || "";
-  const transportDetails = noTravel
-    ? leg.message || ""
-    : [modeLabel, leg.duration].filter(Boolean).join(" · ");
-  const accessibleLabel = noTravel
-    ? [origin, destination, transportDetails].filter(Boolean).join(" ")
-    : [
-        `${origin} to ${destination}`,
-        modeLabel ? `by ${modeLabel}` : "",
-        leg.duration || "",
-      ]
-        .filter(Boolean)
-        .join(", ");
-
-  return `
-    <article class="inter-city-ticket${noTravel ? " inter-city-ticket--no-travel" : ""}" aria-label="${escapeHtml(accessibleLabel)}">
-      <img
-        class="inter-city-ticket-background"
-        src="${escapeHtml(assets.ticket || DEFAULT_DATA.assets.ticket)}"
-        alt=""
-        width="452"
-        height="184"
-        aria-hidden="true"
-      >
-
-      <div class="inter-city-ticket-route-row">
-        <p class="inter-city-ticket-origin">${escapeHtml(origin)}</p>
-        <span class="inter-city-ticket-icon-shell" aria-hidden="true">
-          <span
-            class="inter-city-ticket-icon"
-            data-inter-city-icon
-            data-src="${escapeHtml(icon)}"
-          ></span>
-        </span>
-        <p class="inter-city-ticket-destination">${escapeHtml(destination)}</p>
+const renderJourney = (data, assets) => {
+  const dot = (x, y) => `<img class="inter-city-route-dot" src="../assets/components/inter-city-travel/route-dot.svg" alt="" width="6" height="6" style="left:${x}px;top:${y}px">`;
+  const legs = data.legs.map((leg, index) => {
+    const leftward = index % 2 === 1;
+    const y = 60 + index * 84;
+    const mode = normalizeMode(leg.mode);
+    const duration = String(leg.duration || "").trim();
+    const missingDuration = mode !== "none" && !duration;
+    const details = mode === "none" ? leg.message || "" : duration || "X HRS";
+    const label = [data.places[index].name + " to " + data.places[index + 1].name, getModeLabel(mode), missingDuration ? "Duration not provided" : details].filter(Boolean).join(", ");
+    const dots = [];
+    // A single grid keeps every horizontal run and vertical turn aligned.
+    // Label collisions are resolved after measuring the loaded font.
+    for (let x = 36; x <= 444; x += 12) {
+      if (x < 210 || x >= 270) dots.push(dot(x, y));
+    }
+    if (index > 0) {
+      for (let offset = 72; offset > 0; offset -= 12) dots.push(dot(leftward ? 444 : 36, y - offset));
+    }
+    return `<li class="inter-city-journey-leg${leftward ? " inter-city-journey-leg--left" : ""}" aria-label="${escapeHtml(label)}">
+      <div aria-hidden="true">${dots.join("")}
+        <span class="inter-city-journey-icon" style="top:${y - 27}px" data-inter-city-icon data-src="${escapeHtml(assets.modes[mode] || "")}"></span>
+        <span class="inter-city-journey-duration" style="top:${y - 24}px;left:${leftward ? 141 : 339}px">${escapeHtml(details)}</span>
       </div>
-      <span class="inter-city-ticket-rule" aria-hidden="true"></span>
-      <p class="inter-city-ticket-transport-details">${escapeHtml(transportDetails)}</p>
-    </article>
-  `;
+    </li>`;
+  }).join("");
+  const stops = data.places.map((place, index) => `<p class="inter-city-journey-stop${index % 2 ? " inter-city-journey-stop--right" : ""}" style="top:${52 + Math.max(0, index - 1) * 84}px"><span>${escapeHtml(place.name)}</span></p>`).join("");
+  return `<div class="inter-city-journey-frame"><div class="inter-city-journey" style="height:${48 + data.legs.length * 84}px">
+    <ol class="inter-city-journey-legs" aria-label="Journey from place to place">${legs}</ol>
+    <div aria-hidden="true">${stops}</div>
+  </div></div>`;
 };
 
 const getEditorial = (data) => {
@@ -141,42 +123,78 @@ const hydrateIcons = (root) => {
   });
 };
 
-const syncTicketStack = (root) => {
+const getDurationPlacement = (index, textWidth, labels) => {
+  const y = 60 + index * 84;
+  const nearby = labels.filter((label) => label.top < y + 22 && label.bottom > y - 36);
+  const leftStart = Math.max(36, ...nearby.filter((label) => label.left < 210).map((label) => label.right + 12));
+  const rightEnd = Math.min(444, ...nearby.filter((label) => label.right > 270).map((label) => label.left - 12));
+  const spaces = [
+    { start: leftStart, end: 198, preferred: index % 2 === 1 },
+    { start: 282, end: rightEnd, preferred: index % 2 === 0 },
+  ].sort((a, b) => (b.end - b.start) - (a.end - a.start) || Number(b.preferred) - Number(a.preferred));
+  const space = spaces[0];
+  return {
+    left: (space.start + space.end) / 2,
+    top: y - (space.end - space.start >= textWidth ? 24 : 48),
+  };
+};
+
+const syncJourney = (root) => {
   const map = findCountryMap(root);
-  const frame = root.querySelector(".inter-city-ticket-stack-frame");
-  const stack = frame?.querySelector(".inter-city-ticket-stack");
-
-  if (!frame || !stack) return;
-
-  observeResize(root, [map, frame.parentElement], () => {
-    const mapWidth =
-      map?.getBoundingClientRect().width || COUNTRY_MAP_FIGMA_WIDTH;
-    if (mapWidth <= 0) return;
-
-    const stackTargetWidth =
-      mapWidth * TICKET_STACK_TO_MAP_WIDTH_RATIO;
-    const availableWidth = frame.parentElement?.getBoundingClientRect().width;
-    const stackWidth =
-      window.matchMedia("(max-width: 444px)").matches && availableWidth > 0
-        ? availableWidth
-        : Math.min(
-            stackTargetWidth,
-            availableWidth > 0 ? availableWidth : stackTargetWidth,
-          );
-    const scale = stackWidth / TICKET_STACK_FIGMA_WIDTH;
-    root.style.setProperty(
-      "--inter-city-ticket-stack-width",
-      `${stackWidth}px`,
+  const frame = root.querySelector(".inter-city-journey-frame");
+  const journey = frame?.querySelector(".inter-city-journey");
+  if (!journey) return;
+  const stops = [...journey.querySelectorAll(".inter-city-journey-stop")];
+  const update = () => {
+    const availableWidth = frame.parentElement.getBoundingClientRect().width;
+    const mapWidth = map?.getBoundingClientRect().width || 720;
+    const targetWidth = window.matchMedia("(max-width: 444px)").matches
+      ? availableWidth
+      : mapWidth * JOURNEY_TO_MAP_WIDTH_RATIO;
+    const width = Math.min(targetWidth, availableWidth);
+    if (width <= 0) return;
+    const scale = width / JOURNEY_WIDTH;
+    frame.style.width = `${width}px`;
+    frame.style.height = `${journey.offsetHeight * scale}px`;
+    journey.style.transform = `scale(${scale})`;
+    const labelRects = stops.flatMap((stop) =>
+      [...stop.querySelector("span").getClientRects()],
     );
-    frame.style.width = `${stackWidth}px`;
-    frame.style.height = `${stack.offsetHeight * scale}px`;
-    stack.style.setProperty("--inter-city-ticket-stack-scale", scale);
+    const origin = journey.getBoundingClientRect();
+    const localLabels = labelRects.map((label) => ({
+      left: (label.left - origin.left) / scale,
+      right: (label.right - origin.left) / scale,
+      top: (label.top - origin.top) / scale,
+      bottom: (label.bottom - origin.top) / scale,
+    }));
+    journey.querySelectorAll(".inter-city-journey-duration").forEach((duration, index) => {
+      const placement = getDurationPlacement(index, duration.getBoundingClientRect().width / scale, localLabels);
+      duration.style.left = `${placement.left}px`;
+      duration.style.top = `${placement.top}px`;
+    });
+    const clearance = 3 * scale;
+    journey.querySelectorAll(".inter-city-route-dot").forEach((dot) => {
+      const bounds = dot.getBoundingClientRect();
+      const overlaps = labelRects.some((label) =>
+        bounds.left < label.right + clearance &&
+        bounds.right > label.left - clearance &&
+        bounds.top < label.bottom + clearance &&
+        bounds.bottom > label.top - clearance,
+      );
+      dot.style.visibility = overlaps ? "hidden" : "visible";
+    });
+  };
+  observeResize(root, [map, frame.parentElement, ...stops], update);
+  document.fonts?.ready.then(() => {
+    if (journey.isConnected && root.querySelector(".inter-city-journey") === journey) update();
   });
 };
 
 export const render = (root, data) => {
   validateData(data);
   destroyEditorialCarousel(root.querySelector(".inter-city-editorial"));
+  const hasJourney = data.places.length > 1 &&
+    data.legs.some((leg) => normalizeMode(leg.mode) !== "none");
 
   const assets = {
     ...DEFAULT_DATA.assets,
@@ -196,20 +214,14 @@ export const render = (root, data) => {
       <div class="inter-city-layout">
         ${renderEditorial(data)}
 
-        <div class="inter-city-ticket-stack-frame">
-          <div class="inter-city-ticket-stack" aria-label="Journey tickets">
-            ${data.legs
-              .map((leg, index) => renderTicket(leg, index, data.places, assets))
-              .join("")}
-          </div>
-        </div>
+        ${hasJourney ? renderJourney(data, assets) : ""}
       </div>
     </div>
   `;
 
   root.setAttribute("aria-labelledby", "inter-city-title");
-  if (!data.legs.length) {
-    root.querySelector(".inter-city-ticket-stack-frame")?.remove();
+  if (!hasJourney) {
+    root.querySelector(".inter-city-journey-frame")?.remove();
     root.querySelector(".inter-city-layout")?.classList.add("country-editorial-only");
     if (!getEditorial(data).length) {
       root.remove();
@@ -236,7 +248,7 @@ export const render = (root, data) => {
     });
   }
   hydrateIcons(root);
-  syncTicketStack(root);
+  syncJourney(root);
 };
 
 const renderError = (root, error) => {

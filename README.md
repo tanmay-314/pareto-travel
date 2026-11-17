@@ -23,7 +23,7 @@ Implemented:
 - interactive polaroid itinerary;
 - annual best-months travel dial;
 - cuisine editorial/menu section;
-- inter-city travel ticket;
+- continuous dotted inter-city journey;
 - budget receipt;
 - FAQ accordion and five-category country rating;
 - extensionless `/countries/<slug>` URLs backed by generated HTML entry files;
@@ -246,7 +246,7 @@ Cambodia's content lives in
 | `itinerary.json` | itinerary metadata, editorial copy, detail link, and ordered days |
 | `best-months.json` | editorial guidance and 12 month states |
 | `cuisine.json` | section title, up to three meal chapters, icons, dishes, and editorial copy |
-| `inter-city-travel.json` | places, route legs, modes, durations, recommendation flags, and ticket/icon assets |
+| `inter-city-travel.json` | places, route legs, modes, durations, recommendation flags, and mode icon assets |
 | `budget.json` | trip length, party size, year, five line items, total, and editorial copy |
 | `faqs.json` | section title, accordion mode, and ordered questions/answers |
 
