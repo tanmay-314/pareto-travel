@@ -78,7 +78,13 @@ const renderJourney = (data, assets) => {
       </div>
     </li>`;
   }).join("");
-  const stops = data.places.map((place, index) => `<p class="inter-city-journey-stop${index % 2 ? " inter-city-journey-stop--right" : ""}" style="top:${52 + Math.max(0, index - 1) * 84}px"><span>${escapeHtml(place.name)}</span></p>`).join("");
+  const stops = data.places.map((place, index) => {
+    const words = String(place.name || "").trim().split(/\s+/);
+    const name = words.length === 2
+      ? words.map(escapeHtml).join("<br>")
+      : escapeHtml(place.name);
+    return `<p class="inter-city-journey-stop${index % 2 ? " inter-city-journey-stop--right" : ""}" style="top:${52 + Math.max(0, index - 1) * 84}px"><span>${name}</span></p>`;
+  }).join("");
   return `<div class="inter-city-journey-frame"><div class="inter-city-journey" style="height:${48 + data.legs.length * 84}px">
     <ol class="inter-city-journey-legs" aria-label="Journey from place to place">${legs}</ol>
     <div aria-hidden="true">${stops}</div>
