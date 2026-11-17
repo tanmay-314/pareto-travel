@@ -24,6 +24,14 @@
         "y": 378
       },
       {
+        "id": "south",
+        "label": "SOUTH",
+        "icon": "map-pin",
+        "state": "primary",
+        "x": 312,
+        "y": 510
+      },
+      {
         "id": "north",
         "label": "NORTH",
         "icon": "map-pin",

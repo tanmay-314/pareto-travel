@@ -15,9 +15,9 @@
         "x": 36,
         "y": 221,
         "labelPosition": {
-          "x": 193.5,
-          "y": 263,
-          "lineHeight": 22
+          "x": 204,
+          "y": 259,
+          "lineHeight": 29
         },
         "connector": {
           "x": 78,
@@ -33,9 +33,9 @@
         "x": 60,
         "y": 270,
         "labelPosition": {
-          "x": 194.5,
-          "y": 311,
-          "lineHeight": 22
+          "x": 204.5,
+          "y": 307,
+          "lineHeight": 29
         },
         "connector": {
           "x": 102,

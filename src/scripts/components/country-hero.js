@@ -53,10 +53,15 @@ function normalizeLocation(location, index) {
     : normalizePosition(location.labelPosition, `${fieldName}.labelPosition`);
   if (labelPosition) {
     const lineHeight = location.labelPosition.lineHeight ?? 24;
-    if (lineHeight !== 22 && lineHeight !== 24) {
+    if (![22, 24, 29].includes(lineHeight)) {
       throw new Error(`Country hero data needs a valid ${fieldName}.labelPosition.lineHeight.`);
     }
     labelPosition.lineHeight = lineHeight;
+    const fontSize = location.labelPosition.fontSize ?? 24;
+    if (fontSize !== 18 && fontSize !== 24) {
+      throw new Error(`Country hero data needs a valid ${fieldName}.labelPosition.fontSize.`);
+    }
+    labelPosition.fontSize = fontSize;
   }
   let connector = null;
   if (location.connector != null) {
@@ -154,7 +159,8 @@ function createMapMarker(location) {
     label.classList.add("country-map-marker-label--offset");
     label.style.left = `${((location.labelPosition.x - location.x) / MAP_COORDINATE_SIZE) * 100}cqw`;
     label.style.top = `${((location.labelPosition.y - location.y) / MAP_COORDINATE_SIZE) * 100}cqw`;
-    label.style.lineHeight = location.labelPosition.lineHeight / 18;
+    label.style.fontSize = `${(location.labelPosition.fontSize / MAP_COORDINATE_SIZE) * 100}cqw`;
+    label.style.lineHeight = location.labelPosition.lineHeight / location.labelPosition.fontSize;
   }
 
   marker.append(icon, label);

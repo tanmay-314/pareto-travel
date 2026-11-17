@@ -187,6 +187,7 @@ Update the paths below when components are integrated.
 
 ### Country map and dot artwork
 
+- Country hero maps render live marker labels over the external SVG shape. Labels use 24px Bitcount Grid Single with 24px leading at the 720px map baseline and scale with the map width. Country data preserves source line breaks and offset labels; NY and Grand Canyon retain the Art pages' 18px exceptions.
 - Root: component-specific or decorative asset container
 - Inputs: external SVG/image path, accessible label when informative
 - Key behavior: preserve approved dot geometry and palette

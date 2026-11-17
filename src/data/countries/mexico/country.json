@@ -17,15 +17,15 @@
       },
       {
         "id": "chichen-itza",
-        "label": "CHICHEN-ITZA",
+        "label": "CHICHEN-\nITZA",
         "icon": "map-pin",
         "state": "primary",
         "x": 588,
         "y": 372,
         "labelPosition": {
-          "x": 498,
-          "y": 413,
-          "lineHeight": 22
+          "x": 512,
+          "y": 396,
+          "lineHeight": 29
         },
         "connector": {
           "x": 570,

@@ -129,6 +129,13 @@ provided it must be an integer, and when absent the navigation omits the year.
 Map paths are resolved relative to
 `country.json` and must point to a same-origin asset.
 
+`map.locations` supplies marker `id`, `label`, `icon`, `state`, `x`, and `y` in
+the 720 × 720 map coordinate space. Labels preserve newline characters. Optional
+`labelPosition` supplies the label's horizontal center `x` and top `y`, with
+`fontSize` (18 or 24, default 24) and `lineHeight` (22, 24, or 29, default 24).
+These sizes scale with the rendered map. Optional `connector` supplies `x`, `y`,
+and `dots` for a horizontal dotted leader.
+
 ## Country rating
 
 Country ratings live in the top-level `ratings` array in `country.json` and are

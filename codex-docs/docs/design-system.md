@@ -123,6 +123,10 @@ Responsive work should preserve composition, hierarchy, and readability—not me
 
 ## Adding a token
 
+Country map labels follow the country Art pages: 24px type and 24px leading at
+the 720px map baseline, scaling proportionally with the map. Offset labels may
+declare the source design's 18px type or automatic leading through country data.
+
 1. Confirm the value is not already represented.
 2. Decide whether it is primitive, semantic, or both.
 3. Add it to `tokens.css` using the existing naming system.

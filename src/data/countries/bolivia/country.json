@@ -10,7 +10,7 @@
     "locations": [
       {
         "id": "salt-flats",
-        "label": "SALT FLATS",
+        "label": "SALT\nFLATS",
         "icon": "map-pin",
         "state": "primary",
         "x": 168,
@@ -26,7 +26,7 @@
       },
       {
         "id": "santa-cruz",
-        "label": "SANTA CRUZ",
+        "label": "SANTA\nCRUZ",
         "icon": "airplane",
         "state": "primary",
         "x": 339,
@@ -34,7 +34,7 @@
       },
       {
         "id": "laguna-colorada",
-        "label": "LAGUNA COLORADA",
+        "label": "LAGUNA\nCOLORADA",
         "icon": "map-pin",
         "state": "secondary",
         "x": 162,

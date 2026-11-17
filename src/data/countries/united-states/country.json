@@ -24,7 +24,9 @@
         "y": 324,
         "labelPosition": {
           "x": 254.5,
-          "y": 355
+          "y": 355,
+          "lineHeight": 24,
+          "fontSize": 18
         },
         "connector": {
           "x": 186,
@@ -73,7 +75,9 @@
         "y": 228,
         "labelPosition": {
           "x": 695,
-          "y": 268
+          "y": 268,
+          "lineHeight": 24,
+          "fontSize": 18
         },
         "connector": {
           "x": 648,
