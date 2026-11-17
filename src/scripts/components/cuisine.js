@@ -1,8 +1,8 @@
 import { fetchJson, findCountryMap, observeResize } from "../lib/component-utils.js";
 
 const COUNTRY_MAP_FIGMA_WIDTH = 720;
-const MENU_FIGMA_WIDTH = 420;
-const MENU_FIGMA_HEIGHT = 540;
+const MENU_FIGMA_WIDTH = 480;
+const MENU_FIGMA_HEIGHT = 480;
 const DEFAULT_DATA = {
   title: "MEALS YOU CAN'T MISS",
   chapters: [],
@@ -42,7 +42,10 @@ function applyCuisineIcons(root, chapters) {
     const source = chapters[index]?.icon;
     if (!source) return;
 
-    const url = new URL(source, document.baseURI).href;
+    const standardIcon = source.match(/(?:^|\/)icon-(morning|afternoon|night)\.svg$/);
+    const url = standardIcon
+      ? new URL(`../../assets/components/cuisine-${standardIcon[1]}.svg`, import.meta.url).href
+      : new URL(source, document.baseURI).href;
     icon.style.setProperty("--cuisine-icon-image", `url("${url}")`);
   });
 }
@@ -113,7 +116,6 @@ export function renderCuisine(root, data) {
     <div class="cuisine-layout">
       <div class="cuisine-menu-frame">
         <div class="cuisine-menu">
-          <span class="cuisine-menu-paper" aria-hidden="true"></span>
           <div class="cuisine-chapters">
             ${chapters.map(renderChapter).join("")}
           </div>

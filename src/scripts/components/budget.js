@@ -2,28 +2,11 @@ import { fetchJson, findCountryMap, observeResize } from "../lib/component-utils
 import { renderEditorialCarousel, destroyEditorialCarousel } from "./editorial-carousel.js";
 
 const COUNTRY_MAP_FIGMA_WIDTH = 720;
-const RECEIPT_TO_MAP_WIDTH_RATIO = 7 / 12;
+const RECEIPT_TO_MAP_WIDTH_RATIO = 480 / 720;
 const RECEIPT_FIGMA_WIDTH =
   COUNTRY_MAP_FIGMA_WIDTH * RECEIPT_TO_MAP_WIDTH_RATIO;
-const RECEIPT_FIGMA_HEIGHT = 540;
-const RECEIPT_ASSETS = Object.freeze({
-  perforation: new URL(
-    "../../assets/components/budget/perforation.svg",
-    import.meta.url
-  ).href,
-  top: new URL(
-    "../../assets/components/budget/receipt-top.svg",
-    import.meta.url
-  ).href,
-  separatorHeader: new URL(
-    "../../assets/components/budget/separator-1.svg",
-    import.meta.url
-  ).href,
-  separatorTotal: new URL(
-    "../../assets/components/budget/separator-2.svg",
-    import.meta.url
-  ).href
-});
+const RECEIPT_FIGMA_HEIGHT = 480;
+const RULE_DOT_URL = new URL("../../assets/components/budget/rule-dot.svg", import.meta.url).href;
 
 export const DEFAULT_RECEIPT = Object.freeze({
   days: "—",
@@ -107,15 +90,17 @@ function element(tagName, className, content) {
   return node;
 }
 
-function createDecorativeImage(modifier, source) {
-  const image = element(
-    "img",
-    "budget-receipt__decoration budget-receipt__decoration--" + modifier
-  );
-  image.src = source;
-  image.alt = "";
-  image.setAttribute("aria-hidden", "true");
-  return image;
+function createRule() {
+  const rule = element("div", "budget-receipt__rule");
+  rule.setAttribute("aria-hidden", "true");
+  for (let index = 0; index < 34; index += 1) {
+    const dot = element("img");
+    dot.src = RULE_DOT_URL;
+    dot.alt = "";
+    dot.width = dot.height = 6;
+    rule.append(dot);
+  }
+  return rule;
 }
 
 function createLineItems(items) {
@@ -203,9 +188,6 @@ export function createReceipt(data) {
       receipt.year
   );
 
-  const paper = element("span", "budget-receipt__paper");
-  paper.setAttribute("aria-hidden", "true");
-
   const meta = element("p", "budget-receipt__meta");
   const days = element("span", "budget-receipt__meta-group");
   const people = element("span", "budget-receipt__meta-group");
@@ -231,17 +213,7 @@ export function createReceipt(data) {
   const totalValue = element("strong", "budget-receipt__total-value", receipt.total);
   total.append(totalLabel, totalValue);
 
-  article.append(
-    createDecorativeImage("perforation", RECEIPT_ASSETS.perforation),
-    paper,
-    createDecorativeImage("top", RECEIPT_ASSETS.top),
-    createDecorativeImage("header-rule", RECEIPT_ASSETS.separatorHeader),
-    createDecorativeImage("total-rule", RECEIPT_ASSETS.separatorTotal),
-    createDecorativeImage("bottom-rule", RECEIPT_ASSETS.separatorTotal),
-    meta,
-    createLineItems(receipt.lineItems),
-    total
-  );
+  article.append(createRule(), meta, createRule(), createLineItems(receipt.lineItems), createRule(), total, createRule());
 
   return article;
 }

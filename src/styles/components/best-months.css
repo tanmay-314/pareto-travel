@@ -1,5 +1,4 @@
 :root {
-  --dial-background: #fefcf3;
   --dial-best: #85586f;
   --dial-good: #ba97a3;
   --dial-avoid: #f0dbdb;
@@ -7,12 +6,11 @@
 }
 
 .annual-travel-dial {
-  width: var(--annual-travel-dial-size, 540px);
+  width: var(--annual-travel-dial-size, 480px);
   max-width: 100%;
   aspect-ratio: 1;
   margin: 0;
   overflow: visible;
-  background: var(--dial-background);
 }
 
 .annual-travel-dial__svg {
@@ -24,7 +22,7 @@
 
 .annual-travel-dial__compass--animated {
   transform-box: view-box;
-  transform-origin: 270px 270px;
+  transform-origin: 240px 240px;
   animation: annual-travel-dial-compass-hover
     var(--dial-compass-hover-duration) ease-in-out infinite;
   will-change: transform;
@@ -58,7 +56,7 @@
 
 .annual-travel-dial__month {
   font-size: var(--type-size-map-label, 24px);
-  font-weight: var(--type-weight-regular);
+  font-weight: var(--type-weight-emphasis);
   text-anchor: middle;
 }
 

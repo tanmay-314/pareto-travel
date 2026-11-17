@@ -1,18 +1,8 @@
-:root {
-  --budget-receipt-paper: var(--color-bg-surface, #ffffff);
-  --budget-receipt-ink: var(--color-text-primary, #85586f);
-  --budget-receipt-muted: var(--color-text-secondary, #ba97a3);
-  --budget-receipt-font: var(--type-family-display), ui-monospace, monospace;
-}
-
-/*
- * Component geometry mirrors Figma node 1244:10592. The fixed frame is scaled
- * as one unit so its type, exported decorations, and spacing stay aligned.
- */
+/* Figma 1693:102166, with the requested 480px base width. */
 .budget-receipt-frame {
   position: relative;
-  width: 420px;
-  height: 540px;
+  width: 480px;
+  height: 480px;
 }
 
 .budget-receipt-frame > .budget-receipt {
@@ -24,181 +14,77 @@
 }
 
 .budget-receipt {
-  position: relative;
-  isolation: isolate;
-  width: 420px;
-  min-width: 420px;
-  height: 540px;
-  overflow: visible;
-  color: var(--budget-receipt-ink);
-  font-family: var(--budget-receipt-font);
-  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-lg);
+  width: 480px;
+  min-width: 480px;
+  height: 480px;
+  color: var(--color-text-primary);
+  font-family: var(--type-family-display), monospace;
+  font-size: var(--type-size-budget-item, 24px);
+  font-weight: var(--type-weight-emphasis);
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
 }
 
-.budget-receipt__paper {
-  position: absolute;
-  z-index: 1;
-  top: 3px;
-  left: 3px;
-  width: 414px;
-  height: 534px;
-  background: var(--budget-receipt-paper);
-  pointer-events: none;
-}
-
-.budget-receipt__decoration {
-  position: absolute;
-  z-index: 2;
-  display: block;
-  max-width: none;
-  pointer-events: none;
-  user-select: none;
-}
-
-.budget-receipt__decoration--perforation {
-  z-index: 0;
-  top: 0;
-  left: 0;
-  width: 423.25px;
-  height: 544px;
-}
-
-.budget-receipt__decoration--top {
-  top: 34px;
-  left: 24px;
-  width: 360px;
+.budget-receipt__rule {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
   height: 6px;
+  flex: 0 0 6px;
 }
 
-.budget-receipt__decoration--header-rule,
-.budget-receipt__decoration--total-rule,
-.budget-receipt__decoration--bottom-rule {
-  width: 360px;
-  height: 6px;
-}
-
-.budget-receipt__decoration--header-rule {
-  top: 115px;
-  left: 24px;
-}
-
-.budget-receipt__decoration--total-rule {
-  bottom: 115px;
-  left: 24px;
-}
-
-.budget-receipt__decoration--bottom-rule {
-  bottom: 36px;
-  left: 24px;
-}
-
-.budget-receipt__meta,
-.budget-receipt__line-description,
-.budget-receipt__line-value,
-.budget-receipt__total-label,
-.budget-receipt__total-value {
-  margin: 0;
-  line-height: normal;
-}
+.budget-receipt__rule img { max-width: none; }
 
 .budget-receipt__meta {
-  position: absolute;
-  z-index: 3;
-  top: 61px;
-  left: 65.5px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 289px;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
   height: 29px;
-  color: var(--budget-receipt-ink);
-  font-family: var(--budget-receipt-font);
-  font-size: var(--type-size-budget-item, 24px);
-  font-weight: var(--type-weight-regular);
+  font: inherit;
   white-space: nowrap;
 }
 
-.budget-receipt__meta-group {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs, 6px);
-}
+.budget-receipt__meta-group { display: flex; gap: var(--space-xs); }
 
 .budget-receipt__line-items {
-  position: absolute;
-  z-index: 3;
-  top: 150px;
-  left: 30px;
   display: flex;
   flex-direction: column;
+  gap: var(--space-xxl);
   width: 360px;
-  margin: 0;
   padding: 0;
-  gap: var(--space-xxl, 36px);
+  margin: 0;
 }
 
 .budget-receipt__line-item {
   display: grid;
   grid-template-columns: 249px 111px;
-  width: 360px;
   height: 18px;
+  color: var(--color-text-secondary);
+  font-size: var(--type-size-body, 18px);
+  font-weight: var(--type-weight-regular);
+  line-height: 18px;
 }
 
-.budget-receipt__line-description {
-  text-transform: uppercase;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 18px;
-  min-width: 0;
-  overflow: hidden;
-  color: var(--budget-receipt-muted);
-  font-size: var(--type-size-budget-item, 24px);
-  font-weight: var(--type-weight-regular);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.budget-receipt__line-value {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 18px;
-  min-width: 0;
-  overflow: hidden;
-  color: var(--budget-receipt-muted);
-  font-size: var(--type-size-budget-item, 24px);
-  font-weight: var(--type-weight-regular);
-  text-align: right;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+.budget-receipt__line-description { text-transform: uppercase; }
+.budget-receipt__line-value { margin: 0; text-align: right; white-space: nowrap; }
 
 .budget-receipt__total {
-  position: absolute;
-  z-index: 3;
-  top: 444px;
-  right: 30px;
-  left: 30px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
+  width: 360px;
+  height: 29px;
+  flex-shrink: 0;
 }
 
-.budget-receipt__total-label {
-  color: var(--budget-receipt-ink);
-  font-size: var(--type-size-budget-item, 24px);
-  font-weight: var(--type-weight-regular);
-}
-
-.budget-receipt__total-value {
-  color: var(--budget-receipt-ink);
-  font-size: var(--type-size-budget-item, 24px);
-  font-weight: var(--type-weight-regular);
-  text-align: right;
-  white-space: nowrap;
-}
+.budget-receipt__total-value { font-weight: inherit; white-space: nowrap; }
 
 .budget {
   padding-block: var(--space-xxl);

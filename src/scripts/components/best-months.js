@@ -20,14 +20,10 @@ const MONTHS = [
 
 const VALID_STATES = new Set(["best", "good", "avoid"]);
 let dialInstanceId = 0;
-const DIAL_VIEWBOX_SIZE = 544;
-const DIAL_CENTER = 270;
-const DIAL_TO_MAP_SIZE_RATIO = 3 / 4;
+const DIAL_VIEWBOX_SIZE = 480;
+const DIAL_CENTER = 240;
+const DIAL_TO_MAP_SIZE_RATIO = 480 / 720;
 const COMPASS_HOVER_DEGREES = 4;
-const DOTTED_RING_ASSET_URL = new URL(
-  "../../assets/components/best-months/dotted-ring.svg",
-  import.meta.url,
-).href;
 const COMPASS_NEEDLE_ASSET_URL = new URL(
   "../../assets/components/best-months/compass-needle.svg",
   import.meta.url,
@@ -215,19 +211,7 @@ export function renderAnnualTravelDial(container, rawConfig) {
   const description = svgNode("desc", { id: descriptionId });
   description.textContent = `${makeAccessibleSummary(config)}.`;
 
-  svg.append(
-    title,
-    description,
-    svgNode("image", {
-      class: "annual-travel-dial__frame",
-      href: DOTTED_RING_ASSET_URL,
-      x: 0,
-      y: 0,
-      width: 542,
-      height: 544,
-      preserveAspectRatio: "none",
-    }),
-  );
+  svg.append(title, description);
 
   const ring = svgNode("g", {
     class: "annual-travel-dial__ring",
@@ -241,8 +225,8 @@ export function renderAnnualTravelDial(container, rawConfig) {
   const compass = svgNode("image", {
     class: "annual-travel-dial__compass",
     href: COMPASS_NEEDLE_ASSET_URL,
-    x: 243,
-    y: 108,
+    x: 213,
+    y: 78,
     width: 54.001,
     height: 331,
     preserveAspectRatio: "none",
