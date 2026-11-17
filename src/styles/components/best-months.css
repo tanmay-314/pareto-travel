@@ -56,7 +56,7 @@
 
 .annual-travel-dial__month {
   font-size: var(--type-size-map-label, 24px);
-  font-weight: var(--type-weight-emphasis);
+  font-weight: var(--type-weight-regular);
   text-anchor: middle;
 }
 

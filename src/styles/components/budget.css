@@ -25,7 +25,7 @@
   color: var(--color-text-primary);
   font-family: var(--type-family-display), monospace;
   font-size: var(--type-size-budget-item, 24px);
-  font-weight: var(--type-weight-emphasis);
+  font-weight: var(--type-weight-regular);
   font-variation-settings: "CRSV" 0, "ELSH" 0, "ELXP" 0;
 }
 

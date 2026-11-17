@@ -135,7 +135,7 @@ Update the paths below when components are integrated.
 
 - Root: `[data-budget-receipt]`
 - Inputs: number of days, number of people, year, five ordered line items, total, an overview `editorial` paragraph array, and optional `categories` with `title` and `editorial` paragraphs.
-- Key behavior: render configurable receipt content in the transparent `480 × 480px` receipt geometry with 18px Regular line items and 24px Medium header/total, keep its width at `480:720` of the live country-map width, and align its editorial with the shared country-section grid
+- Key behavior: render configurable receipt content in the transparent `480 × 480px` receipt geometry with 18px Regular line items and 24px Regular header/total, keep its width at `480:720` of the live country-map width, and align its editorial with the shared country-section grid
 - Editorial carousel: overview followed by each category and an optional combined alternatives screen; Cambodia has seven screens. The final screen uses bold body-font subheadings and the shared 18px editorial body size. The shared controls provide bounded arrows, keyboard and swipe navigation, equal dots with scaled 4px slot gaps, and map-relative sizing. The content grid matches best months at a minimum of 420px and grows to the longest screen. Without categories, legacy editorial paragraphs render as before.
 - Accessibility: use real text; announce totals in a logical reading order
 - Implementation paths: `src/scripts/components/budget.js`, `src/styles/components/budget.css`, `src/assets/components/budget/`, and `src/data/countries/<slug>/budget.json`
@@ -169,7 +169,7 @@ Update the paths below when components are integrated.
 
 - Root: `[data-cuisine-component]`
 - Inputs: `title`, up to three `chapters`, an `editorial` paragraph array, and an optional `detailLink`
-- Key behavior: render the three dishes inside a transparent `480 × 480px` cuisine menu with flexible dish-copy columns, 24px Medium dish titles, and 18px Regular Bitcount Grid Single descriptions in secondary plum; meal labels and icons use primary plum, keep its width at `480:720` of the live country-map width, pair it with editorial copy on desktop, and collapse to one column below `900px`
+- Key behavior: render the three dishes inside a transparent `480 × 480px` cuisine menu with flexible dish-copy columns, 24px Regular dish titles, and 18px Regular Bitcount Grid Single descriptions in secondary plum; meal labels and icons use primary plum, keep its width at `480:720` of the live country-map width, pair it with editorial copy on desktop, and collapse to one column below `900px`
 - Compatibility: legacy `lede` and `paretoPick.copy` values are used when `editorial` is absent
 - Implementation paths: `src/scripts/components/cuisine.js`, `src/styles/components/cuisine.css`, and `src/data/countries/<slug>/cuisine.json`
 
