@@ -17,7 +17,7 @@ authority where older examples below differ.
 Implemented:
 
 - world-map landing page artwork and country hotspots;
-- shared Destinations overlay with 18 illustrated stamps grouped by region;
+- shared Destinations overlay with 17 stamps featuring paired landmark illustrations grouped by region;
 - a data-driven Cambodia hero and annotated country map;
 - a six-link in-hero passport-stamp navigation group;
 - interactive polaroid itinerary;

@@ -83,16 +83,18 @@ export function initializeDestinations(header, closeMenu) {
           const name = document.createElement("span");
           name.className = "destination-stamp__name";
           name.textContent = country.name;
-          const art = document.createElement("img");
+          const art = document.createElement("div");
           art.className = "destination-stamp__art";
-          art.src = new URL(country.artwork, dataUrl);
-          art.alt = "";
-          art.width = 360;
-          art.height = 180;
-          const caption = document.createElement("span");
-          caption.className = "destination-stamp__caption";
-          caption.textContent = country.caption;
-          card.append(name, art, caption);
+          if (country.artworkLayout === "narrow-wide") {
+            art.classList.add("destination-stamp__art--narrow-wide");
+          }
+          for (const artwork of country.artwork) {
+            const landmark = document.createElement("img");
+            landmark.src = new URL(artwork, dataUrl);
+            landmark.alt = "";
+            art.append(landmark);
+          }
+          card.append(name, art);
           grid.append(card);
         }
         section.append(heading, grid);

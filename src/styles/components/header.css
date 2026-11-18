@@ -128,8 +128,7 @@ a.destination-stamp:hover {
     color: var(--color-text-accent);
 }
 
-.destination-stamp__name,
-.destination-stamp__caption {
+.destination-stamp__name {
     position: absolute;
     font-family: var(--type-family-display), monospace;
     font-weight: var(--type-weight-regular);
@@ -150,15 +149,28 @@ a.destination-stamp:hover {
     left: 3.846154%;
     width: 92.307692%;
     height: 66.666667%;
+    overflow: hidden;
 }
 
-.destination-stamp__caption {
-    top: 88.148148%;
-    left: 0;
-    width: 100%;
-    color: var(--color-text-secondary);
-    font-size: 4.615385cqw;
-    text-align: center;
+.destination-stamp__art img {
+    position: absolute;
+    top: 0;
+    left: 3.333333%;
+    width: 43.333333%;
+    height: 100%;
+}
+
+.destination-stamp__art img + img {
+    left: 53.333333%;
+}
+
+.destination-stamp__art--narrow-wide img {
+    width: 28.333333%;
+}
+
+.destination-stamp__art--narrow-wide img + img {
+    left: 38.333333%;
+    width: 56.666667%;
 }
 
 @media (max-width: 900px) {
