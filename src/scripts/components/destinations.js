@@ -17,7 +17,7 @@ export function initializeDestinations(header, closeMenu) {
   close.setAttribute("aria-label", "Close places");
   close.autofocus = true;
   const icon = document.createElement("img");
-  icon.src = new URL("../../assets/icons/icon-overlay-close.svg", import.meta.url);
+  icon.src = new URL("../../assets/components/destinations/icon-overlay-close.svg", import.meta.url);
   icon.alt = "";
   icon.width = icon.height = 30;
   close.append(icon);

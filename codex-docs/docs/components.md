@@ -225,9 +225,15 @@ locks background scrolling, supports Escape, and restores focus to the trigger
 (or the mobile menu button). Styles live in `styles/components/header.css`.
 
 `data/components/destinations.json` owns the ordered regions and countries. Each
-country has `name`, `caption`, an `artwork` URL relative to that JSON, and a nullable
-`href`. Only published guides receive links. The SVG artwork is exported from
-Figma node `1565:202613` into `assets/components/destinations/`.
+country has `name`, an ordered pair of `artwork` URLs relative to that JSON, an
+optional `artworkLayout: "narrow-wide"`, and a nullable `href`. Only published
+guides receive links. Landmark SVGs live in `assets/components/destinations/landmarks/`.
+The layout follows Figma `1861:442748`, with the exported `1861:242463` stamp
+frame in `assets/components/destinations/stamp-frame.svg`. Each 360 × 240 stamp
+uses the frame at its native 364 × 244 size (including its right/bottom dots),
+a 36px country label at (12, 4), and a 360 × 180 artwork pair at (-1, 47).
+Landmarks retain their native dimensions. The grid has three 360px columns
+with 30px gaps.
 
 There are 17 stamps across six regions, including Malaysia first in Southeast
 Asia and Japan in East Asia. Regions optionally accept `rowGap: "compact"`

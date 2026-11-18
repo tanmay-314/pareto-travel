@@ -91,7 +91,7 @@
 
 .places-overlay__grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 390px));
+    grid-template-columns: repeat(3, 360px);
     gap: var(--space-xl);
 }
 
@@ -102,8 +102,8 @@
 .destination-stamp {
     position: relative;
     display: block;
-    aspect-ratio: 390 / 270;
-    container-type: inline-size;
+    width: 360px;
+    height: 240px;
     color: var(--color-text-primary);
     text-decoration: none;
     isolation: isolate;
@@ -112,15 +112,11 @@
 .destination-stamp::before {
     position: absolute;
     z-index: -1;
-    inset: 0;
-    border: 3px solid transparent;
-    background:
-        linear-gradient(var(--color-bg-surface), var(--color-bg-surface)) padding-box,
-        url("../../assets/components/destinations/stamp-dot-top.svg") left top / 6px 6px repeat-x border-box,
-        url("../../assets/components/destinations/stamp-dot-top.svg") left bottom / 6px 6px repeat-x border-box,
-        url("../../assets/components/destinations/stamp-dot-top.svg") left top / 6px 6px repeat-y border-box,
-        url("../../assets/components/destinations/stamp-dot-top.svg") right top / 6px 6px repeat-y border-box;
-    filter: drop-shadow(2px 4px 0 var(--color-text-secondary));
+    top: 0;
+    left: 0;
+    width: 364px;
+    height: 244px;
+    background: url("../../assets/components/destinations/stamp-frame.svg") no-repeat;
     content: "";
 }
 
@@ -138,39 +134,33 @@ a.destination-stamp:hover {
 }
 
 .destination-stamp__name {
-    top: 4.444444%;
-    left: 3.076923%;
-    font-size: 9.230769cqw;
+    top: 4px;
+    left: var(--space-sm);
+    font-size: var(--space-xxl);
 }
 
 .destination-stamp__art {
     position: absolute;
-    top: 20%;
-    left: 3.846154%;
-    width: 92.307692%;
-    height: 66.666667%;
+    top: 47px;
+    left: -1px;
+    width: 360px;
+    height: 180px;
     overflow: hidden;
 }
 
 .destination-stamp__art img {
     position: absolute;
     top: 0;
-    left: 3.333333%;
-    width: 43.333333%;
-    height: 100%;
+    left: var(--space-sm);
+    max-width: none;
 }
 
 .destination-stamp__art img + img {
-    left: 53.333333%;
-}
-
-.destination-stamp__art--narrow-wide img {
-    width: 28.333333%;
+    left: 192px;
 }
 
 .destination-stamp__art--narrow-wide img + img {
-    left: 38.333333%;
-    width: 56.666667%;
+    left: 138px;
 }
 
 @media (max-width: 900px) {
@@ -182,6 +172,10 @@ a.destination-stamp:hover {
         font-size: var(--type-size-body);
     }
 
+}
+
+:root {
+    --site-logo-width: clamp(min(62vw, 264px), (100vw - 288px) * 0.2907489, 528px);
 }
 
 .header {
@@ -197,7 +191,8 @@ a.destination-stamp:hover {
 
 .logo {
     display: block;
-    width: min(29.0748898678%, 528px);
+    flex: none;
+    width: var(--site-logo-width);
 }
 
 .logo img {
@@ -220,7 +215,6 @@ a.destination-stamp:hover {
 
 @media (max-width: 900px) {
     .header {
-        --mobile-logo-width: min(62vw, 264px);
         --mobile-menu-size: min(7.0454545vw, 30px);
 
         position: relative;
@@ -228,12 +222,6 @@ a.destination-stamp:hover {
         align-items: center;
         gap: var(--space-lg);
         padding: var(--space-lg);
-    }
-
-    .logo {
-        /* Keep the artwork readable independently of the desktop map ratio. */
-        flex: none;
-        width: var(--mobile-logo-width);
     }
 
     .nav-toggle {
