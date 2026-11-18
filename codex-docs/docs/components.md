@@ -233,11 +233,13 @@ frame in `assets/components/destinations/stamp-frame.svg`. Each 360 × 240 stamp
 uses the frame at its native 364 × 244 size (including its right/bottom dots),
 a 36px country label at (12, 4), and a 360 × 180 artwork pair at (-1, 47).
 Landmarks retain their native dimensions. The grid has three 360px columns
-with 30px gaps.
+with 30px gaps. Regions are separated by `--space-region-gap` (60px),
+matching the updated Figma spacing; outer composition padding remains 144px
+vertically and 85px horizontally, with the existing minimum close-button clearance.
 
 There are 17 stamps across six regions, including Malaysia first in Southeast
-Asia and Japan in East Asia. Regions optionally accept `rowGap: "compact"`
-for the 12px row gap used by South America; the default gap is 30px. India and
+Asia and Japan in East Asia. The legacy `rowGap: "compact"` setting remains supported; South America now
+uses the same 30px row gap as the rest of the grid. India and
 Japan render as unlinked figures until their guides are published.
 
 The right-aligned frame uses `min(100vw, max(600px, 50vw))`: half the viewport

@@ -133,3 +133,9 @@ declare the source design's 18px type or automatic leading through country data.
 4. Replace relevant repeated literals only within the requested scope.
 5. Check every changed component visually.
 6. Update this document if the token expands the design language.
+
+### Region spacing
+
+`--space-region-gap` maps to the 60px primitive `--primitive-scale-60`.
+The Places composition uses it between regions (Figma `1861:442748`);
+`--space-xxl` remains 36px for existing consumers.
