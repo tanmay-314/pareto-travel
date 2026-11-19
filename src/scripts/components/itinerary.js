@@ -2,7 +2,12 @@ import { renderEditorialCarousel, destroyEditorialCarousel } from "./editorial-c
 import { fetchJson, findCountryMap, observeResize } from "../lib/component-utils.js";
 
 const FRAME_URL = new URL(
-  "../../assets/components/itinerary/polaroid-frame.svg",
+  "../../assets/components/itinerary/polaroid-deux-frame.svg",
+  import.meta.url,
+);
+
+const PLACEHOLDER_URL = new URL(
+  "../../assets/components/itinerary/photo-placeholder.svg",
   import.meta.url,
 );
 
@@ -18,13 +23,15 @@ export const ALLOWED_ROTATIONS = Object.freeze([
 const DEFAULTS = Object.freeze({
   dayNumber: "DAY 1",
   location: "LOCATION",
+  dayTotal: null,
+  paperBacking: false,
   rotation: "0°",
   image: null,
 });
 
 const FIGMA_SIZE = Object.freeze({
-  width: 412,
-  height: 460,
+  width: 396,
+  height: 450,
   photo: 360,
   stackTravel: 360,
 });
@@ -90,6 +97,7 @@ export function create(config, interactive = false) {
   const surface = document.createElement(interactive ? "button" : "div");
   const tilt = document.createElement("div");
   const photo = document.createElement("div");
+  const backing = document.createElement("div");
   const frame = document.createElement("img");
   const caption = document.createElement("div");
 
@@ -125,23 +133,31 @@ export function create(config, interactive = false) {
   );
 
   photo.className = "itinerary-polaroid-photo";
-  if (imageOptions.src) {
-    const image = document.createElement("img");
+  const image = document.createElement("img");
+  const showPlaceholder = () => {
+    image.src = PLACEHOLDER_URL.href;
+    image.alt = "";
+    image.style.setProperty("--polaroid-image-position", "50% 50%");
+  };
+  image.loading = "lazy";
+  image.decoding = "async";
+  if (imageOptions.src?.trim()) {
+    image.addEventListener("error", showPlaceholder, { once: true });
     image.src = imageOptions.src;
     image.alt = imageOptions.alt;
-    image.loading = "lazy";
-    image.decoding = "async";
-    image.style.setProperty(
-      "--polaroid-image-position",
-      imageOptions.position,
-    );
-    photo.append(image);
+    image.style.setProperty("--polaroid-image-position", imageOptions.position);
+  } else {
+    showPlaceholder();
   }
+  photo.append(image);
 
   frame.className = "itinerary-polaroid-frame";
   frame.src = options.frameAsset || FRAME_URL.href;
   frame.alt = "";
   frame.setAttribute("aria-hidden", "true");
+
+  backing.className = "itinerary-polaroid-backing";
+  backing.setAttribute("aria-hidden", "true");
 
   caption.className = "itinerary-polaroid-caption";
   caption.append(
@@ -149,9 +165,13 @@ export function create(config, interactive = false) {
     createText("itinerary-polaroid-location", options.location),
   );
 
+  if (options.paperBacking) tilt.append(backing);
   tilt.append(photo, frame, caption);
   surface.append(tilt);
   polaroid.append(surface);
+  if (options.dayTotal != null) {
+    setDayCaption(polaroid, options.dayCurrent || getDayOrdinal(polaroid, 0), options.dayTotal);
+  }
   return polaroid;
 }
 
@@ -171,7 +191,12 @@ export function renderItinerary(target, days, onSelectDay) {
   const count = days.length;
   deckCleanups.get(root)?.();
   const cards = days.map((day, index) => {
-    const card = create(day, true);
+    const card = create({
+      ...day,
+      dayCurrent: index + 1,
+      dayTotal: count,
+      paperBacking: true,
+    }, true);
     const offset = getStackOffset(index, count);
     const scale =
       Number.parseFloat(
@@ -196,16 +221,20 @@ function getDayOrdinal(card, fallback) {
   return match ? Number.parseInt(match[0], 10) : fallback + 1;
 }
 
-function getRestingRotation(card, rank) {
-  if (rank === 0) return "0deg";
-  if (rank === 1) return rotationToCss("2°");
+function setDayCaption(card, ordinal, total) {
+  const caption = card.querySelector(".itinerary-polaroid-day");
+  caption.setAttribute("aria-label", `Day ${ordinal} of ${total}`);
+  caption.replaceChildren(...["DAY", ordinal, "OF", total].map((value) => {
+    const part = document.createElement("span");
+    part.textContent = value;
+    part.setAttribute("aria-hidden", "true");
+    return part;
+  }));
+}
 
-  const configured = rotationToCss(card.dataset.rotation);
-  return configured === "0deg"
-    ? rank % 2 === 0
-      ? "-4deg"
-      : "4deg"
-    : configured;
+function getRestingRotation(card, rank) {
+  const rotations = ["0°", "2°", "-4°", "1°", "-3°", "3°", "0°"];
+  return rotationToCss(rotations[rank] || card.dataset.rotation);
 }
 
 function enhanceDeck(root, cards, onSelectDay) {
@@ -239,7 +268,6 @@ function enhanceDeck(root, cards, onSelectDay) {
     order.forEach((cardIndex, rank) => {
       const card = cards[cardIndex];
       const control = card.querySelector(".itinerary-polaroid-surface");
-      const day = card.querySelector(".itinerary-polaroid-day");
       const ordinal = getDayOrdinal(card, cardIndex);
       const isActive = rank === 0;
       const offset = getStackOffset(rank, count);
@@ -268,9 +296,7 @@ function enhanceDeck(root, cards, onSelectDay) {
           ? `Day ${ordinal} of ${count} selected: ${card.dataset.location}`
           : `Select day ${ordinal} of ${count}: ${card.dataset.location}`,
       );
-      day.textContent = isActive
-        ? `DAY ${ordinal} OF ${count}`
-        : card.dataset.dayLabel;
+      setDayCaption(card, ordinal, count);
     });
   };
 
@@ -572,14 +598,10 @@ export function renderPage(itinerary, selectors = {}) {
     itinerary,
     (dayIndex) => deckSelections.get(list)?.(dayIndex),
   );
-  if (itinerary.days.every((day) => !normaliseImage(day).src)) {
-    list.hidden = true;
-    const visual = list.closest(".itinerary-visual");
-    if (visual) visual.hidden = true;
-    list.closest(".itinerary-layout")?.classList.add("country-editorial-only");
-    return list;
-  }
   list.hidden = false;
+  const visual = list.closest(".itinerary-visual");
+  if (visual) visual.hidden = false;
+  list.closest(".itinerary-layout")?.classList.remove("country-editorial-only");
   return renderItinerary(listSelector, itinerary.days, (dayIndex) => {
     // Screen zero is the overview; the remaining screens follow the day order.
     editorialSelections.get(editorial)?.(dayIndex + 1, false);
