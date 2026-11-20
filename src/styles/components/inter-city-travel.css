@@ -43,7 +43,7 @@
 }
 
 @media (max-width: 444px) {
-  .inter-city-journey-frame {
+  .inter-city-journeys {
     order: -1;
   }
 }
@@ -59,6 +59,12 @@
   position: relative;
   justify-self: center;
   width: min(480px, 100%);
+}
+
+.inter-city-journeys {
+  display: grid;
+  gap: var(--space-xxl);
+  min-width: 0;
 }
 
 .inter-city-journey {

@@ -32,7 +32,7 @@ const normalizeMode = (mode) => {
 
 const getModeLabel = (mode) => normalizeMode(mode);
 
-export const validateData = (data) => {
+const validateJourney = (data) => {
   if (!data || typeof data !== "object") {
     throw new TypeError("Inter-city data must be an object.");
   }
@@ -51,6 +51,19 @@ export const validateData = (data) => {
     throw new RangeError("Inter-city data requires at least one journey leg.");
   }
 };
+
+export const validateData = (data) => {
+  validateJourney(data);
+  if (data.additionalJourneys !== undefined && !Array.isArray(data.additionalJourneys)) {
+    throw new TypeError("Additional journeys must be an array.");
+  }
+  (data.additionalJourneys || []).forEach(validateJourney);
+};
+
+const getJourneys = (data) => [data, ...(data.additionalJourneys || [])];
+
+const hasJourney = (data) => data.places.length > 1 &&
+  data.legs.some((leg) => normalizeMode(leg.mode) !== "none");
 
 const renderJourney = (data, assets) => {
   const dot = (x, y) => `<img class="inter-city-route-dot" src="../assets/components/inter-city-travel/route-dot.svg" alt="" width="6" height="6" style="left:${x}px;top:${y}px">`;
@@ -145,9 +158,8 @@ const getDurationPlacement = (index, textWidth, labels) => {
   };
 };
 
-const syncJourney = (root) => {
+const syncJourneyFrame = (root, frame) => {
   const map = findCountryMap(root);
-  const frame = root.querySelector(".inter-city-journey-frame");
   const journey = frame?.querySelector(".inter-city-journey");
   if (!journey) return;
   const stops = [...journey.querySelectorAll(".inter-city-journey-stop")];
@@ -190,17 +202,31 @@ const syncJourney = (root) => {
       dot.style.visibility = overlaps ? "hidden" : "visible";
     });
   };
-  observeResize(root, [map, frame.parentElement, ...stops], update);
+  const cleanup = observeResize(frame, [map, frame.parentElement, ...stops], update);
   document.fonts?.ready.then(() => {
-    if (journey.isConnected && root.querySelector(".inter-city-journey") === journey) update();
+    if (journey.isConnected && root.contains(journey)) update();
   });
+  return cleanup;
+};
+
+const journeyCleanups = new WeakMap();
+
+const destroyJourneys = (root) => {
+  (journeyCleanups.get(root) || []).forEach((cleanup) => cleanup?.());
+  journeyCleanups.delete(root);
+};
+
+const syncJourney = (root) => {
+  const cleanups = [...root.querySelectorAll(".inter-city-journey-frame")]
+    .map((frame) => syncJourneyFrame(root, frame));
+  journeyCleanups.set(root, cleanups);
 };
 
 export const render = (root, data) => {
   validateData(data);
+  destroyJourneys(root);
   destroyEditorialCarousel(root.querySelector(".inter-city-editorial"));
-  const hasJourney = data.places.length > 1 &&
-    data.legs.some((leg) => normalizeMode(leg.mode) !== "none");
+  const journeys = getJourneys(data).filter(hasJourney);
 
   const assets = {
     ...DEFAULT_DATA.assets,
@@ -220,13 +246,13 @@ export const render = (root, data) => {
       <div class="inter-city-layout">
         ${renderEditorial(data)}
 
-        ${hasJourney ? renderJourney(data, assets) : ""}
+        ${journeys.length ? `<div class="inter-city-journeys">${journeys.map((journey) => renderJourney(journey, assets)).join("")}</div>` : ""}
       </div>
     </div>
   `;
 
   root.setAttribute("aria-labelledby", "inter-city-title");
-  if (!hasJourney) {
+  if (!journeys.length) {
     root.querySelector(".inter-city-journey-frame")?.remove();
     root.querySelector(".inter-city-layout")?.classList.add("country-editorial-only");
     if (!getEditorial(data).length) {
@@ -235,14 +261,14 @@ export const render = (root, data) => {
     }
   }
   root.removeAttribute("aria-label");
-  const editorialLegs = data.legs
-    .map((leg, index) => ({ leg, index }))
+  const editorialLegs = getJourneys(data)
+    .flatMap((journey) => journey.legs.map((leg, index) => ({ leg, index, journey })))
     .filter(({ leg }) => Array.isArray(leg.editorial) && leg.editorial.length);
   if (editorialLegs.length) {
     renderEditorialCarousel(root.querySelector(".inter-city-editorial"), [
       { label: "Overview", editorial: getEditorial(data) },
-      ...editorialLegs.map(({ leg, index }) => {
-        const title = leg.title || `${data.places[index].name} to ${data.places[index + 1].name}`;
+      ...editorialLegs.map(({ leg, index, journey }) => {
+        const title = leg.title || `${journey.places[index].name} to ${journey.places[index + 1].name}`;
         return {
           label: title, title,
           editorial: leg.editorial.filter((paragraph) => typeof paragraph === "string" && paragraph.trim()),
@@ -258,6 +284,7 @@ export const render = (root, data) => {
 };
 
 const renderError = (root, error) => {
+  destroyJourneys(root);
   destroyEditorialCarousel(root.querySelector(".inter-city-editorial"));
   root.innerHTML = `
     <p class="inter-city-error" role="alert">
