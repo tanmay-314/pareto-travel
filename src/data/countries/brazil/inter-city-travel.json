@@ -7,7 +7,7 @@
       "name": "Rio de Janeiro"
     },
     {
-      "name": "Foz do Iguacu"
+      "name": "Iguazu"
     },
     {
       "name": "Sao Paulo"
@@ -15,10 +15,12 @@
   ],
   "legs": [
     {
-      "mode": "flight"
+      "mode": "flight",
+      "duration": "4 hrs"
     },
     {
-      "mode": "flight"
+      "mode": "flight",
+      "duration": "2.5 hrs"
     },
     {
       "mode": "flight"
@@ -26,8 +28,8 @@
   ],
   "title": "Going from Place to Place",
   "editorial": [
-    "Fly. There is no romantic road-trip version of Manaus to Rio to Iguacu to Sao Paulo that fits eleven days.",
-    "Domestic flights save enormous distances but create fragility: delays, diversions and airport time accumulate. Leave buffers around anything you cannot afford to miss.",
-    "Within Rio and Sao Paulo, ride-hailing is straightforward. In the Amazon, boats become the road network."
+    "Fly. Everywhere. ",
+    "Sometimes, it might be economical to take a one-stop flight especially when flying to / from Iguazu. For instance, we did a layover in Curitiba between Rio de Janeiro and Iguazu. ",
+    "Within the cities, you can take an Ube"
   ]
 }

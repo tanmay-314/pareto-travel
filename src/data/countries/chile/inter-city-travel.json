@@ -1,10 +1,71 @@
 {
-  "places": [],
-  "legs": [],
+  "places": [
+    {
+      "name": "Santiago"
+    },
+    {
+      "name": "Rapa Nui"
+    }
+  ],
+  "legs": [
+    {
+      "mode": "flight",
+      "duration": "5.5 hrs"
+    }
+  ],
   "title": "Going from Place to Place",
   "editorial": [
-    "Flights do most of the heavy lifting.",
-    "Santiago to Rapa Nui is a proper long-haul domestic flight. Patagonia then requires another flight south plus road travel through Puerto Natales and Torres del Paine. Punta Arenas connects the final stretch.",
-    "Renting a car gives you valuable freedom in the park, but plan fuel, insurance, opening hours and trail logistics before you arrive. We had poor support from our rental provider and would choose more carefully next time."
+    "Flights do most of the heavy lifting, but you’ll need your driver’s license for Patagonia. ",
+    "Santiago to Rapa Nui is a long haul at 6+ hours, but it’s by far the most luxurious domestic flight we’ve taken in South America. There’s a special gate at the airport for Rapa Nui flights, so be sure to reach early in case you have trouble locating it. ",
+    "To get to Patagonia, you’ll need to fly from Santiago to Puerto Natales and rent a car to ride about an hour to Torres del Paine National Park. One important thing to note… there were no gas stations / petrol pumps inside the park, so be sure to purchase extra cans of fuel.  ",
+    "To go further south to Punta Arenas, you can catch a 3-hour bus from Puerto Natales. There were no international flights out of Puerto Natales, so you’ll be headed back to Santiago to check out of Chile. "
+  ],
+  "additionalJourneys": [
+    {
+      "places": [
+        {
+          "name": "Santiago"
+        },
+        {
+          "name": "Puerto Natales"
+        },
+        {
+          "name": "Torres del Paine"
+        }
+      ],
+      "legs": [
+        {
+          "mode": "flight",
+          "duration": "3.5 hrs"
+        },
+        {
+          "mode": "car",
+          "duration": "1 hr"
+        }
+      ]
+    },
+    {
+      "places": [
+        {
+          "name": "Puerto Natales"
+        },
+        {
+          "name": "Punta Arenas"
+        },
+        {
+          "name": "Santiago"
+        }
+      ],
+      "legs": [
+        {
+          "mode": "bus",
+          "duration": "3 hrs"
+        },
+        {
+          "mode": "flight",
+          "duration": "3.5 hrs"
+        }
+      ]
+    }
   ]
 }

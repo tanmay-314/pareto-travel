@@ -15,18 +15,22 @@
   ],
   "legs": [
     {
-      "mode": "flight"
+      "mode": "flight",
+      "duration": "1.5 hrs"
     },
     {
-      "mode": "car"
+      "mode": "car",
+      "duration": "1.5 hrs"
     },
     {
-      "mode": "train"
+      "mode": "train",
+      "duration": "1.5 hrs"
     }
   ],
   "title": "Going from Place to Place",
   "editorial": [
-    "Fly between Lima and Cusco unless your itinerary is much longer than ours.",
-    "From Cusco, the route into the Sacred Valley and onward by train through Ollantaytambo to Aguas Calientes is part of the experience. Build in time for altitude, delays and the general reality that mountain travel does not care about your spreadsheet."
+    "You can Uber around Lima for sightseeing. The neighbourhood of Mira Flores, where we stayed, is walkable too.",
+    "To get from Lima to Machu Picchu, you must take planes, trains, and automobiles. Lima to Cusco is a 1.5 hours flight. From Cusco, you can hail a cab to Ollantaytambo, which takes about 1.5 hours (longer if your driver insists on stopping over at tourist traps).",
+    "And finally, there’s the vista dome train (1.5 hours long again) from Ollantaytambo to Aguas Calientes, with breathtaking panoramic views of the Andes. "
   ]
 }

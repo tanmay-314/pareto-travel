@@ -1,10 +1,51 @@
 {
-  "places": [],
-  "legs": [],
+  "places": [
+    {
+      "name": "CDMX"
+    },
+    {
+      "name": "Merida"
+    },
+    {
+      "name": "Chichen-itza"
+    },
+    {
+      "name": "Bacalar"
+    },
+    {
+      "name": "Chetumal"
+    },
+    {
+      "name": "CDMX"
+    }
+  ],
+  "legs": [
+    {
+      "mode": "flight",
+      "duration": "2.5 hrs"
+    },
+    {
+      "mode": "bus",
+      "duration": "2 hrs"
+    },
+    {
+      "mode": "bus",
+      "duration": "4.5 hrs"
+    },
+    {
+      "mode": "car",
+      "duration": "1 hr"
+    },
+    {
+      "mode": "flight",
+      "duration": "2 hrs"
+    }
+  ],
   "title": "Going from Place to Place",
   "editorial": [
-    "Mexico City and Teotihuacan pair naturally by road.",
-    "Chichen Itza and Bacalar are far enough away that a six-day itinerary needs flights plus road transport. If you hate transit days, stay in central Mexico or extend the trip.",
-    "In CDMX, Uber was our default. In Bacalar, have a backup plan because ride-hailing coverage was much weaker."
+    "Within CDMX, you can either walk or take an Uber. ",
+    "To get from CDMX to Chichen-itza, you need to first take a 2.5-hour flight to Merida. We recommend flying into Merida the night prior to your Chichen-itza tour because you want to catch the 7:00 AM bus to beat the heat. The bus itself takes 2 hours. ",
+    "From Chichen-itza to Bacalar is another bus ride, this one takes 4.5 hours. You only need half a day for the pyramids and cenote, so can catch a late evening bus. ",
+    "To get back to CDMX from Bacalar, you can take a 2-hour flight from Chetumal. Be sure to book a cab in advance to go from Bacalar to Chetumal as Uber is unreliable in the area. "
   ]
 }

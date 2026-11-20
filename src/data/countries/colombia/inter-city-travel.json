@@ -1,10 +1,47 @@
 {
-  "places": [],
-  "legs": [],
+  "places": [
+    {
+      "name": "Medellin"
+    },
+    {
+      "name": "Guatape"
+    }
+  ],
+  "legs": [
+    {
+      "mode": "bus",
+      "duration": "2.5 hrs"
+    }
+  ],
   "title": "Going from Place to Place",
   "editorial": [
-    "Fly between Medellin and Cartagena if your trip is only a week.",
-    "Guatape works well as a road day-trip from Medellin. Bogota can be added as an entry, exit or connection rather than forced into an already packed route.",
-    "Ride-hailing worked for us, though drivers sometimes preferred passengers to sit in front because of tensions with traditional taxi operators at the time."
+    "You can Uber to go around Medellin, although it wasn’t legal per se in 2023. Drivers may ask you to sit in the front seat to avoid being caught by cops, so don’t alarmed by such a request. Walking is also an enticing option in the lovely weather, but be sure to know which areas to avoid. ",
+    "Guatape is a 2.5-hour bus ride from Medellin, which makes for an easy day trip. ",
+    "Medellin to Cartagena is a short hour-long flight. In all likelihood, if your trip ends in Cartagena, you’ll need to catch a 1.5 hours flight to Bogota to check out from Colombia.   "
+  ],
+  "additionalJourneys": [
+    {
+      "places": [
+        {
+          "name": "Medellin"
+        },
+        {
+          "name": "Cartagena"
+        },
+        {
+          "name": "Bogota"
+        }
+      ],
+      "legs": [
+        {
+          "mode": "flight",
+          "duration": "1 hr"
+        },
+        {
+          "mode": "flight",
+          "duration": "1.5 hrs"
+        }
+      ]
+    }
   ]
 }

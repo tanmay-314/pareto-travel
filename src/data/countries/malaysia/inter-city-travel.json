@@ -10,13 +10,13 @@
   "legs": [
     {
       "mode": "flight",
-      "duration": "1 HR"
+      "duration": "1 hr"
     }
   ],
   "title": "Going from Place to Place",
   "editorial": [
-    "Langkawi is only an hour from Kuala Lumpur by flight. ",
-    "If you’re going to Penang, you will likely have to find a taxi to take you from Penang to Langkawi. ",
-    "Within the cities, Grab is the go-to ride hailing app. "
+    "Langkawi is only an hour’s flight from Kuala Lumpur. ",
+    "If you’re going to Penang, you will most likely have to find a taxi to take you from Penang to Langkawi as the ferry between the two ceased operations. ",
+    "Within the KL and Langkawi, Grab is the go-to ride hailing app and accepts international credit cards. "
   ]
 }

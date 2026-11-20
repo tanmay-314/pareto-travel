@@ -9,12 +9,14 @@
   ],
   "legs": [
     {
-      "mode": "flight"
+      "mode": "flight",
+      "duration": "1.5 hrs"
     }
   ],
   "title": "Going from Place to Place",
   "editorial": [
-    "Istanbul is easy to explore with a mix of walking and public transport. The historic core rewards wandering, so don't over-engineer it.",
-    "For Cappadocia, fly from Istanbul. Our trip was short enough that an overnight bus would have eaten too much of the itinerary. If you add Pamukkale, check the current domestic flight options before locking the route; connections have changed since our trip."
+    "Istanbul is easy to explore with a mix of walking and public transport. The historic core of the city rewards wandering, so just go wherever your feet take you. ",
+    "Istanbul to Cappadocia is short 1.5-hour flight. Be sure to catch one in the wee hours of the morning if you plan on taking the balloon ride on the same day. The balloons take off around 5:00 AM. ",
+    "If Pamukkale is on your itinerary, then it’ll also be a roundtrip from Istanbul. During our visit in 2022, there were no direct flights between Cappadocia and Pamukkale. "
   ]
 }

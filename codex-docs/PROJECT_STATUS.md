@@ -47,6 +47,12 @@ Update this list with file paths and implementation status once the files are pr
 
 ## Recently completed
 
+- Refreshed transport copy and authored routes for all 15 published guides;
+  Japan's transport remains unpublished draft data. Separate journey groups
+  preserve correct origins after duplicate return routes are removed. Source,
+  JSON, rendering-code, and HTTP checks pass; native browser visual checks
+  timed out. See [transport handoff](transport-editorials-handoff.md).
+
 - Updated the shared place-to-place section to Figma `1734:60531`: a 480px continuous dotted journey with destinations at each leg’s end, preserving country data and editorial controls. Browser visual verification remains pending because no browser connector was available.
 
 - Removed Vietnam from the homepage map and shared Places data, along with

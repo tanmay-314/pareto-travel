@@ -235,6 +235,14 @@ Provide ordered `places` (objects with `name`) and one or more `legs` with
 one more place than legs. Optional `title`, `editorial`, and `assets` configure
 the section heading, paragraphs, and ticket/mode images.
 
+When removing repeated return routes leaves disconnected route groups, keep the
+first group in `places`/`legs` and put subsequent groups in optional
+`additionalJourneys: [{places, legs}]`. Each group follows the same length
+contract and renders as its own connected journey, without suggesting a new
+route between unrelated endpoints. Colombia and Chile use this option. Keep
+return-trip prose in the editorial. Missing durations remain omitted rather than
+being inferred; Brazil's final flight currently has no authored duration.
+
 A leg may include an `editorial` string array and optional `title`. When at
 least one leg has editorial content, the section renders a carousel: the
 top-level `editorial` is the overview, followed by each leg with copy. Leg

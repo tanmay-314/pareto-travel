@@ -1,6 +1,11 @@
 {
   "title": "Going from Place to Place",
-  "editorial": [],
+  "editorial": [
+    "Ethereal as they might be, the salt flats take some effort to get to. ",
+    "Your journey, like ours, will likely begin with touchdown in Santa Cruz airport, followed by a turbulent 30-minute flight to Sucre. ",
+    "From Sucre, you’ll need to catch an overnight bus to Uyuni. The buses leave around 9:00 PM and reach around 5:00 AM. The bus rides (at least the ones we took) are pretty stuffy as the windows are up cause it’s too cold outside but there’s no ventilation to make up for it. ",
+    "You’ll have to retrace your path back to Santa Cruz to exit Bolivia. But beware of multiple bus terminals at Uyuni. We almost missed our bus back by landing up at the wrong one! "
+  ],
   "places": [
     {
       "name": "Santa Cruz"
@@ -15,20 +20,11 @@
   "legs": [
     {
       "mode": "flight",
-      "duration": "35 MINS",
-      "editorial": [
-        "We flew. The flight is short but the combination of a small aircraft, elevation and wind produced memorable turbulence in both directions."
-      ],
-      "title": "Santa Cruz to Sucre"
+      "duration": "30 minutes"
     },
     {
       "mode": "bus",
-      "duration": "8 HRS",
-      "editorial": [
-        "Overnight buses left around 9:00 PM and reached Uyuni in the early morning when we travelled. The seats reclined reasonably well, but it was still a long, stuffy ride.",
-        "Check your exact terminal with locals before departure. This is one of those places where blindly trusting the map nearly cost us the trip back."
-      ],
-      "title": "Sucre to Uyuni"
+      "duration": "8 hrs"
     }
   ]
 }
