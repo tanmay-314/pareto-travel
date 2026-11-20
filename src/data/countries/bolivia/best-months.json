@@ -3,7 +3,10 @@
     "bolivia": {
       "country": "Bolivia",
       "editorial": [
-        "The best time depends on which version of Salar de Uyuni you want."
+        "When to go depends on which version of the salt flats you want. When we visited in October, it was the dry season (July to October).",
+        "We were witnessed the vast white salt crust at its finest, while there was still residual water in pockets that produced the mirror effect. The cactus islands, arguably the most picturesque region, are harder to reach during when the water levels rise.",
+        "That being said, the peak wet season (January to March) is when you get the giant mirror that’s all over Instagram. ",
+        "The rest of the year is an awkward time when there’s enough water to interfere with the accessibility, but not enough for the mirror effect. "
       ],
       "months": {
         "jan": "good",
@@ -18,28 +21,7 @@
         "oct": "best",
         "nov": "avoid",
         "dec": "avoid"
-      },
-      "seasons": [
-        {
-          "title": "July to October",
-          "editorial": [
-            "This is the drier period and our preferred version. We visited in late October and saw the vast white salt crust at its best, while residual water in places still produced the mirror effect.",
-            "The cactus islands—especially Incahuasi—were one of our favourite parts of the day and may be harder to reach when water levels rise."
-          ]
-        },
-        {
-          "title": "January to March",
-          "editorial": [
-            "The wet season creates the giant mirror you have seen in photographs. If that reflection is the dream, this is the period to target, accepting that flooding can limit access to parts of the flats."
-          ]
-        },
-        {
-          "title": "Shoulder Months",
-          "editorial": [
-            "The awkward periods are when there may be enough water to interfere with access but not enough to create the full mirror. If Uyuni is the sole reason for travelling to Bolivia, optimise the trip around the salt rather than around slightly cheaper flights."
-          ]
-        }
-      ]
+      }
     }
   }
 }

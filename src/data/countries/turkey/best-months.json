@@ -3,11 +3,11 @@
     "turkey": {
       "country": "Turkey",
       "editorial": [
-        "We visited in early June. Istanbul was hot but manageable and the crowds had not yet reached full summer madness.",
-        "For the version of this itinerary we'd choose again, late spring or early autumn strikes the best balance: long days, tolerable heat and fewer people than peak July-August.",
-        "Cappadocia adds another variable because balloon flights are weather-dependent. Whatever month you choose, a second morning there is worth more than obsessing over the statistically perfect date."
+        "We visited in early June, when temperatures were rising but not unbearable. Afternoons in Cappadocia are much warmer than in Istanbul, but ideally you won’t be out in the sun. ",
+        "For our itinerary, we’d recommend the shoulder seasons of either late spring (April to June) or early Autumn (September and October). ",
+        "Summertime (July and August) brings both peak crowds and temperatures, so we’d avoid this window. ",
+        "Winter months (November to March) are rainy or snowy, especially in Cappadocia, where the hot air balloon rides are often grounded due to the weather. "
       ],
-      "seasons": [],
       "months": {
         "jan": "avoid",
         "feb": "avoid",
@@ -19,7 +19,7 @@
         "aug": "good",
         "sep": "best",
         "oct": "best",
-        "nov": "good",
+        "nov": "avoid",
         "dec": "avoid"
       }
     }

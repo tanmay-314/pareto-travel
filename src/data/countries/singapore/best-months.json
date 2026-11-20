@@ -3,15 +3,12 @@
     "singapore": {
       "country": "Singapore",
       "editorial": [
-        "Singapore is hot, humid and rain-prone throughout the year, so there is no magic weather window.",
-        "We visited in June and managed perfectly well by planning outdoor walking around the heat and ducking indoors when necessary.",
-        "Choose dates based more on airfare, events and crowds than fantasies of crisp weather. You are going to sweat. The country has air conditioning and has made peace with this fact."
+        "Singapore is tiny and almost on the equator, which means there’s little variability in weather throughout the year. We visited in June and planned our outdoor activities around the heat. The entire country is air-conditioned, so you can always duck indoors if it gets too hot. "
       ],
-      "seasons": [],
       "months": {
         "jan": "good",
-        "feb": "best",
-        "mar": "best",
+        "feb": "good",
+        "mar": "good",
         "apr": "good",
         "may": "good",
         "jun": "good",

@@ -3,30 +3,10 @@
     "malaysia": {
       "country": "Malaysia",
       "editorial": [
-        "First, we acknowledge that there’s a whole other side to Malaysia that we left unexplored. If your trip includes Borneo, then our suggestions may not be the most appropriate. ",
-        "With that out of the way, our recommendation is to visit during December to March. "
-      ],
-      "seasons": [
-        {
-          "title": "December to March: ",
-          "editorial": [
-            "This is the cool and dry season on the western coast, along which Kuala Lumpur, Langkawi, and Penang lie. You can be pretty much assured of pristine skies during this time, making it the ideal weather for Langkawi in particular. ",
-            "As always, peak season implies bigger crowds and higher costs."
-          ]
-        },
-        {
-          "title": "April to September:",
-          "editorial": [
-            "We visited Malaysia in August. It’s more humid than the winter months with the occasional showers disrupting your day. ",
-            "We did get caught in the rains in Kuala Lumpur a couple of times, and there were dark clouds dampening the beach experience in Langkawi. But we would still encourage visiting during this time, especially if you’re on a tight budget. "
-          ]
-        },
-        {
-          "title": "October & November:",
-          "editorial": [
-            "This is the peak of the wet season on the west coast, so is best avoided. The rains are heavier and more persistent than the transitional months. "
-          ]
-        }
+        "Before laying out our recommendations, we must acknowledge there’s a whole other side to Malaysia that we left unexplored. If your itinerary includes Borneo, then perhaps our suggestions may not be the most appropriate. ",
+        "With that out of the way, our recommendation is to visit during the cool and dry season (December to March) along the western coast of the mainland. The pristine skies make it the ideal time for Langkawi in particular. ",
+        "We visited in August, which is the moderate season (March to August) and were subject to the occasional showers in both KL and Langkawi. ",
+        "The wetter months (September to November) are best avoided unless getting drenched in persistent rains is your idea of fun. "
       ],
       "months": {
         "jan": "best",
@@ -37,7 +17,7 @@
         "jun": "good",
         "jul": "good",
         "aug": "good",
-        "sep": "good",
+        "sep": "avoid",
         "oct": "avoid",
         "nov": "avoid",
         "dec": "best"

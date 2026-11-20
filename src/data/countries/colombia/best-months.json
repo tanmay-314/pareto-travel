@@ -3,20 +3,20 @@
     "colombia": {
       "country": "Colombia",
       "editorial": [
-        "Colombia's geography makes blanket seasonal advice imperfect. Medellin's mild climate is forgiving, Cartagena stays hot and humid, and Bogota is cool because of altitude.",
-        "For this itinerary, prioritise the weather in Cartagena because that is where heat can most directly drain the fun out of the day. Shoulder periods with fewer visitors are attractive if you can tolerate occasional rain."
+        "Medellin is the city of eternal spring, but Cartagena can be sweltering, so choose a time that makes for a comfortable visit to the Caribbean coast. ",
+        "We visited in October, in the middle of the wet season (May to November). In Cartagena, they may as well call it sweat season. The heat and humidity was unlike anything we had experienced, and stepping out during the day was a health hazard. Medellin, of course was perfectly pleasant. ",
+        "So we certainly recommend going during the milder months of the dry season (December to April).  "
       ],
-      "seasons": [],
       "months": {
         "jan": "best",
         "feb": "best",
         "mar": "best",
         "apr": "good",
         "may": "avoid",
-        "jun": "good",
-        "jul": "good",
-        "aug": "good",
-        "sep": "good",
+        "jun": "avoid",
+        "jul": "avoid",
+        "aug": "avoid",
+        "sep": "avoid",
         "oct": "avoid",
         "nov": "avoid",
         "dec": "best"

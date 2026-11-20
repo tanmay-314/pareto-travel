@@ -3,11 +3,11 @@
     "brazil": {
       "country": "Brazil",
       "editorial": [
-        "Brazil refuses to give a clean answer.",
-        "The Amazon has wet and drier periods, Rio has its own seasonal rhythm, and Iguacu is spectacular at different water levels for different reasons. Trying to optimise all three can become a spreadsheet hobby.",
-        "Our approach would be to decide which experience matters most, choose its stronger season, then accept imperfect weather elsewhere. For us, the Amazon and Iguacu were the irreplaceable pieces."
+        "Brazil is too big for any answer other than “it depends”.",
+        "We visited in October, which is the dry season (June to November) in the Amazon rainforest, but early spring (September to November) in the southeast, which includes Rio, Sao Paulo, and Iguazu. We had a great time everywhere, so maybe visit then?",
+        "If you prefer to skip the Amazon and set up shop in the southeast, then summer (December to February) is a good time too. Or autumn (March to May) if you want to experience the carnival.",
+        "Alternatively, if you want to explore the deep trenches of the Amazon, then go during the wet / high-water season (December to May). "
       ],
-      "seasons": [],
       "months": {
         "jan": "good",
         "feb": "good",
@@ -15,9 +15,9 @@
         "apr": "good",
         "may": "good",
         "jun": "good",
-        "jul": "best",
-        "aug": "best",
-        "sep": "best",
+        "jul": "good",
+        "aug": "good",
+        "sep": "good",
         "oct": "good",
         "nov": "good",
         "dec": "good"

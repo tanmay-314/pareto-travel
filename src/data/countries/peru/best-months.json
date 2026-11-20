@@ -3,22 +3,20 @@
     "peru": {
       "country": "Peru",
       "editorial": [
-        "For the classic Lima-Cusco-Machu Picchu route, the dry Andean months are the easiest bet, especially if clear mountain views matter to you.",
-        "The trade-off is obvious: better weather attracts more people. Shoulder months can give you a better balance if you are willing to tolerate a little uncertainty.",
-        "Whatever month you choose, remember that Lima and Cusco can feel like different countries climatically. Pack for both."
+        "We’ve been to Peru twice (well at least one of us has), once in April and the other in November. Both happen to be outside the Andean dry season (May to October), but we had a great time nonetheless.",
+        "That said, we do recommend avoiding the wet season (November to April) to reduce the odds an encounter with the rain Gods.  "
       ],
-      "seasons": [],
       "months": {
         "jan": "avoid",
         "feb": "avoid",
-        "mar": "good",
+        "mar": "avoid",
         "apr": "good",
         "may": "best",
         "jun": "best",
         "jul": "best",
         "aug": "best",
         "sep": "best",
-        "oct": "good",
+        "oct": "best",
         "nov": "good",
         "dec": "avoid"
       }
