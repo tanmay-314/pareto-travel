@@ -1,5 +1,13 @@
 # Going from place to place refresh — 20 November 2026
 
+## Connected-journey correction — 21 November 2026
+
+The user requested connected routes after reviewing Chile's separated groups.
+Restored the source's Rapa Nui → Santiago and Torres del Paine → Puerto Natales
+legs in Chile, and Guatape → Medellin in Colombia. Both now use one places/legs
+chain; additionalJourneys was removed from these datasets. This supersedes the
+deduplication/grouping choices described below. All prose remains unchanged.
+
 Source index: https://app.notion.com/p/6b1319ac2c834f048cccfea29357c7e0
 
 Refetched all 17 relevant country drafts through the connected Notion tool. Refreshed or confirmed the transport section for all 15 published guides and added transport data to Japan's unpublished draft. United States and Cambodia already matched. No substantive transport copy exists for placeholder-only India or the blank Kenya, Tanzania, and Vietnam pages read during the preceding refresh. Selected source responses reported no truncation or unknown blocks.

@@ -20,11 +20,11 @@
   "legs": [
     {
       "mode": "flight",
-      "duration": "30 minutes"
+      "duration": "30m"
     },
     {
       "mode": "bus",
-      "duration": "8 hrs"
+      "duration": "8H"
     }
   ]
 }

@@ -46,55 +46,55 @@
   "legs": [
     {
       "mode": "car",
-      "duration": "1 hr"
+      "duration": "1H"
     },
     {
       "mode": "car",
-      "duration": "1 hr"
+      "duration": "1H"
     },
     {
       "mode": "car",
-      "duration": "10 mins"
+      "duration": "10m"
     },
     {
       "mode": "car",
-      "duration": "2 hrs"
+      "duration": "2H"
     },
     {
       "mode": "car",
-      "duration": "1.5 hrs"
+      "duration": "1.5H"
     },
     {
       "mode": "car",
-      "duration": "30 mins"
+      "duration": "30m"
     },
     {
       "mode": "car",
-      "duration": "20 mins"
+      "duration": "20m"
     },
     {
       "mode": "car",
-      "duration": "30 mins"
+      "duration": "30m"
     },
     {
       "mode": "car",
-      "duration": "1 hr"
+      "duration": "1H"
     },
     {
       "mode": "car",
-      "duration": "2 hrs"
+      "duration": "2H"
     },
     {
       "mode": "car",
-      "duration": "1 hr"
+      "duration": "1H"
     },
     {
       "mode": "car",
-      "duration": "6 hrs"
+      "duration": "6H"
     },
     {
       "mode": "car",
-      "duration": "6 hrs"
+      "duration": "6H"
     }
   ],
   "title": "Going from Place to Place",

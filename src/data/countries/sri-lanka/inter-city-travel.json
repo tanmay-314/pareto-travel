@@ -25,19 +25,19 @@
   "legs": [
     {
       "mode": "car",
-      "duration": "4 hrs"
+      "duration": "4H"
     },
     {
       "mode": "car",
-      "duration": "5 hrs"
+      "duration": "5H"
     },
     {
       "mode": "car",
-      "duration": "3.5 hrs"
+      "duration": "3.5H"
     },
     {
       "mode": "car",
-      "duration": "2.5 hr"
+      "duration": "2.5H"
     }
   ]
 }

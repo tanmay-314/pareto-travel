@@ -16,15 +16,15 @@
   "legs": [
     {
       "mode": "flight",
-      "duration": "1.5 hrs"
+      "duration": "1.5H"
     },
     {
       "mode": "car",
-      "duration": "1.5 hrs"
+      "duration": "1.5H"
     },
     {
       "mode": "train",
-      "duration": "1.5 hrs"
+      "duration": "1.5H"
     }
   ],
   "title": "Going from Place to Place",

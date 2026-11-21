@@ -16,11 +16,11 @@
   "legs": [
     {
       "mode": "flight",
-      "duration": "4 hrs"
+      "duration": "4H"
     },
     {
       "mode": "flight",
-      "duration": "2.5 hrs"
+      "duration": "2.5H"
     },
     {
       "mode": "flight"

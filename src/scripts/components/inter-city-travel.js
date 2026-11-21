@@ -73,7 +73,7 @@ const renderJourney = (data, assets) => {
     const mode = normalizeMode(leg.mode);
     const duration = String(leg.duration || "").trim();
     const missingDuration = mode !== "none" && !duration;
-    const details = mode === "none" ? leg.message || "" : duration || "X HRS";
+    const details = mode === "none" ? leg.message || "" : duration || "XH";
     const label = [data.places[index].name + " to " + data.places[index + 1].name, getModeLabel(mode), missingDuration ? "Duration not provided" : details].filter(Boolean).join(", ");
     const dots = [];
     // A single grid keeps every horizontal run and vertical turn aligned.

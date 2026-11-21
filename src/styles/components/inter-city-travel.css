@@ -107,6 +107,7 @@
 }
 
 .inter-city-journey-duration {
+  text-transform: none;
   width: max-content;
   transform: translateX(-50%);
   color: var(--inter-city-text-secondary);
