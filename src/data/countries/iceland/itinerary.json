@@ -50,7 +50,11 @@
             "We also ate at Mama Reykjavik, where finding daal in Iceland felt like a small act of divine intervention."
           ]
         }
-      ]
+      ],
+      "detailLink": {
+        "label": "View daily itinerary",
+        "href": "/countries/iceland/itinerary"
+      }
     }
   ]
 }

@@ -63,7 +63,11 @@
             "We tried squeezing in Topkapi too, ran out of time, and went back to Hagia Sophia instead. No regrets."
           ]
         }
-      ]
+      ],
+      "detailLink": {
+        "label": "View daily itinerary",
+        "href": "/countries/turkey/itinerary"
+      }
     }
   ]
 }

@@ -84,7 +84,11 @@
             "Most importantly: eat pandebono. If Colombia had exported only this, diplomatic relations would still be secure."
           ]
         }
-      ]
+      ],
+      "detailLink": {
+        "label": "View daily itinerary",
+        "href": "/countries/colombia/itinerary"
+      }
     }
   ]
 }

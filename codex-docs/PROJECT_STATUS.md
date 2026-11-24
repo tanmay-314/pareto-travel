@@ -2,7 +2,7 @@
 
 This file gives a new Codex session a quick snapshot of active work. Keep it brief and update it whenever priorities or known constraints materially change.
 
-Last updated: 2026-11-17
+Last updated: 2026-11-24
 
 ## Current objective
 
@@ -46,6 +46,10 @@ Update this list with file paths and implementation status once the files are pr
 - None recorded yet.
 
 ## Recently completed
+
+- Applied the shared nested itinerary template to all 15 published guides.
+  Country summaries link to generated daily itinerary pages, preserving all
+  existing overview/day copy and artwork.
 
 - Refreshed transport copy and authored routes for all 15 published guides;
   Japan's transport remains unpublished draft data. Separate journey groups

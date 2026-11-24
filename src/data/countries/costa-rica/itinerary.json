@@ -80,7 +80,11 @@
             "size": 360
           }
         }
-      ]
+      ],
+      "detailLink": {
+        "label": "View daily itinerary",
+        "href": "/countries/costa-rica/itinerary"
+      }
     }
   ]
 }

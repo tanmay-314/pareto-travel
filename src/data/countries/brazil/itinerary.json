@@ -125,7 +125,11 @@
             "One final practical lesson came at the airport: international health and transit requirements can interact in unexpected ways. Check the current vaccination rules for Brazil and your onward destination before flying. Do not learn this at the check-in counter."
           ]
         }
-      ]
+      ],
+      "detailLink": {
+        "label": "View daily itinerary",
+        "href": "/countries/brazil/itinerary"
+      }
     }
   ]
 }

@@ -193,7 +193,8 @@ Greece is the first guide using the linked editorial layout from Figma
 `1680:40382`: itinerary and budget summaries link to generated detail pages,
 and seasonal guidance appears together. The detail pages reuse the existing
 day/category JSON, preserve source links, and are readable without JavaScript.
-Other countries retain their editorial carousels.
+All 15 published guides use the nested itinerary template; budget detail pages
+remain enabled for Greece only.
 
 ## Component map
 

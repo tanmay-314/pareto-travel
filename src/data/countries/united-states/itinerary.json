@@ -117,7 +117,11 @@
             "The sameness is the point. It gives you a better understanding of the country than visiting only places designed to appear on postcards."
           ]
         }
-      ]
+      ],
+      "detailLink": {
+        "label": "View daily itinerary",
+        "href": "/countries/united-states/itinerary"
+      }
     }
   ]
 }

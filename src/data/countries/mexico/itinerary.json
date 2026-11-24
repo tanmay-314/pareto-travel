@@ -81,7 +81,11 @@
             "We flew back to CDMX and had a few hours to kill before our flight out of the country. We visited the Palacio de Bellas Artes (”Palace of Fine Arts”), but were not super impressed by the displays."
           ]
         }
-      ]
+      ],
+      "detailLink": {
+        "label": "View daily itinerary",
+        "href": "/countries/mexico/itinerary"
+      }
     }
   ]
 }

@@ -15,7 +15,8 @@
 - Best-months prose without `seasons` renders continuously; the optional
   `editorialLayout: "continuous"` uses the new Figma spacing and width. Existing
   inline bold/emphasis formatting remains supported.
-- Greece alone uses these new options. Other country data is unchanged.
+- All 15 published guides use itinerary detail links and the shared nested page
+  template. Budget detail links and continuous seasonal layout remain Greece-only.
 
 ## Goals
 

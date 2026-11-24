@@ -82,11 +82,12 @@ The itinerary, best-months, and budget components share `editorial-carousel.js` 
 stylesheet for editorial navigation, accessibility, and map-relative controls.
 Each section supplies its own screens and retains its own visual component.
 
-Greece opts into linked itinerary and budget editorials through `detailLink`.
+All published guides opt into linked itinerary editorials through `detailLink`;
+Greece also uses this option for its budget.
 The guide renders the overview and optional alternatives; the generator renders
 days/categories as semantic HTML using `src/pages/country-detail.html`.
 These detail pages load only the shared header script, and their article content
-and return links work without JavaScript. Other countries keep their carousels.
+and return links work without JavaScript. Other budget sections keep their carousels.
 
 ### Data
 

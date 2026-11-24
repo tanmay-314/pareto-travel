@@ -131,7 +131,11 @@
             "We skipped the Sky Costanera observation deck because USD13 each did not feel worth paying for another high-up view after Patagonia and Rapa Nui had already ruined ordinary panoramas for us."
           ]
         }
-      ]
+      ],
+      "detailLink": {
+        "label": "View daily itinerary",
+        "href": "/countries/chile/itinerary"
+      }
     }
   ]
 }

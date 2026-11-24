@@ -56,7 +56,11 @@
             "That is perhaps the country's greatest tourist attraction: competence as ambient entertainment."
           ]
         }
-      ]
+      ],
+      "detailLink": {
+        "label": "View daily itinerary",
+        "href": "/countries/singapore/itinerary"
+      }
     }
   ]
 }

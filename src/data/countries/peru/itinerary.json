@@ -70,7 +70,11 @@
             "Fly back to Lima for the final day and use it as a buffer before leaving Peru. Another meal in Miraflores is a more appealing ending than gambling an international connection on Andean flight timings."
           ]
         }
-      ]
+      ],
+      "detailLink": {
+        "label": "View daily itinerary",
+        "href": "/countries/peru/itinerary"
+      }
     }
   ]
 }
