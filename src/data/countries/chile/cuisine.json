@@ -1,8 +1,30 @@
 {
-  "chapters": [],
+  "chapters": [
+    {
+      "icon": "../assets/icons/icon-morning.svg",
+      "period": "BREAKFAST",
+      "dish": "MARRAQUETA",
+      "description": "Crusty bread rolls eaten with butter or avocado"
+    },
+    {
+      "icon": "../assets/icons/icon-afternoon.svg",
+      "period": "LUNCH",
+      "dish": "CAZUELA",
+      "description": "Meat stew with pumpkin, corn, and potatoes"
+    },
+    {
+      "icon": "../assets/icons/icon-night.svg",
+      "period": "DINNER",
+      "dish": "CONEJO ESCABECHE",
+      "description": "Rabbit pieces simmered in a liquid made of white wine, vinegar, and oil"
+    }
+  ],
   "title": "Meals You Can't Miss",
   "editorial": [
-    "Chile was not our favourite food country, so take this section as permission rather than a sacred list.",
-    "On Rapa Nui, tuna and seafood make the most geographic sense, but restaurant prices are high enough that groceries are useful for some meals. In Santiago, our most memorable meal may embarrass the nation: it was Indian."
+    "Chilean food wasn’t as memorable as the rest of Latin America, but we did relish a rabbit dish (conejo escabeche) at Liguria in Providencia, Santiago. ",
+    "In Rapa Nui and Patagonia, our advice would be to cook your own meals to the extent possible owing to how prohibitively expensive food is in these remote regions. ",
+    "The fish at Kanahau in Rapa Nui was well prepared, but fairly expensive (around $25 per person in 2023)! ",
+    "Restaurante Bahia Mansa is Puerto Natales came recommended by the staff at the Chilean embassy in NYC and their seafood did not disappoint! ",
+    "Inside Torres del Paine National Park, we ate at our Airbnb for $22 per meal, which also felt unreasonably expensive for what was on offer. "
   ]
 }

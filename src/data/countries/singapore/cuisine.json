@@ -1,10 +1,27 @@
 {
-  "chapters": [],
+  "chapters": [
+    {
+      "icon": "../assets/icons/icon-morning.svg",
+      "period": "BREAKFAST",
+      "dish": "KAYA TOAST & EGGS",
+      "description": "Crispy toasted bread spread with coconut-egg-pandan jam paired and butter with runny eggs"
+    },
+    {
+      "icon": "../assets/icons/icon-afternoon.svg",
+      "period": "LUNCH",
+      "dish": "HAINANESE CHICKEN RICE",
+      "description": "Poached chicken served with seasoned rice, chili sauce, and cucumbers"
+    },
+    {
+      "icon": "../assets/icons/icon-night.svg",
+      "period": "DINNER",
+      "dish": "CHAR KWAY TEOW",
+      "description": "Stir-fried flat noodles with soy sauce, garlic, chilli paste, and protein(s) of choice"
+    }
+  ],
   "title": "Meals You Can't Miss",
   "editorial": [
-    "Singapore's most important food advice is structural: eat in hawker centres.",
-    "Chicken rice, laksa, char kway teow and chilli crab are the obvious starting points, but the real pleasure is moving between Chinese, Malay, Indian and Peranakan food without changing neighbourhoods, let alone countries.",
-    "Street vendors are not scattered everywhere because Singapore organised many of them into dedicated centres. This makes eating less visually chaotic and much easier to navigate.",
-    "Also carry tissues. We somehow spent days wondering why they were never available when we needed them."
+    "Simple suggestion: Eat in hawker centres. It’s street food, but inside dedicated squeaky clean centres. And they cover all cuisines Singapore is famous for including Chinese, Malay, Indian, and fusions of these. ",
+    "A word of caution about hawker centres: they don’t provide tissues for free (sometimes at all), so carry some with you. "
   ]
 }

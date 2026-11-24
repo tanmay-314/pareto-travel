@@ -3,13 +3,13 @@
     {
       "period": "BREAKFAST",
       "dish": "ROTI CANAI",
-      "description": "buttery flatbread with chicken and potato curry",
+      "description": "Buttery flatbread with chicken and potato curry",
       "icon": "../assets/icons/icon-morning.svg"
     },
     {
       "period": "LUNCH",
       "dish": "NASI LEMAK",
-      "description": "fatty rice with anchovies, chicken, egg and veggies",
+      "description": "Fatty rice with anchovies, chicken, egg and veggies",
       "icon": "../assets/icons/icon-afternoon.svg"
     },
     {
@@ -21,9 +21,8 @@
   ],
   "title": "Meals You Can't Miss",
   "editorial": [
-    "Our favourite part of Malaysia was the food! Delicious and decadent, it’s no wonder Malaysia has the third-highest incidence of diabetes per capita. ",
-    "Jalan Alor food street in Kuala Lumpur is accused of being a tourist trap, but we were drawn to it like moths to a flame. In a single night, we gorged on mee goreng, cockles, oysters, frogs, beef satays, mango sticky rice, and matcha ice cream. ",
-    "Nasi lemak, the national dish, is a divine experience. ",
+    "Delicious and decadent, food was our favourite part of Malaysia. It’s so hard to resist that Malaysia has the third-highest incidence of diabetes per capita! Nasi lemak, the national dish, is a divine experience. ",
+    "Jalan Alor food street in Kuala Lumpur is accused of being a tourist trap, but we were drawn to it like moths to a flame. On one of the nights we spent here, we devoured mee goreng, cockles, oysters, frogs, beef satays, mango sticky rice, and matcha ice cream. ",
     "Good Timing Food Village in Jalan Alor was a spot we hit multiple times. In Langkawi, Yasmin serves phenomenal Syrian food. The lamb mandi was to die for! "
   ]
 }

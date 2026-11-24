@@ -1,9 +1,29 @@
 {
-  "chapters": [],
+  "chapters": [
+    {
+      "icon": "../assets/icons/icon-morning.svg",
+      "period": "BREAKFAST",
+      "dish": "HUEVOS RANCHEROS",
+      "description": "Fried eggs served on tortillas with salsa and beans"
+    },
+    {
+      "icon": "../assets/icons/icon-afternoon.svg",
+      "period": "LUNCH",
+      "dish": "CHILE EN NOGADA",
+      "description": "Roasted peppers stuffed with meat and fruit filling in creamy sauce"
+    },
+    {
+      "icon": "../assets/icons/icon-night.svg",
+      "period": "DINNER",
+      "dish": "TACOS",
+      "description": "Grilled meats, salsa, and veggies in a tortilla... basically heaven on a plate"
+    }
+  ],
   "title": "Meals You Can't Miss",
   "editorial": [
-    "Tacos, obviously—but don't stop at the obvious.",
-    "We ate tacos de canasta at Los Especiales, chiles en nogada and drowned tacos at Los Panchos, tacos al pastor at El Caifan, and a buffet at Cenote Ik Kil.",
-    "Mexican food is one of the easiest cuisines in the world to eat repeatedly without feeling like you are repeating yourself."
+    "Everyday is Taco Tuesday when you’re in Mexico, but spare some appetite for the other heavy-hitters like chile en nogada, enchiladas, quesadillas and so much more!",
+    "In CDMX, we ate tacos at Tacos de Canasta Los Especiale in Centro (our personal favourite), La Buenavida in Roma Norte, and El Caifan in Centro. ",
+    "We indulged in chile en nogada, drowned tacos, and mole at Los Panchos in Hidalgo. Mole is one of those dishes that we’d call an acquired taste. ",
+    "We savoured the buffet at Cenote Ik Kil near Chichen-itza and went back to devouring tacos in Bacalar at the streetside Mr. Taco. "
   ]
 }

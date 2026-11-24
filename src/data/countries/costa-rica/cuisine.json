@@ -10,7 +10,7 @@
       "period": "LUNCH",
       "icon": "../assets/icons/icon-afternoon.svg",
       "dish": "CASADO",
-      "description": "Rice and beans with a meat, a salad, sweet plantains, and tortilla"
+      "description": "Rice and beans with a meat, a salad, sweet plantains, and tortilla chips"
     },
     {
       "period": "DINNER",
@@ -21,7 +21,7 @@
   ],
   "title": "Meals You Can't Miss",
   "editorial": [
-    "Costa Rica has probably the most wholesome food we’ve had on our travels. The casado is the most perfectly balanced meal with all the macronutrients one would want. ",
-    "In Monteverde, our go to spots were Soda la Amistad, Sabor Tico, and Soda la Coati. In San Jose, we dined at La Criollita and Cafe Rojo. "
+    "Costa Rica has arguably the most wholesome food we’ve had on our travels. The traditional casado is the most perfectly balanced meal with all the macronutrients one would want. ",
+    "In Monteverde, our go to spots were Soda la Amistad and Sabor Tico. In San Jose, we dined at La Criollita and Cafe Rojo, the latter was one of the few spots open in San Jose after sundown! "
   ]
 }

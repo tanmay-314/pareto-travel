@@ -1,8 +1,28 @@
 {
-  "chapters": [],
+  "chapters": [
+    {
+      "icon": "../assets/icons/icon-morning.svg",
+      "period": "BREAKFAST",
+      "dish": "PAN CON CHICHARRON",
+      "description": "Crispy fried pork belly in a roll with sweet potato and salsa"
+    },
+    {
+      "icon": "../assets/icons/icon-afternoon.svg",
+      "period": "LUNCH",
+      "dish": "LOMO SALTADO",
+      "description": "Stir-fried sirloin strips and veggies served with rice and fries "
+    },
+    {
+      "icon": "../assets/icons/icon-night.svg",
+      "period": "DINNER",
+      "dish": "CEVICHE",
+      "description": "Raw fish or seafood cured in citrus juices and mixed with veggies"
+    }
+  ],
   "title": "Meals You Can't Miss",
   "editorial": [
-    "Ceviche is the obvious coastal answer; lomo saltado is the comforting one.",
-    "Peruvian food has more range than our short notes capture, so don't limit yourself to those two just because we temporarily did. Lima in particular deserves to be treated as an eating destination, not merely an airport with cliffs."
+    "We’d heard glowing reviews of Peruvian cuisine, but honestly found ourselves captivated only by the national dish, lomo saltado, which became our go-to meal. ",
+    "Street meats (including alpaca and guinea pigs!) were delicious snacks to fuel us between meals. ",
+    "In Lima, we liked Punto Azul in Miraflores for ceviche, and for a bigger spread try Panchita, which is also in Miraflores. In the other towns, we opportunistically ate wherever a table was available!"
   ]
 }

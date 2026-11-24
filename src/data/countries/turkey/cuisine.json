@@ -1,8 +1,28 @@
 {
-  "chapters": [],
+  "chapters": [
+    {
+      "icon": "../assets/icons/icon-morning.svg",
+      "period": "BREAKFAST",
+      "dish": "KAHVALTI",
+      "description": "Assortment of savory and sweet small plates paired with black tea"
+    },
+    {
+      "icon": "../assets/icons/icon-afternoon.svg",
+      "period": "LUNCH",
+      "dish": "HUNKAR BEGENDI",
+      "description": "Lamb curry over an eggplant and bechamel base served with bread"
+    },
+    {
+      "icon": "../assets/icons/icon-night.svg",
+      "period": "DINNER",
+      "dish": "DONER KEBAB",
+      "description": "Grilled meat wrapped in flatbread with salads and sauces"
+    }
+  ],
   "title": "Meals You Can't Miss",
   "editorial": [
-    "The doner kebab at Durumzade was worth writing home about. We also ate at Istanbul Anatolian Cuisine, Jashn, Karakoy Sarihan Iskembe and Hanzade Terrace Restaurant.",
-    "Turkish food is easy to like because the flavour profile is familiar without being boring: grilled meats, bread, yoghurt, eggplant, stews and enough desserts to undo all the walking."
+    "Our first meal in Istanbul was the the döner kebab at Dürümzade (in Beyoglu) and it’s a core memory from our travels. If there’s one must-try meal in Istanbul, it’s this one. ",
+    "Other restaurants we explored in Istanbul were Karakoy Sarihan Iskembe for breakfast, Istanbul Anatolian Cuisine and Hanzade Bosphorus Restaurant for lunch, and a lovely Armenian joint called Jash for dinner. ",
+    "And of course, we indulged in lots and lots of baklava from small shops in the tourist areas. "
   ]
 }

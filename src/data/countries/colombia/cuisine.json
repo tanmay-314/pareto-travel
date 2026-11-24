@@ -1,8 +1,28 @@
 {
-  "chapters": [],
+  "chapters": [
+    {
+      "icon": "../assets/icons/icon-morning.svg",
+      "period": "BREAKFAST",
+      "dish": "PANDEBONO",
+      "description": "Cheesy bread made from cassava starch"
+    },
+    {
+      "icon": "../assets/icons/icon-afternoon.svg",
+      "period": "LUNCH",
+      "dish": "BANDEJA PAISA",
+      "description": "Hearty platter of beans, rice, meats, fried egg, plantain, avocado, and arepa"
+    },
+    {
+      "icon": "../assets/icons/icon-night.svg",
+      "period": "DINNER",
+      "dish": "SANCOCHO",
+      "description": "Meat or fish and vegetable stew served with rice"
+    }
+  ],
   "title": "Meals You Can't Miss",
   "editorial": [
-    "Start with bandeja paisa in Medellin. We had versions at El Pilon Guarceno and elsewhere and kept returning to it for a reason.",
-    "In Cartagena, try sancocho and fish. In Bogota, ajiaco is the local answer and pandebono is the snack that deserves more international lobbying."
+    "Before arriving, we had heard rave reviews about the pandebono (Colombian cheese bread) and it did not disappoint! Makes for an easy breakfast to get you ready for the day. ",
+    "Our go-to for lunch was the bandeja paisa (literally translates to country meal), a delicious and balanced platter of meats, rice, beans, and more. El Pilón Guarceño was our favourite spot for bandeja paise in Medellin. Mondongo’s is very popular (and good) too!",
+    "In coastal Cartagena, we enjoyed the fish sancocho at Coroncoro.  "
   ]
 }

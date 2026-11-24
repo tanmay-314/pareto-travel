@@ -4,24 +4,24 @@
     {
       "period": "BREAKFAST",
       "icon": "../assets/icons/icon-morning.svg",
-      "dish": "Nom banh chok",
-      "description": "Cool rice noodles, green fish curry and a fistful of herbs"
+      "dish": "BAI SACH CHROUK",
+      "description": "Sweet grilled pork over rice and veggies"
     },
     {
       "period": "LUNCH",
       "icon": "../assets/icons/icon-afternoon.svg",
-      "dish": "Fish amok",
-      "description": "Freshwater fish steamed with coconut custard and kroeung"
+      "dish": "FISH AMOK",
+      "description": "Creamy coconut fish curry steamed in a banana leaf"
     },
     {
       "period": "DINNER",
       "icon": "../assets/icons/icon-night.svg",
-      "dish": "Beef lok lak",
-      "description": "Peppery seared beef, crisp vegetables and a sharp lime dip"
+      "dish": "BEEF LOK LAK",
+      "description": "Stir-fried beef in savoury sauce served with rice, salad, and egg"
     }
   ],
   "editorial": [
-    "Cambodian cuisine is quite distinct from its Southeast Asian neighbours. It relies heavily on fermentation, which makes for strong (almost pungent) flavours that may not be to everyone’s liking. The popular Prahok Ktis and Fish Amok are both fermented fish recipes. ",
-    "If fermented foods aren’t your thing, then there’s always grilled meats (assuming you want to still indulge in local meals). But the grilled meats aren’t as heavily marinated as say satays in Thailand and Malaysia, and may feel underwhelming if you’re expecting an explosion of flavours. "
+    "Cambodian cuisine is quite distinct from its Southeast Asian neighbours and relies heavily on fermentation, which makes for strong (often pungent) flavours. The popular prahok ktis and fish amok are both fermented fish dishes. ",
+    "If fermented foods aren’t to your fancy, there’s always grilled meats. But unlike the heavily marinated satays in Thailand and Malaysia, the Cambodian grilled meats are more austere. "
   ]
 }

@@ -2,21 +2,21 @@
   "title": "Meals You Can’t Miss",
   "chapters": [
     {
-      "period": "Breakfast",
-      "dish": "HOPPERS & SAMBOL",
-      "description": "Fermented rice crepes with a spicy coconut relish.",
+      "period": "BREAKFAST",
+      "dish": "HOPPERS & POL SAMBOL",
+      "description": "Rice crepes with a spicy coconut relish",
       "icon": "../assets/icons/icon-morning.svg"
     },
     {
-      "period": "Lunch",
-      "dish": "RICE & CURRIES",
-      "description": "Jackfruit, beetroot, and chicken curries infused with coconut milk.",
+      "period": "LUNCH",
+      "dish": "RICE & CURRY PLATTER",
+      "description": "Jackfruit, beetroot, beans & chicken curries with rice",
       "icon": "../assets/icons/icon-afternoon.svg"
     },
     {
-      "period": "Dinner",
-      "dish": "RICE & CURRY",
-      "description": "Freshly caught fish or prawn curry infused with coconut milk.",
+      "period": "DINNER",
+      "dish": "KOTTU ROTI",
+      "description": "Chopped roti stir-fried with veggies, egg, and meat",
       "icon": "../assets/icons/icon-night.svg"
     }
   ],

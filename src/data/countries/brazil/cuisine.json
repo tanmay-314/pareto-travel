@@ -1,9 +1,28 @@
 {
-  "chapters": [],
+  "chapters": [
+    {
+      "icon": "../assets/icons/icon-morning.svg",
+      "period": "BREAKFAST",
+      "dish": "PÃO DE QUEIJO",
+      "description": "Cheesy bread made from tapioca or cassava starch"
+    },
+    {
+      "icon": "../assets/icons/icon-afternoon.svg",
+      "period": "LUNCH",
+      "dish": "FEIJOADA",
+      "description": "Black bean stew with an assortment of pork and beef cuts, served with rice"
+    },
+    {
+      "icon": "../assets/icons/icon-night.svg",
+      "period": "DINNER",
+      "dish": "TAMBAQUI DE BANDA",
+      "description": "Amazon-style grilled fish, served with rice and beans"
+    }
+  ],
   "title": "Meals You Can't Miss",
   "editorial": [
-    "Feijoada is mandatory if you eat meat. Our first bowl near Copacabana was rich, cheap and excellent.",
-    "In Manaus, try tambaqui and other Amazonian fish. Acai also comes from this region, which made us realise we had mentally filed it under “East Asian trendy thing” for no defensible reason.",
-    "Brazil's regional scale means food changes drastically as you move. Treat every flight as permission to reset the menu."
+    "Brazil is meat-eater heaven. Brazilian barbecue is among the best in the world and the national dish, feijoada, is a mandatory meal! In Rio de Janeiro, our favourite spot for feijoada was the austere Brasileiro de Copa. ",
+    "Brazil has the biggest Japanese community outside of Japan. Meng in Rio and Hira Ramen Izakaya in Sao Paulo were solid ramen shops. ",
+    "The Amazonas region has delectable river fish (which tends to be bonier than sea fish). Tambaqui de Banda in Manaus is a fabulous spot with live music and dance. And to our surprise, acai originates in this part of the world and isn’t yet another East Asian export! "
   ]
 }

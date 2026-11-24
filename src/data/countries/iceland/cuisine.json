@@ -1,8 +1,29 @@
 {
-  "chapters": [],
+  "chapters": [
+    {
+      "icon": "../assets/icons/icon-morning.svg",
+      "period": "BREAKFAST",
+      "dish": "B.Y.O.B.",
+      "description": "Bring your own breakfast"
+    },
+    {
+      "icon": "../assets/icons/icon-afternoon.svg",
+      "period": "LUNCH",
+      "dish": "B.Y.O.L.",
+      "description": "Bring your own lunch"
+    },
+    {
+      "icon": "../assets/icons/icon-night.svg",
+      "period": "DINNER",
+      "dish": "B.Y.O.D.",
+      "description": "Bring your own dinner"
+    }
+  ],
   "title": "Meals You Can't Miss",
   "editorial": [
-    "Cuisine was not the reason we went to Iceland, and our notes reflect that.",
-    "If you are doing a fast road trip, prioritise reliable meals and carry snacks. Reykjavik gives you the widest choice; outside it, food options become sparser and your schedule may not align with restaurant hours."
+    "Food isn’t easy to come by when you’re driving on desolate roads for hours on end. And in all honesty, you’ll be salivating over the landscapes a lot more than what you eat. ",
+    "Be sure to carry some snacks with you when you fly into Iceland as even groceries can be sparse outside of the capital. ",
+    "The Icelandic food we did try, the famous fermented shark (know as hákarl) was an acquired taste to say the least. ",
+    "Surprisingly though, the best dal we’ve ever had in our lives (we’re from India!) was in Mama Reykjavik. "
   ]
 }
