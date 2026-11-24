@@ -4,19 +4,19 @@
       "icon": "../assets/icons/icon-morning.svg",
       "period": "BREAKFAST",
       "dish": "KAYA TOAST & EGGS",
-      "description": "Crispy toasted bread spread with coconut-egg-pandan jam paired and butter with runny eggs"
+      "description": "Toast with butter and coconut jam; paired with runny eggs"
     },
     {
       "icon": "../assets/icons/icon-afternoon.svg",
       "period": "LUNCH",
       "dish": "HAINANESE CHICKEN RICE",
-      "description": "Poached chicken served with seasoned rice, chili sauce, and cucumbers"
+      "description": "Poached chicken with seasoned rice, chili sauce, and cucumbers"
     },
     {
       "icon": "../assets/icons/icon-night.svg",
       "period": "DINNER",
       "dish": "CHAR KWAY TEOW",
-      "description": "Stir-fried flat noodles with soy sauce, garlic, chilli paste, and protein(s) of choice"
+      "description": "Stir-fried flat noodles with soy sauce, garlic, and chilli paste"
     }
   ],
   "title": "Meals You Can't Miss",

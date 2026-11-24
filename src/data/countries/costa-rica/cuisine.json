@@ -4,13 +4,13 @@
       "period": "BREAKFAST",
       "icon": "../assets/icons/icon-morning.svg",
       "dish": "GALLO PINTO",
-      "description": "Rice and beans sautéed with onions, peppers, cilantro, and tangy salsa lizano"
+      "description": "Rice and beans sautéed with veggies and tangy salsa"
     },
     {
       "period": "LUNCH",
       "icon": "../assets/icons/icon-afternoon.svg",
       "dish": "CASADO",
-      "description": "Rice and beans with a meat, a salad, sweet plantains, and tortilla chips"
+      "description": "Platter of rice, beans, meat, salad, sweet plantain, and chips"
     },
     {
       "period": "DINNER",

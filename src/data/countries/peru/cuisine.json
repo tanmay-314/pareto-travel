@@ -10,13 +10,13 @@
       "icon": "../assets/icons/icon-afternoon.svg",
       "period": "LUNCH",
       "dish": "LOMO SALTADO",
-      "description": "Stir-fried sirloin strips and veggies served with rice and fries "
+      "description": "Stir-fried sirloin and veggies served with rice and fries "
     },
     {
       "icon": "../assets/icons/icon-night.svg",
       "period": "DINNER",
       "dish": "CEVICHE",
-      "description": "Raw fish or seafood cured in citrus juices and mixed with veggies"
+      "description": "Raw seafood cured in citrus juices and mixed with veggies"
     }
   ],
   "title": "Meals You Can't Miss",

@@ -9,13 +9,13 @@
     {
       "period": "LUNCH",
       "dish": "MOUSSAKA",
-      "description": "Layers of eggplant and potatoes with a spiced minced meat, tomato sauce, and creamy béchamel sauce",
+      "description": "Layers of eggplant and potatoes with minced meat and sauces",
       "icon": "../assets/icons/icon-afternoon.svg"
     },
     {
       "period": "DINNER",
       "dish": "GYROS",
-      "description": "Tender pieces of grilled meat served in a warm pita with fresh tomatoes, onions, fries, and creamy Tzatziki",
+      "description": "Grilled meat pieces, veggies, fries and tzatiki in pita",
       "icon": "../assets/icons/icon-night.svg"
     }
   ],
