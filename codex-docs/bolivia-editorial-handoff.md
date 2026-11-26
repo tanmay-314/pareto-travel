@@ -23,3 +23,18 @@ Source: [Bolivia](https://app.notion.com/p/Bolivia-d1a978cb32244c8c9db28e745bb66
 - All 107 repository JSON files parse; transport places/legs are consistent and routes are unique in either direction. Ran the country-page generator and its `--check`; all 15 generated entries are current. `git diff --check` reports only the two source-preserved trailing spaces in the generated Bolivia overview; the generated HTML was not hand-edited.
 - Served `src` over HTTP and confirmed the fetched budget matches local JSON. Browser checks passed at 390px and 1440px: all seven budget screens and receipt fields, six itinerary screens, four seasonal screens, three transport screens, and three FAQ toggles. The two tickets have no recommendation badges. Rechecked the updated overview and alternatives at both widths, including rendered overview paragraph breaks. Inspected mobile and desktop screenshots; no horizontal overflow, broken images, console/runtime errors, failed requests, or HTTP errors were recorded. Used the existing local Playwright/Chrome setup because in-app browser execution and the browser CLI are unavailable in this session.
 - No rendering changes, deployment, or Notion mutation were needed.
+
+## Itinerary refresh — 26 November 2026
+
+Refreshed only the itinerary from the latest [main draft](https://app.notion.com/p/d1a978cb32244c8c9db28e745bb66f98)
+and [daily child page](https://app.notion.com/p/4226869db21e807abc6bf5949ec1e47f).
+Both fetches returned content without truncation or unknown-block markers.
+Copied the summary, extra-time ideas and five days verbatim, preserving paragraph
+order and the Andes Salt Expeditions tour link. The five-day count matches the
+title. Existing grammatical issues remain as authored; no placeholders found.
+Assets, IDs and detail URL are unchanged. Preserved the user's existing edits in
+best-months.json, verified by a before/after hash.
+
+Source comparison, rendered HTML paragraph/link checks, generator freshness,
+diff whitespace and three local HTTP routes pass. Browser visual and interaction
+checks remain unverified. No deployment or Notion mutation was performed.
