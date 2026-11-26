@@ -111,8 +111,9 @@ def render_detail_paragraph(copy: str, links: list[dict[str, str]]) -> str:
     for link in links:
         label = link["text"]
         href = link["href"]
-        if not label or not href.startswith(("https://", "http://")):
-            raise ValueError("Editorial links need text and an HTTP(S) URL")
+        local_section = re.fullmatch(r"/countries/[a-z0-9]+(?:-[a-z0-9]+)*#[a-z][a-z0-9-]*", href)
+        if not label or not (href.startswith(("https://", "http://")) or local_section):
+            raise ValueError("Editorial links need text and an HTTP(S) URL or local country section")
         if label not in remaining:
             continue
         before, remaining = remaining.split(label, 1)

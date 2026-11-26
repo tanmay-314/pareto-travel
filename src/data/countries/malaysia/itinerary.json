@@ -7,7 +7,7 @@
       "editorial": [
         "We split our time between the city lights of Kuala Lumpur and the sunsets of Langkawi. For a major city, Kuala Lumpur is fairly compact and can be explored in a little over two days. Two and a bit days in Langkawi felt adequate as well. ",
         "What if we had more time?",
-        "We’d add George Town in Penang to our trip. It’s hailed as the food capital of Malaysia, and as fans of Malaysian cuisine, we feel like we missed out on some heavenly meals!"
+        "We’d add a couple of days in George Town, Penang to our trip. It’s hailed as the food capital of Malaysia, and as fans of Malaysian cuisine, we feel like we missed out on some heavenly meals!"
       ],
       "editorialHeadings": [
         1
@@ -22,15 +22,21 @@
             "In our first day of strolling across town (26,000 steps over 11 hours!), we covered Petaling Street (outdoor market) and Central Market (indoor market), the National Mosque and nighttimes view of the Petronas Towers. ",
             "Malaysian hawkers are polite to a fault, which makes the market visits a very pleasant experience. We recommend haggling just a little bit to bring prices down by 10-20%. ",
             "The National Mosque felt very peaceful, almost spiritual instead of religious (a stark contrast to places of worship in India). ",
-            "And what can we say about the Petronas Towers that hasn’t been said already. They’re truly a spectacle that have stood the test of time! ",
-            "Our last destination of the day was Jalan Alor food street. More on that later. "
+            "And the Petronas Towers are truly a spectacle that have stood the test of time! ",
+            "Our last destination of the day was Jalan Alor food street. More on that here. "
           ],
           "image": {
             "src": "../assets/countries/malaysia/art-360/day-1-art-kuala-lumpur-petronas.svg",
             "alt": "Petronas Towers in Kuala Lumpur",
             "position": "50% 50%",
             "size": 360
-          }
+          },
+          "links": [
+            {
+              "text": "here",
+              "href": "/countries/malaysia#cuisine"
+            }
+          ]
         },
         {
           "dayNumber": "Day 2",
@@ -38,10 +44,10 @@
           "title": "Day 2 - Kuala Lumpur",
           "editorial": [
             "We ate, prayed, and loved our way through Day 2. ",
-            "We started with the Batu Caves in the outskirts of Kuala Lumpur, which has a huge statue of the Hindu god, Shiva. ",
-            "Afterwards, we visited the Federal Territory Mosque, where we were given a fairly objective walkthrough of Islam and the Quran. Unlike some other parts of Asia of varying faiths, Malaysians don’t seem to wear religion on their sleeves.   ",
+            "We started with the Batu Caves in the outskirts of Kuala Lumpur, which has a huge gold-coloured statue of the Hindu god, Shiva. You can climb 272 steps to explore the caves behind the statue. ",
+            "Afterwards, we visited the Federal Territory Mosque, where we were given a fairly objective walkthrough of Islam and the Quran. Unlike some other parts of Asia (of various faiths), Malaysians don’t seem to wear religion on their sleeves.   ",
             "In the evening, we walked up to the Thean Hou Temple, adorned by lanterns that come alive as darkness descends. It was the most peaceful we had felt in a long time. ",
-            "The night ended around our Airbnb in Bukit Bintang dancing along to street performers in the area. "
+            "The night ended around our Airbnb in Bukit Bintang singing and dancing along to street performers in the area. "
           ],
           "image": {
             "src": "../assets/countries/malaysia/art-360/day-2-art-penang-temple.svg",
@@ -57,23 +63,30 @@
           "editorial": [
             "We kept the day deliberately loose and returned to our favourite spots from the previous days, particularly Jalan Alor. ",
             "We also caught a glimpse of the Merdeka 118 Tower, the second-tallest building in the world (as of 2025).",
-            "We took the short flight to Langkawi and walked the beach around sunset. It was satisfying to know that a busy holiday island can still feel relaxed. "
+            "In the afternoon, we took the short flight to Langkawi and checked into Cenang Plaza Beach Hotel, which as advertised, was practically on the beach.",
+            "Our evening was spent walking on the pristine beach watching the sun light the sky on fire. Our bags sat unattended while we waded into the waters, which is a testament to how safe Malaysia is in general. "
           ],
           "image": {
             "src": "../assets/countries/malaysia/art-360/day-3-art-kuala-lumpur-batu.svg",
             "alt": "Batu Caves in Kuala Lumpur",
             "position": "50% 50%",
             "size": 360
-          }
+          },
+          "links": [
+            {
+              "text": "Cenang Plaza Beach Hotel",
+              "href": "https://www.cenangplazahotel.com/"
+            }
+          ]
         },
         {
           "dayNumber": "Day 4",
           "location": "Langkawi",
           "title": "Day 4 - Langkawi",
           "editorial": [
-            "We did the island-hopping tour. We paid RM40 ($10) and it felt worth exactly that amount - not a sen more or less. ",
-            "We kayaked for a half-hour in Dayang Bunting. While the weather was gloomy, paddling through the lake was still the best part of the excursion. ",
-            "In the evening, we were back on the beach optimizing for absolutely nothing. "
+            "The next day, we did the island-hopping tour. We paid RM40 ($10) and it felt worth exactly that amount! ",
+            "We kayaked for a half-hour in Dayang Bunting. While the weather was gloomy (and got worse later in the day), paddling through the lake was still the best part of the excursion. ",
+            "In the evening, we were back on the beach. "
           ],
           "image": {
             "src": "../assets/countries/malaysia/art-360/day-4-art-langkawi-beach.svg",
@@ -87,10 +100,11 @@
           "location": "Langkawi",
           "title": "Day 5 - Langkawi",
           "editorial": [
-            "Ah, the adrenaline packed day at last. ",
-            "We went parasailing over the waters, which joins ziplining across the valleys of Costa Rica in the growing list of activities one of us fears for weeks, but enjoys in minutes. ",
+            "After lazing around for the first two days, it was time to get our adrenaline rushing. ",
+            "We went parasailing over the ocean, which joins zip-lining across the valleys of Costa Rica in the growing list of activities one of us fears for days, but enjoys in minutes. ",
             "We also attempted to visit the Sky Bridge, but discovered you cannot casually stroll up to it. Access required a RM90 ($23) per person cable-car ticket. We decided against it, but it’s among the most popular things to do in Langkawi. ",
-            "The beach beckoned instead and we spent the rest of our time relaxing. Our bags sat unattended while we waded into the waters, which is a testament to how safe Malaysia is in general. "
+            "The beach beckoned instead and we spent the rest of our time doing absolutely nothing.",
+            "We flew back home directly from Langkawi, but depending on your destination, you may have to lay over in Kuala Lumpur.   "
           ],
           "image": {
             "src": "../assets/countries/malaysia/art-360/day-5-art-langkawi-parasailing.svg",

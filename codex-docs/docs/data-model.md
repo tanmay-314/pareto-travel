@@ -9,7 +9,9 @@
 - Budget supports the same optional `detailLink`. Its main-page copy uses
   `editorial` followed by `alternatives`, while `categories` supplies the detail
   page. Optional category `links: [{text, href}]` preserves HTTP(S) links within
-  plain-text paragraphs without introducing HTML into JSON.
+  plain-text paragraphs without introducing HTML into JSON. Itinerary days also
+  support `links`; local `/countries/<slug>#<section>` links can reference a
+  public country section in place of a private Notion source anchor.
 - Local links `/countries/<slug>/itinerary` and `/countries/<slug>/budget` opt
   into generated detail HTML. Run the existing generator after editing them.
 - Best-months prose without `seasons` renders continuously; the optional

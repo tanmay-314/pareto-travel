@@ -5,9 +5,9 @@
       "country": "Cambodia",
       "title": "Wat and Peace - 2 Day Itinerary",
       "editorial": [
-        "We spent two nights in Siem Reap, which is the gateway to Angkor Wat and other temples in the area. Siem Reap has an international airport with direct flights from major Southeast Asian cities. If flight timings permit, we suggest reaching Siem Reap a day prior to the temple tour and indulging in activities around the town. ",
+        "We spent two nights in Siem Reap, the gateway to Angkor Wat and other temples. Siem Reap has an international airport with direct flights from major Southeast Asian cities. If flight timings permit, we suggest reaching Siem Reap a day prior to the temple tour and indulging in activities around the town. ",
         "What if we had more time?",
-        "If we had a little more time, we’d drop by the capital, Phnom Penh. Mostly to get experience a more authentic Cambodian way of life, which isn’t always evident in the manicured Siem Reap. And of course, to learn more about the horrors of the genocide."
+        "If we had a little more time, we’d drop by the capital, Phnom Penh. Mostly to get experience a more authentic Cambodian way of life, which isn’t always evident in the tourist curated Siem Reap. And of course, to learn more about the horrors of the genocide."
       ],
       "detailLink": {
         "label": "View daily itinerary",
@@ -26,8 +26,19 @@
           },
           "title": "Day 1 - Siem Reap",
           "editorial": [
-            "Cambodia is home to the grace and intricate Apsara dance. There are various venues across Siem Reap that host performances in the evening alongside a lavish buffet. We visited Amazon Angkor, a rather fancy banquet that we reached by wading through some not-so-fancy (but entirely safe) back alleys.",
-            "The Apsara show goes on from 6:00 PM to 9:00 PM, after which you can take your lot to Pub Street, a quintessential Southeast Asian party street. But remember, the sunrise temple tour starts at 5:00 AM, so tuck yourself in by a reasonable time.  "
+            "Our ride from the airport to the town was a serene ride through the countryside. Cambodia is home to the graceful and intricate Apsara dance form. We visited Amazon Angkor, one of various venues that host Apsara performances in the evening alongside a lavish buffet. ",
+            "On our walk from the hotel (Pandora Suite d’Angkor) to the banquet hall, we waded through back alleys, that shed light on the trying economic circumstances a majority of Cambodians live in. While what we witnessed was upsetting, we felt safe throughout.   ",
+            "The Apsara show goes on from 6:00 PM to 9:00 PM, after which you can take your lot to Pub Street, a quintessential Southeast Asian party block. But remember, the sunrise temple tour starts at 5:00 AM, so tuck yourself in by a reasonable time.  "
+          ],
+          "links": [
+            {
+              "text": "Amazon Angkor",
+              "href": "https://www.amazon-angkor.com/"
+            },
+            {
+              "text": "Pandora Suite d’Angkor",
+              "href": "https://pandorasuitedangkor.com/"
+            }
           ]
         },
         {
@@ -42,9 +53,9 @@
           },
           "title": "Day 2 - Angkor Wat",
           "editorial": [
-            "Day two is devoted to temples. Be sure to book your tour in advance especially if you’re visiting in the peak season. We booked ours with {tour operator} via Klook and had a great time with Chanthy. Our tour covered the temples of Angkor Wat, Bayon, Ta Prohm, and Banteay Kdei.",
-            "Seeing the sun rise over Angkor Wat is a sight for the Gods (duh!). Those 30 minutes alone make the trip to Cambodia worth it. You spend the morning exploring all the temples before it starts getting hot. ",
-            "In the afternoon, when the sun is blazing overhead, you can head back to Angkor Wat (on your own) and pretty much have the view to yourself. My wife and I got some great pictures in our return to the temple."
+            "The second day is devoted to temples. Be sure to book your tour in advance especially if you’re visiting in the peak season. We booked ours with {tour operator} via Klook and had a great time with Chanthy. Our tour covered the temples of Angkor Wat, Bayon, Ta Prohm (made famous by the Tomb Raider movies), and Banteay Kdei.",
+            "Seeing the sun rise over Angkor Wat is a sight for the Gods (duh!). Those 30 minutes alone make the trip to Cambodia worth it. You spend the rest of the morning exploring all the temples before it starts getting hot. ",
+            "In the afternoon, when the sun is blazing overhead, you can head back to Angkor Wat (on your own) and pretty much have the view to yourself. My partner and I got some great pictures in our return to the temple that featured in our wedding invitation!"
           ]
         }
       ],
