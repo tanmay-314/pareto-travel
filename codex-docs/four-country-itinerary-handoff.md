@@ -30,3 +30,11 @@ rejection of JavaScript, protocol-relative and malformed local URLs. All 12
 country/detail/data routes return HTTP 200. Browser visual, console and
 interaction checks remain unverified; the preceding browser inventory exposed
 no browser connection. No deployment or Notion mutation was performed.
+
+## Cambodia tour link follow-up
+
+Re-fetched the Cambodia daily source on 26 November after its 10:20 UTC edit.
+Replaced the Day 2 operator placeholder with the revised source sentence and
+its Klook tour link, preserving the rest of the itinerary. Regenerated the
+nested page and verified the exact rendered link and source paragraph.
+The earlier placeholder note above is superseded.
