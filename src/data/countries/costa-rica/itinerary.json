@@ -5,37 +5,43 @@
       "country": "Costa Rica",
       "title": "Feet in the Sand, Head in the Clouds - 4-Day Itinerary",
       "editorial": [
-        "We spent one day in San Jose and three in Monteverde. ",
+        "We spent a day in San Jose and, dare I say, it was a day too many. Three days in the lush greenery of Monteverde were worth the hassle of entering the country via the capital. ",
         "What if we had more time?",
-        "From what we heard from fellow travellers, we regret not visiting Arenal volcano near Monteverde. And if time weren’t a constraint, we’d add Playa Manuel Antonio to the itinerary for the gorgeous beach."
+        "From what we heard from fellow travellers in our Monteverde hostel, we regret not visiting Arenal nearby. If we had another couple of days, we’d also add the white sand beaches of Manuel Antonio."
       ],
       "editorialHeadings": [
         1
       ],
       "days": [
         {
-          "dayNumber": "Day 1",
-          "location": "San Jose",
+          "dayNumber": "DAY 1",
+          "location": "SAN JOSE",
           "title": "DAY 1 - SAN JOSE",
           "editorial": [
             "San Jose should strictly be your port of arrival. ",
-            "Unfortunately, our impression of the city was less than flattering. Prostitution is rampant, which is not a problem in and of itself, if it weren’t for the unsavoury elements propping up the business. ",
-            "We toured the National Theatre during the day, and cooped up in our Airbnb after sundown."
+            "After we toured the National Theatre during the day, we had no choice but to coop up in our Airbnb after sundown. The scenes of people rushing to catch the last buses before sun sets is unsettling.",
+            "But you quickly learn why, as the streets are taken over by unsavoury elements. Even restaurants shut down and so we were eternally grateful for Cafe Rojo for staying open until the ungodly hours of 8:30 PM. "
           ],
           "image": {
             "src": "../assets/countries/costa-rica/art-360/day-1-art-frame-theatre.svg",
             "alt": "National Theatre in San Jose",
             "position": "50% 50%",
             "size": 360
-          }
+          },
+          "links": [
+            {
+              "text": "Cafe Rojo",
+              "href": "https://maps.app.goo.gl/kfEimMEZ9e2mxMB37"
+            }
+          ]
         },
         {
-          "dayNumber": "Day 2",
-          "location": "Monteverde",
+          "dayNumber": "DAY 2",
+          "location": "MONTEVERDE",
           "title": "DAY 2 - MONTEVERDE",
           "editorial": [
-            "We took the bus from San Jose to Monteverde (about 5 hours away) and immediately felt better about our trip!",
-            "Monteverde had a wonderful welcoming vibe exemplified by our hostel, Monteverde Backpackers. Filled with travellers from across the world (mainly Europe), it had the communal feeling you want from a hostel. ",
+            "Early next morning, we took the bus from San Jose to Monteverde (about 5 hours away). The roads up the hill are narrow and winding, so be warned if you plan to drive yourself. ",
+            "On arriving in Monteverde, we immediately felt better about our trip! The place had a wonderful welcoming vibe exemplified by our hostel, Monteverde Backpackers. Filled with travellers from across the world (mainly Europe), it had the communal feeling you want from a hostel. ",
             "After dark, we did a night tour of the forest. In a couple of hours, we saw a sloth, a scorpion, a tarantula, a viper, and toucans of various hues. Our guide’s fascinating personality elevated the experience.  "
           ],
           "image": {
@@ -43,18 +49,23 @@
             "alt": "Waterfall in Costa Rica",
             "position": "50% 50%",
             "size": 360
-          }
+          },
+          "links": [
+            {
+              "text": "Monteverde Backpackers",
+              "href": "https://www.hostelworld.com/hostels/p/19204/monteverde-backpackers/?source=ppc_gooads_nonbrand_dsk_dsa_pn_en_in&network=g&campaign_id=21500370178&adgroup_id=170785392128&criteria_id=dsa-443313842330&creative_id=706589916672&location_physical_id=9062005&location_interest_id=&adposition=&uniqueclickID=13957471572765733859&sub_keyword=&sub_ad=&sub_publisher=ADW&gclsrc=aw.ds&gad_source=1&gad_campaignid=21500370178&gbraid=0AAAAAD9QXQbm6-E7f3K3m2gPYN1O54toT&gclid=CjwKCAiAq5rYBhB-EiwAhj1RdleoTwquCCNYc6NtkCB9CVZdplsgyDcwQNfAJGlZZzO-Ls03YlB1gBoCq00QAvD_BwE"
+            }
+          ]
         },
         {
-          "dayNumber": "Day 3",
-          "location": "Monteverde",
+          "dayNumber": "DAY 3",
+          "location": "MONTEVERDE",
           "title": "DAY 3 - MONTEVERDE",
           "editorial": [
-            "On dia dos in Monteverde, we explored the cloud forests by day with our newfound hostel friends. ",
-            "The lushness of the forests will put you at ease as only nature can. After feasting our eyes on the green of the forest, we added a dash of colour by visiting a bird park that housed exotic species. ",
-            "In the afternoon, we learnt why it’s called a “cloud” forest. The mist descending on the hills is a spectacle. One that must experienced for a camera cannot capture the dreamlike atmosphere the clouds create. ",
-            "The evening was spent back in the hostel, with conversations over cooking. ",
-            "One of us was also preparing themselves for the next day…"
+            "On dia dos in Monteverde, we explored the cloud forests by day with our newfound hostel friends. We took lots of pictures of and on the most famous hanging bridge. ",
+            "After feasting our eyes on the forest greens, we added a dash of colour by visiting a bird park that housed exotic species. ",
+            "In the afternoon, it was time for the main event. The mist descending on the hills is a spectacle. One that must experienced for a camera cannot capture the dreamlike atmosphere the clouds create. ",
+            "The evening was spent back in the hostel, with conversations over cooking. "
           ],
           "image": {
             "src": "../assets/countries/costa-rica/art-360/day-3-art-frame-mountain.svg",
@@ -64,14 +75,16 @@
           }
         },
         {
-          "dayNumber": "Day 4",
-          "location": "Monteverde",
+          "dayNumber": "DAY 4",
+          "location": "MONTEVERDE",
           "title": "DAY 4 - MONTEVERDE",
           "editorial": [
-            "The highlight of Monteverde is zip-lining over the valleys. ",
-            "If you’re scared of heights, it will be the most terrifying day of your life. ",
+            "Most people who come to Monteverde Cloud Forest, are to experience life as a cloud soaring over the lush valleys. ",
+            "If you’re scared of heights (as one of us most certainly is), it will be the most terrifying day of your life. Once you cross the first of 13 zip-line cables, there’s no turning back. ",
             "But somehow, we did it. And boy was it worth it! ",
-            "As a famous ad punchline back in India goes, “Darr ke aage jeet hai”. “Beyond fear lies victory”."
+            "As a famous ad punchline back in India goes, “Darr ke aage jeet hai”. “Beyond fear lies victory”.",
+            "For the even more adventurous (which the other of us is), there’s a Tarzan swing where you plunge from a platform into the open sky. ",
+            "After our nerves had settled, we headed back to other kind of danger, San Jose, to catch our flight out. "
           ],
           "image": {
             "src": "../assets/countries/costa-rica/art-360/day-4-art-frame-zipline.svg",
